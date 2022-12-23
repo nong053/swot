@@ -1,5 +1,22 @@
 
+var loadExampleSwot=function(uuid){
+
+    $.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"loadExampleSwot",
+		},
+		success:function(data){
+	
+		}
+	});
+}
 var autoLoginFn=function(uuid){
+
     $.ajax({
 		url:"./Model/login.php",
 		type:"post",
@@ -9,17 +26,24 @@ var autoLoginFn=function(uuid){
 			"uuid":uuid,
 		},
 		success:function(data){
-            // alert(1);
-			 console.log(data);
-             console.log(data[0]);
-            alert(data[0]['loginStatus']);
+
+		
+			if(data[0]['loginType']=="newUser"){
+				loadExampleSwot(sessionStorage.getItem('uuid'));
+				alert("newUser");
+			}else{
+				alert("oldUser");
+			}
             
 		}
 	});
 }
 
+
 $(document).ready(function(){
+	
     var uuid = new DeviceUUID().get();
+	sessionStorage.setItem('uuid', uuid);
     autoLoginFn(uuid);
     //alert(uuid);
 });

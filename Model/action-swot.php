@@ -1,11 +1,11 @@
 <?php
-
- $sql = "SELECT * FROM admin where p_id='$_POST[uuid]'";
+include("../config.php");
+ $sql = "SELECT * FROM admin where uu_id='$_REQUEST[uuid]'";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
 
     //coding here.
-    if($_POST['action']=='findOne'){
+    if($_REQUEST['action']=='findOne'){
 
         $sql = "SELECT id, firstname, lastname FROM MyGuests";
         $result = $conn->query($sql);
@@ -19,7 +19,7 @@
         }
 
 
-    }else if($_POST['action']=='insert'){
+    }else if($_REQUEST['action']=='insert'){
 
         $sql = "INSERT INTO MyGuests (firstname, lastname, email)
         VALUES ('John', 'Doe', 'john@example.com')";
@@ -28,7 +28,7 @@
         echo "New record created successfully";
         }
 
-    }else if($_POST['action']=='show'){
+    }else if($_REQUEST['action']=='show'){
 
         $sql = "SELECT id, firstname, lastname FROM MyGuests";
         $result = $conn->query($sql);
@@ -42,7 +42,7 @@
         echo "0 results";
         }
 
-    }else if($_POST['action']=='updated'){
+    }else if($_REQUEST['action']=='updated'){
 
         $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
 
@@ -52,7 +52,7 @@
         echo "Error updating record: " . $conn->error;
         }
 
-    }else if($_POST['action']=='delete'){
+    }else if($_REQUEST['action']=='delete'){
         // sql to delete a record
         $sql = "DELETE FROM MyGuests WHERE id=3";
 
@@ -61,20 +61,68 @@
         } else {
         echo "Error deleting record: " . $conn->error;
         }
-    }else if($_POST['action']=='insertSwotMaster'){
+    }else if($_REQUEST['action']=='insertSwotMaster'){
 
         $sql = "
-        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_POST[uuid]', 'ปัจจัยภายใน จุดแข็ง', NOW(),NOW()
-        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_POST[uuid]', 'ปัจจัยภายใน จุดอ่อน', NOW(),NOW()
-        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_POST[uuid]', 'ปัจจัยภายนอก โอกาส', NOW(),NOW()
-        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_POST[uuid]', 'ปัจจัยภายนอก อุปสรรค', NOW(),NOW()
+        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_REQUEST[uuid]', 'ปัจจัยภายใน จุดแข็ง', NOW(),NOW()
+        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_REQUEST[uuid]', 'ปัจจัยภายใน จุดอ่อน', NOW(),NOW()
+        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_REQUEST[uuid]', 'ปัจจัยภายนอก โอกาส', NOW(),NOW()
+        INSERT INTO aspect (uu_id, ap_name, created_date,updated_date) VALUES ('$_REQUEST[uuid]', 'ปัจจัยภายนอก อุปสรรค', NOW(),NOW()
         )";
 
         if ($conn->query($sql) === TRUE) {
             echo "[{\"status\":\"200\",\"statusData\":\"insert swot master success.\"}]";
         }
 
-    }         
+    }else if($_REQUEST['action']=='loadExampleSwot'){
+
+        //Loop start
+        $checkError=true;
+        $sql_select_aspect = "SELECT ap_id, ap_name FROM aspect where uu_id='$_REQUEST[uuid]'";
+        $result_aspect = $conn->query($sql_select_aspect);
+        
+        if ($result_aspect->num_rows > 0) {
+          // output data of each row
+      
+          $swot_list = array("ปัจจัยภายใน จุดแข็ง", "ปัจจัยภายใน จุดอ่อน", "ปัจจัยภายนอก โอกาส","ปัจจัยภายนอก อุปสรรค");
+          $count=0;
+          while($row = $result_aspect->fetch_assoc()) {
+            // $row["uu_id"]
+            $sql_select_performance = "
+            INSERT INTO swot (ap_id, s_name, s_weight, s_score,s_total_score,created_date,updated_date) VALUES
+            ('$row[ap_id]','$swot_list[$count]1', 0.25, 5, 1.25,NOW(),NOW()), 
+            ('$row[ap_id]','$swot_list[$count]2', 0.25, 5, 1.25,NOW(),NOW()),
+            ('$row[ap_id]','$swot_list[$count]3', 0.25, 5, 1.25,NOW(),NOW()),
+            ('$row[ap_id]','$swot_list[$count]4', 0.25, 5, 1.25,NOW(),NOW());
+
+           ";
+           $count++;
+
+           if ($conn->query($sql_select_performance) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error2: " . $sql . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+          }
+          if($checkError==true){
+            echo "[{\"status\":\"200\",\"statusData\":\"insert performance master success.\"}]";
+          }else{
+            echo "[{\"status\":\"500\",\"statusData\":\"performance master error\"}]";
+          }
+
+
+        }else{
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        //Loop end
+         
+         //per_id	ap_id	per_weight	per_score	per_total_score	created_date	updated_date
+
+    }  
+            
     //coding here.
     
 
