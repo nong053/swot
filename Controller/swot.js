@@ -11,7 +11,9 @@ var loadExampleSwot=function(uuid){
 			"action":"loadExampleSwot",
 		},
 		success:function(data){
-	
+			if(data[0]['status']=="200"){
+				alert("load data success.");
+			}
 		}
 	});
 }
