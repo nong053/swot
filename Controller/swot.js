@@ -1,5 +1,5 @@
 
-var loadExampleSwot=function(uuid){
+var insertAndLoadExampleSwot=function(uuid){
 
     $.ajax({
 		url:"./Model/action-swot.php",
@@ -8,7 +8,7 @@ var loadExampleSwot=function(uuid){
         async:false,
 		data:{
 			"uuid":uuid,
-			"action":"loadExampleSwot",
+			"action":"insertAndLoadExampleSwot",
 		},
 		success:function(data){
 			if(data[0]['status']=="200"){
@@ -31,9 +31,10 @@ var autoLoginFn=function(uuid){
 
 		
 			if(data[0]['loginType']=="newUser"){
-				loadExampleSwot(sessionStorage.getItem('uuid'));
+				insertAndLoadExampleSwot(sessionStorage.getItem('uuid'));
 				alert("newUser");
 			}else{
+				loadExampleSwot(sessionStorage.getItem('uuid'));
 				alert("oldUser");
 			}
             
