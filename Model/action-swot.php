@@ -74,7 +74,7 @@ include("../config.php");
             echo "[{\"status\":\"200\",\"statusData\":\"insert swot master success.\"}]";
         }
 
-    }else if($_REQUEST['action']=='loadExampleSwot'){
+    }else if($_REQUEST['action']=='insertAndLoadExampleSwot'){
 
         //Loop start
         $checkError=true;
@@ -107,7 +107,24 @@ include("../config.php");
 
           }
           if($checkError==true){
-            echo "[{\"status\":\"200\",\"statusData\":\"insert performance master success.\"}]";
+
+            //echo "[{\"status\":\"200\",\"statusData\":\"insert performance master success.\"}]";
+
+
+            $sql = "SELECT ap.ap_id,ap.uu_id,ap.ap_name,s.s_id,s.ap_id,s.s_name,s.s_weight,s.s_score,s.s_total_score 
+            FROM aspect ap 
+            inner join swot s on ap.ap_id=s.ap_id  
+            where ap.uu_id='$_REQUEST[uuid]'
+            order by s.s_id asc";
+
+            if ($conn->query($sql) === TRUE) {
+            echo json_encode($sql);
+
+            } else {
+            echo "Error updating record: " . $conn->error;
+            }
+
+
           }else{
             echo "[{\"status\":\"500\",\"statusData\":\"performance master error\"}]";
           }
@@ -121,6 +138,19 @@ include("../config.php");
          
          //per_id	ap_id	per_weight	per_score	per_total_score	created_date	updated_date
 
+    }else if($_REQUEST['action']=='loadExampleSwot'){
+        $sql = "SELECT ap.ap_id,ap.uu_id,ap.ap_name,s.s_id,s.ap_id,s.s_name,s.s_weight,s.s_score,s.s_total_score 
+            FROM aspect ap 
+            inner join swot s on ap.ap_id=s.ap_id  
+            where ap.uu_id='$_REQUEST[uuid]'
+            order by s.s_id asc";
+
+            if ($conn->query($sql) === TRUE) {
+            echo json_encode($sql);
+
+            } else {
+            echo "Error updating record: " . $conn->error;
+            }
     }  
             
     //coding here.
