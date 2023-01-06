@@ -7,26 +7,16 @@ include("../config.php");
     //coding here.
     if($_REQUEST['action']=='findOne'){
 
-        $sql = "
-        select s.s_id,s.uuid,s.ap_id,ap_name,
-        s.s_name,s.s_weight,s.s_score,
-        s.s_total_score 
-        from swot s
-        inner join aspect_master am on s.ap_id=am.ap_id
-        where uuid='$_REQUEST[uuid]'
-        order by ap_id asc
-        ";
-        $dataArray = array();
-            $result = $conn->query($sql);
-            if ($result->num_rows > 0) {
-            // output data of each row
-                while($row = $result->fetch_assoc()) {
-                    $dataArray[] = $row;
-                }
-               
-            } 
-            //echo"[]";
-            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        $sql = "SELECT id, firstname, lastname FROM MyGuests";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+        }
+        } else {
+        echo "0 results";
+        }
 
 
     }else if($_REQUEST['action']=='insert'){
@@ -155,76 +145,46 @@ include("../config.php");
          //per_id	ap_id	per_weight	per_score	per_total_score	created_date	updated_date
 
     }else if($_REQUEST['action']=='loadExampleSwot'){
-/*
-swot_example
-id,b_id,ap_id,seq_id,s_name,s_weight,s_score,s_total_score
-swot
-s_id,uuid,ap_id,s_name,s_weight,s_score,s_total_score
-*/
-        $checkError=true;
-        $sql_delete = " DELETE FROM swot WHERE uuid='$_REQUEST[uuid]';";
 
-        if ($conn->query($sql_delete) === TRUE) {
-            $sql_select_swot = "SELECT * FROM swot_example where b_id='$_REQUEST[b_id]'";
-            $result_swot = $conn->query($sql_select_swot);
-            if ($result_swot->num_rows > 0) {
 
-                $count=0;
-                while($row = $result_swot->fetch_assoc()) {
-                   
-                    $sql_select_swot = "
-                    INSERT INTO swot (uuid,ap_id, s_name, s_weight, s_score,s_total_score,created_date,updated_date) VALUES
-                    ('$_REQUEST[uuid]','$row[ap_id]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW())";
-        
-                   $count++;
-        
-                   if ($conn->query($sql_select_swot) === TRUE) {
-                        $checkError=true;
-                    }else{
-                        echo "Error2: " . $sql . "<br>" . $conn->error;
-                        $checkError=false;
-                    }
-                  } //while 
+        /*
+        $sql = "SELECT ap.ap_id,ap.uu_id,ap.ap_name,s.s_id,s.ap_id,s.s_name,s.s_weight,s.s_score,s.s_total_score 
+            FROM aspect ap 
+            inner join swot s on ap.ap_id=s.ap_id  
+            where ap.uu_id='d520c7a8-421b-4563-b955-f5abc56b97ec'
+            order by s.s_id asc";
 
-                  if($checkError==true){
+            if ($conn->query($sql) === TRUE) {
+            echo"test";
 
-                    $sql_swot = "
-                    select s.s_id,s.uuid,s.ap_id,ap_name,
-                    s.s_name,s.s_weight,s.s_score,
-                    s.s_total_score 
-                    from swot s
-                    inner join aspect_master am on s.ap_id=am.ap_id
-                    where uuid='$_REQUEST[uuid]'
-                    order by ap_id asc
-                    ";
-                    $dataArray = array();
-                    $result_swot = $conn->query($sql_swot);
-                    if ($result_swot->num_rows > 0) {
-                    // output data of each row
-                        while($row = $result_swot->fetch_assoc()) {
-                            $dataArray[] = $row;
-                        }
-                        //echo json_encode($dataArray);
-                    } 
-
-                    echo "[{\"status\":\"200\",\"data\":\".".json_encode($dataArray)."\"}]";
-                  }
-                  
-                  
+            } else {
+            echo "Error updating record: " . $conn->error;
             }
-        }else{
-            echo "step3: " . $sql_delete . "<br>" . $conn->error;
-        } 
+            */
 
-
-       
-
-    }     
-
+        $sql = "SELECT ap.ap_id,ap.uu_id,ap.ap_name,s.s_id,s.ap_id,s.s_name,s.s_weight,s.s_score,s.s_total_score 
+        FROM aspect ap 
+        inner join swot s on ap.ap_id=s.ap_id  
+        where ap.uu_id='$_REQUEST[uuid]'
+        order by s.s_id asc";
+        $dataArray = array();
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+        // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
+            echo json_encode($dataArray);
+        } else {
+        echo "0 results";
+        }
+    }  
+            
+    //coding here.
     
 
  }else{
-    echo "[{\"loginStatus\":\"notLogin\"}]";
+    echo "[{\"loginStatus\":\"error\"}]";
  }
  $conn->close();
 

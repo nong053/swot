@@ -196,7 +196,7 @@
                     <div class="row mb-3">
                         <!-- <div class="col-1">1</div> -->
                         <div class="col-9">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="s" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
                             <!-- <select class="form-select font-score" aria-label="Default select example">
@@ -207,8 +207,10 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                               </select> -->
-                              <input type="text" name="" id="" class="form-control">
+                              <input type="text" name="s1_score" id="" class="form-control">
+                              
                         </div>
+                    
                     </div>
                     <div class="row mb-3">
                         <!-- <div class="col-1">2</div> -->
