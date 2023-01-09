@@ -11,8 +11,93 @@ s_total_score
 s_weight
 uuid
 */
-	alert(data['']);
+	console.log("renderSwotToForm");
+	console.log(data);
+
+
+	$.each(data,function(data,indexEntry){
+		// alert(indexEntry['s_name']);
+		// alert(indexEntry['s_score']);
 	
+
+		
+
+		if(indexEntry['form_id']=='s1'){
+	
+			$("#s1_name").val(indexEntry['s_name']);
+			$("#s1_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='s2'){
+			$("#s2_name").val(indexEntry['s_name']);
+			$("#s2_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='s3'){
+			$("#s3_name").val(indexEntry['s_name']);
+			$("#s3_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='s4'){
+			$("#s4_name").val(indexEntry['s_name']);
+			$("#s4_score").val(indexEntry['s_score']);
+		}
+
+
+		if(indexEntry['form_id']=='w1'){
+			$("#w1_name").val(indexEntry['s_name']);
+			$("#w1_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='w2'){
+			$("#w2_name").val(indexEntry['s_name']);
+			$("#w2_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='w3'){
+			$("#w3_name").val(indexEntry['s_name']);
+			$("#w3_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='w4'){
+			$("#w4_name").val(indexEntry['s_name']);
+			$("#w4_score").val(indexEntry['s_score']);
+		}
+
+
+		
+
+		if(indexEntry['form_id']=='o1'){
+			$("#o1_name").val(indexEntry['s_name']);
+			$("#o1_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='o2'){
+			$("#o2_name").val(indexEntry['s_name']);
+			$("#o2_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='o3'){
+			$("#o3_name").val(indexEntry['s_name']);
+			$("#o3_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='o4'){
+			$("#o4_name").val(indexEntry['s_name']);
+			$("#o4_score").val(indexEntry['s_score']);
+		}
+
+
+		if(indexEntry['form_id']=='t1'){
+			$("#t1_name").val(indexEntry['s_name']);
+			$("#t1_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='t2'){
+			$("#t2_name").val(indexEntry['s_name']);
+			$("#t2_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='t3'){
+			$("#t3_name").val(indexEntry['s_name']);
+			$("#t3_score").val(indexEntry['s_score']);
+		}
+		if(indexEntry['form_id']=='t4'){
+			$("#t4_name").val(indexEntry['s_name']);
+			$("#t4_score").val(indexEntry['s_score']);
+		}
+		
+	});
+
 }
 var findOne=function(uuid){
 	alert(uuid);
@@ -27,11 +112,11 @@ var findOne=function(uuid){
 			"action":"findOne",
 		},
 		success:function(data){
-			//alert(1);
-			console.log(data);
-			alert(data);
+			
+			
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
+					
 					renderSwotToForm(data[0]['data']);
 				}
 			}

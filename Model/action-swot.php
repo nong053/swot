@@ -8,13 +8,13 @@ include("../config.php");
     if($_REQUEST['action']=='findOne'){
 
         $sql = "
-        select s.s_id,s.uuid,s.ap_id,ap_name,
+        select s.s_id,s.uuid,s.form_id,s.ap_id,ap_name,
         s.s_name,s.s_weight,s.s_score,
         s.s_total_score 
         from swot s
         inner join aspect_master am on s.ap_id=am.ap_id
         where uuid='$_REQUEST[uuid]'
-        order by ap_id asc
+        order by ap_id,form_id asc
         ";
         $dataArray = array();
             $result = $conn->query($sql);
@@ -173,8 +173,8 @@ s_id,uuid,ap_id,s_name,s_weight,s_score,s_total_score
                 while($row = $result_swot->fetch_assoc()) {
                    
                     $sql_select_swot = "
-                    INSERT INTO swot (uuid,ap_id, s_name, s_weight, s_score,s_total_score,created_date,updated_date) VALUES
-                    ('$_REQUEST[uuid]','$row[ap_id]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW())";
+                    INSERT INTO swot (uuid,form_id,ap_id, s_name, s_weight, s_score,s_total_score,created_date,updated_date) VALUES
+                    ('$_REQUEST[uuid]','$row[form_id]','$row[ap_id]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW())";
         
                    $count++;
         
@@ -189,7 +189,7 @@ s_id,uuid,ap_id,s_name,s_weight,s_score,s_total_score
                   if($checkError==true){
 
                     $sql_swot = "
-                    select s.s_id,s.uuid,s.ap_id,ap_name,
+                    select s.s_id,s.uuid,s.form_id,s.ap_id,ap_name,
                     s.s_name,s.s_weight,s.s_score,
                     s.s_total_score 
                     from swot s

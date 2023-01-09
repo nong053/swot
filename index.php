@@ -196,7 +196,7 @@
                     <div class="row mb-3">
                         <!-- <div class="col-1">1</div> -->
                         <div class="col-9">
-                          <input type="text" class="form-control" id="s" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
                             <!-- <select class="form-select font-score" aria-label="Default select example">
@@ -207,7 +207,7 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                               </select> -->
-                              <input type="text" name="s1_score" id="" class="form-control">
+                              <input type="text" name="s1_score" id="s1_score" class="form-control">
                               
                         </div>
                     
@@ -215,7 +215,7 @@
                     <div class="row mb-3">
                         <!-- <div class="col-1">2</div> -->
                         <div class="col-9">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
                             <!-- <select class="form-select" aria-label="Default select example">
@@ -226,14 +226,14 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                               </select> -->
-                              <input type="text" name="" id="" class="form-control">
+                              <input type="text" name="s2_score" id="s2_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <!-- <div class="col-1">3</div> -->
                         <div class="col-9">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
                             <!-- <select class="form-select" aria-label="Default select example">
@@ -244,14 +244,14 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                               </select> -->
-                              <input type="text" name="" id="" class="form-control">
+                              <input type="text" name="s3_score" id="s3_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <!-- <div class="col-1">4</div> -->
                         <div class="col-9">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
                             <!-- <select class="form-select" aria-label="Default select example">
@@ -262,14 +262,14 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                               </select> -->
-                              <input type="text" name="" id="" class="form-control">
+                              <input type="text" name="s4_score" id="s4_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <!-- <div class="col-1">5</div> -->
                         <div class="col-9">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
                             <!-- <select class="form-select" aria-label="Default select example">
@@ -280,7 +280,7 @@
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                               </select> -->
-                              <input type="text" name="" id="" class="form-control">
+                              <input type="text" name="s5_score" id="s5_score" class="form-control">
                         </div>
                     </div>
                         
@@ -302,84 +302,89 @@
                     <div class="row mb-3">
                         <div class="col-1">1</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="w5_score" id="w1_score" class="form-control">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-1">2</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="w5_score" id="w2_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">3</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="w5_score" id="w3_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">4</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="w4_score" id="w4_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">5</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="w5_score" id="w5_score" class="form-control">
                         </div>
                     </div>
                         
@@ -401,84 +406,89 @@
                     <div class="row mb-3">
                         <div class="col-1">1</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="o1_score" id="o1_score" class="form-control">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-1">2</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="o2_score" id="o2_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">3</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="o3_score" id="o3_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">4</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="o4_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="o4_score" id="o4_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">5</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="o5_score" id="o5_score" class="form-control">
                         </div>
                     </div>
                         
@@ -500,84 +510,89 @@
                     <div class="row mb-3">
                         <div class="col-1">1</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="t1_score" id="t1_score" class="form-control">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-1">2</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="t2_score" id="t2_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">3</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="t3_score" id="t3_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">4</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="t4_score" id="t4_score" class="form-control">
                         </div>
                     </div>
     
                     <div class="row mb-3">
                         <div class="col-1">5</div>
                         <div class="col-8">
-                          <input type="text" class="form-control" id="name_s1" aria-describedby="xxx">
+                          <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
                         </div>
                         <div class="col-3">
-                            <select class="form-select" aria-label="Default select example">
+                            <!-- <select class="form-select" aria-label="Default select example">
                            
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
-                              </select>
+                              </select> -->
+                              <input type="text" name="t5_score" id="t5_score" class="form-control">
                         </div>
                     </div>
                         
