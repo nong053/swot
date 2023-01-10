@@ -219,7 +219,98 @@ s_id,uuid,ap_id,s_name,s_weight,s_score,s_total_score
 
        
 
-    }     
+    }else if($_REQUEST['action']=='calculateSwot'){
+        
+        $s1_name="";
+        $s1_score="";
+        $s2_name="";
+        $s2_score="";
+        $s3_name="";
+        $s3_score="";
+        $s4_name="";
+        $s4_score="";
+        $s5_name="";
+        $s5_score="";
+
+        $s1_total_score=0.00;
+        $s2_total_score=0.00;
+        $s3_total_score=0.00;
+        $s4_total_score=0.00;
+        $s5_total_score=0.00;
+        $s_total_score=0.00;
+
+
+        $w1_name="";
+        $w1_score="";
+        $w2_name="";
+        $w2_score="";
+        $w3_name="";
+        $w3_score="";
+        $w4_name="";
+        $w4_score="";
+        $w5_name="";
+        $w5_score="";
+
+        $o1_name="";
+        $o1_score="";
+        $o2_name="";
+        $o2_score="";
+        $o3_name="";
+        $o3_score="";
+        $o4_name="";
+        $o4_score="";
+        $o5_name="";
+        $o5_score="";
+
+        $t1_name="";
+        $t1_score="";
+        $t2_name="";
+        $t2_score="";
+        $t3_name="";
+        $t3_score="";
+        $t4_name="";
+        $t4_score="";
+        $t5_name="";
+        $t5_score="";
+        
+        //Strang
+        if($_REQUEST['s1_name']!==""){
+            $s1_name=$_REQUEST['s1_name'];
+            $s1_weight=$_REQUEST['s1_weight'];
+            $s1_score=$_REQUEST['s1_score'];
+            $s1_total_score =  $s1_weight*$s1_score;
+
+        }
+        if($_REQUEST['s2_name']!==""){
+            $s2_name=$_REQUEST['s2_name'];
+            $s2_weight=$_REQUEST['s2_weight'];
+            $s2_score=$_REQUEST['s2_score'];
+            $s2_total_score =  $s2_weight*$s2_score;
+        }
+        if($_REQUEST['s3_name']!==""){
+            $s3_name=$_REQUEST['s3_name'];
+            $s3_weight=$_REQUEST['s3_weight'];
+            $s3_score=$_REQUEST['s3_score'];
+            $s3_total_score =  $s3_weight*$s3_score;
+        }
+        if($_REQUEST['s4_name']!==""){
+            $s4_name=$_REQUEST['s4_name'];
+            $s4_weight=$_REQUEST['s4_weight'];
+            $s4_score=$_REQUEST['s4_score'];
+            $s4_total_score =  $s4_weight*$s4_score;
+        }
+        if($_REQUEST['s5_name']!==""){
+            $s5_name=$_REQUEST['s5_name'];
+            $s5_weight=$_REQUEST['s5_weight'];
+            $s5_score=$_REQUEST['s5_score'];
+            $s5_total_score =  $s5_weight*$s5_score;
+        }
+
+        $s_total_score="";
+
+
+
+    }   
 
     
 

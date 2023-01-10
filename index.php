@@ -42,6 +42,17 @@
             -webkit-box-shadow: var(--phoenix-setting-toggle-shadow);
             box-shadow: var(--phoenix-setting-toggle-shadow);
         }
+
+        .widthSwotName{
+            width: 70%;
+        }
+        .widthSwotWeight{
+            width:15%;
+        }
+        .widthSwotScore{
+            width: 15%;
+        }
+        
     </style>
 </head>
   <body>
@@ -173,7 +184,7 @@
 
     
     
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:blue;">
+    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:blue;">
         <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white;">SWOT Analysis Program</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
@@ -185,104 +196,107 @@
             <div class="card text-bg-primary mb-3" >
                 <div class="card-header">
 
-                    <div class="row ">
+                    <!-- <div class="row ">
                         <div class="col-1"><b>#</b></div>
                         <div class="col-8"><b>ปัจจัยภายใน จุดแข็ง</b></div>
+                        
                         <div class="col-3 font-h-score">คะแนน</div>
-                    </div>
+                    </div> -->
+                    <table>
+                            <thead>
+
+                                <th class="widthSwotName">
+                                    ปัจจัยภายใน จุดแข็ง
+                                </th>
+                                <th class="widthSwotWeight">
+                                    น้ำหนัก
+                                </th>
+                                <th class="widthSwotScore">
+                                    คะแนน
+                                </th>
+
+                            </tr>
+                            
+                        </thead>
+                    </table>
 
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
                         <!-- <div class="col-1">1</div> -->
-                        <div class="col-9">
-                          <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select font-score" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="s1_score" id="s1_score" class="form-control">
-                              
-                        </div>
+                        <table>
+                            <tr>
+                                <td class="widthSwotName">
+                                    <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
+                                </td>
+                                <td class="widthSwotWeight">
+                                    <input type="text" name="s1_weight" id="s1_weight" class="form-control">
+                                </td>
+                                <td class="widthSwotScore">
+                                    <input type="text" name="s1_score" id="s1_score" class="form-control">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                    <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
+                                </td>
+                                <td class="widthSwotWeight">
+                                    <input type="text" name="s2_weight" id="s2_weight" class="form-control">
+                                </td>
+                                <td class="widthSwotScore">
+                                    <input type="text" name="s2_score" id="s2_score" class="form-control">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                    <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
+                                </td>
+                                <td class="widthSwotWeight">
+                                    <input type="text" name="s3_weight" id="s3_weight" class="form-control">
+                                </td>
+                                <td class="widthSwotScore">
+                                    <input type="text" name="s3_score" id="s3_score" class="form-control">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                    <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
+                                </td>
+                                <td class="widthSwotWeight">
+                                    <input type="text" name="s4_weight" id="s4_weight" class="form-control">
+                                </td>
+                                <td class="widthSwotScore">
+                                    <input type="text" name="s4_score" id="s4_score" class="form-control">
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                    <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
+                                </td>
+                                <td class="widthSwotWeight">
+                                    <input type="text" name="s5_weight" id="s5_weight" class="form-control">
+                                </td>
+                                <td class="widthSwotScore">
+                                    <input type="text" name="s5_score" id="s5_score" class="form-control">
+                                </td>
+
+                            </tr>
+                            
+                        </table>
+
                     
                     </div>
-                    <div class="row mb-3">
-                        <!-- <div class="col-1">2</div> -->
-                        <div class="col-9">
-                          <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="s2_score" id="s2_score" class="form-control">
-                        </div>
-                    </div>
+                    
     
-                    <div class="row mb-3">
-                        <!-- <div class="col-1">3</div> -->
-                        <div class="col-9">
-                          <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="s3_score" id="s3_score" class="form-control">
-                        </div>
-                    </div>
+                    
     
-                    <div class="row mb-3">
-                        <!-- <div class="col-1">4</div> -->
-                        <div class="col-9">
-                          <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="s4_score" id="s4_score" class="form-control">
-                        </div>
-                    </div>
+                    
     
-                    <div class="row mb-3">
-                        <!-- <div class="col-1">5</div> -->
-                        <div class="col-9">
-                          <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="s5_score" id="s5_score" class="form-control">
-                        </div>
-                    </div>
+                
                         
                 </div>
             </div>
@@ -610,7 +624,7 @@
                 
                 
                
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
             </form>
 
 
