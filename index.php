@@ -185,8 +185,8 @@
     
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:blue;">
-        <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white;">SWOT Analysis Program</h5>
+        <div class="offcanvas-header" style=" text-align:center;">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">SWOT Analysis Program</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
@@ -305,103 +305,96 @@
             <div class="card text-bg-secondary mb-3" >
                 <div class="card-header">
 
-                    <div class="row ">
-                        <div class="col-1"><b>#</b></div>
-                        <div class="col-8"><b>ปัจจัยภายใน จุดอ่อน</b></div>
-                        <div class="col-3 font-h-score"><b>คะแนน</b></div>
-                    </div>
+                   
+
+                    <table>
+                            <thead>
+
+                                <th class="widthSwotName">
+                                    ปัจจัยภายใน จุดอ่อน
+                                </th>
+                                <th class="widthSwotWeight">
+                                    น้ำหนัก
+                                </th>
+                                <th class="widthSwotScore">
+                                    คะแนน
+                                </th>
+
+                            </tr>
+                            
+                        </thead>
+                    </table>
+
 
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
-                        <div class="col-1">1</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="w5_score" id="w1_score" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-1">2</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="w5_score" id="w2_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">3</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="w5_score" id="w3_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">4</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="w4_score" id="w4_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">5</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="w5_score" id="w5_score" class="form-control">
-                        </div>
-                    </div>
+
+                        <table>
+                                <tr>
+                                    <td class="widthSwotName">
+                                        <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
+                                    </td>
+                                    <td class="widthSwotWeight">
+                                        <input type="text" name="w1_weight" id="w1_weight" class="form-control">
+                                    </td>
+                                    <td class="widthSwotScore">
+                                        <input type="text" name="w1_score" id="w1_score" class="form-control">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="widthSwotName">
+                                        <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
+                                    </td>
+                                    <td class="widthSwotWeight">
+                                        <input type="text" name="w2_weight" id="w2_weight" class="form-control">
+                                    </td>
+                                    <td class="widthSwotScore">
+                                        <input type="text" name="w2_score" id="w2_score" class="form-control">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="widthSwotName">
+                                        <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
+                                    </td>
+                                    <td class="widthSwotWeight">
+                                        <input type="text" name="w3_weight" id="w3_weight" class="form-control">
+                                    </td>
+                                    <td class="widthSwotScore">
+                                        <input type="text" name="w3_score" id="w3_score" class="form-control">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="widthSwotName">
+                                        <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
+                                    </td>
+                                    <td class="widthSwotWeight">
+                                        <input type="text" name="w4_weight" id="w4_weight" class="form-control">
+                                    </td>
+                                    <td class="widthSwotScore">
+                                        <input type="text" name="w4_score" id="w4_score" class="form-control">
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="widthSwotName">
+                                        <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
+                                    </td>
+                                    <td class="widthSwotWeight">
+                                        <input type="text" name="w5_weight" id="w5_weight" class="form-control">
+                                    </td>
+                                    <td class="widthSwotScore">
+                                        <input type="text" name="w5_score" id="w5_score" class="form-control">
+                                    </td>
+
+                                </tr>
+                                
+                            </table>
                         
+                    </div>  
                 </div>
             </div>
             <!--box-->
@@ -409,103 +402,92 @@
             <div class="card text-bg-success  mb-3" >
                 <div class="card-header">
 
-                    <div class="row ">
-                        <div class="col-1"><b>#</b></div>
-                        <div class="col-8"><b>ปัจจัยภายนอก โอกาส</b></div>
-                        <div class="col-3 font-h-score"><b>คะแนน</b></div>
-                    </div>
+                   
+                    <table>
+                            <thead>
+
+                                <th class="widthSwotName">
+                                    ปัจจัยภายนอก โอกาส
+                                </th>
+                                <th class="widthSwotWeight">
+                                    น้ำหนัก
+                                </th>
+                                <th class="widthSwotScore">
+                                    คะแนน
+                                </th>
+
+                            </tr>
+                            
+                        </thead>
+                    </table>
 
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
-                        <div class="col-1">1</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="o1_score" id="o1_score" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-1">2</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="o2_score" id="o2_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">3</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="o3_score" id="o3_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">4</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="o4_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="o4_score" id="o4_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">5</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="o5_score" id="o5_score" class="form-control">
-                        </div>
-                    </div>
+                    <table>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="o1_weight" id="o1_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="o1_score" id="o1_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="o2_weight" id="o2_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="o2_score" id="o2_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="o3_weight" id="o3_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="o3_score" id="o3_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="o4_weight" id="o4_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="o4_score" id="o4_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="o5_weight" id="o5_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="o5_score" id="o5_score" class="form-control">
+                            </td>
+
+                        </tr>
                         
+                    </table>
+                    </div>
                 </div>
             </div>
             <!--box-->
@@ -513,103 +495,94 @@
             <div class="card text-bg-danger  mb-3" >
                 <div class="card-header">
 
-                    <div class="row ">
-                        <div class="col-1"><b>#</b></div>
-                        <div class="col-8"><b>ปัจจัยภายนอก อุปสรรค</b></div>
-                        <div class="col-3 font-h-score"><b>คะแนน</b></div>
-                    </div>
+                  
+
+                    <table>
+                            <thead>
+
+                                <th class="widthSwotName">
+                                    ปัจจัยภายนอก อุปสรรค
+                                </th>
+                                <th class="widthSwotWeight">
+                                    น้ำหนัก
+                                </th>
+                                <th class="widthSwotScore">
+                                    คะแนน
+                                </th>
+
+                            </tr>
+                            
+                        </thead>
+                    </table>
+
 
                 </div>
                 <div class="card-body">
-                    <div class="row mb-3">
-                        <div class="col-1">1</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="t1_score" id="t1_score" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-1">2</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="t2_score" id="t2_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">3</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="t3_score" id="t3_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">4</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="t4_score" id="t4_score" class="form-control">
-                        </div>
-                    </div>
-    
-                    <div class="row mb-3">
-                        <div class="col-1">5</div>
-                        <div class="col-8">
-                          <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
-                        </div>
-                        <div class="col-3">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                           
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                              </select> -->
-                              <input type="text" name="t5_score" id="t5_score" class="form-control">
-                        </div>
-                    </div>
+                <div class="row mb-3">
+                    <table>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="t1_weight" id="t1_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="t1_score" id="t1_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="t2_weight" id="t2_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="t2_score" id="t2_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="t3_weight" id="t3_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="t3_score" id="t3_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="t4_weight" id="t4_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="t4_score" id="t4_score" class="form-control">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td class="widthSwotName">
+                                <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
+                            </td>
+                            <td class="widthSwotWeight">
+                                <input type="text" name="t5_weight" id="t5_weight" class="form-control">
+                            </td>
+                            <td class="widthSwotScore">
+                                <input type="text" name="t5_score" id="t5_score" class="form-control">
+                            </td>
+
+                        </tr>
                         
+                    </table>
+                </div>
                 </div>
             </div>
             <!--box-->
@@ -624,7 +597,7 @@
                 
                 
                
-                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+                <button type="button" id="submit" class="btn btn-primary">บันทึกข้อมูล</button>
             </form>
 
 
