@@ -1,36 +1,32 @@
 
- function createChart(data) {
+ function createGauges(id) {
+	var value = $("#gauge-value").val();
 
-	$("#chart").kendoChart({
-		title: {
-			text: "SWOT Analysis",
-			visible: true
+	$("#gauge"+id).kendoLinearGauge({
+		pointer: {
+			value: 28
 		},
-		chartArea: {
-			background: "#aa00bb"
-		  },
-		legend: {
-			position: "bottom",
-			visible: false
-		},
-		seriesDefaults: {
-			type: "radarLine"
-		},
-		series: [{
-			name: "SWOT Matrix",
-			data: data
-		}],
-		categoryAxis: {
-			categories: ["Strengths", "Weaknesses", "Opportunities", "Threats"]
-		},
-		valueAxis: {
-			labels: {
-				format: "{0}"
-			}
-		},
-		tooltip: {
-			visible: true,
-			format: "{0} คะแนน"
+		scale: {
+			majorUnit: 20,
+			minorUnit: 2,
+			min: -40,
+			max: 60,
+			vertical: true,
+			ranges: [
+				{
+					from: -40,
+					to: -20,
+					color: "#2798df"
+				}, {
+					from: 30,
+					to: 45,
+					color: "#ffc700"
+				}, {
+					from: 45,
+					to: 60,
+					color: "#c20000"
+				}
+			]
 		}
 	});
 }
@@ -534,6 +530,9 @@ $(document).ready(function(){
 		//return false;
 	});
 
-	createChart([1,2,3,4]);
+	createGauges(1);
+	createGauges(2);
+	createGauges(3);
+	createGauges(4);
     //alert(uuid);
 });

@@ -13,7 +13,7 @@ include("../config.php");
         s.s_total_score 
         from swot s
         inner join aspect_master am on s.ap_id=am.ap_id
-        where uuid='$_REQUEST[uuid]'
+        where uuid='$_REQUEST[uuid]'  
         order by ap_id,form_id asc
         ";
         $dataArray = array();
