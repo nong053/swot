@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Risk Management</title>
+    <title>Manpower Calculation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.3.1109/styles/kendo.default-ocean-blue.min.css" /> -->
     <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/jquery.min.js"></script> -->
@@ -29,7 +29,7 @@
         }
         .graph{
             width: 100%;
-             height: 700px; 
+             height: 300px; 
             background-color:bisque;
         }
         .setting-toggle {
@@ -63,126 +63,236 @@
 
 <div class="container">
 
-    <div class=" mb-3">
+    <div class="row mb-3">
         
+        <div class="col-md-3">
+            <div class='graph'>อัตรากำลังพลงานที่1/กำลังพลปัจจุบันงานที่1</div>
+            
+        </div>
+        <div class="col-md-3">
+            <div class='graph'>อัตรากำลังพลงานที่2/กำลังพลปัจจุบันงานที่2</div>
+        </div>
+        <div class="col-md-3">
+            <div class='graph'>อัตรากำลังพลงานที่3/กำลังพลปัจจุบันงานที่3</div>
+        </div>
+        <div class="col-md-3">
+            <div class='graph'>อัตรากำลังพลทั้งหมด/กำลังพลปัจจุบันทั้งหมด</div>
+        </div>
         
-        <div id="chart" class="graph" ></div>
   
     </div>
 
 
 
-    <div class="card text-bg-primary mb-3" >
-        <div class="card-header">SO (จุดแข็งและโอกาส)</div>
+    <div class="card  mb-3" >
+        <div class="card-header"> 	1. การเตรียมความพร้อมระบบบัญชาการและควบคุม ทอ.</div>
         <div class="card-body">
             <table class="table  table-striped">
+                <thead>
+                    
+                       
+                        <th>
+                            รายละเอียดงาน
+                        </th>
+                        <th>
+                            เวลา:หน่วย
+                        </th>
+                        <th>
+                            ปริมาณงาน:ปี
+                        </th>
+                        <th>
+                            อัตรากำลัง:ปี
+                        </th>
+                       
+                    
+                </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                   
+                    <tr>
+                        
+                        <td>
+                            1.1  สำรวจและรวบรวมสถานภาพของระบบบัญชาการและควบคุม
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        1.2  ตรวจสอบความสัมพันธ์ของข้อมูลสถานภาพ ข้อมูล Hardware/Software และบุคลากร จากหน่วยที่เกี่ยวข้อง 
+
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        1.3  วิเคราะห์ และประเมินผล การบูรณาการทุกระบบสารสนเทศเพื่อการยุทธ ทอ.(CIS) ที่เชื่อมต่อกับ ศปก.ทอ.
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        1.4  นำข้อมูลที่ได้จากการวิเคราะห์ นำมาเปรียบเทียบกับ ระบบบัญชาการและควบคุม ร่วม/ผสม 
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        1.5  นำเสนอแนวทาง พัฒนา/แก้ไข ให้ผู้บังคับบัญชา ตัดสินตกลงใจได้ในทุกสภาวการณ์ อย่างมีประสิทธิภาพ
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr style="background-color:antiquewhite;">
+                        <td colspan="3">อัตรากำลังพล</td>
+                        <td>1.39</td>
+                    </tr>
+                   
                 </tbody>
             </table>
+            
+        </div>
+    </div>
+    <div class="card  mb-3" >
+        <div class="card-header"> 	2. การกำกับดูแล และตรวจสอบการปฏิบัติตาม รปป. ของหน่วยที่เกี่ยวข้องกับระบบเชื่อมโยงข้อมูลทางยุทธวิธี
+</div>
+        <div class="card-body">
             <table class="table  table-striped">
+                <thead>
+                    
+                       
+                        <th>
+                            รายละเอียดงาน
+                        </th>
+                        <th>
+                            เวลา:หน่วย
+                        </th>
+                        <th>
+                            ปริมาณงาน:ปี
+                        </th>
+                        <th>
+                            อัตรากำลัง:ปี
+                        </th>
+                       
+                    
+                </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                   
+                    <tr>
+                        
+                        <td>
+                        2.1  รวบรวมเอกสาร รปป.ที่เกี่ยวข้องกับระบบเชื่อมโยงข้อมูลทางยุทธวิธี
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        2.2  ติดตามตรวจสอบการปฏิบัติงานของหน่วยเกี่ยวข้อง
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        2.3  การเปลี่ยนแปลงความถี่และ Crypto Key,การจัดองค์การรักษาความปลอดภัยข้อมูล/อุปกรณ์ ระบบการติดต่อ สื่อสาร(CIS), การกำกับการตรวจสอบระบบเชื่อมโยงข้อมูลทางยุทธวิธีที่ GES, SAAB 340B/AEW และบน บ.Gripen
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        2.4  การปรับเปลี่ยนนโยบาย การเปลี่ยนแปลงโครงสร้างของระบบฯ 
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td>
+                        2.5  การแก้ไขเพิ่มเติม รปป.ฯ ทุกหน่วยที่เกี่ยวข้อง ประชุม หารือ สรุปผล แล้วนำเรียนขออนุมัติจากผู้บังคับบัญชา
+
+
+                        </td>
+                        <td>840</td>
+                        <td>24</td>
+                        <td>0.23</td>
+                    </tr>
+                    <tr style="background-color:antiquewhite;">
+                        <td colspan="3">อัตรากำลังพล</td>
+                        <td>1.39</td>
+                    </tr>
+                   
                 </tbody>
             </table>
+            
         </div>
     </div>
 
-    <div class="card text-bg-secondary  mb-3" >
-        <div class="card-header">ST (จุดแข็งและภัยคุกคาม)</div>
+
+
+    <div class="card  mb-3" >
+        <div class="card-header"> 	สรุป
+</div>
         <div class="card-body">
-            <table class="table  table-striped">
+        <table class="table  table-striped">
+                <thead>
+                    
+                       
+                        <th style="width: 70%;">
+                       
+                        </th>
+                        <th>
+                            เวลา:หน่วย
+                        </th>
+                        <th>
+                            ปริมาณงาน:ปี
+                        </th>
+                        <th>
+                            อัตรากำลัง:ปี
+                        </th>
+                       
+                    
+                </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                    <tr>
+                        <td></td>
+                        <td>999</td>
+                        <td>99</td>
+                        <td>9</td>
+                    </tr>
                 </tbody>
-            </table>
-            <table class="table  table-striped">
-                <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
-                </tbody>
-            </table>
+        </table>
         </div>
     </div>
 
-    <div class="card text-bg-success  mb-3" >
-        <div class="card-header">WO (จุดอ่อนและโอกาส)</div>
-        <div class="card-body">
-            <table class="table  table-striped">
-                <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="table  table-striped">
-                <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="card text-bg-danger  mb-3" >
-        <div class="card-header">WT (จุดอ่อนและภัยคุกคาม)</div>
-        <div class="card-body">
-            <table class="table  table-striped">
-                <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="table  table-striped">
-                <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    
 
 
 
@@ -193,102 +303,278 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:blue;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">Risk Management</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">Manpower Calculation</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
+
+        <!-- accordian start-->
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                งานที่#1
+                </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <table>
+                            <tr>
+                                <td colspan="3">
+                                    <input type="text" class="form-control" id="s1_name" placeholder="1. ชื่องาน">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.รายละเอียดงาน"> -->
+                                <textarea  class="form-control" id="s1_name" placeholder="1.1 รายละเอียดงาน"></textarea>
+                                <div class="alert alert-success" role="alert">
+                                    <table>
+                                        <tr>
+                                           
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
+                                            </td>
+                                           
+                                        </tr>
+                                    </table>
+                                </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                <input type="text" class="form-control" id="s1_name" placeholder="1.2 รายละเอียดงาน">
+                                <div class="alert alert-success" role="alert">
+                                    <table>
+                                        <tr>
+                                            
+                                            
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
+                                            </td>
+                                           
+                                        </tr>
+                                    </table>
+                                </div>   
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                <input type="text" class="form-control" id="s1_name" placeholder="1.3 รายละเอียดงาน">
+                                <div class="alert alert-success" role="alert">
+                                    <table>
+                                        <tr>
+                                            
+                                           
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
+                                            </td>
+                                           
+                                        </tr>
+                                    </table>
+                                </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                <input type="text" class="form-control" id="s1_name" placeholder="1.4 รายละเอียดงาน">
+                                <div class="alert alert-success" role="alert">
+                                    <table>
+                                        <tr>
+                                            
+                                            
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
+                                            </td>
+                                           
+                                        </tr>
+                                    </table>
+                                    
+                                </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                <input type="text" class="form-control" id="s1_name" placeholder="1.5 รายละเอียดงาน">
+                                <div class="alert alert-success" role="alert">
+                                    <table>
+                                        <tr>
+                                            
+                                          
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
+                                            </td>
+                                            <td>
+                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
+                                            </td>
+                                           
+                                        </tr>
+                                    </table>
+                                </div>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="widthSwotName">
+                                <input type="text" class="form-control" id="s1_name" placeholder="กำลังพล(ปัจจุบัน)">
+                               
+                                    
+                                </td>
+                            </tr>
+                            
+                    </table>
+
+                </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                งานที่#2
+                </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <!-- Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content. -->
+                </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                งานที่#3
+                </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <!-- Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application. -->
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- accordian end-->
+
+
 
             <form>
             <!--box-->
             <div class="card text-bg-primary mb-3" >
                 <div class="card-header">
-
-                    <!-- <div class="row ">
-                        <div class="col-1"><b>#</b></div>
-                        <div class="col-8"><b>ปัจจัยภายใน จุดแข็ง</b></div>
-                        
-                        <div class="col-3 font-h-score">คะแนน</div>
-                    </div> -->
-                    <table>
-                            <thead>
-
-                                <th class="widthSwotName">
-                                    ปัจจัยภายใน จุดแข็ง
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
-
-                            </tr>
-                            
-                        </thead>
-                    </table>
-
+                    <div class="row">
+                        งานที่#1
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
                         <!-- <div class="col-1">1</div> -->
                         <table>
                             <tr>
+                                <td colspan="3">
+                                    <input type="text" class="form-control" id="s1_name" placeholder="ภารกิจ...">
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
+                                    <input type="text" class="form-control" id="s1_name" placeholder="รายละเอียดงาน...">
                                 </td>
                                 <td class="widthSwotWeight">
-                                    <input type="text" name="s1_weight" id="s1_weight" class="form-control">
+                                    <input type="text" name="s1_weight" id="s1_weight" class="form-control" placeholder="">
                                 </td>
                                 <td class="widthSwotScore">
-                                    <input type="text" name="s1_score" id="s1_score" class="form-control">
+                                    <input type="text" name="s1_score" id="s1_score" class="form-control" placeholder="">
                                 </td>
 
                             </tr>
                             <tr>
                                 <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
+                                    <input type="text" class="form-control" id="s2_name" placeholder="รายละเอียดงาน...">
                                 </td>
                                 <td class="widthSwotWeight">
-                                    <input type="text" name="s2_weight" id="s2_weight" class="form-control">
+                                    <input type="text" name="s2_weight" id="s2_weight" class="form-control" placeholder="">
                                 </td>
                                 <td class="widthSwotScore">
-                                    <input type="text" name="s2_score" id="s2_score" class="form-control">
+                                    <input type="text" name="s2_score" id="s2_score" class="form-control" placeholder="">
                                 </td>
 
                             </tr>
                             <tr>
                                 <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
+                                    <input type="text" class="form-control" id="s3_name" placeholder="รายละเอียดงาน...">
                                 </td>
                                 <td class="widthSwotWeight">
-                                    <input type="text" name="s3_weight" id="s3_weight" class="form-control">
+                                    <input type="text" name="s3_weight" id="s3_weight" class="form-control" placeholder="">
                                 </td>
                                 <td class="widthSwotScore">
-                                    <input type="text" name="s3_score" id="s3_score" class="form-control">
+                                    <input type="text" name="s3_score" id="s3_score" class="form-control" placeholder="">
                                 </td>
 
                             </tr>
                             <tr>
                                 <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
+                                    <input type="text" class="form-control" id="s4_name" placeholder="รายละเอียดงาน...">
                                 </td>
                                 <td class="widthSwotWeight">
-                                    <input type="text" name="s4_weight" id="s4_weight" class="form-control">
+                                    <input type="text" name="s4_weight" id="s4_weight" class="form-control" placeholder="">
                                 </td>
                                 <td class="widthSwotScore">
-                                    <input type="text" name="s4_score" id="s4_score" class="form-control">
+                                    <input type="text" name="s4_score" id="s4_score" class="form-control" placeholder="">
                                 </td>
 
                             </tr>
                             <tr>
                                 <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
+                                    <input type="text" class="form-control" id="s5_name" placeholder="รายละเอียดงาน...">
                                 </td>
                                 <td class="widthSwotWeight">
-                                    <input type="text" name="s5_weight" id="s5_weight" class="form-control">
+                                    <input type="text" name="s5_weight" id="s5_weight" class="form-control" placeholder="">
                                 </td>
                                 <td class="widthSwotScore">
-                                    <input type="text" name="s5_score" id="s5_score" class="form-control">
+                                    <input type="text" name="s5_score" id="s5_score" class="form-control" placeholder="">
                                 </td>
 
                             </tr>
@@ -298,303 +584,13 @@
                     
                     </div>
                     
-    
-                    
-    
-                    
-    
-                
                         
                 </div>
             </div>
             <!--box-->
-            <!--box-->
-            <div class="card text-bg-secondary mb-3" >
-                <div class="card-header">
-
-                   
-
-                    <table>
-                            <thead>
-
-                                <th class="widthSwotName">
-                                    ปัจจัยภายใน จุดอ่อน
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
-
-                            </tr>
-                            
-                        </thead>
-                    </table>
-
-
-                </div>
-                <div class="card-body">
-                    <div class="row mb-3">
-
-                        <table>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w1_weight" id="w1_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w1_score" id="w1_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w2_weight" id="w2_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w2_score" id="w2_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w3_weight" id="w3_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w3_score" id="w3_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w4_weight" id="w4_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w4_score" id="w4_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w5_weight" id="w5_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w5_score" id="w5_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                
-                            </table>
-                        
-                    </div>  
-                </div>
-            </div>
-            <!--box-->
-            <!--box-->
-            <div class="card text-bg-success  mb-3" >
-                <div class="card-header">
-
-                   
-                    <table>
-                            <thead>
-
-                                <th class="widthSwotName">
-                                    ปัจจัยภายนอก โอกาส
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
-
-                            </tr>
-                            
-                        </thead>
-                    </table>
-
-                </div>
-                <div class="card-body">
-                    <div class="row mb-3">
-                    <table>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o1_weight" id="o1_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o1_score" id="o1_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o2_weight" id="o2_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o2_score" id="o2_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o3_weight" id="o3_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o3_score" id="o3_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o4_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o4_weight" id="o4_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o4_score" id="o4_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o5_weight" id="o5_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o5_score" id="o5_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        
-                    </table>
-                    </div>
-                </div>
-            </div>
-            <!--box-->
-            <!--box-->
-            <div class="card text-bg-danger  mb-3" >
-                <div class="card-header">
-
-                  
-
-                    <table>
-                            <thead>
-
-                                <th class="widthSwotName">
-                                    ปัจจัยภายนอก อุปสรรค
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
-
-                            </tr>
-                            
-                        </thead>
-                    </table>
-
-
-                </div>
-                <div class="card-body">
-                <div class="row mb-3">
-                    <table>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t1_weight" id="t1_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t1_score" id="t1_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t2_weight" id="t2_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t2_score" id="t2_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t3_weight" id="t3_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t3_score" id="t3_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t4_weight" id="t4_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t4_score" id="t4_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t5_weight" id="t5_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t5_score" id="t5_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        
-                    </table>
-                </div>
-                </div>
-            </div>
-            <!--box-->
+            
                
-                <button type="button" id="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+                <button type="button" id="submit" class="btn btn-primary ">บันทึกข้อมูล</button>
             </form>
 
 
