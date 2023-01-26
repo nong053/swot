@@ -85,114 +85,143 @@
     </div>
 
 
+    
+        <div class="card text-bg-default mb-3" >
+                <div class="card-header">SO (จุดแข็งและโอกาส)</div>
+                <div class="card-body">
+        <div class="row">
+        <div class="col-md-6">
+        
+                <table class="table  table-striped">
+                        <tbody>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                   
+                
 
-    <div class="card text-bg-default mb-3" >
-        <div class="card-header">SO (จุดแข็งและโอกาส)</div>
-        <div class="card-body">
-            <table class="table  table-striped">
-                <tbody>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table class="table  table-striped">
-                <tbody>
-                <tr>
-                    <td scope="row">ปัจจัยภายนอก โอกาส 1</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td scope="row">ปัจจัยภายนอก โอกาส 2</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td scope="row">ปัจจัยภายนอก โอกาส 3</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td scope="row">ปัจจัยภายนอก โอกาส 4</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
-                </tbody>
-            </table>
+
         </div>
-    </div>
+        <div class="col-md-6">
+                <!--content here-->
+                
 
-    <div class="card text-bg-default  mb-3" >
-        <div class="card-header">ST (จุดแข็งและภัยคุกคาม)</div>
-        <div class="card-body">
-            <table class="table  table-striped">
-                <tbody>
+                    <table class="table  table-striped">
+                        <tbody>
                         <tr>
-                            <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
+                            <td scope="row">ปัจจัยภายนอก โอกาส 1</td>
                             <td>5</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
+                            <td scope="row">ปัจจัยภายนอก โอกาส 2</td>
                             <td>5</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
+                            <td scope="row">ปัจจัยภายนอก โอกาส 3</td>
                             <td>5</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
+                            <td scope="row">ปัจจัยภายนอก โอกาส 4</td>
                             <td>5</td>
                         </tr>
                         <tr>
                             <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
                         </tr>
-                </tbody>
-            </table>
-            <table class="table  table-striped">
-                <tbody>
-                <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 1</td>
-                        <td>5</td>
-                    </tr>
+                        </tbody>
+                    </table>
+                <!--content here-->
+        </div>
+    </div>
+    </div>
+
+    </div>
+    
+
+    <div class="card text-bg-default  mb-3" >
+        <div class="card-header">ST (จุดแข็งและภัยคุกคาม)</div>
+        <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-6">
+
+
+                <table class="table  table-striped">
+                    <tbody>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            <div class="col-md-6">
+                <table class="table  table-striped">
+                    <tbody>
                     <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 3</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 4</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                    </tr>
-                </tbody>
-            </table>
+                            <td scope="row">ปัจจัยภายนอก อุปสรรค 1</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">ปัจจัยภายนอก อุปสรรค 2</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">ปัจจัยภายนอก อุปสรรค 3</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">ปัจจัยภายนอก อุปสรรค 4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 
     <div class="card text-bg-default  mb-3" >
         <div class="card-header">WO (จุดอ่อนและโอกาส)</div>
         <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+
             <table class="table  table-striped">
                 <tbody>
                 <tr>
@@ -216,6 +245,10 @@
                 </tr>
                 </tbody>
             </table>
+            </div>
+            <div class="col-md-6">
+
+            
             <table class="table  table-striped">
                 <tbody>
                     <tr>
@@ -239,12 +272,18 @@
                 </tr>
                 </tbody>
             </table>
+            </div>
+        </div>
         </div>
     </div>
 
     <div class="card text-bg-default  mb-3" >
         <div class="card-header">WT (จุดอ่อนและภัยคุกคาม)</div>
         <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-6">
+
             <table class="table  table-striped">
                 <tbody>
                     <tr>
@@ -268,6 +307,8 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
+            <div class="col-md-6">
             <table class="table  table-striped">
                 <tbody>
                     <tr>
@@ -291,6 +332,8 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
+        </div>
         </div>
     </div>
 
