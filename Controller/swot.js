@@ -4,10 +4,11 @@
 	$("#chart").kendoChart({
 		title: {
 			text: "SWOT Analysis",
-			visible: true
+			visible: false
 		},
 		chartArea: {
-			background: "#aa00bb"
+			 //background: "#ffc107",
+			 //visible: false
 		  },
 		legend: {
 			position: "bottom",

@@ -10,6 +10,7 @@
     
     <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/9770e5b059.css" crossorigin="anonymous"> -->
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" >
    
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
@@ -97,32 +98,7 @@
             border-bottom: black 3px solid;
         }
 
-
-        .btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 0; // changed
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 0; // changed
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 0; // changed
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
-}
+        
         
     </style>
 </head>
@@ -241,12 +217,7 @@
         </div>
         </div>
 
-            
-            
         </div>
-        
-        
-  
     </div>
 
 
@@ -388,18 +359,6 @@
     </div>
     
 
-
-
-
-
-    
-
-
-
-
-
-
-    
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">

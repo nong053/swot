@@ -8,7 +8,8 @@
     <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.3.1109/styles/kendo.default-ocean-blue.min.css" /> -->
     <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/jquery.min.js"></script> -->
     
-
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" >
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
 
@@ -19,7 +20,10 @@
     @import url(fonts/thsarabunnew.css);
 
     /**{ margin: 0; padding: 0; }*/
-    body{ font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; background-color: darkblue; }
+    body{ 
+        font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; ; 
+        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
+    }
         .font-score{
             
         }
@@ -30,7 +34,7 @@
         .graph{
             width: 100%;
              height: 700px; 
-            background-color:bisque;
+            /* background-color:bisque; */
         }
         .setting-toggle {
             position: fixed;
@@ -56,6 +60,9 @@
         .widthSwotScore{
             width: 15%;
         }
+
+
+
         
     </style>
 </head>
@@ -63,33 +70,64 @@
 
 <div class="container">
 
-    <div class=" mb-3">
+    <div class="  mb-3">
         
         
-        <div id="chart" class="graph" ></div>
+        
+
+        <div class="card text-bg-defualt  mb-3 " style="margin-top: 30px;">
+            <div class="card-header">SWOT Analysis</div>
+            <div class="card-body">
+                <div id="chart" class="graph" ></div>
+            </div>
+        </div>
   
     </div>
 
 
 
-    <div class="card text-bg-primary mb-3" >
+    <div class="card text-bg-default mb-3" >
         <div class="card-header">SO (จุดแข็งและโอกาส)</div>
         <div class="card-body">
             <table class="table  table-striped">
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                    </tr>
                 </tbody>
             </table>
             <table class="table  table-striped">
                 <tbody>
                 <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
+                    <td scope="row">ปัจจัยภายนอก โอกาส 1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td scope="row">ปัจจัยภายนอก โอกาส 2</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td scope="row">ปัจจัยภายนอก โอกาส 3</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td scope="row">ปัจจัยภายนอก โอกาส 4</td>
                     <td>5</td>
                 </tr>
                 <tr>
@@ -100,41 +138,77 @@
         </div>
     </div>
 
-    <div class="card text-bg-secondary  mb-3" >
+    <div class="card text-bg-default  mb-3" >
         <div class="card-header">ST (จุดแข็งและภัยคุกคาม)</div>
         <div class="card-body">
             <table class="table  table-striped">
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                        <tr>
+                            <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                        </tr>
                 </tbody>
             </table>
             <table class="table  table-striped">
                 <tbody>
                 <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <div class="card text-bg-success  mb-3" >
+    <div class="card text-bg-default  mb-3" >
         <div class="card-header">WO (จุดอ่อนและโอกาส)</div>
         <div class="card-body">
             <table class="table  table-striped">
                 <tbody>
                 <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
+                    <td scope="row">ปัจจัยภายใน จุดอ่อน 1</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td scope="row">ปัจจัยภายใน จุดอ่อน 2</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td scope="row">ปัจจัยภายใน จุดอ่อน 3</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td scope="row">ปัจจัยภายใน จุดอ่อน 4</td>
                     <td>5</td>
                 </tr>
                 <tr>
@@ -144,10 +218,22 @@
             </table>
             <table class="table  table-striped">
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
-                    <td>5</td>
-                </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก โอกาส 1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก โอกาส 2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก โอกาส 3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก โอกาส 4</td>
+                        <td>5</td>
+                    </tr>
                 <tr>
                     <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
                 </tr>
@@ -156,29 +242,53 @@
         </div>
     </div>
 
-    <div class="card text-bg-danger  mb-3" >
+    <div class="card text-bg-default  mb-3" >
         <div class="card-header">WT (จุดอ่อนและภัยคุกคาม)</div>
         <div class="card-body">
             <table class="table  table-striped">
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบจุดแข็ง</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดอ่อน 1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดอ่อน 2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดอ่อน 3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายใน จุดอ่อน 4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                    </tr>
                 </tbody>
             </table>
             <table class="table  table-striped">
                 <tbody>
-                <tr>
-                    <th scope="row">ทดสอบระบบโอกาส</th>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 2</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 3</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">ปัจจัยภายนอก อุปสรรค 4</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -191,13 +301,19 @@
 
     
     
-    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:blue;">
+    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">SWOT Analysis Program</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
-
+            <div class="row">
+                <div class="col-md-12" style="text-align: left;">
+                    <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                    <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                    <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-warning btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                </div>
+            </div>
             <form>
             <!--box-->
             <div class="card text-bg-primary mb-3" >
@@ -594,7 +710,7 @@
             </div>
             <!--box-->
                
-                <button type="button" id="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+             
             </form>
 
 
@@ -609,8 +725,8 @@
         <div class="position-relative rounded-start" style="height:34px;width:28px">
             <div class="settings-popover">
                 <span class="ripple">
-                    <span class="fa-spin position-absolute all-0 d-flex flex-center">
-                        <i class="fa-regular fa-gear"></i>
+                    <span class="fa-spin position-absolute all-0 d-flex flex-center" style="left:2px; top:15px; ">
+                        <i class="fa-sharp fa-solid fa-gear fa-xl"></i>
                     </span>
                 </span>
             </div>
