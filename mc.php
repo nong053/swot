@@ -8,7 +8,8 @@
     <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.3.1109/styles/kendo.default-ocean-blue.min.css" /> -->
     <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/jquery.min.js"></script> -->
     
-
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" >
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
 
@@ -19,7 +20,11 @@
     @import url(fonts/thsarabunnew.css);
 
     /**{ margin: 0; padding: 0; }*/
-    body{ font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; background-color: darkblue; }
+        body{ 
+        font-family: 'THSarabunNew', sans-serif; 
+        font-size: 0.95em; line-height: 1.7em; 
+        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
+    }
         .font-score{
             
         }
@@ -30,7 +35,7 @@
         .graph{
             width: 100%;
              height: 300px; 
-            background-color:bisque;
+            /* background-color:bisque; */
         }
         .setting-toggle {
             position: fixed;
@@ -66,17 +71,46 @@
     <div class="row mb-3">
         
         <div class="col-md-3">
-            <div class='graph'>อัตรากำลังพลงานที่1/กำลังพลปัจจุบันงานที่1</div>
+            <div class="card text-bg-default  mb-3"  >
+                <div class="card-header" style="text-align: center;">อัตรากำลังพลงานที่1/กำลังพลปัจจุบันงานที่1</div>
+                <div class="card-body" style="text-align: center; ">
+           
+                    <div id="gauge1" class="graph" >graph1</div>
+                </div>
+            </div>
+
+            <!-- <div class='graph'>อัตรากำลังพลงานที่1/กำลังพลปัจจุบันงานที่1</div> -->
             
         </div>
         <div class="col-md-3">
-            <div class='graph'>อัตรากำลังพลงานที่2/กำลังพลปัจจุบันงานที่2</div>
+            <div class="card text-bg-default  mb-3"  >
+                <div class="card-header" style="text-align: center;">อัตรากำลังพลงานที่2/กำลังพลปัจจุบันงานที่2</div>
+                <div class="card-body" style="text-align: center; ">
+             
+                    <div id="gauge2" class="graph" >graph2</div>
+                </div>
+            </div>
+            <!-- <div class='graph'>อัตรากำลังพลงานที่2/กำลังพลปัจจุบันงานที่2</div> -->
         </div>
         <div class="col-md-3">
-            <div class='graph'>อัตรากำลังพลงานที่3/กำลังพลปัจจุบันงานที่3</div>
+            <div class="card text-bg-default  mb-3"  >
+                <div class="card-header" style="text-align: center;">อัตรากำลังพลงานที่3/กำลังพลปัจจุบันงานที่3</div>
+                <div class="card-body" style="text-align: center; ">
+                
+                    <div id="gauge3" class="graph" >graph3</div>
+                </div>
+            </div>
+            <!-- <div class='graph'>อัตรากำลังพลงานที่3/กำลังพลปัจจุบันงานที่3</div> -->
         </div>
         <div class="col-md-3">
-            <div class='graph'>อัตรากำลังพลทั้งหมด/กำลังพลปัจจุบันทั้งหมด</div>
+            <div class="card text-bg-default  mb-3"  >
+                <div class="card-header" style="text-align: center;">อัตรากำลังพลทั้งหมด/กำลังพลปัจจุบันทั้งหมด</div>
+                <div class="card-body" style="text-align: center; ">
+   
+                    <div id="gauge4" class="graph" >graph4</div>
+                </div>
+            </div>
+            <!-- <div class='graph'>อัตรากำลังพลทั้งหมด/กำลังพลปัจจุบันทั้งหมด</div> -->
         </div>
         
   
@@ -301,12 +335,20 @@
 
     
     
-    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:blue;">
+    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">Manpower Calculation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
+
+        <div class="row">
+                <div class="col-md-12" style="text-align: left;">
+                    <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                     <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                    <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                </div>
+            </div>
 
         <!-- accordian start-->
         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -318,43 +360,56 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
+                <div  class="mb-3">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: left;">
+                    
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
                     <table>
                             <tr>
                                 <td colspan="3">
-                                    <input type="text" class="form-control" id="s1_name" placeholder="1. ชื่องาน">
+                                <div  class="mb-3">
+                                    <!-- <input type="text" class="form-control" id="s1_name" placeholder="1. ชื่องาน"> -->
+                                    <textarea  class="form-control" id="s1_name" placeholder="1. ชื่องาน"></textarea>
+                                </div>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td class="widthSwotName">
                                 <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.รายละเอียดงาน"> -->
-                                <textarea  class="form-control" id="s1_name" placeholder="1.1 รายละเอียดงาน"></textarea>
-                                <div class="alert alert-success" role="alert">
-                                    <table>
-                                        <tr>
-                                           
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
-                                            </td>
-                                           
-                                        </tr>
-                                    </table>
+                                <div  class="mb-3">
+                                    <textarea  class="form-control" id="s1_name" placeholder="1.1 รายละเอียดงาน"></textarea>
+                                    <div  class="mb-3">
+                                        <table>
+                                            <tr>
+                                            
+                                                <td>
+                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
+                                                </td>
+                                            
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </div>
-                                    
                                 </td>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td class="widthSwotName">
-                                <input type="text" class="form-control" id="s1_name" placeholder="1.2 รายละเอียดงาน">
-                                <div class="alert alert-success" role="alert">
+                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.2 รายละเอียดงาน"> -->
+                                <textarea  class="form-control" id="s1_name" placeholder="1.2 รายละเอียดงาน"></textarea>
+                                <div  class="mb-3">
                                     <table>
                                         <tr>
                                             
@@ -380,8 +435,9 @@
                             </tr>
                             <tr>
                                 <td class="widthSwotName">
-                                <input type="text" class="form-control" id="s1_name" placeholder="1.3 รายละเอียดงาน">
-                                <div class="alert alert-success" role="alert">
+                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.3 รายละเอียดงาน"> -->
+                                <textarea  class="form-control" id="s1_name" placeholder="1.3 รายละเอียดงาน"></textarea>
+                                <div  class="mb-3">
                                     <table>
                                         <tr>
                                             
@@ -405,10 +461,11 @@
                                     
                                 </td>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td class="widthSwotName">
-                                <input type="text" class="form-control" id="s1_name" placeholder="1.4 รายละเอียดงาน">
-                                <div class="alert alert-success" role="alert">
+                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.4 รายละเอียดงาน"> -->
+                                <textarea  class="form-control" id="s1_name" placeholder="1.4 รายละเอียดงาน"></textarea>
+                                <div  class="mb-3">
                                     <table>
                                         <tr>
                                             
@@ -432,10 +489,11 @@
                                 </div>
                                 </td>
                             </tr>
-                            <tr>
+                            <tr >
                                 <td class="widthSwotName">
-                                <input type="text" class="form-control" id="s1_name" placeholder="1.5 รายละเอียดงาน">
-                                <div class="alert alert-success" role="alert">
+                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.5 รายละเอียดงาน"> -->
+                                <textarea  class="form-control" id="s1_name" placeholder="1.5 รายละเอียดงาน"></textarea>
+                                <div class="mb-3">
                                     <table>
                                         <tr>
                                             
@@ -468,6 +526,7 @@
                             </tr>
                             
                     </table>
+                </div>
 
                 </div>
                 </div>
@@ -503,7 +562,7 @@
 
             <form>
             <!--box-->
-            <div class="card text-bg-primary mb-3" >
+            <!-- <div class="card text-bg-primary mb-3" >
                 <div class="card-header">
                     <div class="row">
                         งานที่#1
@@ -511,7 +570,7 @@
                 </div>
                 <div class="card-body">
                     <div class="row mb-3">
-                        <!-- <div class="col-1">1</div> -->
+                     
                         <table>
                             <tr>
                                 <td colspan="3">
@@ -586,11 +645,11 @@
                     
                         
                 </div>
-            </div>
+            </div> -->
             <!--box-->
             
                
-                <button type="button" id="submit" class="btn btn-primary ">บันทึกข้อมูล</button>
+                <!-- <button type="button" id="submit" class="btn btn-primary ">บันทึกข้อมูล</button> -->
             </form>
 
 
@@ -605,8 +664,8 @@
         <div class="position-relative rounded-start" style="height:34px;width:28px">
             <div class="settings-popover">
                 <span class="ripple">
-                    <span class="fa-spin position-absolute all-0 d-flex flex-center">
-                        <i class="fa-regular fa-gear"></i>
+                    <span class="fa-spin position-absolute all-0 d-flex flex-center" style="left:2px; top:15px; ">
+                        <i class="fa-sharp fa-solid fa-gear fa-xl"></i>
                     </span>
                 </span>
             </div>
