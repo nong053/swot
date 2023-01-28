@@ -2,33 +2,68 @@
  function createGauges(id) {
 	var value = $("#gauge-value").val();
 
-	$("#gauge"+id).kendoLinearGauge({
+
+	$("#gauge"+id).kendoRadialGauge({
+
 		pointer: {
-			value: 28
+			value: 81
 		},
+
 		scale: {
-			majorUnit: 20,
-			minorUnit: 2,
-			min: -40,
-			max: 60,
-			vertical: true,
+			minorUnit: 5,
+			startAngle: -30,
+			endAngle: 210,
+			max: 100,
+			labels: {
+				position: "inside",
+				// color:"#ffffff"
+			},
 			ranges: [
 				{
-					from: -40,
-					to: -20,
-					color: "#2798df"
-				}, {
-					from: 30,
-					to: 45,
+					from: 50,
+					to: 70,
 					color: "#ffc700"
 				}, {
-					from: 45,
-					to: 60,
+					from: 71,
+					to: 80,
+					color: "#ff7a00"
+				}, {
+					from: 81,
+					to: 100,
 					color: "#c20000"
 				}
 			]
 		}
 	});
+
+
+	// $("#gauge"+id).kendoLinearGauge({
+	// 	pointer: {
+	// 		value: 28
+	// 	},
+	// 	scale: {
+	// 		majorUnit: 20,
+	// 		minorUnit: 2,
+	// 		min: -40,
+	// 		max: 60,
+	// 		vertical: true,
+	// 		ranges: [
+	// 			{
+	// 				from: -40,
+	// 				to: -20,
+	// 				color: "#2798df"
+	// 			}, {
+	// 				from: 30,
+	// 				to: 45,
+	// 				color: "#ffc700"
+	// 			}, {
+	// 				from: 45,
+	// 				to: 60,
+	// 				color: "#c20000"
+	// 			}
+	// 		]
+	// 	}
+	// });
 }
 
 var renderSwotToForm = function(data){

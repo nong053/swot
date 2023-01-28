@@ -347,14 +347,14 @@
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">SWOT Analysis Program</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
             <div class="row">
                 <div class="col-md-12" style="text-align: left;">
-                    <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
-                    <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
-                    <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-warning btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                    <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                     <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button> -->
+                    <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button> -->
                 </div>
             </div>
             <form>

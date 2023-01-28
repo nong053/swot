@@ -7,7 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.3.1109/styles/kendo.default-ocean-blue.min.css" /> -->
     <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/jquery.min.js"></script> -->
-    
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css" >
 
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
@@ -19,7 +20,11 @@
     @import url(fonts/thsarabunnew.css);
 
     /**{ margin: 0; padding: 0; }*/
-    body{ font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; background-color: darkblue; }
+    body{ 
+        font-family: 'THSarabunNew', sans-serif; 
+        font-size: 0.95em; line-height: 1.7em; 
+        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
+    }
         .font-score{
             
         }
@@ -30,7 +35,7 @@
         .graph{
             width: 100%;
              height: 300px; 
-            background-color:bisque;
+            /* background-color:bisque; */
         }
         .setting-toggle {
             position: fixed;
@@ -47,13 +52,13 @@
             box-shadow: var(--phoenix-setting-toggle-shadow);
         }
 
-        .widthSwotName{
+        .widthPersName{
             width: 70%;
         }
-        .widthSwotWeight{
+        .widthPersWeight{
             width:15%;
         }
-        .widthSwotScore{
+        .widthPersScore{
             width: 15%;
         }
         .headerPer{
@@ -61,6 +66,26 @@
             font-size: 18px;
             margin-top: 15px;
             font-weight: bold;
+            text-align: center;
+        }
+        .card-header{
+            font-weight: bold;
+        }
+        .table {
+            color: #ffffff;
+        }
+        .persDisplayName{
+            width: 80%;
+        }
+        .persDisplayScore{
+            width: 20%;
+            text-align: right;
+        }
+        .persDisplayHeaderName{
+            float: left;
+        }
+        .persDisplayHeaderScore{
+            float: right;
         }
         
     </style>
@@ -69,24 +94,56 @@
 
 <div class="container">
 
-    <div class=" mb-3">
+    <div class="  mt-3">
         
         <div class="row">
             <div class="col-md-3">
-                <div class="headerPer">มุมมองของลูกค้า</div>
-                <div id="gauge1" class="graph" >graph1</div>
+
+
+            <div class="card text-bg-default  mb-3"  >
+                <div class="card-header" style="text-align: center;">มุมมองของลูกค้า</div>
+                <div class="card-body" style="text-align: center; ">
+                    <!-- <div class="headerPer">มุมมองของลูกค้า</div> -->
+                    <div id="gauge1" class="graph" >graph1</div>
+                </div>
+            </div>
+
+
+                
             </div>
             <div class="col-md-3">
+                <div class="card text-bg-default  mb-3" >
+                    <div class="card-header" style="text-align: center;">มุมมองภายใน</div>
+                    <div class="card-body" style="text-align: center;">
+             
+                        <div id="gauge2" class="graph" >graph2</div>
+                    </div>
+                </div>
+<!--                 
                 <div class="headerPer">มุมมองภายใน</div>
-                <div id="gauge2" class="graph" >graph2</div>
+                <div id="gauge2" class="graph" >graph2</div> -->
             </div>
             <div class="col-md-3">
-                <div class="headerPer">มุมมองด้านนวัฒกรรมและการเรียนรู้</div>
-                <div id="gauge3" class="graph" >graph3</div>
+                <div class="card text-bg-default  mb-3" >
+                    <div class="card-header" style="text-align: center;">มุมมองด้านนวัฒกรรมและการเรียนรู้</div>
+                    <div class="card-body" style="text-align: center;">
+                        
+                        <div id="gauge3" class="graph" >graph3</div>
+                    </div>
+                </div>
+                <!-- <div class="headerPer">มุมมองด้านนวัฒกรรมและการเรียนรู้</div>
+                <div id="gauge3" class="graph" >graph3</div> -->
             </div>
             <div class="col-md-3">
-                <div class="headerPer">มุมมองทางการเงิน</div>
-                <div id="gauge4" class="graph" >graph4</div>
+                <div class="card text-bg-default  mb-3" >
+                    <div class="card-header" style="text-align: center;">มุมมองทางการเงิน</div>
+                    <div class="card-body" style="text-align: center;">
+                  
+                        <div id="gauge4" class="graph" >graph4</div>
+                    </div>
+                </div>
+                <!-- <div class="headerPer">มุมมองทางการเงิน</div>
+                <div id="gauge4" class="graph" >graph4</div> -->
             </div>
         </div>
         
@@ -97,25 +154,28 @@
 
 
     <div class="card text-bg-primary mb-3" >
-        <div class="card-header">Customer perspective (มุมมองของลูกค้า) </div>
+        <div class="card-header">
+            <span class="persDisplayHeaderName" >Customer perspective (มุมมองของลูกค้า)</span>
+            <span class="persDisplayHeaderScore">คะแนน</span> 
+        </div>
         <div class="card-body">
-            <table class="table  table-striped">
+            <table class="table  ">
                 <tbody>
                     <tr>
-                        <td scope="row">มุมมองของลูกค้า1 </td>
-                        <td>5</td>
+                        <td class="persDisplayName" >มุมมองของลูกค้า1 </td>
+                        <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
-                        <td scope="row">มุมมองของลูกค้า2 </td>
-                        <td>5</td>
+                        <td class="persDisplayName">มุมมองของลูกค้า2 </td>
+                       <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
-                        <td scope="row">มุมมองของลูกค้า3 </td>
-                        <td>5</td>
+                        <td class="persDisplayName">มุมมองของลูกค้า3 </td>
+                       <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
-                        <td scope="row">มุมมองของลูกค้า4 </td>
-                        <td>5</td>
+                        <td class="persDisplayName">มุมมองของลูกค้า4 </td>
+                       <td class="persDisplayScore">5</td>
                     </tr>
                
                 </tbody>
@@ -125,25 +185,28 @@
     </div>
 
     <div class="card text-bg-secondary  mb-3" >
-        <div class="card-header">Internal perspective (มุมมองภายใน)</div>
+        <div class="card-header">
+            <span class="persDisplayHeaderName" >Internal perspective (มุมมองภายใน)</span>
+            <span class="persDisplayHeaderScore">คะแนน</span> 
+        </div>
         <div class="card-body">
-        <table class="table  table-striped">
+        <table class="table  ">
                 <tbody>
                     <tr>
-                        <td scope="row">มุมมองภายใน 1 </td>
-                        <td>5</td>
+                        <td class="persDisplayName">มุมมองภายใน 1 </td>
+                       <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
-                        <td scope="row">มุมมองภายใน 2 </td>
-                        <td>5</td>
+                        <td class="persDisplayName">มุมมองภายใน 2 </td>
+                       <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
-                        <td scope="row">มุมมองภายใน 3 </td>
-                        <td>5</td>
+                        <td class="persDisplayName">มุมมองภายใน 3 </td>
+                       <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
-                        <td scope="row">มุมมองภายใน 4 </td>
-                        <td>5</td>
+                        <td class="persDisplayName">มุมมองภายใน 4 </td>
+                       <td class="persDisplayScore">5</td>
                     </tr>
                
                 </tbody>
@@ -152,25 +215,29 @@
     </div>
 
     <div class="card text-bg-success  mb-3" >
-        <div class="card-header">Innovation and learning perspective (มุมมองด้านนวัฒกรรมและการเรียนรู้)</div>
+        <div class="card-header">
+            <span class="persDisplayHeaderName" >Innovation and learning perspective (มุมมองด้านนวัฒกรรมและการเรียนรู้)</span>
+            <span class="persDisplayHeaderScore">คะแนน</span> 
+
+        </div>
         <div class="card-body">
-            <table class="table  table-striped">
+            <table class="table  ">
                     <tbody>
                         <tr>
-                            <td scope="row">มุมมองด้านนวัฒกรรมและการเรียนรู้ 1</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 1</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
-                            <td scope="row">มุมมองด้านนวัฒกรรมและการเรียนรู้ 2</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 2</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
-                            <td scope="row">มุมมองด้านนวัฒกรรมและการเรียนรู้ 3</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 3</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
-                            <td scope="row">มุมมองด้านนวัฒกรรมและการเรียนรู้ 4</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 4</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                 
                     </tbody>
@@ -179,25 +246,29 @@
     </div>
 
     <div class="card text-bg-danger  mb-3" >
-        <div class="card-header">Financial perspective (มุมมองทางการเงิน)</div>
+        <div class="card-header">
+
+            <span class="persDisplayHeaderName" >Financial perspective (มุมมองทางการเงิน)</span>
+            <span class="persDisplayHeaderScore">คะแนน</span> 
+        </div>
         <div class="card-body">
-        <table class="table  table-striped">
+        <table class="table  ">
                     <tbody>
                         <tr>
-                            <td scope="row">มุมมองทางการเงิน 1</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองทางการเงิน 1</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
-                            <td scope="row">มุมมองทางการเงิน 2</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองทางการเงิน 2</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
-                            <td scope="row">มุมมองทางการเงิน 3</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองทางการเงิน 3</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
-                            <td scope="row">มุมมองทางการเงิน 4</td>
-                            <td>5</td>
+                            <td class="persDisplayName">มุมมองทางการเงิน 4</td>
+                           <td class="persDisplayScore">5</td>
                         </tr>
                 
                     </tbody>
@@ -212,13 +283,19 @@
 
     
     
-    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:blue;">
+    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">BSC : Balanced Scorecard</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
-
+            <div class="row">
+                <div class="col-md-12" style="text-align: left;">
+                    <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                     <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button> -->
+                    <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button> -->
+                </div>
+            </div>
             <form>
             <!--box-->
             <div class="card text-bg-primary mb-3" >
@@ -233,13 +310,13 @@
                     <table>
                             <thead>
 
-                                <th class="widthSwotName">
+                                <th class="widthPersName">
                                 มุมมองของลูกค้า
                                 </th>
-                                <th class="widthSwotWeight">
+                                <th class="widthPersWeight">
                                     น้ำหนัก
                                 </th>
-                                <th class="widthSwotScore">
+                                <th class="widthPersScore">
                                     คะแนน
                                 </th>
 
@@ -254,61 +331,61 @@
                         <!-- <div class="col-1">1</div> -->
                         <table>
                             <tr>
-                                <td class="widthSwotName">
+                                <td class="widthPersName">
                                     <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
                                 </td>
-                                <td class="widthSwotWeight">
+                                <td class="widthPersWeight">
                                     <input type="text" name="s1_weight" id="s1_weight" class="form-control">
                                 </td>
-                                <td class="widthSwotScore">
+                                <td class="widthPersScore">
                                     <input type="text" name="s1_score" id="s1_score" class="form-control">
                                 </td>
 
                             </tr>
                             <tr>
-                                <td class="widthSwotName">
+                                <td class="widthPersName">
                                     <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
                                 </td>
-                                <td class="widthSwotWeight">
+                                <td class="widthPersWeight">
                                     <input type="text" name="s2_weight" id="s2_weight" class="form-control">
                                 </td>
-                                <td class="widthSwotScore">
+                                <td class="widthPersScore">
                                     <input type="text" name="s2_score" id="s2_score" class="form-control">
                                 </td>
 
                             </tr>
                             <tr>
-                                <td class="widthSwotName">
+                                <td class="widthPersName">
                                     <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
                                 </td>
-                                <td class="widthSwotWeight">
+                                <td class="widthPersWeight">
                                     <input type="text" name="s3_weight" id="s3_weight" class="form-control">
                                 </td>
-                                <td class="widthSwotScore">
+                                <td class="widthPersScore">
                                     <input type="text" name="s3_score" id="s3_score" class="form-control">
                                 </td>
 
                             </tr>
                             <tr>
-                                <td class="widthSwotName">
+                                <td class="widthPersName">
                                     <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
                                 </td>
-                                <td class="widthSwotWeight">
+                                <td class="widthPersWeight">
                                     <input type="text" name="s4_weight" id="s4_weight" class="form-control">
                                 </td>
-                                <td class="widthSwotScore">
+                                <td class="widthPersScore">
                                     <input type="text" name="s4_score" id="s4_score" class="form-control">
                                 </td>
 
                             </tr>
                             <tr>
-                                <td class="widthSwotName">
+                                <td class="widthPersName">
                                     <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
                                 </td>
-                                <td class="widthSwotWeight">
+                                <td class="widthPersWeight">
                                     <input type="text" name="s5_weight" id="s5_weight" class="form-control">
                                 </td>
-                                <td class="widthSwotScore">
+                                <td class="widthPersScore">
                                     <input type="text" name="s5_score" id="s5_score" class="form-control">
                                 </td>
 
@@ -338,13 +415,13 @@
                     <table>
                             <thead>
 
-                                <th class="widthSwotName">
+                                <th class="widthPersName">
                                 มุมมองภายใน
                                 </th>
-                                <th class="widthSwotWeight">
+                                <th class="widthPersWeight">
                                     น้ำหนัก
                                 </th>
-                                <th class="widthSwotScore">
+                                <th class="widthPersScore">
                                     คะแนน
                                 </th>
 
@@ -360,61 +437,61 @@
 
                         <table>
                                 <tr>
-                                    <td class="widthSwotName">
+                                    <td class="widthPersName">
                                         <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
                                     </td>
-                                    <td class="widthSwotWeight">
+                                    <td class="widthPersWeight">
                                         <input type="text" name="w1_weight" id="w1_weight" class="form-control">
                                     </td>
-                                    <td class="widthSwotScore">
+                                    <td class="widthPersScore">
                                         <input type="text" name="w1_score" id="w1_score" class="form-control">
                                     </td>
 
                                 </tr>
                                 <tr>
-                                    <td class="widthSwotName">
+                                    <td class="widthPersName">
                                         <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
                                     </td>
-                                    <td class="widthSwotWeight">
+                                    <td class="widthPersWeight">
                                         <input type="text" name="w2_weight" id="w2_weight" class="form-control">
                                     </td>
-                                    <td class="widthSwotScore">
+                                    <td class="widthPersScore">
                                         <input type="text" name="w2_score" id="w2_score" class="form-control">
                                     </td>
 
                                 </tr>
                                 <tr>
-                                    <td class="widthSwotName">
+                                    <td class="widthPersName">
                                         <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
                                     </td>
-                                    <td class="widthSwotWeight">
+                                    <td class="widthPersWeight">
                                         <input type="text" name="w3_weight" id="w3_weight" class="form-control">
                                     </td>
-                                    <td class="widthSwotScore">
+                                    <td class="widthPersScore">
                                         <input type="text" name="w3_score" id="w3_score" class="form-control">
                                     </td>
 
                                 </tr>
                                 <tr>
-                                    <td class="widthSwotName">
+                                    <td class="widthPersName">
                                         <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
                                     </td>
-                                    <td class="widthSwotWeight">
+                                    <td class="widthPersWeight">
                                         <input type="text" name="w4_weight" id="w4_weight" class="form-control">
                                     </td>
-                                    <td class="widthSwotScore">
+                                    <td class="widthPersScore">
                                         <input type="text" name="w4_score" id="w4_score" class="form-control">
                                     </td>
 
                                 </tr>
                                 <tr>
-                                    <td class="widthSwotName">
+                                    <td class="widthPersName">
                                         <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
                                     </td>
-                                    <td class="widthSwotWeight">
+                                    <td class="widthPersWeight">
                                         <input type="text" name="w5_weight" id="w5_weight" class="form-control">
                                     </td>
-                                    <td class="widthSwotScore">
+                                    <td class="widthPersScore">
                                         <input type="text" name="w5_score" id="w5_score" class="form-control">
                                     </td>
 
@@ -434,13 +511,13 @@
                     <table>
                             <thead>
 
-                                <th class="widthSwotName">
+                                <th class="widthPersName">
                                 มุมมองด้านนวัฒกรรมและการเรียนรู้
                                 </th>
-                                <th class="widthSwotWeight">
+                                <th class="widthPersWeight">
                                     น้ำหนัก
                                 </th>
-                                <th class="widthSwotScore">
+                                <th class="widthPersScore">
                                     คะแนน
                                 </th>
 
@@ -454,61 +531,61 @@
                     <div class="row mb-3">
                     <table>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="o1_weight" id="o1_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="o1_score" id="o1_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="o2_weight" id="o2_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="o2_score" id="o2_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="o3_weight" id="o3_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="o3_score" id="o3_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="o4_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="o4_weight" id="o4_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="o4_score" id="o4_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="o5_weight" id="o5_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="o5_score" id="o5_score" class="form-control">
                             </td>
 
@@ -528,13 +605,13 @@
                     <table>
                             <thead>
 
-                                <th class="widthSwotName">
+                                <th class="widthPersName">
                                 มุมมองทางการเงิน
                                 </th>
-                                <th class="widthSwotWeight">
+                                <th class="widthPersWeight">
                                     น้ำหนัก
                                 </th>
-                                <th class="widthSwotScore">
+                                <th class="widthPersScore">
                                     คะแนน
                                 </th>
 
@@ -549,61 +626,61 @@
                 <div class="row mb-3">
                     <table>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="t1_weight" id="t1_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="t1_score" id="t1_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="t2_weight" id="t2_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="t2_score" id="t2_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="t3_weight" id="t3_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="t3_score" id="t3_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="t4_weight" id="t4_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="t4_score" id="t4_score" class="form-control">
                             </td>
 
                         </tr>
                         <tr>
-                            <td class="widthSwotName">
+                            <td class="widthPersName">
                                 <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
                             </td>
-                            <td class="widthSwotWeight">
+                            <td class="widthPersWeight">
                                 <input type="text" name="t5_weight" id="t5_weight" class="form-control">
                             </td>
-                            <td class="widthSwotScore">
+                            <td class="widthPersScore">
                                 <input type="text" name="t5_score" id="t5_score" class="form-control">
                             </td>
 
@@ -630,8 +707,8 @@
         <div class="position-relative rounded-start" style="height:34px;width:28px">
             <div class="settings-popover">
                 <span class="ripple">
-                    <span class="fa-spin position-absolute all-0 d-flex flex-center">
-                        <i class="fa-regular fa-gear"></i>
+                    <span class="fa-spin position-absolute all-0 d-flex flex-center" style="left:2px; top:15px; ">
+                        <i class="fa-sharp fa-solid fa-gear fa-xl"></i>
                     </span>
                 </span>
             </div>

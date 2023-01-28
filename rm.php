@@ -368,9 +368,9 @@
         <div class="offcanvas-body">
         <div class="row">
             <div class="col-md-12" style="text-align: left;">
-                <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                <!-- <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
                 <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
-                <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-warning btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-warning btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
             </div>
         </div>
         <!-- accordian start-->
@@ -383,7 +383,13 @@
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: left;">
+                    
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
                     <!-- form here. -->
                     <form>
                         <div  class="alert alert-primary mb-3" role="alert">
@@ -463,7 +469,13 @@
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: left;">
                     
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
                 <!-- form here. -->
                     <form>
                         <div  class="alert alert-primary mb-3" role="alert">
@@ -497,6 +509,15 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
+
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: left;">
+                    
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
                     <!-- form here. -->
                     <form>
                         <div  class="alert alert-primary mb-3" role="alert">
@@ -637,6 +658,15 @@
                 </h2>
                 <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
+
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: left;">
+                    
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+
                     <!-- form here. -->
                     <form>
                         <div  class="alert alert-primary mb-3" role="alert">
