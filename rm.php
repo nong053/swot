@@ -104,6 +104,7 @@
 </head>
   <body>
 
+  <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
 <div class="container">
 
     <div class="row mb-3">
@@ -697,6 +698,7 @@
 
 <!-- ระดับความเสี่ยง  บรรเทาความเสี่ยง -->
 
+        
            
 
         </div>
@@ -704,7 +706,7 @@
 
 
 
-
+   
     <a class="card setting-toggle" href="#offcanvasRight" data-bs-toggle="offcanvas" aria-controls="offcanvasRight">
         <div class="card-body d-flex align-items-center px-2 py-1">
         <div class="position-relative rounded-start" style="height:34px;width:28px">
@@ -721,11 +723,25 @@
         <!-- <small class="text-uppercase text-700 fw-bold py-2 pe-2 ps-1 rounded-end"></small> -->
         </div>
     </a>
+
+ 
+
+   
 </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
     <script src="Controller/rm.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#btn-back").click(function(){
+                window.location.href = './';
+            });
+        
+        });
+    </script>
 </body>
 </html>

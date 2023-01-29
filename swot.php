@@ -67,7 +67,7 @@
     </style>
 </head>
   <body>
-
+  <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
 <div class="container">
 
     <div class="  mb-3">
@@ -75,7 +75,7 @@
         
         
 
-        <div class="card text-bg-defualt  mb-3 " style="margin-top: 30px;">
+        <div class="card text-bg-defualt  mb-3 " style="">
             <div class="card-header">SWOT Analysis</div>
             <div class="card-body">
                 <div id="chart" class="graph" ></div>
@@ -784,5 +784,14 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
     <script src="Controller/swot.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn-back").click(function(){
+                window.location.href = './';
+            });
+        
+        });
+    </script>
+
 </body>
 </html>

@@ -65,7 +65,7 @@
     </style>
 </head>
   <body>
-
+  <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
 <div class="container">
 
     <div class="row mb-3">
@@ -680,5 +680,13 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
     <script src="Controller/cm.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn-back").click(function(){
+                window.location.href = './';
+            });
+        
+        });
+    </script>
 </body>
 </html>
