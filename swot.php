@@ -56,9 +56,18 @@
         }
         .widthSwotWeight{
             width:15%;
+            text-align: center;
         }
         .widthSwotScore{
             width: 15%;
+            text-align: center;
+        }
+        .card-header{
+            font-weight: bold;
+        }
+        .total-swot{
+            text-align: right;
+            font-weight: bold;
         }
 
 
@@ -76,7 +85,7 @@
         
 
         <div class="card text-bg-defualt  mb-3 " style="">
-            <div class="card-header">SWOT Analysis</div>
+            <div class="card-header">SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D) </div>
             <div class="card-body">
                 <div id="chart" class="graph" ></div>
             </div>
@@ -87,31 +96,43 @@
 
     
         <div class="card text-bg-default mb-3" >
-                <div class="card-header">SO (จุดแข็งและโอกาส)</div>
+                <div class="card-header">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส) </div>
                 <div class="card-body">
         <div class="row">
         <div class="col-md-6">
         
                 <table class="table  table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>จุดแข็ง (Strengths)</th>
+                                <th>คะแนน</th>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
-                                <td>5</td>
+                                <td >1</td>
+                                <td scope="row">บริษัทฯ อยู่ในเครือบริษัทพระนครยนตรการ ก่อตั้งเมื่อปี ๒๕๐๐ ประกอบธุรกิจอุตสาหกรรมด้านยานยนต์เป็นทั้งผู้ประกอบและผู้จัดจำหน่ายภายในประเทศ</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td >2</td>
+                                <td scope="row">ระบบไฮโดรลิค ช่วยทำให้การปรับเปลี่ยนเคลื่ยนย้ายการทำงานจากการปฎิบัติภารกิจแบบเคลื่อนที่(Combat) มาเป็นแบบประจำที่ (Stowed) หรือจะเป็นในทางกลับกันใช้เวลาเพียงไม่เกิน ๑๐ นาที</td>
+                                <td>1</td>
                             </tr>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
-                                <td>5</td>
+                                <td >3</td>
+                                <td scope="row">การทำลายล้างสูง</td>
+                                <td>1</td>
                             </tr>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
-                                <td>5</td>
+                                <td >4</td>
+                                <td scope="row">ระยะหวังผลไกล</td>
+                                <td>1</td>
                             </tr>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                                <td colspan="3" class="total-swot">รวม=1 <!--เฉลี่ย=INF--></td>
                             </tr>
                         </tbody>
                     </table>
@@ -125,25 +146,36 @@
                 
 
                     <table class="table  table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>โอกาส (Opportunities)</th>
+                                <th>คะแนน</th>
+                            </tr>
+                        </thead>
                         <tbody>
                         <tr>
-                            <td scope="row">ปัจจัยภายนอก โอกาส 1</td>
-                            <td>5</td>
+                            <td >1</td>
+                            <td scope="row">เป็นระบบควบคุมอำนวยการยุทธในสงครามสมัยใหม่ที่มีขีดความสามารถสูง</td>
+                            <td>3</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายนอก โอกาส 2</td>
-                            <td>5</td>
+                            <td >2</td>
+                            <td scope="row">ทอ.สามารถรับมือกับภัยคุกคามทางอากาศได้อย่างมีประสิทธิภาพมากขึ้น</td>
+                            <td>3</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายนอก โอกาส 3</td>
-                            <td>5</td>
+                            <td >3</td>
+                            <td scope="row">เชื่อมต่อระบบเข้ากับกองทัพเรือได้</td>
+                            <td>3</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายนอก โอกาส 4</td>
-                            <td>5</td>
+                            <td >4</td>
+                            <td scope="row">ติดกล้องที่หัว missile แล้วถ่ายภาพกลับมาที่ระบบ C2 ได้</td>
+                            <td>3</td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                            <td colspan="3" class="total-swot">รวม=3 <!--เฉลี่ย=INF--></td>
                         </tr>
                         </tbody>
                     </table>
@@ -156,7 +188,7 @@
     
 
     <div class="card text-bg-default  mb-3" >
-        <div class="card-header">ST (จุดแข็งและภัยคุกคาม)</div>
+        <div class="card-header">กลยุทธ์เชิงป้องกัน ST (จุดแข็งและภัยคุกคาม)</div>
         <div class="card-body">
 
         <div class="row">
@@ -164,84 +196,119 @@
 
 
                 <table class="table  table-striped">
-                    <tbody>
+                        <thead>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 1</td>
-                                <td>5</td>
+                                <th>#</th>
+                                <th>จุดแข็ง (Strengths)</th>
+                                <th>คะแนน</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td >1</td>
+                                <td scope="row">บริษัทฯ อยู่ในเครือบริษัทพระนครยนตรการ ก่อตั้งเมื่อปี ๒๕๐๐ ประกอบธุรกิจอุตสาหกรรมด้านยานยนต์เป็นทั้งผู้ประกอบและผู้จัดจำหน่ายภายในประเทศ</td>
+                                <td>1</td>
+                            </tr>
+                            
+                            <tr>
+                                <td >2</td>
+                                <td scope="row">ระบบไฮโดรลิค ช่วยทำให้การปรับเปลี่ยนเคลื่ยนย้ายการทำงานจากการปฎิบัติภารกิจแบบเคลื่อนที่(Combat) มาเป็นแบบประจำที่ (Stowed) หรือจะเป็นในทางกลับกันใช้เวลาเพียงไม่เกิน ๑๐ นาที</td>
+                                <td>1</td>
                             </tr>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 2</td>
-                                <td>5</td>
+                                <td >3</td>
+                                <td scope="row">การทำลายล้างสูง</td>
+                                <td>1</td>
                             </tr>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 3</td>
-                                <td>5</td>
+                                <td >4</td>
+                                <td scope="row">ระยะหวังผลไกล</td>
+                                <td>1</td>
                             </tr>
                             <tr>
-                                <td scope="row">ปัจจัยภายใน จุดแข็ง 4</td>
-                                <td>5</td>
+                                <td colspan="3" class="total-swot">รวม=1 <!--เฉลี่ย=INF--></td>
                             </tr>
-                            <tr>
-                                <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                            </tr>
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
         
             <div class="col-md-6">
                 <table class="table  table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ภัยคุกคาม (Threats)</th>
+                            <th>คะแนน</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                    <tr>
-                            <td scope="row">ปัจจัยภายนอก อุปสรรค 1</td>
-                            <td>5</td>
+                    <tr>    
+                            <td >1</td>
+                            <td scope="row">ความเข้ากันได้ของรถหัวลาก ทอ.กับระบบ PECHORA-2D</td>
+                            <td>4</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายนอก อุปสรรค 2</td>
-                            <td>5</td>
+                            <td >2</td>
+                            <td scope="row">องค์ความรู้ของระบบ PECHORA-2D ยังน้อย</td>
+                            <td>4</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายนอก อุปสรรค 3</td>
-                            <td>5</td>
+                            <td >3</td>
+                            <td scope="row">ค่อนข้างเชื่อมต่อระบบยาก</td>
+                            <td>4</td>
                         </tr>
                         <tr>
-                            <td scope="row">ปัจจัยภายนอก อุปสรรค 4</td>
-                            <td>5</td>
+                            <td >4</td>
+                            <td scope="row">-เคลื่อนย้ายเข้าไปในจุดพื้นที่การรบลำบาก</td>
+                            <td>4</td>
                         </tr>
                         <tr>
-                            <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                            <td colspan="3" class="total-swot">รวม=4 <!--เฉลี่ย=INF--></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
+    </div>
 
     <div class="card text-bg-default  mb-3" >
-        <div class="card-header">WO (จุดอ่อนและโอกาส)</div>
+        <div class="card-header">กลยุทธ์เชิงแก้ไข WO (จุดอ่อนและโอกาส)</div>
         <div class="card-body">
         <div class="row">
             <div class="col-md-6">
 
             <table class="table  table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>จุดอ่อน (Weaknesses)</th>
+                        <th>คะแนน</th>
+                    </tr>
+                </thead>
                 <tbody>
                 <tr>
-                    <td scope="row">ปัจจัยภายใน จุดอ่อน 1</td>
-                    <td>5</td>
+                    <td>1</td>
+                    <td scope="row">ต้องมีการต่ออายุการบำรุงรักษาเป็นรายปี</td>
+                    <td>2</td>
                 </tr>
                 <tr>
-                    <td scope="row">ปัจจัยภายใน จุดอ่อน 2</td>
-                    <td>5</td>
+                    <td>2</td>
+                    <td scope="row">ต้องซื้อ Launcher missile รุ่น 5P73-D เพิ่มเติม</td>
+                    <td>2</td>
                 </tr>
                 <tr>
-                    <td scope="row">ปัจจัยภายใน จุดอ่อน 3</td>
-                    <td>5</td>
+                    <td>3</td>
+                    <td scope="row">ระบบ Command and Control (C2) ไม่สามารถเชื่อต่อกับกองทัพอากาศได้</td>
+                    <td>2</td>
                 </tr>
                 <tr>
-                    <td scope="row">ปัจจัยภายใน จุดอ่อน 4</td>
-                    <td>5</td>
+                    <td>4</td>
+                    <td scope="row">ระบบ Support Radar (Antenna Post) ความแม่่นยำน้อย</td>
+                    <td>2</td>
                 </tr>
                 <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                    <td colspan="3" class="total-swot">รวม=2 <!--เฉลี่ย=INF--></td>
                 </tr>
                 </tbody>
             </table>
@@ -250,25 +317,36 @@
 
             
             <table class="table  table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>โอกาส (Opportunities)</th>
+                        <th>คะแนน</th>
+                    </tr>
+                </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก โอกาส 1</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก โอกาส 2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก โอกาส 3</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก โอกาส 4</td>
-                        <td>5</td>
-                    </tr>
                 <tr>
-                    <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
+                    <td >1</td>
+                    <td scope="row">เป็นระบบควบคุมอำนวยการยุทธในสงครามสมัยใหม่ที่มีขีดความสามารถสูง</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td >2</td>
+                    <td scope="row">ทอ.สามารถรับมือกับภัยคุกคามทางอากาศได้อย่างมีประสิทธิภาพมากขึ้น</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td >3</td>
+                    <td scope="row">เชื่อมต่อระบบเข้ากับกองทัพเรือได้</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td >4</td>
+                    <td scope="row">ติดกล้องที่หัว missile แล้วถ่ายภาพกลับมาที่ระบบ C2 ได้</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="total-swot">รวม=3 <!--เฉลี่ย=INF--></td>
                 </tr>
                 </tbody>
             </table>
@@ -278,60 +356,82 @@
     </div>
 
     <div class="card text-bg-default  mb-3" >
-        <div class="card-header">WT (จุดอ่อนและภัยคุกคาม)</div>
+        <div class="card-header">กลยุทธ์เชิงรับ WT (จุดอ่อนและภัยคุกคาม)</div>
         <div class="card-body">
 
         <div class="row">
             <div class="col-md-6">
 
             <table class="table  table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>จุดอ่อน (Weaknesses)</th>
+                        <th>คะแนน</th>
+                    </tr>
+                </thead>
                 <tbody>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดอ่อน 1</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดอ่อน 2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดอ่อน 3</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายใน จุดอ่อน 4</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                    </tr>
+                <tr>
+                    <td>1</td>
+                    <td scope="row">ต้องมีการต่ออายุการบำรุงรักษาเป็นรายปี</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td scope="row">ต้องซื้อ Launcher missile รุ่น 5P73-D เพิ่มเติม</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td scope="row">ระบบ Command and Control (C2) ไม่สามารถเชื่อต่อกับกองทัพอากาศได้</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td scope="row">ระบบ Support Radar (Antenna Post) ความแม่่นยำน้อย</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td colspan="3"  class="total-swot">รวม=2 <!--เฉลี่ย=INF--></td>
+                </tr>
                 </tbody>
             </table>
             </div>
             <div class="col-md-6">
             <table class="table  table-striped">
-                <tbody>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 1</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 2</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 3</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td scope="row">ปัจจัยภายนอก อุปสรรค 4</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" style="text-align: right;">รวม=5 เฉลี่ย=INF</td>
-                    </tr>
-                </tbody>
-            </table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>ภัยคุกคาม (Threats)</th>
+                            <th>คะแนน</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <tr>    
+                            <td >1</td>
+                            <td scope="row">ความเข้ากันได้ของรถหัวลาก ทอ.กับระบบ PECHORA-2D</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td >2</td>
+                            <td scope="row">องค์ความรู้ของระบบ PECHORA-2D ยังน้อย</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td >3</td>
+                            <td scope="row">ค่อนข้างเชื่อมต่อระบบยาก</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td >4</td>
+                            <td scope="row">เคลื่อนย้ายเข้าไปในจุดพื้นที่การรบลำบาก</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="total-swot">รวม=4 <!--เฉลี่ย=INF--></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         </div>
@@ -346,7 +446,7 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">SWOT Analysis Program</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">SWOT Analysis </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
@@ -359,7 +459,7 @@
             </div>
             <form>
             <!--box-->
-            <div class="card text-bg-primary mb-3" >
+            <div class="card text-bg-default mb-3" >
                 <div class="card-header">
 
                     <!-- <div class="row ">
@@ -468,7 +568,7 @@
             </div>
             <!--box-->
             <!--box-->
-            <div class="card text-bg-secondary mb-3" >
+            <div class="card text-bg-default mb-3" >
                 <div class="card-header">
 
                    
@@ -565,7 +665,7 @@
             </div>
             <!--box-->
             <!--box-->
-            <div class="card text-bg-success  mb-3" >
+            <div class="card text-bg-default  mb-3" >
                 <div class="card-header">
 
                    
@@ -658,7 +758,7 @@
             </div>
             <!--box-->
             <!--box-->
-            <div class="card text-bg-danger  mb-3" >
+            <div class="card text-bg-default  mb-3" >
                 <div class="card-header">
 
                   

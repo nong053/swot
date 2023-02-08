@@ -57,6 +57,7 @@
         }
         .widthPersWeight{
             width:15%;
+            text-align: center;
         }
         .widthPersScore{
             width: 15%;
@@ -71,9 +72,9 @@
         .card-header{
             font-weight: bold;
         }
-        .table {
+        /* .table {
             color: #ffffff;
-        }
+        } */
         .persDisplayName{
             width: 80%;
         }
@@ -85,7 +86,17 @@
             float: left;
         }
         .persDisplayHeaderScore{
-            float: right;
+            text-align: right;
+
+            /* margin-left: 15px; */
+        }
+        .persDisplayHeaderWeight{
+            text-align: right;
+
+        }
+        .bsc-total{
+            font-weight: bold;
+            text-align: right;
         }
         
     </style>
@@ -153,29 +164,51 @@
 
 
 
-    <div class="card text-bg-primary mb-3" >
+    <div class="card text-bg-default mb-3" >
         <div class="card-header">
             <span class="persDisplayHeaderName" >Customer perspective (มุมมองของลูกค้า)</span>
-            <span class="persDisplayHeaderScore">คะแนน</span> 
+           
+            
+            
         </div>
         <div class="card-body">
             <table class="table  ">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>มุมมอง</th>
+                        <th class="persDisplayHeaderWeight">น้ำหนัก</th>
+                        <th class="persDisplayHeaderScore">คะแนน</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
+                        <td>1</td>
                         <td class="persDisplayName" >มุมมองของลูกค้า1 </td>
+                        <td class="persDisplayScore">0.25</td>
                         <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
+                        <td>2</td>
                         <td class="persDisplayName">มุมมองของลูกค้า2 </td>
-                       <td class="persDisplayScore">5</td>
+                        <td class="persDisplayScore">0.25</td>
+                        <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
+                        <td>3</td>
                         <td class="persDisplayName">มุมมองของลูกค้า3 </td>
-                       <td class="persDisplayScore">5</td>
+                        <td class="persDisplayScore">0.25</td>
+                        <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
+                        <td>4</td>
                         <td class="persDisplayName">มุมมองของลูกค้า4 </td>
-                       <td class="persDisplayScore">5</td>
+                        <td class="persDisplayScore">0.25</td>
+                        <td class="persDisplayScore">5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="bsc-total">คะแนนรวม 5</td>
+                        
                     </tr>
                
                 </tbody>
@@ -184,29 +217,50 @@
         </div>
     </div>
 
-    <div class="card text-bg-secondary  mb-3" >
+    <div class="card text-bg-default  mb-3" >
         <div class="card-header">
             <span class="persDisplayHeaderName" >Internal perspective (มุมมองภายใน)</span>
-            <span class="persDisplayHeaderScore">คะแนน</span> 
+            <!-- <span class="persDisplayHeaderScore">คะแนน</span>  -->
         </div>
         <div class="card-body">
         <table class="table  ">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>มุมมอง</th>
+                        <th class="persDisplayHeaderWeight">น้ำหนัก</th>
+                        <th class="persDisplayHeaderScore">คะแนน</th>
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
+                        <td>1</td>
                         <td class="persDisplayName">มุมมองภายใน 1 </td>
+                        <td class="persDisplayScore">0.25</td>
                        <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
+                        <td>2</td>
                         <td class="persDisplayName">มุมมองภายใน 2 </td>
+                        <td class="persDisplayScore">0.25</td>
                        <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
+                        <td>3</td>
                         <td class="persDisplayName">มุมมองภายใน 3 </td>
+                        <td class="persDisplayScore">0.25</td>
                        <td class="persDisplayScore">5</td>
                     </tr>
                     <tr>
+                        <td>4</td>
                         <td class="persDisplayName">มุมมองภายใน 4 </td>
+                        <td class="persDisplayScore">0.25</td>
                        <td class="persDisplayScore">5</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="bsc-total">คะแนนรวม 5</td>
+                        
                     </tr>
                
                 </tbody>
@@ -214,7 +268,7 @@
         </div>
     </div>
 
-    <div class="card text-bg-success  mb-3" >
+    <div class="card text-bg-default  mb-3" >
         <div class="card-header">
             <span class="persDisplayHeaderName" >Innovation and learning perspective (มุมมองด้านนวัฒกรรมและการเรียนรู้)</span>
             <span class="persDisplayHeaderScore">คะแนน</span> 
@@ -222,22 +276,42 @@
         </div>
         <div class="card-body">
             <table class="table  ">
+                <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>มุมมอง</th>
+                            <th class="persDisplayHeaderWeight">น้ำหนัก</th>
+                            <th class="persDisplayHeaderScore">คะแนน</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
+                            <td>1</td>
                             <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 1</td>
-                           <td class="persDisplayScore">5</td>
+                            <td class="persDisplayScore">0.25</td>
+                            <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
+                            <td>2</td>
                             <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 2</td>
-                           <td class="persDisplayScore">5</td>
+                            <td class="persDisplayScore">0.25</td>
+                            <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
+                            <td>3</td>
                             <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 3</td>
-                           <td class="persDisplayScore">5</td>
+                            <td class="persDisplayScore">0.25</td>
+                            <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
+                            <td>4</td>
                             <td class="persDisplayName">มุมมองด้านนวัฒกรรมและการเรียนรู้ 4</td>
-                           <td class="persDisplayScore">5</td>
+                            <td class="persDisplayScore">0.25</td>
+                            <td class="persDisplayScore">5</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="bsc-total">คะแนนรวม 5</td>
+                            
                         </tr>
                 
                     </tbody>
@@ -245,7 +319,7 @@
         </div>
     </div>
 
-    <div class="card text-bg-danger  mb-3" >
+    <div class="card text-bg-default  mb-3" >
         <div class="card-header">
 
             <span class="persDisplayHeaderName" >Financial perspective (มุมมองทางการเงิน)</span>
@@ -253,22 +327,44 @@
         </div>
         <div class="card-body">
         <table class="table  ">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>มุมมอง</th>
+                        <th class="persDisplayHeaderWeight">น้ำหนัก</th>
+                        <th class="persDisplayHeaderScore">คะแนน</th>
+                    </tr>
+                </thead>
+
                     <tbody>
                         <tr>
+                            <td>1</td>
                             <td class="persDisplayName">มุมมองทางการเงิน 1</td>
+                            <td class="persDisplayScore">0.25</td>
                            <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
+                            <td>2</td>
                             <td class="persDisplayName">มุมมองทางการเงิน 2</td>
+                            <td class="persDisplayScore">0.25</td>
                            <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
+                            <td>3</td>
                             <td class="persDisplayName">มุมมองทางการเงิน 3</td>
+                            <td class="persDisplayScore">0.25</td>
                            <td class="persDisplayScore">5</td>
                         </tr>
                         <tr>
+                            <td>4</td>
                             <td class="persDisplayName">มุมมองทางการเงิน 4</td>
+                            <td class="persDisplayScore">0.25</td>
                            <td class="persDisplayScore">5</td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="4" class="bsc-total">คะแนนรวม 5</td>
+                            
                         </tr>
                 
                     </tbody>
@@ -298,7 +394,7 @@
             </div>
             <form>
             <!--box-->
-            <div class="card text-bg-primary mb-3" >
+            <div class="card text-bg-default mb-3" >
                 <div class="card-header">
 
                     <!-- <div class="row ">
@@ -407,7 +503,7 @@
             </div>
             <!--box-->
             <!--box-->
-            <div class="card text-bg-secondary mb-3" >
+            <div class="card text-bg-default mb-3" >
                 <div class="card-header">
 
                    
@@ -504,7 +600,7 @@
             </div>
             <!--box-->
             <!--box-->
-            <div class="card text-bg-success  mb-3" >
+            <div class="card text-bg-default  mb-3" >
                 <div class="card-header">
 
                    
@@ -597,7 +693,7 @@
             </div>
             <!--box-->
             <!--box-->
-            <div class="card text-bg-danger  mb-3" >
+            <div class="card text-bg-default  mb-3" >
                 <div class="card-header">
 
                   
@@ -692,7 +788,7 @@
             </div>
             <!--box-->
                
-                <button type="button" id="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+                <!-- <button type="button" id="submit" class="btn btn-primary">บันทึกข้อมูล</button> -->
             </form>
 
 
