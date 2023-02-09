@@ -61,6 +61,28 @@
         .widthSwotScore{
             width: 15%;
         }
+        .mc_header_detail{
+
+        }
+        .mc_time_unit{
+            width: 10%;
+            text-align: right;
+        }
+        .mc_workload_year{
+            width: 10%;
+            text-align: right;
+        }
+        .mc_manpower_year{
+            width: 10%;
+            text-align: right;
+        }
+        .mc_footer_sumary{
+            width: 10%;
+            text-align: right;
+            font-weight: bold;
+        }
+
+
         
     </style>
 </head>
@@ -72,7 +94,7 @@
         
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">อัตรากำลังพลงานที่1/กำลังพลปัจจุบันงานที่1</div>
+                <div class="card-header" style="text-align: center;">1. การเตรียมความพร้อม..</div>
                 <div class="card-body" style="text-align: center; ">
            
                     <div id="gauge1" class="graph" >graph1</div>
@@ -84,7 +106,7 @@
         </div>
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">อัตรากำลังพลงานที่2/กำลังพลปัจจุบันงานที่2</div>
+                <div class="card-header" style="text-align: center;"> 2. การกำกับดูแล/ข้อมูลทางยุทธวิธี.. </div>
                 <div class="card-body" style="text-align: center; ">
              
                     <div id="gauge2" class="graph" >graph2</div>
@@ -94,7 +116,7 @@
         </div>
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">อัตรากำลังพลงานที่3/กำลังพลปัจจุบันงานที่3</div>
+                <div class="card-header" style="text-align: center;">3.  การกำกับดูแล/(COMSEC)..</div>
                 <div class="card-body" style="text-align: center; ">
                 
                     <div id="gauge3" class="graph" >graph3</div>
@@ -104,7 +126,7 @@
         </div>
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">อัตรากำลังพลทั้งหมด/กำลังพลปัจจุบันทั้งหมด</div>
+                <div class="card-header" style="text-align: center;">สรุปประสิทธิภาพกำลังพล</div>
                 <div class="card-body" style="text-align: center; ">
    
                     <div id="gauge4" class="graph" >graph4</div>
@@ -125,16 +147,16 @@
                 <thead>
                     
                        
-                        <th>
+                        <th class="mc_detail">
                             รายละเอียดงาน
                         </th>
-                        <th>
+                        <th class="mc_time_unit">
                             เวลา:หน่วย
                         </th>
-                        <th>
+                        <th class="mc_workload_year">
                             ปริมาณงาน:ปี
                         </th>
-                        <th>
+                        <th class="mc_manpower_year">
                             อัตรากำลัง:ปี
                         </th>
                        
@@ -144,57 +166,70 @@
                    
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                             1.1  สำรวจและรวบรวมสถานภาพของระบบบัญชาการและควบคุม
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">840</td>
+                        <td class="mc_workload_year">24</td>
+                        <td class="mc_manpower_year">0.23</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         1.2  ตรวจสอบความสัมพันธ์ของข้อมูลสถานภาพ ข้อมูล Hardware/Software และบุคลากร จากหน่วยที่เกี่ยวข้อง 
 
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">720</td>
+                        <td class="mc_workload_year">24</td>
+                        <td class="mc_manpower_year">0.20</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         1.3  วิเคราะห์ และประเมินผล การบูรณาการทุกระบบสารสนเทศเพื่อการยุทธ ทอ.(CIS) ที่เชื่อมต่อกับ ศปก.ทอ.
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">900</td>
+                        <td class="mc_workload_year">24</td>
+                        <td class="mc_manpower_year">0.24</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         1.4  นำข้อมูลที่ได้จากการวิเคราะห์ นำมาเปรียบเทียบกับ ระบบบัญชาการและควบคุม ร่วม/ผสม 
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">1,200</td>
+                        <td class="mc_workload_year">24</td>
+                        <td class="mc_manpower_year">0.33</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         1.5  นำเสนอแนวทาง พัฒนา/แก้ไข ให้ผู้บังคับบัญชา ตัดสินตกลงใจได้ในทุกสภาวการณ์ อย่างมีประสิทธิภาพ
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">720</td>
+                        <td class="mc_workload_year">24</td>
+                        <td class="mc_manpower_year">0.20</td>
                     </tr>
+
+                    <tr>
+                        
+                        <td class="mc_detail">
+                        1.6  มีเอกสารการเตรียมข้อมูลในระบบบัญชาการและควบคุม 
+
+                        </td>
+                        <td class="mc_time_unit">720</td>
+                        <td class="mc_workload_year">24</td>
+                        <td class="mc_manpower_year">0.20</td>
+                    </tr>
+
+                    
                     <tr style="background-color:antiquewhite;">
                         <td colspan="3">อัตรากำลังพล</td>
-                        <td>1.39</td>
+                        <td class="mc_footer_sumary">1.39/1</td>
                     </tr>
                    
                 </tbody>
@@ -203,23 +238,22 @@
         </div>
     </div>
     <div class="card  mb-3" >
-        <div class="card-header"> 	2. การกำกับดูแล และตรวจสอบการปฏิบัติตาม รปป. ของหน่วยที่เกี่ยวข้องกับระบบเชื่อมโยงข้อมูลทางยุทธวิธี
-</div>
+        <div class="card-header"> 	2. การกำกับดูแล และตรวจสอบการปฏิบัติตาม รปป. ของหน่วยที่เกี่ยวข้องกับระบบเชื่อมโยงข้อมูลทางยุทธวิธี</div>
         <div class="card-body">
             <table class="table  table-striped">
                 <thead>
                     
                        
-                        <th>
+                        <th class="mc_detail">
                             รายละเอียดงาน
                         </th>
-                        <th>
+                        <th class="mc_time_unit">
                             เวลา:หน่วย
                         </th>
-                        <th>
+                        <th class="mc_workload_year">
                             ปริมาณงาน:ปี
                         </th>
-                        <th>
+                        <th class="mc_manpower_year">
                             อัตรากำลัง:ปี
                         </th>
                        
@@ -229,58 +263,146 @@
                    
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         2.1  รวบรวมเอกสาร รปป.ที่เกี่ยวข้องกับระบบเชื่อมโยงข้อมูลทางยุทธวิธี
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">840</td>
+                        <td class="mc_workload_year">12</td>
+                        <td class="mc_manpower_year">0.11</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         2.2  ติดตามตรวจสอบการปฏิบัติงานของหน่วยเกี่ยวข้อง
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">1,680</td>
+                        <td class="mc_workload_year">12</td>
+                        <td class="mc_manpower_year">0.23</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         2.3  การเปลี่ยนแปลงความถี่และ Crypto Key,การจัดองค์การรักษาความปลอดภัยข้อมูล/อุปกรณ์ ระบบการติดต่อ สื่อสาร(CIS), การกำกับการตรวจสอบระบบเชื่อมโยงข้อมูลทางยุทธวิธีที่ GES, SAAB 340B/AEW และบน บ.Gripen
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">1,680</td>
+                        <td class="mc_workload_year">12</td>
+                        <td class="mc_manpower_year">0.23</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         2.4  การปรับเปลี่ยนนโยบาย การเปลี่ยนแปลงโครงสร้างของระบบฯ 
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">840</td>
+                        <td class="mc_workload_year">12</td>
+                        <td class="mc_manpower_year">0.11</td>
                     </tr>
                     <tr>
                         
-                        <td>
+                        <td class="mc_detail">
                         2.5  การแก้ไขเพิ่มเติม รปป.ฯ ทุกหน่วยที่เกี่ยวข้อง ประชุม หารือ สรุปผล แล้วนำเรียนขออนุมัติจากผู้บังคับบัญชา
 
 
                         </td>
-                        <td>840</td>
-                        <td>24</td>
-                        <td>0.23</td>
+                        <td class="mc_time_unit">840</td>
+                        <td class="mc_workload_year">12</td>
+                        <td class="mc_manpower_year">0.11</td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="mc_detail">
+                        2.6  มีเอกสาร รปป.ฯ ทุกหน่วยที่เกี่ยวข้องในระบบเชื่อมโยงข้อมูลทางยุทธวิธี ให้เป็นไปด้วยความเรียบร้อย 
+
+
+                        </td>
+                        <td class="mc_time_unit">840</td>
+                        <td class="mc_workload_year">12</td>
+                        <td class="mc_manpower_year">0.11</td>
                     </tr>
                     <tr style="background-color:antiquewhite;">
                         <td colspan="3">อัตรากำลังพล</td>
-                        <td>1.39</td>
+                        <td class="mc_footer_sumary">0.91/1</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+
+
+    <div class="card  mb-3" >
+        <div class="card-header"> 	3. การกำกับดูแล ตรวจสอบระบบเชื่อมโยงข้อมูลทางยุทธวิธี และระบบรักษาความปลอดภัย (COMSEC)</div>
+        <div class="card-body">
+            <table class="table  table-striped">
+                <thead>
+                    
+                       
+                        <th class="mc_detail">
+                            รายละเอียดงาน
+                        </th>
+                        <th class="mc_time_unit">
+                            เวลา:หน่วย
+                        </th>
+                        <th class="mc_workload_year">
+                            ปริมาณงาน:ปี
+                        </th>
+                        <th class="mc_manpower_year">
+                            อัตรากำลัง:ปี
+                        </th>
+                       
+                    
+                </thead>
+                <tbody>
+                   
+                    <tr>
+                        
+                        <td class="mc_detail">
+                        3.1   รวบรวมเอกสารที่เกี่ยวข้องกับระบบเชื่อมโยงข้อมูลทางยุทธวิธี และ ระบบ COMSEC
+
+                        </td>
+                        <td class="mc_time_unit">420</td>
+                        <td class="mc_workload_year">48</td>
+                        <td class="mc_manpower_year">0.23</td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="mc_detail">
+                        3.2  ติดตามตรวจสอบการปฏิบัติงานของหน่วยเกี่ยวข้อง
+
+                        </td>
+                        <td class="mc_time_unit">1,680</td>
+                        <td class="mc_workload_year">48</td>
+                        <td class="mc_manpower_year">0.91</td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="mc_detail">
+                        3.3   ติดตาม ตรวจสอบ และกำกับดูแลสถานภาพของอุปกรณ์ที่เกี่ยวข้องกับระบบเชื่อมโยงข้อมูลการยุทธ
+
+                        </td>
+                        <td class="mc_time_unit">1,680</td>
+                        <td class="mc_workload_year">48</td>
+                        <td class="mc_manpower_year">0.91</td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="mc_detail">
+                        3.4  จัดทำเอกสารบันทึกสถานภาพอุปกรณ์ เพื่อรายงานผู้บังคับบัญชา 
+
+                        </td>
+                        <td class="mc_time_unit">840</td>
+                        <td class="mc_workload_year">48</td>
+                        <td class="mc_manpower_year">0.46</td>
+                    </tr>
+                    
+                    <tr style="background-color:antiquewhite;">
+                        <td colspan="3">อัตรากำลังพล</td>
+                        <td class="mc_footer_sumary">2.51/3</td>
                     </tr>
                    
                 </tbody>
@@ -302,24 +424,24 @@
                         <th style="width: 70%;">
                        
                         </th>
-                        <th>
+                        <th class="mc_time_unit">
                             เวลา:หน่วย
                         </th>
-                        <th>
+                        <th class="mc_workload_year">
                             ปริมาณงาน:ปี
                         </th>
-                        <th>
+                        <th class="mc_manpower_year">
                             อัตรากำลัง:ปี
                         </th>
                        
                     
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr style="background-color:antiquewhite;">
                         <td></td>
-                        <td>999</td>
-                        <td>99</td>
-                        <td>9</td>
+                        <td class="mc_time_unit">16,440</td>
+                        <td class="mc_workload_year">408</td>
+                        <td class="mc_manpower_year">4.82/4</td>
                     </tr>
                 </tbody>
         </table>

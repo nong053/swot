@@ -64,17 +64,24 @@
        .graphMainRight{
         border-right: red 2px dashed;
         text-align: right;
+        font-weight: bold;
+        padding-right: 10px;
        
        }
        .graphMainTop{
         border-top: red 2px dashed;
         text-align: right;
+        font-weight: bold;
+        padding: 10px;
      
         }
         .borderRisk{
             border:1px dashed wheat;
-            text-align: right;
+            text-align: center;
             padding: 10px;
+            height: 50px;
+            width: 100px;
+
         }
         .riskBgRed{
             background-color: red;
@@ -97,6 +104,15 @@
         
             border-bottom: black 3px solid;
         }
+        .effect_text{
+            position: absolute;
+            z-index: 5;
+            transform: rotate(-90deg); 
+            top:50%;
+        }
+        .opportunity_occurred_txt{
+            text-align: center;
+        }
 
         
         
@@ -115,7 +131,8 @@
         <div class="card-body" style="padding: 0px; ">
             <!-- content here. -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" >
+                    <div style="padding:5px;">
                     <table class="table">
                         <thead>
                             
@@ -152,54 +169,56 @@
                             </tr>
                         </tbody>
                     </table>
+                    </div>
                 </div>
-                <div class="col-md-6">
-
+                <div class="col-md-6" >
+                <div style="background-color: #cccccc; padding: 10px;" >
+                <div class="effect_text">ผลกระทบ</div>
                     <table class="" style="background-color: #cccccc; margin-top:30px; width:100%; margin:0px; ">
                     
                     <tr>
-                            <td class="graphMainRight" id="risk5T" >5</td>
-                        <td class="borderRisk" id="risk51">51</td>
-                        <td class="borderRisk riskBgYellow borderScopeRiskBottom borderScopeRiskLeft" id="risk52">52</td>
-                        <td class="borderRisk riskBgYellow" id="risk53">53</td>
-                        <td class="borderRisk riskBgOgrange borderScopeRiskBottom borderScopeRiskLeft" id="risk54">54</td>
-                        <td class="borderRisk riskBgRed borderScopeRiskBottom borderScopeRiskLeft" id="risk55">55</td>
+                        <td class="graphMainRight" id="risk5T" >5</td>
+                        <td class="borderRisk" id="risk51"></td>
+                        <td class="borderRisk riskBgYellow borderScopeRiskBottom borderScopeRiskLeft" id="risk52"></td>
+                        <td class="borderRisk riskBgYellow" id="risk53">RT03 RT04</td>
+                        <td class="borderRisk riskBgOgrange borderScopeRiskBottom borderScopeRiskLeft" id="risk54">RP02</td>
+                        <td class="borderRisk riskBgRed borderScopeRiskBottom borderScopeRiskLeft" id="risk55"></td>
                         
                     </tr>
                     <tr>
                         <td  class="graphMainRight" id="risk4T">4</td>
-                        <td class="borderRisk" id="risk41">41</td>
-                        <td class="borderRisk" id="risk42">42</td>
-                        <td class="borderRisk riskBgYellow borderScopeRiskLeft" id="risk43">43</td>
-                        <td class="borderRisk riskBgYellow" id="risk44">44</td>
-                        <td class="borderRisk riskBgOgrange borderScopeRiskBottom borderScopeRiskLeft" id="risk45">45</td>
+                        <td class="borderRisk" id="risk41"></td>
+                        <td class="borderRisk" id="risk42"></td>
+                        <td class="borderRisk riskBgYellow borderScopeRiskLeft" id="risk43"></td>
+                        <td class="borderRisk riskBgYellow" id="risk44"></td>
+                        <td class="borderRisk riskBgOgrange borderScopeRiskBottom borderScopeRiskLeft" id="risk45"></td>
                         
                     </tr>
                     <tr>
                         <td  class="graphMainRight" id="risk3T">3</td>
-                        <td class="borderRisk" id="risk31">31</td>
-                        <td class="borderRisk" id="risk32">32</td>
-                        <td class="borderRisk riskBgYellow borderScopeRiskBottom borderScopeRiskLeft" id="risk33">33</td>
-                        <td class="borderRisk riskBgYellow borderScopeRiskBottom" id="risk34">34</td>
-                        <td class="borderRisk riskBgYellow" id="risk35">35</td>
+                        <td class="borderRisk" id="risk31"></td>
+                        <td class="borderRisk" id="risk32"></td>
+                        <td class="borderRisk riskBgYellow borderScopeRiskBottom borderScopeRiskLeft" id="risk33"></td>
+                        <td class="borderRisk riskBgYellow borderScopeRiskBottom" id="risk34"></td>
+                        <td class="borderRisk riskBgYellow" id="risk35"></td>
                         
                     </tr>
                     <tr>
                         <td  class="graphMainRight" id="risk3T">2</td>
-                        <td class="borderRisk" id="risk21">21</td>
-                        <td class="borderRisk" id="risk22">22</td>
-                        <td class="borderRisk" id="risk23">23</td>
-                        <td class="borderRisk" id="risk24">24</td>
-                        <td class="borderRisk riskBgYellow borderScopeRiskLeft borderScopeRiskBottom" id="risk25">25</td>
+                        <td class="borderRisk" id="risk21"></td>
+                        <td class="borderRisk" id="risk22"></td>
+                        <td class="borderRisk" id="risk23"></td>
+                        <td class="borderRisk" id="risk24"></td>
+                        <td class="borderRisk riskBgYellow borderScopeRiskLeft borderScopeRiskBottom" id="risk25"></td>
                         
                     </tr>
                     <tr>
                         <td  class="graphMainRight" id="risk1T">1</td>
-                        <td class="borderRisk" id="risk11">11</td>
-                        <td class="borderRisk" id="risk12">12</td>
-                        <td class="borderRisk" id="risk13">13</td>
-                        <td class="borderRisk" id="risk14">14</td>
-                        <td class="borderRisk" id="risk15">15</td>
+                        <td class="borderRisk" id="risk11"></td>
+                        <td class="borderRisk" id="risk12"></td>
+                        <td class="borderRisk" id="risk13"></td>
+                        <td class="borderRisk" id="risk14"></td>
+                        <td class="borderRisk" id="risk15"></td>
                         
                     </tr>
                     <tr>
@@ -212,6 +231,8 @@
                     </tr>
                     
                 </table>
+                <div class="opportunity_occurred_txt">โอกาสที่จะเกิด</div>
+                </div>
                 </div>
             </div>
             <!-- content here. -->
@@ -355,7 +376,7 @@
                    
                 </tbody>
             </table>
-            
+          
         </div>
     </div>
     

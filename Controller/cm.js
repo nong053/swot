@@ -1,11 +1,11 @@
-function createGauges(id) {
+function createGauges(id,value_param) {
 	var value = $("#gauge-value").val();
 
 
 	$("#gauge"+id).kendoRadialGauge({
 
 		pointer: {
-			value: 81
+			value: value_param
 		},
 
 		scale: {
@@ -43,9 +43,9 @@ $(document).ready(function(){
 	
    
 
-	createGauges(1);
-	createGauges(2);
-	createGauges(3);
-	createGauges(4);
+	createGauges(1,139);
+	createGauges(2,91);
+	createGauges(3,83.66);
+	createGauges(4,120.5);
 
 });
