@@ -132,7 +132,7 @@
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td colspan="3" class="total-swot">รวม=1 <!--เฉลี่ย=INF--></td>
+                                <td colspan="3" class="total-swot">เฉลี่ย=1 <!--เฉลี่ย=INF--></td>
                             </tr>
                         </tbody>
                     </table>
@@ -175,7 +175,7 @@
                             <td>3</td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="total-swot">รวม=3 <!--เฉลี่ย=INF--></td>
+                            <td colspan="3" class="total-swot">เฉลี่ย=3 <!--เฉลี่ย=INF--></td>
                         </tr>
                         </tbody>
                     </table>
@@ -226,7 +226,7 @@
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td colspan="3" class="total-swot">รวม=1 <!--เฉลี่ย=INF--></td>
+                                <td colspan="3" class="total-swot">เฉลี่ย=1 <!--เฉลี่ย=INF--></td>
                             </tr>
                         </tbody>
                 </table>
@@ -263,7 +263,7 @@
                             <td>4</td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="total-swot">รวม=4 <!--เฉลี่ย=INF--></td>
+                            <td colspan="3" class="total-swot">เฉลี่ย=4 <!--เฉลี่ย=INF--></td>
                         </tr>
                     </tbody>
                 </table>
@@ -308,7 +308,7 @@
                     <td>2</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="total-swot">รวม=2 <!--เฉลี่ย=INF--></td>
+                    <td colspan="3" class="total-swot">เฉลี่ย=2 <!--เฉลี่ย=INF--></td>
                 </tr>
                 </tbody>
             </table>
@@ -346,7 +346,7 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="total-swot">รวม=3 <!--เฉลี่ย=INF--></td>
+                    <td colspan="3" class="total-swot">เฉลี่ย=3 <!--เฉลี่ย=INF--></td>
                 </tr>
                 </tbody>
             </table>
@@ -392,7 +392,7 @@
                     <td>2</td>
                 </tr>
                 <tr>
-                    <td colspan="3"  class="total-swot">รวม=2 <!--เฉลี่ย=INF--></td>
+                    <td colspan="3"  class="total-swot">เฉลี่ย=2 <!--เฉลี่ย=INF--></td>
                 </tr>
                 </tbody>
             </table>
@@ -428,7 +428,7 @@
                             <td>4</td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="total-swot">รวม=4 <!--เฉลี่ย=INF--></td>
+                            <td colspan="3" class="total-swot">เฉลี่ย=4 <!--เฉลี่ย=INF--></td>
                         </tr>
                     </tbody>
                 </table>

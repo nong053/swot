@@ -94,7 +94,7 @@
         
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">1. การเตรียมความพร้อม..</div>
+                <div class="card-header" style="text-align: center;">การเตรียมความพร้อม..</div>
                 <div class="card-body" style="text-align: center; ">
            
                     <div id="gauge1" class="graph" >graph1</div>
@@ -106,7 +106,7 @@
         </div>
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;"> 2. การกำกับดูแล/ข้อมูลทางยุทธวิธี.. </div>
+                <div class="card-header" style="text-align: center;">การกำกับดูแล/ข้อมูลทางยุทธวิธี.. </div>
                 <div class="card-body" style="text-align: center; ">
              
                     <div id="gauge2" class="graph" >graph2</div>
@@ -116,7 +116,7 @@
         </div>
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">3.  การกำกับดูแล/(COMSEC)..</div>
+                <div class="card-header" style="text-align: center;">การกำกับดูแล/(COMSEC)..</div>
                 <div class="card-body" style="text-align: center; ">
                 
                     <div id="gauge3" class="graph" >graph3</div>
