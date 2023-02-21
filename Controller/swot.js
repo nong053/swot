@@ -169,7 +169,7 @@ var findOne=function(uuid){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 					
-					//renderSwotToForm(data[0]['data']);
+					renderSwotToForm(data[0]['data']);
 				}
 			}
 		}
