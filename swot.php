@@ -69,6 +69,9 @@
             text-align: right;
             font-weight: bold;
         }
+        .accordion {
+            --bs-accordion-body-padding-x: 5px;
+        }
 
 
 
@@ -450,408 +453,454 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
-            <div class="row">
-                <div class="col-md-12" style="text-align: left;">
-                    <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
-                     <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-download"></i></button>
-                    <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button> -->
-                </div>
-            </div>
+
             <form>
-            <!--box-->
-            <div class="card text-bg-default mb-3" >
-                <div class="card-header">
+            <div class="row">
+                        <div class="col-md-12" style="text-align: left; margin-bottom:10px;">
 
-                    <!-- <div class="row ">
-                        <div class="col-1"><b>#</b></div>
-                        <div class="col-8"><b>ปัจจัยภายใน จุดแข็ง</b></div>
+                      
+
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitExcel" class="btn btn-warning btn-circle ">
+                            <i class="fa-sharp fa-solid fa-file-excel"></i>
+                            </button>
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
+                                <i class="fa-sharp fa-solid fa-bars-progress"></i>
+                            </button>
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPrint" class="btn btn-info btn-circle ">
+                                <i class="fa-sharp fa-solid fa-print"></i>
+                            </button>
+
+                            
                         
-                        <div class="col-3 font-h-score">คะแนน</div>
-                    </div> -->
-                    <table>
-                            <thead>
-
-                                <th class="widthSwotName">
-                                    ปัจจัยภายใน จุดแข็ง
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
-
-                            </tr>
-                            
-                        </thead>
-                    </table>
-
-                </div>
-                <div class="card-body">
-                    <div class="row mb-3">
-                        <!-- <div class="col-1">1</div> -->
-                        <table>
-                            <tr>
-                                <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
-                                </td>
-                                <td class="widthSwotWeight">
-                                    <input type="text" name="s1_weight" id="s1_weight" class="form-control">
-                                </td>
-                                <td class="widthSwotScore">
-                                    <input type="text" name="s1_score" id="s1_score" class="form-control">
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
-                                </td>
-                                <td class="widthSwotWeight">
-                                    <input type="text" name="s2_weight" id="s2_weight" class="form-control">
-                                </td>
-                                <td class="widthSwotScore">
-                                    <input type="text" name="s2_score" id="s2_score" class="form-control">
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
-                                </td>
-                                <td class="widthSwotWeight">
-                                    <input type="text" name="s3_weight" id="s3_weight" class="form-control">
-                                </td>
-                                <td class="widthSwotScore">
-                                    <input type="text" name="s3_score" id="s3_score" class="form-control">
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
-                                </td>
-                                <td class="widthSwotWeight">
-                                    <input type="text" name="s4_weight" id="s4_weight" class="form-control">
-                                </td>
-                                <td class="widthSwotScore">
-                                    <input type="text" name="s4_score" id="s4_score" class="form-control">
-                                </td>
-
-                            </tr>
-                            <tr>
-                                <td class="widthSwotName">
-                                    <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
-                                </td>
-                                <td class="widthSwotWeight">
-                                    <input type="text" name="s5_weight" id="s5_weight" class="form-control">
-                                </td>
-                                <td class="widthSwotScore">
-                                    <input type="text" name="s5_score" id="s5_score" class="form-control">
-                                </td>
-
-                            </tr>
-                            
-                        </table>
-
-                    
+                        </div>
                     </div>
-                    
-    
-                    
-    
-                    
-    
-                
-                        
-                </div>
-            </div>
-            <!--box-->
             <!--box-->
             <div class="card text-bg-default mb-3" >
-                <div class="card-header">
+                            <div class="card-header">
 
-                   
+                                รายละเอียด SWOT
 
-                    <table>
-                            <thead>
-
-                                <th class="widthSwotName">
-                                    ปัจจัยภายใน จุดอ่อน
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
-
-                            </tr>
-                            
-                        </thead>
-                    </table>
-
-
-                </div>
-                <div class="card-body">
-                    <div class="row mb-3">
-
-                        <table>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w1_weight" id="w1_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w1_score" id="w1_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w2_weight" id="w2_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w2_score" id="w2_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w3_weight" id="w3_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w3_score" id="w3_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w4_weight" id="w4_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w4_score" id="w4_score" class="form-control">
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td class="widthSwotName">
-                                        <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
-                                    </td>
-                                    <td class="widthSwotWeight">
-                                        <input type="text" name="w5_weight" id="w5_weight" class="form-control">
-                                    </td>
-                                    <td class="widthSwotScore">
-                                        <input type="text" name="w5_score" id="w5_score" class="form-control">
-                                    </td>
-
-                                </tr>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
                                 
-                            </table>
-                        
-                    </div>  
-                </div>
-            </div>
-            <!--box-->
-            <!--box-->
-            <div class="card text-bg-default  mb-3" >
-                <div class="card-header">
+                                <textarea class="form-control" id="swot_detail"></textarea>
+                                
+                                </div>
 
-                   
-                    <table>
-                            <thead>
+                            </div>
+                        </div>
+                        <!--box-->
+                        <!--box-->
+                        <div class="card text-bg-default mb-3" >
+                            <div class="card-header">
 
-                                <th class="widthSwotName">
-                                    ปัจจัยภายนอก โอกาส
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
+                                <!-- <div class="row ">
+                                    <div class="col-1"><b>#</b></div>
+                                    <div class="col-8"><b>ปัจจัยภายใน จุดแข็ง</b></div>
+                                    
+                                    <div class="col-3 font-h-score">คะแนน</div>
+                                </div> -->
+                                <table>
+                                        <thead>
 
-                            </tr>
+                                            <th class="widthSwotName">
+                                                ปัจจัยภายใน จุดแข็ง
+                                            </th>
+                                            <th class="widthSwotWeight">
+                                                น้ำหนัก
+                                            </th>
+                                            <th class="widthSwotScore">
+                                                คะแนน
+                                            </th>
+
+                                        </tr>
+                                        
+                                    </thead>
+                                </table>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                    <!-- <div class="col-1">1</div> -->
+                                    <table>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s1_weight" id="s1_weight" class="form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s1_score" id="s1_score" class="form-control">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s2_weight" id="s2_weight" class="form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s2_score" id="s2_score" class="form-control">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s3_weight" id="s3_weight" class="form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s3_score" id="s3_score" class="form-control">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s4_weight" id="s4_weight" class="form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s4_score" id="s4_score" class="form-control">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s5_weight" id="s5_weight" class="form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s5_score" id="s5_score" class="form-control">
+                                            </td>
+
+                                        </tr>
+                                        
+                                    </table>
+
+                                
+                                </div>
+                                
+                
+                                
+                
+                                
+                
                             
-                        </thead>
-                    </table>
+                                    
+                            </div>
+                        </div>
+                        <!--box-->
+                        <!--box-->
+                        <div class="card text-bg-default mb-3" >
+                            <div class="card-header">
 
-                </div>
-                <div class="card-body">
-                    <div class="row mb-3">
-                    <table>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o1_weight" id="o1_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o1_score" id="o1_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o2_weight" id="o2_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o2_score" id="o2_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o3_weight" id="o3_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o3_score" id="o3_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o4_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o4_weight" id="o4_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o4_score" id="o4_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="o5_weight" id="o5_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="o5_score" id="o5_score" class="form-control">
-                            </td>
-
-                        </tr>
-                        
-                    </table>
-                    </div>
-                </div>
-            </div>
-            <!--box-->
-            <!--box-->
-            <div class="card text-bg-default  mb-3" >
-                <div class="card-header">
-
-                  
-
-                    <table>
-                            <thead>
-
-                                <th class="widthSwotName">
-                                    ปัจจัยภายนอก อุปสรรค
-                                </th>
-                                <th class="widthSwotWeight">
-                                    น้ำหนัก
-                                </th>
-                                <th class="widthSwotScore">
-                                    คะแนน
-                                </th>
-
-                            </tr>
                             
-                        </thead>
-                    </table>
+
+                                <table>
+                                        <thead>
+
+                                            <th class="widthSwotName">
+                                                ปัจจัยภายใน จุดอ่อน
+                                            </th>
+                                            <th class="widthSwotWeight">
+                                                น้ำหนัก
+                                            </th>
+                                            <th class="widthSwotScore">
+                                                คะแนน
+                                            </th>
+
+                                        </tr>
+                                        
+                                    </thead>
+                                </table>
 
 
-                </div>
-                <div class="card-body">
-                <div class="row mb-3">
-                    <table>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t1_weight" id="t1_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t1_score" id="t1_score" class="form-control">
-                            </td>
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
 
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t2_weight" id="t2_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t2_score" id="t2_score" class="form-control">
-                            </td>
+                                    <table>
+                                            <tr>
+                                                <td class="widthSwotName">
+                                                    <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
+                                                </td>
+                                                <td class="widthSwotWeight">
+                                                    <input type="text" name="w1_weight" id="w1_weight" class="form-control">
+                                                </td>
+                                                <td class="widthSwotScore">
+                                                    <input type="text" name="w1_score" id="w1_score" class="form-control">
+                                                </td>
 
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t3_weight" id="t3_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t3_score" id="t3_score" class="form-control">
-                            </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="widthSwotName">
+                                                    <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
+                                                </td>
+                                                <td class="widthSwotWeight">
+                                                    <input type="text" name="w2_weight" id="w2_weight" class="form-control">
+                                                </td>
+                                                <td class="widthSwotScore">
+                                                    <input type="text" name="w2_score" id="w2_score" class="form-control">
+                                                </td>
 
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t4_weight" id="t4_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t4_score" id="t4_score" class="form-control">
-                            </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="widthSwotName">
+                                                    <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
+                                                </td>
+                                                <td class="widthSwotWeight">
+                                                    <input type="text" name="w3_weight" id="w3_weight" class="form-control">
+                                                </td>
+                                                <td class="widthSwotScore">
+                                                    <input type="text" name="w3_score" id="w3_score" class="form-control">
+                                                </td>
 
-                        </tr>
-                        <tr>
-                            <td class="widthSwotName">
-                                <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
-                            </td>
-                            <td class="widthSwotWeight">
-                                <input type="text" name="t5_weight" id="t5_weight" class="form-control">
-                            </td>
-                            <td class="widthSwotScore">
-                                <input type="text" name="t5_score" id="t5_score" class="form-control">
-                            </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="widthSwotName">
+                                                    <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
+                                                </td>
+                                                <td class="widthSwotWeight">
+                                                    <input type="text" name="w4_weight" id="w4_weight" class="form-control">
+                                                </td>
+                                                <td class="widthSwotScore">
+                                                    <input type="text" name="w4_score" id="w4_score" class="form-control">
+                                                </td>
 
-                        </tr>
-                        
-                    </table>
-                </div>
-                </div>
-            </div>
-            <!--box-->
+                                            </tr>
+                                            <tr>
+                                                <td class="widthSwotName">
+                                                    <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
+                                                </td>
+                                                <td class="widthSwotWeight">
+                                                    <input type="text" name="w5_weight" id="w5_weight" class="form-control">
+                                                </td>
+                                                <td class="widthSwotScore">
+                                                    <input type="text" name="w5_score" id="w5_score" class="form-control">
+                                                </td>
+
+                                            </tr>
+                                            
+                                        </table>
+                                    
+                                </div>  
+                            </div>
+                        </div>
+                        <!--box-->
+                        <!--box-->
+                        <div class="card text-bg-default  mb-3" >
+                            <div class="card-header">
+
+                            
+                                <table>
+                                        <thead>
+
+                                            <th class="widthSwotName">
+                                                ปัจจัยภายนอก โอกาส
+                                            </th>
+                                            <th class="widthSwotWeight">
+                                                น้ำหนัก
+                                            </th>
+                                            <th class="widthSwotScore">
+                                                คะแนน
+                                            </th>
+
+                                        </tr>
+                                        
+                                    </thead>
+                                </table>
+
+                            </div>
+                            <div class="card-body">
+                                <div class="row mb-3">
+                                <table>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="o1_weight" id="o1_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="o1_score" id="o1_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="o2_weight" id="o2_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="o2_score" id="o2_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="o3_weight" id="o3_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="o3_score" id="o3_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="o4_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="o4_weight" id="o4_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="o4_score" id="o4_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="o5_weight" id="o5_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="o5_score" id="o5_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--box-->
+                        <!--box-->
+                        <div class="card text-bg-default  mb-3" >
+                            <div class="card-header">
+
+                            
+
+                                <table>
+                                        <thead>
+
+                                            <th class="widthSwotName">
+                                                ปัจจัยภายนอก อุปสรรค
+                                            </th>
+                                            <th class="widthSwotWeight">
+                                                น้ำหนัก
+                                            </th>
+                                            <th class="widthSwotScore">
+                                                คะแนน
+                                            </th>
+
+                                        </tr>
+                                        
+                                    </thead>
+                                </table>
+
+
+                            </div>
+                            <div class="card-body">
+                            <div class="row mb-3">
+                                <table>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="t1_weight" id="t1_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="t1_score" id="t1_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="t2_weight" id="t2_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="t2_score" id="t2_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="t3_weight" id="t3_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="t3_score" id="t3_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="t4_weight" id="t4_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="t4_score" id="t4_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="widthSwotName">
+                                            <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
+                                        </td>
+                                        <td class="widthSwotWeight">
+                                            <input type="text" name="t5_weight" id="t5_weight" class="form-control">
+                                        </td>
+                                        <td class="widthSwotScore">
+                                            <input type="text" name="t5_score" id="t5_score" class="form-control">
+                                        </td>
+
+                                    </tr>
+                                    
+                                </table>
+                            </div>
+                            </div>
+                        </div>
+                        <!--box-->
+                        <!--button-->
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: left;">
+                                <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-success btn-circle ">
+                                    <i class="fa-solid fa-floppy-disk"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!--button-->
                
              
             </form>
@@ -879,6 +928,34 @@
         </div>
     </a>
 </div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModelLabel">ตัวอย่างข้อมูล</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <select class="form-select" id="dataBusinessType" aria-label="Default select example">
+           
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="getExampleSubmit" class="btn btn-primary">Load</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Model -->
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
