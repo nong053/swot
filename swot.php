@@ -72,6 +72,27 @@
         .accordion {
             --bs-accordion-body-padding-x: 5px;
         }
+        .btn-circle{
+            font-size: 20px;
+        }
+        .headeTitle{
+            color:white;
+            text-align: center;
+            position: absolute;
+            top:15px;
+        }
+        .swot_seq{
+            width: 10%;
+            text-align: center;
+        }
+        .swot_name{
+            width: 70%;
+            text-align: left;
+        }
+        .swot_score{
+            width: 20%;
+            text-align: right;
+        }
 
 
 
@@ -81,6 +102,7 @@
   <body>
   <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
 <div class="container">
+    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
 
     <div class="  mb-3">
         
@@ -88,7 +110,9 @@
         
 
         <div class="card text-bg-defualt  mb-3 " style="">
-            <div class="card-header">SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D) </div>
+            <div class="card-header" id="swot_detail_header">ตัวอย่างข้อมูล SWOT
+                <!-- SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D)  -->
+            </div>
             <div class="card-body">
                 <div id="chart" class="graph" ></div>
             </div>
@@ -107,12 +131,12 @@
                 <table class="table  table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>จุดแข็ง (Strengths)</th>
-                                <th>คะแนน</th>
+                                <th class="swot_seq">#</th>
+                                <th class="swot_name">จุดแข็ง (Strengths)</th>
+                                <th class="swot_score">คะแนน</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="dataStrengths">
                             <tr>
                                 <td >1</td>
                                 <td scope="row">บริษัทฯ อยู่ในเครือบริษัทพระนครยนตรการ ก่อตั้งเมื่อปี ๒๕๐๐ ประกอบธุรกิจอุตสาหกรรมด้านยานยนต์เป็นทั้งผู้ประกอบและผู้จัดจำหน่ายภายในประเทศ</td>
@@ -135,7 +159,7 @@
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td colspan="3" class="total-swot">เฉลี่ย=1 <!--เฉลี่ย=INF--></td>
+                                <td colspan="3" class="total-swot">เฉลี่ย=1 </td>
                             </tr>
                         </tbody>
                     </table>
@@ -151,13 +175,13 @@
                     <table class="table  table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>โอกาส (Opportunities)</th>
-                                <th>คะแนน</th>
+                                 <th class="swot_seq">#</th>
+                                <th class="swot_name">โอกาส (Opportunities)</th>
+                                <th class="swot_score">คะแนน</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        <tr>
+                        <tbody class="dataOpportunities">
+                        <!-- <tr>
                             <td >1</td>
                             <td scope="row">เป็นระบบควบคุมอำนวยการยุทธในสงครามสมัยใหม่ที่มีขีดความสามารถสูง</td>
                             <td>3</td>
@@ -178,8 +202,8 @@
                             <td>3</td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="total-swot">เฉลี่ย=3 <!--เฉลี่ย=INF--></td>
-                        </tr>
+                            <td colspan="3" class="total-swot">เฉลี่ย=3 </td>
+                        </tr> -->
                         </tbody>
                     </table>
                 <!--content here-->
@@ -201,13 +225,13 @@
                 <table class="table  table-striped">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>จุดแข็ง (Strengths)</th>
-                                <th>คะแนน</th>
+                                 <th class="swot_seq">#</th>
+                                <th class="swot_name">จุดแข็ง (Strengths)</th>
+                                <th class="swot_score">คะแนน</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody class="dataStrengths">
+                            <!-- <tr>
                                 <td >1</td>
                                 <td scope="row">บริษัทฯ อยู่ในเครือบริษัทพระนครยนตรการ ก่อตั้งเมื่อปี ๒๕๐๐ ประกอบธุรกิจอุตสาหกรรมด้านยานยนต์เป็นทั้งผู้ประกอบและผู้จัดจำหน่ายภายในประเทศ</td>
                                 <td>1</td>
@@ -229,8 +253,8 @@
                                 <td>1</td>
                             </tr>
                             <tr>
-                                <td colspan="3" class="total-swot">เฉลี่ย=1 <!--เฉลี่ย=INF--></td>
-                            </tr>
+                                <td colspan="3" class="total-swot">เฉลี่ย=1 </td>
+                            </tr> -->
                         </tbody>
                 </table>
             </div>
@@ -239,13 +263,13 @@
                 <table class="table  table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>ภัยคุกคาม (Threats)</th>
-                            <th>คะแนน</th>
+                             <th class="swot_seq">#</th>
+                            <th class="swot_name">ภัยคุกคาม (Threats)</th>
+                            <th class="swot_score">คะแนน</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    <tr>    
+                    <tbody class="dataThreats">
+                    <!-- <tr>    
                             <td >1</td>
                             <td scope="row">ความเข้ากันได้ของรถหัวลาก ทอ.กับระบบ PECHORA-2D</td>
                             <td>4</td>
@@ -266,8 +290,8 @@
                             <td>4</td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="total-swot">เฉลี่ย=4 <!--เฉลี่ย=INF--></td>
-                        </tr>
+                            <td colspan="3" class="total-swot">เฉลี่ย=4 </td>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -284,13 +308,13 @@
             <table class="table  table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>จุดอ่อน (Weaknesses)</th>
-                        <th>คะแนน</th>
+                         <th class="swot_seq">#</th>
+                        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
+                        <th class="swot_score">คะแนน</th>
                     </tr>
                 </thead>
-                <tbody>
-                <tr>
+                <tbody class="dataWeaknesses">
+                <!-- <tr>
                     <td>1</td>
                     <td scope="row">ต้องมีการต่ออายุการบำรุงรักษาเป็นรายปี</td>
                     <td>2</td>
@@ -311,8 +335,8 @@
                     <td>2</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="total-swot">เฉลี่ย=2 <!--เฉลี่ย=INF--></td>
-                </tr>
+                    <td colspan="3" class="total-swot">เฉลี่ย=2 </td>
+                </tr> -->
                 </tbody>
             </table>
             </div>
@@ -322,13 +346,13 @@
             <table class="table  table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>โอกาส (Opportunities)</th>
-                        <th>คะแนน</th>
+                         <th class="swot_seq">#</th>
+                        <th class="swot_name">โอกาส (Opportunities)</th>
+                        <th class="swot_score">คะแนน</th>
                     </tr>
                 </thead>
-                <tbody>
-                <tr>
+                <tbody class="dataOpportunities">
+                <!-- <tr>
                     <td >1</td>
                     <td scope="row">เป็นระบบควบคุมอำนวยการยุทธในสงครามสมัยใหม่ที่มีขีดความสามารถสูง</td>
                     <td>3</td>
@@ -349,8 +373,8 @@
                     <td>3</td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="total-swot">เฉลี่ย=3 <!--เฉลี่ย=INF--></td>
-                </tr>
+                    <td colspan="3" class="total-swot">เฉลี่ย=3 </td>
+                </tr> -->
                 </tbody>
             </table>
             </div>
@@ -368,13 +392,13 @@
             <table class="table  table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>จุดอ่อน (Weaknesses)</th>
-                        <th>คะแนน</th>
+                         <th class="swot_seq">#</th>
+                        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
+                        <th class="swot_score">คะแนน</th>
                     </tr>
                 </thead>
-                <tbody>
-                <tr>
+                <tbody class="dataWeaknesses">
+                <!-- <tr>
                     <td>1</td>
                     <td scope="row">ต้องมีการต่ออายุการบำรุงรักษาเป็นรายปี</td>
                     <td>2</td>
@@ -395,8 +419,8 @@
                     <td>2</td>
                 </tr>
                 <tr>
-                    <td colspan="3"  class="total-swot">เฉลี่ย=2 <!--เฉลี่ย=INF--></td>
-                </tr>
+                    <td colspan="3"  class="total-swot">เฉลี่ย=2 </td>
+                </tr> -->
                 </tbody>
             </table>
             </div>
@@ -404,13 +428,13 @@
             <table class="table  table-striped">
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>ภัยคุกคาม (Threats)</th>
-                            <th>คะแนน</th>
+                             <th class="swot_seq">#</th>
+                            <th class="swot_name">ภัยคุกคาม (Threats)</th>
+                            <th class="swot_score">คะแนน</th>
                         </tr>
                     </thead>
-                    <tbody>
-                    <tr>    
+                    <tbody class="dataThreats">
+                    <!-- <tr>    
                             <td >1</td>
                             <td scope="row">ความเข้ากันได้ของรถหัวลาก ทอ.กับระบบ PECHORA-2D</td>
                             <td>4</td>
@@ -431,8 +455,8 @@
                             <td>4</td>
                         </tr>
                         <tr>
-                            <td colspan="3" class="total-swot">เฉลี่ย=4 <!--เฉลี่ย=INF--></td>
-                        </tr>
+                            <td colspan="3" class="total-swot">เฉลี่ย=4 </td>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -449,7 +473,7 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">SWOT Analysis </h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i class="fa-sharp fa-solid fa-angles-left"></i> SWOT FORM </h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
@@ -464,18 +488,25 @@
                             <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
+                            <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
+                                <i class="fa-sharp fa-solid fa-bars-progress"></i>
+                            </button>
 
                             <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitExcel" class="btn btn-warning btn-circle ">
                             <i class="fa-sharp fa-solid fa-file-excel"></i>
                             </button>
 
-                            <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
-                                <i class="fa-sharp fa-solid fa-bars-progress"></i>
-                            </button>
+                            
 
                             <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPrint" class="btn btn-info btn-circle ">
                                 <i class="fa-sharp fa-solid fa-print"></i>
                             </button>
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPDF" class="btn btn-danger btn-circle ">
+                                <i class="fa-sharp fa-solid fa-file-pdf"></i>
+                            </button>
+
+                            
 
                             
                         

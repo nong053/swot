@@ -22,6 +22,7 @@ body{
     <div class="col-md-12"  style="text-align: center; margin-top: 30px;">
         <button  type="button" id="btn-sw" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-users"></i> SW</button>
         <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> BS</button>
+        <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> KPI</button>
         <button  type="button" id="btn-rm" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-code-compare"></i> RM</button>
         <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> MC</button>
     </div>

@@ -1,4 +1,33 @@
+// var saveSubmitFn = function(){
+// 	$.ajax({
+// 		url:"./Model/action-swot.php",
+// 		type:"post",
+// 		dataType:"json",
+//         async:false,
+// 		data:{
+// 			"uuid":uuid,
+// 			"action":"insert",
+// 		},
+// 		success:function(data){
 
+// 			if(data[0]!=="" || data[0]!==null){
+// 				if(data[0]['status']=="200"){
+					
+// 					renderSwotToForm(data[0]['data']);
+// 				}
+// 			}
+// 		}
+// 	});
+// }
+
+var clearDataFn = function(){
+	$("#swot_detail").val("");
+	$(".dataStrengths").html("");
+	$(".dataWeaknesses").html("");
+	$(".dataOpportunities").html("");
+	$(".dataThreats").html("");
+	$("#swot_detail_header").html("");
+}
 var calculateSwotFn = function(){
 	var s1_name="";
 	var s1_weight=0.00;
@@ -177,15 +206,7 @@ w_total_score=(+w1_total_score)+(+w2_total_score)+(+w3_total_score)+(+w4_total_s
 w_total_weight=(+w1_weight)+(+w2_weight)+(+w3_weight)+(+w4_weight)+(+w5_weight);
 w_performance=(parseFloat(w_total_score).toFixed(2)/parseFloat(w_total_weight).toFixed(2));
 
-// alert(w1_weight);
-// alert(w2_weight);
-// alert(w3_weight);
-// alert(w4_weight);
-// alert(w5_weight);
 
-// alert(w_total_score);
-// alert(w_total_weight);
- //alert("w_performance="+w_performance);
 
 
 if($('#o1_name').val()!==""){
@@ -260,11 +281,16 @@ t_performance=(parseFloat(t_total_score).toFixed(2)/parseFloat(t_total_weight).t
 
 
 var dataArray=[s_performance, w_performance, o_performance, t_performance];
-
-
 createChart(dataArray);
 
+//get data from form to table start
+
+//get data from form to table end
+
+
+
 }
+
  function createChart(data) {
 
 	$("#chart").kendoChart({
@@ -314,6 +340,7 @@ s_total_score
 s_weight
 uuid
 */
+
 
 
 
@@ -418,6 +445,80 @@ uuid
 	});
 
 }
+var renderSwotToDisplay = function(data){
+	var dataStrengths="";
+	var dataWeaknesses="";
+	var dataOpportunities="";
+	var dataThreats="";
+
+	var sumStrengths=0;
+	var sumWeaknesses=0;
+	var sumOpportunities=0;
+	var sumThreats=0;
+
+	var countStrengths=0;
+	var countWeaknesses=0;
+	var countOpportunities=0;
+	var countThreats=0;
+	
+
+	
+
+
+		$.each(data,function(index,indexEntry){
+			if(index==1){
+				$("#swot_detail_header").html(indexEntry['swot_detail']);
+				
+			}
+			
+			if(indexEntry['ap_id']=='1' && indexEntry['s_name']!==""){
+				countStrengths+=1;
+				dataStrengths+="<tr>";
+					dataStrengths+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
+					dataStrengths+="<td  class='swot_name'>"+indexEntry['s_name']+"</td>";
+					dataStrengths+="<td  class='swot_score'>"+indexEntry['s_total_score']+"</td>";
+					sumStrengths+=+parseFloat(indexEntry['s_total_score']).toFixed(2);
+				dataStrengths+="</tr>";
+			}
+			if(indexEntry['ap_id']=='2'&& indexEntry['s_name']!==""){
+				countWeaknesses+=1;
+				dataWeaknesses+="<tr>";
+					dataWeaknesses+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
+					dataWeaknesses+="<td  class='swot_name'>"+indexEntry['s_name']+"</td>";
+					dataWeaknesses+="<td  class='swot_score'>"+indexEntry['s_total_score']+"</td>";
+					sumWeaknesses+=+parseFloat(indexEntry['s_total_score']).toFixed(2);
+				dataWeaknesses+="</tr>";
+			}
+			if(indexEntry['ap_id']=='3'&& indexEntry['s_name']!==""){
+				countOpportunities+=1;
+				dataOpportunities+="<tr>";
+					dataOpportunities+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
+					dataOpportunities+="<td  class='swot_name'>"+indexEntry['s_name']+"</td>";
+					dataOpportunities+="<td  class='swot_score'>"+indexEntry['s_total_score']+"</td>";
+					sumOpportunities+=+parseFloat(indexEntry['s_total_score']).toFixed(2);
+				dataOpportunities+="</tr>";
+			}
+			if(indexEntry['ap_id']=='4'&& indexEntry['s_name']!==""){
+				countThreats+=1;
+				dataThreats+="<tr>";
+					dataThreats+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
+					dataThreats+="<td  class='swot_name'>"+indexEntry['s_name']+"</td>";
+					dataThreats+="<td  class='swot_score'>"+indexEntry['s_total_score']+"</td>";
+					sumThreats+=+parseFloat(indexEntry['s_total_score']).toFixed(2);
+				dataThreats+="</tr>";
+			}
+			
+			
+		});
+		
+	//alert(dataStrengths);
+		$(".dataStrengths").html(dataStrengths).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumStrengths/countThreats).toFixed(2)+" </td></tr>");
+		$(".dataWeaknesses").html(dataWeaknesses).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumWeaknesses/countWeaknesses).toFixed(2)+" </td></tr>");
+		$(".dataOpportunities").html(dataOpportunities).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumOpportunities/countOpportunities).toFixed(2)+" </td></tr>");
+		$(".dataThreats").html(dataThreats).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumThreats/countThreats).toFixed(2)+" </td></tr>");
+		
+
+}
 var findOne=function(uuid){
 	// alert(uuid);
 	// alert("findOne");
@@ -436,6 +537,7 @@ var findOne=function(uuid){
 				if(data[0]['status']=="200"){
 					
 					renderSwotToForm(data[0]['data']);
+					renderSwotToDisplay(data[0]['data']);
 				}
 			}
 		}
@@ -478,7 +580,13 @@ var loadExampleSwot=function(b_id,swot_detail){
 
 			
 			if(data[0]['status']=="200"){
-				location.reload();
+	
+				//renderSwotToDisplay(data[0]['data']);
+				//calculateSwotFn();
+			
+					location.reload();
+				
+				
 			}
 		}
 	});
@@ -494,104 +602,127 @@ var saveSwot=function(){
         async:false,
 		data:{
 			"uuid":sessionStorage.getItem('uuid'),
-			"action":"saveSwot",
-			"swot_detail":swot_detail,
+			"action":"insert",
+			"swot_detail":$("#swot_detail").val(),
 
 			//form strengths start
 			"s1_name":$("#s1_name").val(),
 			"s1_weight":$("#s1_weight").val(),
 			"s1_score":$("#s1_score").val(),
+			"s1_total_score":parseFloat($("#s1_weight").val()*$("#s1_score").val()).toFixed(2),
 
 			"s2_name":$("#s2_name").val(),
 			"s2_weight":$("#s2_weight").val(),
 			"s2_score":$("#s2_score").val(),
+			"s2_total_score":parseFloat($("#s2_weight").val()*$("#s2_score").val()).toFixed(2),
 
 			"s3_name":$("#s3_name").val(),
 			"s3_weight":$("#s3_weight").val(),
 			"s3_score":$("#s3_score").val(),
+			"s3_total_score":parseFloat($("#s3_weight").val()*$("#s3_score").val()).toFixed(2),
 
 			"s4_name":$("#s4_name").val(),
 			"s4_weight":$("#s4_weight").val(),
 			"s4_score":$("#s4_score").val(),
+			"s4_total_score":parseFloat($("#s4_weight").val()*$("#s4_score").val()).toFixed(2),
 
 			"s5_name":$("#s5_name").val(),
 			"s5_weight":$("#s5_weight").val(),
 			"s5_score":$("#s5_score").val(),
+			"s5_total_score":parseFloat($("#s5_weight").val()*$("#s5_score").val()).toFixed(2),
 			//form strengths end
 
 			//form weakness start
 			"w1_name":$("#w1_name").val(),
 			"w1_weight":$("#w1_weight").val(),
 			"w1_score":$("#w1_score").val(),
+			"w1_total_score":parseFloat($("#w1_weight").val()*$("#w1_score").val()).toFixed(2),
 
 			"w2_name":$("#w2_name").val(),
 			"w2_weight":$("#w2_weight").val(),
 			"w2_score":$("#w2_score").val(),
+			"w2_total_score":parseFloat($("#w2_weight").val()*$("#w2_score").val()).toFixed(2),
 
 			"w3_name":$("#w3_name").val(),
 			"w3_weight":$("#w3_weight").val(),
 			"w3_score":$("#w3_score").val(),
+			"w3_total_score":parseFloat($("#w3_weight").val()*$("#w3_score").val()).toFixed(2),
 
 			"w4_name":$("#w4_name").val(),
 			"w4_weight":$("#w4_weight").val(),
 			"w4_score":$("#w4_score").val(),
+			"w4_total_score":parseFloat($("#w4_weight").val()*$("#w4_score").val()).toFixed(2),
 
 			"w5_name":$("#w5_name").val(),
 			"w5_weight":$("#w5_weight").val(),
 			"w5_score":$("#w5_score").val(),
+			"w5_total_score":parseFloat($("#w5_weight").val()*$("#w5_score").val()).toFixed(2),
 			//form weakness end
 
 			//form opportunities start
 			"o1_name":$("#o1_name").val(),
 			"o1_weight":$("#o1_weight").val(),
 			"o1_score":$("#o1_score").val(),
+			"o1_total_score":parseFloat($("#o1_weight").val()*$("#o1_score").val()).toFixed(2),
 
 			"o2_name":$("#o2_name").val(),
 			"o2_weight":$("#o2_weight").val(),
 			"o2_score":$("#o2_score").val(),
+			"o2_total_score":parseFloat($("#o2_weight").val()*$("#o2_score").val()).toFixed(2),
 
 			"o3_name":$("#o3_name").val(),
 			"o3_weight":$("#o3_weight").val(),
 			"o3_score":$("#o3_score").val(),
+			"o3_total_score":parseFloat($("#o3_weight").val()*$("#o3_score").val()).toFixed(2),
 
 			"o4_name":$("#o4_name").val(),
 			"o4_weight":$("#o4_weight").val(),
 			"o4_score":$("#o4_score").val(),
+			"o4_total_score":parseFloat($("#o4_weight").val()*$("#o4_score").val()).toFixed(2),
 
-			"w5_name":$("#o5_name").val(),
-			"w5_weight":$("#o5_weight").val(),
-			"w5_score":$("#o5_score").val(),
+			"o5_name":$("#o5_name").val(),
+			"o5_weight":$("#o5_weight").val(),
+			"o5_score":$("#o5_score").val(),
+			"o5_total_score":parseFloat($("#o5_weight").val()*$("#o5_score").val()).toFixed(2),
 			//form opportunities end
 
 			//form thrests start
 			"t1_name":$("#t1_name").val(),
 			"t1_weight":$("#t1_weight").val(),
 			"t1_score":$("#t1_score").val(),
+			"t1_total_score":parseFloat($("#t1_weight").val()*$("#t1_score").val()).toFixed(2),
 
 			"t2_name":$("#t2_name").val(),
 			"t2_weight":$("#t2_weight").val(),
 			"t2_score":$("#t2_score").val(),
+			"t2_total_score":parseFloat($("#t2_weight").val()*$("#t2_score").val()).toFixed(2),
 
 			"t3_name":$("#t3_name").val(),
 			"t3_weight":$("#t3_weight").val(),
 			"t3_score":$("#t3_score").val(),
+			"t3_total_score":parseFloat($("#t3_weight").val()*$("#t3_score").val()).toFixed(2),
 
 			"t4_name":$("#t4_name").val(),
 			"t4_weight":$("#t4_weight").val(),
 			"t4_score":$("#t4_score").val(),
+			"t4_total_score":parseFloat($("#t4_weight").val()*$("#t4_score").val()).toFixed(2),
 
 			"t5_name":$("#t5_name").val(),
 			"t5_weight":$("#t5_weight").val(),
 			"t5_score":$("#t5_score").val(),
+			"t5_total_score":parseFloat($("#t5_weight").val()*$("#t5_score").val()).toFixed(2),
 			//form thrests end
 
 
 		},
 		success:function(data){
 
-			
+		
 			if(data[0]['status']=="200"){
-				location.reload();
+				
+				renderSwotToDisplay(data[0]['data']);
+				calculateSwotFn();
+				//location.reload();
 			}
 		}
 	});
@@ -666,17 +797,20 @@ $(document).ready(function(){
 		getBusinessType();
 	});
 	$("#getExampleSubmit").click(function(){
+		
 		loadExampleSwot($("#dataBusinessType").val(),$("#dataBusinessType option:selected").text());
 	});
 
 
 
 	$("#submitSave").click(function(){
-		calculateSwotFn();
+		clearDataFn();
+		saveSwot();
+		//calculateSwotFn();
 		
 		//return false;
 	});
-
-	createChart([1,2,3,4]);
+	calculateSwotFn();
+	//createChart([1,2,3,4]);
     //alert(uuid);
 });
