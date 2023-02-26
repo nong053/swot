@@ -6,25 +6,40 @@ body{
     background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
 }
 .btn-circle {
-    width: 50px;
-    height: 50px;
+    width: 3em;
+    height: 3em;
     text-align: center;
     padding: 0;
-    font-size: 12px;
+    margin: 5px;
+    font-size:3em;
     line-height: 1.428571429;
-    border-radius: 25px;
+    border-radius: 3em;
 }
+
 </style>
 
 
 
 <div class="row">
     <div class="col-md-12"  style="text-align: center; margin-top: 30px;">
-        <button  type="button" id="btn-sw" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-users"></i> SW</button>
-        <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> BS</button>
-        <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> KPI</button>
-        <button  type="button" id="btn-rm" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-code-compare"></i> RM</button>
-        <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> MC</button>
+        <button  type="button" id="btn-sw" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-users"></i> 
+        <div>SW</div>
+    </button>
+    <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
+        <div>BS</div>
+    </button>
+    <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
+        <div>KPI</div>
+    </button>
+    <button  type="button" id="btn-rm" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-code-compare"></i> 
+        <div>RM</div>
+    </button>
+    <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
+        <div>MC</div>
+    </button>
+    <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
+        <div>MC2</div>
+    </button>
     </div>
 </div>
 

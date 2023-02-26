@@ -72,9 +72,7 @@
         .accordion {
             --bs-accordion-body-padding-x: 5px;
         }
-        .btn-circle{
-            font-size: 20px;
-        }
+       
         .headeTitle{
             color:white;
             text-align: center;
