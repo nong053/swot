@@ -466,13 +466,8 @@
 
         <div class="row">
                 <div class="col-md-12" style="text-align: left;">
-                    <button style="margin-bottom:10px; float:right;" type="button" id="submitSaveTask" class="btn btn-success btn-circle" >
-                        <i class="fa-solid fa-floppy-disk"></i>
-                    </button>
-                    <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
-                        <i class="fa-sharp fa-solid fa-bars-progress"></i>
-                    </button>
-                     <button style="margin-bottom:10px; float:right;"  type="button" id="submitAddTask" class="btn btn-primary btn-circle " data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                    <button style="margin-bottom:10px; float:right; "  type="button" id="submitSaveTask" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                     <button style="margin-bottom:10px; float:right;"  type="button" id="submitAddTask" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
                     <button style="margin-bottom:10px; float:right;"  type="button" id="submitDeleteTask" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
                 </div>
             </div>
@@ -678,7 +673,7 @@
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
-                    
+                    <!-- Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application. -->
                 </div>
                 </div>
             </div>
@@ -796,55 +791,12 @@
                     </span>
                 </span>
             </div>
+
         </div>
         <!-- <small class="text-uppercase text-700 fw-bold py-2 pe-2 ps-1 rounded-end"></small> -->
         </div>
     </a>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="cateTaskModel" tabindex="-1" aria-labelledby="cateTaskModelLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModelLabel">งาน</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <input type="text" class="form-control" id="" placeholder="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-        <button type="button" id="cateTaskSubmit" class="btn btn-primary">บันทึกข้อมูล</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!--Model -->
-<!-- Modal -->
-<div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModelLabel">ตัวอย่างข้อมูล</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <select class="form-select" id="dataBusinessType" aria-label="Default select example">
-           <option>ตัวอย่างข้อมูล 1</option>
-           <option>ตัวอย่างข้อมูล 2</option>
-        </select>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="getExampleSubmit" class="btn btn-primary">Load</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!--Model -->
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>

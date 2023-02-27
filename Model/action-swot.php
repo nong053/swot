@@ -1,6 +1,7 @@
 <?php
 include("../config.php");
- $sql = "SELECT * FROM admin where uu_id='$_REQUEST[uuid]'";
+$uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
+ $sql = "SELECT * FROM admin where uu_id='$uuid'";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
 
@@ -347,7 +348,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
     
 
  }else{
-    echo "[{\"loginStatus\":\"notLogin\"}]";
+    echo "[{\"status\":\"404\",\"loginStatus\":\"notLogin\"}]";
  }
  $conn->close();
 
