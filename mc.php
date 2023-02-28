@@ -413,7 +413,7 @@
                     </button>
                     <button  type="button" id="addTaskModal" class="btn btn-primary btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
                     <button  type="button" id="submitDeleteTask" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
-                    <button  type="button" id="submitEditCateTask" class="btn btn-warning btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+                    <button  type="button" id="editTaskCateModal" class="btn btn-warning btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
@@ -795,6 +795,7 @@
       </div>
       <div class="modal-footer">
         <input type="hidden" id="actionTaskCate" value="add">
+        <input type="hidden" id="idTaskCate" value="">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
         <button type="button" id="cateTaskSubmit" class="btn btn-primary">บันทึกข้อมูล</button>
       </div>

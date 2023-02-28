@@ -63,7 +63,7 @@ function createGauges(id,value_param) {
 	});
 }
 
-var findOneTaskCate=function(uuid){
+var findOneTaskCate=function(uuid,tc_id){
 	
     $.ajax({
 		url:"./Model/action-mc.php",
@@ -71,15 +71,17 @@ var findOneTaskCate=function(uuid){
 		dataType:"json",
         async:false,
 		data:{
-			"uuid":showCate,
-			"tc_id":"2",
+			"uuid":uuid,
+			"tc_id":tc_id,
 			"action":"findOneCate",
 		},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert('ok');
+					$("#cateTaskName").val(data[0]['data']['tc_name']);
+					$("#idTaskCate").val(data[0]['data']['tc_id']);
+					$("#actionTaskCate").val("edit");
 				}
 			}
 		}
@@ -213,10 +215,22 @@ $(document).ready(function(){
 	
 	
 	 });
+	 $("#editTaskCateModal").click(function(){
+		var tc_id =$(".cate_mc:checked").attr("id");
+		tc_id=tc_id.split("-");
+		tc_id=tc_id[1];
+			findOneTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6',tc_id);
+	 });
+
 
 	 $("#cateTaskSubmit").click(function(){
 		//alert("cateTaskSubmit");
-		insertTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+		if($("#actionTaskCate").val()=="add"){
+			insertTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+		}else{
+			updateTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+		}
+		
 	});
 
 	$("#submitDeleteTask").click(function(){
