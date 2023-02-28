@@ -6,17 +6,10 @@ include("../config-mc.php");
  if ($result->num_rows > 0) {
 
     //coding here.
-    if($_REQUEST['action']=='findOne'){
+    if($_REQUEST['action']=='findOneCate'){
 
         $sql = "
-        select s.s_id,s.uuid,s.form_id,s.ap_id,ap_name,
-        s.s_name,s.s_weight,s.s_score,
-        s.s_total_score,s.swot_detail
-        from swot s
-        inner join aspect_master am on s.ap_id=am.ap_id
-       
-        where uuid='$_REQUEST[uuid]'  
-        order by ap_id,form_id asc
+       select * from task_cate where tc_id='$_REQUEST[tc_id]'
         ";
         $dataArray = array();
             $result = $conn->query($sql);
@@ -31,40 +24,67 @@ include("../config-mc.php");
             echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
 
 
-    }else if($_REQUEST['action']=='show'){
+    }else if($_REQUEST['action']=='showCate'){
 
-        $sql = "SELECT id, firstname, lastname FROM MyGuests";
+        $sql = "SELECT tc_id, tc_name,tc_code FROM task_cate";
+        $dataArray = array();
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
         // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+            while($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
         }
-        } else {
-        echo "0 results";
-        }
+        echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
 
-    }else if($_REQUEST['action']=='updated'){
+    }else if($_REQUEST['action']=='updatedCate'){
 
-        $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
+        $sql = "UPDATE task_cate SET tc_name='$_REQUEST[tc_name]' WHERE tc_id='$_REQUEST[tc_id]'";
 
         if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
+       // echo "Record updated successfully";
+        echo "[{\"status\":\"200\"}]";
         } else {
         echo "Error updating record: " . $conn->error;
         }
 
-    }else if($_REQUEST['action']=='delete'){
+    }else if($_REQUEST['action']=='deleteCate'){
         // sql to delete a record
-        $sql = "DELETE FROM task_cate WHERE id=3";
+        $checkError=true;
+        $sql = "DELETE FROM task_cate WHERE tc_id='$_REQUEST[tc_id]'";
 
         if ($conn->query($sql) === TRUE) {
-        echo "Record deleted successfully";
+        
+       // echo "[{\"status\":\"200\"}]";
+        
+
         } else {
+            $checkError==false;
         echo "Error deleting record: " . $conn->error;
         }
-    }else if($_REQUEST['action']=='insertCateTask'){
+
+        if($checkError==true){
+            $sql_task_cate = "
+            select uu_id,tc_code,tc_name,created_date,updated_date,tc_id
+            from task_cate
+            
+            where uu_id='$_REQUEST[uuid]'
+            order by tc_name asc
+            ";
+            $dataArray = array();
+            $result_task_cate = $conn->query($sql_task_cate);
+            if ($result_task_cate->num_rows > 0) {
+            // output data of each row
+                while($row = $result_task_cate->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            } 
+
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        }
+
+    }else if($_REQUEST['action']=='insertTaskCate'){
             $sql_insert = "
             INSERT INTO task_cate 
             (uu_id,tc_code,tc_name,created_date,updated_date) 
@@ -80,7 +100,7 @@ include("../config-mc.php");
 
         if($checkError==true){
             $sql_task_cate = "
-            select uu_id,tc_code,tc_name,created_date,updated_date
+            select uu_id,tc_code,tc_name,created_date,updated_date,tc_id
             from task_cate
             
             where uu_id='$_REQUEST[uuid]'

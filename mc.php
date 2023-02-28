@@ -10,86 +10,25 @@
     
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" >
+    <link rel="stylesheet" href="css/mc.css" >
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
-
-    
-    
     <style>
-
-    @import url(fonts/thsarabunnew.css);
-
-    /**{ margin: 0; padding: 0; }*/
-        body{ 
-        font-family: 'THSarabunNew', sans-serif; 
-        font-size: 0.95em; line-height: 1.7em; 
-        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
+    .headeTitle{
+        color:white;
+        text-align: center;
+        position: absolute;
+        top:15px;
     }
-        .font-score{
-            
-        }
-        .font-h-score{
-            text-align: left;
-            font-weight: bold;
-        }
-        .graph{
-            width: 100%;
-             height: 300px; 
-            /* background-color:bisque; */
-        }
-        .setting-toggle {
-            position: fixed;
-            top: 65px;
-            right: 33px;
-            text-decoration: none;
-            z-index: 1016;
-            -webkit-transform: rotate(-90deg) translate3d(-25px, 39px, 0);
-            transform: rotate(-90deg) translate3d(-25px, 39px, 0);
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            margin-top: -83px;
-            -webkit-box-shadow: var(--phoenix-setting-toggle-shadow);
-            box-shadow: var(--phoenix-setting-toggle-shadow);
-        }
-
-        .widthSwotName{
-            width: 70%;
-        }
-        .widthSwotWeight{
-            width:15%;
-        }
-        .widthSwotScore{
-            width: 15%;
-        }
-        .mc_header_detail{
-
-        }
-        .mc_time_unit{
-            width: 10%;
-            text-align: right;
-        }
-        .mc_workload_year{
-            width: 10%;
-            text-align: right;
-        }
-        .mc_manpower_year{
-            width: 10%;
-            text-align: right;
-        }
-        .mc_footer_sumary{
-            width: 10%;
-            text-align: right;
-            font-weight: bold;
-        }
-
-
-        
     </style>
+    
+    
+    
 </head>
   <body>
   <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
 <div class="container">
-
+    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-people-arrows"></i> MANPOWER CALCULATION</h1>
     <div class="row mb-3">
         
         <div class="col-md-3">
@@ -465,15 +404,16 @@
         <div class="offcanvas-body">
 
         <div class="row">
-                <div class="col-md-12" style="text-align: left;">
-                    <button style="margin-bottom:10px; float:right;" type="button" id="submitSaveTask" class="btn btn-success btn-circle" >
+                <div class="col-md-12" style="text-align: left; padding-bottom: 5px;">
+                    <!-- <button style="margin-bottom:10px; float:right;" type="button" id="submitSaveTask" class="btn btn-success btn-circle" >
                         <i class="fa-solid fa-floppy-disk"></i>
-                    </button>
+                    </button> -->
                     <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
                         <i class="fa-sharp fa-solid fa-bars-progress"></i>
                     </button>
-                     <button style="margin-bottom:10px; float:right;"  type="button" id="submitAddTask" class="btn btn-primary btn-circle " data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
-                    <button style="margin-bottom:10px; float:right;"  type="button" id="submitDeleteTask" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                    <button  type="button" id="addTaskModal" class="btn btn-primary btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                    <button  type="button" id="submitDeleteTask" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                    <button  type="button" id="submitEditCateTask" class="btn btn-warning btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
 
@@ -481,61 +421,74 @@
         <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                งานที่#1
-                </button>
+                    <div class="mc_checkbox_cate_mc">
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                    <div class="mc_cate_mc">   
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            งานที่#1
+                        </button> 
+                    </div>
+                    <br style="clear:both">
                 </h2>
                 <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
+                <div class="accordion-body" style="padding: 2px;">
                 <div  class="mb-3">
-                    <div class="row">
-                        <div class="col-md-12" style="text-align: left;">
+                    <div class="row" style="padding:5px;">
+                        <div class="col-md-12" style="text-align: left; ">
                     
-                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
-                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                            
+                            <button type="button" id="submitSaveTask" class="btn btn-success btn-circle sub_mc_btn" >
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
+                            <button   type="button" id="submit" class="btn btn-primary btn-circle sub_mc_btn"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button  type="button" id="submit" class="btn btn-danger btn-circle sub_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
                         </div>
                     </div>
-                    <table>
-                            <tr>
+                   
+                    <table class="table table-striped">
+                            <!-- <tr>
                                 <td colspan="3">
                                 <div  class="mb-3">
-                                    <!-- <input type="text" class="form-control" id="s1_name" placeholder="1. ชื่องาน"> -->
+                                   
                                     <textarea  class="form-control" id="s1_name" placeholder="1. ชื่องาน"></textarea>
                                 </div>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr >
                                 <td class="widthSwotName">
-                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.รายละเอียดงาน"> -->
-                                <div  class="mb-3">
-                                    <textarea  class="form-control" id="s1_name" placeholder="1.1 รายละเอียดงาน"></textarea>
-                                    <div  class="mb-3">
-                                        <table>
-                                            <tr>
-                                            
-                                                <td>
-                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
-                                                </td>
-                                                <td>
-                                                    <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
-                                                </td>
-                                            
-                                            </tr>
-                                        </table>
+                                    <input type="checkbox"  class="form-check-input">
+                                    <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.รายละเอียดงาน"> -->
+                                    <div  class="mb-3"  class="form-check-input">
+                                        <textarea  class="form-control mb-2" id="s1_name" placeholder="1.1 รายละเอียดงาน"></textarea>
+                                        <div  class="mb-3">
+                                            <table>
+                                                <tr>
+                                                
+                                                    <td>
+                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
+                                                    </td>
+                                                
+                                                </tr>
+                                            </table>
+                                        </div>
                                     </div>
-                                </div>
                                 </td>
                             </tr>
                             <tr >
                                 <td class="widthSwotName">
                                 <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.2 รายละเอียดงาน"> -->
-                                <textarea  class="form-control" id="s1_name" placeholder="1.2 รายละเอียดงาน"></textarea>
+                                <input type="checkbox"  class="form-check-input">
+                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.2 รายละเอียดงาน"></textarea>
                                 <div  class="mb-3">
                                     <table>
                                         <tr>
@@ -563,7 +516,8 @@
                             <tr>
                                 <td class="widthSwotName">
                                 <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.3 รายละเอียดงาน"> -->
-                                <textarea  class="form-control" id="s1_name" placeholder="1.3 รายละเอียดงาน"></textarea>
+                                <input type="checkbox"  class="form-check-input">
+                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.3 รายละเอียดงาน"></textarea>
                                 <div  class="mb-3">
                                     <table>
                                         <tr>
@@ -591,7 +545,8 @@
                             <tr >
                                 <td class="widthSwotName">
                                 <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.4 รายละเอียดงาน"> -->
-                                <textarea  class="form-control" id="s1_name" placeholder="1.4 รายละเอียดงาน"></textarea>
+                                <input type="checkbox"  class="form-check-input">
+                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.4 รายละเอียดงาน"></textarea>
                                 <div  class="mb-3">
                                     <table>
                                         <tr>
@@ -619,7 +574,8 @@
                             <tr >
                                 <td class="widthSwotName">
                                 <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.5 รายละเอียดงาน"> -->
-                                <textarea  class="form-control" id="s1_name" placeholder="1.5 รายละเอียดงาน"></textarea>
+                                <input type="checkbox"  class="form-check-input">
+                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.5 รายละเอียดงาน"></textarea>
                                 <div class="mb-3">
                                     <table>
                                         <tr>
@@ -660,21 +616,45 @@
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                งานที่#2
-                </button>
+
+                    <div class="mc_checkbox_cate_mc">
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                    <div class="mc_cate_mc">   
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            งานที่#2
+                        </button> 
+                    </div>
+                    <br style="clear:both">
+
+                    <!-- <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    งานที่#2
+                    </button> -->
                 </h2>
                 <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
+                    xx
                     <!-- Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content. -->
                 </div>
                 </div>
             </div>
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+
+
+                    <div class="mc_checkbox_cate_mc">
+                        <input type="checkbox" class="form-check-input">
+                    </div>
+                    <div class="mc_cate_mc">   
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            งานที่#3
+                        </button> 
+                    </div>
+                    <br style="clear:both">
+
+                <!-- <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                 งานที่#3
-                </button>
+                </button> -->
                 </h2>
                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
@@ -807,13 +787,14 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModelLabel">งาน</h1>
+        <h1 class="modal-title fs-5" id="exampleModelLabel">ภารกิจ</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <input type="text" class="form-control" id="" placeholder="">
+        <input type="text" class="form-control" id="cateTaskName" placeholder="" >
       </div>
       <div class="modal-footer">
+        <input type="hidden" id="actionTaskCate" value="add">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
         <button type="button" id="cateTaskSubmit" class="btn btn-primary">บันทึกข้อมูล</button>
       </div>
