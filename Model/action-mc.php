@@ -26,17 +26,30 @@ include("../config-mc.php");
 
     }else if($_REQUEST['action']=='showCate'){
 
-        $sql = "SELECT tc_id, tc_name,tc_code FROM task_cate";
-        $dataArray = array();
-        $result = $conn->query($sql);
+        $sqlTaskCate = "SELECT tc_id, tc_name,tc_code FROM task_cate where uu_id='$_REQUEST[uuid]'";
+        $dataTaskCateArray = array();
+        $resultTaskCate = $conn->query($sqlTaskCate);
 
-        if ($result->num_rows > 0) {
+        if ($resultTaskCate->num_rows > 0) {
         // output data of each row
-            while($row = $result->fetch_assoc()) {
-                $dataArray[] = $row;
+            while($row = $resultTaskCate->fetch_assoc()) {
+                $dataTaskCateArray[] = $row;
             }
         }
-        echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+
+        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+        FROM task where uu_id='$_REQUEST[uuid]'";
+        $dataTaskArray = array();
+        $resultTask = $conn->query($sqlTask);
+
+        if ($resultTask->num_rows > 0) {
+        // output data of each row
+            while($row = $resultTask->fetch_assoc()) {
+                $dataTaskArray[] = $row;
+            }
+        }
+
+        echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
 
     }else if($_REQUEST['action']=='updatedCate'){
 
@@ -93,6 +106,12 @@ include("../config-mc.php");
             ";
         if ($conn->query($sql_insert) === TRUE) {
             $checkError=true;
+
+            $last_id = mysqli_insert_id($conn);
+            $sql = "UPDATE task_cate SET tc_code='$last_id' WHERE tc_id='$last_id'";
+            $conn->query($sql);
+            
+
         }else{
             echo "Error insert: " . $sql_insert . "<br>" . $conn->error;
             $checkError=false;
@@ -118,6 +137,122 @@ include("../config-mc.php");
             echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
         }
     }
+
+
+
+
+
+
+    if($_REQUEST['action']=='findOneTask'){
+
+        $sql = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+        FROM task where uu_id='$_REQUEST[uu_id]' and t_id='$_REQUEST[t_id]'";
+        $dataArray = array();
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+            // output data of each row
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+               
+            } 
+            //echo"[]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+
+
+    }else if($_REQUEST['action']=='showTask'){
+
+       
+
+        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+        FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'";
+        $dataTaskArray = array();
+        $resultTask = $conn->query($sqlTask);
+
+        if ($resultTask->num_rows > 0) {
+        // output data of each row
+            while($row = $resultTask->fetch_assoc()) {
+                $dataTaskArray[] = $row;
+            }
+        }
+
+        echo "[{\"status\":\"200\",\"dataTask\":".json_encode($dataTaskArray)."}]";
+
+    }else if($_REQUEST['action']=='updatedTask'){
+
+        $sql = "UPDATE task_cate SET tc_name='$_REQUEST[tc_name]' WHERE tc_id='$_REQUEST[tc_id]'";
+
+        if ($conn->query($sql) === TRUE) {
+       // echo "Record updated successfully";
+        echo "[{\"status\":\"200\"}]";
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
+
+    }else if($_REQUEST['action']=='deleteTask'){
+        // sql to delete a record
+        $checkError=true;
+        $sql = "DELETE FROM task WHERE t_id='$_REQUEST[t_id]'";
+
+        if ($conn->query($sql) === TRUE) {
+        
+       // echo "[{\"status\":\"200\"}]";
+        
+
+        } else {
+            $checkError==false;
+        echo "Error deleting record: " . $conn->error;
+        }
+
+        if($checkError==true){
+            $sql_task = "
+            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+        FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'
+            ";
+            $dataArray = array();
+            $result_task = $conn->query($sql_task);
+            if ($result_task->num_rows > 0) {
+            // output data of each row
+                while($row = $result_task->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            } 
+
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        }
+
+    }else if($_REQUEST['action']=='insertTask'){
+            $sql_insert = "
+            INSERT INTO task 
+            (uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower) 
+            VALUES
+            ('$_REQUEST[uuid]','$_REQUEST[tc_code]','','','','','','','','','')
+            ";
+        if ($conn->query($sql_insert) === TRUE) {
+            $checkError=true;
+        }else{
+            echo "Error insert: " . $sql_insert . "<br>" . $conn->error;
+            $checkError=false;
+        }
+
+        if($checkError==true){
+            $sql_task = "
+            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+            FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'
+            ";
+            $dataArray = array();
+            $result_task = $conn->query($sql_task);
+            if ($result_task->num_rows > 0) {
+            // output data of each row
+                while($row = $result_task->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            } 
+
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        }
+    }
+
        
        
 

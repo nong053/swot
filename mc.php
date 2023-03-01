@@ -412,7 +412,7 @@
                         <i class="fa-sharp fa-solid fa-bars-progress"></i>
                     </button>
                     <button  type="button" id="addTaskModal" class="btn btn-primary btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
-                    <button  type="button" id="submitDeleteTask" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                    <button  type="button" id="deleteTaskCate" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
                     <button  type="button" id="editTaskCateModal" class="btn btn-warning btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                 </div>
             </div>
@@ -447,18 +447,9 @@
                     </div>
                    
                     <table class="table table-striped">
-                            <!-- <tr>
-                                <td colspan="3">
-                                <div  class="mb-3">
-                                   
-                                    <textarea  class="form-control" id="s1_name" placeholder="1. ชื่องาน"></textarea>
-                                </div>
-                                </td>
-                            </tr> -->
                             <tr >
                                 <td class="widthSwotName">
                                     <input type="checkbox"  class="form-check-input">
-                                    <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.รายละเอียดงาน"> -->
                                     <div  class="mb-3"  class="form-check-input">
                                         <textarea  class="form-control mb-2" id="s1_name" placeholder="1.1 รายละเอียดงาน"></textarea>
                                         <div  class="mb-3">
@@ -477,7 +468,6 @@
                                                     <td>
                                                         <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
                                                     </td>
-                                                
                                                 </tr>
                                             </table>
                                         </div>
