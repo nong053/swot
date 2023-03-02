@@ -37,7 +37,7 @@ include("../config-mc.php");
             }
         }
 
-        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uuid]'";
         $dataTaskArray = array();
         $resultTask = $conn->query($sqlTask);
@@ -69,7 +69,10 @@ include("../config-mc.php");
 
         if ($conn->query($sql) === TRUE) {
         
-       // echo "[{\"status\":\"200\"}]";
+        /* untill again
+        $sql_task = "DELETE FROM task WHERE t_id='$_REQUEST[tc_id]'";
+        $conn->query($sql_task);
+        */
         
 
         } else {
@@ -78,6 +81,8 @@ include("../config-mc.php");
         }
 
         if($checkError==true){
+
+            /*
             $sql_task_cate = "
             select uu_id,tc_code,tc_name,created_date,updated_date,tc_id
             from task_cate
@@ -88,13 +93,38 @@ include("../config-mc.php");
             $dataArray = array();
             $result_task_cate = $conn->query($sql_task_cate);
             if ($result_task_cate->num_rows > 0) {
-            // output data of each row
                 while($row = $result_task_cate->fetch_assoc()) {
                     $dataArray[] = $row;
                 }
             } 
-
             echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+            */
+
+            $sqlTaskCate = "SELECT tc_id, tc_name,tc_code FROM task_cate where uu_id='$_REQUEST[uuid]'";
+            $dataTaskCateArray = array();
+            $resultTaskCate = $conn->query($sqlTaskCate);
+    
+            if ($resultTaskCate->num_rows > 0) {
+            // output data of each row
+                while($row = $resultTaskCate->fetch_assoc()) {
+                    $dataTaskCateArray[] = $row;
+                }
+            }
+    
+            $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+            FROM task where uu_id='$_REQUEST[uuid]'";
+            $dataTaskArray = array();
+            $resultTask = $conn->query($sqlTask);
+    
+            if ($resultTask->num_rows > 0) {
+            // output data of each row
+                while($row = $resultTask->fetch_assoc()) {
+                    $dataTaskArray[] = $row;
+                }
+            }
+    
+            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
+
         }
 
     }else if($_REQUEST['action']=='insertTaskCate'){
@@ -118,6 +148,7 @@ include("../config-mc.php");
         }
 
         if($checkError==true){
+            /*
             $sql_task_cate = "
             select uu_id,tc_code,tc_name,created_date,updated_date,tc_id
             from task_cate
@@ -128,13 +159,40 @@ include("../config-mc.php");
             $dataArray = array();
             $result_task_cate = $conn->query($sql_task_cate);
             if ($result_task_cate->num_rows > 0) {
-            // output data of each row
                 while($row = $result_task_cate->fetch_assoc()) {
                     $dataArray[] = $row;
                 }
             } 
 
             echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+            */
+
+            $sqlTaskCate = "SELECT tc_id, tc_name,tc_code FROM task_cate where uu_id='$_REQUEST[uuid]'";
+            $dataTaskCateArray = array();
+            $resultTaskCate = $conn->query($sqlTaskCate);
+    
+            if ($resultTaskCate->num_rows > 0) {
+            // output data of each row
+                while($row = $resultTaskCate->fetch_assoc()) {
+                    $dataTaskCateArray[] = $row;
+                }
+            }
+    
+            $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+            FROM task where uu_id='$_REQUEST[uuid]'";
+            $dataTaskArray = array();
+            $resultTask = $conn->query($sqlTask);
+    
+            if ($resultTask->num_rows > 0) {
+            // output data of each row
+                while($row = $resultTask->fetch_assoc()) {
+                    $dataTaskArray[] = $row;
+                }
+            }
+    
+            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
+
+
         }
     }
 
@@ -145,7 +203,7 @@ include("../config-mc.php");
 
     if($_REQUEST['action']=='findOneTask'){
 
-        $sql = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+        $sql = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uu_id]' and t_id='$_REQUEST[t_id]'";
         $dataArray = array();
             $result = $conn->query($sql);
@@ -164,7 +222,7 @@ include("../config-mc.php");
 
        
 
-        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'";
         $dataTaskArray = array();
         $resultTask = $conn->query($sqlTask);
@@ -178,9 +236,17 @@ include("../config-mc.php");
 
         echo "[{\"status\":\"200\",\"dataTask\":".json_encode($dataTaskArray)."}]";
 
-    }else if($_REQUEST['action']=='updatedTask'){
+    }else if($_REQUEST['action']=='updateTask'){
 
-        $sql = "UPDATE task_cate SET tc_name='$_REQUEST[tc_name]' WHERE tc_id='$_REQUEST[tc_id]'";
+        $sql = "UPDATE task 
+        SET 
+        t_name='$_REQUEST[t_name]',
+        t_day='$_REQUEST[t_day]',
+        t_hour='$_REQUEST[t_hour]', 
+        t_minute='$_REQUEST[t_minute]',
+        t_quantity='$_REQUEST[t_quantity]'
+         
+        WHERE t_code='$_REQUEST[t_code]'";
 
         if ($conn->query($sql) === TRUE) {
        // echo "Record updated successfully";
@@ -192,7 +258,7 @@ include("../config-mc.php");
     }else if($_REQUEST['action']=='deleteTask'){
         // sql to delete a record
         $checkError=true;
-        $sql = "DELETE FROM task WHERE t_id='$_REQUEST[t_id]'";
+        $sql = "DELETE FROM task WHERE t_code='$_REQUEST[t_code]' and uu_id='$_REQUEST[uuid]'";
 
         if ($conn->query($sql) === TRUE) {
         
@@ -206,7 +272,7 @@ include("../config-mc.php");
 
         if($checkError==true){
             $sql_task = "
-            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'
             ";
             $dataArray = array();
@@ -224,12 +290,16 @@ include("../config-mc.php");
     }else if($_REQUEST['action']=='insertTask'){
             $sql_insert = "
             INSERT INTO task 
-            (uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower) 
+            (uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower,created_date,updated_date) 
             VALUES
-            ('$_REQUEST[uuid]','$_REQUEST[tc_code]','','','','','','','','','')
+            ('$_REQUEST[uuid]','','$_REQUEST[tc_code]','','','','','','','','',now(),now())
             ";
         if ($conn->query($sql_insert) === TRUE) {
             $checkError=true;
+            $last_id = mysqli_insert_id($conn);
+            $sql = "UPDATE task SET t_code='$last_id' WHERE t_id='$last_id'";
+            $conn->query($sql);
+
         }else{
             echo "Error insert: " . $sql_insert . "<br>" . $conn->error;
             $checkError=false;
@@ -237,7 +307,7 @@ include("../config-mc.php");
 
         if($checkError==true){
             $sql_task = "
-            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower 
+            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
             FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'
             ";
             $dataArray = array();
