@@ -9,7 +9,7 @@ include("../config-mc.php");
     if($_REQUEST['action']=='findOneCate'){
 
         $sql = "
-       select * from task_cate where tc_id='$_REQUEST[tc_id]'
+       select * from task_cate where tc_code='$_REQUEST[tc_code]'
         ";
         $dataArray = array();
             $result = $conn->query($sql);
@@ -26,7 +26,7 @@ include("../config-mc.php");
 
     }else if($_REQUEST['action']=='showCate'){
 
-        $sqlTaskCate = "SELECT tc_id, tc_name,tc_code FROM task_cate where uu_id='$_REQUEST[uuid]'";
+        $sqlTaskCate = "SELECT tc_id, tc_name,tc_code,current_person FROM task_cate where uu_id='$_REQUEST[uuid]'";
         $dataTaskCateArray = array();
         $resultTaskCate = $conn->query($sqlTaskCate);
 
@@ -37,7 +37,7 @@ include("../config-mc.php");
             }
         }
 
-        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_x_time,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uuid]'";
         $dataTaskArray = array();
         $resultTask = $conn->query($sqlTask);
@@ -53,7 +53,7 @@ include("../config-mc.php");
 
     }else if($_REQUEST['action']=='updatedCate'){
 
-        $sql = "UPDATE task_cate SET tc_name='$_REQUEST[tc_name]' WHERE tc_id='$_REQUEST[tc_id]'";
+        $sql = "UPDATE task_cate SET tc_name='$_REQUEST[tc_name]',current_person='$_REQUEST[current_person]'   WHERE tc_code='$_REQUEST[tc_code]'";
 
         if ($conn->query($sql) === TRUE) {
        // echo "Record updated successfully";
@@ -111,7 +111,7 @@ include("../config-mc.php");
                 }
             }
     
-            $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+            $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_x_time,manpower ,t_quantity
             FROM task where uu_id='$_REQUEST[uuid]'";
             $dataTaskArray = array();
             $resultTask = $conn->query($sqlTask);
@@ -178,7 +178,7 @@ include("../config-mc.php");
                 }
             }
     
-            $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+            $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_x_time,manpower ,t_quantity
             FROM task where uu_id='$_REQUEST[uuid]'";
             $dataTaskArray = array();
             $resultTask = $conn->query($sqlTask);
@@ -203,7 +203,7 @@ include("../config-mc.php");
 
     if($_REQUEST['action']=='findOneTask'){
 
-        $sql = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+        $sql = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_x_time,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uu_id]' and t_id='$_REQUEST[t_id]'";
         $dataArray = array();
             $result = $conn->query($sql);
@@ -222,7 +222,7 @@ include("../config-mc.php");
 
        
 
-        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+        $sqlTask = "SELECT t_id,uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_x_time,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'";
         $dataTaskArray = array();
         $resultTask = $conn->query($sqlTask);
@@ -244,7 +244,10 @@ include("../config-mc.php");
         t_day='$_REQUEST[t_day]',
         t_hour='$_REQUEST[t_hour]', 
         t_minute='$_REQUEST[t_minute]',
-        t_quantity='$_REQUEST[t_quantity]'
+        t_quantity='$_REQUEST[t_quantity]',
+        t_x_time='$_REQUEST[t_x_time]',
+        manpower='$_REQUEST[manpower]'
+       
          
         WHERE t_code='$_REQUEST[t_code]'";
 
@@ -272,7 +275,7 @@ include("../config-mc.php");
 
         if($checkError==true){
             $sql_task = "
-            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+            SELECT t_id,uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_x_time,manpower ,t_quantity
         FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'
             ";
             $dataArray = array();
@@ -290,9 +293,9 @@ include("../config-mc.php");
     }else if($_REQUEST['action']=='insertTask'){
             $sql_insert = "
             INSERT INTO task 
-            (uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower,created_date,updated_date) 
+            (uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_quantity,t_x_time,manpower,created_date,updated_date) 
             VALUES
-            ('$_REQUEST[uuid]','','$_REQUEST[tc_code]','','','','','','','','',now(),now())
+            ('$_REQUEST[uuid]','','$_REQUEST[tc_code]','','0','0','0','0','0','0',now(),now())
             ";
         if ($conn->query($sql_insert) === TRUE) {
             $checkError=true;
@@ -307,7 +310,7 @@ include("../config-mc.php");
 
         if($checkError==true){
             $sql_task = "
-            SELECT t_id,uu_id,t_code,tc_code,t_name,t_person,t_day,t_hour,t_minute,t_x_time,t_x_quantity,manpower ,t_quantity
+            SELECT t_id,uu_id,t_code,tc_code,t_name,t_day,t_hour,t_minute,t_x_time,manpower ,t_quantity
             FROM task where uu_id='$_REQUEST[uuid]' and tc_code='$_REQUEST[tc_code]'
             ";
             $dataArray = array();

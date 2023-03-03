@@ -47,18 +47,23 @@ var listTaskCateFn = function(data){
 									htmlListTaskCate+="<table>";
 										htmlListTaskCate+="<tr>";
 											htmlListTaskCate+="<td>";
+												htmlListTaskCate+=" <label for='t_day-"+indexEntryTask['t_code']+"' class='form-label'>วัน</label>";
 												htmlListTaskCate+="<input type=\"text\" name=\"t_day-"+indexEntryTask['t_code']+"\" id=\"t_day-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"วัน\" value=\""+indexEntryTask['t_day']+"\">";
 											htmlListTaskCate+="</td>";
 											htmlListTaskCate+="<td>";
+												htmlListTaskCate+=" <label for='t_hour-"+indexEntryTask['t_code']+"' class='form-label'>ชั่วโมง</label>";
 												htmlListTaskCate+="<input type=\"text\" name=\"t_hour-"+indexEntryTask['t_code']+"\" id=\"t_hour-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"ชั่วโมง\" value=\""+indexEntryTask['t_hour']+"\">";
 											htmlListTaskCate+="</td>";
 											htmlListTaskCate+="<td>";
+												htmlListTaskCate+=" <label for='t_minute-"+indexEntryTask['t_code']+"' class='form-label'>นาที</label>";
 												htmlListTaskCate+="<input type=\"text\" name=\"t_minute-"+indexEntryTask['t_code']+"\" id=\"t_minute-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"นาที\" value=\""+indexEntryTask['t_minute']+"\">";
 											htmlListTaskCate+="</td>";
 											htmlListTaskCate+="<td>";
+												htmlListTaskCate+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง</label>";
 												htmlListTaskCate+="<input type=\"text\" name=\"t_quantity-"+indexEntryTask['t_code']+"\" id=\"t_quantity-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"ครั้ง\" value=\""+indexEntryTask['t_quantity']+"\">";
 											htmlListTaskCate+="</td>";
 										htmlListTaskCate+="</tr>";
+										
 									htmlListTaskCate+="</table>";
 									htmlListTaskCate+="</div>";
 								htmlListTaskCate+="</div>";
@@ -69,6 +74,14 @@ var listTaskCateFn = function(data){
 				});
 				htmlListTaskCate+="</tbody>";
 				htmlListTaskCate+="</table>";
+				// htmlListTaskCate+="<table>";
+				// 	htmlListTaskCate+="<tr>";
+				// 		htmlListTaskCate+="<td colspan='4' class=\"widthSwotName\">";
+				// 		htmlListTaskCate+=" <label for='current_person-"+indexEntryTaskCate['t_code']+"' class='form-label'>กำลังพล(ปัจจุบัน)</label>";
+				// 		htmlListTaskCate+="<input type=\"text\" class=\"form-control\" id=\"current_person-"+indexEntryTaskCate['t_code']+"\" placeholder=\"กำลังพล(ปัจจุบัน)\" value="+indexEntryTaskCate['current_person']+">";
+				// 		htmlListTaskCate+="</td>";
+				// 	htmlListTaskCate+="</tr>";
+				// htmlListTaskCate+="</table>";
 				
 			htmlListTaskCate+="</div>";
 			htmlListTaskCate+="</div>";
@@ -76,6 +89,102 @@ var listTaskCateFn = function(data){
 	});
 
 	$("#accordionFlushExample").html(htmlListTaskCate);
+}
+
+var listTaskCateDisplayFn = function(data){
+	var htmlGauageChartArea="";
+	var htmlDataTableMCDisplay="";
+	var totalAllManpower=0.00;
+	var totalAllTime=0;
+	var totalAllQuantity=0;
+	$("#gaugeChartArea").html("");
+	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
+		var tc_name ="";
+		if(indexEntryTaskCate['tc_name'].length>20){
+			tc_name = indexEntryTaskCate['tc_name'].substring(1,20)+"...";
+		}else{
+			tc_name=indexEntryTaskCate['tc_name'];
+		}
+		
+		 
+		htmlGauageChartArea="";
+		htmlGauageChartArea+="<div class=\"col-md-3\">";
+			htmlGauageChartArea+="<div class=\"card text-bg-default  mb-3\">";
+				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center;\">"+tc_name+"</div>";
+				htmlGauageChartArea+="<div class=\"card-body\" style=\"text-align: center; \">";
+				htmlGauageChartArea+="<div id=\"gauge"+indexEntryTaskCate['tc_code']+"\" class=\"graph\" ></div>";
+				htmlGauageChartArea+="</div>";
+			htmlGauageChartArea+="</div>";
+		htmlGauageChartArea+="</div>";
+
+
+
+
+
+
+		htmlDataTableMCDisplay+="<div class=\"card  mb-3\" >";
+			htmlDataTableMCDisplay+="<div class=\"card-header\">"+indexEntryTaskCate['tc_name']+"</div>";
+			htmlDataTableMCDisplay+="<div class=\"card-body\">";
+				htmlDataTableMCDisplay+="<table class=\"table  table-striped\">";
+					htmlDataTableMCDisplay+="<thead>";
+						htmlDataTableMCDisplay+="<th class=\"mc_detail\">";
+						htmlDataTableMCDisplay+="รายละเอียดงาน";
+						htmlDataTableMCDisplay+="</th>";
+						htmlDataTableMCDisplay+=" <th class=\"mc_time_unit\">";
+						htmlDataTableMCDisplay+="เวลา:หน่วย";
+						htmlDataTableMCDisplay+="</th>";
+						htmlDataTableMCDisplay+="<th class=\"mc_workload_year\">";
+						htmlDataTableMCDisplay+="ปริมาณงาน:ครั้ง";
+						htmlDataTableMCDisplay+=" </th>";
+						htmlDataTableMCDisplay+="<th class=\"mc_manpower_year\">";
+						htmlDataTableMCDisplay+="อัตรากำลัง:ปี";
+						htmlDataTableMCDisplay+="</th>";
+					htmlDataTableMCDisplay+="</thead>";
+					htmlDataTableMCDisplay+="<tbody>";
+					var totalManpowerByCate=0.00;
+					$.each(data['dataTask'],function(index,indexEntryTask){
+						if(indexEntryTaskCate['tc_code']==indexEntryTask['tc_code']){
+							htmlDataTableMCDisplay+="<tr>";
+								htmlDataTableMCDisplay+="<td class=\"mc_detail\">";
+								htmlDataTableMCDisplay+=indexEntryTask['t_name'];
+								htmlDataTableMCDisplay+=" </td>";
+								htmlDataTableMCDisplay+="<td class=\"mc_time_unit\">"+commaSeparateNumber(indexEntryTask['t_x_time'])+"</td>";
+								htmlDataTableMCDisplay+="<td class=\"mc_workload_year\">"+commaSeparateNumber(indexEntryTask['t_quantity'])+"</td>";
+								htmlDataTableMCDisplay+="<td class=\"mc_manpower_year\">"+commaSeparateNumber(indexEntryTask['manpower'])+"</td>";
+								totalManpowerByCate+=(+indexEntryTask['manpower']);
+								totalAllManpower+=(+indexEntryTask['manpower']);
+								totalAllTime+=(+indexEntryTask['t_x_time']);
+								totalAllQuantity+=(+indexEntryTask['t_quantity']);
+							htmlDataTableMCDisplay+="</tr>";
+
+						}
+					});
+					htmlDataTableMCDisplay+="<tr style=\"background-color:antiquewhite;\">";
+						htmlDataTableMCDisplay+="<td colspan=\"3\">อัตรากำลังพล</td>";
+						htmlDataTableMCDisplay+="<td class=\"mc_footer_sumary\">"+commaSeparateNumber(parseFloat(totalManpowerByCate).toFixed(2))+"/"+indexEntryTaskCate['current_person']+"</td>";
+					htmlDataTableMCDisplay+="</tr>";
+								
+					htmlDataTableMCDisplay+="</tbody>";
+				htmlDataTableMCDisplay+="</table>";
+			htmlDataTableMCDisplay+="</div>";
+		htmlDataTableMCDisplay+="</div>";
+		$("#gaugeChartArea").append(htmlGauageChartArea);
+		//alert(totalManpowerByCate+"-"+indexEntryTaskCate['current_person']);
+		//alert((totalManpowerByCate/indexEntryTaskCate['current_person'])*100);
+		createGauges(indexEntryTaskCate['tc_code'],((totalManpowerByCate/indexEntryTaskCate['current_person']))*100);
+	});
+	
+
+	
+
+
+	$("#dataTableMCDisplay").html(htmlDataTableMCDisplay);
+	$("#totalTime").html(commaSeparateNumber(totalAllTime));
+	$("#totalQuantity").html(commaSeparateNumber(totalAllQuantity));
+	$("#totalManPower").html(commaSeparateNumber(totalAllManpower));
+
+
+	
 }
 
 function createGauges(id,value_param) {
@@ -116,7 +225,7 @@ function createGauges(id,value_param) {
 	});
 }
 
-var findOneTaskCate=function(uuid,tc_id){
+var findOneTaskCate=function(uuid,tc_code){
 	
     $.ajax({
 		url:"./Model/action-mc.php",
@@ -125,7 +234,7 @@ var findOneTaskCate=function(uuid,tc_id){
         async:false,
 		data:{
 			"uuid":uuid,
-			"tc_id":tc_id,
+			"tc_code":tc_code,
 			"action":"findOneCate",
 		},
 		success:function(data){
@@ -133,6 +242,7 @@ var findOneTaskCate=function(uuid,tc_id){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 					$("#cateTaskName").val(data[0]['data'][0]['tc_name']);
+					$("#currentPerson").val(data[0]['data'][0]['current_person']);
 					$("#idTaskCate").val(data[0]['data'][0]['tc_id']);
 					$("#actionTaskCate").val("edit");
 				}
@@ -159,13 +269,14 @@ var showTaskCate=function(uuid){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 					listTaskCateFn(data[0]);
+					listTaskCateDisplayFn(data[0]);
 				}
 			}
 		}
 	});
 	
 }
-var updateTaskCate=function(uuid){
+var updateTaskCateFn=function(uuid){
 
     $.ajax({
 		url:"./Model/action-mc.php",
@@ -175,14 +286,16 @@ var updateTaskCate=function(uuid){
 		data:{
 			"uuid":uuid,
 			"action":"updatedCate",
-			"tc_name":"9999",
-			"tc_id":"2"
+			"tc_name":$("#cateTaskName").val(),
+			"current_person":$("#currentPerson").val(),
+			"tc_code":$("#idTaskCate").val(),
 		},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert("ok success");
+					//alert("ok success");
+					location.reload();
 				}
 			}
 		}
@@ -207,6 +320,7 @@ var deleteTaskCate=function(uuid,tc_id){
 				if(data[0]['status']=="200"){
 					//alert("ok success");
 					listTaskCateFn(data[0]);
+					listTaskCateDisplayFn(data[0]);
 				}
 			}
 		}
@@ -241,6 +355,7 @@ var deleteTaskFn=function(uuid,t_code,tc_code){
 var clearFormTaskCateFn = function(){
 
 	$("#cateTaskName").val("");
+	$("#currentPerson").val("");
 	$("#idTaskCate").val("");
 	$("#actionTaskCate").val("add");
 	$(".cate_mc").prop("checked",false);
@@ -264,6 +379,8 @@ var insertTaskCateFn=function(uuid){
 			"uuid":uuid,
 			"action":"insertTaskCate",
 			"tc_name":$("#cateTaskName").val(),
+			"current_person":$("#currentPerson").val(),
+			
 		},
 		success:function(data){
 
@@ -291,18 +408,28 @@ var htmlListTask="";
 						htmlListTask+="<table>";
 							htmlListTask+="<tr>";
 								htmlListTask+="<td>";
+									htmlListTask+=" <label for='t_day-"+indexEntryTask['t_code']+"' class='form-label'>วัน</label>";
 									htmlListTask+="<input type=\"text\" name=\"t_day-"+indexEntryTask['t_code']+"\" id=\"t_day-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"วัน\">";
 								htmlListTask+="</td>";
 								htmlListTask+="<td>";
+									htmlListTask+=" <label for='t_hour-"+indexEntryTask['t_code']+"' class='form-label'>ชั่วโมง</label>";
 									htmlListTask+="<input type=\"text\" name=\"t_hour-"+indexEntryTask['t_code']+"\" id=\"t_hour-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"ชั่วโมง\">";
 								htmlListTask+="</td>";
 								htmlListTask+="<td>";
+									htmlListTask+=" <label for='t_minute-"+indexEntryTask['t_code']+"' class='form-label'>นาที</label>";
 									htmlListTask+="<input type=\"text\" name=\"t_minute-"+indexEntryTask['t_code']+"\" id=\"t_minute-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"นาที\">";
 								htmlListTask+="</td>";
 								htmlListTask+="<td>";
+									htmlListTask+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง</label>";
 									htmlListTask+="<input type=\"text\" name=\"t_quantity-"+indexEntryTask['t_code']+"\" id=\"t_quantity-"+indexEntryTask['t_code']+"\" class=\"form-control\" placeholder=\"ครั้ง\">";
 								htmlListTask+="</td>";
 							htmlListTask+="</tr>";
+							// htmlListTask+="<tr>";
+							// 	htmlListTask+="<td colspan='4' class=\"widthSwotName\">";
+							// 	htmlListTask+=" <label for='current_person-"+indexEntryTask['t_code']+"' class='form-label'>กำลังพล(ปัจจุบัน)</label>";
+							// 		htmlListTask+="<input type=\"text\" class=\"form-control\" id=\"current_person-"+indexEntryTask['t_code']+"\" placeholder=\"กำลังพล(ปัจจุบัน)\">";
+							// 	htmlListTask+="</td>";
+							// htmlListTask+="</tr>";
 						htmlListTask+="</table>";
 						htmlListTask+="</div>";
 					htmlListTask+="</div>";
@@ -340,6 +467,13 @@ var addTaskFn = function(uuid,tc_code){
 }
 
 var updateTaskFn = function(uuid,t_code){
+	var t_x_time=0.00;
+	var manpower=0.00;
+	t_x_time=(parseInt($("#t_day-"+t_code).val())*parseInt($("#t_hour-"+t_code).val())*parseInt($("#t_minute-"+t_code).val())*parseInt($("#t_quantity-"+t_code).val()))
+	manpower=parseFloat(t_x_time/88200).toFixed(2);
+	// alert(t_x_time);
+	// alert(manpower);
+	
 	var dataReturn=true;
 	$.ajax({
 		url:"./Model/action-mc.php",
@@ -354,6 +488,9 @@ var updateTaskFn = function(uuid,t_code){
 			"t_hour":$("#t_hour-"+t_code).val(),
 			"t_minute":$("#t_minute-"+t_code).val(),
 			"t_quantity":$("#t_quantity-"+t_code).val(),
+			"t_x_time":t_x_time,
+			"manpower":manpower,
+			"current_person":$("#current_person-"+t_code).val(),
 			"t_code":t_code,
 		},
 		success:function(data){
@@ -368,6 +505,7 @@ var updateTaskFn = function(uuid,t_code){
 		}
 		
 	});
+	
 }
 
 $(document).ready(function(){
@@ -376,18 +514,16 @@ $(document).ready(function(){
 	sessionStorage.setItem('uuid', uuid);
 
 
-   //findOneTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-   showTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-   //updateTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-   //deleteTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-   //insertTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 
+   showTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+
+/*
 	createGauges(1,139);
 	createGauges(2,91);
 	createGauges(3,83.66);
 	createGauges(4,120.5);
 
-
+*/
 	
 	
 
@@ -400,19 +536,21 @@ $(document).ready(function(){
 
 
 	 $("#editTaskCateModal").click(function(){
-		var tc_id =$(".cate_mc:checked").attr("id");
-		tc_id=tc_id.split("-");
-		tc_id=tc_id[1];
+		var tc_code =$(".cate_mc:checked").attr("id");
+		tc_code=tc_code.split("-");
+		tc_code=tc_code[1];
 		
-			findOneTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6',tc_id);
+			findOneTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6',tc_code);
 	 });
 
 
 	 $("#cateTaskSubmit").click(function(){
-		//alert("cateTaskSubmit");
+		
 		if($("#actionTaskCate").val()=="add"){
+			//alert("add");
 			insertTaskCateFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 		}else{
+			//alert("edt");
 			updateTaskCateFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 		}
 		
