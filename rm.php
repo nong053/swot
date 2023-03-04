@@ -113,6 +113,12 @@
         .opportunity_occurred_txt{
             text-align: center;
         }
+        .headeTitle{
+            color:white;
+            text-align: center;
+            position: absolute;
+            top:15px;
+        }
 
         
         
@@ -122,7 +128,7 @@
 
   <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
 <div class="container">
-
+    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-building-shield"></i> RISK MANAGEMENT</h1>
     <div class="row mb-3">
         
         <div class="col-md-12">
@@ -384,15 +390,47 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">Risk Managment</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i class="fa-sharp fa-solid fa-angles-left"></i> Risk Managment Form</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
         </div>
         <div class="offcanvas-body">
         <div class="row">
-            <div class="col-md-12" style="text-align: left;">
+            <div class="col-md-12" style="text-align: left;  margin-bottom:10px;">
                 <!-- <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
-                <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button>
+                <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
                 <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-warning btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
+            
+               
+
+                      
+
+<!-- 
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button> -->
+                            <button style="margin-bottom:10px; margin:1px; float:right; " data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
+                                <i class="fa-sharp fa-solid fa-bars-progress"></i>
+                            </button>
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitExcel" class="btn btn-warning btn-circle ">
+                            <i class="fa-sharp fa-solid fa-file-excel"></i>
+                            </button>
+
+                            
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPrint" class="btn btn-info btn-circle ">
+                                <i class="fa-sharp fa-solid fa-print"></i>
+                            </button>
+
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPDF" class="btn btn-danger btn-circle ">
+                                <i class="fa-sharp fa-solid fa-file-pdf"></i>
+                            </button>
+
+                            
+
+                            
+                        
+                        
             </div>
         </div>
         <!-- accordian start-->
@@ -407,77 +445,72 @@
                 <div class="accordion-body">
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                    
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                     <!-- form here. -->
-                    <form>
-                        <div  class="alert alert-primary mb-3" role="alert">
-                           
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="xxx"  placeholder="รหัส">
-                             
-                            </div>
-                            <div class="mb-3">
-                                <textarea  class="form-control" placeholder="ชื่อความเสี่ยง"></textarea>
-                            </div>
-                            <div class="mb-3">
-                              
-                                <textarea  class="form-control" placeholder="ลักษณะ"></textarea>
-                            </div>
-                            <div class="mb-3">
-                               
-                                <textarea  class="form-control" placeholder="ปัจจัยเสี่ยง"></textarea>
-                            </div>
-                            <div class="mb-3">
+                    <div id="riskFormArea">
+
+                    </div>
+                    <!--
+                    <div  class="alert alert-primary mb-3" role="alert">
+                        <input type="radio" name="task_mc" id="XX" class="form-check-input rm_radio">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="xxx"  placeholder="รหัส">
                             
-                                <textarea  class="form-control" placeholder="ผลกระทบ"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="xxx"  placeholder="ผู้รับผิดชอบ">
-                             
-                            </div>
-                            <div class="mb-3">
-                            
-                                <select  class="form-control">
-                                    <option>กลยุทธ์การจัดการความเสี่ยง</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" id="xxx"  placeholder="ระยะเวลาการปฏิบัติ">
-                            </div>
-                            <div class="mb-3">
-                                <select  class="form-control">
-                                    <option>โอกาส(5คะแนน)</option>
-                                    <option>โอกาส(4คะแนน)</option>
-                                    <option>โอกาส(3คะแนน)</option>
-                                    <option>โอกาส(2คะแนน)</option>
-                                    <option>โอกาส(5คะแนน)</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <select  class="form-control">
-                                    <option>ผลกระทบ(5คะแนน)</option>
-                                    <option>ผลกระทบ(4คะแนน)</option>
-                                    <option>ผลกระทบ(3คะแนน)</option>
-                                    <option>ผลกระทบ(2คะแนน)</option>
-                                    <option>ผลกระทบ(1คะแนน)</option>
-                                </select>
-                            </div>
-
-                            
-
-
-
-
-                           
                         </div>
-
+                        <div class="mb-3">
+                            <textarea  class="form-control" placeholder="ชื่อความเสี่ยง"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <textarea  class="form-control" placeholder="ลักษณะ"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            
+                            <textarea  class="form-control" placeholder="ปัจจัยเสี่ยง"></textarea>
+                        </div>
+                        <div class="mb-3">
                         
-                      
-                    </form>
+                            <textarea  class="form-control" placeholder="ผลกระทบ"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="xxx"  placeholder="ผู้รับผิดชอบ">
+                            
+                        </div>
+                        <div class="mb-3">
+                        
+                            <select  class="form-control">
+                                <option>กลยุทธ์การจัดการความเสี่ยง</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="xxx"  placeholder="ระยะเวลาการปฏิบัติ">
+                        </div>
+                        <div class="mb-3">
+                            <select  class="form-control">
+                                <option>โอกาส(5คะแนน)</option>
+                                <option>โอกาส(4คะแนน)</option>
+                                <option>โอกาส(3คะแนน)</option>
+                                <option>โอกาส(2คะแนน)</option>
+                                <option>โอกาส(5คะแนน)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <select  class="form-control">
+                                <option>ผลกระทบ(5คะแนน)</option>
+                                <option>ผลกระทบ(4คะแนน)</option>
+                                <option>ผลกระทบ(3คะแนน)</option>
+                                <option>ผลกระทบ(2คะแนน)</option>
+                                <option>ผลกระทบ(1คะแนน)</option>
+                            </select>
+                        </div>
+                    </div>
+                    -->
                     <!-- form here. -->
 
                 </div>
@@ -493,15 +526,17 @@
                 <div class="accordion-body">
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                    
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                 <!-- form here. -->
-                    <form>
+                    <div id="estimatedRiskFormArea">
+                        <!--
                         <div  class="alert alert-primary mb-3" role="alert">
-                           
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="xxx"  placeholder="รหัส">
                             </div>
@@ -515,9 +550,9 @@
                             <div class="mb-3">
                                 <textarea  class="form-control" placeholder="คำอธิบาย"></textarea>
                             </div>
-                           
                         </div>
-                    </form>
+                    -->
+                    </div>
                     <!-- form here. -->
 
                 </div>
@@ -534,16 +569,18 @@
 
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                    
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
                         </div>
                     </div>
 
                     <!-- form here. -->
-                    <form>
-                        <div  class="alert alert-primary mb-3" role="alert">
-                           
+                    <div id="effectRiskFormArea">
+
+                        <!-- <div  class="alert alert-primary mb-3" role="alert">
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="xxx"  placeholder="รหัส">
                             </div>
@@ -556,11 +593,9 @@
                             <div class="mb-3">
                             <textarea  class="form-control" placeholder="คำอธิบาย"></textarea>
                             </div>
+                        </div> -->
 
-                            
-                           
-                        </div>
-                    </form>
+                    </div>
                     <!-- form here. -->
                 </div>
                 </div>
@@ -576,6 +611,14 @@
                 <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body">
                     <!-- form here. -->
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: left;">
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
+                          
+                        </div>
+                    </div>
                     <form>
                         <div  class="alert alert-primary mb-3" role="alert">
                            
@@ -683,16 +726,17 @@
 
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                    
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
                             <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
                         </div>
                     </div>
 
                     <!-- form here. -->
-                    <form>
-                        <div  class="alert alert-primary mb-3" role="alert">
-                           
+                    <div id="mitigateRisksFormArea">
+                        <!-- <div  class="alert alert-primary mb-3" role="alert">
                             <div class="mb-3">
                                 <input type="text" class="form-control" id="xxx"  placeholder="รหัส">
                             </div>
@@ -702,11 +746,8 @@
                             <div class="mb-3">
                             <textarea  class="form-control" placeholder="คำอธิบาย"></textarea>
                             </div>
-
-                            
-                           
-                        </div>
-                    </form>
+                        </div> -->
+                    </div>
                     <!-- form here. -->
                 </div>
                 </div>
@@ -749,6 +790,30 @@
 
    
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModelLabel">ตัวอย่างข้อมูล</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <select class="form-select" id="dataBusinessType" aria-label="Default select example">
+           <option>ตัวอย่างข้อมูล 1</option>
+           <option>ตัวอย่างข้อมูล 2</option>
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="getExampleSubmit" class="btn btn-primary">Load</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Model -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
