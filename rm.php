@@ -445,11 +445,11 @@
                 <div class="accordion-body">
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="btnRiskSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
-                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
-                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="btnRiskAdd" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button style="margin-bottom:10px; float:right;"  type="button" id="btnRiskDel" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                     <!-- form here. -->
