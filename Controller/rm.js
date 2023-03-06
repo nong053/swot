@@ -1,6 +1,6 @@
-var listRiskFn = function(data){
+var listRiskFormFn = function(data){
     var htmlFormRisk="";
-    $.each(data,function(index,indexEntry){
+    $.each(data['dataRisk'],function(index,indexEntry){
         
         htmlFormRisk+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
             htmlFormRisk+="<input type=\"radio\"  id=\"risk_radio-"+indexEntry['r_code']+"\"  class=\"form-check-input risk_radio\">";
@@ -24,7 +24,9 @@ var listRiskFn = function(data){
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control stm_code_select_area\" id=\"stm_code-"+indexEntry['r_code']+"\">";
-                htmlFormRisk+="<option>กลยุทธ์การจัดการความเสี่ยง</option>";
+                $.each(data['dataStm'],function(indexStm,indexEntryStm){
+                    htmlFormRisk+="<option value="+indexEntryStm['stm_code']+">"+indexEntryStm['stm_name']+"</option>";
+                });
                 htmlFormRisk+="</select>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
@@ -35,20 +37,16 @@ var listRiskFn = function(data){
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control lh_code_select_area\" id=\"lh_code-"+indexEntry['r_code']+"\">";
-                    htmlFormRisk+="<option>โอกาส(5คะแนน)</option>";
-                    htmlFormRisk+="<option>โอกาส(4คะแนน)</option>";
-                    htmlFormRisk+="<option>โอกาส(3คะแนน)</option>";
-                    htmlFormRisk+="<option>โอกาส(2คะแนน)</option>";
-                    htmlFormRisk+="<option>โอกาส(1คะแนน)</option>";
+                $.each(data['dataLh'],function(indexLm,indexEntryLh){
+                    htmlFormRisk+="<option value="+indexEntryLh['lh_code']+">"+indexEntryLh['lh_name']+"(ระดับ"+indexEntryLh['lh_score']+")</option>";
+                });
                 htmlFormRisk+="</select>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control im_code_select_area\" id=\"im_code-"+indexEntry['r_code']+"\">";
-                    htmlFormRisk+="<option>ผลกระทบ(5คะแนน)</option>";
-                    htmlFormRisk+="<option>ผลกระทบ(4คะแนน)</option>";
-                    htmlFormRisk+="<option>ผลกระทบ(3คะแนน)</option>";
-                    htmlFormRisk+="<option>ผลกระทบ(2คะแนน)</option>";
-                    htmlFormRisk+="<option>ผลกระทบ(1คะแนน)</option>";
+                $.each(data['dataIm'],function(indexIm,indexEntryIm){
+                    htmlFormRisk+="<option value="+indexEntryIm['im_code']+">"+indexEntryIm['im_name']+"(ระดับ"+indexEntryIm['im_score']+")</option>";
+                });
                 htmlFormRisk+="</select>";
             htmlFormRisk+="</div>";
         htmlFormRisk+="</div>";
@@ -56,7 +54,7 @@ var listRiskFn = function(data){
     });
     $("#riskFormArea").html(htmlFormRisk);
 }
-var riskAllFn = function(uuid){
+var riskFormFn = function(uuid){
     $.ajax({
 		url:"./Model/action-rm.php",
 		type:"post",
@@ -71,7 +69,7 @@ var riskAllFn = function(uuid){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 					
-					 listRiskFn(data[0]['dataRisk']);
+					 listRiskFormFn(data[0]);
 				}
 			}
 		}
@@ -106,7 +104,7 @@ var riskAddFn = function(uuid){
 				if(data[0]['status']=="200"){
 					
 					// console.log(data[0]['data']);
-					listRiskFn(data[0]['dataRisk']);
+					listRiskFn(data[0]);
 				}
 			}
 		}
@@ -226,66 +224,157 @@ var imSelectDataFn=function(uuid){
 	});
 	
 }
+//likelihood master
+var listLikelihoodMasterFormFn = function(data){
+    //console.log(data);
+    var htmlEstimatedRiskForm="";
+    $.each(data,function(index,indexEntry){
+
+        htmlEstimatedRiskForm+="<div class=\"alert alert-primary mb-3\" role=\"alert\">";
+                // htmlEstimatedRiskForm+="<input type=\"radio\"  id=\"lh_radio="+indexEntry['lh_code']+"\" class=\"form-check-input lh_radio\">";
+            // htmlEstimatedRiskForm+="<div class=\"mb-3\">";
+            //     htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"lh_code\"  placeholder=\"รหัส\">";
+            // htmlEstimatedRiskForm+="</div>";
+            htmlEstimatedRiskForm+="<div class=\"mb-3\">";               
+                htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"lh_name-"+indexEntry['lh_code']+"\"  placeholder=\"โอกาสที่จะเกิด\" value="+indexEntry['lh_name']+">";
+            htmlEstimatedRiskForm+="</div>";
+            htmlEstimatedRiskForm+="<div class=\"mb-3\">";
+                htmlEstimatedRiskForm+=" <input type=\"text\" class=\"form-control\" id=\"lh_score-"+indexEntry['lh_code']+"\"  placeholder=\"ค่าโอกาส\" value="+indexEntry['lh_score']+">";
+            htmlEstimatedRiskForm+="</div>";
+            htmlEstimatedRiskForm+="<div class=\"mb-3\">";
+                htmlEstimatedRiskForm+="<textarea  class=\"form-control\" id=\"lh_description-"+indexEntry['lh_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['lh_description']+"</textarea>";
+            htmlEstimatedRiskForm+="</div>";
+        htmlEstimatedRiskForm+="</div>";
+
+
+    });
+    $("#estimatedRiskFormArea").html(htmlEstimatedRiskForm);
+}
+var likelihoodMasterFormFn = function(uuid){
+    $.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"lhSelectData"
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					
+                    listLikelihoodMasterFormFn(data[0]['data']);
+				}
+			}
+		}
+	});
+}
+var listImpactMasterFormFn = function(data){
+     //effectRiskFormArea
+ var htmlEffectRiskForm="";
+ $.each(data,function(index,indexEntry){
+ htmlEffectRiskForm+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
+//  htmlEffectRiskForm+="<input type=\"radio\"  id=\"XX\" class=\"form-check-input rm_radio\">";
+    // htmlEffectRiskForm+="<div class=\"mb-3\">";
+    //     htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
+    // htmlEffectRiskForm+="</div>";
+    htmlEffectRiskForm+="<div class=\"mb-3\">";
+        htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"im_name-"+indexEntry['im_code']+"\"  placeholder=\"ความรุนแรง\" value="+indexEntry['im_name']+">";
+    htmlEffectRiskForm+="</div>";
+    htmlEffectRiskForm+="<div class=\"mb-3\">";
+        htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"im_score-"+indexEntry['im_code']+"\"  placeholder=\"ค่าผลกระทบ\" value="+indexEntry['im_score']+">";
+    htmlEffectRiskForm+="</div>";
+    htmlEffectRiskForm+="<div class=\"mb-3\">";
+        htmlEffectRiskForm+="<textarea  class=\"form-control\" id=\"im_description-"+indexEntry['im_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['im_description']+"</textarea>";
+    htmlEffectRiskForm+="</div>";
+ htmlEffectRiskForm+="</div>";
+ });
+ $("#effectRiskFormArea").html(htmlEffectRiskForm);
+
+}
+var impactMasterFormFn = function(uuid){
+    $.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"imSelectData"
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+                    listImpactMasterFormFn(data[0]['data']);
+				}
+			}
+		}
+	});
+}
+
+var listStrategyTypeMasterFn = function(data){
+//mitigateRisksFormArea
+var htmlMitigateRisksForm="";
+$.each(data,function(index,indexEntry){
+    htmlMitigateRisksForm+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
+        // htmlMitigateRisksForm+="<div class=\"mb-3\">";
+        //     htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
+        // htmlMitigateRisksForm+="</div>";
+        htmlMitigateRisksForm+="<div class=\"mb-3\">";
+            htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"stm_name-"+indexEntry['stm_code']+"\"  placeholder=\"กลยุทธ์การจัดการความเสี่ยง\" value="+indexEntry['stm_name']+">";
+        htmlMitigateRisksForm+="</div>";
+        htmlMitigateRisksForm+="<div class=\"mb-3\">";
+            htmlMitigateRisksForm+="<textarea  class=\"form-control\" id=\"stm_description-"+indexEntry['stm_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['stm_description']+"</textarea>";
+        htmlMitigateRisksForm+="</div>";
+    htmlMitigateRisksForm+="</div>";
+});
+
+$("#mitigateRisksFormArea").html(htmlMitigateRisksForm);
+}
+
+var strategyTypeMasterFormFn = function(uuid){
+    $.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"stmSelectData"
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+                    listStrategyTypeMasterFn(data[0]['data']);
+				}
+			}
+		}
+	});
+}
 
 
 $(document).ready(function(){
 
-//estimatedRiskFormArea
-var htmlEstimatedRiskForm="";
- htmlEstimatedRiskForm+="<div class=\"alert alert-primary mb-3\" role=\"alert\">";
-    htmlEstimatedRiskForm+="<input type=\"radio\"  id=\"XX\" class=\"form-check-input rm_radio\">";
-    htmlEstimatedRiskForm+="<div class=\"mb-3\">";
-    htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
-    htmlEstimatedRiskForm+="</div>";
-    htmlEstimatedRiskForm+="<div class=\"mb-3\">";               
-    htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"โอกาสที่จะเกิด\">";
-    htmlEstimatedRiskForm+="</div>";
-    htmlEstimatedRiskForm+="<div class=\"mb-3\">";
-    htmlEstimatedRiskForm+=" <input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"ค่าโอกาส\">";
-    htmlEstimatedRiskForm+="</div>";
-    htmlEstimatedRiskForm+="<div class=\"mb-3\">";
-    htmlEstimatedRiskForm+="<textarea  class=\"form-control\" placeholder=\"คำอธิบาย\"></textarea>";
-    htmlEstimatedRiskForm+="</div>";
- htmlEstimatedRiskForm+="</div>";
- $("#estimatedRiskFormArea").html(htmlEstimatedRiskForm);
-
- //effectRiskFormArea
- var htmlEffectRiskForm="";
- htmlEffectRiskForm+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
- htmlEffectRiskForm+="<input type=\"radio\"  id=\"XX\" class=\"form-check-input rm_radio\">";
-    htmlEffectRiskForm+="<div class=\"mb-3\">";
-        htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\รหัส\">";
-    htmlEffectRiskForm+="</div>";
-    htmlEffectRiskForm+="<div class=\"mb-3\">";
-        htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"ความรุนแรง\">";
-    htmlEffectRiskForm+="</div>";
-    htmlEffectRiskForm+="<div class=\"mb-3\">";
-        htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"ค่าผลกระทบ\">";
-    htmlEffectRiskForm+="</div>";
-    htmlEffectRiskForm+="<div class=\"mb-3\">";
-        htmlEffectRiskForm+="<textarea  class=\"form-control\" placeholder=\"คำอธิบาย\"></textarea>";
-    htmlEffectRiskForm+="</div>";
- htmlEffectRiskForm+="</div>";
- $("#effectRiskFormArea").html(htmlEffectRiskForm);
-
-//mitigateRisksFormArea
-var htmlMitigateRisksForm="";
-htmlMitigateRisksForm+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
-htmlMitigateRisksForm+="<input type=\"radio\"  id=\"XX\" class=\"form-check-input rm_radio\">";
-    htmlMitigateRisksForm+="<div class=\"mb-3\">";
-        htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
-    htmlMitigateRisksForm+="</div>";
-    htmlMitigateRisksForm+="<div class=\"mb-3\">";
-        htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"กลยุทธ์การจัดการความเสี่ยง\">";
-    htmlMitigateRisksForm+="</div>";
-    htmlMitigateRisksForm+="<div class=\"mb-3\">";
-        htmlMitigateRisksForm+="<textarea  class=\"form-control\" placeholder=\"คำอธิบาย\"></textarea>";
-    htmlMitigateRisksForm+="</div>";
-htmlMitigateRisksForm+="</div>";
-$("#mitigateRisksFormArea").html(htmlMitigateRisksForm);
 
 
-riskAllFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+
+
+
+
+
+riskFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+impactMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+likelihoodMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+strategyTypeMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+
+// stmSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+// lhSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+// imSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+
 /*risk management start*/
 $(document).on("click","#btnRiskSave",function(){
     alert("btnRiskSave");
