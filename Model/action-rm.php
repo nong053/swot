@@ -138,20 +138,38 @@ include("../config-rm.php");
         echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
 
 
-    }else if($_REQUEST['action']=='updatedRisk'){
+    }else if($_REQUEST['action']=='reSelectData'){
 
+        $sql = "SELECT 
+        *
+        FROM risk_evaluation_master where uu_id='$_REQUEST[uuid]'";
+        $dataArray = array();
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+        // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
+        }
+        echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+
+
+    }else if($_REQUEST['action']=='updatedRisk'){
+       
+       
         $sql = "
         UPDATE risk SET 
        
-        r_name='$_REQUEST[t_name]',
+        r_name='$_REQUEST[r_name]',
         r_description='$_REQUEST[r_description]',
         r_factor='$_REQUEST[r_factor]',
         r_effect='$_REQUEST[r_effect]',
         responsible_person='$_REQUEST[responsible_person]',
-        guideline_risk='$_REQUEST[guideline_risk]',
+        guidelines_risk='$_REQUEST[guidelines_risk]',
         duration_of_work ='$_REQUEST[duration_of_work]',
         lh_code='$_REQUEST[lh_code]',
-        im_score='$_REQUEST[im_score]',
+        im_code='$_REQUEST[im_code]',
         stm_code='$_REQUEST[stm_code]',
         total_score='$_REQUEST[total_score]',
         updated_date=now()
@@ -159,10 +177,89 @@ include("../config-rm.php");
         WHERE r_code='$_REQUEST[r_code]' and uu_id='$_REQUEST[uuid]'";
 
         if ($conn->query($sql) === TRUE) {
-        echo "[{\"status\":\"200\"}]";
+
+
+            $sqlRisk = "SELECT 
+            uu_id ,
+            r_seq ,
+            r_name ,
+            r_description ,
+            r_factor,
+            r_effect ,
+            r_code ,
+            responsible_person ,
+            guidelines_risk ,
+            duration_of_work, 
+            lh_code ,
+            im_code ,
+            stm_code, 
+            total_score ,
+            created_date,
+            updated_date
+            FROM risk where uu_id='$_REQUEST[uuid]'";
+            $dataRiskArray = array();
+            $resultRisk = $conn->query($sqlRisk);
+            if ($resultRisk->num_rows > 0) {
+                // output data of each row
+                    while($row = $resultRisk->fetch_assoc()) {
+                        $dataRiskArray[] = $row;
+                    }
+            }
+
+
+            //strategy type master
+            $sqlStm = "SELECT 
+            *
+            FROM strategy_type_master where uu_id='$_REQUEST[uuid]'";
+            $dataStmArray = array();
+            $resultStm = $conn->query($sqlStm);
+
+            if ($resultStm->num_rows > 0) {
+                while($row = $resultStm->fetch_assoc()) {
+                    $dataStmArray[] = $row;
+                }
+            }
+
+            
+        
+            //likelihood master
+            $sqlLh = "SELECT 
+            *
+            FROM likelihood_master where uu_id='$_REQUEST[uuid]'";
+            $dataLhArray = array();
+            $resultLh = $conn->query($sqlLh);
+
+            if ($resultLh->num_rows > 0) {
+            // output data of each row
+                while($row = $resultLh->fetch_assoc()) {
+                    $dataLhArray[] = $row;
+                }
+            }
+
+            //impact master
+            $sqlIm = "SELECT 
+            *
+            FROM impact_master where uu_id='$_REQUEST[uuid]'";
+            $dataImArray = array();
+            $resultIm = $conn->query($sqlIm);
+
+            if ($resultIm->num_rows > 0) {
+            // output data of each row
+                while($row = $resultIm->fetch_assoc()) {
+                    $dataImArray[] = $row;
+                }
+            }
+
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"dataRisk\":".json_encode($dataRiskArray).",
+                \"dataStm\":".json_encode($dataStmArray).",
+                \"dataLh\":".json_encode($dataLhArray).",
+                \"dataIm\":".json_encode($dataImArray)."}]";
+
         } else {
         echo "Error updating record: " . $conn->error;
         }
+        
 
     }else if($_REQUEST['action']=='deleteRisk'){
         // sql to delete a record
@@ -208,8 +305,53 @@ include("../config-rm.php");
                     $dataRiskArray[] = $row;
                 }
             }
-    
-            echo "[{\"status\":\"200\",\"dataRisk\":".json_encode($dataRiskArray)."}]";
+             //strategy type master
+            $sqlStm = "SELECT 
+            *
+            FROM strategy_type_master where uu_id='$_REQUEST[uuid]'";
+            $dataStmArray = array();
+            $resultStm = $conn->query($sqlStm);
+
+            if ($resultStm->num_rows > 0) {
+                while($row = $resultStm->fetch_assoc()) {
+                    $dataStmArray[] = $row;
+                }
+            }
+
+
+              //likelihood master
+            $sqlLh = "SELECT 
+            *
+            FROM likelihood_master where uu_id='$_REQUEST[uuid]'";
+            $dataLhArray = array();
+            $resultLh = $conn->query($sqlLh);
+
+            if ($resultLh->num_rows > 0) {
+            // output data of each row
+                while($row = $resultLh->fetch_assoc()) {
+                    $dataLhArray[] = $row;
+                }
+            }
+
+            //impact master
+            $sqlIm = "SELECT 
+            *
+            FROM impact_master where uu_id='$_REQUEST[uuid]'";
+            $dataImArray = array();
+            $resultIm = $conn->query($sqlIm);
+
+            if ($resultIm->num_rows > 0) {
+            // output data of each row
+                while($row = $resultIm->fetch_assoc()) {
+                    $dataImArray[] = $row;
+                }
+            }
+            
+            echo "[{\"status\":\"200\",\"dataRisk\":".json_encode($dataRiskArray).",
+                \"dataStm\":".json_encode($dataStmArray).",
+                \"dataLh\":".json_encode($dataLhArray).",
+                \"dataIm\":".json_encode($dataImArray)."}]";
+            //echo "[{\"status\":\"200\",\"dataRisk\":".json_encode($dataRiskArray)."}]";
 
         }
 
@@ -297,7 +439,55 @@ include("../config-rm.php");
                 }
             }
 
-            echo "[{\"status\":\"200\",\"dataRisk\":".json_encode($dataRiskArray)."}]";
+
+             //strategy type master
+        $sqlStm = "SELECT 
+        *
+        FROM strategy_type_master where uu_id='$_REQUEST[uuid]'";
+        $dataStmArray = array();
+        $resultStm = $conn->query($sqlStm);
+
+        if ($resultStm->num_rows > 0) {
+            while($row = $resultStm->fetch_assoc()) {
+                $dataStmArray[] = $row;
+            }
+        }
+
+        
+       
+        //likelihood master
+        $sqlLh = "SELECT 
+        *
+        FROM likelihood_master where uu_id='$_REQUEST[uuid]'";
+        $dataLhArray = array();
+        $resultLh = $conn->query($sqlLh);
+
+        if ($resultLh->num_rows > 0) {
+        // output data of each row
+            while($row = $resultLh->fetch_assoc()) {
+                $dataLhArray[] = $row;
+            }
+        }
+
+        //impact master
+        $sqlIm = "SELECT 
+        *
+        FROM impact_master where uu_id='$_REQUEST[uuid]'";
+        $dataImArray = array();
+        $resultIm = $conn->query($sqlIm);
+
+        if ($resultIm->num_rows > 0) {
+        // output data of each row
+            while($row = $resultIm->fetch_assoc()) {
+                $dataImArray[] = $row;
+            }
+        }
+
+            echo "[{\"status\":\"200\",\"dataRisk\":".json_encode($dataRiskArray).",
+            \"dataStm\":".json_encode($dataStmArray).",
+            \"dataLh\":".json_encode($dataLhArray).",
+            \"dataIm\":".json_encode($dataImArray)."}]";
+            //echo "[{\"status\":\"200\",\"dataRisk\":".json_encode($dataRiskArray)."}]";
 
         }
 
@@ -382,15 +572,164 @@ include("../config-rm.php");
         if($checkError==true){
             echo "[{\"status\":\"200\"}]";
         }
+    
+    }else if($_REQUEST['action']=='likelihoodUpdate'){
+       
+       
+        $sql = "
+        UPDATE likelihood_master SET 
+       
+        lh_name='$_REQUEST[lh_name]',
+        lh_score='$_REQUEST[lh_score]',
+        lh_description='$_REQUEST[lh_description]',
+        updated_date=now()
 
-   
+        WHERE lh_code='$_REQUEST[lh_code]' and uu_id='$_REQUEST[uuid]'";
 
+        if ($conn->query($sql) === TRUE) {
+
+            //likelihood master
+            $sqlLh = "SELECT 
+            *
+            FROM likelihood_master where uu_id='$_REQUEST[uuid]'";
+            $dataLhArray = array();
+            $resultLh = $conn->query($sqlLh);
+
+            if ($resultLh->num_rows > 0) {
+            // output data of each row
+                while($row = $resultLh->fetch_assoc()) {
+                    $dataLhArray[] = $row;
+                }
+            }
+
+           
+
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"dataLh\":".json_encode($dataLhArray)."}]";
+
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
         
 
-    
-}
+    }else if($_REQUEST['action']=='impactRiskUpdate'){
        
        
+        $sql = "
+        UPDATE impact_master SET 
+       
+        im_name='$_REQUEST[im_name]',
+        im_description='$_REQUEST[im_description]',
+        im_score='$_REQUEST[im_score]',
+        updated_date=now()
+
+        WHERE im_code='$_REQUEST[im_code]' and uu_id='$_REQUEST[uuid]'";
+
+        if ($conn->query($sql) === TRUE) {
+
+            //impact master
+            $sqlIm = "SELECT 
+            *
+            FROM impact_master where uu_id='$_REQUEST[uuid]'";
+            $dataImArray = array();
+            $resultIm = $conn->query($sqlIm);
+
+            if ($resultIm->num_rows > 0) {
+            // output data of each row
+                while($row = $resultIm->fetch_assoc()) {
+                    $dataImArray[] = $row;
+                }
+            }
+
+           
+
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"dataIm\":".json_encode($dataImArray)."}]";
+
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
+        
+
+    }else if($_REQUEST['action']=='strategyTypeRiskUpdate'){
+       
+       
+        $sql = "
+        UPDATE strategy_type_master SET 
+       
+        stm_name='$_REQUEST[stm_name]',
+        stm_description='$_REQUEST[stm_description]',
+       
+        updated_date=now()
+
+        WHERE stm_code='$_REQUEST[stm_code]' and uu_id='$_REQUEST[uuid]'";
+
+        if ($conn->query($sql) === TRUE) {
+
+             //strategy type master
+            $sqlStm = "SELECT 
+            *
+            FROM strategy_type_master where uu_id='$_REQUEST[uuid]'";
+            $dataStmArray = array();
+            $resultStm = $conn->query($sqlStm);
+
+            if ($resultStm->num_rows > 0) {
+                while($row = $resultStm->fetch_assoc()) {
+                    $dataStmArray[] = $row;
+                }
+            }
+
+           
+
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"dataStm\":".json_encode($dataStmArray)."}]";
+
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
+        
+
+    }else if($_REQUEST['action']=='evaluationRiskUpdate'){
+       
+       
+        $sql = "
+        UPDATE risk_evaluation_master SET 
+       
+        re_name='$_REQUEST[re_name]',
+        re_score_start='$_REQUEST[re_score_start]',
+        re_score_end='$_REQUEST[re_score_end]',
+        re_score_color='$_REQUEST[re_score_color]',
+        updated_date=now()
+        WHERE re_code='$_REQUEST[re_code]' and uu_id='$_REQUEST[uuid]'";
+
+        if ($conn->query($sql) === TRUE) {
+
+             //strategy type master
+            $sqlStm = "SELECT 
+            *
+            FROM risk_evaluation_master where uu_id='$_REQUEST[uuid]'";
+            $dataStmArray = array();
+            $resultStm = $conn->query($sqlStm);
+
+            if ($resultStm->num_rows > 0) {
+                while($row = $resultStm->fetch_assoc()) {
+                    $dataStmArray[] = $row;
+                }
+            }
+
+           
+
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"dataStm\":".json_encode($dataStmArray)."}]";
+
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
+        
+
+    }
+       
+   
 
     
     

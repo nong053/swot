@@ -2,7 +2,7 @@ var listRiskFormFn = function(data){
     var htmlFormRisk="";
     $.each(data['dataRisk'],function(index,indexEntry){
         
-        htmlFormRisk+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
+        htmlFormRisk+="<div  class=\"alert alert-primary mb-3 risk_loop\" id=\"risk_loop-"+indexEntry['r_code']+"\" role=\"alert\">";
             htmlFormRisk+="<input type=\"radio\"  id=\"risk_radio-"+indexEntry['r_code']+"\"  class=\"form-check-input risk_radio\">";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<input type=\"text\" class=\"form-control\" id=\"r_code-"+indexEntry['r_code']+"\"  placeholder=\"รหัส\" value="+indexEntry['r_code']+">";
@@ -25,6 +25,7 @@ var listRiskFormFn = function(data){
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control stm_code_select_area\" id=\"stm_code-"+indexEntry['r_code']+"\">";
                 $.each(data['dataStm'],function(indexStm,indexEntryStm){
+                    //alert(indexEntryStm['stm_name']);
                     htmlFormRisk+="<option value="+indexEntryStm['stm_code']+">"+indexEntryStm['stm_name']+"</option>";
                 });
                 htmlFormRisk+="</select>";
@@ -33,7 +34,7 @@ var listRiskFormFn = function(data){
                 htmlFormRisk+="<textarea  class=\"form-control\" id=\"duration_of_work-"+indexEntry['r_code']+"\" placeholder=\"ระยะเวลาการปฏิบัติ\">"+indexEntry['duration_of_work']+"</textarea>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<textarea  class=\"form-control\" id=\"guideline_risk-"+indexEntry['r_code']+"\" placeholder=\"จัดการความเสี่ยง\">"+indexEntry['guidelines_risk']+"</textarea>";
+                htmlFormRisk+="<textarea  class=\"form-control\" id=\"guidelines_risk-"+indexEntry['r_code']+"\" placeholder=\"จัดการความเสี่ยง\">"+indexEntry['guidelines_risk']+"</textarea>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control lh_code_select_area\" id=\"lh_code-"+indexEntry['r_code']+"\">";
@@ -92,7 +93,7 @@ var riskAddFn = function(uuid){
             "responsible_person":$("#responsible_person").val(),
             "stm_code":$("#stm_code").val(),
             "duration_of_work":$("#duration_of_work").val(),
-            "guideline_risk":$("#guideline_risk").val(),
+            "guidelines_risk":$("#guidelines_risk").val(),
             "lh_code":$("#lh_code").val(),
             "im_code":$("#im_code").val(),
 			"total_score":"5"
@@ -104,7 +105,7 @@ var riskAddFn = function(uuid){
 				if(data[0]['status']=="200"){
 					
 					// console.log(data[0]['data']);
-					listRiskFn(data[0]);
+					listRiskFormFn(data[0]);
 				}
 			}
 		}
@@ -132,13 +133,53 @@ var deleteRiskFn=function(uuid,r_code){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 					//alert("ok success");
-					listRiskFn(data[0]['dataRisk']);
+					listRiskFormFn(data[0]);
 					
 				}
 			}
 		}
 	});
 	
+}
+var riskSaveFn = function(uuid,r_code){
+
+
+	
+	var dataReturn=true;
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"updatedRisk",
+			"r_code":r_code,
+            "r_seq":$("#r_seq-"+r_code).val(),
+            "r_name":$("#r_name-"+r_code).val(),
+            "r_description":$("#r_description-"+r_code).val(),
+            "r_factor":$("#r_factor-"+r_code).val(),
+            "r_effect":$("#r_effect-"+r_code).val(),
+            "responsible_person":$("#responsible_person-"+r_code).val(),
+            "guidelines_risk":$("#guidelines_risk-"+r_code).val(),
+            "duration_of_work":$("#duration_of_work-"+r_code).val(),
+            "lh_code":$("#lh_code-"+r_code).val(),
+            "im_code":$("#im_code-"+r_code).val(),
+            "stm_code":$("#stm_code-"+r_code).val(),
+            "total_score":"55",
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']!="200"){
+					dataReturn=false;
+					//listTaskFn(data[0]['data'],tc_code);
+				}
+			}
+			return dataReturn;
+		}
+		
+	});
 }
 var stmSelectDataFn=function(uuid){
 
@@ -230,7 +271,7 @@ var listLikelihoodMasterFormFn = function(data){
     var htmlEstimatedRiskForm="";
     $.each(data,function(index,indexEntry){
 
-        htmlEstimatedRiskForm+="<div class=\"alert alert-primary mb-3\" role=\"alert\">";
+        htmlEstimatedRiskForm+="<div class=\"alert alert-primary mb-3 lh_loop\" id=\"lh_loop-"+indexEntry['lh_code']+"\" role=\"alert\">";
                 // htmlEstimatedRiskForm+="<input type=\"radio\"  id=\"lh_radio="+indexEntry['lh_code']+"\" class=\"form-check-input lh_radio\">";
             // htmlEstimatedRiskForm+="<div class=\"mb-3\">";
             //     htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"lh_code\"  placeholder=\"รหัส\">";
@@ -275,7 +316,7 @@ var listImpactMasterFormFn = function(data){
      //effectRiskFormArea
  var htmlEffectRiskForm="";
  $.each(data,function(index,indexEntry){
- htmlEffectRiskForm+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
+ htmlEffectRiskForm+="<div  class=\"alert alert-primary mb-3 im_loop\" id=\"im_loop-"+indexEntry['im_code']+"\" role=\"alert\">";
 //  htmlEffectRiskForm+="<input type=\"radio\"  id=\"XX\" class=\"form-check-input rm_radio\">";
     // htmlEffectRiskForm+="<div class=\"mb-3\">";
     //     htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
@@ -316,23 +357,71 @@ var impactMasterFormFn = function(uuid){
 }
 
 var listStrategyTypeMasterFn = function(data){
-//mitigateRisksFormArea
-var htmlMitigateRisksForm="";
-$.each(data,function(index,indexEntry){
-    htmlMitigateRisksForm+="<div  class=\"alert alert-primary mb-3\" role=\"alert\">";
-        // htmlMitigateRisksForm+="<div class=\"mb-3\">";
-        //     htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
-        // htmlMitigateRisksForm+="</div>";
-        htmlMitigateRisksForm+="<div class=\"mb-3\">";
-            htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"stm_name-"+indexEntry['stm_code']+"\"  placeholder=\"กลยุทธ์การจัดการความเสี่ยง\" value="+indexEntry['stm_name']+">";
+    //mitigateRisksFormArea
+    var htmlMitigateRisksForm="";
+    $.each(data,function(index,indexEntry){
+        htmlMitigateRisksForm+="<div  class=\"alert alert-primary mb-3 stm_loop\" id=\"stm_loop-"+indexEntry['stm_code']+"\" role=\"alert\">";
+            // htmlMitigateRisksForm+="<div class=\"mb-3\">";
+            //     htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
+            // htmlMitigateRisksForm+="</div>";
+            htmlMitigateRisksForm+="<div class=\"mb-3\">";
+                htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"stm_name-"+indexEntry['stm_code']+"\"  placeholder=\"กลยุทธ์การจัดการความเสี่ยง\" value="+indexEntry['stm_name']+">";
+            htmlMitigateRisksForm+="</div>";
+            htmlMitigateRisksForm+="<div class=\"mb-3\">";
+                htmlMitigateRisksForm+="<textarea  class=\"form-control\" id=\"stm_description-"+indexEntry['stm_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['stm_description']+"</textarea>";
+            htmlMitigateRisksForm+="</div>";
         htmlMitigateRisksForm+="</div>";
-        htmlMitigateRisksForm+="<div class=\"mb-3\">";
-            htmlMitigateRisksForm+="<textarea  class=\"form-control\" id=\"stm_description-"+indexEntry['stm_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['stm_description']+"</textarea>";
-        htmlMitigateRisksForm+="</div>";
-    htmlMitigateRisksForm+="</div>";
-});
+    });
 
-$("#mitigateRisksFormArea").html(htmlMitigateRisksForm);
+    $("#mitigateRisksFormArea").html(htmlMitigateRisksForm);
+}
+
+
+var listEvaluationRiskFn = function(data){
+    //listEvaluationRisk
+    var htmlEvaluationRiskForm="";
+    $.each(data,function(index,indexEntry){
+        htmlEvaluationRiskForm+="<div  class=\"alert alert-primary mb-3 re_loop\" id=\"re_loop-"+indexEntry['re_code']+"\" role=\"alert\">";            
+            htmlEvaluationRiskForm+="<div class=\"mb-3\">";
+             htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_name-"+indexEntry['re_code']+"\"  placeholder=\"ระดับความเสี่ยง\" value="+indexEntry['re_name']+">";
+            htmlEvaluationRiskForm+="</div>";
+            htmlEvaluationRiskForm+="<div class=\"row\">";
+                htmlEvaluationRiskForm+="<div class=\"col-md-4\">";
+                    htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_score_start-"+indexEntry['re_code']+"\"  placeholder=\"เริ่ม\" value="+indexEntry['re_score_start']+">";
+                htmlEvaluationRiskForm+="</div>";
+                htmlEvaluationRiskForm+="<div class=\"col-md-4\">";
+                    htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_score_end-"+indexEntry['re_code']+"\"  placeholder=\"ถึง\" value="+indexEntry['re_score_end']+">";
+                htmlEvaluationRiskForm+="</div>";
+                htmlEvaluationRiskForm+="<div class=\"col-md-4\">";
+                    htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_score_color-"+indexEntry['re_code']+"\" placeholder=\"พื้นที่สี\" value="+indexEntry['re_score_color']+">";
+                htmlEvaluationRiskForm+="</div>";
+            htmlEvaluationRiskForm+="</div>";
+        htmlEvaluationRiskForm+="</div>";
+    });
+
+    $("#evaluationRiskFormArea").html(htmlEvaluationRiskForm);
+}
+
+
+var evaluationRiskFormFn = function(uuid){
+    $.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"reSelectData"
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+                    listEvaluationRiskFn(data[0]['data']);
+				}
+			}
+		}
+	});
 }
 
 var strategyTypeMasterFormFn = function(uuid){
@@ -356,6 +445,128 @@ var strategyTypeMasterFormFn = function(uuid){
 	});
 }
 
+var likelihoodRiskSaveFn = function(uuid,lh_code){
+    var dataReturn=true;
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"likelihoodUpdate",
+			"lh_code":lh_code,
+            "lh_name":$("#lh_name-"+lh_code).val(),
+            "lh_score":$("#lh_score-"+lh_code).val(),
+            "lh_description":$("#lh_description-"+lh_code).val(),
+          
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']!="200"){
+					dataReturn=false;
+					//listTaskFn(data[0]['data'],tc_code);
+				}
+			}
+			return dataReturn;
+		}
+		
+	});
+}
+
+var impactRiskFn = function(uuid,im_code){
+    var dataReturn=true;
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"impactRiskUpdate",
+			"im_code":im_code,
+            "im_name":$("#im_name-"+im_code).val(),
+            "im_score":$("#im_score-"+im_code).val(),
+            "im_description":$("#im_description-"+im_code).val(),
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']!="200"){
+					dataReturn=false;
+                    
+					//listTaskFn(data[0]['data'],tc_code);
+				}
+			}
+			return dataReturn;
+		}
+		
+	});
+}
+var strategyTypeRiskFn = function(uuid,stm_code){
+    var dataReturn=true;
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"strategyTypeRiskUpdate",
+			"stm_code":stm_code,
+            "stm_name":$("#stm_name-"+stm_code).val(),
+            "stm_score":$("#stm_score-"+stm_code).val(),
+            "stm_description":$("#stm_description-"+stm_code).val(),
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']!="200"){
+					dataReturn=false;
+                    
+					//listTaskFn(data[0]['data'],tc_code);
+				}
+			}
+			return dataReturn;
+		}
+		
+	});
+}
+var evaluationRiskFn = function(uuid,re_code){
+    var dataReturn=true;
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"evaluationRiskUpdate",
+			"re_code":re_code,
+            "re_name":$("#re_name-"+re_code).val(),
+            "re_score_start":$("#re_score_start-"+re_code).val(),
+            "re_score_end":$("#re_score_end-"+re_code).val(),
+            "re_score_color":$("#re_score_color-"+re_code).val(),
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']!="200"){
+					dataReturn=false;
+                    
+					//listTaskFn(data[0]['data'],tc_code);
+				}
+			}
+			return dataReturn;
+		}
+		
+	});
+}
+
+
+
+
 
 $(document).ready(function(){
 
@@ -370,6 +581,7 @@ riskFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 impactMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 likelihoodMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 strategyTypeMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+evaluationRiskFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 
 // stmSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 // lhSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
@@ -377,7 +589,25 @@ strategyTypeMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 
 /*risk management start*/
 $(document).on("click","#btnRiskSave",function(){
-    alert("btnRiskSave");
+    //alert("btnRiskSave");
+    var flagCheck=true;
+	$(".risk_loop").each(function(index,indexEntry){
+		
+		var r_code="";
+		var data_code =$(this).attr('id');
+		data_code=data_code.split("-");
+		r_code=data_code[1];
+
+		
+		if(riskSaveFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',r_code)==false){
+			flagCheck=false;
+		}
+
+	});
+	if(flagCheck==true){
+		alert("ok");
+	}
+
 });
 
 $(document).on("click","#btnRiskAdd",function(){
@@ -394,7 +624,111 @@ $(document).on("click","#btnRiskAdd",function(){
     //alert(risk_code);
     deleteRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',risk_code);
  });
-/*risk management start*/
+/*risk management end*/
+
+/*risk estimate start*/
+$("#likelihoodRiskSave").click(function(){
+    var flagCheck=true;
+	$(".lh_loop").each(function(index,indexEntry){
+		
+		var lh_code="";
+		var data_code =$(this).attr('id');
+		data_code=data_code.split("-");
+		lh_code=data_code[1];
+
+		
+		if(likelihoodRiskSaveFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',lh_code)==false){
+			flagCheck=false;
+		}
+
+	});
+	if(flagCheck==true){
+		alert("ok");
+	}
+    
+
+});
+/*risk estimate end*/
+
+
+/*risk effectRisk start*/
+$("#impactRiskSave").click(function(){
+    
+    var flagCheck=true;
+	$(".im_loop").each(function(index,indexEntry){
+		
+		var im_code="";
+		var data_code =$(this).attr('id');
+		data_code=data_code.split("-");
+		im_code=data_code[1];
+
+		
+		if(impactRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',im_code)==false){
+			flagCheck=false;
+		}
+
+	});
+	if(flagCheck==true){
+		alert("ok");
+	}
+
+});
+/*risk effectRisk end*/
+
+
+
+/*risk mitigate start*/
+$("#mitigateRisksSave").click(function(){
+     
+    var flagCheck=true;
+	$(".stm_loop").each(function(index,indexEntry){
+		
+		var stm_code="";
+		var data_code =$(this).attr('id');
+		data_code=data_code.split("-");
+		stm_code=data_code[1];
+
+		
+		if(strategyTypeRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',stm_code)==false){
+			flagCheck=false;
+		}
+
+	});
+	if(flagCheck==true){
+		alert("ok");
+	}
+});
+/*risk mitigate end*/
+
+/*risk evaluation master start*/
+$("#evaluationRiskSave").click(function(){
+     
+    var flagCheck=true;
+	$(".re_loop").each(function(index,indexEntry){
+		
+		var re_code="";
+		var data_code =$(this).attr('id');
+		data_code=data_code.split("-");
+		re_code=data_code[1];
+
+		
+		if(evaluationRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',re_code)==false){
+			flagCheck=false;
+		}
+
+	});
+	if(flagCheck==true){
+		alert("ok");
+	}
+});
+/*risk  evaluation master start*/
+
+
+
+
+
+
+
 
 
 });

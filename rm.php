@@ -526,7 +526,7 @@
                 <div class="accordion-body">
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="likelihoodRiskSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
                             <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
@@ -569,7 +569,7 @@
 
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="impactRiskSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
                             <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
@@ -613,29 +613,52 @@
                     <!-- form here. -->
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="evaluationRiskSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
                           
                         </div>
                     </div>
-                    <form>
+                    <!-- <form> -->
+                    <div id="evaluationRiskFormArea">
+                            <!--
                         <div  class="alert alert-primary mb-3" role="alert">
                            
                             <div class="mb-3">
                                 
-                                <input type="text" class="form-control" id="xxx"  placeholder="ระดับความเสี่ยง">
+                                <input type="text" class="form-control" id="re_name"  placeholder="ระดับความเสี่ยง">
                             
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="เริ่ม">
+                                <input type="text" class="form-control" id="re_score_start"  placeholder="เริ่ม">
                                 </div>
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="ถึง">
+                                <input type="text" class="form-control" id="re_score_end"  placeholder="ถึง">
                                 </div>
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx" placeholder="พื้นที่สี">
+                                <input type="text" class="form-control" id="re_score_color" placeholder="พื้นที่สี">
+                                </div>
+                            </div>
+                           
+                        </div>
+
+                         <div  class="alert alert-primary mb-3" role="alert">
+                           
+                            <div class="mb-3">
+                                
+                                <input type="text" class="form-control" id="re_name"  placeholder="ระดับความเสี่ยง">
+                            
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                <input type="text" class="form-control" id="re_score_start"  placeholder="เริ่ม">
+                                </div>
+                                <div class="col-md-4">
+                                <input type="text" class="form-control" id="re_score_end"  placeholder="ถึง">
+                                </div>
+                                <div class="col-md-4">
+                                <input type="text" class="form-control" id="re_score_color" placeholder="พื้นที่สี">
                                 </div>
                             </div>
                            
@@ -645,18 +668,18 @@
                            
                             <div class="mb-3">
                                 
-                                <input type="text" class="form-control" id="xxx"  placeholder="ระดับความเสี่ยง">
+                                <input type="text" class="form-control" id="re_name"  placeholder="ระดับความเสี่ยง">
                             
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="เริ่ม">
+                                <input type="text" class="form-control" id="re_score_start"  placeholder="เริ่ม">
                                 </div>
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="ถึง">
+                                <input type="text" class="form-control" id="re_score_end"  placeholder="ถึง">
                                 </div>
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx" placeholder="พื้นที่สี">
+                                <input type="text" class="form-control" id="re_score_color" placeholder="พื้นที่สี">
                                 </div>
                             </div>
                            
@@ -666,50 +689,23 @@
                            
                             <div class="mb-3">
                                 
-                                <input type="text" class="form-control" id="xxx"  placeholder="ระดับความเสี่ยง">
+                                <input type="text" class="form-control" id="re_name"  placeholder="ระดับความเสี่ยง">
                             
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="เริ่ม">
+                                <input type="text" class="form-control" id="re_score_start"  placeholder="เริ่ม">
                                 </div>
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="ถึง">
+                                <input type="text" class="form-control" id="re_score_end"  placeholder="ถึง">
                                 </div>
                                 <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx" placeholder="พื้นที่สี">
+                                <input type="text" class="form-control" id="re_score_color" placeholder="พื้นที่สี">
                                 </div>
                             </div>
-                           
-                        </div>
-
-                        <div  class="alert alert-primary mb-3" role="alert">
-                           
-                            <div class="mb-3">
-                                
-                                <input type="text" class="form-control" id="xxx"  placeholder="ระดับความเสี่ยง">
-                            
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="เริ่ม">
-                                </div>
-                                <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx"  placeholder="ถึง">
-                                </div>
-                                <div class="col-md-4">
-                                <input type="text" class="form-control" id="xxx" placeholder="พื้นที่สี">
-                                </div>
-                            </div>
-                           
-                        </div>
-                        
-                        
-                      
-                        
-                        
-                      
-                    </form>
+                        </div> -->
+                    </div>
+                    <!-- </form> -->
                     <!-- form here. -->
                 </div>
                 </div>
@@ -726,7 +722,7 @@
 
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="mitigateRisksSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
                             <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
