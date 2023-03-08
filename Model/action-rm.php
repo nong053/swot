@@ -9,23 +9,23 @@ include("../config-rm.php");
     if($_REQUEST['action']=='showRisk'){
 
         $sqlRisk = "SELECT 
-        uu_id ,
-        r_seq ,
-        r_name ,
-        r_description ,
-        r_factor,
-        r_effect ,
-        r_code ,
-        responsible_person ,
-        guidelines_risk ,
-        duration_of_work, 
-        lh_code ,
-        im_code ,
-        stm_code, 
-        total_score ,
-        created_date,
-        updated_date
-        FROM risk where uu_id='$_REQUEST[uuid]'";
+        r.uu_id ,
+        r.r_seq ,
+        r.r_name ,
+        r.r_description ,
+        r.r_factor,
+        r.r_effect ,
+        r.r_code ,
+        r.responsible_person ,
+        r.guidelines_risk ,
+        r.duration_of_work, 
+        r.lh_code ,
+        r.im_code ,
+        r.stm_code,stm.stm_name,
+        r.total_score ,
+        r.created_date,
+        r.updated_date
+        FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code  where r.uu_id='$_REQUEST[uuid]'";
         $dataRiskArray = array();
         $resultRisk = $conn->query($sqlRisk);
         if ($resultRisk->num_rows > 0) {
@@ -179,24 +179,23 @@ include("../config-rm.php");
         if ($conn->query($sql) === TRUE) {
 
 
-            $sqlRisk = "SELECT 
-            uu_id ,
-            r_seq ,
-            r_name ,
-            r_description ,
-            r_factor,
-            r_effect ,
-            r_code ,
-            responsible_person ,
-            guidelines_risk ,
-            duration_of_work, 
-            lh_code ,
-            im_code ,
-            stm_code, 
-            total_score ,
-            created_date,
-            updated_date
-            FROM risk where uu_id='$_REQUEST[uuid]'";
+            $sqlRisk = "SELECT r.uu_id ,
+            r.r_seq ,
+            r.r_name ,
+            r.r_description ,
+            r.r_factor,
+            r.r_effect ,
+            r.r_code ,
+            r.responsible_person ,
+            r.guidelines_risk ,
+            r.duration_of_work, 
+            r.lh_code ,
+            r.im_code ,
+            r.stm_code,stm.stm_name,
+            r.total_score ,
+            r.created_date,
+            r.updated_date
+            FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code where r.uu_id='$_REQUEST[uuid]'";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
             if ($resultRisk->num_rows > 0) {
@@ -278,24 +277,23 @@ include("../config-rm.php");
         if($checkError==true){
 
 
-            $sqlRisk = "SELECT 
-            uu_id ,
-            r_seq ,
-            r_name ,
-            r_description ,
-            r_factor,
-            r_effect ,
-            r_code ,
-            responsible_person ,
-            guidelines_risk ,
-            duration_of_work, 
-            lh_code ,
-            im_code ,
-            stm_code, 
-            total_score ,
-            created_date,
-            updated_date
-            FROM risk where uu_id='$_REQUEST[uuid]'";
+            $sqlRisk = "SELECT r.uu_id ,
+            r.r_seq ,
+            r.r_name ,
+            r.r_description ,
+            r.r_factor,
+            r.r_effect ,
+            r.r_code ,
+            r.responsible_person ,
+            r.guidelines_risk ,
+            r.duration_of_work, 
+            r.lh_code ,
+            r.im_code ,
+            r.stm_code,stm.stm_name,
+            r.total_score ,
+            r.created_date,
+            r.updated_date
+            FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code where r.uu_id='$_REQUEST[uuid]'";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
     
@@ -411,24 +409,23 @@ include("../config-rm.php");
 
         if($checkError==true){
         
-            $sqlRisk = "SELECT 
-            uu_id ,
-            r_seq ,
-            r_name ,
-            r_description ,
-            r_factor,
-            r_effect ,
-            r_code ,
-            responsible_person ,
-            guidelines_risk ,
-            duration_of_work, 
-            lh_code ,
-            im_code ,
-            stm_code, 
-            total_score ,
-            created_date,
-            updated_date
-            FROM risk where uu_id='$_REQUEST[uuid]'";
+            $sqlRisk = "SELECT r.uu_id ,
+            r.r_seq ,
+            r.r_name ,
+            r.r_description ,
+            r.r_factor,
+            r.r_effect ,
+            r.r_code ,
+            r.responsible_person ,
+            r.guidelines_risk ,
+            r.duration_of_work, 
+            r.lh_code ,
+            r.im_code ,
+            r.stm_code,stm.stm_name,
+            r.total_score ,
+            r.created_date,
+            r.updated_date
+            FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code where r.uu_id='$_REQUEST[uuid]'";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
 

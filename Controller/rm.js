@@ -39,14 +39,14 @@ var listRiskFormFn = function(data){
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control lh_code_select_area\" id=\"lh_code-"+indexEntry['r_code']+"\">";
                 $.each(data['dataLh'],function(indexLm,indexEntryLh){
-                    htmlFormRisk+="<option value="+indexEntryLh['lh_code']+">"+indexEntryLh['lh_name']+"(ระดับ"+indexEntryLh['lh_score']+")</option>";
+                    htmlFormRisk+="<option value="+indexEntryLh['lh_score']+">"+indexEntryLh['lh_name']+"(ระดับ"+indexEntryLh['lh_score']+")</option>";
                 });
                 htmlFormRisk+="</select>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control im_code_select_area\" id=\"im_code-"+indexEntry['r_code']+"\">";
                 $.each(data['dataIm'],function(indexIm,indexEntryIm){
-                    htmlFormRisk+="<option value="+indexEntryIm['im_code']+">"+indexEntryIm['im_name']+"(ระดับ"+indexEntryIm['im_score']+")</option>";
+                    htmlFormRisk+="<option value="+indexEntryIm['im_score']+">"+indexEntryIm['im_name']+"(ระดับ"+indexEntryIm['im_score']+")</option>";
                 });
                 htmlFormRisk+="</select>";
             htmlFormRisk+="</div>";
@@ -55,7 +55,39 @@ var listRiskFormFn = function(data){
     });
     $("#riskFormArea").html(htmlFormRisk);
 }
+var listRiskDisplayFn = function(data){
+    var htmlRiskDisplay="";
+    $.each(data['dataRisk'],function(index,indexEntry){
+        htmlRiskDisplay+="<tr>";
+			htmlRiskDisplay+="<td>";
+				htmlRiskDisplay+=index+1;
+			htmlRiskDisplay+="</td>";
+			htmlRiskDisplay+="<td>";
+				htmlRiskDisplay+=indexEntry['r_code']+""+indexEntry['r_name'];
+			htmlRiskDisplay+="</td>";
+			htmlRiskDisplay+="<td>";
+				htmlRiskDisplay+=indexEntry['total_score'];
+			htmlRiskDisplay+="</td>";
+			htmlRiskDisplay+="<td>";
+				htmlRiskDisplay+=indexEntry['stm_name'];
+			htmlRiskDisplay+="</td>";
+			htmlRiskDisplay+="<td>";
+				htmlRiskDisplay+=indexEntry['guidelines_risk'];
+			htmlRiskDisplay+="</td>";
+			htmlRiskDisplay+="<td>";
+				htmlRiskDisplay+=indexEntry['responsible_person'];
+			htmlRiskDisplay+="</td>";
+			htmlRiskDisplay+="<td>";
+				htmlRiskDisplay+=indexEntry['duration_of_work'];
+			htmlRiskDisplay+="</td>";
+		htmlRiskDisplay+="</tr>";
+    });
+
+    $("#listRiskDataArea").html(htmlRiskDisplay);
+}
+
 var riskFormFn = function(uuid){
+	
     $.ajax({
 		url:"./Model/action-rm.php",
 		type:"post",
@@ -71,6 +103,7 @@ var riskFormFn = function(uuid){
 				if(data[0]['status']=="200"){
 					
 					 listRiskFormFn(data[0]);
+					 listRiskDisplayFn(data[0]);
 				}
 			}
 		}
@@ -106,6 +139,7 @@ var riskAddFn = function(uuid){
 					
 					// console.log(data[0]['data']);
 					listRiskFormFn(data[0]);
+					listRiskDisplayFn(data[0]);
 				}
 			}
 		}
@@ -134,6 +168,7 @@ var deleteRiskFn=function(uuid,r_code){
 				if(data[0]['status']=="200"){
 					//alert("ok success");
 					listRiskFormFn(data[0]);
+					listRiskDisplayFn(data[0]);
 					
 				}
 			}
@@ -144,6 +179,8 @@ var deleteRiskFn=function(uuid,r_code){
 var riskSaveFn = function(uuid,r_code){
 
 
+	var total_score=0.00;
+	total_score=$("#lh_code-"+r_code).val()*$("#im_code-"+r_code).val();
 	
 	var dataReturn=true;
 	$.ajax({
@@ -166,7 +203,7 @@ var riskSaveFn = function(uuid,r_code){
             "lh_code":$("#lh_code-"+r_code).val(),
             "im_code":$("#im_code-"+r_code).val(),
             "stm_code":$("#stm_code-"+r_code).val(),
-            "total_score":"55",
+            "total_score":total_score,
 		},
 		success:function(data){
 
@@ -181,7 +218,7 @@ var riskSaveFn = function(uuid,r_code){
 		
 	});
 }
-var stmSelectDataFn=function(uuid){
+var stmSelectDataFn_bk=function(uuid){
 
     $.ajax({
 		url:"./Model/action-rm.php",
@@ -209,7 +246,7 @@ var stmSelectDataFn=function(uuid){
 	});
 	
 }
-var lhSelectDataFn=function(uuid){
+var lhSelectDataFn_bk=function(uuid){
 
     $.ajax({
 		url:"./Model/action-rm.php",
@@ -237,7 +274,7 @@ var lhSelectDataFn=function(uuid){
 	});
 	
 }
-var imSelectDataFn=function(uuid){
+var imSelectDataFn_bk=function(uuid){
 
     $.ajax({
 		url:"./Model/action-rm.php",
