@@ -30,7 +30,7 @@
 <div class="container">
     <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-people-arrows"></i> MANPOWER CALCULATION</h1>
     <div class="row mb-3" id="gaugeChartArea">
-         <!--
+         
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
                 <div class="card-header" style="text-align: center;">การเตรียมความพร้อม..</div>
@@ -70,13 +70,13 @@
                 </div>
             </div>
         </div>
-        -->
+        
         
   
     </div>
 
     <div id="dataTableMCDisplay"></div>
-<!--
+
     <div class="card  mb-3" >
         <div class="card-header"> 	1. การเตรียมความพร้อมระบบบัญชาการและควบคุม ทอ.</div>
         <div class="card-body">
@@ -152,7 +152,6 @@
             </table>
         </div>
     </div>
--->
 
 
 
