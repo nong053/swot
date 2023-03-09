@@ -119,6 +119,12 @@
             position: absolute;
             top:15px;
         }
+        .main_cate_rm_btn{
+       
+
+            margin-bottom:10px; margin:1px; float:right; 
+            
+        }
 
         
         
@@ -411,21 +417,21 @@
                             <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button> -->
-                            <button style="margin-bottom:10px; margin:1px; float:right; " data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
+                            <button  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle main_cate_rm_btn">
                                 <i class="fa-sharp fa-solid fa-bars-progress"></i>
                             </button>
 
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitExcel" class="btn btn-warning btn-circle ">
+                            <button  type="button" id="submitExcel" class="btn btn-warning btn-circle main_cate_rm_btn">
                             <i class="fa-sharp fa-solid fa-file-excel"></i>
                             </button>
 
                             
 
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPrint" class="btn btn-info btn-circle ">
+                            <button  type="button" id="submitPrint" class="btn btn-info btn-circle main_cate_rm_btn">
                                 <i class="fa-sharp fa-solid fa-print"></i>
                             </button>
 
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPDF" class="btn btn-danger btn-circle ">
+                            <button type="button" id="submitPDF" class="btn btn-danger btn-circle main_cate_rm_btn">
                                 <i class="fa-sharp fa-solid fa-file-pdf"></i>
                             </button>
 
@@ -448,11 +454,11 @@
                 <div class="accordion-body">
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="btnRiskSave" class="btn btn-success btn-circle ">
+                            <button  type="button" id="btnRiskSave" class="btn btn-success btn-circle main_cate_rm_btn">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
-                            <button style="margin-bottom:10px; float:right;"  type="button" id="btnRiskAdd" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
-                            <button style="margin-bottom:10px; float:right;"  type="button" id="btnRiskDel" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button>
+                            <button   type="button" id="btnRiskAdd" class="btn btn-primary btn-circle main_cate_rm_btn"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                            <button   type="button" id="btnRiskDel" class="btn btn-danger btn-circle main_cate_rm_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                     <!-- form here. -->
@@ -725,11 +731,11 @@
 
                     <div class="row">
                         <div class="col-md-12" style="text-align: left;">
-                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="mitigateRisksSave" class="btn btn-success btn-circle ">
+                            <button  type="button" id="mitigateRisksSave" class="btn btn-success btn-circle main_cate_rm_btn">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
-                           <button style="margin-bottom:10px; float:right;"  type="button" id="mitigateRisAdd" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
-                           <button style="margin-bottom:10px; float:right;"  type="button" id="mitigateRisDel" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button> 
+                           <button   type="button" id="mitigateRisAdd" class="btn btn-primary btn-circle main_cate_rm_btn"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                           <button   type="button" id="mitigateRisDel" class="btn btn-danger btn-circle main_cate_rm_btn"><i class="fa-sharp fa-solid fa-trash"></i></button> 
                         </div>
                     </div>
 
