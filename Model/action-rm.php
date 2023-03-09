@@ -8,7 +8,8 @@ include("../config-rm.php");
     //coding here.
     if($_REQUEST['action']=='showRisk'){
 
-        $sqlRisk = "SELECT 
+        $sqlRisk = "
+        SELECT 
         r.uu_id ,
         r.r_seq ,
         r.r_name ,
@@ -19,13 +20,17 @@ include("../config-rm.php");
         r.responsible_person ,
         r.guidelines_risk ,
         r.duration_of_work, 
-        r.lh_code ,
-        r.im_code ,
+        r.lh_code , lh.lh_score,
+        r.im_code , im.im_score,
         r.stm_code,stm.stm_name,
         r.total_score ,
         r.created_date,
         r.updated_date
-        FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code  where r.uu_id='$_REQUEST[uuid]'";
+        FROM risk r 
+        inner join strategy_type_master stm on r.stm_code =stm.stm_code
+        inner join likelihood_master lh on r.lh_code=lh.lh_code
+        inner join impact_master im on r.im_code=im.im_code
+        where r.uu_id='$_REQUEST[uuid]'";
         $dataRiskArray = array();
         $resultRisk = $conn->query($sqlRisk);
         if ($resultRisk->num_rows > 0) {
@@ -179,23 +184,30 @@ include("../config-rm.php");
         if ($conn->query($sql) === TRUE) {
 
 
-            $sqlRisk = "SELECT r.uu_id ,
-            r.r_seq ,
-            r.r_name ,
-            r.r_description ,
-            r.r_factor,
-            r.r_effect ,
-            r.r_code ,
-            r.responsible_person ,
-            r.guidelines_risk ,
-            r.duration_of_work, 
-            r.lh_code ,
-            r.im_code ,
-            r.stm_code,stm.stm_name,
-            r.total_score ,
-            r.created_date,
-            r.updated_date
-            FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code where r.uu_id='$_REQUEST[uuid]'";
+            $sqlRisk = "
+            SELECT 
+        r.uu_id ,
+        r.r_seq ,
+        r.r_name ,
+        r.r_description ,
+        r.r_factor,
+        r.r_effect ,
+        r.r_code ,
+        r.responsible_person ,
+        r.guidelines_risk ,
+        r.duration_of_work, 
+        r.lh_code , lh.lh_score,
+        r.im_code , im.im_score,
+        r.stm_code,stm.stm_name,
+        r.total_score ,
+        r.created_date,
+        r.updated_date
+        FROM risk r 
+        inner join strategy_type_master stm on r.stm_code =stm.stm_code
+        inner join likelihood_master lh on r.lh_code=lh.lh_code
+        inner join impact_master im on r.im_code=im.im_code
+        
+        where r.uu_id='$_REQUEST[uuid]'";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
             if ($resultRisk->num_rows > 0) {
@@ -277,7 +289,8 @@ include("../config-rm.php");
         if($checkError==true){
 
 
-            $sqlRisk = "SELECT r.uu_id ,
+            $sqlRisk = "SELECT 
+            r.uu_id ,
             r.r_seq ,
             r.r_name ,
             r.r_description ,
@@ -287,13 +300,16 @@ include("../config-rm.php");
             r.responsible_person ,
             r.guidelines_risk ,
             r.duration_of_work, 
-            r.lh_code ,
-            r.im_code ,
+            r.lh_code , lh.lh_score,
+            r.im_code , im.im_score,
             r.stm_code,stm.stm_name,
             r.total_score ,
             r.created_date,
             r.updated_date
-            FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code where r.uu_id='$_REQUEST[uuid]'";
+            FROM risk r 
+            inner join strategy_type_master stm on r.stm_code =stm.stm_code
+            inner join likelihood_master lh on r.lh_code=lh.lh_code
+            inner join impact_master im on r.im_code=im.im_code where r.uu_id='$_REQUEST[uuid]'";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
     
@@ -409,7 +425,8 @@ include("../config-rm.php");
 
         if($checkError==true){
         
-            $sqlRisk = "SELECT r.uu_id ,
+            $sqlRisk = "SELECT 
+            r.uu_id ,
             r.r_seq ,
             r.r_name ,
             r.r_description ,
@@ -419,13 +436,16 @@ include("../config-rm.php");
             r.responsible_person ,
             r.guidelines_risk ,
             r.duration_of_work, 
-            r.lh_code ,
-            r.im_code ,
+            r.lh_code , lh.lh_score,
+            r.im_code , im.im_score,
             r.stm_code,stm.stm_name,
             r.total_score ,
             r.created_date,
             r.updated_date
-            FROM risk r inner join strategy_type_master stm on r.stm_code =stm.stm_code where r.uu_id='$_REQUEST[uuid]'";
+            FROM risk r 
+            inner join strategy_type_master stm on r.stm_code =stm.stm_code
+            inner join likelihood_master lh on r.lh_code=lh.lh_code
+            inner join impact_master im on r.im_code=im.im_code where r.uu_id='$_REQUEST[uuid]'";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
 
@@ -684,6 +704,102 @@ include("../config-rm.php");
         } else {
         echo "Error updating record: " . $conn->error;
         }
+        
+
+    }else if($_REQUEST['action']=='insertStrategyTypeRisk'){
+       
+        $sql_insert = "
+        INSERT INTO strategy_type_master 
+        (
+        uu_id ,
+        stm_code,
+        stm_name,
+        stm_description,
+        created_date,
+        updated_date
+
+        ) 
+        VALUES
+        (
+        '$_REQUEST[uuid]',
+        '',
+        '',
+        '',
+        now(),
+        now()
+        )
+        ";
+        if ($conn->query($sql_insert) === TRUE) {
+        $checkError=true;
+
+        $last_id = mysqli_insert_id($conn);
+        $sql = "UPDATE strategy_type_master SET stm_code='$last_id' WHERE stm_id='$last_id'";
+        $conn->query($sql);
+       
+
+        }else{
+            echo "Error insert: " . $sql_insert . "<br>" . $conn->error;
+            $checkError=false;
+        }
+
+        if($checkError==true){
+        
+           
+             //strategy type master
+            $sqlStm = "SELECT 
+            *
+            FROM strategy_type_master where uu_id='$_REQUEST[uuid]'";
+            $dataStmArray = array();
+            $resultStm = $conn->query($sqlStm);
+
+            if ($resultStm->num_rows > 0) {
+                while($row = $resultStm->fetch_assoc()) {
+                    $dataStmArray[] = $row;
+                }
+            }
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataStmArray)."}]";
+           
+
+        }
+
+        
+
+    }else if($_REQUEST['action']=='deleteStrategyTypeRisk'){
+       
+       
+         // sql to delete a record
+         $checkError=true;
+         $sql = "DELETE FROM strategy_type_master WHERE  stm_code='$_REQUEST[stm_code]' and uu_id='$_REQUEST[uuid]'";
+ 
+         if ($conn->query($sql) === TRUE) {
+     
+            $checkError=true;
+ 
+         } else {
+             $checkError==false;
+         echo "Error deleting record: " . $conn->error;
+         }
+ 
+         if($checkError==true){
+ 
+ 
+           
+              //strategy type master
+             $sqlStm = "SELECT 
+             *
+             FROM strategy_type_master where uu_id='$_REQUEST[uuid]'";
+             $dataStmArray = array();
+             $resultStm = $conn->query($sqlStm);
+ 
+             if ($resultStm->num_rows > 0) {
+                 while($row = $resultStm->fetch_assoc()) {
+                     $dataStmArray[] = $row;
+                 }
+             }
+             echo "[{\"status\":\"200\",\"data\":".json_encode($dataStmArray)."}]";
+
+ 
+         }
         
 
     }else if($_REQUEST['action']=='evaluationRiskUpdate'){

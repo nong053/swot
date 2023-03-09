@@ -148,7 +148,8 @@
                 
 
                         </thead>
-                        <tbody>
+                        <tbody id="mitigateRisksDisplayArea">
+                            <!--
                             <tr>
                                 <td>1 - 8</td>
                                 <td>ต่ำ</td>
@@ -173,6 +174,7 @@
                                 <td  style="background-color: red;  border: 3px black solid; text-align:center;">แดง</td>
                                 
                             </tr>
+    -->
                         </tbody>
                     </table>
                     </div>
@@ -186,8 +188,8 @@
                         <td class="graphMainRight" id="risk5T" >5</td>
                         <td class="borderRisk" id="risk51"></td>
                         <td class="borderRisk riskBgYellow borderScopeRiskBottom borderScopeRiskLeft" id="risk52"></td>
-                        <td class="borderRisk riskBgYellow" id="risk53">RT03 RT04</td>
-                        <td class="borderRisk riskBgOgrange borderScopeRiskBottom borderScopeRiskLeft" id="risk54">RP02</td>
+                        <td class="borderRisk riskBgYellow" id="risk53"></td>
+                        <td class="borderRisk riskBgOgrange borderScopeRiskBottom borderScopeRiskLeft" id="risk54"></td>
                         <td class="borderRisk riskBgRed borderScopeRiskBottom borderScopeRiskLeft" id="risk55"></td>
                         
                     </tr>
@@ -726,8 +728,8 @@
                             <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="mitigateRisksSave" class="btn btn-success btn-circle ">
                                 <i class="fa-solid fa-floppy-disk"></i>
                             </button>
-                            <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
-                            <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button> -->
+                           <button style="margin-bottom:10px; float:right;"  type="button" id="mitigateRisAdd" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-plus"></i></button>
+                           <button style="margin-bottom:10px; float:right;"  type="button" id="mitigateRisDel" class="btn btn-danger btn-circle "><i class="fa-sharp fa-solid fa-trash"></i></button> 
                         </div>
                     </div>
 
