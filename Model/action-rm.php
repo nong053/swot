@@ -860,6 +860,42 @@ include("../config-rm.php");
         ";
         if ($conn->query($sql_insert) === TRUE) {
             $checkError=true;
+            //Load impace master ex start   no!!!! may be save not load
+            $sql_load_impact_master_ex ="
+            INSERT INTO 
+            impact_master 
+            (uu_id, im_code, im_name, im_description,im_score,created_date,updated_date)
+            SELECT 
+            $_REQUEST[uuid], im_code, im_score, im_name, im_description,now(),now()
+            FROM impact_master_ex
+            WHERE rce_id = $_REQUEST[rce_id]";
+
+            if ($conn->query($sql_load_impact_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_load_impact_master_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+            //Load likelihood master ex start no!!!! may be save not load
+            $sql_load_likelihood_master_ex ="
+            INSERT INTO 
+            likelihood_master 
+            (uu_id, lh_code, lh_name, lh_score,lh_description,created_date,updated_date)
+            SELECT 
+            $_REQUEST[uuid], lh_code, lh_score, lh_name, lh_description,now(),now()
+            FROM likelihood_master_ex
+            WHERE rce_id = $_REQUEST[rce_id]";
+
+            if ($conn->query($sql_load_likelihood_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_load_likelihood_master_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+
+
 
         }else{
             echo "Error insert: " . $sql_insert . "<br>" . $conn->error;
