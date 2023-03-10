@@ -699,16 +699,197 @@ var evaluationRiskFn = function(uuid,re_code){
 }
 
 
+var saveExampleDataFn = function(uuid){
 
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"saveExampleData",
+            "rce_type":$("#rce_type").val(),
+			"rce_name":$("#rce_name").val(),
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                    alert("OK");
+					//listTaskFn(data[0]['data'],tc_code);
+				}
+			}
+		}
+	});
+
+}
+
+var listExampleDataFn = function(data){
+	
+	var htmlExampleData = "";
+	$.each(data,function(index,indexEntry){
+		
+		htmlExampleData+="<tr>";
+			htmlExampleData+="<td>"+(index+1)+"</td>";
+			htmlExampleData+="<td>"+indexEntry['rce_name']+"</td>";
+			htmlExampleData+="<td>"+indexEntry['rce_type_name']+"</td>";
+			htmlExampleData+="<td>";
+			// if(indexEntry['rce_type_code']!=1){
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+			// }
+				htmlExampleData+="</td>";
+		htmlExampleData+="</tr>";
+	});
+	$("#dataExampleArea").html(htmlExampleData);
+}
+
+var listExampleLoadDataFn = function(data){
+	
+	var htmlExampleLoadData="";
+	$.each(data,function(index,indexEntry){
+		htmlExampleLoadData+="<option value="+indexEntry['rce_id']+">"+indexEntry['rce_name']+"</option>";
+	});
+	alert(listExampleLoadDataFn);
+	$("#rce_type_load").html(htmlExampleLoadData);
+	
+}	
+
+var showAllExampleDataUUIDFn = function(uuid){
+
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"showAllExampleDataByUuid",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                    alert("OK2");
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+var findOneExampleDataFn = function(uuid,rce_id){
+
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"rce_id":rce_id,
+			"action":"findOneExampleData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					
+				
+					$("#rce_type").val(data[0]['data'][0]['rce_type_code']);
+					$("#rce_name").val(data[0]['data'][0]['rce_name']);
+                    
+				}
+			}
+		}
+	});
+
+}
+
+var updateExampleDataFn = function(uuid,rce_id){
+
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"updateExampleData",
+            "rce_type":$("#rce_type").val(),
+			"rce_name":$("#rce_name").val(),
+			"rce_id":rce_id,
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+              
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+var delExampleDataFn = function(uuid,rce_id){
+
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"delExampleData",
+			"rce_id":rce_id
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                    
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+//LOAD DATA START
+var showAllExampleLoadDataFn = function(uuid){
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"showAllExampleLoadData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					listExampleLoadDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+//LOAD DATA END
 
 
 $(document).ready(function(){
-
-
-
-
-
-
 
 
 riskFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
@@ -871,7 +1052,72 @@ $("#evaluationRiskSave").click(function(){
 });
 /*risk  evaluation master start*/
 
+/*load data start here.*/
+var clearExampleDataFn = function(){
+	$("#actionExample").val("add");
+	$("#rce_name").val("");
+	$("#rce_id").val("");
+	$("#rce_type").prop("selectedIndex", 0);
+}
+$("#btnSaveExample").click(function(){
+	if($("#actionExample").val()=='add'){
+		saveExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	}else{
+		updateExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',$("#rce_id").val());
+	}
+});
 
+$("#getExampleModel").click(function(){
+	showAllExampleDataUUIDFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	clearExampleDataFn();
+});
+$(document).on("click",".delExampleData",function(){
+
+	var rce_id = this.id;
+	rce_id=rce_id.split("-");
+	rce_id=rce_id[1];
+
+	delExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',rce_id);
+
+ });
+ $(document).on("click",".editExampleData",function(){
+    var rce_id = this.id;
+	rce_id=rce_id.split("-");
+	rce_id=rce_id[1];
+	//alert(rce_id);
+	$("#actionExample").val("edit");
+	$("#rce_id").val(rce_id);
+	findOneExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',rce_id);
+
+ });
+
+
+
+
+
+
+ $("#home-tab").click(function(){
+	//alert("TAB1");
+	clearExampleDataFn();
+	$("#btnLoadExample").show();
+	$("#btnSaveExample").hide();
+	
+ });
+ $("#profile-tab").click(function(){
+	//alert("TAB2");
+	clearExampleDataFn();
+	$("#btnLoadExample").hide();
+	$("#btnSaveExample").show();
+	
+ });
+
+ showAllExampleLoadDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+ $("#btnLoadExample").click(function(){
+	alert("btnLoadExample");
+	
+ });
+ 
+/*load data end here.*/
 
 
 

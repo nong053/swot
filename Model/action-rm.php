@@ -840,7 +840,169 @@ include("../config-rm.php");
         }
         
 
-    }
+    }else if($_REQUEST['action']=='saveExampleData'){
+       
+       
+        $sql_insert = "
+        INSERT INTO risk_cate_ex 
+        (
+        uu_id ,
+        rce_name,
+        rce_type_code 
+        ) 
+        VALUES
+        (
+        '$_REQUEST[uuid]',
+        '$_REQUEST[rce_name]',
+        '$_REQUEST[rce_type_code]',
+        
+        )
+        ";
+        if ($conn->query($sql_insert) === TRUE) {
+            $checkError=true;
+
+        }else{
+            echo "Error insert: " . $sql_insert . "<br>" . $conn->error;
+            $checkError=false;
+        }
+
+        
+    }else if($_REQUEST['action']=='updateExampleData'){
+       
+       
+        $sql = "
+        UPDATE risk_cate_ex SET 
+       
+        rce_name='$_REQUEST[rce_name]',
+        rce_type_code='$_REQUEST[rce_type]'
+       
+        WHERE rce_id='$_REQUEST[rce_id]'";
+
+        if ($conn->query($sql) === TRUE) {
+
+     
+            $sql = "SELECT 
+            *
+            FROM risk_cate_ex where uu_id='$_REQUEST[uuid]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
+
+        
+    }else if($_REQUEST['action']=='delExampleData'){
+       
+       
+        $checkError=true;
+        $sql = "DELETE FROM risk_cate_ex WHERE  rce_id='$_REQUEST[rce_id]' and uu_id='$_REQUEST[uuid]'";
+
+        if ($conn->query($sql) === TRUE) {
+    
+        
+
+        } else {
+            $checkError==false;
+        echo "Error deleting record: " . $conn->error;
+        }
+
+        if($checkError==true){
+
+            $sql = "
+            SELECT 
+            *
+            FROM risk_cate_ex where uu_id='$_REQUEST[uuid]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+            
+            }
+
+        
+    }else if($_REQUEST['action']=='findOneExampleData'){
+       
+       
+        
+
+            $sql = "SELECT 
+            *
+            FROM risk_cate_ex where rce_id='$_REQUEST[rce_id]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+            
+            
+
+        
+    }else if($_REQUEST['action']=='showAllExampleDataByUuid'){
+       
+       
+        
+
+        $sql = "SELECT 
+        *
+        FROM risk_cate_ex where  uu_id='$_REQUEST[uuid]'";
+        $dataArray = array();
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
+        }
+        //echo "[{\"status\":\"200\"}]";
+        echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        
+        
+
+    
+        }else if($_REQUEST['action']=='showAllExampleLoadData'){
+            
+            
+                
+
+            $sql = "SELECT 
+            *
+            FROM risk_cate_ex where  uu_id='$_REQUEST[uuid]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+            
+            
+
+
+        }
+    //findOneExampleData
        
    
 

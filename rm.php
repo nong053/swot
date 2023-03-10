@@ -810,35 +810,89 @@
       
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Home</button>
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">โหลดข้อมูล</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">บันทึกข้อมูล</button>
             </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Contact</button>
-            </li>
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false" disabled>Disabled</button>
-            </li>
+ 
+           
         </ul>
         <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">...</div>
-        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">...</div>
-        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">...</div>
-        <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-md-12 " style="padding:5px;">
+                        <select class="form-select" id="rce_type_load" >
+                            <option>ตัวอย่างข้อมูล 1</option>
+                            <option>ตัวอย่างข้อมูล 2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-md-12 " style="padding:5px;">
+                    <div class="mb-3">
+                        <!-- <label for="exampleFindData" class="form-label">ค้นหา</label> -->
+                        <input type="text" class="form-control" id="rce_name_find" placeholder="ค้นหา">
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <th>#</th>
+                            <th>ข้อมูลตัวอย่าง</th>
+                            <th>ประเภท</th>
+                            <th>จัดการ</th>
+                        </thead>
+                        <tbody id="dataExampleArea">
+                            <!-- <tr>
+                                <td>1</td>
+                                <td>ตัวอย่าง1</td>
+                                <td>สาธารณะ</td>
+                                <td>
+                                    <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ตัวอย่าง2</td>
+                                <td>ส่วนตัว</td>
+                                <td>
+                                    <button class="btn btn-danger" id="exampleDel-1"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                    <div class="mb-3">
+                        <label for="rce_type" class="form-label">ประเภทข้อมูล</label>
+                        <select class="form-select" id="rce_type" aria-label="">
+                            <!-- <option value="1">ผู้ดูแลระบบ</option> -->
+                            <option value="1">ผู้ดูแลระบบ</option>
+                            <option value="2">สาธารณะ</option>
+                            <option value="3">ส่วนตัว</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rce_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
+                        <input type="text" class="form-control" id="rce_name" placeholder="ชื่อข้อมูลตัวอย่าง">
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+           
         </div>
 
 
 
-        <select class="form-select" id="dataBusinessType" aria-label="Default select example">
-           <option>ตัวอย่างข้อมูล 1</option>
-           <option>ตัวอย่างข้อมูล 2</option>
-        </select>
+       
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="getExampleSubmit" class="btn btn-primary">Load</button>
+        <input type="hidden" id="actionExample" value="add">
+        <input type="hidden" id="rce_id" value="">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+        <button type="button" style="display:none;" id="btnSaveExample" class="btn btn-primary">บันทึก</button>
+        <button type="button" id="btnLoadExample" class="btn btn-primary">โหลดข้อมูล</button>
       </div>
     </div>
   </div>
