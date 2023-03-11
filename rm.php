@@ -822,7 +822,7 @@
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                 <div class="row">
                     <div class="col-md-12 " style="padding:5px;">
-                        <select class="form-select" id="rce_type_load" >
+                        <select class="form-select" id="rce_id_load" >
                             <option>ตัวอย่างข้อมูล 1</option>
                             <option>ตัวอย่างข้อมูล 2</option>
                         </select>

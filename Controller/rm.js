@@ -700,7 +700,9 @@ var evaluationRiskFn = function(uuid,re_code){
 
 
 var saveExampleDataFn = function(uuid){
+    var rce_type_name = $("#rce_type option:selected").html()
 
+    
 	$.ajax({
 		url:"./Model/action-rm.php",
 		type:"post",
@@ -709,7 +711,8 @@ var saveExampleDataFn = function(uuid){
 		data:{
 			"uuid":uuid,
 			"action":"saveExampleData",
-            "rce_type":$("#rce_type").val(),
+            "rce_type_code":$("#rce_type").val(),
+            "rce_type_name":rce_type_name,
 			"rce_name":$("#rce_name").val(),
 		},
 		success:function(data){
@@ -752,8 +755,8 @@ var listExampleLoadDataFn = function(data){
 	$.each(data,function(index,indexEntry){
 		htmlExampleLoadData+="<option value="+indexEntry['rce_id']+">"+indexEntry['rce_name']+"</option>";
 	});
-	alert(listExampleLoadDataFn);
-	$("#rce_type_load").html(htmlExampleLoadData);
+
+	$("#rce_id_load").html(htmlExampleLoadData);
 	
 }	
 
@@ -774,7 +777,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 				
-                    alert("OK2");
+                   
 					listExampleDataFn(data[0]['data']);
 				}
 			}
@@ -887,7 +890,32 @@ var showAllExampleLoadDataFn = function(uuid){
 
 }
 //LOAD DATA END
+var loadExampleDataFn = function(uuid){
 
+    
+    $.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"loadExampleData",
+            "rce_id":$("#rce_id_load").val()
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					alert("ok");
+				}
+			}
+		}
+	});
+    
+
+}
 
 $(document).ready(function(){
 
@@ -1068,7 +1096,10 @@ $("#btnSaveExample").click(function(){
 });
 
 $("#getExampleModel").click(function(){
+    //table show display on list example
 	showAllExampleDataUUIDFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+    //select on tab load example
+    showAllExampleLoadDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 	clearExampleDataFn();
 });
 $(document).on("click",".delExampleData",function(){
@@ -1111,9 +1142,11 @@ $(document).on("click",".delExampleData",function(){
 	
  });
 
- showAllExampleLoadDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+ 
  $("#btnLoadExample").click(function(){
 	alert("btnLoadExample");
+    loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+    
 	
  });
  

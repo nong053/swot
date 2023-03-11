@@ -848,51 +848,109 @@ include("../config-rm.php");
         (
         uu_id ,
         rce_name,
-        rce_type_code 
+        rce_type_code,
+        rce_type_name 
         ) 
         VALUES
         (
         '$_REQUEST[uuid]',
         '$_REQUEST[rce_name]',
         '$_REQUEST[rce_type_code]',
+        '$_REQUEST[rce_type_name]'
         
         )
         ";
         if ($conn->query($sql_insert) === TRUE) {
             $checkError=true;
-            //Load impace master ex start   no!!!! may be save not load
-            $sql_load_impact_master_ex ="
+            $rce_id = mysqli_insert_id($conn);
+            
+           //SAVE EXAMPLE TO STORE START
+           //impact_master_ex
+           
+            $sql_save_to_impact_master_ex ="
             INSERT INTO 
-            impact_master 
-            (uu_id, im_code, im_name, im_description,im_score,created_date,updated_date)
+            impact_master_ex 
+            (rce_id,im_code, im_name, im_description,im_score)
             SELECT 
-            $_REQUEST[uuid], im_code, im_score, im_name, im_description,now(),now()
-            FROM impact_master_ex
-            WHERE rce_id = $_REQUEST[rce_id]";
+            $rce_id,im_code, im_name,im_description,im_score
+            FROM impact_master
+            WHERE uu_id = '$_REQUEST[uuid]'";
 
-            if ($conn->query($sql_load_impact_master_ex) === TRUE) {
+            if ($conn->query($sql_save_to_impact_master_ex) === TRUE) {
                 $checkError=true;
             }else{
-                echo "Error insert: " . $sql_load_impact_master_ex . "<br>" . $conn->error;
+                echo "Error insert: " . $sql_save_to_impact_master_ex . "<br>" . $conn->error;
                 $checkError=false;
             }
 
-            //Load likelihood master ex start no!!!! may be save not load
-            $sql_load_likelihood_master_ex ="
+            //likelihood_master_ex
+            $sql_save_to_likelihood_master_ex ="
             INSERT INTO 
-            likelihood_master 
-            (uu_id, lh_code, lh_name, lh_score,lh_description,created_date,updated_date)
+            likelihood_master_ex 
+            (rce_id,lh_code, lh_name, lh_score,lh_description)
             SELECT 
-            $_REQUEST[uuid], lh_code, lh_score, lh_name, lh_description,now(),now()
-            FROM likelihood_master_ex
-            WHERE rce_id = $_REQUEST[rce_id]";
+            $rce_id, lh_code,lh_name,lh_score, lh_description
+            FROM likelihood_master
+            WHERE uu_id = '$_REQUEST[uuid]'";
 
-            if ($conn->query($sql_load_likelihood_master_ex) === TRUE) {
+            if ($conn->query($sql_save_to_likelihood_master_ex) === TRUE) {
                 $checkError=true;
             }else{
-                echo "Error insert: " . $sql_load_likelihood_master_ex . "<br>" . $conn->error;
+                echo "Error insert: " . $sql_save_to_likelihood_master_ex . "<br>" . $conn->error;
                 $checkError=false;
             }
+
+            //risk_evaluation_master_ex
+            $sql_save_to_evaluation_master_ex ="
+            INSERT INTO 
+            risk_evaluation_master_ex 
+            (rce_id,re_code,re_name,re_score_start, re_score_end, re_score_color)
+            SELECT 
+            $rce_id,re_code,re_name,re_score_start, re_score_end,re_score_color
+            FROM risk_evaluation_master
+            WHERE uu_id = '$_REQUEST[uuid]'";
+
+            if ($conn->query($sql_save_to_evaluation_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_save_to_evaluation_master_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+            //strategy_type_master_ex
+            $sql_save_to_strategy_type_master_ex ="
+            INSERT INTO 
+            strategy_type_master_ex 
+            (rce_id,stm_code,stm_name,stm_description)
+            SELECT 
+            $rce_id,stm_code,stm_name,stm_description
+            FROM strategy_type_master
+            WHERE uu_id = '$_REQUEST[uuid]'";
+
+            if ($conn->query($sql_save_to_strategy_type_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_save_to_strategy_type_master_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+             //risk_ex
+             $sql_save_to_risk_ex ="
+             INSERT INTO 
+             risk_ex 
+             (rce_id,r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
+             SELECT 
+           $rce_id,'r_seq',r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
+             FROM risk
+             WHERE uu_id = '$_REQUEST[uuid]'";
+ 
+             if ($conn->query($sql_save_to_risk_ex) === TRUE) {
+                 $checkError=true;
+             }else{
+                 echo "Error insert: " . $sql_save_to_risk_ex . "<br>" . $conn->error;
+                 $checkError=false;
+             }
+
+            //SAVE EXAMPLE TO STORE END
 
 
 
@@ -911,12 +969,144 @@ include("../config-rm.php");
        
         rce_name='$_REQUEST[rce_name]',
         rce_type_code='$_REQUEST[rce_type]'
-       
         WHERE rce_id='$_REQUEST[rce_id]'";
 
         if ($conn->query($sql) === TRUE) {
+            /*
+            $sql = "DELETE FROM impact_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            $conn->query($sql);
+            */
+            //DELETE EXAMPLE FOR NEW LOAD
+            $sql_impact = "DELETE FROM impact_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_impact) === TRUE) {
+                $checkError=true;
+            
+            }else{
+                $checkError=false;
+            }
 
-     
+            $sql_likelihood_master_ex = "DELETE FROM likelihood_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_likelihood_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+            }
+
+            $sql_evaluation_master_ex = "DELETE FROM risk_evaluation_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_evaluation_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+            }
+
+            $sql_strategy_type_master_ex = "DELETE FROM strategy_type_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_strategy_type_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+            }
+            $sql_risk_ex = "DELETE FROM risk_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_risk_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+            }
+
+            //SAVE EXAMPLE TO STORE START
+           //impact_master_ex
+           
+           $sql_save_to_impact_master_ex ="
+           INSERT INTO 
+           impact_master_ex 
+           (rce_id,im_code, im_name, im_description,im_score)
+           SELECT 
+           $_REQUEST[rce_id],im_code, im_name,im_description,im_score
+           FROM impact_master
+           WHERE uu_id = '$_REQUEST[uuid]'";
+
+           if ($conn->query($sql_save_to_impact_master_ex) === TRUE) {
+               $checkError=true;
+           }else{
+               echo "Error insert: " . $sql_save_to_impact_master_ex . "<br>" . $conn->error;
+               $checkError=false;
+           }
+
+           //likelihood_master
+           $sql_save_to_likelihood_master_ex ="
+           INSERT INTO 
+           likelihood_master_ex 
+           (rce_id,lh_code, lh_name, lh_score,lh_description)
+           SELECT 
+           $_REQUEST[rce_id], lh_code,lh_name,lh_score, lh_description
+           FROM likelihood_master
+           WHERE uu_id = '$_REQUEST[uuid]'";
+
+           if ($conn->query($sql_save_to_likelihood_master_ex) === TRUE) {
+               $checkError=true;
+           }else{
+               echo "Error insert: " . $sql_save_to_likelihood_master_ex . "<br>" . $conn->error;
+               $checkError=false;
+           }
+
+           //risk_evaluation_master
+           $sql_save_to_evaluation_master_ex ="
+           INSERT INTO 
+           risk_evaluation_master_ex 
+           (rce_id,re_code,re_name,re_score_start, re_score_end, re_score_color)
+           SELECT 
+           $_REQUEST[rce_id],re_code,re_name,re_score_start, re_score_end,re_score_color
+           FROM risk_evaluation_master
+           WHERE uu_id = '$_REQUEST[uuid]'";
+
+           if ($conn->query($sql_save_to_evaluation_master_ex) === TRUE) {
+               $checkError=true;
+           }else{
+               echo "Error insert: " . $sql_save_to_evaluation_master_ex . "<br>" . $conn->error;
+               $checkError=false;
+           }
+
+           //strategy_type_master
+           $sql_save_to_strategy_type_master_ex ="
+           INSERT INTO 
+           strategy_type_master_ex 
+           (rce_id,stm_code,stm_name,stm_description)
+           SELECT 
+           $_REQUEST[rce_id],stm_code,stm_name,stm_description
+           FROM strategy_type_master
+           WHERE uu_id = '$_REQUEST[uuid]'";
+
+           if ($conn->query($sql_save_to_strategy_type_master_ex) === TRUE) {
+               $checkError=true;
+           }else{
+               echo "Error insert: " . $sql_save_to_strategy_type_master_ex . "<br>" . $conn->error;
+               $checkError=false;
+           }
+           //risk_ex
+           $sql_save_to_risk_ex ="
+           INSERT INTO 
+           risk_ex 
+           (rce_id,r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
+           SELECT 
+           $_REQUEST[rce_id],'r_seq',r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
+           FROM risk
+           WHERE uu_id = '$_REQUEST[uuid]'";
+
+           if ($conn->query($sql_save_to_risk_ex) === TRUE) {
+               $checkError=true;
+           }else{
+               echo "Error insert: " . $sql_save_to_risk_ex . "<br>" . $conn->error;
+               $checkError=false;
+           }
+           //SAVE EXAMPLE TO STORE END
+
+           
+            
+
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
+
+        if( $checkError==true){
             $sql = "SELECT 
             *
             FROM risk_cate_ex where uu_id='$_REQUEST[uuid]'";
@@ -930,9 +1120,6 @@ include("../config-rm.php");
             }
             //echo "[{\"status\":\"200\"}]";
             echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
-
-        } else {
-        echo "Error updating record: " . $conn->error;
         }
 
         
@@ -944,7 +1131,48 @@ include("../config-rm.php");
 
         if ($conn->query($sql) === TRUE) {
     
-        
+         
+            $sql_impact = "DELETE FROM impact_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_impact) === TRUE) {
+                $checkError=true;
+            
+            }else{
+                $checkError=false;
+                echo "Error deleting impact_master_ex: " . $conn->error."<br>";
+            }
+
+            $sql_likelihood_master_ex = "DELETE FROM likelihood_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_likelihood_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting likelihood_master_ex: " . $conn->error."<br>";
+            }
+
+            $sql_evaluation_master_ex = "DELETE FROM risk_evaluation_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_evaluation_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting risk_evaluation_master_ex: " . $conn->error."<br>";
+            }
+
+            $sql_strategy_type_master_ex = "DELETE FROM strategy_type_master_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_strategy_type_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting strategy_type_master_ex: " . $conn->error."<br>";
+            }
+
+            $sql_risk_ex = "DELETE FROM risk_ex WHERE  rce_id='$_REQUEST[rce_id]'";
+            if ($conn->query($sql_risk_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting risk_ex: " . $conn->error."<br>";
+            }
+            
 
         } else {
             $checkError==false;
@@ -968,6 +1196,8 @@ include("../config-rm.php");
             //echo "[{\"status\":\"200\"}]";
             echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
             
+            }else{
+                echo "Error deleting record: " . $conn->error;
             }
 
         
@@ -1037,8 +1267,161 @@ include("../config-rm.php");
             
 
 
+        }else if($_REQUEST['action']=='loadExampleData'){
+            
+            
+                
+
+           //DELETE EXAMPLE FOR NEW LOAD START
+           $sql_impact_delete = "DELETE FROM impact_master WHERE  uu_id='$_REQUEST[uuid]'";
+           if ($conn->query($sql_impact_delete) === TRUE) {
+               $checkError=true;
+               
+           
+           }else{
+               $checkError=false;
+               echo "Error deleting sql_impact_delete: " . $conn->error."<br>";
+           }
+
+           $sql_likelihood_master_delete = "DELETE FROM likelihood_master WHERE  uu_id='$_REQUEST[uuid]'";
+           if ($conn->query($sql_likelihood_master_delete) === TRUE) {
+               $checkError=true;
+           }else{
+               $checkError=false;
+               echo "Error deleting sql_likelihood_master_delete: " . $conn->error."<br>";
+           }
+
+           $sql_evaluation_master_delete = "DELETE FROM risk_evaluation_master WHERE  uu_id='$_REQUEST[uuid]'";
+           if ($conn->query($sql_evaluation_master_delete) === TRUE) {
+               $checkError=true;
+           }else{
+               $checkError=false;
+               echo "Error deleting sql_evaluation_master_delete: " . $conn->error."<br>";
+           }
+
+           $sql_strategy_type_master_delete = "DELETE FROM strategy_type_master WHERE  uu_id='$_REQUEST[uuid]'";
+           if ($conn->query($sql_strategy_type_master_delete) === TRUE) {
+               $checkError=true;
+           }else{
+               $checkError=false;
+               echo "Error deleting sql_strategy_type_master_delete: " . $conn->error."<br>";
+           }
+           $sql_risk_delete = "DELETE FROM risk WHERE  uu_id='$_REQUEST[uuid]'";
+           if ($conn->query($sql_risk_delete) === TRUE) {
+               $checkError=true;
+           }else{
+               $checkError=false;
+               echo "Error deleting sql_risk_delete: " . $conn->error."<br>";
+           }
+           
+           //DELETE EXAMPLE FOR NEW LOAD END
+
+           //LOAD EXAMPLE FROM STORE START
+
+          //impact_master_ex
+          $sql_load_from_impact_master_ex ="
+          INSERT INTO 
+          impact_master
+          (uu_id,im_code, im_name, im_description,im_score)
+          SELECT 
+          '$_REQUEST[uuid]',im_code, im_name,im_description,im_score
+          FROM impact_master_ex 
+          WHERE rce_id = '$_REQUEST[rce_id]'";
+
+          if ($conn->query($sql_load_from_impact_master_ex) === TRUE) {
+              $checkError=true;
+          }else{
+              echo "Error insert: " . $sql_load_from_impact_master_ex . "<br>" . $conn->error;
+              $checkError=false;
+          }
+
+          //likelihood_master
+          $sql_load_from_likelihood_master_ex ="
+          INSERT INTO 
+          likelihood_master
+          (uu_id,lh_code, lh_name, lh_score,lh_description)
+          SELECT 
+          '$_REQUEST[uuid]', lh_code,lh_name,lh_score, lh_description
+          FROM likelihood_master_ex
+          WHERE rce_id = '$_REQUEST[rce_id]'";
+
+          if ($conn->query($sql_load_from_likelihood_master_ex) === TRUE) {
+              $checkError=true;
+          }else{
+              echo "Error insert: " . $sql_load_from_likelihood_master_ex . "<br>" . $conn->error;
+              $checkError=false;
+          }
+
+          //risk_evaluation_master
+          $sql_load_from_evaluation_master_ex ="
+          INSERT INTO 
+          risk_evaluation_master
+          (uu_id,re_code,re_name,re_score_start, re_score_end, re_score_color)
+          SELECT 
+          '$_REQUEST[uuid]',re_code,re_name,re_score_start, re_score_end,re_score_color
+          FROM risk_evaluation_master_ex
+          WHERE rce_id = '$_REQUEST[rce_id]'";
+
+          if ($conn->query($sql_load_from_evaluation_master_ex) === TRUE) {
+              $checkError=true;
+          }else{
+              echo "Error insert: " . $sql_load_from_evaluation_master_ex . "<br>" . $conn->error;
+              $checkError=false;
+          }
+
+          //strategy_type_master
+          $sql_load_from_strategy_type_master_ex ="
+          INSERT INTO 
+          strategy_type_master
+          (uu_id,stm_code,stm_name,stm_description)
+          SELECT 
+          '$_REQUEST[uuid]',stm_code,stm_name,stm_description
+          FROM strategy_type_master_ex
+          WHERE rce_id = '$_REQUEST[rce_id]'";
+
+          if ($conn->query($sql_load_from_strategy_type_master_ex) === TRUE) {
+              $checkError=true;
+          }else{
+              echo "Error insert: " . $sql_load_from_strategy_type_master_ex . "<br>" . $conn->error;
+              $checkError=false;
+          }
+
+
+          //risk_ex
+          $sql_load_from_risk_ex ="
+          INSERT INTO 
+          risk
+          (uu_id,r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
+          SELECT 
+          '$_REQUEST[uuid]',r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
+          FROM risk_ex
+          WHERE rce_id = '$_REQUEST[rce_id]'";
+
+          if ($conn->query($sql_load_from_risk_ex) === TRUE) {
+              $checkError=true;
+          }else{
+              echo "Error insert: " . $sql_load_from_risk_ex . "<br>" . $conn->error;
+              $checkError=false;
+          }
+          
+          
+          //LOAD EXAMPLE FROM STORE END
+            
+            
+
+
+          if($checkError==true){
+
+           
+            echo "[{\"status\":\"200\"}]";
+           
+
+            }
+
+
+
         }
-    //findOneExampleData
+
        
    
 
