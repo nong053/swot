@@ -820,12 +820,23 @@
         </ul>
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                <div class="row">
-                    <div class="col-md-12 " style="padding:5px;">
-                        <select class="form-select" id="rce_id_load" >
-                            <option>ตัวอย่างข้อมูล 1</option>
-                            <option>ตัวอย่างข้อมูล 2</option>
-                        </select>
+                <div class="row " >
+                    <div class="col-md-12 " >
+                        <form id="formImportFile" enctype="multipart/form-data">
+                            <div class="mb-3" style="padding-top: 15px;">
+                                <select class="form-select" id="rce_id_load" >
+                                    <option>ตัวอย่างข้อมูล 1</option>
+                                    <option>ตัวอย่างข้อมูล 2</option>
+                                </select>
+                            </div>
+                            <div>หรือ(JSON file)</div>
+                            <div class="mb-3">
+                                <!-- <label for="file_import" class="form-label">ไฟล์ JSON</label> -->
+                                <input type="file" class="form-control" id="file_import" onchange="processFiles(this.files)">
+                                <div id="message"></div>
+                                <div id="fileOutput"></div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -836,12 +847,12 @@
                         <!-- <label for="exampleFindData" class="form-label">ค้นหา</label> -->
                         <input type="text" class="form-control" id="rce_name_find" placeholder="ค้นหา">
                     </div>
-                    <table class="table">
+                    <table class="table" id="exampleDataTable">
                         <thead>
                             <th>#</th>
                             <th>ข้อมูลตัวอย่าง</th>
                             <th>ประเภท</th>
-                            <th>จัดการ</th>
+                            <th style="text-align: center;">จัดการ</th>
                         </thead>
                         <tbody id="dataExampleArea">
                             <!-- <tr>
@@ -863,6 +874,7 @@
                         </tbody>
                     </table>
                     <div class="mb-3">
+                        <hr>
                         <label for="rce_type" class="form-label">ประเภทข้อมูล</label>
                         <select class="form-select" id="rce_type" aria-label="">
                             <!-- <option value="1">ผู้ดูแลระบบ</option> -->

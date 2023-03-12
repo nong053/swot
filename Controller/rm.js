@@ -1,3 +1,5 @@
+var dataJsonForImport="";
+
 var listRiskFormFn = function(data){
     var htmlFormRisk="";
     $.each(data['dataRisk'],function(index,indexEntry){
@@ -742,7 +744,8 @@ var listExampleDataFn = function(data){
 			// if(indexEntry['rce_type_code']!=1){
 				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
 				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
-			// }
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+				// }
 				htmlExampleData+="</td>";
 		htmlExampleData+="</tr>";
 	});
@@ -917,6 +920,113 @@ var loadExampleDataFn = function(uuid){
 
 }
 
+
+
+function getFile (elm) {
+	new Response(elm.files[0]).json().then(json => {
+	  console.log(json)
+	}, err => {
+	  // not json
+	})
+  }
+
+  function processFiles(files) {
+	var file = files[0];
+
+	var message = document.getElementById("message");
+	message.innerHTML = "File Name：" + file.name + "<br>";
+	message.innerHTML += "File Size：" + file.size + "<br>";
+	message.innerHTML += "File Type：" + file.type + "<br>";
+
+	var reader = new FileReader();
+	reader.onload = function (e) {
+
+		dataJsonForImport=e.target.result;
+		/*
+	  var output = document.getElementById("fileOutput");  
+	  output.textContent = JSON.parse(e.target.result);
+	  console.log(e.target.result);
+	  */
+
+
+	};
+	reader.readAsText(file);
+  }
+var importExampleDataJsonFn = function(uuid,dataJsonForImport){
+
+
+	var dataJsonForImportObject=eval("("+dataJsonForImport+")");
+	
+
+    
+    $.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"importExampleJsonData",
+			"dataRisk":dataJsonForImportObject['dataRisk'],
+			"dataStm":dataJsonForImportObject['dataStm'],
+			"dataLh":dataJsonForImportObject['dataLh'],
+			"dataIm":dataJsonForImportObject['dataIm'],
+			"dataRe":dataJsonForImportObject['dataRe']
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					alert("ok");
+				}
+			}
+		}
+	});
+    
+
+}
+
+
+function exportToJsonFile(jsonData) {
+    let dataStr = JSON.stringify(jsonData);
+    let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+
+    let exportFileDefaultName = 'data.json';
+
+    let linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
+
+var exportExampleDataFn = function(uuid,rce_id){
+	$.ajax({
+		url:"./Model/action-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"rce_id":rce_id,
+			"action":"exportExampleData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					
+				console.log(data[0]);
+				exportToJsonFile(data[0]);
+					
+                    
+				}
+			}
+		}
+	});
+}
+
 $(document).ready(function(){
 
 
@@ -1086,6 +1196,10 @@ var clearExampleDataFn = function(){
 	$("#rce_name").val("");
 	$("#rce_id").val("");
 	$("#rce_type").prop("selectedIndex", 0);
+	$("#message").html("");
+	dataJsonForImport="";
+	$("#file_import").val("");
+
 }
 $("#btnSaveExample").click(function(){
 	if($("#actionExample").val()=='add'){
@@ -1121,6 +1235,16 @@ $(document).on("click",".delExampleData",function(){
 	findOneExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',rce_id);
 
  });
+ $(document).on("click",".exportExampleData",function(){
+    var rce_id = this.id;
+	rce_id=rce_id.split("-");
+	rce_id=rce_id[1];
+
+	exportExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',rce_id);
+
+ });
+
+ 
 
 
 
@@ -1132,6 +1256,7 @@ $(document).on("click",".delExampleData",function(){
 	clearExampleDataFn();
 	$("#btnLoadExample").show();
 	$("#btnSaveExample").hide();
+
 	
  });
  $("#profile-tab").click(function(){
@@ -1144,14 +1269,29 @@ $(document).on("click",".delExampleData",function(){
 
  
  $("#btnLoadExample").click(function(){
-	alert("btnLoadExample");
-    loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-    
+	if($("#file_import").val()==""){
+		alert('loadExampleDataFn');
+		//loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	}else{
+		alert('importExampleDataJsonFn');
+		importExampleDataJsonFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',dataJsonForImport);
+	}
 	
  });
  
 /*load data end here.*/
 
+
+/*
+search risk from store for edit,del,export
+*/
+$("#rce_name_find").keyup(function(){
+	console.log("search");
+	var value = $(this).val().toLowerCase();
+    $("#exampleDataTable tbody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
 
 
 

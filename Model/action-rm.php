@@ -966,7 +966,6 @@ include("../config-rm.php");
        
         $sql = "
         UPDATE risk_cate_ex SET 
-       
         rce_name='$_REQUEST[rce_name]',
         rce_type_code='$_REQUEST[rce_type]'
         WHERE rce_id='$_REQUEST[rce_id]'";
@@ -1420,13 +1419,321 @@ include("../config-rm.php");
 
 
 
+        }else if($_REQUEST['action']=="exportExampleData"){
+
+            //risk_ex
+            $sqlRisk = "SELECT 
+            *
+            FROM risk_ex  
+            where rce_id='$_REQUEST[rce_id]'";
+            $dataRiskArray = array();
+            $resultRisk = $conn->query($sqlRisk);
+    
+            if ($resultRisk->num_rows > 0) {
+       
+                while($row = $resultRisk->fetch_assoc()) {
+                    $dataRiskArray[] = $row;
+                }
+            }
+             //strategy_type_master_ex
+            $sqlStm = "SELECT 
+            *
+            FROM strategy_type_master_ex where rce_id='$_REQUEST[rce_id]'";
+            $dataStmArray = array();
+            $resultStm = $conn->query($sqlStm);
+
+            if ($resultStm->num_rows > 0) {
+                while($row = $resultStm->fetch_assoc()) {
+                    $dataStmArray[] = $row;
+                }
+            }
+
+
+              //likelihood_master_ex
+            $sqlLh = "SELECT 
+            *
+            FROM likelihood_master_ex where rce_id='$_REQUEST[rce_id]'";
+            $dataLhArray = array();
+            $resultLh = $conn->query($sqlLh);
+
+            if ($resultLh->num_rows > 0) {
+            // output data of each row
+                while($row = $resultLh->fetch_assoc()) {
+                    $dataLhArray[] = $row;
+                }
+            }
+
+            //impact_master_ex
+            $sqlIm = "SELECT 
+            *
+            FROM impact_master_ex where rce_id='$_REQUEST[rce_id]'";
+            $dataImArray = array();
+            $resultIm = $conn->query($sqlIm);
+
+            if ($resultIm->num_rows > 0) {
+            // output data of each row
+                while($row = $resultIm->fetch_assoc()) {
+                    $dataImArray[] = $row;
+                }
+            }
+
+             //risk_evaluation_master_ex
+             $sqlRe = "SELECT 
+             *
+             FROM risk_evaluation_master_ex where rce_id='$_REQUEST[rce_id]'";
+             $dataReArray = array();
+             $resultRe = $conn->query($sqlRe);
+ 
+             if ($resultRe->num_rows > 0) {
+             // output data of each row
+                 while($row = $resultRe->fetch_assoc()) {
+                     $dataReArray[] = $row;
+                 }
+             }
+            
+            echo "[{\"status\":\"200\",
+                \"dataRisk\":".json_encode($dataRiskArray).",
+                \"dataStm\":".json_encode($dataStmArray).",
+                \"dataLh\":".json_encode($dataLhArray).",
+                \"dataIm\":".json_encode($dataImArray).",
+                \"dataRe\":".json_encode($dataReArray)."
+            }]";
+           
+        }else if($_REQUEST['action']=="importExampleJsonData"){
+
+            $riskLength=sizeof($_REQUEST['dataRisk']);
+            $StmLength=sizeof($_REQUEST['dataStm']);
+            $LhLength=sizeof($_REQUEST['dataLh']);
+            $ImLength=sizeof($_REQUEST['dataIm']);
+            $ReLength=sizeof($_REQUEST['dataRe']);
+            $checkError=true;
+    
+
+            
+
+            $impact_master_delete = "DELETE FROM impact_master WHERE  uu_id='$_REQUEST[uuid]'";
+            if ($conn->query($impact_master_delete) === TRUE) {
+                $checkError=true;
+            
+            }else{
+                $checkError=false;
+                echo "Error deleting: " . $impact_master_delete . "<br>" . $conn->error;
+            }
+
+            $sql_likelihood_master_delete = "DELETE FROM likelihood_master WHERE  uu_id='$_REQUEST[uuid]'";
+            if ($conn->query($sql_likelihood_master_delete) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting: " . $sql_likelihood_master_delete . "<br>" . $conn->error;
+            }
+
+            $sql_evaluation_master_delete = "DELETE FROM risk_evaluation_master WHERE  uu_id='$_REQUEST[uuid]'";
+            if ($conn->query($sql_evaluation_master_delete) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting: " . $sql_evaluation_master_delete . "<br>" . $conn->error;
+            }
+
+            $sql_strategy_type_master_delete = "DELETE FROM strategy_type_master WHERE  uu_id='$_REQUEST[uuid]'";
+            if ($conn->query($sql_strategy_type_master_delete) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting: " . $sql_strategy_type_master_delete . "<br>" . $conn->error;
+            }
+            $sql_risk_delete = "DELETE FROM risk WHERE  uu_id='$_REQUEST[uuid]'";
+            if ($conn->query($sql_risk_delete) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+                echo "Error deleting: " . $sql_risk_delete . "<br>" . $conn->error;
+            }
+
+    
+            for ($i = 0; $i < $riskLength; $i++) {
+         
+
+                $sql_insert_risk = "
+                INSERT INTO risk 
+                (
+                uu_id ,
+                r_code,
+                r_seq ,
+                r_name ,
+                r_description ,
+                r_factor,
+                r_effect ,
+                responsible_person ,
+                guidelines_risk,
+                duration_of_work, 
+                lh_code ,
+                im_code ,
+                stm_code, 
+                total_score ,
+                created_date,
+                updated_date
+                ) 
+                VALUES
+                (
+                '".$_REQUEST['uuid']."',
+                '".$_REQUEST['dataRisk'][$i]['r_code']."',
+                ".$_REQUEST['dataRisk'][$i]['r_seq'].",
+                '".$_REQUEST['dataRisk'][$i]['r_name']."',
+                '".$_REQUEST['dataRisk'][$i]['r_description']."',
+                '".$_REQUEST['dataRisk'][$i]['r_factor']."',
+                '".$_REQUEST['dataRisk'][$i]['r_effect']."',
+                '".$_REQUEST['dataRisk'][$i]['responsible_person']."',
+                '".$_REQUEST['dataRisk'][$i]['guidelines_risk']."',
+                '".$_REQUEST['dataRisk'][$i]['duration_of_work']."',
+                ".$_REQUEST['dataRisk'][$i]['lh_code'].",
+                ".$_REQUEST['dataRisk'][$i]['im_code'].",
+                ".$_REQUEST['dataRisk'][$i]['stm_code'].",
+                ".$_REQUEST['dataRisk'][$i]['total_score'].",
+                now(),
+                now()
+                )
+                ";
+
+                if ($conn->query($sql_insert_risk) === TRUE) {
+                    $checkError=true;
+                }else{
+                    echo "Error insert: " . $sql_insert_risk . "<br>" . $conn->error;
+                    $checkError=false;
+                } 
+                
+            }
+
+            for ($i = 0; $i < $StmLength; $i++) {
+               
+
+                $sql_insert_stm = "
+                INSERT INTO strategy_type_master 
+                (
+                    uu_id,stm_code,stm_name,stm_description,created_date,updated_date
+                ) 
+                VALUES
+                (
+                '".$_REQUEST['uuid']."',
+                '".$_REQUEST['dataStm'][$i]['stm_code']."',
+                '".$_REQUEST['dataStm'][$i]['stm_name']."',
+                '".$_REQUEST['dataStm'][$i]['stm_description']."',
+                now(),
+                now()
+                )
+                ";
+
+                if ($conn->query($sql_insert_stm) === TRUE) {
+                    $checkError=true;
+                }else{
+                    echo "Error insert: " . $sql_insert_stm . "<br>" . $conn->error;
+                    $checkError=false;
+                } 
+                
+            }
+
+            for ($i = 0; $i < $LhLength; $i++) {
+               
+
+                $sql_insert_lh = "
+                INSERT INTO likelihood_master 
+                (
+                    uu_id,lh_code, lh_name, lh_score,lh_description,created_date,updated_date
+                ) 
+                VALUES
+                (
+                '".$_REQUEST['uuid']."',
+                '".$_REQUEST['dataLh'][$i]['lh_code']."',
+                '".$_REQUEST['dataLh'][$i]['lh_name']."',
+                '".$_REQUEST['dataLh'][$i]['lh_score']."',
+                '".$_REQUEST['dataLh'][$i]['lh_description']."',
+                now(),
+                now()
+                )
+                ";
+
+                if ($conn->query($sql_insert_lh) === TRUE) {
+                    $checkError=true;
+                }else{
+                    echo "Error insert: " . $sql_insert_lh . "<br>" . $conn->error;
+                    $checkError=false;
+                } 
+                
+            }
+
+            for ($i = 0; $i < $ImLength; $i++) {
+               
+
+                $sql_insert_Im = "
+                INSERT INTO impact_master 
+                (
+                    uu_id,im_code, im_name, im_description,im_score,created_date,updated_date
+                ) 
+                VALUES
+                (
+                '".$_REQUEST['uuid']."',
+                '".$_REQUEST['dataIm'][$i]['im_code']."',
+                '".$_REQUEST['dataIm'][$i]['im_name']."',
+                '".$_REQUEST['dataIm'][$i]['im_description']."',
+                '".$_REQUEST['dataIm'][$i]['im_score']."',
+                now(),
+                now()
+                )
+                ";
+
+                if ($conn->query($sql_insert_Im) === TRUE) {
+                    $checkError=true;
+                }else{
+                    echo "Error insert: " . $sql_insert_Im . "<br>" . $conn->error;
+                    $checkError=false;
+                } 
+                
+            }
+
+
+            for ($i = 0; $i < $ReLength; $i++) {
+               
+
+                $sql_insert_Re = "
+                INSERT INTO risk_evaluation_master 
+                (
+                    uu_id,re_code,re_name,re_score_start, re_score_end, re_score_color,created_date,updated_date
+                ) 
+                VALUES
+                (
+                '".$_REQUEST['uuid']."',
+                '".$_REQUEST['dataRe'][$i]['re_code']."',
+                '".$_REQUEST['dataRe'][$i]['re_name']."',
+                '".$_REQUEST['dataRe'][$i]['re_score_start']."',
+                '".$_REQUEST['dataRe'][$i]['re_score_end']."',
+                '".$_REQUEST['dataRe'][$i]['re_score_color']."',
+                now(),
+                now()
+                )
+                ";
+
+                if ($conn->query($sql_insert_Re) === TRUE) {
+                    $checkError=true;
+                }else{
+                    echo "Error insert: " . $sql_insert_Re . "<br>" . $conn->error;
+                    $checkError=false;
+                } 
+                
+            }
+
+
+
+
+            if($checkError==true){
+
+            echo "[{\"status\":\"200\"}]";
+
+            }
+
         }
 
-       
-   
-
-    
-    
+        //importExampleJsonData
 
  }else{
     echo "[{\"status\":\"404\",\"loginStatus\":\"notLogin\"}]";
