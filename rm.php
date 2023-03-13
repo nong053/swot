@@ -10,7 +10,7 @@
     
     <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/9770e5b059.css" crossorigin="anonymous"> -->
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css" >
+    <link rel="stylesheet" href="./main.css" >
    
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
@@ -19,7 +19,7 @@
     
     <style>
 
-    @import url(fonts/thsarabunnew.css);
+    @import url(./fonts/thsarabunnew.css);
 
     /**{ margin: 0; padding: 0; }*/
     body{
@@ -261,7 +261,7 @@
     <div class="card  mb-3" >
         <div class="card-header"> 	<b>รายงานสรุปการบริหารความความเสี่ยง </b></div>
         <div class="card-body">
-            <table class="table  table-striped">
+            <table class="table  table-striped" id="tableRiskData">
                 <thead>
                     
                        
@@ -915,6 +915,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript" src="printThis-master/printThis.js"></script>
+   
+    
+
+
+    
+
     <script src="Controller/rm.js"></script>
 
     <script>

@@ -1027,6 +1027,7 @@ var exportExampleDataFn = function(uuid,rce_id){
 	});
 }
 
+
 $(document).ready(function(){
 
 
@@ -1292,6 +1293,38 @@ $("#rce_name_find").keyup(function(){
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
 });
+
+
+//dowload pdf,excel,print
+$("#submitExcel").click(function(){
+
+	$("#tableRiskData").table2excel({
+		exclude: ".excludeThisClass",
+		name: "Risk Managmente",
+		filename: "Risk_Managment.xls", // do include extension
+		preserveColors: false // set to true if you want background colors and font colors preserved
+	});
+});
+$("#submitPDF").click(function(){
+	html2canvas($('#tableRiskData')[0], {
+		onrendered: function (canvas) {
+			var data = canvas.toDataURL();
+			var docDefinition = {
+				content: [{
+					image: data,
+					width: 500
+				}]
+			};
+			pdfMake.createPdf(docDefinition).download("risk-management.pdf");
+		}
+	});
+});
+$("#submitPrint").click(function(){
+	
+	$("#tableRiskData").printThis();
+});
+
+
 
 
 
