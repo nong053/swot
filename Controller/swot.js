@@ -813,4 +813,79 @@ $(document).ready(function(){
 	calculateSwotFn();
 	//createChart([1,2,3,4]);
     //alert(uuid);
+
+	//dowload pdf,excel,print
+	$("#submitExcel").click(function(){
+
+		$("#forExportExcel").table2excel({
+			exclude: ".excludeThisClass",
+			name: "SWOT ANALYSIS",
+			filename: "SWOT_Analysis.xls", // do include extension
+			preserveColors: false // set to true if you want background colors and font colors preserved
+		});
+	});
+	/*
+	$("#submitPDF").click(function(){
+		$("#pdfModel").modal('show');
+		$("#forExportPDF").show();
+
+		$("#submitDownloadPDF").click(function(){
+			//location.href = "./swot-pdf.php";
+			
+			html2canvas($('#forExportPDF')[0], {
+				onrendered: function (canvas) {
+					var data = canvas.toDataURL();
+					var docDefinition = {
+						content: [{
+							image: data,
+							width: 500,
+							// height:1000
+						}]
+					};
+					
+					pdfMake.createPdf(docDefinition).download("swot-analysis.pdf");
+					$("#forExportPDF").hide();
+					
+				}
+			});
+			
+			$("#pdfModel").modal('hide');
+		});
+	});
+*/
+
+	$("#submitPDF").click(function(){
+		
+		$("#forExportPDF").show();
+
+		
+			
+			html2canvas($('#forExportPDF')[0], {
+				onrendered: function (canvas) {
+					var data = canvas.toDataURL();
+					var docDefinition = {
+						content: [{
+							image: data,
+							width: 500,
+							// height:1000
+						}]
+					};
+					
+					pdfMake.createPdf(docDefinition).download("swot-analysis.pdf");
+					$("#forExportPDF").hide();
+					
+				}
+			});
+			
+			
+		
+	});
+
+
+	$("#submitPrint").click(function(){
+		
+		$("#tableRmDataAllArea").printThis();
+	});
+
+
 });

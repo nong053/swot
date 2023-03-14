@@ -99,9 +99,12 @@
 </head>
   <body>
   <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
-<div class="container">
-    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
+<div class="container" >
 
+    <div id="tableRmDataAllArea">
+
+    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
+    
     <div class="  mb-3">
         
         
@@ -111,14 +114,14 @@
             <div class="card-header" id="swot_detail_header">ตัวอย่างข้อมูล SWOT
                 <!-- SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D)  -->
             </div>
-            <div class="card-body">
+            <div class="card-body" >
                 <div id="chart" class="graph" ></div>
             </div>
         </div>
   
     </div>
 
-
+ 
     
         <div class="card text-bg-default mb-3" >
                 <div class="card-header">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส) </div>
@@ -126,7 +129,7 @@
         <div class="row">
         <div class="col-md-6">
         
-                <table class="table  table-striped">
+                <table class="table  table-striped tableRmData">
                         <thead>
                             <tr>
                                 <th class="swot_seq">#</th>
@@ -135,6 +138,7 @@
                             </tr>
                         </thead>
                         <tbody class="dataStrengths">
+<!--                             
                             <tr>
                                 <td >1</td>
                                 <td scope="row">บริษัทฯ อยู่ในเครือบริษัทพระนครยนตรการ ก่อตั้งเมื่อปี ๒๕๐๐ ประกอบธุรกิจอุตสาหกรรมด้านยานยนต์เป็นทั้งผู้ประกอบและผู้จัดจำหน่ายภายในประเทศ</td>
@@ -158,7 +162,7 @@
                             </tr>
                             <tr>
                                 <td colspan="3" class="total-swot">เฉลี่ย=1 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                    
@@ -170,7 +174,7 @@
                 <!--content here-->
                 
 
-                    <table class="table  table-striped">
+                    <table class="table  table-striped tableRmData">
                         <thead>
                             <tr>
                                  <th class="swot_seq">#</th>
@@ -220,7 +224,7 @@
             <div class="col-md-6">
 
 
-                <table class="table  table-striped">
+                <table class="table  table-striped tableRmData">
                         <thead>
                             <tr>
                                  <th class="swot_seq">#</th>
@@ -258,7 +262,7 @@
             </div>
         
             <div class="col-md-6">
-                <table class="table  table-striped">
+                <table class="table  table-striped tableRmData">
                     <thead>
                         <tr>
                              <th class="swot_seq">#</th>
@@ -303,7 +307,7 @@
         <div class="row">
             <div class="col-md-6">
 
-            <table class="table  table-striped">
+            <table class="table  table-striped tableRmData">
                 <thead>
                     <tr>
                          <th class="swot_seq">#</th>
@@ -341,7 +345,7 @@
             <div class="col-md-6">
 
             
-            <table class="table  table-striped">
+            <table class="table  table-striped tableRmData">
                 <thead>
                     <tr>
                          <th class="swot_seq">#</th>
@@ -387,7 +391,7 @@
         <div class="row">
             <div class="col-md-6">
 
-            <table class="table  table-striped">
+            <table class="table  table-striped tableRmData">
                 <thead>
                     <tr>
                          <th class="swot_seq">#</th>
@@ -423,7 +427,7 @@
             </table>
             </div>
             <div class="col-md-6">
-            <table class="table  table-striped">
+            <table class="table  table-striped tableRmData">
                     <thead>
                         <tr>
                              <th class="swot_seq">#</th>
@@ -463,7 +467,7 @@
     </div>
 
 
-
+    </div><!-- #tableRmDataAllArea-->
 
 
 
@@ -921,15 +925,7 @@
                             </div>
                         </div>
                         <!--box-->
-                        <!--button-->
-                        <div class="row">
-                            <div class="col-md-12" style="text-align: left;">
-                                <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-success btn-circle ">
-                                    <i class="fa-solid fa-floppy-disk"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!--button-->
+                       
                
              
             </form>
@@ -937,8 +933,7 @@
 
         </div>
     </div>
-
-
+   
 
 
     <a class="card setting-toggle" href="#offcanvasRight" data-bs-toggle="offcanvas" aria-controls="offcanvasRight">
@@ -959,10 +954,275 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="pdfModel" tabindex="-1" aria-labelledby="pdfModelLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="pdfModelLabel">Download PDF file</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ยืนยันการการดาวน์โหลด
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="submitDownloadPDF" class="btn btn-primary">Load</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Model -->
+<!-- for export pdf start-->
+<table id="forExportPDF" class="table" style="display:none;">
+            
+    <tr>
+        <td colspan="2">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส)</td>
+    </tr>
+    <tr>
+        <td>
+            <table class="table  table-striped tableRmData">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">จุดแข็ง (Strengths)</th>
+                        <th class="swot_score">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataStrengths">
+
+                </tbody>
+            </table>
+        </td>
+        <td>
+            <table class="table  table-striped ">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">โอกาส (Opportunities)</th>
+                        <th class="swot_score">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataOpportunities ">
+
+                </tbody>
+            </table>
+        </td>
+        
+    </tr>
+
+    <tr>
+        <td colspan="2">กลยุทธ์เชิงป้องกัน ST (จุดแข็งและภัยคุกคาม)</td>
+    </tr>
+    <tr>
+        <td>
+            <table class="table  table-striped ">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">จุดแข็ง (Strengths)</th>
+                        <th class="swot_scoreX">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataStrengths"></tbody>
+            </table>
+        </td>
+        <td>
+            <table class="table  table-striped ">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">ภัยคุกคาม (Threats)</th>
+                        <th class="swot_score">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataThreats">
+
+                </tbody>
+            </table>
+        </td>
+        
+    </tr>
 
 
+    <tr>
+        <td colspan="2">กลยุทธ์เชิงแก้ไข WO (จุดอ่อนและโอกาส)</td>
+    </tr>
+    
+    <tr>
+        <td>
+            <table class="table  table-striped ">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
+                        <th class="swot_score">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataWeaknesses"></tbody>
+            </table>
+        </td>
+        <td>
+            <table class="table  table-striped ">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">โอกาส (Opportunities)</th>
+                        <th class="swot_score">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataOpportunities">
+                    
+                </tbody>
+            </table>
+        </td>
+        
+    </tr>
 
 
+    <tr>
+        <td colspan="2">กลยุทธ์เชิงรับ WT (จุดอ่อนและภัยคุกคาม)</td>
+    </tr>
+    <tr>
+        <td>
+            <table class="table  table-striped tableRmData">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
+                        <th class="swot_score">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataWeaknesses">
+
+                </tbody>
+            </table>
+        </td>
+        <td>
+            <table class="table  table-striped tableRmData">
+                <thead>
+                    <tr>
+                        <th class="swot_seq">#</th>
+                        <th class="swot_name">ภัยคุกคาม (Threats)</th>
+                        <th class="swot_score">คะแนน</th>
+                    </tr>
+                </thead>
+                <tbody class="dataThreats">
+
+                </tbody>
+            </table>
+        </td>
+        
+    </tr>
+
+    
+</table>
+<!-- for export pdf end-->
+<!-- for export excel start-->
+<table id="forExportExcel" class="table" style="display:none;">
+            
+    <tr>
+        <td colspan="3">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส)</td>
+    </tr>
+   
+    <tr>
+        <th class="swot_seq">#</th>
+        <th class="swot_name">จุดแข็ง (Strengths)</th>
+        <th class="swot_score">คะแนน</th>
+    </tr>
+
+    <tbody class="dataStrengths">
+
+    </tbody>
+            
+    <tr>
+        <th class="swot_seq">#</th>
+        <th class="swot_name">โอกาส (Opportunities)</th>
+        <th class="swot_score">คะแนน</th>
+    </tr>
+
+    <tbody class="dataOpportunities ">
+
+    </tbody>
+            
+       
+        
+     
+
+    <tr>
+        <td colspan="3">กลยุทธ์เชิงป้องกัน ST (จุดแข็งและภัยคุกคาม)</td>
+    </tr>
+    <tr>
+       
+        <th class="swot_seq">#</th>
+        <th class="swot_name">จุดแข็ง (Strengths)</th>
+        <th class="swot_scoreX">คะแนน</th>
+    </tr>
+              
+     <tbody class="dataStrengths"></tbody>
+            
+        
+     <tr>
+        <th class="swot_seq">#</th>
+        <th class="swot_name">ภัยคุกคาม (Threats)</th>
+        <th class="swot_score">คะแนน</th>
+     </tr>
+
+     <tbody class="dataThreats"></tbody>
+
+               
+
+
+    <tr>
+        <td colspan="3">กลยุทธ์เชิงแก้ไข WO (จุดอ่อนและโอกาส)</td>
+    </tr>
+    
+   
+    <tr>
+        <th class="swot_seq">#</th>
+        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
+        <th class="swot_score">คะแนน</th>
+    </tr>
+
+    <tbody class="dataWeaknesses"></tbody>
+
+    <tr>
+        <th class="swot_seq">#</th>
+        <th class="swot_name">โอกาส (Opportunities)</th>
+        <th class="swot_score">คะแนน</th>
+    </tr>
+
+    <tbody class="dataOpportunities"></tbody>
+            
+
+
+    <tr>
+        <td colspan="3">กลยุทธ์เชิงรับ WT (จุดอ่อนและภัยคุกคาม)</td>
+    </tr>
+   
+    <tr>
+        <th class="swot_seq">#</th>
+        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
+        <th class="swot_score">คะแนน</th>
+    </tr>
+
+    <tbody class="dataWeaknesses"></tbody>
+
+    <tr>
+        <th class="swot_seq">#</th>
+        <th class="swot_name">ภัยคุกคาม (Threats)</th>
+        <th class="swot_score">คะแนน</th>
+    </tr>
+
+    <tbody class="dataThreats"></tbody>
+
+               
+        
+    </tr> 
+
+    
+</table>
+<!-- for export exel end-->
 <!-- Modal -->
 <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -989,6 +1249,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
+
+     <!-- export excel-->
+     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+    <!-- export pdf-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- printing-->
+    <script type="text/javascript" src="printThis-master/printThis.js"></script>
+
+
     <script src="Controller/swot.js"></script>
     <script>
         $(document).ready(function(){

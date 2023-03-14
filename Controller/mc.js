@@ -623,4 +623,11 @@ $(document).on("click",".addTask",function(){
  });
 /*  Task End*/
 
+
+$("#submitPrint").click(function(){
+		
+	$("#dataTableMCDisplay").printThis();
+});
+
+
 });

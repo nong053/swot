@@ -207,16 +207,32 @@
         <div class="offcanvas-body">
 
         <div class="row">
+                
+              
+                <!-- <div class="col-md-12" style="text-align: left; padding-bottom: 5px;">
+                    <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPDF" class="btn btn-danger btn-circle ">
+                                <i class="fa-sharp fa-solid fa-file-pdf"></i>
+                            </button>
+                    <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPrint" class="btn btn-info btn-circle ">
+                        <i class="fa-sharp fa-solid fa-print"></i>
+                    </button>
+
+                    <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitExcel" class="btn btn-warning btn-circle ">
+                            <i class="fa-sharp fa-solid fa-file-excel"></i>
+                            </button>
+                </div>
+                <hr> -->
                 <div class="col-md-12" style="text-align: left; padding-bottom: 5px;">
-                    <!-- <button style="margin-bottom:10px; float:right;" type="button" id="submitSaveTask" class="btn btn-success btn-circle" >
-                        <i class="fa-solid fa-floppy-disk"></i>
-                    </button> -->
+                    
                     <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
                         <i class="fa-sharp fa-solid fa-bars-progress"></i>
                     </button>
                     <button  type="button" id="addTaskModal" class="btn btn-primary btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
                     <button  type="button" id="deleteTaskCate" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
                     <button  type="button" id="editTaskCateModal" class="btn btn-warning btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+                    <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPrint" class="btn btn-info btn-circle ">
+                        <i class="fa-sharp fa-solid fa-print"></i>
+                    </button>
                 </div>
             </div>
 
@@ -631,6 +647,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
+
+     <!-- export excel-->
+     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
+    <!-- export pdf-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- printing-->
+    <script type="text/javascript" src="printThis-master/printThis.js"></script>
+
+
     <script src="Controller/main.js"></script>
     <script src="Controller/mc.js"></script>
     <script>
