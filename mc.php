@@ -76,7 +76,7 @@
     </div>
 
     <div id="dataTableMCDisplay"></div>
-
+<!--
     <div class="card  mb-3" >
         <div class="card-header"> 	1. การเตรียมความพร้อมระบบบัญชาการและควบคุม ทอ.</div>
         <div class="card-body">
@@ -152,7 +152,7 @@
             </table>
         </div>
     </div>
-
+-->
 
 
     <div class="card  mb-3" >
@@ -201,7 +201,7 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i class="fa-sharp fa-solid fa-angles-left"></i> MANPOWER FORM</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-sharp fa-solid fa-angles-right"></i> MANPOWER FORM</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
@@ -620,7 +620,7 @@
 </div>
 <!--Model -->
 <!-- Modal -->
-<div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -636,6 +636,101 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" id="getExampleSubmit" class="btn btn-primary">Load</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--Model -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModelLabel">ตัวอย่างข้อมูล</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">โหลดข้อมูล</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">บันทึกข้อมูล</button>
+            </li>
+ 
+           
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <div class="row " >
+                    <div class="col-md-12 " >
+                        <form id="formImportFile" enctype="multipart/form-data">
+                            <div class="mb-3" style="padding-top: 15px;">
+                                <select class="form-select" id="mc_id_load" >
+                                    <option>ตัวอย่างข้อมูล 1</option>
+                                    <option>ตัวอย่างข้อมูล 2</option>
+                                </select>
+                            </div>
+                            <div>หรือ(JSON file)</div>
+                            <div class="mb-3">
+                                <!-- <label for="file_import" class="form-label">ไฟล์ JSON</label> -->
+                                <input type="file" class="form-control" id="file_import" onchange="processFiles(this.files)">
+                                <div id="message"></div>
+                                <div id="fileOutput"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                <div class="row">
+                    <div class="col-md-12 " style="padding:5px;">
+                    <div class="mb-3">
+                        <!-- <label for="exampleFindData" class="form-label">ค้นหา</label> -->
+                        <input type="text" class="form-control" id="mc_name_find" placeholder="ค้นหา">
+                    </div>
+                    <table class="table" id="exampleDataTable">
+                        <thead>
+                            <th>#</th>
+                            <th>ข้อมูลตัวอย่าง</th>
+                            <th>ประเภท</th>
+                            <th style="text-align: center;">จัดการ</th>
+                        </thead>
+                        <tbody id="dataExampleArea">
+                       
+                        </tbody>
+                    </table>
+                    <div class="mb-3">
+                        <hr>
+                        <label for="mc_release_type_code" class="form-label">ประเภทข้อมูล</label>
+                        <select class="form-select" id="mc_release_type_code" aria-label="">
+                            <!-- <option value="1">ผู้ดูแลระบบ</option> -->
+                            <option value="1">ผู้ดูแลระบบ</option>
+                            <option value="2">สาธารณะ</option>
+                            <option value="3">ส่วนตัว</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mc_release_type_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
+                        <input type="text" class="form-control" id="mc_name" placeholder="ชื่อข้อมูลตัวอย่าง">
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+       
+      </div>
+      <div class="modal-footer">
+        <input type="hidden" id="actionExample" value="add">
+        <input type="hidden" id="mc_id" value="">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+        <button type="button" style="display:none;" id="btnSaveExample" class="btn btn-primary">บันทึก</button>
+        <button type="button" id="btnLoadExample" class="btn btn-primary">โหลดข้อมูล</button>
       </div>
     </div>
   </div>

@@ -700,7 +700,7 @@ var evaluationRiskFn = function(uuid,re_code){
 	});
 }
 
-
+// example management start
 var saveExampleDataFn = function(uuid){
     var rce_type_name = $("#rce_type option:selected").html()
 
@@ -1026,7 +1026,7 @@ var exportExampleDataFn = function(uuid,rce_id){
 		}
 	});
 }
-
+//example management end
 
 $(document).ready(function(){
 

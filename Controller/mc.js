@@ -1,4 +1,4 @@
-
+var dataJsonForImport="";
 var listTaskCateFn = function(data){
 
 	var htmlListTaskCate="";
@@ -181,7 +181,7 @@ var listTaskCateDisplayFn = function(data){
 	$("#dataTableMCDisplay").html(htmlDataTableMCDisplay);
 	$("#totalTime").html(commaSeparateNumber(totalAllTime));
 	$("#totalQuantity").html(commaSeparateNumber(totalAllQuantity));
-	$("#totalManPower").html(commaSeparateNumber(totalAllManpower));
+	$("#totalManPower").html(commaSeparateNumber(parseFloat(totalAllManpower).toFixed(2)));
 
 
 	
@@ -508,6 +508,347 @@ var updateTaskFn = function(uuid,t_code){
 	
 }
 
+
+
+// example management start
+var saveExampleDataFn = function(uuid){
+    var mc_release_type_name = $("#mc_release_type_code option:selected").html()
+
+    
+	$.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"saveExampleData",
+            "mc_release_type_code":$("#mc_release_type_code").val(),
+            "mc_release_type_name":mc_release_type_name,
+			"mc_name":$("#mc_name").val(),
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                    alert("OK");
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+
+var listExampleDataFn = function(data){
+	
+	var htmlExampleData = "";
+	$.each(data,function(index,indexEntry){
+		
+		htmlExampleData+="<tr>";
+			htmlExampleData+="<td>"+(index+1)+"</td>";
+			htmlExampleData+="<td>"+indexEntry['mc_name']+"</td>";
+			htmlExampleData+="<td>"+indexEntry['mc_release_type_name']+"</td>";
+			htmlExampleData+="<td>";
+			// if(indexEntry['rce_type_code']!=1){
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['mc_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['mc_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['mc_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+				// }
+				htmlExampleData+="</td>";
+		htmlExampleData+="</tr>";
+	});
+	$("#dataExampleArea").html(htmlExampleData);
+}
+
+var listExampleLoadDataFn = function(data){
+	
+	var htmlExampleLoadData="";
+	$.each(data,function(index,indexEntry){
+		htmlExampleLoadData+="<option value="+indexEntry['mc_id']+">"+indexEntry['mc_name']+"</option>";
+	});
+
+	$("#mc_id_load").html(htmlExampleLoadData);
+	
+}	
+
+var showAllExampleDataUUIDFn = function(uuid){
+
+	$.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"showAllExampleDataByUuid",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                   
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+var findOneExampleDataFn = function(uuid,mc_id){
+
+	$.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"mc_id":mc_id,
+			"action":"findOneExampleData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					
+				
+					$("#mc_release_type_code").val(data[0]['data'][0]['mc_release_type_code']);
+					$("#mc_name").val(data[0]['data'][0]['mc_name']);
+                    
+				}
+			}
+		}
+	});
+
+}
+
+var updateExampleDataFn = function(uuid,mc_id){
+	var mc_release_type_name = $("#mc_release_type_code option:selected").html()
+	$.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"updateExampleData",
+            "mc_release_type_code":$("#mc_release_type_code").val(),
+			"mc_release_type_name":mc_release_type_name,
+			"mc_name":$("#mc_name").val(),
+			"mc_id":mc_id,
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+              
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+var delExampleDataFn = function(uuid,mc_id){
+
+	$.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"delExampleData",
+			"mc_id":mc_id
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                    
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+//LOAD DATA START
+var showAllExampleLoadDataFn = function(uuid){
+	$.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"showAllExampleLoadData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					listExampleLoadDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+//LOAD DATA END
+var loadExampleDataFn = function(uuid){
+
+    
+    $.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"loadExampleData",
+            "mc_id":$("#mc_id_load").val()
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					alert("ok");
+				}
+			}
+		}
+	});
+    
+
+}
+
+
+
+function getFile (elm) {
+	new Response(elm.files[0]).json().then(json => {
+	  console.log(json)
+	}, err => {
+	  // not json
+	})
+  }
+
+  function processFiles(files) {
+	var file = files[0];
+
+	var message = document.getElementById("message");
+	message.innerHTML = "File Name：" + file.name + "<br>";
+	message.innerHTML += "File Size：" + file.size + "<br>";
+	message.innerHTML += "File Type：" + file.type + "<br>";
+
+	var reader = new FileReader();
+	reader.onload = function (e) {
+
+		dataJsonForImport=e.target.result;
+		/*
+	  var output = document.getElementById("fileOutput");  
+	  output.textContent = JSON.parse(e.target.result);
+	  console.log(e.target.result);
+	  */
+
+
+	};
+	reader.readAsText(file);
+  }
+
+var importExampleDataJsonFn = function(uuid,dataJsonForImport){
+
+
+	var dataJsonForImportObject=eval("("+dataJsonForImport+")");
+	
+
+    
+    $.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"importExampleJsonData",
+			"dataTaskCate":dataJsonForImportObject['dataTaskCate'],
+			"dataTask":dataJsonForImportObject['dataTask'],
+			
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					alert("ok");
+				}
+			}
+		}
+	});
+    
+
+}
+
+
+function exportToJsonFile(jsonData) {
+    let dataStr = JSON.stringify(jsonData);
+    let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+
+    let exportFileDefaultName = 'data.json';
+
+    let linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
+
+var exportExampleDataFn = function(uuid,mc_id){
+	$.ajax({
+		url:"./Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"mc_id":mc_id,
+			"action":"exportExampleData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					
+				console.log(data[0]);
+				exportToJsonFile(data[0]);
+					
+                    
+				}
+			}
+		}
+	});
+}
+var clearExampleDataFn = function(){
+	$("#actionExample").val("add");
+	$("#mc_id").val("");
+	$("#mc_name").val("");
+	$("#mc_release_type_code").prop("selectedIndex", 0);
+	$("#message").html("");
+	dataJsonForImport="";
+	$("#file_import").val("");
+
+}
+
+//example management end
+
 $(document).ready(function(){
 	
 	var uuid = new DeviceUUID().get();
@@ -629,5 +970,98 @@ $("#submitPrint").click(function(){
 	$("#dataTableMCDisplay").printThis();
 });
 
+
+//action example management start
+$("#getExampleModel").click(function(){
+    //table show display on list example
+	showAllExampleDataUUIDFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+    //select on tab load example
+    showAllExampleLoadDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	clearExampleDataFn();
+});
+
+$(document).on("click",".delExampleData",function(){
+
+	var mc_id = this.id;
+	mc_id=mc_id.split("-");
+	mc_id=mc_id[1];
+
+	delExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',mc_id);
+
+ });
+ $(document).on("click",".editExampleData",function(){
+    var mc_id = this.id;
+	mc_id=mc_id.split("-");
+	mc_id=mc_id[1];
+	//alert(mc_id);
+	$("#actionExample").val("edit");
+	$("#mc_id").val(mc_id);
+	findOneExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',mc_id);
+
+ });
+ $(document).on("click",".exportExampleData",function(){
+    var mc_id = this.id;
+	mc_id=mc_id.split("-");
+	mc_id=mc_id[1];
+
+	exportExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',mc_id);
+
+ });
+
+ 
+
+
+
+
+
+
+ $("#home-tab").click(function(){
+	//alert("TAB1");
+	clearExampleDataFn();
+	$("#btnLoadExample").show();
+	$("#btnSaveExample").hide();
+
+	
+ });
+ $("#profile-tab").click(function(){
+	//alert("TAB2");
+	clearExampleDataFn();
+	$("#btnLoadExample").hide();
+	$("#btnSaveExample").show();
+	
+ });
+/*load data start here.*/
+ $("#btnLoadExample").click(function(){
+	if($("#file_import").val()==""){
+		alert('loadExampleDataFn');
+		loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	}else{
+		alert('importExampleDataJsonFn');
+		importExampleDataJsonFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',dataJsonForImport);
+	}
+	
+ });
+ /*load data end here.*/
+
+
+$("#btnSaveExample").click(function(){
+	if($("#actionExample").val()=='add'){
+		saveExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	}else{
+		updateExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',$("#mc_id").val());
+	}
+});
+
+//action axample mangement end
+/*
+search risk from store for edit,del,export
+*/
+$("#mc_name_find").keyup(function(){
+	console.log("search");
+	var value = $(this).val().toLowerCase();
+    $("#exampleDataTable tbody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
 
 });
