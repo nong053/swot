@@ -594,6 +594,7 @@ var loadExampleSwot=function(b_id,swot_detail){
 }
 var saveSwot=function(){
 
+//alert($("#swot_detail").val());
 
     $.ajax({
 		url:"./Model/action-swot.php",
@@ -727,6 +728,7 @@ var saveSwot=function(){
 		}
 	});
 	
+	
 }
 var getBusinessType=function(){
 
@@ -804,11 +806,9 @@ $(document).ready(function(){
 
 
 	$("#submitSave").click(function(){
-		clearDataFn();
+		//clearDataFn();
 		saveSwot();
-		//calculateSwotFn();
-		
-		//return false;
+
 	});
 	calculateSwotFn();
 	//createChart([1,2,3,4]);

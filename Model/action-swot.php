@@ -1,7 +1,7 @@
 <?php
 include("../config.php");
 $uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
- $sql = "SELECT * FROM admin where uu_id='$uuid'";
+ $sql = "SELECT * FROM users where uu_id='$uuid'";
  $result = $conn->query($sql);
  if ($result->num_rows > 0) {
 
@@ -9,14 +9,18 @@ $uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
     if($_REQUEST['action']=='findOne'){
 
         $sql = "
-        select s.s_id,s.uuid,s.form_id,s.ap_id,ap_name,
+  
+
+
+        select s.s_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
         s.s_name,s.s_weight,s.s_score,
         s.s_total_score,s.swot_detail
         from swot s
-        inner join aspect_master am on s.ap_id=am.ap_id
+        inner join aspect_master ap on s.ap_code=ap.ap_code
        
-        where uuid='$_REQUEST[uuid]'  
-        order by ap_id,form_id asc
+        where s.uu_id='$_REQUEST[uuid]'  
+        order by s.ap_code,s.form_id asc
+
         ";
         $dataArray = array();
             $result = $conn->query($sql);
@@ -189,11 +193,11 @@ if ($conn->query($sql_insert_swot) === TRUE) {
         $checkError=true;
         $sql_set = "SET SQL_SAFE_UPDATES = 0";
         $conn->query($sql_set);
-        $sql_delete = "DELETE FROM swot WHERE uuid='$_REQUEST[uuid]';";
+        $sql_delete = "DELETE FROM swot WHERE uu_id='$_REQUEST[uuid]';";
 
         if ($conn->query($sql_delete) === TRUE) {
 
-            $sql_select_swot = "SELECT * FROM swot_example where b_id='$_REQUEST[b_id]';";
+            $sql_select_swot = "SELECT * FROM swot_ex where b_id='$_REQUEST[b_id]';";
             $result_swot = $conn->query($sql_select_swot);
             if ($result_swot->num_rows > 0) {
 
@@ -201,8 +205,8 @@ if ($conn->query($sql_insert_swot) === TRUE) {
                 while($row = $result_swot->fetch_assoc()) {
                    
                     $sql_select_swot = "
-                    INSERT INTO swot (uuid,form_id,ap_id, s_name, s_weight, s_score,s_total_score,created_date,updated_date,swot_detail) VALUES
-                    ('$_REQUEST[uuid]','$row[form_id]','$row[ap_id]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW(),'$_REQUEST[swot_detail]')";
+                    INSERT INTO swot (uu_id,form_id,ap_code, s_name, s_weight, s_score,s_total_score,created_date,updated_date,swot_detail) VALUES
+                    ('$_REQUEST[uuid]','$row[form_id]','$row[ap_code]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW(),'$row[swot_detail]')";
         
                    $count++;
         
@@ -212,10 +216,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
                         echo "Error2: " . $sql . "<br>" . $conn->error;
                         $checkError=false;
                     }
-                  } //while 
-
-                  
-                  
+                  } //while   
                   
             }
 
@@ -227,7 +228,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
 
         if($checkError==true){
 
-            $sql_swot = "
+            /*
             select s.s_id,s.uuid,s.form_id,s.ap_id,ap_name,
             s.s_name,s.s_weight,s.s_score,
             s.s_total_score 
@@ -235,6 +236,20 @@ if ($conn->query($sql_insert_swot) === TRUE) {
             inner join aspect_master am on s.ap_id=am.ap_id
             where uuid='$_REQUEST[uuid]'
             order by ap_id asc
+            */
+
+            $sql_swot = "
+
+            
+            select s.s_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
+            s.s_name,s.s_weight,s.s_score,
+            s.s_total_score,s.swot_detail
+            from swot s
+            inner join aspect_master ap on s.ap_code=ap.ap_code
+        
+            where s.uu_id='$_REQUEST[uuid]'  
+            order by s.ap_code,s.form_id asc
+
             ";
             $dataArray = array();
             $result_swot = $conn->query($sql_swot);
