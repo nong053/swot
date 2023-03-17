@@ -1271,7 +1271,7 @@
                     <div class="col-md-12 " >
                         <form id="formImportFile" enctype="multipart/form-data">
                             <div class="mb-3" style="padding-top: 15px;">
-                                <select class="form-select" id="mc_id_load" >
+                                <select class="form-select" id="b_id_load" >
                                     <option>ตัวอย่างข้อมูล 1</option>
                                     <option>ตัวอย่างข้อมูล 2</option>
                                 </select>
@@ -1292,7 +1292,7 @@
                     <div class="col-md-12 " style="padding:5px;">
                     <div class="mb-3">
                         <!-- <label for="exampleFindData" class="form-label">ค้นหา</label> -->
-                        <input type="text" class="form-control" id="mc_name_find" placeholder="ค้นหา">
+                        <input type="text" class="form-control" id="b_name_find" placeholder="ค้นหา">
                     </div>
                     <table class="table" id="exampleDataTable">
                         <thead>
@@ -1307,8 +1307,8 @@
                     </table>
                     <div class="mb-3">
                         <hr>
-                        <label for="mc_release_type_code" class="form-label">ประเภทข้อมูล</label>
-                        <select class="form-select" id="mc_release_type_code" aria-label="">
+                        <label for="b_release_type_code" class="form-label">ประเภทข้อมูล</label>
+                        <select class="form-select" id="b_release_type_code" aria-label="">
                             <!-- <option value="1">ผู้ดูแลระบบ</option> -->
                             <option value="1">ผู้ดูแลระบบ</option>
                             <option value="2">สาธารณะ</option>
@@ -1316,8 +1316,8 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="mc_release_type_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
-                        <input type="text" class="form-control" id="mc_name" placeholder="ชื่อข้อมูลตัวอย่าง">
+                        <label for="b_type_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
+                        <input type="text" class="form-control" id="b_type_name" placeholder="ชื่อข้อมูลตัวอย่าง">
                     </div>
                         
                     </div>
@@ -1329,7 +1329,7 @@
       </div>
       <div class="modal-footer">
         <input type="hidden" id="actionExample" value="add">
-        <input type="hidden" id="mc_id" value="">
+        <input type="hidden" id="b_id" value="">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
         <button type="button" style="display:none;" id="btnSaveExample" class="btn btn-primary">บันทึก</button>
         <button type="button" id="btnLoadExample" class="btn btn-primary">โหลดข้อมูล</button>

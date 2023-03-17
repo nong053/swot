@@ -598,6 +598,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 	});
 
 }
+
 var findOneExampleDataFn = function(uuid,mc_id){
 
 	$.ajax({
@@ -655,6 +656,7 @@ var updateExampleDataFn = function(uuid,mc_id){
 	});
 
 }
+
 var delExampleDataFn = function(uuid,mc_id){
 
 	$.ajax({
@@ -1043,7 +1045,7 @@ $(document).on("click",".delExampleData",function(){
  });
  /*load data end here.*/
 
-
+//action save,update start
 $("#btnSaveExample").click(function(){
 	if($("#actionExample").val()=='add'){
 		saveExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
@@ -1051,8 +1053,8 @@ $("#btnSaveExample").click(function(){
 		updateExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',$("#mc_id").val());
 	}
 });
+//action save,update end
 
-//action axample mangement end
 /*
 search risk from store for edit,del,export
 */

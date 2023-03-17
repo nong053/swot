@@ -19,7 +19,7 @@
 // 		}
 // 	});
 // }
-
+var dataJsonForImport="";
 var clearDataFn = function(){
 	$("#swot_detail").val("");
 	$(".dataStrengths").html("");
@@ -471,7 +471,7 @@ var renderSwotToDisplay = function(data){
 				
 			}
 			
-			if(indexEntry['ap_id']=='1' && indexEntry['s_name']!==""){
+			if(indexEntry['ap_code']=='1' && indexEntry['s_name']!==""){
 				countStrengths+=1;
 				dataStrengths+="<tr>";
 					dataStrengths+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
@@ -480,7 +480,7 @@ var renderSwotToDisplay = function(data){
 					sumStrengths+=+parseFloat(indexEntry['s_total_score']).toFixed(2);
 				dataStrengths+="</tr>";
 			}
-			if(indexEntry['ap_id']=='2'&& indexEntry['s_name']!==""){
+			if(indexEntry['ap_code']=='2'&& indexEntry['s_name']!==""){
 				countWeaknesses+=1;
 				dataWeaknesses+="<tr>";
 					dataWeaknesses+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
@@ -489,7 +489,7 @@ var renderSwotToDisplay = function(data){
 					sumWeaknesses+=+parseFloat(indexEntry['s_total_score']).toFixed(2);
 				dataWeaknesses+="</tr>";
 			}
-			if(indexEntry['ap_id']=='3'&& indexEntry['s_name']!==""){
+			if(indexEntry['ap_code']=='3'&& indexEntry['s_name']!==""){
 				countOpportunities+=1;
 				dataOpportunities+="<tr>";
 					dataOpportunities+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
@@ -498,7 +498,7 @@ var renderSwotToDisplay = function(data){
 					sumOpportunities+=+parseFloat(indexEntry['s_total_score']).toFixed(2);
 				dataOpportunities+="</tr>";
 			}
-			if(indexEntry['ap_id']=='4'&& indexEntry['s_name']!==""){
+			if(indexEntry['ap_code']=='4'&& indexEntry['s_name']!==""){
 				countThreats+=1;
 				dataThreats+="<tr>";
 					dataThreats+="<td  class='swot_seq'>"+indexEntry['form_id']+"</td>";
@@ -787,17 +787,340 @@ var autoLoginFn=function(){
 }
 
 
+// example management start
 
+var listExampleDataFn = function(data){
+	
+	var htmlExampleData = "";
+	$.each(data,function(index,indexEntry){
+		
+		htmlExampleData+="<tr>";
+			htmlExampleData+="<td>"+(index+1)+"</td>";
+			htmlExampleData+="<td>"+indexEntry['b_type_name']+"</td>";
+			htmlExampleData+="<td>"+indexEntry['b_release_type_name']+"</td>";
+			htmlExampleData+="<td>";
+			// if(indexEntry['rce_type_code']!=1){
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+				// }
+				htmlExampleData+="</td>";
+		htmlExampleData+="</tr>";
+	});
+	$("#dataExampleArea").html(htmlExampleData);
+}
+
+var saveExampleDataFn = function(uuid){
+    var b_release_type_name = $("#b_release_type_code option:selected").html()
+
+    
+	$.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"saveExampleData",
+            "b_release_type_code":$("#b_release_type_code").val(),
+            "b_release_type_name":b_release_type_name,
+			"b_type_name":$("#b_type_name").val(),
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                    alert("OK");
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+var clearExampleDataFn = function(){
+	$("#actionExample").val("add");
+	$("#b_type_name").val("");
+	$("#b_release_type_code").prop("selectedIndex", 0);
+	$("#message").html("");
+	dataJsonForImport="";
+	$("#file_import").val("");
+
+}
+
+var showAllExampleDataUUIDFn = function(uuid){
+
+	$.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"showAllExampleDataByUuid",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+                   
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+
+//LOAD DATA START
+var showAllExampleLoadDataFn = function(uuid){
+	$.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"showAllExampleLoadData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					listExampleLoadDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+var loadExampleDataFn = function(uuid){
+
+    
+    $.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"loadExampleData",
+            "b_id":$("#b_id_load").val()
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					alert("ok");
+				}
+			}
+		}
+	});
+    
+
+}
+//LOAD DATA END
+
+var listExampleLoadDataFn = function(data){
+	
+	var htmlExampleLoadData="";
+	$.each(data,function(index,indexEntry){
+		htmlExampleLoadData+="<option value="+indexEntry['b_id']+">"+indexEntry['b_type_name']+"</option>";
+	});
+
+	$("#b_id_load").html(htmlExampleLoadData);
+	
+}	
+
+
+
+var findOneExampleDataFn = function(uuid,b_id){
+
+	$.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"b_id":b_id,
+			"action":"findOneExampleData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					
+				
+					$("#b_release_type_code").val(data[0]['data'][0]['b_release_type_code']);
+					$("#b_type_name").val(data[0]['data'][0]['b_type_name']);
+                    
+				}
+			}
+		}
+	});
+
+}
+
+var updateExampleDataFn = function(uuid,b_id){
+	var b_release_type_name = $("#b_release_type_code option:selected").html()
+	$.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"updateExampleData",
+            "b_release_type_code":$("#b_release_type_code").val(),
+			"b_release_type_name":b_release_type_name,
+			"b_type_name":$("#b_type_name").val(),
+			"b_id":b_id,
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				
+              
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+
+var delExampleDataFn = function(uuid,b_id){
+
+	$.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"delExampleData",
+			"b_id":b_id
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					listExampleDataFn(data[0]['data']);
+				}
+			}
+		}
+	});
+
+}
+
+function exportToJsonFile(jsonData) {
+    let dataStr = JSON.stringify(jsonData);
+    let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+
+    let exportFileDefaultName = 'data.json';
+
+    let linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
+
+var exportExampleDataFn = function(uuid,b_id){
+	$.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"b_id":b_id,
+			"action":"exportExampleData",
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					
+				console.log(data[0]);
+				exportToJsonFile(data[0]);
+				}
+			}
+		}
+	});
+}
+
+var importExampleDataJsonFn = function(uuid,dataJsonForImport){
+
+	var dataJsonForImportObject=eval("("+dataJsonForImport+")");
+
+    $.ajax({
+		url:"./Model/action-swot.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"action":"importExampleJsonData",
+			"dataAspectMasterEx":dataJsonForImportObject['dataAspectMasterEx'],
+			"dataSwotEx":dataJsonForImportObject['dataSwotEx'],
+			
+	
+		},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+					alert("ok");
+				}
+			}
+		}
+	});
+    
+}
+function processFiles(files) {
+	var file = files[0];
+
+	var message = document.getElementById("message");
+	message.innerHTML = "File Name：" + file.name + "<br>";
+	message.innerHTML += "File Size：" + file.size + "<br>";
+	message.innerHTML += "File Type：" + file.type + "<br>";
+
+	var reader = new FileReader();
+	reader.onload = function (e) {
+
+		dataJsonForImport=e.target.result;
+		/*
+	  var output = document.getElementById("fileOutput");  
+	  output.textContent = JSON.parse(e.target.result);
+	  console.log(e.target.result);
+	  */
+
+
+	};
+	reader.readAsText(file);
+  }
 
 $(document).ready(function(){
+	//4b7e2fd0-776a-420d-bd09-79a58da47ff6 //mobile nong personal
+	//d520c7a8-421b-4563-b955-f5abc56b97ec //pc work room rtaf
 	
     var uuid = new DeviceUUID().get();
-	sessionStorage.setItem('uuid', uuid);
-    autoLoginFn();
+		//alert(uuid);
+		sessionStorage.setItem('uuid', uuid);
+    	autoLoginFn();
 
-	$("#getExampleModel").click(function(){
-		getBusinessType();
-	});
+	// $("#getExampleModel").click(function(){
+	// 	getBusinessType();
+	// });
 	$("#getExampleSubmit").click(function(){
 		
 		loadExampleSwot($("#dataBusinessType").val(),$("#dataBusinessType option:selected").text());
@@ -887,5 +1210,96 @@ $(document).ready(function(){
 		$("#tableRmDataAllArea").printThis();
 	});
 
+	//tap start
+
+	$("#home-tab").click(function(){
+		//alert("TAB1");
+		clearExampleDataFn();
+		$("#btnLoadExample").show();
+		$("#btnSaveExample").hide();
+	
+		
+	 });
+	 $("#profile-tab").click(function(){
+		//alert("TAB2");
+		clearExampleDataFn();
+		$("#btnLoadExample").hide();
+		$("#btnSaveExample").show();
+		
+	 });
+
+	//tab end
+
+
+	//action save,update start
+	$("#btnSaveExample").click(function(){
+		if($("#actionExample").val()=='add'){
+			saveExampleDataFn(sessionStorage.getItem('uuid'));
+		}else{
+			updateExampleDataFn(sessionStorage.getItem('uuid'),$("#b_id").val());
+		}
+	});
+	//action save,update end
+
+	//action show modal  start
+	$("#getExampleModel").click(function(){
+		//table show display on list example
+		showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
+		//select on tab load example
+		showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
+		clearExampleDataFn();
+	});
+	//action show modal  end
+
+
+	$(document).on("click",".delExampleData",function(){
+
+		var b_id = this.id;
+		b_id=b_id.split("-");
+		b_id=b_id[1];
+	
+		delExampleDataFn(sessionStorage.getItem('uuid'),b_id);
+	
+	 });
+	 $(document).on("click",".editExampleData",function(){
+		var b_id = this.id;
+		b_id=b_id.split("-");
+		b_id=b_id[1];
+		//alert(b_id);
+		$("#actionExample").val("edit");
+		$("#b_id").val(b_id);
+		findOneExampleDataFn(sessionStorage.getItem('uuid'),b_id);
+	
+	 });
+	 $(document).on("click",".exportExampleData",function(){
+		var b_id = this.id;
+		b_id=b_id.split("-");
+		b_id=b_id[1];
+	
+		exportExampleDataFn(sessionStorage.getItem('uuid'),b_id);
+	
+	 });
+
+	 $("#b_name_find").keyup(function(){
+		console.log("search");
+		var value = $(this).val().toLowerCase();
+		$("#exampleDataTable tbody tr").filter(function() {
+		  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		});
+	});
+
+
+	/*load data start here.*/
+	$("#btnLoadExample").click(function(){
+		if($("#file_import").val()==""){
+			alert('loadExampleDataFn');
+			loadExampleDataFn(sessionStorage.getItem('uuid'));
+		}else{
+			alert('importExampleDataJsonFn');
+			importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
+		}
+		
+	 });
+	 /*load data end here.*/
 
 });

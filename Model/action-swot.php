@@ -55,12 +55,12 @@ if ($conn->query($sql_insert_swot) === TRUE) {
 */
 
         $checkError=true;
-        $sql_delete = " DELETE FROM swot WHERE uuid='$_REQUEST[uuid]'";
+        $sql_delete = " DELETE FROM swot WHERE uu_id='$_REQUEST[uuid]'";
 
         if ($conn->query($sql_delete) === TRUE) {
             $sql_insert_swot = "
                 INSERT INTO swot 
-                (uuid,form_id,ap_id, s_name, s_weight,s_score,s_total_score,created_date,updated_date,swot_detail) 
+                (uu_id,form_id,ap_code, s_name, s_weight,s_score,s_total_score,created_date,updated_date,swot_detail) 
                 VALUES
                 ('$_REQUEST[uuid]','s1','1','$_REQUEST[s1_name]','$_REQUEST[s1_weight]','$_REQUEST[s1_score]','$_REQUEST[s1_total_score]',now(),now(),'$_REQUEST[swot_detail]'),
                 ('$_REQUEST[uuid]','s2','1','$_REQUEST[s2_name]','$_REQUEST[s2_weight]','$_REQUEST[s2_score]','$_REQUEST[s2_total_score]',now(),now(),'$_REQUEST[swot_detail]'),
@@ -105,13 +105,22 @@ if ($conn->query($sql_insert_swot) === TRUE) {
         if($checkError==true){
 
             $sql_swot = "
-                    select s.s_id,s.uuid,s.form_id,s.ap_id,ap_name,
+           
+
+
+
+
+                    select s.s_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
                     s.s_name,s.s_weight,s.s_score,
-                    s.s_total_score 
+                    s.s_total_score,s.swot_detail
                     from swot s
-                    inner join aspect_master am on s.ap_id=am.ap_id
-                    where uuid='$_REQUEST[uuid]'
-                    order by ap_id asc
+                    inner join aspect_master ap on s.ap_code=ap.ap_code
+                   
+                    where s.uu_id='$_REQUEST[uuid]'  
+                    order by s.ap_code,s.form_id asc
+
+                    
+
                     ";
                     $dataArray = array();
                     $result_swot = $conn->query($sql_swot);
@@ -205,8 +214,8 @@ if ($conn->query($sql_insert_swot) === TRUE) {
                 while($row = $result_swot->fetch_assoc()) {
                    
                     $sql_select_swot = "
-                    INSERT INTO swot (uu_id,form_id,ap_code, s_name, s_weight, s_score,s_total_score,created_date,updated_date,swot_detail) VALUES
-                    ('$_REQUEST[uuid]','$row[form_id]','$row[ap_code]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW(),'$row[swot_detail]')";
+                    INSERT INTO swot (uu_id,s_code,form_id,ap_code, s_name, s_weight, s_score,s_total_score,created_date,updated_date,swot_detail) VALUES
+                    ('$_REQUEST[uuid]','$row[s_code]','$row[form_id]','$row[ap_code]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW(),'$row[swot_detail]')";
         
                    $count++;
         
@@ -358,7 +367,509 @@ if ($conn->query($sql_insert_swot) === TRUE) {
 
 
 
-    }   
+    }else if($_REQUEST['action']=='showAllExampleDataByUuid'){
+       
+       
+        
+
+        $sql = "SELECT 
+        *
+        FROM business_type where  uu_id='$_REQUEST[uuid]'";
+        $dataArray = array();
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
+        }
+        //echo "[{\"status\":\"200\"}]";
+        echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        
+        
+
+    
+    }else if($_REQUEST['action']=='showAllExampleLoadData'){
+        
+        
+            
+
+        $sql = "SELECT 
+        *
+        FROM business_type where  uu_id='$_REQUEST[uuid]'";
+        $dataArray = array();
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $dataArray[] = $row;
+            }
+        }
+        //echo "[{\"status\":\"200\"}]";
+        echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        
+    }else if($_REQUEST['action']=='saveExampleData'){
+       
+        $checkError=true;
+        $sql_insert = "
+        INSERT INTO business_type 
+        (
+        uu_id ,
+        b_type_name,
+        b_release_type_code,
+        b_release_type_name,
+        created_date,
+        updated_date
+        ) 
+        VALUES
+        (
+        '$_REQUEST[uuid]',
+        '$_REQUEST[b_type_name]',
+        '$_REQUEST[b_release_type_code]',
+        '$_REQUEST[b_release_type_name]',
+        now(),
+        now()
+        )
+        ";
+        if ($conn->query($sql_insert) === TRUE) {
+            $checkError=true;
+            $b_id = mysqli_insert_id($conn);
+            
+           //SAVE EXAMPLE TO STORE START
+           //aspect_master_ex
+            $sql_save_to_aspect_master_ex="
+            INSERT INTO 
+            aspect_master_ex 
+            (b_id,ap_code, ap_name,created_date,updated_date)
+            SELECT 
+            $b_id,ap_code, ap_name,now(),now()
+            FROM aspect_master
+            WHERE uu_id = '$_REQUEST[uuid]'";
+
+            if ($conn->query($sql_save_to_aspect_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_save_to_aspect_master_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+            //task_ex
+            $sql_save_to_swot_ex="
+            INSERT INTO 
+            swot_ex 
+            (b_id,ap_code,seq_id,form_id,s_name,s_weight,s_score,s_total_score,swot_detail,created_date,updated_date)
+            SELECT 
+            $b_id,ap_code,seq_id,form_id,s_name,s_weight,s_score,s_total_score,swot_detail,now(),now()
+            FROM swot
+            WHERE uu_id = '$_REQUEST[uuid]'";
+
+            if ($conn->query($sql_save_to_swot_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_save_to_swot_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+            //SAVE EXAMPLE TO STORE END
+
+        }else{
+            echo "Error insert: " . $sql_insert . "<br>" . $conn->error;
+            $checkError=false;
+        }
+        if( $checkError==true){
+            $sql = "SELECT 
+            *
+            FROM business_type where uu_id='$_REQUEST[uuid]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        }
+        
+    }else if($_REQUEST['action']=='updateExampleData'){
+       
+       
+        $sql = "
+        UPDATE business_type SET 
+        b_type_name='$_REQUEST[b_type_name]',
+        b_release_type_code='$_REQUEST[b_release_type_code]',
+        b_release_type_name='$_REQUEST[b_release_type_name]'
+        WHERE b_id='$_REQUEST[b_id]'";
+
+        $checkError=true;
+
+        if ($conn->query($sql) === TRUE) {
+          
+            //DELETE EXAMPLE FOR NEW LOAD
+            
+            $aspect_master_ex_delete = "DELETE FROM aspect_master_ex WHERE  b_id='$_REQUEST[b_id]'";
+            if ($conn->query($aspect_master_ex_delete) === TRUE) {
+                $checkError=true;
+            
+            }else{
+                $checkError=false;
+            }
+
+            $swot_ex_detete = "DELETE FROM swot_ex WHERE  b_id='$_REQUEST[b_id]'";
+            if ($conn->query($swot_ex_detete) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+            }
+
+          
+
+            //SAVE EXAMPLE TO STORE START
+            //aspect_master_ex
+            $sql_save_to_aspect_master_ex="
+            INSERT INTO 
+            aspect_master_ex 
+            (b_id,ap_code, ap_name,created_date,updated_date)
+            SELECT 
+            $_REQUEST[b_id],ap_code, ap_name,now(),now()
+            FROM aspect_master
+            WHERE uu_id = '$_REQUEST[uuid]'";
+
+            if ($conn->query($sql_save_to_aspect_master_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_save_to_aspect_master_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+            //swot_ex
+            $sql_save_to_swot_ex="
+            INSERT INTO 
+            swot_ex 
+            (b_id,ap_code,seq_id,form_id,s_name,s_weight,s_score,s_total_score,swot_detail,created_date,updated_date)
+            SELECT 
+            $_REQUEST[b_id],ap_code,seq_id,form_id,s_name,s_weight,s_score,s_total_score,swot_detail,now(),now()
+            FROM swot
+            WHERE uu_id = '$_REQUEST[uuid]'";
+
+            if ($conn->query($sql_save_to_swot_ex) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_save_to_swot_ex . "<br>" . $conn->error;
+                $checkError=false;
+            }
+
+           //SAVE EXAMPLE TO STORE END
+
+        } else {
+        echo "Error updating record: " . $conn->error;
+        }
+
+        if( $checkError==true){
+            $sql = "SELECT 
+            *
+            FROM business_type where uu_id='$_REQUEST[uuid]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        }
+
+        
+    }else if($_REQUEST['action']=='delExampleData'){
+       
+       
+        $checkError=true;
+        $sql = "DELETE FROM business_type WHERE  b_id='$_REQUEST[b_id]' and uu_id='$_REQUEST[uuid]'";
+
+        if ($conn->query($sql) === TRUE) {
+    
+         
+            $aspect_master_ex_delete = "DELETE FROM aspect_master_ex WHERE  b_id='$_REQUEST[b_id]'";
+            if ($conn->query($aspect_master_ex_delete) === TRUE) {
+                $checkError=true;
+            
+            }else{
+                $checkError=false;
+            }
+
+            $swot_ex_detete = "DELETE FROM swot_ex WHERE  b_id='$_REQUEST[b_id]'";
+            if ($conn->query($swot_ex_detete) === TRUE) {
+                $checkError=true;
+            }else{
+                $checkError=false;
+            }
+
+
+           
+
+        } else {
+            $checkError==false;
+        echo "Error deleting record: " . $conn->error;
+        }
+
+        if($checkError==true){
+
+            $sql = "
+            SELECT 
+            *
+            FROM business_type where uu_id='$_REQUEST[uuid]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+            
+            }else{
+                echo "Error deleting record: " . $conn->error;
+            }
+
+        
+    }else if($_REQUEST['action']=='findOneExampleData'){
+       
+       
+        
+
+            $sql = "SELECT 
+            *
+            FROM business_type where b_id='$_REQUEST[b_id]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        
+    }else if($_REQUEST['action']=="exportExampleData"){
+
+        //risk_ex
+        $sqlAspectMasterEx = "SELECT 
+        *
+        FROM aspect_master_ex  
+        where b_id='$_REQUEST[b_id]'";
+        $dataAspectMasterExArray = array();
+        $resultAspectMasterEx = $conn->query($sqlAspectMasterEx);
+
+        if ($resultAspectMasterEx->num_rows > 0) {
+   
+            while($row = $resultAspectMasterEx->fetch_assoc()) {
+                $dataAspectMasterExArray[] = $row;
+            }
+        }
+         //strategy_type_master_ex
+        $sqlSwotEx = "SELECT 
+        *
+        FROM swot_ex where b_id='$_REQUEST[b_id]'";
+        $dataSwotExArray = array();
+        $resultSwotEx = $conn->query($sqlSwotEx);
+
+        if ($resultSwotEx->num_rows > 0) {
+            while($row = $resultSwotEx->fetch_assoc()) {
+                $dataSwotExArray[] = $row;
+            }
+        }
+
+
+        
+        echo "[{\"status\":\"200\",
+            \"dataAspectMasterEx\":".json_encode($dataAspectMasterExArray).",
+            \"dataSwotEx\":".json_encode($dataSwotExArray)."
+        }]";
+       
+    }else if($_REQUEST['action']=='loadExampleData'){
+            
+           
+        $checkError=true;    
+        //DELETE EXAMPLE FOR NEW LOAD START
+        $sql_aspect_master_delete = "DELETE FROM aspect_master WHERE  uu_id='$_REQUEST[uuid]'";
+        if ($conn->query($sql_aspect_master_delete) === TRUE) {
+            $checkError=true;
+            
+        
+        }else{
+            $checkError=false;
+            echo "Error deleting sql_aspect_master_delete: " . $conn->error."<br>";
+        }
+
+        $sql_swot_delete = "DELETE FROM swot WHERE  uu_id='$_REQUEST[uuid]'";
+        if ($conn->query($sql_swot_delete) === TRUE) {
+            $checkError=true;
+        }else{
+            $checkError=false;
+            echo "Error deleting swot: " . $conn->error."<br>";
+        }
+
+       
+        
+        //DELETE EXAMPLE FOR NEW LOAD END
+
+        //LOAD EXAMPLE FROM STORE START
+
+       //impact_master_ex
+       $sql_load_from_aspect_master_ex ="
+       INSERT INTO 
+       aspect_master
+       (uu_id,ap_code,ap_name,created_date,updated_date)
+       SELECT 
+       '$_REQUEST[uuid]',ap_code,ap_name,now(),now()
+       FROM aspect_master_ex 
+       WHERE b_id = '$_REQUEST[b_id]'";
+
+       if ($conn->query($sql_load_from_aspect_master_ex) === TRUE) {
+           $checkError=true;
+       }else{
+           echo "Error insert: " . $sql_load_from_aspect_master_ex . "<br>" . $conn->error;
+           $checkError=false;
+       }
+
+       //likelihood_master
+       $sql_load_from_swot_ex ="
+       INSERT INTO 
+       swot
+                  (uu_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_detail,created_date,updated_date)
+       SELECT 
+       '$_REQUEST[uuid]',s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_detail,now(),now()
+       FROM swot_ex
+       WHERE b_id = '$_REQUEST[b_id]'";
+
+       if ($conn->query($sql_load_from_swot_ex) === TRUE) {
+           $checkError=true;
+       }else{
+           echo "Error insert: " . $sql_load_from_swot_ex . "<br>" . $conn->error;
+           $checkError=false;
+       }
+
+       //LOAD EXAMPLE FROM STORE END
+         
+
+       if($checkError==true){    
+         
+        echo "[{\"status\":\"200\"}]";
+
+         }
+
+     }else if($_REQUEST['action']=="importExampleJsonData"){
+
+        $AspectMasterExLength=sizeof($_REQUEST['dataAspectMasterEx']);
+        $SwotExLength=sizeof($_REQUEST['dataSwotEx']);
+        $checkError=true;
+
+
+        
+
+        $aspect_master_delete = "DELETE FROM aspect_master WHERE  uu_id='$_REQUEST[uuid]'";
+        if ($conn->query($aspect_master_delete) === TRUE) {
+            $checkError=true;
+        
+        }else{
+            $checkError=false;
+            echo "Error deleting: " . $aspect_master_delete . "<br>" . $conn->error;
+        }
+
+        $swot_delete = "DELETE FROM swot WHERE  uu_id='$_REQUEST[uuid]'";
+        if ($conn->query($swot_delete) === TRUE) {
+            $checkError=true;
+        }else{
+            $checkError=false;
+            echo "Error deleting: " . $swot_delete . "<br>" . $conn->error;
+        }
+
+       
+
+
+        for ($i = 0; $i < $AspectMasterExLength; $i++) {
+     
+
+            $sql_insert_aspect_master = "
+            INSERT INTO aspect_master 
+            (
+            uu_id ,
+            ap_code,
+            ap_name ,
+            created_date,
+            updated_date
+            ) 
+            VALUES
+            (
+            '".$_REQUEST['uuid']."',
+            '".$_REQUEST['dataAspectMasterEx'][$i]['ap_code']."',
+            '".$_REQUEST['dataAspectMasterEx'][$i]['ap_name']."',
+            now(),
+            now()
+            )
+            ";
+
+            if ($conn->query($sql_insert_aspect_master) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_insert_aspect_master . "<br>" . $conn->error;
+                $checkError=false;
+            } 
+            
+        }
+
+        for ($i = 0; $i < $SwotExLength; $i++) {
+           
+
+            $sql_insert_swot = "
+            INSERT INTO swot 
+            (
+                uu_id,s_code,ap_code,form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_detail,created_date,updated_date
+            ) 
+            VALUES
+            (
+            '".$_REQUEST['uuid']."',
+            '".$_REQUEST['dataSwotEx'][$i]['s_code']."',
+            '".$_REQUEST['dataSwotEx'][$i]['ap_code']."',
+            '".$_REQUEST['dataSwotEx'][$i]['form_id']."',
+            '".$_REQUEST['dataSwotEx'][$i]['seq_id']."',
+            '".$_REQUEST['dataSwotEx'][$i]['s_name']."',
+            '".$_REQUEST['dataSwotEx'][$i]['s_weight']."',
+            '".$_REQUEST['dataSwotEx'][$i]['s_score']."',
+            '".$_REQUEST['dataSwotEx'][$i]['s_total_score']."',
+            '".$_REQUEST['dataSwotEx'][$i]['swot_detail']."',
+            now(),
+            now()
+            )
+            ";
+
+            if ($conn->query($sql_insert_swot) === TRUE) {
+                $checkError=true;
+            }else{
+                echo "Error insert: " . $sql_insert_swot . "<br>" . $conn->error;
+                $checkError=false;
+            } 
+            
+        }
+
+        
+
+
+
+
+        if($checkError==true){
+
+        echo "[{\"status\":\"200\"}]";
+
+        }
+
+    }  
 
     
 
