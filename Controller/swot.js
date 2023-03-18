@@ -544,7 +544,7 @@ var findOne=function(uuid){
 	});
 	
 }
-var insertAndLoadExampleSwot=function(uuid){
+var insertAndLoadExampleSwot_bk=function(uuid){
 
     $.ajax({
 		url:"./Model/action-swot.php",
@@ -562,7 +562,7 @@ var insertAndLoadExampleSwot=function(uuid){
 		}
 	});
 }
-var loadExampleSwot=function(b_id,swot_detail){
+var loadExampleSwot_bk=function(b_id,swot_detail){
 
 
     $.ajax({
@@ -772,6 +772,8 @@ var autoLoginFn=function(){
 
 		
 			if(data[0]['loginType']=="newUser"){
+				
+				loadExampleDataFn(sessionStorage.getItem('uuid'),1);
 				//insertAndLoadExampleSwot(sessionStorage.getItem('uuid'));
 				//alert("newUser");
 			}else{
@@ -795,16 +797,34 @@ var listExampleDataFn = function(data){
 	$.each(data,function(index,indexEntry){
 		
 		htmlExampleData+="<tr>";
+			htmlExampleData+="<td>";
+			htmlExampleData+="ชื่อข้อมูล:"+indexEntry['b_type_name']+"<br>";
+			htmlExampleData+="ประเภทข้อมูล: "+indexEntry['b_release_type_name']+"<br>";
+			
+			htmlExampleData+="</td>";
+			htmlExampleData+="<td>";
+				htmlExampleData+="<div style='text-align:right'>";
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+				htmlExampleData+="</div>"
+			htmlExampleData+="</td>";
+
+/*
+
 			htmlExampleData+="<td>"+(index+1)+"</td>";
 			htmlExampleData+="<td>"+indexEntry['b_type_name']+"</td>";
 			htmlExampleData+="<td>"+indexEntry['b_release_type_name']+"</td>";
 			htmlExampleData+="<td>";
-			// if(indexEntry['rce_type_code']!=1){
+
+
 				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
 				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
 				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
-				// }
-				htmlExampleData+="</td>";
+
+			htmlExampleData+="</td>";
+*/
+
 		htmlExampleData+="</tr>";
 	});
 	$("#dataExampleArea").html(htmlExampleData);
@@ -898,7 +918,7 @@ var showAllExampleLoadDataFn = function(uuid){
 	});
 
 }
-var loadExampleDataFn = function(uuid){
+var loadExampleDataFn = function(uuid,b_id){
 
     
     $.ajax({
@@ -909,14 +929,16 @@ var loadExampleDataFn = function(uuid){
 		data:{
 			"uuid":uuid,
 			"action":"loadExampleData",
-            "b_id":$("#b_id_load").val()
+            "b_id":b_id
 	
 		},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert("ok");
+					//alert("ok");
+					location.reload();
+
 				}
 			}
 		}
@@ -1111,10 +1133,45 @@ function processFiles(files) {
 
 $(document).ready(function(){
 	//4b7e2fd0-776a-420d-bd09-79a58da47ff6 //mobile nong personal
-	//d520c7a8-421b-4563-b955-f5abc56b97ec //pc work room rtaf
+	//pc work room rtaf
+	//d520c7a8-421b-4563-b955-f5abc56b97ec 
+	//pc work room home = ADMIN
+	//58cfe63bbed667625e7e5831b2d35597
 	
-    var uuid = new DeviceUUID().get();
-		//alert(uuid);
+	
+	
+	
+	//bdc289a2-3e0d-44d2-b34c-173a69736388 //mobile nuy
+	//09144604-59cd-48de-b55a-3438b132cbf0 //tablet
+
+	
+    //var uuid2 = new DeviceUUID().get();
+	var du = new DeviceUUID().parse();
+    var dua = [
+        du.language,
+        du.platform,
+        du.os,
+        du.cpuCores,
+        du.isAuthoritative,
+        du.silkAccelerated,
+        du.isKindleFire,
+        du.isDesktop,
+        du.isMobile,
+        du.isTablet,
+        du.isWindows,
+        du.isLinux,
+        du.isLinux64,
+        du.isMac,
+        du.isiPad,
+        du.isiPhone,
+        du.isiPod,
+        du.isSmartTV,
+        du.pixelDepth,
+        du.isTouchScreen
+    ];
+    var uuid = du.hashMD5(dua.join(':'));
+		
+	
 		sessionStorage.setItem('uuid', uuid);
     	autoLoginFn();
 
@@ -1293,7 +1350,7 @@ $(document).ready(function(){
 	$("#btnLoadExample").click(function(){
 		if($("#file_import").val()==""){
 			alert('loadExampleDataFn');
-			loadExampleDataFn(sessionStorage.getItem('uuid'));
+			loadExampleDataFn(sessionStorage.getItem('uuid'),$("#b_id_load").val());
 		}else{
 			alert('importExampleDataJsonFn');
 			importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);

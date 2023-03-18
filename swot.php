@@ -22,7 +22,7 @@
     /**{ margin: 0; padding: 0; }*/
     body{ 
         font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; ; 
-        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
+        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  );
     }
         .font-score{
             
@@ -38,7 +38,7 @@
         }
         .setting-toggle {
             position: fixed;
-            top: 65px;
+            top:75px;
             right: 33px;
             text-decoration: none;
             z-index: 1016;
@@ -77,7 +77,7 @@
             color:white;
             text-align: center;
             position: absolute;
-            top:15px;
+            top:25px;
         }
         .swot_seq{
             width: 10%;
@@ -91,26 +91,43 @@
             width: 20%;
             text-align: right;
         }
+        .headerFixed{
+             background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  ); 
+            position:fixed; z-index:10; display:block;width:100%;
+            top:0px;
+            height: 75px;
+            /* border-bottom: 1px solid #000039; */
+          
+ 
+        }
 
 
 
         
     </style>
 </head>
-  <body>
-  <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
-<div class="container" >
+<body>
+<div class="headerFixed">
+        <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+        <div class=" d-lg-none" style="margin-top: 55px;"></div>
+        <div class="container">
+            <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
+        </div>
+</div>
+<div style="margin-bottom: 80px;" class="d-none d-lg-block"></div>
+<div style="margin-bottom: 75px;" class=" d-lg-none"></div>
+<div class="container"  >
+    
+    <div id="tableRmDataAllArea"  >
 
-    <div id="tableRmDataAllArea">
-
-    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
+    
     
     <div class="  mb-3">
         
         
         
 
-        <div class="card text-bg-defualt  mb-3 " style="">
+        <div class="card text-bg-defualt  mb-3 " >
             <div class="card-header" id="swot_detail_header">ตัวอย่างข้อมูล SWOT
                 <!-- SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D)  -->
             </div>
@@ -1249,7 +1266,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModelLabel">ตัวอย่างข้อมูล</h1>
+        <h1 class="modal-title fs-5" id="exampleModelLabel">จัดการข้อมูล</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1296,29 +1313,30 @@
                     </div>
                     <table class="table" id="exampleDataTable">
                         <thead>
-                            <th>#</th>
+                            <!-- <th>#</th> -->
                             <th>ข้อมูลตัวอย่าง</th>
-                            <th>ประเภท</th>
-                            <th style="text-align: center;">จัดการ</th>
+                            <!-- <th>ประเภท</th> -->
+                             <th style="text-align: right;">จัดการ</th> 
                         </thead>
                         <tbody id="dataExampleArea">
                        
                         </tbody>
                     </table>
-                    <div class="mb-3">
-                        <hr>
-                        <label for="b_release_type_code" class="form-label">ประเภทข้อมูล</label>
-                        <select class="form-select" id="b_release_type_code" aria-label="">
-                            <!-- <option value="1">ผู้ดูแลระบบ</option> -->
-                            <option value="1">ผู้ดูแลระบบ</option>
-                            <option value="2">สาธารณะ</option>
-                            <option value="3">ส่วนตัว</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="b_type_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
-                        <input type="text" class="form-control" id="b_type_name" placeholder="ชื่อข้อมูลตัวอย่าง">
-                    </div>
+                    
+                        <div class="mb-3">
+                            <label for="b_type_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
+                            <input type="text" class="form-control" id="b_type_name" placeholder="ชื่อข้อมูลตัวอย่าง">
+                        </div>
+                        <div class="mb-3">
+                            <hr>
+                            <label for="b_release_type_code" class="form-label">ประเภทข้อมูล</label>
+                            <select class="form-select" id="b_release_type_code" aria-label="">
+                                <!-- <option value="1">ผู้ดูแลระบบ</option> -->
+                        
+                                <option value="2">สาธารณะ</option>
+                                <option value="3">ส่วนตัว</option>
+                            </select>
+                        </div>
                         
                     </div>
                 </div>
