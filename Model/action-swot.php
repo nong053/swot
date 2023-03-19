@@ -116,7 +116,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
                     from swot s
                     inner join aspect_master ap on s.ap_code=ap.ap_code
                    
-                    where s.uu_id='$_REQUEST[uuid]'  
+                    where s.uu_id='$_REQUEST[uuid]'   and  ap.uu_id='$_REQUEST[uuid]'
                     order by s.ap_code,s.form_id asc
 
                     
@@ -134,20 +134,6 @@ if ($conn->query($sql_insert_swot) === TRUE) {
 
                     echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
            // echo "[{\"status\":\"200\"}]";
-        }
-
-    }else if($_REQUEST['action']=='show'){
-
-        $sql = "SELECT id, firstname, lastname FROM MyGuests";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-            echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-        }
-        } else {
-        echo "0 results";
         }
 
     }else if($_REQUEST['action']=='business-type'){
@@ -256,7 +242,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
             from swot s
             inner join aspect_master ap on s.ap_code=ap.ap_code
         
-            where s.uu_id='$_REQUEST[uuid]'  
+            where s.uu_id='$_REQUEST[uuid]'  and  ap.uu_id='$_REQUEST[uuid]'
             order by s.ap_code,s.form_id asc
 
             ";

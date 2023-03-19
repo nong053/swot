@@ -87,7 +87,7 @@
             width: 70%;
             text-align: left;
         }
-        .swot_score{
+        .swot_score number_only{
             width: 20%;
             text-align: right;
         }
@@ -101,12 +101,30 @@
  
         }
 
+        .alert {
+   
+            --bs-alert-margin-bottom: 0px;
+        }
+
 
 
         
     </style>
 </head>
 <body>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+  <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </symbol>
+</svg>
+
 <div class="headerFixed">
         <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
         <div class=" d-lg-none" style="margin-top: 55px;"></div>
@@ -151,7 +169,7 @@
                             <tr>
                                 <th class="swot_seq">#</th>
                                 <th class="swot_name">จุดแข็ง (Strengths)</th>
-                                <th class="swot_score">คะแนน</th>
+                                <th class="swot_score number_only">คะแนน</th>
                             </tr>
                         </thead>
                         <tbody class="dataStrengths">
@@ -196,7 +214,7 @@
                             <tr>
                                  <th class="swot_seq">#</th>
                                 <th class="swot_name">โอกาส (Opportunities)</th>
-                                <th class="swot_score">คะแนน</th>
+                                <th class="swot_score number_only">คะแนน</th>
                             </tr>
                         </thead>
                         <tbody class="dataOpportunities">
@@ -246,7 +264,7 @@
                             <tr>
                                  <th class="swot_seq">#</th>
                                 <th class="swot_name">จุดแข็ง (Strengths)</th>
-                                <th class="swot_score">คะแนน</th>
+                                <th class="swot_score number_only">คะแนน</th>
                             </tr>
                         </thead>
                         <tbody class="dataStrengths">
@@ -284,7 +302,7 @@
                         <tr>
                              <th class="swot_seq">#</th>
                             <th class="swot_name">ภัยคุกคาม (Threats)</th>
-                            <th class="swot_score">คะแนน</th>
+                            <th class="swot_score number_only">คะแนน</th>
                         </tr>
                     </thead>
                     <tbody class="dataThreats">
@@ -329,7 +347,7 @@
                     <tr>
                          <th class="swot_seq">#</th>
                         <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataWeaknesses">
@@ -367,7 +385,7 @@
                     <tr>
                          <th class="swot_seq">#</th>
                         <th class="swot_name">โอกาส (Opportunities)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataOpportunities">
@@ -413,7 +431,7 @@
                     <tr>
                          <th class="swot_seq">#</th>
                         <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataWeaknesses">
@@ -449,7 +467,7 @@
                         <tr>
                              <th class="swot_seq">#</th>
                             <th class="swot_name">ภัยคุกคาม (Threats)</th>
-                            <th class="swot_score">คะแนน</th>
+                            <th class="swot_score number_only">คะแนน</th>
                         </tr>
                     </thead>
                     <tbody class="dataThreats">
@@ -493,11 +511,11 @@
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-sharp fa-solid fa-angles-right"></i> SWOT FORM </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
+        <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
 
-            <form>
+            <form >
             <div class="row">
                         <div class="col-md-12" style="text-align: left; margin-bottom:10px;">
 
@@ -539,11 +557,18 @@
 
                             </div>
                             <div class="card-body">
-                                <div class="row mb-3">
-                                
-                                <textarea class="form-control" id="swot_detail"></textarea>
+                                <div id="swot_detail_alert" class="row alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
+                                    <!-- <i class="fa fa-exclamation" aria-hidden="true"></i> -->
+                                    <!-- <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
+                                    <!-- <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span> -->
+                                    <div id="swot_detail_alert_text"></div>
+                                </div>
+                                <div class="row mb-31">
+
+                                    <textarea class="form-control" id="swot_detail" ></textarea>
                                 
                                 </div>
+                                
 
                             </div>
                         </div>
@@ -578,18 +603,24 @@
 
                             </div>
                             <div class="card-body">
-                                <div class="row mb-3">
+                                <div class="row ">
                                     <!-- <div class="col-1">1</div> -->
+                                    <div id="s_alert" class=" alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
+                                       
+                                        <div id="s_alert_text">
+                                            
+                                        </div>
+                                    </div>
                                     <table>
                                         <tr>
                                             <td class="widthSwotName">
                                                 <input type="text" class="form-control" id="s1_name" aria-describedby="xxx">
                                             </td>
                                             <td class="widthSwotWeight">
-                                                <input type="text" name="s1_weight" id="s1_weight" class="form-control">
+                                                <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control">
                                             </td>
                                             <td class="widthSwotScore">
-                                                <input type="text" name="s1_score" id="s1_score" class="form-control">
+                                                <input type="text" name="s1_score" id="s1_score" class="s_score number_only form-control">
                                             </td>
 
                                         </tr>
@@ -598,10 +629,10 @@
                                                 <input type="text" class="form-control" id="s2_name" aria-describedby="xxx">
                                             </td>
                                             <td class="widthSwotWeight">
-                                                <input type="text" name="s2_weight" id="s2_weight" class="form-control">
+                                                <input type="text" name="s2_weight" id="s2_weight" class="s_weight number_only form-control">
                                             </td>
                                             <td class="widthSwotScore">
-                                                <input type="text" name="s2_score" id="s2_score" class="form-control">
+                                                <input type="text" name="s2_score" id="s2_score" class=" s_score number_only form-control">
                                             </td>
 
                                         </tr>
@@ -610,10 +641,10 @@
                                                 <input type="text" class="form-control" id="s3_name" aria-describedby="xxx">
                                             </td>
                                             <td class="widthSwotWeight">
-                                                <input type="text" name="s3_weight" id="s3_weight" class="form-control">
+                                                <input type="text" name="s3_weight" id="s3_weight" class="s_weight number_only form-control">
                                             </td>
                                             <td class="widthSwotScore">
-                                                <input type="text" name="s3_score" id="s3_score" class="form-control">
+                                                <input type="text" name="s3_score" id="s3_score" class="s_score number_only form-control">
                                             </td>
 
                                         </tr>
@@ -622,10 +653,10 @@
                                                 <input type="text" class="form-control" id="s4_name" aria-describedby="xxx">
                                             </td>
                                             <td class="widthSwotWeight">
-                                                <input type="text" name="s4_weight" id="s4_weight" class="form-control">
+                                                <input type="text" name="s4_weight" id="s4_weight" class="s_weight number_only form-control">
                                             </td>
                                             <td class="widthSwotScore">
-                                                <input type="text" name="s4_score" id="s4_score" class="form-control">
+                                                <input type="text" name="s4_score" id="s4_score" class="s_score number_only form-control">
                                             </td>
 
                                         </tr>
@@ -634,15 +665,16 @@
                                                 <input type="text" class="form-control" id="s5_name" aria-describedby="xxx">
                                             </td>
                                             <td class="widthSwotWeight">
-                                                <input type="text" name="s5_weight" id="s5_weight" class="form-control">
+                                                <input type="text" name="s5_weight" id="s5_weight" class="s_weight number_only form-control">
                                             </td>
                                             <td class="widthSwotScore">
-                                                <input type="text" name="s5_score" id="s5_score" class="form-control">
+                                                <input type="text" name="s5_score" id="s5_score" class="s_score number_only form-control">
                                             </td>
 
                                         </tr>
                                         
                                     </table>
+                                    
 
                                 
                                 </div>
@@ -661,7 +693,7 @@
                         <div class="card text-bg-default mb-3" >
                             <div class="card-header">
 
-                            
+                                
 
                                 <table>
                                         <thead>
@@ -684,18 +716,23 @@
 
                             </div>
                             <div class="card-body">
-                                <div class="row mb-3">
-
+                                <div class="row ">
+                                    <div id="w_alert" class=" alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
+                                       
+                                        <div id="w_alert_text">
+                                            
+                                        </div>
+                                    </div>
                                     <table>
                                             <tr>
                                                 <td class="widthSwotName">
                                                     <input type="text" class="form-control" id="w1_name" aria-describedby="xxx">
                                                 </td>
                                                 <td class="widthSwotWeight">
-                                                    <input type="text" name="w1_weight" id="w1_weight" class="form-control">
+                                                    <input type="text" name="w1_weight" id="w1_weight" class="w_weight number_only form-control">
                                                 </td>
                                                 <td class="widthSwotScore">
-                                                    <input type="text" name="w1_score" id="w1_score" class="form-control">
+                                                    <input type="text" name="w1_score" id="w1_score" class="w_score number_only form-control">
                                                 </td>
 
                                             </tr>
@@ -704,10 +741,10 @@
                                                     <input type="text" class="form-control" id="w2_name" aria-describedby="xxx">
                                                 </td>
                                                 <td class="widthSwotWeight">
-                                                    <input type="text" name="w2_weight" id="w2_weight" class="form-control">
+                                                    <input type="text" name="w2_weight" id="w2_weight" class="w_weight number_only form-control">
                                                 </td>
                                                 <td class="widthSwotScore">
-                                                    <input type="text" name="w2_score" id="w2_score" class="form-control">
+                                                    <input type="text" name="w2_score" id="w2_score" class="w_score number_only form-control">
                                                 </td>
 
                                             </tr>
@@ -716,10 +753,10 @@
                                                     <input type="text" class="form-control" id="w3_name" aria-describedby="xxx">
                                                 </td>
                                                 <td class="widthSwotWeight">
-                                                    <input type="text" name="w3_weight" id="w3_weight" class="form-control">
+                                                    <input type="text" name="w3_weight" id="w3_weight" class="w_weight number_only form-control">
                                                 </td>
                                                 <td class="widthSwotScore">
-                                                    <input type="text" name="w3_score" id="w3_score" class="form-control">
+                                                    <input type="text" name="w3_score" id="w3_score" class="w_score number_only form-control">
                                                 </td>
 
                                             </tr>
@@ -728,10 +765,10 @@
                                                     <input type="text" class="form-control" id="w4_name" aria-describedby="xxx">
                                                 </td>
                                                 <td class="widthSwotWeight">
-                                                    <input type="text" name="w4_weight" id="w4_weight" class="form-control">
+                                                    <input type="text" name="w4_weight" id="w4_weight" class="w_weight number_only form-control">
                                                 </td>
                                                 <td class="widthSwotScore">
-                                                    <input type="text" name="w4_score" id="w4_score" class="form-control">
+                                                    <input type="text" name="w4_score" id="w4_score" class="w_score number_only form-control">
                                                 </td>
 
                                             </tr>
@@ -740,10 +777,10 @@
                                                     <input type="text" class="form-control" id="w5_name" aria-describedby="xxx">
                                                 </td>
                                                 <td class="widthSwotWeight">
-                                                    <input type="text" name="w5_weight" id="w5_weight" class="form-control">
+                                                    <input type="text" name="w5_weight" id="w5_weight" class="w_weight number_only form-control">
                                                 </td>
                                                 <td class="widthSwotScore">
-                                                    <input type="text" name="w5_score" id="w5_score" class="form-control">
+                                                    <input type="text" name="w5_score" id="w5_score" class="w_score number_only form-control">
                                                 </td>
 
                                             </tr>
@@ -758,7 +795,7 @@
                         <div class="card text-bg-default  mb-3" >
                             <div class="card-header">
 
-                            
+                                
                                 <table>
                                         <thead>
 
@@ -779,17 +816,23 @@
 
                             </div>
                             <div class="card-body">
-                                <div class="row mb-3">
+                                <div class="row ">
+                                <div id="o_alert" class=" alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
+                                    
+                                    <div id="o_alert_text">
+                                        
+                                    </div>
+                                </div>
                                 <table>
                                     <tr>
                                         <td class="widthSwotName">
                                             <input type="text" class="form-control" id="o1_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="o1_weight" id="o1_weight" class="form-control">
+                                            <input type="text" name="o1_weight" id="o1_weight" class="o_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="o1_score" id="o1_score" class="form-control">
+                                            <input type="text" name="o1_score" id="o1_score" class="o_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -798,10 +841,10 @@
                                             <input type="text" class="form-control" id="o2_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="o2_weight" id="o2_weight" class="form-control">
+                                            <input type="text" name="o2_weight" id="o2_weight" class="o_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="o2_score" id="o2_score" class="form-control">
+                                            <input type="text" name="o2_score" id="o2_score" class="o_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -810,10 +853,10 @@
                                             <input type="text" class="form-control" id="o3_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="o3_weight" id="o3_weight" class="form-control">
+                                            <input type="text" name="o3_weight" id="o3_weight" class="o_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="o3_score" id="o3_score" class="form-control">
+                                            <input type="text" name="o3_score" id="o3_score" class="o_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -822,10 +865,10 @@
                                             <input type="text" class="form-control" id="o4_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="o4_weight" id="o4_weight" class="form-control">
+                                            <input type="text" name="o4_weight" id="o4_weight" class="o_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="o4_score" id="o4_score" class="form-control">
+                                            <input type="text" name="o4_score" id="o4_score" class="o_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -834,10 +877,10 @@
                                             <input type="text" class="form-control" id="o5_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="o5_weight" id="o5_weight" class="form-control">
+                                            <input type="text" name="o5_weight" id="o5_weight" class="o_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="o5_score" id="o5_score" class="form-control">
+                                            <input type="text" name="o5_score" id="o5_score" class="o_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -851,7 +894,7 @@
                         <div class="card text-bg-default  mb-3" >
                             <div class="card-header">
 
-                            
+                                
 
                                 <table>
                                         <thead>
@@ -874,17 +917,23 @@
 
                             </div>
                             <div class="card-body">
-                            <div class="row mb-3">
+                            <div class="row ">
+                                <div id="t_alert" class=" alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
+                                    
+                                    <div id="t_alert_text">
+                                        
+                                    </div>
+                                </div>
                                 <table>
                                     <tr>
                                         <td class="widthSwotName">
                                             <input type="text" class="form-control" id="t1_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="t1_weight" id="t1_weight" class="form-control">
+                                            <input type="text" name="t1_weight" id="t1_weight" class="t_weight number_only  form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="t1_score" id="t1_score" class="form-control">
+                                            <input type="text" name="t1_score" id="t1_score" class="t_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -893,10 +942,10 @@
                                             <input type="text" class="form-control" id="t2_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="t2_weight" id="t2_weight" class="form-control">
+                                            <input type="text" name="t2_weight" id="t2_weight" class="t_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="t2_score" id="t2_score" class="form-control">
+                                            <input type="text" name="t2_score" id="t2_score" class="t_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -905,10 +954,10 @@
                                             <input type="text" class="form-control" id="t3_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="t3_weight" id="t3_weight" class="form-control">
+                                            <input type="text" name="t3_weight" id="t3_weight" class="t_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="t3_score" id="t3_score" class="form-control">
+                                            <input type="text" name="t3_score" id="t3_score" class="t_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -917,10 +966,10 @@
                                             <input type="text" class="form-control" id="t4_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="t4_weight" id="t4_weight" class="form-control">
+                                            <input type="text" name="t4_weight" id="t4_weight" class="t_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="t4_score" id="t4_score" class="form-control">
+                                            <input type="text" name="t4_score" id="t4_score" class="t_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -929,10 +978,10 @@
                                             <input type="text" class="form-control" id="t5_name" aria-describedby="xxx">
                                         </td>
                                         <td class="widthSwotWeight">
-                                            <input type="text" name="t5_weight" id="t5_weight" class="form-control">
+                                            <input type="text" name="t5_weight" id="t5_weight" class="t_weight number_only form-control">
                                         </td>
                                         <td class="widthSwotScore">
-                                            <input type="text" name="t5_score" id="t5_score" class="form-control">
+                                            <input type="text" name="t5_score" id="t5_score" class="t_score number_only form-control">
                                         </td>
 
                                     </tr>
@@ -1003,7 +1052,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">จุดแข็ง (Strengths)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataStrengths">
@@ -1017,7 +1066,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">โอกาส (Opportunities)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataOpportunities ">
@@ -1038,7 +1087,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">จุดแข็ง (Strengths)</th>
-                        <th class="swot_scoreX">คะแนน</th>
+                        <th class="swot_score number_onlyX">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataStrengths"></tbody>
@@ -1050,7 +1099,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">ภัยคุกคาม (Threats)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataThreats">
@@ -1073,7 +1122,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataWeaknesses"></tbody>
@@ -1085,7 +1134,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">โอกาส (Opportunities)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataOpportunities">
@@ -1107,7 +1156,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataWeaknesses">
@@ -1121,7 +1170,7 @@
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">ภัยคุกคาม (Threats)</th>
-                        <th class="swot_score">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataThreats">
@@ -1145,7 +1194,7 @@
     <tr>
         <th class="swot_seq">#</th>
         <th class="swot_name">จุดแข็ง (Strengths)</th>
-        <th class="swot_score">คะแนน</th>
+        <th class="swot_score number_only">คะแนน</th>
     </tr>
 
     <tbody class="dataStrengths">
@@ -1155,7 +1204,7 @@
     <tr>
         <th class="swot_seq">#</th>
         <th class="swot_name">โอกาส (Opportunities)</th>
-        <th class="swot_score">คะแนน</th>
+        <th class="swot_score number_only">คะแนน</th>
     </tr>
 
     <tbody class="dataOpportunities ">
@@ -1173,7 +1222,7 @@
        
         <th class="swot_seq">#</th>
         <th class="swot_name">จุดแข็ง (Strengths)</th>
-        <th class="swot_scoreX">คะแนน</th>
+        <th class="swot_score number_onlyX">คะแนน</th>
     </tr>
               
      <tbody class="dataStrengths"></tbody>
@@ -1182,7 +1231,7 @@
      <tr>
         <th class="swot_seq">#</th>
         <th class="swot_name">ภัยคุกคาม (Threats)</th>
-        <th class="swot_score">คะแนน</th>
+        <th class="swot_score number_only">คะแนน</th>
      </tr>
 
      <tbody class="dataThreats"></tbody>
@@ -1198,7 +1247,7 @@
     <tr>
         <th class="swot_seq">#</th>
         <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-        <th class="swot_score">คะแนน</th>
+        <th class="swot_score number_only">คะแนน</th>
     </tr>
 
     <tbody class="dataWeaknesses"></tbody>
@@ -1206,7 +1255,7 @@
     <tr>
         <th class="swot_seq">#</th>
         <th class="swot_name">โอกาส (Opportunities)</th>
-        <th class="swot_score">คะแนน</th>
+        <th class="swot_score number_only">คะแนน</th>
     </tr>
 
     <tbody class="dataOpportunities"></tbody>
@@ -1220,7 +1269,7 @@
     <tr>
         <th class="swot_seq">#</th>
         <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-        <th class="swot_score">คะแนน</th>
+        <th class="swot_score number_only">คะแนน</th>
     </tr>
 
     <tbody class="dataWeaknesses"></tbody>
@@ -1228,7 +1277,7 @@
     <tr>
         <th class="swot_seq">#</th>
         <th class="swot_name">ภัยคุกคาม (Threats)</th>
-        <th class="swot_score">คะแนน</th>
+        <th class="swot_score number_only">คะแนน</th>
     </tr>
 
     <tbody class="dataThreats"></tbody>
@@ -1361,6 +1410,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
+    <!-- jquery confirm start-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <!-- jquery confirm end-->
 
      <!-- export excel-->
      <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
