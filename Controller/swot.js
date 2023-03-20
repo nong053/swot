@@ -1656,13 +1656,35 @@ $(document).ready(function(){
 
 	/*load data start here.*/
 	$("#btnLoadExample").click(function(){
-		if($("#file_import").val()==""){
-			//alert('loadExampleDataFn');
-			loadExampleDataFn(sessionStorage.getItem('uuid'),$("#b_id_load").val());
-		}else{
-			//alert('importExampleDataJsonFn');
-			importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
-		}
+
+		$.confirm({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+			content: 'คำเตือน!! ข้อมูลเก่าจะถูกลบโดยทันที',
+			buttons: {
+				confirm: {
+					text: 'ยืนยันการโหลดข้อมูล', 
+					
+					action: function () {
+
+						if($("#file_import").val()==""){
+			
+							loadExampleDataFn(sessionStorage.getItem('uuid'),$("#b_id_load").val());
+						}else{
+						
+							importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
+						}
+					}
+
+				
+					
+				},
+				cancel:  {
+					text: 'ยกเลิก'
+				}
+			}
+		});
+
+		
 		
 	 });
 	 /*load data end here.*/
