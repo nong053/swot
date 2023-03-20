@@ -513,42 +513,36 @@
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-sharp fa-solid fa-angles-right"></i> SWOT FORM </h5>
         <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
+        <div class="container"  >
+            <div class="col-md-121" style="text-align: left; margin-bottom:10px; margin-right:15px">
+
+                <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitSave" class="btn btn-success btn-circle ">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                </button>
+                <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
+                    <i class="fa-sharp fa-solid fa-bars-progress"></i>
+                </button>
+
+                <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitExcel" class="btn btn-warning btn-circle ">
+                <i class="fa-sharp fa-solid fa-file-excel"></i>
+                </button>
+
+
+                <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPrint" class="btn btn-info btn-circle ">
+                    <i class="fa-sharp fa-solid fa-print"></i>
+                </button>
+
+                <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPDF" class="btn btn-danger btn-circle ">
+                    <i class="fa-sharp fa-solid fa-file-pdf"></i>
+                </button>
+                <br style="clear: both;">
+            </div>
+        </div>
+
         <div class="offcanvas-body">
 
             <form >
-            <div class="row">
-                        <div class="col-md-12" style="text-align: left; margin-bottom:10px;">
-
-                      
-
-
-                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitSave" class="btn btn-success btn-circle ">
-                                <i class="fa-solid fa-floppy-disk"></i>
-                            </button>
-                            <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
-                                <i class="fa-sharp fa-solid fa-bars-progress"></i>
-                            </button>
-
-                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitExcel" class="btn btn-warning btn-circle ">
-                            <i class="fa-sharp fa-solid fa-file-excel"></i>
-                            </button>
-
-                            
-
-                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPrint" class="btn btn-info btn-circle ">
-                                <i class="fa-sharp fa-solid fa-print"></i>
-                            </button>
-
-                            <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPDF" class="btn btn-danger btn-circle ">
-                                <i class="fa-sharp fa-solid fa-file-pdf"></i>
-                            </button>
-
-                            
-
-                            
-                        
-                        </div>
-                    </div>
+            
             <!--box-->
             <div class="card text-bg-default mb-3" >
                             <div class="card-header">
@@ -1343,10 +1337,19 @@
                                 </select>
                             </div>
                             <div>หรือ(JSON file)</div>
-                            <div class="mb-3">
+                            <div >
                                 <!-- <label for="file_import" class="form-label">ไฟล์ JSON</label> -->
                                 <input type="file" class="form-control" id="file_import" onchange="processFiles(this.files)">
-                                <div id="message"></div>
+                                
+                                <div  style="padding-top:10px;" >
+                                    <div id="message_area" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; display:none;" role="alert">
+                                        <span><i class="fa-sharp fa-solid fa-circle-info"></i> <span> ข้อมูลทั่วไป
+                                        <div id="message"> </div>
+                                    </div>
+                                </div>
+                                
+
+                                
                                 <div id="fileOutput"></div>
                             </div>
                         </form>
@@ -1354,7 +1357,7 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                <div class="row">
+                <div class="row1">
                     <div class="col-md-12 " style="padding:5px;">
                     <div class="mb-3">
                         <!-- <label for="exampleFindData" class="form-label">ค้นหา</label> -->
@@ -1371,13 +1374,20 @@
                        
                         </tbody>
                     </table>
+
+                   
+                        
+                        <div id="example_data_alert" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; display:none;" role="alert">
+                            <div id="example_data_alert_text"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> กรุณากรอกชื่อข้อมูลตัวอย่าง</div>
+                        </div>
+                       
                     
                         <div class="mb-3">
                             <label for="b_type_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
                             <input type="text" class="form-control" id="b_type_name" placeholder="ชื่อข้อมูลตัวอย่าง">
                         </div>
                         <div class="mb-3">
-                            <hr>
+                            
                             <label for="b_release_type_code" class="form-label">ประเภทข้อมูล</label>
                             <select class="form-select" id="b_release_type_code" aria-label="">
                                 <!-- <option value="1">ผู้ดูแลระบบ</option> -->
@@ -1414,6 +1424,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <!-- jquery confirm end-->
+    <!-- jquery mloading start-->
+    <link rel="stylesheet" href="css/jquery.mloading.css">
+    <script src="js/jquery.mloading.js"></script>
+    <!-- jquery mloading end-->
 
      <!-- export excel-->
      <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>

@@ -1,3 +1,14 @@
+
+$( document ).ajaxStart(function() {
+	$("body").mLoading();
+	console.log('start');
+});
+$( document ).ajaxStop(function() {
+	$("body").mLoading('hide');
+	//console.log('stop');
+});
+$("body").mLoading();
+
 // var saveSubmitFn = function(){
 // 	$.ajax({
 // 		url:"./Model/action-swot.php",
@@ -535,9 +546,10 @@ var findOne=function(uuid){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					
+	
 					renderSwotToForm(data[0]['data']);
 					renderSwotToDisplay(data[0]['data']);
+					checkValidateFn();
 				}
 			}
 		}
@@ -723,12 +735,13 @@ var saveSwot=function(){
 				
 				renderSwotToDisplay(data[0]['data']);
 				calculateSwotFn();
-				
+			
 				$.alert({
-					title: 'Alert!',
+					title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 					content: 'บันทึกข้อมูลเรียบร้อย',
 				});
 				$("#OffcanvasClose").click();
+				
 				//location.reload();
 			}
 		}
@@ -804,8 +817,8 @@ var listExampleDataFn = function(data){
 		
 		htmlExampleData+="<tr>";
 			htmlExampleData+="<td>";
-			htmlExampleData+="ชื่อข้อมูล:"+indexEntry['b_type_name']+"<br>";
-			htmlExampleData+="ประเภทข้อมูล: "+indexEntry['b_release_type_name']+"<br>";
+			htmlExampleData+="<b>ชื่อข้อมูล</b>:"+indexEntry['b_type_name']+"<br>";
+			htmlExampleData+="<b>ประเภทข้อมูล</b>: "+indexEntry['b_release_type_name']+"<br>";
 			
 			htmlExampleData+="</td>";
 			htmlExampleData+="<td>";
@@ -857,7 +870,10 @@ var saveExampleDataFn = function(uuid){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 				
-                    alert("OK");
+                    $.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'บันทึกข้อมูลตัวอย่างเรียบร้อย',
+					});
 					listExampleDataFn(data[0]['data']);
 				}
 			}
@@ -869,9 +885,15 @@ var clearExampleDataFn = function(){
 	$("#actionExample").val("add");
 	$("#b_type_name").val("");
 	$("#b_release_type_code").prop("selectedIndex", 0);
+	$("#message_area").hide();
 	$("#message").html("");
 	dataJsonForImport="";
 	$("#file_import").val("");
+
+	//clear value default
+	$("#b_type_name").css({"border":"#ced4da solid 1px"});
+	$("#example_data_alert_text").html("");
+	$("#example_data_alert").hide();
 
 }
 
@@ -942,8 +964,16 @@ var loadExampleDataFn = function(uuid,b_id){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					//alert("ok");
-					location.reload();
+
+
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'โหลดข้อมูลเรียบร้อย',
+					});
+
+					findOne(sessionStorage.getItem('uuid'));
+
+					//location.reload();
 
 				}
 			}
@@ -1016,7 +1046,10 @@ var updateExampleDataFn = function(uuid,b_id){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 				
-              
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'แก้ไขข้อมูลเรียบร้อย',
+					});
 					listExampleDataFn(data[0]['data']);
 				}
 			}
@@ -1107,7 +1140,10 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert("ok");
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'โหลดข้อมูลเรียบร้อย',
+					});
 				}
 			}
 		}
@@ -1135,6 +1171,7 @@ function processFiles(files) {
 
 	};
 	reader.readAsText(file);
+	$("#message_area").show();
   }
 var checkNanFN=function(value){
 	var datarereturn=0;
@@ -1316,6 +1353,23 @@ var checkValidateFn = function(){
 
 	return validate;
 }
+var checkValidateExampleFn  = function(){
+	validate=true;
+	if($("#b_type_name").val()==""){
+		validate=false;
+		$("#b_type_name").css({"border":"red solid 1px"});
+		$("#example_data_alert_text").html("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกชื่อข้อมูลตัวอย่าง");
+		$("#example_data_alert").show();
+
+	}else{
+		$("#b_type_name").css({"border":"#ced4da solid 1px"});
+		$("#example_data_alert_text").html("");
+		$("#example_data_alert").hide();
+	}
+	return validate;
+	
+
+}
 $(document).ready(function(){
 
 
@@ -1389,11 +1443,9 @@ $(document).ready(function(){
 		//checkValidateFn();
 		
 		if(checkValidateFn()==false){
-		
-	
 			$.alert({
-				title: 'Alert!',
-				content: 'เกิดข้อผิดพลาดโปรดตรวจสอบความถูกต้อง',
+				title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+				content: ' เกิดข้อผิดพลาดโปรดตรวจสอบความถูกต้อง',
 			});
 		}else{
 			saveSwot();
@@ -1502,9 +1554,13 @@ $(document).ready(function(){
 	//action save,update start
 	$("#btnSaveExample").click(function(){
 		if($("#actionExample").val()=='add'){
+			if(checkValidateExampleFn()==true){
 			saveExampleDataFn(sessionStorage.getItem('uuid'));
+			}
 		}else{
+			if(checkValidateExampleFn()==true){
 			updateExampleDataFn(sessionStorage.getItem('uuid'),$("#b_id").val());
+			}
 		}
 	});
 	//action save,update end
@@ -1525,8 +1581,29 @@ $(document).ready(function(){
 		var b_id = this.id;
 		b_id=b_id.split("-");
 		b_id=b_id[1];
+
+		$.confirm({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+			content: '',
+			buttons: {
+				confirm: {
+					text: 'ยืนยัน', 
+					action: function () {
+						delExampleDataFn(sessionStorage.getItem('uuid'),b_id);
+					}
+
+				
+					
+				},
+				cancel:  {
+					text: 'ยกเลิก'
+					//$("#exampleModel").modal('hide');
+				}
+			}
+		});
+
 	
-		delExampleDataFn(sessionStorage.getItem('uuid'),b_id);
+		
 	
 	 });
 	 $(document).on("click",".editExampleData",function(){
@@ -1560,10 +1637,10 @@ $(document).ready(function(){
 	/*load data start here.*/
 	$("#btnLoadExample").click(function(){
 		if($("#file_import").val()==""){
-			alert('loadExampleDataFn');
+			//alert('loadExampleDataFn');
 			loadExampleDataFn(sessionStorage.getItem('uuid'),$("#b_id_load").val());
 		}else{
-			alert('importExampleDataJsonFn');
+			//alert('importExampleDataJsonFn');
 			importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
 		}
 		
