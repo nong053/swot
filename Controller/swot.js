@@ -38,6 +38,9 @@ var clearDataFn = function(){
 	$(".dataOpportunities").html("");
 	$(".dataThreats").html("");
 	$("#swot_detail_header").html("");
+
+	//clear form start
+	$(".form-control").val("");
 }
 var calculateSwotFn = function(){
 	var s1_name="";
@@ -547,8 +550,15 @@ var findOne=function(uuid){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 	
+
+					clearDataFn();
+					
+
 					renderSwotToForm(data[0]['data']);
 					renderSwotToDisplay(data[0]['data']);
+
+					calculateSwotFn();
+					
 					checkValidateFn();
 				}
 			}
@@ -1175,13 +1185,11 @@ function processFiles(files) {
 		$("#data_not_support_area").hide();
 		
 	}else{
-
+		$("#btnLoadExample").prop( "disabled", true );
 		$("#data_general_area").hide();
 		$("#data_not_support_area").show();
-
 		$("#message_not_support").html("<i class=\"fa-sharp fa-solid fa-circle-info\"></i><span> อัปโหลดเป็น JSON ไฟล์เท่านั้น</span>");
-		$("#btnLoadExample").prop( "disabled", true );
-		dataJsonForImport="{\"status\":\"404\"}";
+		dataJsonForImport="{\"status\":\"200\",\"dataAspectMasterEx\":[],\"dataSwotEx\":[]}";
 	}
 
   }
