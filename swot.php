@@ -136,7 +136,7 @@
 <div style="margin-bottom: 75px;" class=" d-lg-none"></div>
 <div class="container"  >
     
-    <div id="tableRmDataAllArea"  >
+    <div id="tableRmDataAllArea" aria-hidden="true" >
 
     
     
@@ -146,7 +146,7 @@
         
 
         <div class="card text-bg-defualt  mb-3 " >
-            <div class="card-header" id="swot_detail_header">ตัวอย่างข้อมูล SWOT
+            <div class="card-header placeholder-glow" id="swot_detail_header">&nbsp;
                 <!-- SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D)  -->
             </div>
             <div class="card-body" >
@@ -159,7 +159,7 @@
  
     
         <div class="card text-bg-default mb-3" >
-                <div class="card-header">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส) </div>
+                <div class="card-header placeholder-glow">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส) </div>
                 <div class="card-body">
         <div class="row">
         <div class="col-md-6">
@@ -1343,8 +1343,15 @@
                                 
                                 <div  style="padding-top:10px;" >
                                     <div id="message_area" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; display:none;" role="alert">
-                                        <span><i class="fa-sharp fa-solid fa-circle-info"></i> <span> ข้อมูลทั่วไป
-                                        <div id="message"> </div>
+                                        <div id="data_general_area">
+                                            <span><i class="fa-sharp fa-solid fa-circle-info"></i> <span> ข้อมูลทั่วไป
+                                            <div id="message_data_general"> </div>
+                                        </div>
+
+                                        <div id="data_not_support_area">
+                                            
+                                            <div id="message_not_support"> </div>
+                                        </div>
                                     </div>
                                 </div>
                                 

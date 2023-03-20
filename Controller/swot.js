@@ -1151,27 +1151,39 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
     
 }
 function processFiles(files) {
-	var file = files[0];
-
-	var message = document.getElementById("message");
-	message.innerHTML = "File Name：" + file.name + "<br>";
-	message.innerHTML += "File Size：" + file.size + "<br>";
-	message.innerHTML += "File Type：" + file.type + "<br>";
-
-	var reader = new FileReader();
-	reader.onload = function (e) {
-
-		dataJsonForImport=e.target.result;
-		/*
-	  var output = document.getElementById("fileOutput");  
-	  output.textContent = JSON.parse(e.target.result);
-	  console.log(e.target.result);
-	  */
-
-
-	};
-	reader.readAsText(file);
 	$("#message_area").show();
+	var file = files[0];
+	if(file.type=='application/json'){
+	
+		var message = document.getElementById("message_data_general");
+		message.innerHTML = "File Name：" + file.name + "<br>";
+		message.innerHTML += "File Size：" + file.size + "<br>";
+		message.innerHTML += "File Type：" + file.type + "<br>";
+		
+		var reader = new FileReader();
+		reader.onload = function (e) {
+		dataJsonForImport=e.target.result;
+			/*
+		var output = document.getElementById("fileOutput");  
+		output.textContent = JSON.parse(e.target.result);
+		console.log(e.target.result);
+		*/
+		};
+		reader.readAsText(file);
+		$("#btnLoadExample").prop( "disabled", false );
+		$("#data_general_area").show();
+		$("#data_not_support_area").hide();
+		
+	}else{
+
+		$("#data_general_area").hide();
+		$("#data_not_support_area").show();
+
+		$("#message_not_support").html("<i class=\"fa-sharp fa-solid fa-circle-info\"></i><span> อัปโหลดเป็น JSON ไฟล์เท่านั้น</span>");
+		$("#btnLoadExample").prop( "disabled", true );
+		dataJsonForImport="{\"status\":\"404\"}";
+	}
+
   }
 var checkNanFN=function(value){
 	var datarereturn=0;
@@ -1441,7 +1453,7 @@ $(document).ready(function(){
 
 	$("#submitSave").click(function(){
 		//checkValidateFn();
-		
+		$("body").mLoading();
 		if(checkValidateFn()==false){
 			$.alert({
 				title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
