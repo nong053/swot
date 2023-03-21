@@ -105,16 +105,6 @@
    
             --bs-alert-margin-bottom: 0px;
         }
-      
-        .card-body-ex{
-            padding-left:5px; padding-right:5px
-        }
-        .alert-ex{
-            padding:5px
-        }
-        .textarea-height-ex{
-            height: 100px;
-        }
 
 
 
@@ -606,86 +596,96 @@
                                 </table>
 
                             </div>
-                            <div class="card-body" style="padding-left:5px; padding-right:5px">
-                                <!-- <div class="row "> -->
+                            <div class="card-body">
+                                <div class="row ">
                                     <!-- <div class="col-1">1</div> -->
-                                
                                     <div id="s_alert" class=" alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
                                        
                                         <div id="s_alert_text">
                                             
                                         </div>
                                     </div>
-
-
-                                <div class="alert alert-primary mb-3 alert-ex"  >
-                                    <div class="row mb-1" >
-                                        <div class="col-md-12">
-                                          
-                                                <textarea class="form-control s_name textarea-height-ex" id="s1_name" placeholder="ปัจจัยภายใน จุดแข็ง" ></textarea>
-                                               
-                                      
-                                        </div>
-                                    </div>
-                                    <div class="row">
-
-                                        <div class="col-6 ">
-                                            
-                                            <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
-                                        </div>
-                                        <div class="col-6 ">
-                                            <select class="form-select s_score" id="s1_score" aria-label="">
-                                                <option value="0">0 คะแนน</option>
-                                                <option value="1">1 คะแนน</option>
-                                                <option value="2">2 คะแนน</option>
-                                                <option value="3">3 คะแนน</option>
-                                                <option value="4">4 คะแนน</option>
-                                                <option value="5">5 คะแนน</option>
-                                            </select>
-                                           
-                                        </div>
-
-                                    </div>
-                                </div>
-                                        
-
-
-                                <div class="alert alert-primary mb-3 alert-ex">
-                                    <div class="row mb-1" >
-                                        <div class="col-md-12">
-                                          
-                                                <textarea class="form-control s_name textarea-height-ex" id="s1_name" placeholder="ปัจจัยภายใน จุดแข็ง" ></textarea>
+                                    <table>
+                                        <tr>
+                                            <td class="widthSwotName" colspan="2">
+                                                <textarea class="form-control s_name" id="s1_name" placeholder="ปัจจัยภายใน จุดแข็ง"></textarea>
                                                 <!-- <input type="text" class="form-control s_name" id="s1_name" aria-describedby="xxx"> -->
-                                      
-                                        </div>
-                                    </div>
-                                    <div class="row">
+                                            </td>
+                                        </tr>
+                                        <tr>
 
-                                        <div class="col-6 ">
-                                            
-                                            <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
-                                        </div>
-                                        <div class="col-6 ">
-                                            <select class="form-select s_score" id="s1_score" aria-label="">
-                                                <option value="0">0 คะแนน</option>
-                                                <option value="1">1 คะแนน</option>
-                                                <option value="2">2 คะแนน</option>
-                                                <option value="3">3 คะแนน</option>
-                                                <option value="4">4 คะแนน</option>
-                                                <option value="5">5 คะแนน</option>
-                                            </select>
-                                            <!-- <input type="text" name="s1_score" id="s1_score" class="s_score number_only form-control"  placeholder="คะแนน"> -->
-                                        </div>
+                                            <td class="widthSwotWeight">
+                                                
+                                                <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <select class="form-select s_score" id="s1_score" aria-label="">
+                                                    <option value="0">0 คะแนน</option>
+                                                    <option value="1">1 คะแนน</option>
+                                                    <option value="2">2 คะแนน</option>
+                                                    <option value="3">3 คะแนน</option>
+                                                    <option value="4">4 คะแนน</option>
+                                                    <option value="5">5 คะแนน</option>
+                                                </select>
+                                                <!-- <input type="text" name="s1_score" id="s1_score" class="s_score number_only form-control"  placeholder="คะแนน"> -->
+                                            </td>
 
-                                    </div>
-                                </div>
-                                        
+                                        </tr>
+                                        <!--
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control s_name" id="s2_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s2_weight" id="s2_weight" class="s_weight number_only form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s2_score" id="s2_score" class=" s_score number_only form-control">
+                                            </td>
 
-                                     
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control s_name" id="s3_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s3_weight" id="s3_weight" class="s_weight number_only form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s3_score" id="s3_score" class="s_score number_only form-control">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control s_name" id="s4_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s4_weight" id="s4_weight" class="s_weight number_only form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s4_score" id="s4_score" class="s_score number_only form-control">
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotName">
+                                                <input type="text" class="form-control s_name" id="s5_name" aria-describedby="xxx">
+                                            </td>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s5_weight" id="s5_weight" class="s_weight number_only form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <input type="text" name="s5_score" id="s5_score" class="s_score number_only form-control">
+                                            </td>
+
+                                        </tr>
+    -->
+                                    </table>
                                     
 
                                 
-                                <!-- </div> -->
+                                </div>
                                 
                 
                                 

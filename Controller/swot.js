@@ -1206,10 +1206,15 @@ var checkNanFN=function(value){
 var checkAllDataSwotFn = function(swot_name){
 	//Strengths validate start
 	var swot_flag=true;
+
 	var s_score_flag=true;
 	var w_score_flag=true;
 	var o_score_flag=true;
 	var t_score_flag=true;
+
+	$("#"+swot_name+"_alert_text").html("");
+	$("#"+swot_name+"_alert").hide();
+
 
 	var swot_1_weight= checkNanFN(parseFloat($("#"+swot_name+"1_weight").val()).toFixed(2));
 	var swot_2_weight= checkNanFN(parseFloat($("#"+swot_name+"2_weight").val()).toFixed(2));
@@ -1217,18 +1222,100 @@ var checkAllDataSwotFn = function(swot_name){
 	var swot_4_weight= checkNanFN(parseFloat($("#"+swot_name+"4_weight").val()).toFixed(2));
 	var swot_5_weight= checkNanFN(parseFloat($("#"+swot_name+"5_weight").val()).toFixed(2));
 	var sumWeight=(+swot_1_weight)+(+swot_2_weight)+(+swot_3_weight)+(+swot_4_weight)+(+swot_5_weight);
+	
+	var swot_name_text="";
+		if(swot_name=="s"){
+			swot_name_text="กรุณากรอกปัจจัยภายใน จุดแข็ง";
+		}else if(swot_name=="w"){
+			swot_name_text="กรุณากรอกปัจจัยภายใน จุดอ่อน";
+		}else if(swot_name=="o"){
+			swot_name_text="กรุณากรอกปัจจัยภายนอก โอกาส";
+		}else if(swot_name=="t"){
+			swot_name_text="ปัจจัยภายนอก อุปสรรค";
+		}
+
+	//swot_name
+	if($("#"+swot_name+"1_name").val()=="" && ($("#"+swot_name+"1_weight").val()!="" && $("#"+swot_name+"1_score").val()!="")){
+		$("#"+swot_name+"1_name").css({"border":"red solid 1px"});
+		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่1</div></div>");
+		$("#"+swot_name+"_alert").show();
+
+		swot_flag=false;
+	}else{
+		$("#"+swot_name+"1_name").css({"border":"#ced4da solid 1px"});
+		$("#"+swot_name+"_alert").hide();
+	}
+
+	if($("#"+swot_name+"2_name").val()=="" && ($("#"+swot_name+"2_weight").val()=="" || $("#"+swot_name+"2_score").val()=="")){
+		$("#"+swot_name+"2_name").css({"border":"red solid 1px"});
+		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่2</div>");
+		$("#"+swot_name+"_alert").show();
+		swot_flag=false;
+	}else{
+		$("#"+swot_name+"2_name").css({"border":"#ced4da solid 1px"});
+		
+		
+	}
+
+	if($("#"+swot_name+"3_name").val()=="" && ($("#"+swot_name+"3_weight").val()=="" || $("#"+swot_name+"3_score").val()=="")){
+		$("#"+swot_name+"3_name").css({"border":"red solid 1px"});
+		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่3</div>");
+		$("#"+swot_name+"_alert").show();
+		swot_flag=false;
+	}else{
+		$("#"+swot_name+"3_name").css({"border":"#ced4da solid 1px"});
+		
+	}
+
+	if($("#"+swot_name+"4_name").val()=="" && ($("#"+swot_name+"4_weight").val()=="" || $("#"+swot_name+"4_score").val()=="")){
+		$("#"+swot_name+"4_name").css({"border":"red solid 1px"});
+		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่4</div>");
+		$("#"+swot_name+"_alert").show();
+		swot_flag=false;
+	}else{
+		$("#"+swot_name+"4_name").css({"border":"#ced4da solid 1px"});
+		
+		
+	}
+
+	if($("#"+swot_name+"5_name").val()=="" && ($("#"+swot_name+"5_weight").val()!="" || $("#"+swot_name+"5_score").val()!="")){
+		$("#"+swot_name+"5_name").css({"border":"red solid 1px"});
+		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่5</div>");
+		$("#"+swot_name+"_alert").show();
+		swot_flag=false;
+	}else{
+		$("#"+swot_name+"5_name").css({"border":"#ced4da solid 1px"});
+	}
+
+
 	//weight
-	$("#"+swot_name+"_alert_text").html("");
+
 	if(sumWeight!=1){
-		$("."+swot_name+"_weight ").css({"border":"red solid 1px"});
-		$("#"+swot_name+"_alert_text").html("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรอกน้ำหนักรวมกันแล้วต้องเท่ากับ 1 ");
+		if($("#"+swot_name+"1_name").val()!=""){
+			$("#"+swot_name+"1_weight ").css({"border":"red solid 1px"});
+		}
+		if($("#"+swot_name+"2_name").val()!=""){
+			$("#"+swot_name+"2_weight ").css({"border":"red solid 1px"});
+		}
+		if($("#"+swot_name+"3_name").val()!=""){
+			$("#"+swot_name+"3_weight ").css({"border":"red solid 1px"});
+		}
+		if($("#"+swot_name+"4_name").val()!=""){
+			$("#"+swot_name+"4_weight ").css({"border":"red solid 1px"});
+		}
+		if($("#"+swot_name+"5_name").val()!=""){
+			$("#"+swot_name+"5_weight ").css({"border":"red solid 1px"});
+		}
+
+		
+		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรอกน้ำหนักรวมกันแล้วต้องเท่ากับ 1 </div>");
 		$("#"+swot_name+"_alert").show();
 	 	swot_flag=false;
 
 	}else{
 		$("."+swot_name+"_weight").css({"border":"#ced4da solid 1px"});
-		$("#"+swot_name+"_alert").hide();
-		$("#"+swot_name+"_alert_text").html("");
+		//$("#"+swot_name+"_alert").hide();
+		//$("#"+swot_name+"_alert_text").html("");
 	}
 
  	//score
@@ -1260,6 +1347,11 @@ var checkAllDataSwotFn = function(swot_name){
 		swot_flag=false;
 	}
 
+
+
+
+
+
 	if(s_score_flag==false){
 		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรอกคะแนนได้ 1-5 คะแนน</div>");
 		$("#"+swot_name+"_alert").show();
@@ -1279,15 +1371,20 @@ var checkAllDataSwotFn = function(swot_name){
 		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรอกคะแนนได้ 1-5 คะแนน</div>");
 		$("#"+swot_name+"_alert").show();
 	}
+
+
+
+
+
+
 	return swot_flag;
-	//Strengths validate end
+	
 }
 
 var checkValidateFn = function(){
 	$("#swot_detail_alert").hide();
 	var validate=true;
-	var sumWeightStrengths=0;
-	var s_score_flag=true;
+
 
 	if($("#swot_detail").val()==""){
 		validate=false;
@@ -1315,62 +1412,6 @@ var checkValidateFn = function(){
 		validate=false;
 	}
 	
-	// validate=checkAllDataSwotFn("w");
-	// validate=checkAllDataSwotFn("o");
-	// validate=checkAllDataSwotFn("t");
-
-	return validate;
-	
-	// //Strengths validate start
-	// var s1_weight= checkNanFN(parseFloat($("#s1_weight").val()).toFixed(2));
-	// var s2_weight= checkNanFN(parseFloat($("#s2_weight").val()).toFixed(2));
-	// var s3_weight= checkNanFN(parseFloat($("#s3_weight").val()).toFixed(2));
-	// var s4_weight= checkNanFN(parseFloat($("#s4_weight").val()).toFixed(2));
-	// var s5_weight= checkNanFN(parseFloat($("#s5_weight").val()).toFixed(2));
-	// sumWeightStrengths=(+s1_weight)+(+s2_weight)+(+s3_weight)+(+s4_weight)+(+s5_weight);
-	// //weight
-	// if(sumWeightStrengths!=1){
-	// 	$(".s_weight ").css({"border":"red solid 1px"});
-	// 	$("#s_alert_text").html("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรอกน้ำหนักรวมกันแล้วต้องเท่ากับ 1 ");
-	// 	$("#s_alert").show();
-	// }else{
-	// 	$(".s_weight").css({"border":"#ced4da solid 1px"});
-	// 	$("#s_alert").hide();
-	// }
-
- 	// //score
-	// $(".s_score").css({"border":"#ced4da solid 1px"});
-
-	// if($("#s1_score").val()>5){
-	// 	$("#s1_score").css({"border":"red solid 1px"});
-	// 	s_score_flag=false;
-	// }
-	// if($("#s2_score").val()>5){
-	// 	$("#s2_score").css({"border":"red solid 1px"});
-	// 	s_score_flag=false;
-	// }
-	// if($("#s3_score").val()>5){
-	// 	$("#s3_score").css({"border":"red solid 1px"});
-	// 	s_score_flag=false;
-	// }
-	// if($("#s4_score").val()>5){
-	// 	$("#s4_score").css({"border":"red solid 1px"});
-	// 	s_score_flag=false;
-	// }
-	// if($("#s5_score").val()>5){
-	// 	$("#s5_score").css({"border":"red solid 1px"});
-	// 	s_score_flag=false;
-	// }
-
-	// if(s_score_flag==false){
-	// 	$("#s_alert_text").append("<br><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรอกคะแนนได้ 1-5 คะแนน");
-	// 	$("#s_alert").show();
-	// }
-	// //Strengths validate end
-
-
-
-
 	return validate;
 }
 var checkValidateExampleFn  = function(){
@@ -1461,7 +1502,7 @@ $(document).ready(function(){
 
 	$("#submitSave").click(function(){
 		//checkValidateFn();
-		$("body").mLoading();
+		
 		if(checkValidateFn()==false){
 			$.alert({
 				title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',

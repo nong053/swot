@@ -1,0 +1,75 @@
+<!-- 
+                                        <tr class="borderTopTableRr">
+                                            <td class="widthSwotName newSwot" colspan="2">
+                                                <textarea class="form-control s_name" id="s3_name" placeholder="ปัจจัยภายใน จุดแข็ง"></textarea>
+                                                <!-- <input type="text" class="form-control s_name" id="s3_name" aria-describedby="xxx"> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s3_weight" id="s3_weight" class="s_weight number_only form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                            <!-- <input type="text" name="s3_score" id="s3_score" class="s_score number_only form-control"> -->
+                                                <select class="form-select s_score" id="s3_score" aria-label="">
+                                                    <option value="0">0 คะแนน</option>
+                                                    <option value="1">1 คะแนน</option>
+                                                    <option value="2">2 คะแนน</option>
+                                                    <option value="3">3 คะแนน</option>
+                                                    <option value="4">4 คะแนน</option>
+                                                    <option value="5">5 คะแนน</option>
+                                                </select>    
+                                        </td>
+
+                                        </tr>
+                                        <tr class="borderTopTableRr">
+                                            <td class="widthSwotName newSwot" colspan="2">
+                                                <textarea class="form-control s_name" id="s4_name" placeholder="ปัจจัยภายใน จุดแข็ง"></textarea>
+                                                <!-- <input type="text" class="form-control s_name" id="s4_name" aria-describedby="xxx"> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s4_weight" id="s4_weight" class="s_weight number_only form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <!-- <input type="text" name="s4_score" id="s4_score" class="s_score number_only form-control"> -->
+
+                                                <select class="form-select s_score" id="s4_score" aria-label="">
+                                                    <option value="0">0 คะแนน</option>
+                                                    <option value="1">1 คะแนน</option>
+                                                    <option value="2">2 คะแนน</option>
+                                                    <option value="3">3 คะแนน</option>
+                                                    <option value="4">4 คะแนน</option>
+                                                    <option value="5">5 คะแนน</option>
+                                                </select>
+
+                                            </td>
+
+                                        </tr>
+                                        <tr class="borderTopTableRr">
+                                            <td class="widthSwotName newSwot" colspan="2">
+                                                <textarea class="form-control s_name" id="s5_name" placeholder="ปัจจัยภายใน จุดแข็ง"></textarea>
+                                                <!-- <input type="text" class="form-control s_name" id="s5_name" aria-describedby="xxx"> -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="widthSwotWeight">
+                                                <input type="text" name="s5_weight" id="s5_weight" class="s_weight number_only form-control">
+                                            </td>
+                                            <td class="widthSwotScore">
+                                                <!-- <input type="text" name="s5_score" id="s5_score" class="s_score number_only form-control"> -->
+
+                                                <select class="form-select s_score" id="s5_score" aria-label="">
+                                                    <option value="0">0 คะแนน</option>
+                                                    <option value="1">1 คะแนน</option>
+                                                    <option value="2">2 คะแนน</option>
+                                                    <option value="3">3 คะแนน</option>
+                                                    <option value="4">4 คะแนน</option>
+                                                    <option value="5">5 คะแนน</option>
+                                                </select>
+
+                                            </td>
+
+                                        </tr>
+     -->
