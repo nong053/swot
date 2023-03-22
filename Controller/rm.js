@@ -1,5 +1,15 @@
 var dataJsonForImport="";
 
+$( document ).ajaxStart(function() {
+	$("body").mLoading();
+});
+$( document ).ajaxStop(function() {
+	$("body").mLoading('hide');
+});
+$("body").mLoading();
+
+
+
 var listRiskFormFn = function(data){
     var htmlFormRisk="";
     $.each(data['dataRisk'],function(index,indexEntry){
@@ -893,7 +903,7 @@ var showAllExampleLoadDataFn = function(uuid){
 
 }
 //LOAD DATA END
-var loadExampleDataFn = function(uuid){
+var loadExampleDataFn = function(uuid,rce_id){
 
     
     $.ajax({
@@ -904,14 +914,18 @@ var loadExampleDataFn = function(uuid){
 		data:{
 			"uuid":uuid,
 			"action":"loadExampleData",
-            "rce_id":$("#rce_id_load").val()
+            "rce_id":rce_id
 	
 		},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert("ok");
+					//alert("ok");
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'โหลดข้อมูลตัวอย่างเรียบร้อย',
+					});
 				}
 			}
 		}
@@ -1028,8 +1042,91 @@ var exportExampleDataFn = function(uuid,rce_id){
 }
 //example management end
 
+
+var autoLoginFn=function(){
+	
+    if(sessionStorage.getItem('uuid')=="" || sessionStorage.getItem('uuid')==null) {
+		console.log("Can't login");
+		return false;
+	}
+    $.ajax({
+		url:"./Model/login-rm.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":sessionStorage.getItem('uuid'),
+		},
+		success:function(data){
+
+		
+			if(data[0]['loginType']=="newUser"){
+				
+				$.confirm({
+					title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> โหลดข้อมูลตัวอย่างหรือไม่?',
+					content: '',
+					buttons: {
+						confirm: {
+							text: 'ยืนยันการโหลดข้อมูล', 
+							action: function () {
+								loadExampleDataFn(sessionStorage.getItem('uuid'),1);
+							}
+						},
+						cancel:  {
+							text: 'ยกเลิก'
+							
+						}
+					}
+				});
+
+				
+				
+			}else{
+				riskFormFn(sessionStorage.getItem('uuid'));
+				
+				
+
+			}
+            
+		}
+	});
+}
+
+
 $(document).ready(function(){
 
+
+/*Login Management Start */
+var du = new DeviceUUID().parse();
+    var dua = [
+        du.language,
+        du.platform,
+        du.os,
+        du.cpuCores,
+        du.isAuthoritative,
+        du.silkAccelerated,
+        du.isKindleFire,
+        du.isDesktop,
+        du.isMobile,
+        du.isTablet,
+        du.isWindows,
+        du.isLinux,
+        du.isLinux64,
+        du.isMac,
+        du.isiPad,
+        du.isiPhone,
+        du.isiPod,
+        du.isSmartTV,
+        du.pixelDepth,
+        du.isTouchScreen
+    ];
+    var uuid = du.hashMD5(dua.join(':'));
+
+	sessionStorage.setItem('uuid', uuid);
+	
+	autoLoginFn();
+
+/*Login Management End */
 
 riskFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 impactMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
@@ -1272,7 +1369,7 @@ $(document).on("click",".delExampleData",function(){
  $("#btnLoadExample").click(function(){
 	if($("#file_import").val()==""){
 		alert('loadExampleDataFn');
-		//loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+		loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',$("#rce_id_load").val());
 	}else{
 		alert('importExampleDataJsonFn');
 		importExampleDataJsonFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',dataJsonForImport);
