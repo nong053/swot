@@ -359,48 +359,33 @@ uuid
 
 
 	$.each(data,function(index,indexEntry){
-		var s_score="";
+	
 	
 		if(index==0){
 			 $("#swot_detail").val(indexEntry['swot_detail']);
 		}
-
-		if(indexEntry['s_score']=="" || indexEntry['s_score']==0 ){
-			s_score="";
-		}else{
-			s_score=indexEntry['s_score'];
-		}
-		console.log("s_score="+s_score);
 		
 
 		if(indexEntry['form_id']=='s1'){
 	
 			$("#s1_name").val(indexEntry['s_name']);
 			$("#s1_weight").val(indexEntry['s_weight']);
-			
-			$("#s1_score").val(s_score);
-			
+			$("#s1_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='s2'){
 			$("#s2_name").val(indexEntry['s_name']);
 			$("#s2_weight").val(indexEntry['s_weight']);
-			$("#s2_score").val(s_score);
+			$("#s2_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='s3'){
 			$("#s3_name").val(indexEntry['s_name']);
 			$("#s3_weight").val(indexEntry['s_weight']);
-			$("#s3_score").val(s_score);
+			$("#s3_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='s4'){
 			$("#s4_name").val(indexEntry['s_name']);
 			$("#s4_weight").val(indexEntry['s_weight']);
-			$("#s4_score").val(s_score);
-		}
-
-		if(indexEntry['form_id']=='s5'){
-			$("#s5_name").val(indexEntry['s_name']);
-			$("#s5_weight").val(indexEntry['s_weight']);
-			$("#s5_score").val(s_score);
+			$("#s4_score").val(indexEntry['s_score']);
 		}
 
 
@@ -423,11 +408,6 @@ uuid
 			$("#w4_name").val(indexEntry['s_name']);
 			$("#w4_weight").val(indexEntry['s_weight']);
 			$("#w4_score").val(indexEntry['s_score']);
-		}
-		if(indexEntry['form_id']=='w5'){
-			$("#w5_name").val(indexEntry['s_name']);
-			$("#w5_weight").val(indexEntry['s_weight']);
-			$("#w5_score").val(indexEntry['s_score']);
 		}
 
 
@@ -453,11 +433,6 @@ uuid
 			$("#o4_weight").val(indexEntry['s_weight']);
 			$("#o4_score").val(indexEntry['s_score']);
 		}
-		if(indexEntry['form_id']=='o5'){
-			$("#o5_name").val(indexEntry['s_name']);
-			$("#o5_weight").val(indexEntry['s_weight']);
-			$("#o5_score").val(indexEntry['s_score']);
-		}
 
 
 		if(indexEntry['form_id']=='t1'){
@@ -479,11 +454,6 @@ uuid
 			$("#t4_name").val(indexEntry['s_name']);
 			$("#t4_weight").val(indexEntry['s_weight']);
 			$("#t4_score").val(indexEntry['s_score']);
-		}
-		if(indexEntry['form_id']=='t5'){
-			$("#t5_name").val(indexEntry['s_name']);
-			$("#t5_weight").val(indexEntry['s_weight']);
-			$("#t5_score").val(indexEntry['s_score']);
 		}
 		
 	});
@@ -556,7 +526,7 @@ var renderSwotToDisplay = function(data){
 		});
 		
 	//alert(dataStrengths);
-		$(".dataStrengths").html(dataStrengths).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumStrengths/countStrengths).toFixed(2)+" </td></tr>");
+		$(".dataStrengths").html(dataStrengths).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumStrengths/countThreats).toFixed(2)+" </td></tr>");
 		$(".dataWeaknesses").html(dataWeaknesses).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumWeaknesses/countWeaknesses).toFixed(2)+" </td></tr>");
 		$(".dataOpportunities").html(dataOpportunities).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumOpportunities/countOpportunities).toFixed(2)+" </td></tr>");
 		$(".dataThreats").html(dataThreats).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumThreats/countThreats).toFixed(2)+" </td></tr>");
@@ -1265,7 +1235,7 @@ var checkAllDataSwotFn = function(swot_name){
 		}
 
 	//swot_name
-	if($("#"+swot_name+"1_name").val()=="" && $("#"+swot_name+"1_weight").val()!="" ){
+	if($("#"+swot_name+"1_name").val()=="" && ($("#"+swot_name+"1_weight").val()!="" && $("#"+swot_name+"1_score").val()!="")){
 		$("#"+swot_name+"1_name").css({"border":"red solid 1px"});
 		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่1</div></div>");
 		$("#"+swot_name+"_alert").show();
@@ -1276,7 +1246,7 @@ var checkAllDataSwotFn = function(swot_name){
 		$("#"+swot_name+"_alert").hide();
 	}
 
-	if($("#"+swot_name+"2_name").val()=="" && $("#"+swot_name+"2_weight").val()==""){
+	if($("#"+swot_name+"2_name").val()=="" && ($("#"+swot_name+"2_weight").val()=="" || $("#"+swot_name+"2_score").val()=="")){
 		$("#"+swot_name+"2_name").css({"border":"red solid 1px"});
 		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่2</div>");
 		$("#"+swot_name+"_alert").show();
@@ -1287,7 +1257,7 @@ var checkAllDataSwotFn = function(swot_name){
 		
 	}
 
-	if($("#"+swot_name+"3_name").val()=="" && $("#"+swot_name+"3_weight").val()=="" ){
+	if($("#"+swot_name+"3_name").val()=="" && ($("#"+swot_name+"3_weight").val()=="" || $("#"+swot_name+"3_score").val()=="")){
 		$("#"+swot_name+"3_name").css({"border":"red solid 1px"});
 		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่3</div>");
 		$("#"+swot_name+"_alert").show();
@@ -1297,7 +1267,7 @@ var checkAllDataSwotFn = function(swot_name){
 		
 	}
 
-	if($("#"+swot_name+"4_name").val()=="" && $("#"+swot_name+"4_weight").val()==""){
+	if($("#"+swot_name+"4_name").val()=="" && ($("#"+swot_name+"4_weight").val()=="" || $("#"+swot_name+"4_score").val()=="")){
 		$("#"+swot_name+"4_name").css({"border":"red solid 1px"});
 		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่4</div>");
 		$("#"+swot_name+"_alert").show();
@@ -1308,7 +1278,7 @@ var checkAllDataSwotFn = function(swot_name){
 		
 	}
 
-	if($("#"+swot_name+"5_name").val()=="" && ($("#"+swot_name+"5_weight").val()!="" && $("#"+swot_name+"5_weight").val()!=0)){
+	if($("#"+swot_name+"5_name").val()=="" && ($("#"+swot_name+"5_weight").val()!="" || $("#"+swot_name+"5_score").val()!="")){
 		$("#"+swot_name+"5_name").css({"border":"red solid 1px"});
 		$("#"+swot_name+"_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> "+swot_name_text+" ช่องที่5</div>");
 		$("#"+swot_name+"_alert").show();
@@ -1469,12 +1439,13 @@ $(document).ready(function(){
 		checkValidateFn();
 	});
 
-	$('.number_only').keypress(function(e) {
-		if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
-	  })
-	  .on("cut copy paste",function(e){
-		e.preventDefault();
-	  });
+	$('.number_only').keypress(function(event){
+
+		if(event.which != 8 && isNaN(String.fromCharCode(event.which))){
+			event.preventDefault(); //stop character from entering input
+		}
+ 
+	});
 
 	//4b7e2fd0-776a-420d-bd09-79a58da47ff6 //mobile nong personal
 	//pc work room rtaf
