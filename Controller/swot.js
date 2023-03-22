@@ -556,11 +556,17 @@ var renderSwotToDisplay = function(data){
 		});
 		
 	//alert(dataStrengths);
+	/*
 		$(".dataStrengths").html(dataStrengths).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumStrengths/countStrengths).toFixed(2)+" </td></tr>");
 		$(".dataWeaknesses").html(dataWeaknesses).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumWeaknesses/countWeaknesses).toFixed(2)+" </td></tr>");
 		$(".dataOpportunities").html(dataOpportunities).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumOpportunities/countOpportunities).toFixed(2)+" </td></tr>");
 		$(".dataThreats").html(dataThreats).append("<tr><td colspan=\"3\" class=\"total-swot\">เฉลี่ย="+parseFloat(sumThreats/countThreats).toFixed(2)+" </td></tr>");
-		
+		*/
+
+		$(".dataStrengths").html(dataStrengths).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumStrengths).toFixed(2)+" </td></tr>");
+		$(".dataWeaknesses").html(dataWeaknesses).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumWeaknesses).toFixed(2)+" </td></tr>");
+		$(".dataOpportunities").html(dataOpportunities).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumOpportunities).toFixed(2)+" </td></tr>");
+		$(".dataThreats").html(dataThreats).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumThreats).toFixed(2)+" </td></tr>");
 
 }
 var findOne=function(uuid){
@@ -1590,9 +1596,7 @@ $(document).ready(function(){
 	$("#submitPDF").click(function(){
 		
 		$("#forExportPDF").show();
-
-		
-			
+				
 			html2canvas($('#forExportPDF')[0], {
 				onrendered: function (canvas) {
 					var data = canvas.toDataURL();
@@ -1609,9 +1613,7 @@ $(document).ready(function(){
 					
 				}
 			});
-			
-			
-		
+
 	});
 
 

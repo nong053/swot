@@ -1616,14 +1616,15 @@
 </div>
 <!--Model -->
 <!-- for export pdf start-->
-<table id="forExportPDF" class="table" style="display:none;">
+
+<table id="forExportPDF" class="table" style="display:none; font-size:48px; ">
             
     <tr>
         <td colspan="2">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส)</td>
     </tr>
     <tr>
         <td>
-            <table class="table  table-striped tableRmData">
+            <table class="table1  table-striped tableRmData">
                 <thead>
                     <tr>
                         <th class="swot_seq">#</th>
@@ -1637,7 +1638,7 @@
             </table>
         </td>
         <td>
-            <table class="table  table-striped ">
+            <table class="table1  table-striped ">
                 <thead>
                     <tr>
                         <th class="swot_seq">#</th>
@@ -1658,19 +1659,19 @@
     </tr>
     <tr>
         <td>
-            <table class="table  table-striped ">
+            <table class="table1  table-striped ">
                 <thead>
                     <tr>
                         <th class="swot_seq">#</th>
                         <th class="swot_name">จุดแข็ง (Strengths)</th>
-                        <th class="swot_score number_onlyX">คะแนน</th>
+                        <th class="swot_score number_only">คะแนน</th>
                     </tr>
                 </thead>
                 <tbody class="dataStrengths"></tbody>
             </table>
         </td>
         <td>
-            <table class="table  table-striped ">
+            <table class="table1  table-striped ">
                 <thead>
                     <tr>
                         <th class="swot_seq">#</th>
@@ -1864,6 +1865,7 @@
 
     
 </table>
+
 <!-- for export exel end-->
 <!-- Modal -->
 <!-- <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
