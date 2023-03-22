@@ -359,74 +359,73 @@ uuid
 
 
 	$.each(data,function(index,indexEntry){
-		var s_score="";
+		var swot_weight="";
 	
 		if(index==0){
 			 $("#swot_detail").val(indexEntry['swot_detail']);
 		}
 
-		if(indexEntry['s_score']=="" || indexEntry['s_score']==0 ){
-			s_score="";
+		if(indexEntry['s_weight']=="" || indexEntry['s_weight']==0 ){
+			swot_weight="";
 		}else{
-			s_score=indexEntry['s_score'];
+			swot_weight=indexEntry['s_weight'];
 		}
-		console.log("s_score="+s_score);
+	
 		
 
 		if(indexEntry['form_id']=='s1'){
 	
 			$("#s1_name").val(indexEntry['s_name']);
-			$("#s1_weight").val(indexEntry['s_weight']);
-			
-			$("#s1_score").val(s_score);
+			$("#s1_weight").val(swot_weight);
+			$("#s1_score").val(indexEntry['s_score']);
 			
 		}
 		if(indexEntry['form_id']=='s2'){
 			$("#s2_name").val(indexEntry['s_name']);
-			$("#s2_weight").val(indexEntry['s_weight']);
-			$("#s2_score").val(s_score);
+			$("#s2_weight").val(swot_weight);
+			$("#s2_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='s3'){
 			$("#s3_name").val(indexEntry['s_name']);
-			$("#s3_weight").val(indexEntry['s_weight']);
-			$("#s3_score").val(s_score);
+			$("#s3_weight").val(swot_weight);
+			$("#s3_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='s4'){
 			$("#s4_name").val(indexEntry['s_name']);
-			$("#s4_weight").val(indexEntry['s_weight']);
-			$("#s4_score").val(s_score);
+			$("#s4_weight").val(swot_weight);
+			$("#s4_score").val(indexEntry['s_score']);
 		}
 
 		if(indexEntry['form_id']=='s5'){
 			$("#s5_name").val(indexEntry['s_name']);
-			$("#s5_weight").val(indexEntry['s_weight']);
-			$("#s5_score").val(s_score);
+			$("#s5_weight").val(swot_weight);
+			$("#s5_score").val(indexEntry['s_score']);
 		}
 
 
 		if(indexEntry['form_id']=='w1'){
 			$("#w1_name").val(indexEntry['s_name']);
-			$("#w1_weight").val(indexEntry['s_weight']);
+			$("#w1_weight").val(swot_weight);
 			$("#w1_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='w2'){
 			$("#w2_name").val(indexEntry['s_name']);
-			$("#w2_weight").val(indexEntry['s_weight']);
+			$("#w2_weight").val(swot_weight);
 			$("#w2_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='w3'){
 			$("#w3_name").val(indexEntry['s_name']);
-			$("#w3_weight").val(indexEntry['s_weight']);
+			$("#w3_weight").val(swot_weight);
 			$("#w3_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='w4'){
 			$("#w4_name").val(indexEntry['s_name']);
-			$("#w4_weight").val(indexEntry['s_weight']);
+			$("#w4_weight").val(swot_weight);
 			$("#w4_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='w5'){
 			$("#w5_name").val(indexEntry['s_name']);
-			$("#w5_weight").val(indexEntry['s_weight']);
+			$("#w5_weight").val(swot_weight);
 			$("#w5_score").val(indexEntry['s_score']);
 		}
 
@@ -435,54 +434,54 @@ uuid
 
 		if(indexEntry['form_id']=='o1'){
 			$("#o1_name").val(indexEntry['s_name']);
-			$("#o1_weight").val(indexEntry['s_weight']);
+			$("#o1_weight").val(swot_weight);
 			$("#o1_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='o2'){
 			$("#o2_name").val(indexEntry['s_name']);
-			$("#o2_weight").val(indexEntry['s_weight']);
+			$("#o2_weight").val(swot_weight);
 			$("#o2_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='o3'){
 			$("#o3_name").val(indexEntry['s_name']);
-			$("#o3_weight").val(indexEntry['s_weight']);
+			$("#o3_weight").val(swot_weight);
 			$("#o3_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='o4'){
 			$("#o4_name").val(indexEntry['s_name']);
-			$("#o4_weight").val(indexEntry['s_weight']);
+			$("#o4_weight").val(swot_weight);
 			$("#o4_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='o5'){
 			$("#o5_name").val(indexEntry['s_name']);
-			$("#o5_weight").val(indexEntry['s_weight']);
+			$("#o5_weight").val(swot_weight);
 			$("#o5_score").val(indexEntry['s_score']);
 		}
 
 
 		if(indexEntry['form_id']=='t1'){
 			$("#t1_name").val(indexEntry['s_name']);
-			$("#t1_weight").val(indexEntry['s_weight']);
+			$("#t1_weight").val(swot_weight);
 			$("#t1_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='t2'){
 			$("#t2_name").val(indexEntry['s_name']);
-			$("#t2_weight").val(indexEntry['s_weight']);
+			$("#t2_weight").val(swot_weight);
 			$("#t2_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='t3'){
 			$("#t3_name").val(indexEntry['s_name']);
-			$("#t3_weight").val(indexEntry['s_weight']);
+			$("#t3_weight").val(swot_weight);
 			$("#t3_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='t4'){
 			$("#t4_name").val(indexEntry['s_name']);
-			$("#t4_weight").val(indexEntry['s_weight']);
+			$("#t4_weight").val(swot_weight);
 			$("#t4_score").val(indexEntry['s_score']);
 		}
 		if(indexEntry['form_id']=='t5'){
 			$("#t5_name").val(indexEntry['s_name']);
-			$("#t5_weight").val(indexEntry['s_weight']);
+			$("#t5_weight").val(swot_weight);
 			$("#t5_score").val(indexEntry['s_score']);
 		}
 		
@@ -866,9 +865,10 @@ var listExampleDataFn = function(data){
 			htmlExampleData+="<b>ชื่อข้อมูล</b>:"+indexEntry['b_type_name']+"<br>";
 			htmlExampleData+="<b>ประเภทข้อมูล</b>: "+indexEntry['b_release_type_name']+"<br>";
 			
-			htmlExampleData+="</td>";
-			htmlExampleData+="<td>";
-				htmlExampleData+="<div style='text-align:right'>";
+			// htmlExampleData+="</td>";
+			// htmlExampleData+="<td>";
+			// htmlExampleData+="<b>จัดการ</b>";
+				htmlExampleData+="<div style=''>";
 				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
 				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
 				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";

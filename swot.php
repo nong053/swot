@@ -1959,7 +1959,7 @@
                             <!-- <th>#</th> -->
                             <th>ข้อมูลตัวอย่าง</th>
                             <!-- <th>ประเภท</th> -->
-                             <th style="text-align: right;">จัดการ</th> 
+                             <!-- <th style="text-align: right;">จัดการ</th>  -->
                         </thead>
                         <tbody id="dataExampleArea">
                        
