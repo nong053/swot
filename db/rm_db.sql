@@ -1,163 +1,147 @@
--- phpMyAdmin SQL Dump
--- version 5.0.3
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.16  Distrib 10.1.30-MariaDB, for Win32 (AMD64)
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 12, 2023 at 09:38 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: 127.0.0.1    Database: rm_db
+-- ------------------------------------------------------
+-- Server version	10.1.30-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `rm_db`
---
-
--- --------------------------------------------------------
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `impact_master`
 --
 
+DROP TABLE IF EXISTS `impact_master`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `impact_master` (
-  `im_id` int(11) NOT NULL,
+  `im_id` int(11) NOT NULL AUTO_INCREMENT,
   `uu_id` varchar(45) DEFAULT NULL,
   `im_code` varchar(45) DEFAULT NULL,
   `im_name` varchar(100) DEFAULT NULL,
   `im_description` varchar(255) DEFAULT NULL,
   `im_score` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`im_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `impact_master`
 --
 
-INSERT INTO `impact_master` (`im_id`, `uu_id`, `im_code`, `im_name`, `im_description`, `im_score`, `created_date`, `updated_date`) VALUES
-(30, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '1', 'ผลกระทบต่ำมาก', 'อธิบายโอกาสเกิด', 1, '2023-03-12 15:23:01', '2023-03-12 15:23:01'),
-(31, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '2', 'ผลกระทบต่ำ', 'อธิบายโอกาสเกิด', 2, '2023-03-12 15:23:01', '2023-03-12 15:23:01'),
-(32, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '3', 'ผลกระทบปานกลาง', 'อธิบายโอกาสเกิด', 3, '2023-03-12 15:23:01', '2023-03-12 15:23:01'),
-(33, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '4', 'ผลกระทบสูง', 'อธิบายโอกาสเกิด', 4, '2023-03-12 15:23:01', '2023-03-12 15:23:01'),
-(34, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '5', 'ผลกระทบสูงมาก', 'อธิบายโอกาสเกิด', 5, '2023-03-12 15:23:01', '2023-03-12 15:23:01');
-
--- --------------------------------------------------------
+LOCK TABLES `impact_master` WRITE;
+/*!40000 ALTER TABLE `impact_master` DISABLE KEYS */;
+INSERT INTO `impact_master` VALUES (1,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','1','ผลกระทบต่ำมาก','อธิบายโอกาสเกิด',1,'2023-03-16 15:40:43','2023-03-16 15:40:43'),(2,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','2','ผลกระทบต่ำ','อธิบายโอกาสเกิด',2,'2023-03-16 15:40:44','2023-03-16 15:40:44'),(3,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','3','ผลกระทบปานกลาง','อธิบายโอกาสเกิด',3,'2023-03-16 15:40:44','2023-03-16 15:40:44'),(4,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','4','ผลกระทบสูง','อธิบายโอกาสเกิด',4,'2023-03-16 15:40:44','2023-03-16 15:40:44'),(5,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','5','ผลกระทบสูงมาก','อธิบายโอกาสเกิด',5,'2023-03-16 15:40:44','2023-03-16 15:40:44'),(13,'2c106cc61b26f9f71ec3da85c01c56cd','1','ผลกระทบต่ำมาก','อธิบายโอกาสเกิด',1,NULL,NULL),(14,'2c106cc61b26f9f71ec3da85c01c56cd','2','ผลกระทบต่ำ','อธิบายโอกาสเกิด',2,NULL,NULL),(15,'2c106cc61b26f9f71ec3da85c01c56cd','3','ผลกระทบปานกลาง','อธิบายโอกาสเกิด',3,NULL,NULL),(16,'2c106cc61b26f9f71ec3da85c01c56cd','4','ผลกระทบสูง','อธิบายโอกาสเกิด',4,NULL,NULL),(17,'2c106cc61b26f9f71ec3da85c01c56cd','5','ผลกระทบสูงมาก','อธิบายโอกาสเกิด',5,NULL,NULL);
+/*!40000 ALTER TABLE `impact_master` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `impact_master_ex`
 --
 
+DROP TABLE IF EXISTS `impact_master_ex`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `impact_master_ex` (
-  `im_id` int(11) NOT NULL,
+  `im_id` int(11) NOT NULL AUTO_INCREMENT,
   `rce_id` varchar(45) DEFAULT NULL,
   `im_code` varchar(100) DEFAULT NULL,
   `im_name` varchar(100) DEFAULT NULL,
   `im_description` varchar(255) DEFAULT NULL,
-  `im_score` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `im_score` int(11) DEFAULT NULL,
+  PRIMARY KEY (`im_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=139 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `impact_master_ex`
 --
 
-INSERT INTO `impact_master_ex` (`im_id`, `rce_id`, `im_code`, `im_name`, `im_description`, `im_score`) VALUES
-(36, '14', '1', 'ผลกระทบต่ำมาก', 'อธิบายโอกาสเกิด', 1),
-(37, '14', '2', 'ผลกระทบต่ำ', 'อธิบายโอกาสเกิด', 2),
-(38, '14', '3', 'ผลกระทบปานกลาง', 'อธิบายโอกาสเกิด', 3),
-(39, '14', '4', 'ผลกระทบสูง', 'อธิบายโอกาสเกิด', 4),
-(40, '14', '5', 'ผลกระทบสูงมาก', 'อธิบายโอกาสเกิด', 5),
-(43, '15', '1', 'ผลกระทบต่ำมาก', 'อธิบายโอกาสเกิด', 1),
-(44, '15', '2', 'ผลกระทบต่ำ', 'อธิบายโอกาสเกิด', 2),
-(45, '15', '3', 'ผลกระทบปานกลาง', 'อธิบายโอกาสเกิด', 3),
-(46, '15', '4', 'ผลกระทบสูง', 'อธิบายโอกาสเกิด', 4),
-(47, '15', '5', 'ผลกระทบสูงมาก', 'อธิบายโอกาสเกิด', 5),
-(134, '25', '1', 'ผลกระทบต่ำมาก', 'อธิบายโอกาสเกิด', 1),
-(135, '25', '2', 'ผลกระทบต่ำ', 'อธิบายโอกาสเกิด', 2),
-(136, '25', '3', 'ผลกระทบปานกลาง', 'อธิบายโอกาสเกิด', 3),
-(137, '25', '4', 'ผลกระทบสูง', 'อธิบายโอกาสเกิด', 4),
-(138, '25', '5', 'ผลกระทบสูงมาก', 'อธิบายโอกาสเกิด', 5);
-
--- --------------------------------------------------------
+LOCK TABLES `impact_master_ex` WRITE;
+/*!40000 ALTER TABLE `impact_master_ex` DISABLE KEYS */;
+INSERT INTO `impact_master_ex` VALUES (36,'1','1','ผลกระทบต่ำมาก','อธิบายโอกาสเกิด',1),(37,'1','2','ผลกระทบต่ำ','อธิบายโอกาสเกิด',2),(38,'1','3','ผลกระทบปานกลาง','อธิบายโอกาสเกิด',3),(39,'1','4','ผลกระทบสูง','อธิบายโอกาสเกิด',4),(40,'1','5','ผลกระทบสูงมาก','อธิบายโอกาสเกิด',5),(43,'15','1','ผลกระทบต่ำมาก','อธิบายโอกาสเกิด',1),(44,'15','2','ผลกระทบต่ำ','อธิบายโอกาสเกิด',2),(45,'15','3','ผลกระทบปานกลาง','อธิบายโอกาสเกิด',3),(46,'15','4','ผลกระทบสูง','อธิบายโอกาสเกิด',4),(47,'15','5','ผลกระทบสูงมาก','อธิบายโอกาสเกิด',5),(134,'25','1','ผลกระทบต่ำมาก','อธิบายโอกาสเกิด',1),(135,'25','2','ผลกระทบต่ำ','อธิบายโอกาสเกิด',2),(136,'25','3','ผลกระทบปานกลาง','อธิบายโอกาสเกิด',3),(137,'25','4','ผลกระทบสูง','อธิบายโอกาสเกิด',4),(138,'25','5','ผลกระทบสูงมาก','อธิบายโอกาสเกิด',5);
+/*!40000 ALTER TABLE `impact_master_ex` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `likelihood_master`
 --
 
+DROP TABLE IF EXISTS `likelihood_master`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `likelihood_master` (
-  `lh_id` int(11) NOT NULL,
+  `lh_id` int(11) NOT NULL AUTO_INCREMENT,
   `uu_id` varchar(45) DEFAULT NULL,
   `lh_code` varchar(45) DEFAULT NULL,
   `lh_name` varchar(100) DEFAULT NULL,
   `lh_score` int(11) DEFAULT NULL,
   `lh_description` varchar(200) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`lh_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `likelihood_master`
 --
 
-INSERT INTO `likelihood_master` (`lh_id`, `uu_id`, `lh_code`, `lh_name`, `lh_score`, `lh_description`, `created_date`, `updated_date`) VALUES
-(30, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '1', 'โอกาสเกิดต่ำมาก', 1, 'อธิบายโอกาสเกิดความเสี่ยง', '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(31, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '2', 'โอกาสเกิดต่ำ', 2, 'อธิบายโอกาสเกิดความเสี่ยง', '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(32, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '3', 'โอกาสเกิดปานกลาง', 3, 'อธิบายโอกาสเกิดความเสี่ยง', '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(33, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '4', 'โอกาสเกิดสูง', 4, 'อธิบายโอกาสเกิดความเสี่ยง', '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(34, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '5', 'โอกาสเกิดสูงมาก', 5, 'อธิบายโอกาสเกิดความเสี่ยง', '2023-03-12 15:23:00', '2023-03-12 15:23:00');
-
--- --------------------------------------------------------
+LOCK TABLES `likelihood_master` WRITE;
+/*!40000 ALTER TABLE `likelihood_master` DISABLE KEYS */;
+INSERT INTO `likelihood_master` VALUES (1,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','1','โอกาสเกิดต่ำมาก',1,'อธิบายโอกาสเกิดความเสี่ยง','2023-03-16 15:40:43','2023-03-16 15:40:43'),(2,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','2','โอกาสเกิดต่ำ',2,'อธิบายโอกาสเกิดความเสี่ยง','2023-03-16 15:40:43','2023-03-16 15:40:43'),(3,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','3','โอกาสเกิดปานกลาง',3,'อธิบายโอกาสเกิดความเสี่ยง','2023-03-16 15:40:43','2023-03-16 15:40:43'),(4,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','4','โอกาสเกิดสูง',4,'อธิบายโอกาสเกิดความเสี่ยง','2023-03-16 15:40:43','2023-03-16 15:40:43'),(5,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','5','โอกาสเกิดสูงมาก',5,'อธิบายโอกาสเกิดความเสี่ยง','2023-03-16 15:40:43','2023-03-16 15:40:43'),(13,'2c106cc61b26f9f71ec3da85c01c56cd','1','โอกาสเกิดต่ำมาก',1,'อธิบายโอกาสเกิดความเสี่ยง',NULL,NULL),(14,'2c106cc61b26f9f71ec3da85c01c56cd','2','โอกาสเกิดต่ำ',2,'อธิบายโอกาสเกิดความเสี่ยง',NULL,NULL),(15,'2c106cc61b26f9f71ec3da85c01c56cd','3','โอกาสเกิดปานกลาง',3,'อธิบายโอกาสเกิดความเสี่ยง',NULL,NULL),(16,'2c106cc61b26f9f71ec3da85c01c56cd','4','โอกาสเกิดสูง',4,'อธิบายโอกาสเกิดความเสี่ยง',NULL,NULL),(17,'2c106cc61b26f9f71ec3da85c01c56cd','5','โอกาสเกิดสูงมาก',5,'อธิบายโอกาสเกิดความเสี่ยง',NULL,NULL);
+/*!40000 ALTER TABLE `likelihood_master` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `likelihood_master_ex`
 --
 
+DROP TABLE IF EXISTS `likelihood_master_ex`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `likelihood_master_ex` (
-  `lh_id` int(11) NOT NULL,
+  `lh_id` int(11) NOT NULL AUTO_INCREMENT,
   `rce_id` int(11) DEFAULT NULL,
   `lh_score` int(11) DEFAULT NULL,
   `lh_name` varchar(100) DEFAULT NULL,
   `lh_description` varchar(255) DEFAULT NULL,
-  `lh_code` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `lh_code` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`lh_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=132 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `likelihood_master_ex`
 --
 
-INSERT INTO `likelihood_master_ex` (`lh_id`, `rce_id`, `lh_score`, `lh_name`, `lh_description`, `lh_code`) VALUES
-(29, 14, 1, 'โอกาสเกิดต่ำมาก', 'อธิบายโอกาสเกิดความเสี่ยง', '1'),
-(30, 14, 2, 'โอกาสเกิดต่ำ', 'อธิบายโอกาสเกิดความเสี่ยง', '2'),
-(31, 14, 3, 'โอกาสเกิดปานกลาง', 'อธิบายโอกาสเกิดความเสี่ยง', '3'),
-(32, 14, 4, 'โอกาสเกิดสูง', 'อธิบายโอกาสเกิดความเสี่ยง', '4'),
-(33, 14, 5, 'โอกาสเกิดสูงมาก', 'อธิบายโอกาสเกิดความเสี่ยง', '5'),
-(36, 15, 1, 'โอกาสเกิดต่ำมาก', 'อธิบายโอกาสเกิดความเสี่ยง', '1'),
-(37, 15, 2, 'โอกาสเกิดต่ำ', 'อธิบายโอกาสเกิดความเสี่ยง', '2'),
-(38, 15, 3, 'โอกาสเกิดปานกลาง', 'อธิบายโอกาสเกิดความเสี่ยง', '3'),
-(39, 15, 4, 'โอกาสเกิดสูง', 'อธิบายโอกาสเกิดความเสี่ยง', '4'),
-(40, 15, 5, 'โอกาสเกิดสูงมาก', 'อธิบายโอกาสเกิดความเสี่ยง', '5'),
-(127, 25, 1, 'โอกาสเกิดต่ำมาก', 'อธิบายโอกาสเกิดความเสี่ยง', '1'),
-(128, 25, 2, 'โอกาสเกิดต่ำ', 'อธิบายโอกาสเกิดความเสี่ยง', '2'),
-(129, 25, 3, 'โอกาสเกิดปานกลาง', 'อธิบายโอกาสเกิดความเสี่ยง', '3'),
-(130, 25, 4, 'โอกาสเกิดสูง', 'อธิบายโอกาสเกิดความเสี่ยง', '4'),
-(131, 25, 5, 'โอกาสเกิดสูงมาก', 'อธิบายโอกาสเกิดความเสี่ยง', '5');
-
--- --------------------------------------------------------
+LOCK TABLES `likelihood_master_ex` WRITE;
+/*!40000 ALTER TABLE `likelihood_master_ex` DISABLE KEYS */;
+INSERT INTO `likelihood_master_ex` VALUES (29,1,1,'โอกาสเกิดต่ำมาก','อธิบายโอกาสเกิดความเสี่ยง','1'),(30,1,2,'โอกาสเกิดต่ำ','อธิบายโอกาสเกิดความเสี่ยง','2'),(31,1,3,'โอกาสเกิดปานกลาง','อธิบายโอกาสเกิดความเสี่ยง','3'),(32,1,4,'โอกาสเกิดสูง','อธิบายโอกาสเกิดความเสี่ยง','4'),(33,1,5,'โอกาสเกิดสูงมาก','อธิบายโอกาสเกิดความเสี่ยง','5'),(36,15,1,'โอกาสเกิดต่ำมาก','อธิบายโอกาสเกิดความเสี่ยง','1'),(37,15,2,'โอกาสเกิดต่ำ','อธิบายโอกาสเกิดความเสี่ยง','2'),(38,15,3,'โอกาสเกิดปานกลาง','อธิบายโอกาสเกิดความเสี่ยง','3'),(39,15,4,'โอกาสเกิดสูง','อธิบายโอกาสเกิดความเสี่ยง','4'),(40,15,5,'โอกาสเกิดสูงมาก','อธิบายโอกาสเกิดความเสี่ยง','5'),(127,25,1,'โอกาสเกิดต่ำมาก','อธิบายโอกาสเกิดความเสี่ยง','1'),(128,25,2,'โอกาสเกิดต่ำ','อธิบายโอกาสเกิดความเสี่ยง','2'),(129,25,3,'โอกาสเกิดปานกลาง','อธิบายโอกาสเกิดความเสี่ยง','3'),(130,25,4,'โอกาสเกิดสูง','อธิบายโอกาสเกิดความเสี่ยง','4'),(131,25,5,'โอกาสเกิดสูงมาก','อธิบายโอกาสเกิดความเสี่ยง','5');
+/*!40000 ALTER TABLE `likelihood_master_ex` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `risk`
 --
 
+DROP TABLE IF EXISTS `risk`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `risk` (
-  `r_id` int(11) NOT NULL,
+  `r_id` int(11) NOT NULL AUTO_INCREMENT,
   `r_code` varchar(10) DEFAULT NULL,
+  `r_code_display` varchar(45) DEFAULT NULL,
   `uu_id` varchar(100) DEFAULT NULL,
   `r_seq` int(11) DEFAULT NULL,
   `r_name` varchar(100) DEFAULT NULL,
@@ -172,50 +156,57 @@ CREATE TABLE `risk` (
   `stm_code` varchar(100) DEFAULT NULL,
   `total_score` int(11) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`r_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `risk`
 --
 
-INSERT INTO `risk` (`r_id`, `r_code`, `uu_id`, `r_seq`, `r_name`, `r_description`, `r_factor`, `r_effect`, `responsible_person`, `guidelines_risk`, `duration_of_work`, `lh_code`, `im_code`, `stm_code`, `total_score`, `created_date`, `updated_date`) VALUES
-(43, 'RISK18', '4b7e2fd0-776a-420d-bd09-79a58da47ff6', 0, '117', '227', '337', '447', '447', '77', '447', '1', '5', '1', 5, '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(44, 'RISK19', '4b7e2fd0-776a-420d-bd09-79a58da47ff6', 0, '55', '55', '55', '55', '55', '55', '55', '2', '3', '1', 6, '2023-03-12 15:23:00', '2023-03-12 15:23:00');
-
--- --------------------------------------------------------
+LOCK TABLES `risk` WRITE;
+/*!40000 ALTER TABLE `risk` DISABLE KEYS */;
+INSERT INTO `risk` VALUES (1,'RISK18',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'117','227','337','447','447','77','447','1','5','1',5,'2023-03-16 15:40:43','2023-03-16 15:40:43'),(2,'RISK19',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'55','55','55','55','55','55','55','2','3','1',6,'2023-03-16 15:40:43','2023-03-16 15:40:43'),(3,'RISK3',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-22 14:11:32','2023-03-22 14:11:32'),(4,'RISK4',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-22 14:12:32','2023-03-22 14:12:32'),(5,'RISK5',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-22 14:13:19','2023-03-22 14:13:19'),(6,'RISK6',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-23 08:19:30','2023-03-23 08:19:30'),(7,'RISK7',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-23 08:19:34','2023-03-23 08:19:34'),(8,'RISK8',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-23 08:19:35','2023-03-23 08:19:35'),(9,'RISK9',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-23 08:30:42','2023-03-23 08:30:42'),(10,'RISK10',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-23 08:40:05','2023-03-23 08:40:05'),(11,'RISK11',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-23 08:40:09','2023-03-23 08:40:09'),(12,'RISK12',NULL,'4b7e2fd0-776a-420d-bd09-79a58da47ff6',0,'','','','','','','','','','',0,'2023-03-23 08:43:10','2023-03-23 08:43:10'),(14,'',NULL,'TEST111',0,'','','','','','','','','','',0,'2023-03-23 09:01:31','2023-03-23 09:01:31'),(15,'',NULL,'TEST001',0,'','','','','','','','','0','',0,'2023-03-23 09:03:20','2023-03-23 09:03:20'),(16,'',NULL,'TEST001',0,'','','','','','','','','','',0,'2023-03-23 09:03:45','2023-03-23 09:03:45'),(17,'',NULL,'TEST111',0,'','','','','','','','','','',0,'2023-03-23 09:04:08','2023-03-23 09:04:08'),(19,'RISK18','RISK001','2c106cc61b26f9f71ec3da85c01c56cd',0,'xxx1','xxx2','xx3','xxx4','xxx5','xxx7','xxx6','1','5','1',5,NULL,'2023-03-23 15:44:47'),(20,'RISK19','xxx','2c106cc61b26f9f71ec3da85c01c56cd',0,'55','55','55','55','55','55','55','2','3','1',6,NULL,'2023-03-23 15:44:47'),(22,'RISK22',NULL,'2c106cc61b26f9f71ec3da85c01c56cd',0,'','','','','','','','','','',0,'2023-03-23 09:25:04','2023-03-23 09:25:04'),(23,'RISK23',NULL,'2c106cc61b26f9f71ec3da85c01c56cd',0,'','','','','','','','','','',0,'2023-03-23 09:28:18','2023-03-23 09:28:18'),(24,'RISK24',NULL,'2c106cc61b26f9f71ec3da85c01c56cd',0,'','','','','','','','','','',0,'2023-03-23 09:37:14','2023-03-23 09:37:14'),(25,'RISK25',NULL,'2c106cc61b26f9f71ec3da85c01c56cd',0,'','','','','','','','','','',0,'2023-03-23 09:39:33','2023-03-23 09:39:33'),(28,'RISK28','xxx','2c106cc61b26f9f71ec3da85c01c56cd',0,'222','222','222','222','22','22','22','5','5','1',25,'2023-03-23 09:53:05','2023-03-23 15:44:47'),(29,'RISK29','xxx','2c106cc61b26f9f71ec3da85c01c56cd',0,'33','33','33','33','33','33','33','1','1','1',1,'2023-03-23 09:57:44','2023-03-23 15:44:47'),(30,'RISK30','xxx','2c106cc61b26f9f71ec3da85c01c56cd',0,'44','44','44','44','44','44','44','1','1','1',1,'2023-03-23 09:58:04','2023-03-23 15:44:47');
+/*!40000 ALTER TABLE `risk` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `risk_cate_ex`
 --
 
+DROP TABLE IF EXISTS `risk_cate_ex`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `risk_cate_ex` (
-  `rce_id` int(11) NOT NULL,
+  `rce_id` int(11) NOT NULL AUTO_INCREMENT,
   `rce_name` varchar(100) DEFAULT NULL,
   `rce_type_code` int(11) DEFAULT NULL,
   `rce_type_name` varchar(100) DEFAULT NULL,
-  `uu_id` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `uu_id` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`rce_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `risk_cate_ex`
 --
 
-INSERT INTO `risk_cate_ex` (`rce_id`, `rce_name`, `rce_type_code`, `rce_type_name`, `uu_id`) VALUES
-(1, 'บริหารความเสี่ยว1', 1, 'ผู้ดูแลระบบ', '4b7e2fd0-776a-420d-bd09-79a58da47ff6'),
-(2, 'บริหารความเสี่ยว222qqqd', 2, 'สาธารณะ', '4b7e2fd0-776a-420d-bd09-79a58da47ff6'),
-(14, '55', 1, 'ผู้ดูแลระบบ', '4b7e2fd0-776a-420d-bd09-79a58da47ff6'),
-(15, '55', 1, 'ผู้ดูแลระบบ', '4b7e2fd0-776a-420d-bd09-79a58da47ff6'),
-(25, 'rrrr888', 1, 'ผู้ดูแลระบบ', '4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-
--- --------------------------------------------------------
+LOCK TABLES `risk_cate_ex` WRITE;
+/*!40000 ALTER TABLE `risk_cate_ex` DISABLE KEYS */;
+INSERT INTO `risk_cate_ex` VALUES (1,'บริหารความเสี่ยง',1,'ผู้ดูแลระบบ','4b7e2fd0-776a-420d-bd09-79a58da47ff6'),(2,'บริหารความเสี่ยว222qqqd',2,'สาธารณะ','4b7e2fd0-776a-420d-bd09-79a58da47ff6'),(14,'55',1,'ผู้ดูแลระบบ','4b7e2fd0-776a-420d-bd09-79a58da47ff6'),(15,'55',1,'ผู้ดูแลระบบ','4b7e2fd0-776a-420d-bd09-79a58da47ff6'),(25,'rrrr888',1,'ผู้ดูแลระบบ','4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+/*!40000 ALTER TABLE `risk_cate_ex` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `risk_evaluation_master`
 --
 
+DROP TABLE IF EXISTS `risk_evaluation_master`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `risk_evaluation_master` (
-  `re_id` int(11) NOT NULL,
+  `re_id` int(11) NOT NULL AUTO_INCREMENT,
   `uu_id` varchar(100) DEFAULT NULL,
   `re_code` varchar(45) DEFAULT NULL,
   `re_name` varchar(100) DEFAULT NULL,
@@ -223,145 +214,151 @@ CREATE TABLE `risk_evaluation_master` (
   `re_score_end` varchar(45) DEFAULT NULL,
   `re_score_color` varchar(100) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`re_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `risk_evaluation_master`
 --
 
-INSERT INTO `risk_evaluation_master` (`re_id`, `uu_id`, `re_code`, `re_name`, `re_score_start`, `re_score_end`, `re_score_color`, `created_date`, `updated_date`) VALUES
-(27, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '1', 'ต่ำ', '1', '8', 'white', '2023-03-12 15:23:01', '2023-03-12 15:23:01'),
-(28, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '2', 'ปานกลาง', '9', '16', 'yellow', '2023-03-12 15:23:01', '2023-03-12 15:23:01'),
-(29, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '3', 'สูง', '17', '24', 'orange', '2023-03-12 15:23:01', '2023-03-12 15:23:01'),
-(30, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '4', 'สูงมาก', '25', '25', 'red', '2023-03-12 15:23:01', '2023-03-12 15:23:01');
-
--- --------------------------------------------------------
+LOCK TABLES `risk_evaluation_master` WRITE;
+/*!40000 ALTER TABLE `risk_evaluation_master` DISABLE KEYS */;
+INSERT INTO `risk_evaluation_master` VALUES (1,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','1','ต่ำ','1','8','white','2023-03-16 15:40:44','2023-03-16 15:40:44'),(2,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','2','ปานกลาง','9','16','yellow','2023-03-16 15:40:44','2023-03-16 15:40:44'),(3,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','3','สูง','17','24','orange','2023-03-16 15:40:44','2023-03-16 15:40:44'),(4,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','4','สูงมาก','25','25','red','2023-03-16 15:40:44','2023-03-16 15:40:44'),(12,'2c106cc61b26f9f71ec3da85c01c56cd','1','ต่ำ','1','8','white',NULL,NULL),(13,'2c106cc61b26f9f71ec3da85c01c56cd','2','ปานกลาง','9','16','yellow',NULL,NULL),(14,'2c106cc61b26f9f71ec3da85c01c56cd','3','สูง','17','24','orange',NULL,NULL),(15,'2c106cc61b26f9f71ec3da85c01c56cd','4','สูงมาก','25','25','red',NULL,NULL);
+/*!40000 ALTER TABLE `risk_evaluation_master` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `risk_evaluation_master_ex`
 --
 
+DROP TABLE IF EXISTS `risk_evaluation_master_ex`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `risk_evaluation_master_ex` (
-  `re_id` int(11) NOT NULL,
+  `re_id` int(11) NOT NULL AUTO_INCREMENT,
   `rce_id` int(11) DEFAULT NULL,
   `re_code` varchar(45) DEFAULT NULL,
   `re_name` varchar(100) DEFAULT NULL,
   `re_score_start` int(11) DEFAULT NULL,
   `re_score_end` int(11) DEFAULT NULL,
-  `re_score_color` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `re_score_color` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`re_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `risk_evaluation_master_ex`
 --
 
-INSERT INTO `risk_evaluation_master_ex` (`re_id`, `rce_id`, `re_code`, `re_name`, `re_score_start`, `re_score_end`, `re_score_color`) VALUES
-(1, 15, '1', 'ต่ำ', 1, 8, 'white'),
-(2, 15, '2', 'ปานกลาง', 9, 16, 'yellow'),
-(3, 15, '3', 'สูง', 17, 24, 'orange'),
-(4, 15, '4', 'สูงมาก', 25, 25, 'red'),
-(8, 16, '1', 'ต่ำ', 1, 8, 'white'),
-(9, 16, '2', 'ปานกลาง', 9, 16, 'yellow'),
-(10, 16, '3', 'สูง', 17, 24, 'orange'),
-(11, 16, '4', 'สูงมาก', 25, 25, 'red'),
-(92, 25, '1', 'ต่ำ', 1, 8, 'white'),
-(93, 25, '2', 'ปานกลาง', 9, 16, 'yellow'),
-(94, 25, '3', 'สูง', 17, 24, 'orange'),
-(95, 25, '4', 'สูงมาก', 25, 25, 'red');
-
--- --------------------------------------------------------
+LOCK TABLES `risk_evaluation_master_ex` WRITE;
+/*!40000 ALTER TABLE `risk_evaluation_master_ex` DISABLE KEYS */;
+INSERT INTO `risk_evaluation_master_ex` VALUES (1,1,'1','ต่ำ',1,8,'white'),(2,1,'2','ปานกลาง',9,16,'yellow'),(3,1,'3','สูง',17,24,'orange'),(4,1,'4','สูงมาก',25,25,'red'),(8,16,'1','ต่ำ',1,8,'white'),(9,16,'2','ปานกลาง',9,16,'yellow'),(10,16,'3','สูง',17,24,'orange'),(11,16,'4','สูงมาก',25,25,'red'),(92,25,'1','ต่ำ',1,8,'white'),(93,25,'2','ปานกลาง',9,16,'yellow'),(94,25,'3','สูง',17,24,'orange'),(95,25,'4','สูงมาก',25,25,'red');
+/*!40000 ALTER TABLE `risk_evaluation_master_ex` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `risk_ex`
 --
 
+DROP TABLE IF EXISTS `risk_ex`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `risk_ex` (
-  `r_id` int(11) NOT NULL,
+  `r_id` int(11) NOT NULL AUTO_INCREMENT,
   `rce_id` int(11) DEFAULT NULL,
+  `r_code` varchar(45) DEFAULT NULL,
   `r_seq` int(11) DEFAULT NULL,
   `r_name` varchar(255) DEFAULT NULL,
   `r_description` varchar(255) DEFAULT NULL,
   `r_factor` varchar(255) DEFAULT NULL,
   `r_effect` varchar(255) DEFAULT NULL,
-  `r_code` varchar(45) DEFAULT NULL,
+  `r_code_display` varchar(45) DEFAULT NULL,
   `responsible_person` varchar(200) DEFAULT NULL,
   `guidelines_risk` varchar(200) DEFAULT NULL,
   `duration_of_work` varchar(255) DEFAULT NULL,
   `stm_code` varchar(100) DEFAULT NULL,
   `im_code` varchar(100) DEFAULT NULL,
   `lh_code` varchar(100) DEFAULT NULL,
-  `total_score` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `total_score` int(11) DEFAULT NULL,
+  PRIMARY KEY (`r_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `risk_ex`
 --
 
-INSERT INTO `risk_ex` (`r_id`, `rce_id`, `r_seq`, `r_name`, `r_description`, `r_factor`, `r_effect`, `r_code`, `responsible_person`, `guidelines_risk`, `duration_of_work`, `stm_code`, `im_code`, `lh_code`, `total_score`) VALUES
-(7, 25, 0, '117', '227', '337', '447', 'RISK18', '447', '77', '447', '1', '5', '1', 5),
-(8, 25, 0, '55', '55', '55', '55', 'RISK19', '55', '55', '55', '1', '3', '2', 6);
-
--- --------------------------------------------------------
+LOCK TABLES `risk_ex` WRITE;
+/*!40000 ALTER TABLE `risk_ex` DISABLE KEYS */;
+INSERT INTO `risk_ex` VALUES (7,1,'RISK18',0,'117','227','337','447',NULL,'447','77','447','1','5','1',5),(8,1,'RISK19',0,'55','55','55','55',NULL,'55','55','55','1','3','2',6);
+/*!40000 ALTER TABLE `risk_ex` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `strategy_type_master`
 --
 
+DROP TABLE IF EXISTS `strategy_type_master`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `strategy_type_master` (
-  `stm_id` int(11) NOT NULL,
+  `stm_id` int(11) NOT NULL AUTO_INCREMENT,
   `uu_id` varchar(45) DEFAULT NULL,
   `stm_code` varchar(45) DEFAULT NULL,
   `stm_name` varchar(100) DEFAULT NULL,
   `stm_description` varchar(255) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `updated_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`stm_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `strategy_type_master`
 --
 
-INSERT INTO `strategy_type_master` (`stm_id`, `uu_id`, `stm_code`, `stm_name`, `stm_description`, `created_date`, `updated_date`) VALUES
-(27, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '1', 'กลยุทธ์ที่1', 'อธิบายของกลยุทธ์1', '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(28, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '2', 'กลยุทธ์ที่2', 'อธิบายของกลยุทธ์121', '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(29, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '3', 'กลยุทธ์ที่3', 'อธิบายของกลยุทธ์121', '2023-03-12 15:23:00', '2023-03-12 15:23:00'),
-(30, '4b7e2fd0-776a-420d-bd09-79a58da47ff6', '4', 'กลยุทธ์ที่4', 'อธิบายของกลยุทธ์121', '2023-03-12 15:23:00', '2023-03-12 15:23:00');
-
--- --------------------------------------------------------
+LOCK TABLES `strategy_type_master` WRITE;
+/*!40000 ALTER TABLE `strategy_type_master` DISABLE KEYS */;
+INSERT INTO `strategy_type_master` VALUES (1,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','1','กลยุทธ์ที่1','อธิบายของกลยุทธ์1','2023-03-16 15:40:43','2023-03-16 15:40:43'),(2,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','2','กลยุทธ์ที่2','อธิบายของกลยุทธ์121','2023-03-16 15:40:43','2023-03-16 15:40:43'),(3,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','3','กลยุทธ์ที่3','อธิบายของกลยุทธ์121','2023-03-16 15:40:43','2023-03-16 15:40:43'),(4,'4b7e2fd0-776a-420d-bd09-79a58da47ff6','4','กลยุทธ์ที่4','อธิบายของกลยุทธ์121','2023-03-16 15:40:43','2023-03-16 15:40:43'),(12,'2c106cc61b26f9f71ec3da85c01c56cd','1','กลยุทธ์ที่1','อธิบายของกลยุทธ์1',NULL,NULL),(13,'2c106cc61b26f9f71ec3da85c01c56cd','2','กลยุทธ์ที่2','อธิบายของกลยุทธ์121',NULL,NULL),(14,'2c106cc61b26f9f71ec3da85c01c56cd','3','กลยุทธ์ที่3','อธิบายของกลยุทธ์121',NULL,NULL),(15,'2c106cc61b26f9f71ec3da85c01c56cd','4','กลยุทธ์ที่4','อธิบายของกลยุทธ์121',NULL,NULL);
+/*!40000 ALTER TABLE `strategy_type_master` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `strategy_type_master_ex`
 --
 
+DROP TABLE IF EXISTS `strategy_type_master_ex`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `strategy_type_master_ex` (
-  `stm_id` int(11) NOT NULL,
+  `stm_id` int(11) NOT NULL AUTO_INCREMENT,
   `rce_id` int(11) DEFAULT NULL,
   `stm_code` varchar(100) DEFAULT NULL,
   `stm_name` varchar(100) DEFAULT NULL,
-  `stm_description` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `stm_description` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`stm_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `strategy_type_master_ex`
 --
 
-INSERT INTO `strategy_type_master_ex` (`stm_id`, `rce_id`, `stm_code`, `stm_name`, `stm_description`) VALUES
-(1, 16, '1', 'กลยุทธ์ที่1', 'อธิบายของกลยุทธ์1'),
-(2, 16, '2', 'กลยุทธ์ที่2', 'อธิบายของกลยุทธ์121'),
-(3, 16, '3', 'กลยุทธ์ที่3', 'อธิบายของกลยุทธ์121'),
-(4, 16, '4', 'กลยุทธ์ที่4', 'อธิบายของกลยุทธ์121'),
-(85, 25, '1', 'กลยุทธ์ที่1', 'อธิบายของกลยุทธ์1'),
-(86, 25, '2', 'กลยุทธ์ที่2', 'อธิบายของกลยุทธ์121'),
-(87, 25, '3', 'กลยุทธ์ที่3', 'อธิบายของกลยุทธ์121'),
-(88, 25, '4', 'กลยุทธ์ที่4', 'อธิบายของกลยุทธ์121');
-
--- --------------------------------------------------------
+LOCK TABLES `strategy_type_master_ex` WRITE;
+/*!40000 ALTER TABLE `strategy_type_master_ex` DISABLE KEYS */;
+INSERT INTO `strategy_type_master_ex` VALUES (1,1,'1','กลยุทธ์ที่1','อธิบายของกลยุทธ์1'),(2,1,'2','กลยุทธ์ที่2','อธิบายของกลยุทธ์121'),(3,1,'3','กลยุทธ์ที่3','อธิบายของกลยุทธ์121'),(4,1,'4','กลยุทธ์ที่4','อธิบายของกลยุทธ์121'),(85,25,'1','กลยุทธ์ที่1','อธิบายของกลยุทธ์1'),(86,25,'2','กลยุทธ์ที่2','อธิบายของกลยุทธ์121'),(87,25,'3','กลยุทธ์ที่3','อธิบายของกลยุทธ์121'),(88,25,'4','กลยุทธ์ที่4','อธิบายของกลยุทธ์121');
+/*!40000 ALTER TABLE `strategy_type_master_ex` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
   `uu_id` varchar(100) NOT NULL,
   `rank` varchar(100) DEFAULT NULL,
@@ -370,163 +367,28 @@ CREATE TABLE `users` (
   `position` varchar(200) DEFAULT NULL,
   `tel` varchar(10) DEFAULT NULL,
   `created_date` datetime DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL
+  `updated_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`uu_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`uu_id`, `rank`, `first_name`, `last_name`, `position`, `tel`, `created_date`, `updated_date`) VALUES
-('4b7e2fd0-776a-420d-bd09-79a58da47ff6', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES ('2c106cc61b26f9f71ec3da85c01c56cd',NULL,NULL,NULL,NULL,NULL,'2023-03-23 09:15:57','2023-03-23 09:15:57'),('4b7e2fd0-776a-420d-bd09-79a58da47ff6',NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `impact_master`
---
-ALTER TABLE `impact_master`
-  ADD PRIMARY KEY (`im_id`);
-
---
--- Indexes for table `impact_master_ex`
---
-ALTER TABLE `impact_master_ex`
-  ADD PRIMARY KEY (`im_id`);
-
---
--- Indexes for table `likelihood_master`
---
-ALTER TABLE `likelihood_master`
-  ADD PRIMARY KEY (`lh_id`);
-
---
--- Indexes for table `likelihood_master_ex`
---
-ALTER TABLE `likelihood_master_ex`
-  ADD PRIMARY KEY (`lh_id`);
-
---
--- Indexes for table `risk`
---
-ALTER TABLE `risk`
-  ADD PRIMARY KEY (`r_id`);
-
---
--- Indexes for table `risk_cate_ex`
---
-ALTER TABLE `risk_cate_ex`
-  ADD PRIMARY KEY (`rce_id`);
-
---
--- Indexes for table `risk_evaluation_master`
---
-ALTER TABLE `risk_evaluation_master`
-  ADD PRIMARY KEY (`re_id`);
-
---
--- Indexes for table `risk_evaluation_master_ex`
---
-ALTER TABLE `risk_evaluation_master_ex`
-  ADD PRIMARY KEY (`re_id`);
-
---
--- Indexes for table `risk_ex`
---
-ALTER TABLE `risk_ex`
-  ADD PRIMARY KEY (`r_id`);
-
---
--- Indexes for table `strategy_type_master`
---
-ALTER TABLE `strategy_type_master`
-  ADD PRIMARY KEY (`stm_id`);
-
---
--- Indexes for table `strategy_type_master_ex`
---
-ALTER TABLE `strategy_type_master_ex`
-  ADD PRIMARY KEY (`stm_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`uu_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `impact_master`
---
-ALTER TABLE `impact_master`
-  MODIFY `im_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT for table `impact_master_ex`
---
-ALTER TABLE `impact_master_ex`
-  MODIFY `im_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
-
---
--- AUTO_INCREMENT for table `likelihood_master`
---
-ALTER TABLE `likelihood_master`
-  MODIFY `lh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT for table `likelihood_master_ex`
---
-ALTER TABLE `likelihood_master_ex`
-  MODIFY `lh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
-
---
--- AUTO_INCREMENT for table `risk`
---
-ALTER TABLE `risk`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
-
---
--- AUTO_INCREMENT for table `risk_cate_ex`
---
-ALTER TABLE `risk_cate_ex`
-  MODIFY `rce_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT for table `risk_evaluation_master`
---
-ALTER TABLE `risk_evaluation_master`
-  MODIFY `re_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
---
--- AUTO_INCREMENT for table `risk_evaluation_master_ex`
---
-ALTER TABLE `risk_evaluation_master_ex`
-  MODIFY `re_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
-
---
--- AUTO_INCREMENT for table `risk_ex`
---
-ALTER TABLE `risk_ex`
-  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `strategy_type_master`
---
-ALTER TABLE `strategy_type_master`
-  MODIFY `stm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
-
---
--- AUTO_INCREMENT for table `strategy_type_master_ex`
---
-ALTER TABLE `strategy_type_master_ex`
-  MODIFY `stm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-03-23 15:46:00

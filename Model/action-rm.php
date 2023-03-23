@@ -17,6 +17,7 @@ include("../config-rm.php");
         r.r_factor,
         r.r_effect ,
         r.r_code ,
+        r.r_code_display ,
         r.responsible_person ,
         r.guidelines_risk ,
         r.duration_of_work, 
@@ -30,7 +31,12 @@ include("../config-rm.php");
         inner join strategy_type_master stm on r.stm_code =stm.stm_code
         inner join likelihood_master lh on r.lh_code=lh.lh_code
         inner join impact_master im on r.im_code=im.im_code
-        where r.uu_id='$_REQUEST[uuid]'";
+        where r.uu_id='$_REQUEST[uuid]'
+        and stm.uu_id='$_REQUEST[uuid]'
+        and lh.uu_id='$_REQUEST[uuid]'
+        and im.uu_id='$_REQUEST[uuid]'
+        
+        ";
         $dataRiskArray = array();
         $resultRisk = $conn->query($sqlRisk);
         if ($resultRisk->num_rows > 0) {
@@ -165,7 +171,7 @@ include("../config-rm.php");
        
         $sql = "
         UPDATE risk SET 
-       
+        r_code_display='$_REQUEST[r_code_display]',
         r_name='$_REQUEST[r_name]',
         r_description='$_REQUEST[r_description]',
         r_factor='$_REQUEST[r_factor]',
@@ -193,6 +199,7 @@ include("../config-rm.php");
         r.r_factor,
         r.r_effect ,
         r.r_code ,
+        r.r_code_display ,
         r.responsible_person ,
         r.guidelines_risk ,
         r.duration_of_work, 
@@ -206,8 +213,13 @@ include("../config-rm.php");
         inner join strategy_type_master stm on r.stm_code =stm.stm_code
         inner join likelihood_master lh on r.lh_code=lh.lh_code
         inner join impact_master im on r.im_code=im.im_code
+        where r.uu_id='$_REQUEST[uuid]'
+        and stm.uu_id='$_REQUEST[uuid]'
+        and lh.uu_id='$_REQUEST[uuid]'
+        and im.uu_id='$_REQUEST[uuid]'
+
+        ";
         
-        where r.uu_id='$_REQUEST[uuid]'";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
             if ($resultRisk->num_rows > 0) {
@@ -297,6 +309,7 @@ include("../config-rm.php");
             r.r_factor,
             r.r_effect ,
             r.r_code ,
+            r.r_code_display ,
             r.responsible_person ,
             r.guidelines_risk ,
             r.duration_of_work, 
@@ -309,7 +322,12 @@ include("../config-rm.php");
             FROM risk r 
             inner join strategy_type_master stm on r.stm_code =stm.stm_code
             inner join likelihood_master lh on r.lh_code=lh.lh_code
-            inner join impact_master im on r.im_code=im.im_code where r.uu_id='$_REQUEST[uuid]'";
+            inner join impact_master im on r.im_code=im.im_code 
+            where r.uu_id='$_REQUEST[uuid]'
+            and stm.uu_id='$_REQUEST[uuid]'
+            and lh.uu_id='$_REQUEST[uuid]'
+            and im.uu_id='$_REQUEST[uuid]'
+            ";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
     
@@ -375,6 +393,7 @@ include("../config-rm.php");
         (
         uu_id ,
         r_code,
+        r_code_display,
         r_seq ,
         r_name ,
         r_description ,
@@ -395,6 +414,7 @@ include("../config-rm.php");
         '$_REQUEST[uuid]',
         '',
         '',
+        0,
         '',
         '',
         '',
@@ -402,10 +422,10 @@ include("../config-rm.php");
         '',
         '',
         '',
-        '',
-        '',
-        '',
-        '',
+        '1',
+        '1',
+        '1',
+        0,
         now(),
         now()
         )
@@ -414,7 +434,7 @@ include("../config-rm.php");
         $checkError=true;
 
         $last_id = mysqli_insert_id($conn);
-        $sql = "UPDATE risk SET r_code='RISK$last_id' WHERE r_id='$last_id'";
+        $sql = "UPDATE risk SET r_code='$last_id' WHERE r_id='$last_id'";
         $conn->query($sql);
        
 
@@ -433,6 +453,7 @@ include("../config-rm.php");
             r.r_factor,
             r.r_effect ,
             r.r_code ,
+            r.r_code_display ,
             r.responsible_person ,
             r.guidelines_risk ,
             r.duration_of_work, 
@@ -445,7 +466,12 @@ include("../config-rm.php");
             FROM risk r 
             inner join strategy_type_master stm on r.stm_code =stm.stm_code
             inner join likelihood_master lh on r.lh_code=lh.lh_code
-            inner join impact_master im on r.im_code=im.im_code where r.uu_id='$_REQUEST[uuid]'";
+            inner join impact_master im on r.im_code=im.im_code 
+            where r.uu_id='$_REQUEST[uuid]'
+            and stm.uu_id='$_REQUEST[uuid]'
+            and lh.uu_id='$_REQUEST[uuid]'
+            and im.uu_id='$_REQUEST[uuid]'
+            ";
             $dataRiskArray = array();
             $resultRisk = $conn->query($sqlRisk);
 
@@ -1084,9 +1110,9 @@ include("../config-rm.php");
            $sql_save_to_risk_ex ="
            INSERT INTO 
            risk_ex 
-           (rce_id,r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
+           (rce_id,r_seq,r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
            SELECT 
-           $_REQUEST[rce_id],'r_seq',r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
+           $_REQUEST[rce_id],'r_seq',r_code,r_code_display,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
            FROM risk
            WHERE uu_id = '$_REQUEST[uuid]'";
 
@@ -1390,9 +1416,9 @@ include("../config-rm.php");
           $sql_load_from_risk_ex ="
           INSERT INTO 
           risk
-          (uu_id,r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
+          (uu_id,r_seq,r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score,created_date,updated_date)
           SELECT 
-          '$_REQUEST[uuid]',r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
+          '$_REQUEST[uuid]',r_seq,r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score,now(),now()
           FROM risk_ex
           WHERE rce_id = '$_REQUEST[rce_id]'";
 
@@ -1560,6 +1586,7 @@ include("../config-rm.php");
                 (
                 uu_id ,
                 r_code,
+                r.r_code_display ,
                 r_seq ,
                 r_name ,
                 r_description ,
@@ -1579,6 +1606,7 @@ include("../config-rm.php");
                 (
                 '".$_REQUEST['uuid']."',
                 '".$_REQUEST['dataRisk'][$i]['r_code']."',
+                '".$_REQUEST['dataRisk'][$i]['r_code_display']."',
                 ".$_REQUEST['dataRisk'][$i]['r_seq'].",
                 '".$_REQUEST['dataRisk'][$i]['r_name']."',
                 '".$_REQUEST['dataRisk'][$i]['r_description']."',

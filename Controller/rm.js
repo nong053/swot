@@ -16,8 +16,16 @@ var listRiskFormFn = function(data){
         
         htmlFormRisk+="<div  class=\"alert alert-primary mb-3 risk_loop\" id=\"risk_loop-"+indexEntry['r_code']+"\" role=\"alert\">";
             htmlFormRisk+="<input type=\"radio\"  id=\"risk_radio-"+indexEntry['r_code']+"\"  class=\"form-check-input risk_radio\">";
+			
+			htmlFormRisk+="<div id=\"risk_alert-"+indexEntry['r_code']+"\" class=\" alert alert-warning d-flex1 align-items-center\" style=\"display:none; margin-bottom:15px;margin-top:15px;\" role=\"alert\">";
+				htmlFormRisk+="<div id=\"risk_alert_text-"+indexEntry['r_code']+"\"></div>";
+			htmlFormRisk+="</div>";
+
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<input type=\"text\" class=\"form-control\" id=\"r_code-"+indexEntry['r_code']+"\"  placeholder=\"รหัส\" value="+indexEntry['r_code']+">";
+                htmlFormRisk+="<input type=\"text\" class=\"form-control\" id=\"r_code_display-"+indexEntry['r_code']+"\"  placeholder=\"รหัสความเสี่ยง\" value="+indexEntry['r_code_display']+">";
+            htmlFormRisk+="</div>";
+			htmlFormRisk+="<div class=\"mb-3\">";
+                htmlFormRisk+="<input type=\"hidden\" class=\"form-control\" id=\"r_code-"+indexEntry['r_code']+"\"  placeholder=\"รหัส\" value="+indexEntry['r_code']+">";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
             htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_name-"+indexEntry['r_code']+"\" placeholder=\"ชื่อความเสี่ยง\">"+indexEntry['r_name']+"</textarea>";
@@ -89,7 +97,7 @@ var listRiskDisplayFn = function(data){
 				htmlRiskDisplay+=index+1;
 			htmlRiskDisplay+="</td>";
 			htmlRiskDisplay+="<td>";
-				htmlRiskDisplay+=indexEntry['r_code']+""+indexEntry['r_name'];
+				htmlRiskDisplay+=indexEntry['r_code_display']+""+indexEntry['r_name'];
 			htmlRiskDisplay+="</td>";
 			htmlRiskDisplay+="<td>";
 				htmlRiskDisplay+=indexEntry['total_score'];
@@ -147,18 +155,18 @@ var riskAddFn = function(uuid){
 		data:{
 			"uuid":uuid,
 			"action":"insertRisk",
-            "r_code":$("#r_code").val(),
-            "r_name":$("#r_name").val(),
-            "r_description":$("#r_description").val(),
-            "r_factor":$("#r_factor").val(),
-            "r_effect":$("#r_effect").val(),
-            "responsible_person":$("#responsible_person").val(),
-            "stm_code":$("#stm_code").val(),
-            "duration_of_work":$("#duration_of_work").val(),
-            "guidelines_risk":$("#guidelines_risk").val(),
-            "lh_code":$("#lh_code").val(),
-            "im_code":$("#im_code").val(),
-			"total_score":"5"
+            // "r_code":$("#r_code").val(),
+            // "r_name":$("#r_name").val(),
+            // "r_description":$("#r_description").val(),
+            // "r_factor":$("#r_factor").val(),
+            // "r_effect":$("#r_effect").val(),
+            // "responsible_person":$("#responsible_person").val(),
+            // "stm_code":$("#stm_code").val(),
+            // "duration_of_work":$("#duration_of_work").val(),
+            // "guidelines_risk":$("#guidelines_risk").val(),
+            // "lh_code":$("#lh_code").val(),
+            // "im_code":$("#im_code").val(),
+			// "total_score":"0"
             
 		},
 		success:function(data){
@@ -221,6 +229,7 @@ var riskSaveFn = function(uuid,r_code){
 			"uuid":uuid,
 			"action":"updatedRisk",
 			"r_code":r_code,
+			"r_code_display":$("#r_code_display-"+r_code).val(),
             "r_seq":$("#r_seq-"+r_code).val(),
             "r_name":$("#r_name-"+r_code).val(),
             "r_description":$("#r_description-"+r_code).val(),
@@ -921,7 +930,7 @@ var loadExampleDataFn = function(uuid,rce_id){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					//alert("ok");
+
 					$.alert({
 						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 						content: 'โหลดข้อมูลตัวอย่างเรียบร้อย',
@@ -1091,7 +1100,110 @@ var autoLoginFn=function(){
 		}
 	});
 }
+var validateRiskFn = function(r_code){
+	var validate_flag=true;
 
+	$("#risk_alert-"+r_code).hide();
+	$("#risk_alert_text-"+r_code).html("");
+	
+	if($("#r_code_display-"+r_code).val()=="" || $("#r_code_display-"+r_code).val()==null || $("#r_code_display-"+r_code).val()=='null'){
+		validate_flag=false;
+		$("#r_code_display-"+r_code).css({"border":"red solid 1px"});
+		$("#risk_alert-"+r_code).show();
+
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรหัสความเสี่ยง</div>");
+		
+
+
+	}else{
+
+		$("#r_code_display-"+r_code).css({"border":"#ced4da solid 1px"});
+		
+		
+	}
+
+
+
+	if($("#r_name-"+r_code).val()==""){
+		validate_flag=false;
+		$("#risk_alert-"+r_code).show();
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกชื่อความเสี่ยง</div>");
+		$("#r_name-"+r_code).css({"border":"red solid 1px"});
+
+	}else{
+	
+		$("#r_name-"+r_code).css({"border":"#ced4da solid 1px"});
+		
+	}
+
+	if($("#r_description-"+r_code).val()==""){
+		validate_flag=false;
+		$("#risk_alert-"+r_code).show();
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรายละเอียดความเสี่ยง</div>");
+		$("#r_description-"+r_code).css({"border":"red solid 1px"});
+	}else{
+
+		$("#r_description-"+r_code).css({"border":"#ced4da solid 1px"});
+	}
+
+	if($("#r_factor-"+r_code).val()==""){
+		validate_flag=false;
+		$("#risk_alert-"+r_code).show();
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกปัจจัยความเสี่ยง</div>");
+		$("#r_factor-"+r_code).css({"border":"red solid 1px"});
+	}else{
+		
+		$("#r_factor-"+r_code).css({"border":"#ced4da solid 1px"});
+	}
+
+	if($("#r_effect-"+r_code).val()==""){
+		validate_flag=false;
+		$("#risk_alert-"+r_code).show();
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรผลกระทบความเสี่ยง</div>");
+		$("#r_effect-"+r_code).css({"border":"red solid 1px"});
+	}else{
+	
+		$("#r_effect-"+r_code).css({"border":"#ced4da solid 1px"});
+	}
+
+	if($("#responsible_person-"+r_code).val()==""){
+		validate_flag=false;
+		$("#risk_alert-"+r_code).show();
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรหัสความเสี่ยง</div>");
+		$("#responsible_person-"+r_code).css({"border":"red solid 1px"});
+	}else{
+		
+		$("#responsible_person-"+r_code).css({"border":"#ced4da solid 1px"});
+	}
+
+	
+
+	if($("#duration_of_work-"+r_code).val()==""){
+		validate_flag=false;
+		$("#risk_alert-"+r_code).show();
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกระยะเวลาการปฏิบัติ</div>");
+		$("#duration_of_work-"+r_code).css({"border":"red solid 1px"});
+	}else{
+
+		$("#duration_of_work-"+r_code).css({"border":"#ced4da solid 1px"});
+	}
+
+	if($("#guidelines_risk-"+r_code).val()==""){
+		validate_flag=false;
+		$("#risk_alert-"+r_code).show();
+		$("#risk_alert_text-"+r_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรหัสความเสี่ยง</div>");
+		$("#guidelines_risk-"+r_code).css({"border":"red solid 1px"});
+	}else{
+
+		$("#guidelines_risk-"+r_code).css({"border":"#ced4da solid 1px"});
+	}
+	
+
+
+
+
+	return validate_flag;
+}
 
 $(document).ready(function(){
 
@@ -1128,52 +1240,94 @@ var du = new DeviceUUID().parse();
 
 /*Login Management End */
 
-riskFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-impactMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-likelihoodMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-strategyTypeMasterFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-evaluationRiskFormFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+riskFormFn(sessionStorage.getItem('uuid'));
+impactMasterFormFn(sessionStorage.getItem('uuid'));
+likelihoodMasterFormFn(sessionStorage.getItem('uuid'));
+strategyTypeMasterFormFn(sessionStorage.getItem('uuid'));
+evaluationRiskFormFn(sessionStorage.getItem('uuid'));
 
-// stmSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-// lhSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
-// imSelectDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+// stmSelectDataFn(sessionStorage.getItem('uuid'));
+// lhSelectDataFn(sessionStorage.getItem('uuid'));
+// imSelectDataFn(sessionStorage.getItem('uuid'));
 
 /*risk management start*/
 $(document).on("click","#btnRiskSave",function(){
     //alert("btnRiskSave");
     var flagCheck=true;
+
 	$(".risk_loop").each(function(index,indexEntry){
 		
 		var r_code="";
 		var data_code =$(this).attr('id');
 		data_code=data_code.split("-");
 		r_code=data_code[1];
-
 		
-		if(riskSaveFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',r_code)==false){
+		if(validateRiskFn(r_code)==false){
+			flagCheck=false;
+		}else if(riskSaveFn(sessionStorage.getItem('uuid'),r_code)==false){
 			flagCheck=false;
 		}
 
 	});
-	if(flagCheck==true){
-		alert("ok");
+	
+	if(flagCheck==false){
+
+		$.alert({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+			content: ' เกิดข้อผิดพลาดโปรดตรวจสอบความถูกต้อง',
+		});
+		
+	}else if(flagCheck==true){
+		$.alert({
+			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+			content: 'บันทึกข้อมูลเรียบร้อย',
+		});
+		riskFormFn(sessionStorage.getItem('uuid'));
+		$("#OffcanvasClose").click();
 	}
 
 });
 
 $(document).on("click","#btnRiskAdd",function(){
 
-    riskAddFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+    riskAddFn(sessionStorage.getItem('uuid'));
 
 	
  });
 
  $(document).on("click","#btnRiskDel",function(){
     var risk_code =$(".risk_radio:checked").attr("id");
-    risk_code=risk_code.split("-");
-    risk_code=risk_code[1];
-    //alert(risk_code);
-    deleteRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',risk_code);
+	if(risk_code==undefined){
+	
+   
+	
+		$.alert({
+			title: '<i style="font-size:44px; color:yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Warning',
+			content: ' กรุณาเลือกความเสี่ยงที่ต้องการลบ',
+		});
+
+	}else{
+		risk_code=risk_code.split("-");
+		risk_code=risk_code[1];
+
+		$.confirm({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+			content: '',
+			buttons: {
+				confirm: {
+					text: 'ยืนยัน', 
+					action: function () {
+						deleteRiskFn(sessionStorage.getItem('uuid'),risk_code);
+					}
+					
+				},
+				cancel:  {
+					text: 'ยกเลิก'
+				}
+			}
+		});
+	}
+    
  });
 /*risk management end*/
 
@@ -1188,7 +1342,7 @@ $("#likelihoodRiskSave").click(function(){
 		lh_code=data_code[1];
 
 		
-		if(likelihoodRiskSaveFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',lh_code)==false){
+		if(likelihoodRiskSaveFn(sessionStorage.getItem('uuid'),lh_code)==false){
 			flagCheck=false;
 		}
 
@@ -1214,13 +1368,16 @@ $("#impactRiskSave").click(function(){
 		im_code=data_code[1];
 
 		
-		if(impactRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',im_code)==false){
+		if(impactRiskFn(sessionStorage.getItem('uuid'),im_code)==false){
 			flagCheck=false;
 		}
 
 	});
 	if(flagCheck==true){
-		alert("ok");
+		$.alert({
+			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+			content: 'บันทึกข้อมูลเรียบร้อย',
+		});
 	}
 
 });
@@ -1240,18 +1397,21 @@ $("#mitigateRisksSave").click(function(){
 		stm_code=data_code[1];
 
 		
-		if(strategyTypeRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',stm_code)==false){
+		if(strategyTypeRiskFn(sessionStorage.getItem('uuid'),stm_code)==false){
 			flagCheck=false;
 		}
 
 	});
 	if(flagCheck==true){
-		alert("ok");
+		$.alert({
+			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+			content: 'บันทึกข้อมูลเรียบร้อย',
+		});
 	}
 });
 $(document).on("click","#mitigateRisAdd",function(){
 
-    strategyTypeRiskAddFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+    strategyTypeRiskAddFn(sessionStorage.getItem('uuid'));
 
 	
  });
@@ -1260,7 +1420,7 @@ $(document).on("click","#mitigateRisAdd",function(){
     var stm_code  =$(".stm_radio:checked").attr("id");
     stm_code =stm_code .split("-");
     stm_code =stm_code [1];
-    strategyTypeRiskDelFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',stm_code);
+    strategyTypeRiskDelFn(sessionStorage.getItem('uuid'),stm_code);
  });
 
 /*risk mitigate end*/
@@ -1277,13 +1437,16 @@ $("#evaluationRiskSave").click(function(){
 		re_code=data_code[1];
 
 		
-		if(evaluationRiskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',re_code)==false){
+		if(evaluationRiskFn(sessionStorage.getItem('uuid'),re_code)==false){
 			flagCheck=false;
 		}
 
 	});
 	if(flagCheck==true){
-		alert("ok");
+		$.alert({
+			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+			content: 'บันทึกข้อมูลเรียบร้อย',
+		});
 	}
 });
 /*risk  evaluation master start*/
@@ -1301,17 +1464,17 @@ var clearExampleDataFn = function(){
 }
 $("#btnSaveExample").click(function(){
 	if($("#actionExample").val()=='add'){
-		saveExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+		saveExampleDataFn(sessionStorage.getItem('uuid'));
 	}else{
-		updateExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',$("#rce_id").val());
+		updateExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id").val());
 	}
 });
 
 $("#getExampleModel").click(function(){
     //table show display on list example
-	showAllExampleDataUUIDFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
     //select on tab load example
-    showAllExampleLoadDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+    showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 	clearExampleDataFn();
 });
 $(document).on("click",".delExampleData",function(){
@@ -1320,7 +1483,28 @@ $(document).on("click",".delExampleData",function(){
 	rce_id=rce_id.split("-");
 	rce_id=rce_id[1];
 
-	delExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',rce_id);
+	$.confirm({
+		title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+		content: '',
+		buttons: {
+			confirm: {
+				text: 'ยืนยัน', 
+				action: function () {
+					delExampleDataFn(sessionStorage.getItem('uuid'),rce_id);
+				}
+
+			
+				
+			},
+			cancel:  {
+				text: 'ยกเลิก'
+				//$("#exampleModel").modal('hide');
+			}
+		}
+	});
+
+
+	
 
  });
  $(document).on("click",".editExampleData",function(){
@@ -1330,7 +1514,7 @@ $(document).on("click",".delExampleData",function(){
 	//alert(rce_id);
 	$("#actionExample").val("edit");
 	$("#rce_id").val(rce_id);
-	findOneExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',rce_id);
+	findOneExampleDataFn(sessionStorage.getItem('uuid'),rce_id);
 
  });
  $(document).on("click",".exportExampleData",function(){
@@ -1338,7 +1522,7 @@ $(document).on("click",".delExampleData",function(){
 	rce_id=rce_id.split("-");
 	rce_id=rce_id[1];
 
-	exportExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',rce_id);
+	exportExampleDataFn(sessionStorage.getItem('uuid'),rce_id);
 
  });
 
@@ -1367,13 +1551,47 @@ $(document).on("click",".delExampleData",function(){
 
  
  $("#btnLoadExample").click(function(){
+
+
+
+
+
+
+	$.confirm({
+		title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+		content: 'คำเตือน!! ข้อมูลเก่าจะถูกลบโดยทันที',
+		buttons: {
+			confirm: {
+				text: 'ยืนยันการโหลดข้อมูล', 
+				
+				action: function () {
+
+					if($("#file_import").val()==""){
+		
+						
+						loadExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id_load").val());
+					}else{
+					
+					
+						importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
+					}
+				}
+
+			},
+			cancel:  {
+				text: 'ยกเลิก'
+			}
+		}
+	});
+	/*
 	if($("#file_import").val()==""){
 		alert('loadExampleDataFn');
-		loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',$("#rce_id_load").val());
+		loadExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id_load").val());
 	}else{
 		alert('importExampleDataJsonFn');
-		importExampleDataJsonFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',dataJsonForImport);
+		importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
 	}
+	*/
 	
  });
  

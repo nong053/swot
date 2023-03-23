@@ -13,9 +13,7 @@ if($_REQUEST['uuid']!=""){
       }
     } else {
 
-      
-              
-        
+
               $sql = "INSERT INTO users (uu_id,created_date,updated_date) VALUES ('$_REQUEST[uuid]',NOW(),NOW())";
               if ($conn->query($sql) === TRUE) {
                 echo "[{\"loginType\":\"newUser\"}]";

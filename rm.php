@@ -139,7 +139,7 @@
         
         <div class="col-md-12">
         <div class="card text-dark bg-light mt-3 " >
-        <div class="card-header">Risk Evaluation</div>
+        <div class="card-header"><b>โปรแกรมบริหารความเสี่ยง (RISK MANAGEMENT)</b></div>
         <div class="card-body" style="padding: 0px; ">
             <!-- content here. -->
             <div class="row">
@@ -400,8 +400,8 @@
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">
-        <i class="fa-sharp fa-solid fa-angles-right" data-bs-dismiss="offcanvas" aria-label="Close"></i> Risk Managment Form</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
+        <i class="fa-sharp fa-solid fa-angles-right" data-bs-dismiss="offcanvas" aria-label="Close"></i> <!--Risk Managment Form--></h5>
+        <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
         </div>
         <div class="offcanvas-body">
         <div class="row">
