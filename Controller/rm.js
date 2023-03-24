@@ -347,10 +347,11 @@ var listLikelihoodMasterFormFn = function(data){
     $.each(data,function(index,indexEntry){
 
         htmlEstimatedRiskForm+="<div class=\"alert alert-primary mb-3 lh_loop\" id=\"lh_loop-"+indexEntry['lh_code']+"\" role=\"alert\">";
-                // htmlEstimatedRiskForm+="<input type=\"radio\"  id=\"lh_radio="+indexEntry['lh_code']+"\" class=\"form-check-input lh_radio\">";
-            // htmlEstimatedRiskForm+="<div class=\"mb-3\">";
-            //     htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"lh_code\"  placeholder=\"รหัส\">";
-            // htmlEstimatedRiskForm+="</div>";
+
+			htmlEstimatedRiskForm+="<div id=\"lh_alert-"+indexEntry['lh_code']+"\" class=\" alert alert-warning d-flex1 align-items-center\" style=\"display:none; margin-bottom:15px;margin-top:15px;\" role=\"alert\">";
+				htmlEstimatedRiskForm+="<div id=\"lh_alert_text-"+indexEntry['lh_code']+"\"></div>";
+			htmlEstimatedRiskForm+="</div>";
+
             htmlEstimatedRiskForm+="<div class=\"mb-3\">";               
                 htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"lh_name-"+indexEntry['lh_code']+"\"  placeholder=\"โอกาสที่จะเกิด\" value="+indexEntry['lh_name']+">";
             htmlEstimatedRiskForm+="</div>";
@@ -392,12 +393,13 @@ var listImpactMasterFormFn = function(data){
  var htmlEffectRiskForm="";
  $.each(data,function(index,indexEntry){
  htmlEffectRiskForm+="<div  class=\"alert alert-primary mb-3 im_loop\" id=\"im_loop-"+indexEntry['im_code']+"\" role=\"alert\">";
-//  htmlEffectRiskForm+="<input type=\"radio\"  id=\"XX\" class=\"form-check-input rm_radio\">";
-    // htmlEffectRiskForm+="<div class=\"mb-3\">";
-    //     htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
-    // htmlEffectRiskForm+="</div>";
+
+	htmlEffectRiskForm+="<div id=\"im_alert-"+indexEntry['im_code']+"\" class=\" alert alert-warning d-flex1 align-items-center\" style=\"display:none; margin-bottom:15px;margin-top:15px;\" role=\"alert\">";
+		htmlEffectRiskForm+="<div id=\"im_alert_text-"+indexEntry['im_code']+"\"></div>";
+	htmlEffectRiskForm+="</div>";
+
     htmlEffectRiskForm+="<div class=\"mb-3\">";
-        htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"im_name-"+indexEntry['im_code']+"\"  placeholder=\"ความรุนแรง\" value="+indexEntry['im_name']+">";
+        htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"im_name-"+indexEntry['im_code']+"\"  placeholder=\"ผลกระทบ\" value="+indexEntry['im_name']+">";
     htmlEffectRiskForm+="</div>";
     htmlEffectRiskForm+="<div class=\"mb-3\">";
         htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"im_score-"+indexEntry['im_code']+"\" disabled  placeholder=\"ค่าผลกระทบ\" value="+indexEntry['im_score']+">";
@@ -436,9 +438,11 @@ var listStrategyTypeMasterFn = function(data){
     var htmlMitigateRisksForm="";
     $.each(data,function(index,indexEntry){
         htmlMitigateRisksForm+="<div  class=\"alert alert-primary mb-3 stm_loop\" id=\"stm_loop-"+indexEntry['stm_code']+"\" role=\"alert\">";
-            // htmlMitigateRisksForm+="<div class=\"mb-3\">";
-            //     htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"xxx\"  placeholder=\"รหัส\">";
-            // htmlMitigateRisksForm+="</div>";
+          
+
+			htmlMitigateRisksForm+="<div id=\"stm_alert-"+indexEntry['stm_code']+"\" class=\" alert alert-warning d-flex1 align-items-center\" style=\"display:none; margin-bottom:15px;margin-top:15px;\" role=\"alert\">";
+				htmlMitigateRisksForm+="<div id=\"stm_alert_text-"+indexEntry['stm_code']+"\"></div>";
+			htmlMitigateRisksForm+="</div>";
 			
 			htmlMitigateRisksForm+="<input type=\"radio\"  name=\"stm_radio\" id=\"stm_radio-"+indexEntry['stm_code']+"\" class=\"form-check-input stm_radio\">";
     		
@@ -474,7 +478,12 @@ var listEvaluationRiskFn = function(data){
     //listEvaluationRisk
     var htmlEvaluationRiskForm="";
     $.each(data,function(index,indexEntry){
-        htmlEvaluationRiskForm+="<div  class=\"alert alert-primary mb-3 re_loop\" id=\"re_loop-"+indexEntry['re_code']+"\" role=\"alert\">";            
+        htmlEvaluationRiskForm+="<div  class=\"alert alert-primary mb-3 re_loop\" id=\"re_loop-"+indexEntry['re_code']+"\" role=\"alert\">";    
+		
+		htmlEvaluationRiskForm+="<div id=\"re_alert-"+indexEntry['re_code']+"\" class=\" alert alert-warning d-flex1 align-items-center\" style=\"display:none; margin-bottom:15px;margin-top:15px;\" role=\"alert\">";
+			htmlEvaluationRiskForm+="<div id=\"re_alert_text-"+indexEntry['re_code']+"\"></div>";
+		htmlEvaluationRiskForm+="</div>";
+
             htmlEvaluationRiskForm+="<div class=\"mb-3\">";
              htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_name-"+indexEntry['re_code']+"\"  placeholder=\"ระดับความเสี่ยง\" value="+indexEntry['re_name']+">";
             htmlEvaluationRiskForm+="</div>";
@@ -1123,7 +1132,6 @@ var validateRiskFn = function(r_code){
 	}
 
 
-
 	if($("#r_name-"+r_code).val()==""){
 		validate_flag=false;
 		$("#risk_alert-"+r_code).show();
@@ -1198,12 +1206,120 @@ var validateRiskFn = function(r_code){
 		$("#guidelines_risk-"+r_code).css({"border":"#ced4da solid 1px"});
 	}
 	
+	return validate_flag;
+}
+var validateLhFn = function(lh_code){
+	var validate_flag=true;
+
+	$("#lh_alert-"+lh_code).hide();
+	$("#lh_alert_text-"+lh_code).html("");
+	
+	if($("#lh_name-"+lh_code).val()=="" || $("#lh_name-"+lh_code).val()==null || $("#lh_name-"+lh_code).val()=='null'){
+		validate_flag=false;
+		$("#lh_name-"+lh_code).css({"border":"red solid 1px"});
+		$("#lh_alert-"+lh_code).show();
+		$("#lh_alert_text-"+lh_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกโอกาสเกิดความเสี่ยง</div>");
+		
+	}else{
+		$("#lh_name-"+lh_code).css({"border":"#ced4da solid 1px"});
+	}
+	return validate_flag;
+	
+
+}
+var validateImFn = function(im_code){
+	var validate_flag=true;
+
+	$("#im_alert-"+im_code).hide();
+	$("#im_alert_text-"+im_code).html("");
+	
+	if($("#im_name-"+im_code).val()=="" || $("#im_name-"+im_code).val()==null || $("#im_name-"+im_code).val()=='null'){
+		validate_flag=false;
+		$("#im_name-"+im_code).css({"border":"red solid 1px"});
+		$("#im_alert-"+im_code).show();
+		$("#im_alert_text-"+im_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกผลกระทบ</div>");
+		
+	}else{
+		$("#im_name-"+im_code).css({"border":"#ced4da solid 1px"});
+	}
+	return validate_flag;
+}
 
 
 
+var validateReFn = function(re_code){
+	var validate_flag=true;
+
+	$("#re_alert-"+re_code).hide();
+	$("#re_alert_text-"+re_code).html("");
+	
+	if($("#re_name-"+re_code).val()=="" || $("#re_name-"+re_code).val()==null || $("#re_name-"+re_code).val()=='null'){
+		validate_flag=false;
+		$("#re_name-"+re_code).css({"border":"red solid 1px"});
+		$("#re_alert-"+re_code).show();
+		$("#re_alert_text-"+re_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกขื่อระดับความเสี่ยง</div>");
+		
+	}else{
+		$("#re_name-"+re_code).css({"border":"#ced4da solid 1px"});
+	}
+
+
+	if($("#re_score_start-"+re_code).val()=="" || $("#re_score_start-"+re_code).val()==null || $("#re_score_start-"+re_code).val()=='null'){
+		validate_flag=false;
+		$("#re_score_start-"+re_code).css({"border":"red solid 1px"});
+		$("#re_alert-"+re_code).show();
+		$("#re_alert_text-"+re_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกค่าความเสี่ยง(เริ่ม)</div>");
+		
+	}else{
+		$("#re_score_start-"+re_code).css({"border":"#ced4da solid 1px"});
+	}
+
+	if($("#re_score_end-"+re_code).val()=="" || $("#re_score_end-"+re_code).val()==null || $("#re_score_end-"+re_code).val()=='null'){
+		validate_flag=false;
+		$("#re_score_end-"+re_code).css({"border":"red solid 1px"});
+		$("#re_alert-"+re_code).show();
+		$("#re_alert_text-"+re_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกค่าความเสี่ยง(ถึง)</div>");
+		
+	}else{
+		$("#re_score_end-"+re_code).css({"border":"#ced4da solid 1px"});
+	}
+
+	if($("#re_score_color-"+re_code).val()=="" || $("#re_score_color-"+re_code).val()==null || $("#re_score_color-"+re_code).val()=='null'){
+		validate_flag=false;
+		$("#re_score_color-"+re_code).css({"border":"red solid 1px"});
+		$("#re_alert-"+re_code).show();
+		$("#re_alert_text-"+re_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกสีความเสี่ยง</div>");
+		
+	}else{
+		$("#re_score_color-"+re_code).css({"border":"#ced4da solid 1px"});
+	}
 
 	return validate_flag;
 }
+var validateStmFn = function(stm_code){
+	var validate_flag=true;
+
+	$("#stm_alert-"+stm_code).hide();
+	$("#stm_alert_text-"+stm_code).html("");
+	
+	if($("#stm_name-"+stm_code).val()=="" || $("#stm_name-"+stm_code).val()==null || $("#stm_name-"+stm_code).val()=='null'){
+		validate_flag=false;
+		$("#stm_name-"+stm_code).css({"border":"red solid 1px"});
+		$("#re_alert-"+stm_code).show();
+		$("#re_alert_text-"+stm_code).append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกกลยุทธ์การ</div>");
+		
+	}else{
+		$("#stm_name-"+stm_code).css({"border":"#ced4da solid 1px"});
+	}
+
+
+
+	
+
+	return validate_flag;
+
+}
+
 
 $(document).ready(function(){
 
@@ -1340,15 +1456,25 @@ $("#likelihoodRiskSave").click(function(){
 		var data_code =$(this).attr('id');
 		data_code=data_code.split("-");
 		lh_code=data_code[1];
-
 		
-		if(likelihoodRiskSaveFn(sessionStorage.getItem('uuid'),lh_code)==false){
+		if(validateLhFn(lh_code)==false){
+			flagCheck=false;
+		}else if(likelihoodRiskSaveFn(sessionStorage.getItem('uuid'),lh_code)==false){
 			flagCheck=false;
 		}
 
 	});
+
 	if(flagCheck==true){
-		alert("ok");
+		$.alert({
+			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+			content: 'บันทึกข้อมูลเรียบร้อย',
+		});
+	}else{
+		$.alert({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+			content: ' เกิดข้อผิดพลาดโปรดตรวจสอบความถูกต้อง',
+		});
 	}
     
 
@@ -1368,15 +1494,34 @@ $("#impactRiskSave").click(function(){
 		im_code=data_code[1];
 
 		
-		if(impactRiskFn(sessionStorage.getItem('uuid'),im_code)==false){
+
+		// if(flagCheck==true){
+		// 	$.alert({
+		// 		title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+		// 		content: 'บันทึกข้อมูลเรียบร้อย',
+		// 	});
+		// }else if(impactRiskFn(sessionStorage.getItem('uuid'),im_code)==false){
+		// 	flagCheck=false;
+		// }
+
+		if(validateImFn(im_code)==false){
+			flagCheck=false;
+		}else if(impactRiskFn(sessionStorage.getItem('uuid'),im_code)==false){
 			flagCheck=false;
 		}
 
+
 	});
+	
 	if(flagCheck==true){
 		$.alert({
 			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 			content: 'บันทึกข้อมูลเรียบร้อย',
+		});
+	}else{
+		$.alert({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+			content: ' เกิดข้อผิดพลาดโปรดตรวจสอบความถูกต้อง',
 		});
 	}
 
@@ -1397,17 +1542,35 @@ $("#mitigateRisksSave").click(function(){
 		stm_code=data_code[1];
 
 		
-		if(strategyTypeRiskFn(sessionStorage.getItem('uuid'),stm_code)==false){
+		// if(strategyTypeRiskFn(sessionStorage.getItem('uuid'),stm_code)==false){
+		// 	flagCheck=false;
+		// }
+		if(validateStmFn(stm_code)==false){
+			flagCheck=false;
+		}else if(strategyTypeRiskFn(sessionStorage.getItem('uuid'),stm_code)==false){
 			flagCheck=false;
 		}
 
 	});
+	// if(flagCheck==true){
+	// 	$.alert({
+	// 		title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+	// 		content: 'บันทึกข้อมูลเรียบร้อย',
+	// 	});
+	// }
+
 	if(flagCheck==true){
 		$.alert({
 			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 			content: 'บันทึกข้อมูลเรียบร้อย',
 		});
+	}else{
+		$.alert({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+			content: ' เกิดข้อผิดพลาดโปรดตรวจสอบความถูกต้อง',
+		});
 	}
+
 });
 $(document).on("click","#mitigateRisAdd",function(){
 
@@ -1418,9 +1581,40 @@ $(document).on("click","#mitigateRisAdd",function(){
 
  $(document).on("click","#mitigateRisDel",function(){
     var stm_code  =$(".stm_radio:checked").attr("id");
+
+	if(stm_code==undefined){
+	
+   
+	
+		$.alert({
+			title: '<i style="font-size:44px; color:yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Warning',
+			content: ' กรุณาเลือกกลยุทธ์การที่ต้องการลบ',
+		});
+
+	}else{
+
     stm_code =stm_code .split("-");
     stm_code =stm_code [1];
-    strategyTypeRiskDelFn(sessionStorage.getItem('uuid'),stm_code);
+
+		$.confirm({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+			content: '',
+			buttons: {
+				confirm: {
+					text: 'ยืนยัน', 
+					action: function () {
+						strategyTypeRiskDelFn(sessionStorage.getItem('uuid'),stm_code);
+						
+					}
+
+				},
+				cancel:  {
+					text: 'ยกเลิก'
+					//$("#exampleModel").modal('hide');
+				}
+			}
+		});
+ 	}
  });
 
 /*risk mitigate end*/
@@ -1437,17 +1631,37 @@ $("#evaluationRiskSave").click(function(){
 		re_code=data_code[1];
 
 		
-		if(evaluationRiskFn(sessionStorage.getItem('uuid'),re_code)==false){
+		// if(evaluationRiskFn(sessionStorage.getItem('uuid'),re_code)==false){
+		// 	flagCheck=false;
+		// }
+		if(validateReFn(re_code)==false){
+			flagCheck=false;
+		}else if(evaluationRiskFn(sessionStorage.getItem('uuid'),re_code)==false){
 			flagCheck=false;
 		}
 
+
 	});
+
+	// if(flagCheck==true){
+	// 	$.alert({
+	// 		title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+	// 		content: 'บันทึกข้อมูลเรียบร้อย',
+	// 	});
+	// }
+
 	if(flagCheck==true){
 		$.alert({
 			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 			content: 'บันทึกข้อมูลเรียบร้อย',
 		});
+	}else{
+		$.alert({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+			content: ' เกิดข้อผิดพลาดโปรดตรวจสอบความถูกต้อง',
+		});
 	}
+
 });
 /*risk  evaluation master start*/
 
