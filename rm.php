@@ -876,20 +876,27 @@
                             </tr> -->
                         </tbody>
                     </table>
-                    <div class="mb-3">
-                        <hr>
-                        <label for="rce_type" class="form-label">ประเภทข้อมูล</label>
-                        <select class="form-select" id="rce_type" aria-label="">
-                            <!-- <option value="1">ผู้ดูแลระบบ</option> -->
-                            <option value="1">ผู้ดูแลระบบ</option>
-                            <option value="2">สาธารณะ</option>
-                            <option value="3">ส่วนตัว</option>
-                        </select>
+                    <div id="example_data_alert" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px;" role="alert">
+                        <div id="example_data_alert_text">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 
+                        </div>
                     </div>
+
                     <div class="mb-3">
                         <label for="rce_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
                         <input type="text" class="form-control" id="rce_name" placeholder="ชื่อข้อมูลตัวอย่าง">
                     </div>
+                    <div class="mb-3">
+                        
+                        <label for="rce_type" class="form-label">ประเภทข้อมูล</label>
+                        <select class="form-select" id="rce_type" aria-label="">
+                    
+                            <!-- <option value="1">ผู้ดูแลระบบ</option> -->
+                            <option value="2">สาธารณะ</option>
+                            <option value="3">ส่วนตัว</option>
+                        </select>
+                    </div>
+                    
                         
                     </div>
                 </div>

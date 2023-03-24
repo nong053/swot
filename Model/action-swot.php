@@ -467,7 +467,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
         if( $checkError==true){
             $sql = "SELECT 
             *
-            FROM business_type where uu_id='$_REQUEST[uuid]'";
+            FROM business_type where  b_release_type_code=2 or uu_id='$_REQUEST[uuid]'";
             $dataArray = array();
             $result = $conn->query($sql);
 

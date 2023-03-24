@@ -9,6 +9,22 @@ $( document ).ajaxStop(function() {
 $("body").mLoading();
 
 
+var clearExampleDataFn = function(){
+	$("#actionExample").val("add");
+	$("#rce_name").val("");
+	$("#rce_id").val("");
+	$("#rce_type").prop("selectedIndex", 0);
+	$("#message").html("");
+	dataJsonForImport="";
+	$("#file_import").val("");
+
+	//clear example data value default
+	$("#rce_name").css({"border":"#ced4da solid 1px"});
+	$("#example_data_alert_text").html("");
+	$("#example_data_alert").hide();
+	
+
+}
 
 var listRiskFormFn = function(data){
     var htmlFormRisk="";
@@ -750,8 +766,19 @@ var saveExampleDataFn = function(uuid){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 				
-                    alert("OK");
-					//listTaskFn(data[0]['data'],tc_code);
+                    //alert("OK");
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'บันทึกข้อมูลเรียบร้อย',
+					});
+					listExampleDataFn(data[0]['data']);
+					clearExampleDataFn();
+					
+				}else if(data[0]['status']=="201"){
+					$.alert({
+						title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+						content: ' ชื่อตัวอย่างข้อมูลนี้มีการใช้งานแล้ว กรุณาใช้ชื่ออื่่น',
+					});
 				}
 			}
 		}
@@ -864,8 +891,12 @@ var updateExampleDataFn = function(uuid,rce_id){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 				
-              
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'แก้ไขข้อมูลเรียบร้อย',
+					});
 					listExampleDataFn(data[0]['data']);
+					clearExampleDataFn();
 				}
 			}
 		}
@@ -1320,6 +1351,23 @@ var validateStmFn = function(stm_code){
 
 }
 
+var checkValidateExampleFn  = function(){
+	validate=true;
+	if($("#rce_name").val()==""){
+		validate=false;
+		$("#rce_name").css({"border":"red solid 1px"});
+		$("#example_data_alert_text").html("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกชื่อข้อมูลตัวอย่าง");
+		$("#example_data_alert").show();
+
+	}else{
+		$("#rce_name").css({"border":"#ced4da solid 1px"});
+		$("#example_data_alert_text").html("");
+		$("#example_data_alert").hide();
+	}
+	return validate;
+	
+
+}
 
 $(document).ready(function(){
 
@@ -1666,21 +1714,16 @@ $("#evaluationRiskSave").click(function(){
 /*risk  evaluation master start*/
 
 /*load data start here.*/
-var clearExampleDataFn = function(){
-	$("#actionExample").val("add");
-	$("#rce_name").val("");
-	$("#rce_id").val("");
-	$("#rce_type").prop("selectedIndex", 0);
-	$("#message").html("");
-	dataJsonForImport="";
-	$("#file_import").val("");
 
-}
 $("#btnSaveExample").click(function(){
-	if($("#actionExample").val()=='add'){
-		saveExampleDataFn(sessionStorage.getItem('uuid'));
-	}else{
-		updateExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id").val());
+	if(checkValidateExampleFn()==true){
+
+		if($("#actionExample").val()=='add'){
+			saveExampleDataFn(sessionStorage.getItem('uuid'));
+		}else{
+			updateExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id").val());
+		}
+
 	}
 });
 
@@ -1769,34 +1812,39 @@ $(document).on("click",".delExampleData",function(){
 
 
 
+	if($("#rce_id_load").val()==undefined || $("#rce_id_load").val()==""){
+		$.alert({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error',
+			content: ' ไม่มีข้อมูลตัวอย่าง',
+		});
+		return false;
+	}else{
 
+		$.confirm({
+			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+			content: 'คำเตือน!! ควรสำรองข้อมูลก่อน! เนื่องจากข้อมูลเก่าจะถูกลบโดยทันที',
+			buttons: {
+				confirm: {
+					text: 'ยืนยันการโหลดข้อมูล', 
+					
+					action: function () {
 
-	$.confirm({
-		title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
-		content: 'คำเตือน!! ข้อมูลเก่าจะถูกลบโดยทันที',
-		buttons: {
-			confirm: {
-				text: 'ยืนยันการโหลดข้อมูล', 
-				
-				action: function () {
-
-					if($("#file_import").val()==""){
-		
+						if($("#file_import").val()==""){
+			
+							loadExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id_load").val());
+						}else{
 						
-						loadExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id_load").val());
-					}else{
-					
-					
-						importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
+							importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
+						}
 					}
-				}
 
-			},
-			cancel:  {
-				text: 'ยกเลิก'
+				},
+				cancel:  {
+					text: 'ยกเลิก'
+				}
 			}
-		}
-	});
+		});
+	}
 	/*
 	if($("#file_import").val()==""){
 		alert('loadExampleDataFn');

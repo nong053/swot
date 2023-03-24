@@ -868,7 +868,19 @@ include("../config-rm.php");
 
     }else if($_REQUEST['action']=='saveExampleData'){
        
-       
+        $checkError=true;
+     
+        $sql_check = "
+        SELECT * FROM risk_cate_ex where rce_name='$_REQUEST[rce_name]'";
+        $result_check = $conn->query($sql_check);
+
+        if ($result_check->num_rows > 0) {
+            echo "[{\"status\":\"201\",\"data\":\"data_duplicate\"}]";
+
+        }else{
+
+    
+
         $sql_insert = "
         INSERT INTO risk_cate_ex 
         (
@@ -986,10 +998,26 @@ include("../config-rm.php");
             $checkError=false;
         }
 
+        if( $checkError==true){
+            $sql = "SELECT 
+            *
+            FROM risk_cate_ex where uu_id='$_REQUEST[uuid]'";
+            $dataArray = array();
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $dataArray[] = $row;
+                }
+            }
+            //echo "[{\"status\":\"200\"}]";
+            echo "[{\"status\":\"200\",\"data\":".json_encode($dataArray)."}]";
+        }
+    }//check name unige
         
     }else if($_REQUEST['action']=='updateExampleData'){
        
-       
+        $checkError=true;
         $sql = "
         UPDATE risk_cate_ex SET 
         rce_name='$_REQUEST[rce_name]',
@@ -1110,9 +1138,9 @@ include("../config-rm.php");
            $sql_save_to_risk_ex ="
            INSERT INTO 
            risk_ex 
-           (rce_id,r_seq,r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
+           (           rce_id,r_seq,r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
            SELECT 
-           $_REQUEST[rce_id],'r_seq',r_code,r_code_display,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
+           $_REQUEST[rce_id],'r_seq',r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
            FROM risk
            WHERE uu_id = '$_REQUEST[uuid]'";
 
@@ -1277,7 +1305,12 @@ include("../config-rm.php");
 
             $sql = "SELECT 
             *
-            FROM risk_cate_ex where  uu_id='$_REQUEST[uuid]'";
+            FROM risk_cate_ex 
+            where  rce_type_code=2 
+            or uu_id='$_REQUEST[uuid]'";
+
+
+
             $dataArray = array();
             $result = $conn->query($sql);
 
