@@ -148,9 +148,9 @@
                     <table class="table">
                         <thead>
                             
-                        <th>ผลคะแนนความเสี่ยง</th>
-                        <th>ค่าระดับความเสี่ยง</th>
-                        <th>พื้นที่สี</th>
+                        <th>ช่วงคะแนนความเสี่ยง</th>
+                        <th>ระดับความเสี่ยง</th>
+                        <th style="text-align:center">พื้นที่สี</th>
                 
 
                         </thead>
@@ -949,7 +949,7 @@
     
 
 
-    
+    <script src="Controller/main.js"></script>
 
     <script src="Controller/rm.js"></script>
 

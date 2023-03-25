@@ -1,5 +1,5 @@
 <?php
-include('../config-rm.php');
+include('config-rm.php');
 
 if($_REQUEST['uuid']!=""){
     $sql = "SELECT 	uu_id,rank,first_name,last_name,position,tel FROM users where uu_id='$_REQUEST[uuid]'";

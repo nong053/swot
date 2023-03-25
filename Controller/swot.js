@@ -11,7 +11,7 @@ $("body").mLoading();
 
 // var saveSubmitFn = function(){
 // 	$.ajax({
-// 		url:"./Model/action-swot.php",
+// 		url:webService+"/Model/action-swot.php",
 // 		type:"post",
 // 		dataType:"json",
 //         async:false,
@@ -572,7 +572,7 @@ var findOne=function(uuid){
 	// alert(uuid);
 	// alert("findOne");
     $.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -604,7 +604,7 @@ var findOne=function(uuid){
 var insertAndLoadExampleSwot_bk=function(uuid){
 
     $.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -623,7 +623,7 @@ var loadExampleSwot_bk=function(b_id,swot_detail){
 
 
     $.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -654,7 +654,7 @@ var saveSwot=function(){
 //alert($("#swot_detail").val());
 
     $.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -797,7 +797,7 @@ var saveSwot=function(){
 var getBusinessType=function(){
 
     $.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -825,7 +825,7 @@ var autoLoginFn=function(){
 		return false;
 	}
     $.ajax({
-		url:"./Model/login.php",
+		url:webService+"/Model/login.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -900,7 +900,7 @@ var saveExampleDataFn = function(uuid){
 
     
 	$.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -946,7 +946,7 @@ var clearExampleDataFn = function(){
 var showAllExampleDataUUIDFn = function(uuid){
 
 	$.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -972,7 +972,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 //LOAD DATA START
 var showAllExampleLoadDataFn = function(uuid){
 	$.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -996,7 +996,7 @@ var loadExampleDataFn = function(uuid,b_id){
 
     
     $.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1046,7 +1046,7 @@ var listExampleLoadDataFn = function(data){
 var findOneExampleDataFn = function(uuid,b_id){
 
 	$.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1075,7 +1075,7 @@ var findOneExampleDataFn = function(uuid,b_id){
 var updateExampleDataFn = function(uuid,b_id){
 	var b_release_type_name = $("#b_release_type_code option:selected").html()
 	$.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1107,7 +1107,7 @@ var updateExampleDataFn = function(uuid,b_id){
 var delExampleDataFn = function(uuid,b_id){
 
 	$.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1142,7 +1142,7 @@ function exportToJsonFile(jsonData) {
 
 var exportExampleDataFn = function(uuid,b_id){
 	$.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1170,7 +1170,7 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 	var dataJsonForImportObject=eval("("+dataJsonForImport+")");
 
     $.ajax({
-		url:"./Model/action-swot.php",
+		url:webService+"/Model/action-swot.php",
 		type:"post",
 		dataType:"json",
         async:false,

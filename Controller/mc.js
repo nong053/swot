@@ -1,4 +1,13 @@
 var dataJsonForImport="";
+
+$( document ).ajaxStart(function() {
+	$("body").mLoading();
+});
+$( document ).ajaxStop(function() {
+	$("body").mLoading('hide');
+});
+$("body").mLoading();
+
 var listTaskCateFn = function(data){
 
 	var htmlListTaskCate="";
@@ -228,7 +237,7 @@ function createGauges(id,value_param) {
 var findOneTaskCate=function(uuid,tc_code){
 	
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -256,7 +265,7 @@ var findOneTaskCate=function(uuid,tc_code){
 var showTaskCate=function(uuid){
 
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -279,7 +288,7 @@ var showTaskCate=function(uuid){
 var updateTaskCateFn=function(uuid){
 
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -305,7 +314,7 @@ var updateTaskCateFn=function(uuid){
 var deleteTaskCate=function(uuid,tc_id){
 
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -330,7 +339,7 @@ var deleteTaskCate=function(uuid,tc_id){
 var deleteTaskFn=function(uuid,t_code,tc_code){
 
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -371,7 +380,7 @@ var clearFormTaskFn = function(){
 var insertTaskCateFn=function(uuid){
 
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -445,7 +454,7 @@ var addTaskFn = function(uuid,tc_code){
 
 
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -476,7 +485,7 @@ var updateTaskFn = function(uuid,t_code){
 	
 	var dataReturn=true;
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -516,7 +525,7 @@ var saveExampleDataFn = function(uuid){
 
     
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -576,7 +585,7 @@ var listExampleLoadDataFn = function(data){
 var showAllExampleDataUUIDFn = function(uuid){
 
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -602,7 +611,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 var findOneExampleDataFn = function(uuid,mc_id){
 
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -631,7 +640,7 @@ var findOneExampleDataFn = function(uuid,mc_id){
 var updateExampleDataFn = function(uuid,mc_id){
 	var mc_release_type_name = $("#mc_release_type_code option:selected").html()
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -660,7 +669,7 @@ var updateExampleDataFn = function(uuid,mc_id){
 var delExampleDataFn = function(uuid,mc_id){
 
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -685,7 +694,7 @@ var delExampleDataFn = function(uuid,mc_id){
 //LOAD DATA START
 var showAllExampleLoadDataFn = function(uuid){
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -706,25 +715,31 @@ var showAllExampleLoadDataFn = function(uuid){
 
 }
 //LOAD DATA END
-var loadExampleDataFn = function(uuid){
+var loadExampleDataFn = function(uuid,mc_id){
 
     
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
 		data:{
 			"uuid":uuid,
 			"action":"loadExampleData",
-            "mc_id":$("#mc_id_load").val()
+            "mc_id":mc_id
 	
 		},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert("ok");
+
+					//alert("ok");
+					showTaskCate(sessionStorage.getItem('uuid'));
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'โหลดข้อมูลตัวอย่างเรียบร้อย',
+					});
 				}
 			}
 		}
@@ -774,7 +789,7 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 
     
     $.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -814,7 +829,7 @@ function exportToJsonFile(jsonData) {
 
 var exportExampleDataFn = function(uuid,mc_id){
 	$.ajax({
-		url:"./Model/action-mc.php",
+		url:webService+"/Model/action-mc.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -851,24 +866,100 @@ var clearExampleDataFn = function(){
 
 //example management end
 
-$(document).ready(function(){
+var autoLoginFn=function(){
 	
+    if(sessionStorage.getItem('uuid')=="" || sessionStorage.getItem('uuid')==null) {
+		console.log("Can't login");
+		return false;
+	}
+    $.ajax({
+		url:webService+"/Model/login-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":sessionStorage.getItem('uuid'),
+		},
+		success:function(data){
+
+		
+			if(data[0]['loginType']=="newUser"){
+				
+				$.confirm({
+					title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> โหลดข้อมูลตัวอย่างหรือไม่?',
+					content: '',
+					buttons: {
+						confirm: {
+							text: 'ยืนยันการโหลดข้อมูล', 
+							action: function () {
+								loadExampleDataFn(sessionStorage.getItem('uuid'),1);
+							}
+						},
+						cancel:  {
+							text: 'ยกเลิก'
+							
+						}
+					}
+				});
+
+				
+				
+			}else{
+				
+				showTaskCate(sessionStorage.getItem('uuid'));
+				
+				
+
+			}
+            
+		}
+	});
+}
+
+$(document).ready(function(){
+	/*
 	var uuid = new DeviceUUID().get();
 	sessionStorage.setItem('uuid', uuid);
+	*/
+/*Login Management Start */
+var du = new DeviceUUID().parse();
+var dua = [
+	du.language,
+	du.platform,
+	du.os,
+	du.cpuCores,
+	du.isAuthoritative,
+	du.silkAccelerated,
+	du.isKindleFire,
+	du.isDesktop,
+	du.isMobile,
+	du.isTablet,
+	du.isWindows,
+	du.isLinux,
+	du.isLinux64,
+	du.isMac,
+	du.isiPad,
+	du.isiPhone,
+	du.isiPod,
+	du.isSmartTV,
+	du.pixelDepth,
+	du.isTouchScreen
+];
+var uuid = du.hashMD5(dua.join(':'));
+
+sessionStorage.setItem('uuid', uuid);
+
+autoLoginFn();
+
+/*Login Management End */
 
 
+   showTaskCate(sessionStorage.getItem('uuid'));
 
-   showTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
 
-/*
-	createGauges(1,139);
-	createGauges(2,91);
-	createGauges(3,83.66);
-	createGauges(4,120.5);
-
-*/
 	
-	
+
+
 
 /* Cate Task Start*/
 
@@ -883,7 +974,7 @@ $(document).ready(function(){
 		tc_code=tc_code.split("-");
 		tc_code=tc_code[1];
 		
-			findOneTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6',tc_code);
+			findOneTaskCate(sessionStorage.getItem('uuid'),tc_code);
 	 });
 
 
@@ -891,10 +982,10 @@ $(document).ready(function(){
 		
 		if($("#actionTaskCate").val()=="add"){
 			//alert("add");
-			insertTaskCateFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+			insertTaskCateFn(sessionStorage.getItem('uuid'));
 		}else{
 			//alert("edt");
-			updateTaskCateFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+			updateTaskCateFn(sessionStorage.getItem('uuid'));
 		}
 		
 	});
@@ -902,10 +993,40 @@ $(document).ready(function(){
 	$("#deleteTaskCate").click(function(){
 		
 		var tc_id =$(".cate_mc:checked").attr("id");
-		tc_id=tc_id.split("-");
-		tc_id=tc_id[1];
+		
 
-		deleteTaskCate('4b7e2fd0-776a-420d-bd09-79a58da47ff6',tc_id);
+
+		if(tc_id==undefined){
+	
+			$.alert({
+				title: '<i style="font-size:44px; color:yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Warning',
+				content: ' กรุณาเลือกความเสี่ยงที่ต้องการลบ',
+			});
+	
+		}else{
+
+			tc_id=tc_id.split("-");
+			tc_id=tc_id[1];
+	
+			$.confirm({
+				title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
+				content: '',
+				buttons: {
+					confirm: {
+						text: 'ยืนยัน', 
+						action: function () {
+							deleteTaskCate(sessionStorage.getItem('uuid'),tc_id);
+						}
+						
+					},
+					cancel:  {
+						text: 'ยกเลิก'
+					}
+				}
+			});
+		}
+
+		
 	});
 /* Cate Task End*/
 
@@ -928,7 +1049,7 @@ $(document).on("click",".saveTask",function(){
 		t_code=data_code[1];
 		tc_code=data_code[3];
 		
-		if(updateTaskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',t_code)==false){
+		if(updateTaskFn(sessionStorage.getItem('uuid'),t_code)==false){
 			flagCheck=false;
 		}
 
@@ -949,7 +1070,7 @@ $(document).on("click",".addTask",function(){
 	tc_code=tc_code.split("-");
 	tc_code=tc_code[1];
 
-	addTaskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',tc_code);
+	addTaskFn(sessionStorage.getItem('uuid'),tc_code);
  });
 
  $(document).on("click",".delTask",function(){
@@ -962,7 +1083,7 @@ $(document).on("click",".addTask",function(){
 	t_code=data_code[2];
 	tc_code=data_code[4];
 	
-	deleteTaskFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',t_code,tc_code);
+	deleteTaskFn(sessionStorage.getItem('uuid'),t_code,tc_code);
  });
 /*  Task End*/
 
@@ -976,9 +1097,9 @@ $("#submitPrint").click(function(){
 //action example management start
 $("#getExampleModel").click(function(){
     //table show display on list example
-	showAllExampleDataUUIDFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+	showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
     //select on tab load example
-    showAllExampleLoadDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+    showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 	clearExampleDataFn();
 });
 
@@ -988,7 +1109,7 @@ $(document).on("click",".delExampleData",function(){
 	mc_id=mc_id.split("-");
 	mc_id=mc_id[1];
 
-	delExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',mc_id);
+	delExampleDataFn(sessionStorage.getItem('uuid'),mc_id);
 
  });
  $(document).on("click",".editExampleData",function(){
@@ -998,7 +1119,7 @@ $(document).on("click",".delExampleData",function(){
 	//alert(mc_id);
 	$("#actionExample").val("edit");
 	$("#mc_id").val(mc_id);
-	findOneExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',mc_id);
+	findOneExampleDataFn(sessionStorage.getItem('uuid'),mc_id);
 
  });
  $(document).on("click",".exportExampleData",function(){
@@ -1006,7 +1127,7 @@ $(document).on("click",".delExampleData",function(){
 	mc_id=mc_id.split("-");
 	mc_id=mc_id[1];
 
-	exportExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',mc_id);
+	exportExampleDataFn(sessionStorage.getItem('uuid'),mc_id);
 
  });
 
@@ -1036,10 +1157,10 @@ $(document).on("click",".delExampleData",function(){
  $("#btnLoadExample").click(function(){
 	if($("#file_import").val()==""){
 		alert('loadExampleDataFn');
-		loadExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+		loadExampleDataFn(sessionStorage.getItem('uuid'),$("#mc_id_load").val());
 	}else{
 		alert('importExampleDataJsonFn');
-		importExampleDataJsonFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',dataJsonForImport);
+		importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
 	}
 	
  });
@@ -1048,9 +1169,9 @@ $(document).on("click",".delExampleData",function(){
 //action save,update start
 $("#btnSaveExample").click(function(){
 	if($("#actionExample").val()=='add'){
-		saveExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6');
+		saveExampleDataFn(sessionStorage.getItem('uuid'));
 	}else{
-		updateExampleDataFn('4b7e2fd0-776a-420d-bd09-79a58da47ff6',$("#mc_id").val());
+		updateExampleDataFn(sessionStorage.getItem('uuid'),$("#mc_id").val());
 	}
 });
 //action save,update end

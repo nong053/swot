@@ -1,5 +1,5 @@
 <?php
-include("../config-rm.php");
+include("config-rm.php");
  $uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
  $sql = "SELECT * FROM users where uu_id='$uuid'";
  $result = $conn->query($sql);

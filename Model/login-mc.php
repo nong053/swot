@@ -1,5 +1,5 @@
 <?php
-include('config.php');
+include('config-mc.php');
 
 if($_REQUEST['uuid']!=""){
     $sql = "SELECT 	uu_id,rank,first_name,last_name,position,tel FROM users where uu_id='$_REQUEST[uuid]'";
@@ -13,9 +13,7 @@ if($_REQUEST['uuid']!=""){
       }
     } else {
 
-      
-              
-        
+
               $sql = "INSERT INTO users (uu_id,created_date,updated_date) VALUES ('$_REQUEST[uuid]',NOW(),NOW())";
               if ($conn->query($sql) === TRUE) {
                 echo "[{\"loginType\":\"newUser\"}]";

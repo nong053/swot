@@ -743,6 +743,17 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
 
+
+     <!-- jquery confirm start-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+    <!-- jquery confirm end-->
+    <!-- jquery mloading start-->
+    <link rel="stylesheet" href="css/jquery.mloading.css">
+    <script src="js/jquery.mloading.js"></script>
+    <!-- jquery mloading end-->
+
+    
      <!-- export excel-->
      <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
     <!-- export pdf-->

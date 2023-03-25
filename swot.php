@@ -2028,7 +2028,7 @@
     <!-- printing-->
     <script type="text/javascript" src="printThis-master/printThis.js"></script>
 
-
+    <script src="Controller/main.js"></script>
     <script src="Controller/swot.js"></script>
     <script>
         $(document).ready(function(){
