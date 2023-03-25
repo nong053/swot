@@ -141,7 +141,7 @@ var listRiskDisplayFn = function(data){
 var riskFormFn = function(uuid){
 	
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -164,7 +164,7 @@ var riskFormFn = function(uuid){
 
 var riskAddFn = function(uuid){
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -206,7 +206,7 @@ var clearFormRiskFn = function(){
 var deleteRiskFn=function(uuid,r_code){
 
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -237,7 +237,7 @@ var riskSaveFn = function(uuid,r_code){
 	
 	var dataReturn=true;
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -275,7 +275,7 @@ var riskSaveFn = function(uuid,r_code){
 var stmSelectDataFn_bk=function(uuid){
 
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -303,7 +303,7 @@ var stmSelectDataFn_bk=function(uuid){
 var lhSelectDataFn_bk=function(uuid){
 
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -331,7 +331,7 @@ var lhSelectDataFn_bk=function(uuid){
 var imSelectDataFn_bk=function(uuid){
 
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -385,7 +385,7 @@ var listLikelihoodMasterFormFn = function(data){
 }
 var likelihoodMasterFormFn = function(uuid){
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -430,7 +430,7 @@ var listImpactMasterFormFn = function(data){
 }
 var impactMasterFormFn = function(uuid){
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -523,7 +523,7 @@ var listEvaluationRiskFn = function(data){
 
 var evaluationRiskFormFn = function(uuid){
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -545,7 +545,7 @@ var evaluationRiskFormFn = function(uuid){
 
 var strategyTypeMasterFormFn = function(uuid){
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -567,7 +567,7 @@ var strategyTypeMasterFormFn = function(uuid){
 var likelihoodRiskSaveFn = function(uuid,lh_code){
     var dataReturn=true;
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -597,7 +597,7 @@ var likelihoodRiskSaveFn = function(uuid,lh_code){
 var impactRiskFn = function(uuid,im_code){
     var dataReturn=true;
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -626,7 +626,7 @@ var impactRiskFn = function(uuid,im_code){
 var strategyTypeRiskFn = function(uuid,stm_code){
     var dataReturn=true;
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -658,7 +658,7 @@ var strategyTypeRiskFn = function(uuid,stm_code){
 
 var strategyTypeRiskAddFn = function(uuid,stm_code){
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -690,7 +690,7 @@ var clearFormStrategyTypeRiskFn = function(){
 var strategyTypeRiskDelFn=function(uuid,stm_code){
 
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -716,7 +716,7 @@ var strategyTypeRiskDelFn=function(uuid,stm_code){
 var evaluationRiskFn = function(uuid,re_code){
     var dataReturn=true;
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -750,7 +750,7 @@ var saveExampleDataFn = function(uuid){
 
     
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -821,7 +821,7 @@ var listExampleLoadDataFn = function(data){
 var showAllExampleDataUUIDFn = function(uuid){
 
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -846,7 +846,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 var findOneExampleDataFn = function(uuid,rce_id){
 
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -875,7 +875,7 @@ var findOneExampleDataFn = function(uuid,rce_id){
 var updateExampleDataFn = function(uuid,rce_id){
 
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -906,7 +906,7 @@ var updateExampleDataFn = function(uuid,rce_id){
 var delExampleDataFn = function(uuid,rce_id){
 
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -931,7 +931,7 @@ var delExampleDataFn = function(uuid,rce_id){
 //LOAD DATA START
 var showAllExampleLoadDataFn = function(uuid){
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -956,7 +956,7 @@ var loadExampleDataFn = function(uuid,rce_id){
 
     
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -971,11 +971,14 @@ var loadExampleDataFn = function(uuid,rce_id){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 
+					riskFormFn(sessionStorage.getItem('uuid'));
+					
 					$.alert({
 						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 						content: 'โหลดข้อมูลตัวอย่างเรียบร้อย',
 					});
 				}
+
 			}
 		}
 	});
@@ -1023,7 +1026,7 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 
     
     $.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1065,7 +1068,7 @@ function exportToJsonFile(jsonData) {
 
 var exportExampleDataFn = function(uuid,rce_id){
 	$.ajax({
-		url:"./Model/action-rm.php",
+		url:webService+"/Model/action-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1099,7 +1102,7 @@ var autoLoginFn=function(){
 		return false;
 	}
     $.ajax({
-		url:"./Model/login-rm.php",
+		url:webService+"/Model/login-rm.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1461,9 +1464,8 @@ $(document).on("click","#btnRiskAdd",function(){
 
  $(document).on("click","#btnRiskDel",function(){
     var risk_code =$(".risk_radio:checked").attr("id");
-	if(risk_code==undefined){
 	
-   
+	if(risk_code==undefined){
 	
 		$.alert({
 			title: '<i style="font-size:44px; color:yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Warning',
