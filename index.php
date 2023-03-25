@@ -25,21 +25,21 @@ body{
         <button  type="button" id="btn-sw" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-users"></i> 
         <div>SW</div>
     </button>
-    <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
+    <!-- <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
         <div>BS</div>
     </button>
     <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
         <div>KPI</div>
-    </button>
+    </button> -->
     <button  type="button" id="btn-rm" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-code-compare"></i> 
         <div>RM</div>
     </button>
     <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
         <div>MC</div>
     </button>
-    <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
+    <!-- <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
         <div>MC2</div>
-    </button>
+    </button> -->
     </div>
 </div>
 

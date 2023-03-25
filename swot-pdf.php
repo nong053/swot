@@ -4,7 +4,7 @@
     <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/jquery.min.js"></script> -->
     
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
-    <table id="convertToPdf" class="table" >
+    <table id="convertToPdf" class="table"  style="font-size: 34px; margin:auto;">
   
                 
                 <tr>
@@ -240,7 +240,7 @@
                    var docDefinition = {
                        content: [{
                            image: data,
-                           width: 500,
+                           width: 600,
                            // height:1000
                        }]
                    };
@@ -252,7 +252,7 @@
            });
 
            setTimeout(function(){
-                history.back();
+                //history.back();
             },500);
         });
             </script>

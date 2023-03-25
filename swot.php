@@ -10,6 +10,9 @@
     
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" >
+
+    <!-- <link rel="stylesheet" type="text/css" media="print" href="print.css" /> -->
+
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
 
@@ -120,6 +123,10 @@
            padding-left:5px; padding-right:5px;
         }
 
+        @media print {
+           
+        }
+
 
 
         
@@ -163,8 +170,9 @@
             <div class="card-header placeholder-glow" id="swot_detail_header">&nbsp;
                 <!-- SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D)  -->
             </div>
-            <div class="card-body" >
-                <div id="chart" class="graph" ></div>
+            <div class="card-body"  >
+                <!-- <div id="chartGe" class="chart graph" ></div> -->
+                <div id="chartPrint" class="chart graph" style="width: 300px; height: 400px;margin:auto; display:block;"></div>
             </div>
         </div>
   
