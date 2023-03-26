@@ -1,5 +1,4 @@
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <?php
 // Require composer autoload
 require_once __DIR__ . '/vendor/autoload.php';
@@ -59,61 +58,91 @@ $dataArray = array();
         $sum_t_score=0.00;
         $swot_detail="";
         $count=1;
+        $count_data1=1;
+        $count_data2=1;
+        $count_data3=1;
+        $count_data4=1;
         while($row = $result->fetch_assoc()) {
             if($count==1){
                 $swot_detail="".$row['swot_detail'];
             }
           if($row['ap_code']=='1' && ($row['s_name']!='' && $row['s_total_score']!=0)){
             $sum_s_score+=$row['s_total_score'];
-            $data1.="<tr>";
-                $data1.="<td>".$row['s_name']."</td>";
-                $data1.="<td>".$row['s_total_score']."</td>";
+            if ($count_data1 % 2 == 0) {
+                $data1.="<tr style='background:white;'>";
+              }else{
+                $data1.="<tr style='background:#F5F5F5;'>";
+              }
+            //$data1.="<tr>";
+                $data1.="<td >".$row['s_name']."</td>";
+                $data1.="<td >".$row['s_total_score']."</td>";
+
             $data1.="</tr>";
+            $count_data1++;
           }
 
           if($row['ap_code']=='2' && ($row['s_name']!='' && $row['s_total_score']!=0)){
             $sum_w_score+=$row['s_total_score'];
-            $data2.="<tr>";
+              if ($count_data2 % 2 == 0) {
+                $data2.="<tr style='background:white;'>";
+              }else{
+                $data2.="<tr style='background:#F5F5F5;'>";
+              }
+
+            //$data2.="<tr>";
                 $data2.="<td>".$row['s_name']."</td>";
                 $data2.="<td>".$row['s_total_score']."</td>";
             $data2.="</tr>";
+            $count_data2++;
           }
 
           if($row['ap_code']=='3' && ($row['s_name']!='' && $row['s_total_score']!=0)){
             $sum_o_score+=$row['s_total_score'];
-            $data3.="<tr>";
+            if ($count_data3 % 2 == 0) {
+                $data3.="<tr style='background:white;'>";
+              }else{
+                $data3.="<tr style='background:#F5F5F5;'>";
+              }
+            //$data3.="<tr>";
                 $data3.="<td>".$row['s_name']."</td>";
                 $data3.="<td>".$row['s_total_score']."</td>";
             $data3.="</tr>";
+            $count_data3++;
           }
 
           if($row['ap_code']=='4' && ($row['s_name']!='' && $row['s_total_score']!=0)){
             $sum_t_score+=$row['s_total_score'];
-            $data4.="<tr>";
+            //$data4.="<tr>";
+            if ($count_data4 % 2 == 0) {
+                $data4.="<tr style='background:white;'>";
+              }else{
+                $data4.="<tr style='background:#F5F5F5;'>";
+              }
                 $data4.="<td>".$row['s_name']."</td>";
                 $data4.="<td>".$row['s_total_score']."</td>";
             $data4.="</tr>";
+            $count_data4++;
           }
            $count++;
         }
 
 
-        $data1.="<tr>";
+        $data1.="<tr style='border-top:1px solid #cccccc; border-bottom:1px solid #cccccc; background:#FFFFCC;'>";
             $data1.="<td><b>คะแนนรวม</b></td>";
             $data1.="<td><b>".number_format($sum_s_score,2, '.', '')."</b></td>";
         $data1.="</tr>";
 
-        $data2.="<tr>";
+        $data2.="<tr style='border-top:1px solid #cccccc; border-bottom:1px solid #cccccc;background:#FFFFCC;' >";
             $data2.="<td><b>คะแนนรวม</b></td>";
             $data2.="<td><b>".number_format($sum_w_score,2, '.', '')."</b></td>";
         $data2.="</tr>";
 
-        $data3.="<tr>";
+        $data3.="<tr style='border-top:1px solid #cccccc;  border-bottom:1px solid #cccccc; background:#FFFFCC;'>";
             $data3.="<td><b>คะแนนรวม</b></td>";
             $data3.="<td><b>".number_format($sum_o_score,2, '.', '')."</b></td>";
         $data3.="</tr>";
 
-        $data4.="<tr>";
+        $data4.="<tr style='border-top:1px solid #cccccc; border-bottom:1px solid #cccccc;background:#FFFFCC;'>";
             $data4.="<td><b>คะแนนรวม</b></td>";
             $data4.="<td><b>".number_format($sum_t_score,2, '.', '')."</b></td>";
         $data4.="</tr>";
@@ -121,28 +150,32 @@ $dataArray = array();
     } 
     $data.="<h1 style='text-align:center;'>".$swot_detail."</h1>";
     $data.="<h3>กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส)</h3>";
-    $data.="<table class='table' style='width:100%;'  border='1'>";
-    $data.="<thead><tr><th>จุดแข็ง (Strengths)</th> <th>โอกาส (Opportunities)</th></tr></thead>"; 
+    $data.="<table  style='width:100%;'  border=''>";
+    $data.="<thead><tr ><th>จุดแข็ง (Strengths)</th> <th>โอกาส (Opportunities)</th></tr></thead>"; 
     $data.="<tbody>";
         $data.="<tr>";
+        
             $data.="<td>";
+            
                 $data.="<table style='width:100%;'>";
-                    // $data.="<thead><tr><th>จุดแข็ง (Strengths)</th> <th>คะแนน</th></tr></thead>"; 
+                    //$data.="<thead><tr><th>จุดแข็ง (Strengths)</th> <th>คะแนน</th></tr></thead>"; 
                     $data.="<tbody>";
                     $data.=$data1;
-                       
-
                     $data.="</tbody>";
                 $data.="</table >";
+                
             $data.="</td>";
             $data.="<td>";
+            
                 $data.="<table style='width:100%;'>";
-                    // $data.="<thead><tr><th>จุดแข็ง (Strengths)</th> <th>คะแนน</th></tr></thead>"; 
-                    $data.="<tbody>";
+                    //$data.="<thead><tr><th>จุดแข็ง (Strengths)</th> <th>คะแนน</th></tr></thead>"; 
+                   $data.="<tbody>";
                     $data.=$data2;
-                    $data.="</tbody>";
+                   $data.="</tbody>";
                 $data.="</table>";
+                
             $data.="</td>";
+            
         $data.="</tr>";
     $data.="</tbody>";
     $data.="</table>"; 
@@ -150,7 +183,7 @@ $dataArray = array();
 
     
     $data.="<h3>กลยุทธ์เชิงป้องกัน ST (จุดแข็งและภัยคุกคาม)</h3>";
-    $data.="<table class='table' style='width:100%;'  border='1'>";
+    $data.="<table class='table' style='width:100%;'  border=''>";
     $data.="<thead><tr><th>จุดแข็ง (Strengths)</th> <th>ภัยคุกคาม (Threats)</th></tr></thead>"; 
     $data.="<tbody>";
         $data.="<tr>";
@@ -180,7 +213,7 @@ $dataArray = array();
 
 
     $data.="<h3>กลยุทธ์เชิงแก้ไข WO (จุดอ่อนและโอกาส)</h3>";
-    $data.="<table class='table' style='width:100%;'  border='1'>";
+    $data.="<table class='table' style='width:100%;'  border=''>";
     $data.="<thead><tr><th>จุดอ่อน (Weaknesses)</th> <th>โอกาส (Opportunities)</th></tr></thead>"; 
     $data.="<tbody>";
         $data.="<tr>";
@@ -206,7 +239,7 @@ $dataArray = array();
 
 
     $data.="<h3>กลยุทธ์เชิงรับ WT (จุดอ่อนและภัยคุกคาม)</h3>";
-    $data.="<table class='table' style='width:100%;'  border='1'>";
+    $data.="<table class='table' style='width:100%;'  border=''>";
     $data.="<thead><tr><th>จุดอ่อน (Weaknesses)</th> <th>ภัยคุกคาม (Threats)</th></tr></thead>"; 
     $data.="<tbody>";
         $data.="<tr>";
@@ -216,7 +249,7 @@ $dataArray = array();
                     $data.="<tbody>";
                     $data.=$data1;
                     $data.="</tbody>";
-                $data.="</table>";
+               $data.="</table>";
             $data.="</td>";
             $data.="<td>";
                     $data.="<table style='width:100%;'>";
