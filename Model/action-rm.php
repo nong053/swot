@@ -35,6 +35,7 @@ include("config-rm.php");
         and stm.uu_id='$_REQUEST[uuid]'
         and lh.uu_id='$_REQUEST[uuid]'
         and im.uu_id='$_REQUEST[uuid]'
+        order by r.total_score DESC
         
         ";
         $dataRiskArray = array();

@@ -132,7 +132,7 @@ var listRiskDisplayFn = function(data){
 			htmlRiskDisplay+="</td>";
 		htmlRiskDisplay+="</tr>";
 		//alert(indexEntry['im_score']+"-"+indexEntry['lh_score']);
-		$("#risk"+indexEntry['im_score']+""+indexEntry['lh_score']).append(indexEntry['r_code']);
+		$("#risk"+indexEntry['im_score']+""+indexEntry['lh_score']).append(indexEntry['r_code_display']);
     });
 	
     $("#listRiskDataArea").html(htmlRiskDisplay);
