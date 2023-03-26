@@ -855,7 +855,21 @@ var autoLoginFn=function(){
 
 
 // example management start
+var clearExampleDataFn = function(){
+	$("#actionExample").val("add");
+	$("#b_type_name").val("");
+	$("#b_release_type_code").prop("selectedIndex", 0);
+	$("#message_area").hide();
+	$("#message").html("");
+	dataJsonForImport="";
+	$("#file_import").val("");
 
+	//clear value default
+	$("#b_type_name").css({"border":"#ced4da solid 1px"});
+	$("#example_data_alert_text").html("");
+	$("#example_data_alert").hide();
+
+}
 var listExampleDataFn = function(data){
 	
 	var htmlExampleData = "";
@@ -921,6 +935,7 @@ var saveExampleDataFn = function(uuid){
 						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 						content: 'บันทึกข้อมูลตัวอย่างเรียบร้อย',
 					});
+					clearExampleDataFn();
 					listExampleDataFn(data[0]['data']);
 				}
 			}
@@ -928,21 +943,7 @@ var saveExampleDataFn = function(uuid){
 	});
 
 }
-var clearExampleDataFn = function(){
-	$("#actionExample").val("add");
-	$("#b_type_name").val("");
-	$("#b_release_type_code").prop("selectedIndex", 0);
-	$("#message_area").hide();
-	$("#message").html("");
-	dataJsonForImport="";
-	$("#file_import").val("");
 
-	//clear value default
-	$("#b_type_name").css({"border":"#ced4da solid 1px"});
-	$("#example_data_alert_text").html("");
-	$("#example_data_alert").hide();
-
-}
 
 var showAllExampleDataUUIDFn = function(uuid){
 
