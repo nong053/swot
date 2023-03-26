@@ -328,7 +328,8 @@ var calculateSwotFn = function(){
 			data: data
 		}],
 		categoryAxis: {
-			categories: ["Strengths", "Weaknesses", "Opportunities", "Threats"]
+			//categories: ["Strengths", "Weaknesses", "Opportunities", "Threats"]
+			categories: ["จุดแข็ง", "จุดอ่อน", "โอกาส", "ภัยคุกคาม"]
 		},
 		valueAxis: {
 			labels: {
