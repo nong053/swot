@@ -1566,7 +1566,7 @@ $(document).ready(function(){
 	
 	$("#submitPDF").click(function(){
 	
-		location.href = "./swot-pdf.php";
+		location.href =  webService+"/Model/mpdf/swot-pdf.php?uuid="+sessionStorage.getItem('uuid')+"";
 		
 	});
 

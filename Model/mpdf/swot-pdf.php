@@ -3,7 +3,12 @@
 <?php
 // Require composer autoload
 require_once __DIR__ . '/vendor/autoload.php';
-include("../Model/config.php");
+include("../config.php");
+
+$uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
+$sql = "SELECT * FROM users where uu_id='$uuid'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
 
 $defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
 $fontData = $defaultFontConfig['fontdata'];
@@ -33,7 +38,7 @@ s.s_name,s.s_weight,s.s_score,
 s.s_total_score,s.swot_detail
 from swot s
 inner join aspect_master ap on s.ap_code=ap.ap_code
-where s.uu_id='2c106cc61b26f9f71ec3da85c01c56cd'   and  ap.uu_id='2c106cc61b26f9f71ec3da85c01c56cd'
+where s.uu_id='$uuid'   and  ap.uu_id='$uuid'
 
 
 order by s.ap_code,s.form_id asc
@@ -48,39 +53,73 @@ $dataArray = array();
     if ($result->num_rows > 0) {
     // output data of each row
    
-
+        $sum_s_score=0.00;
+        $sum_w_score=0.00;
+        $sum_o_score=0.00;
+        $sum_t_score=0.00;
+        $swot_detail="";
+        $count=1;
         while($row = $result->fetch_assoc()) {
-          if($row['ap_code']=='1'){
+            if($count==1){
+                $swot_detail="".$row['swot_detail'];
+            }
+          if($row['ap_code']=='1' && ($row['s_name']!='' && $row['s_total_score']!=0)){
+            $sum_s_score+=$row['s_total_score'];
             $data1.="<tr>";
                 $data1.="<td>".$row['s_name']."</td>";
                 $data1.="<td>".$row['s_total_score']."</td>";
             $data1.="</tr>";
           }
-          if($row['ap_code']=='2'){
+
+          if($row['ap_code']=='2' && ($row['s_name']!='' && $row['s_total_score']!=0)){
+            $sum_w_score+=$row['s_total_score'];
             $data2.="<tr>";
                 $data2.="<td>".$row['s_name']."</td>";
                 $data2.="<td>".$row['s_total_score']."</td>";
             $data2.="</tr>";
           }
 
-          if($row['ap_code']=='3'){
+          if($row['ap_code']=='3' && ($row['s_name']!='' && $row['s_total_score']!=0)){
+            $sum_o_score+=$row['s_total_score'];
             $data3.="<tr>";
                 $data3.="<td>".$row['s_name']."</td>";
                 $data3.="<td>".$row['s_total_score']."</td>";
             $data3.="</tr>";
           }
 
-          if($row['ap_code']=='4'){
+          if($row['ap_code']=='4' && ($row['s_name']!='' && $row['s_total_score']!=0)){
+            $sum_t_score+=$row['s_total_score'];
             $data4.="<tr>";
                 $data4.="<td>".$row['s_name']."</td>";
                 $data4.="<td>".$row['s_total_score']."</td>";
             $data4.="</tr>";
           }
-           
+           $count++;
         }
+
+
+        $data1.="<tr>";
+            $data1.="<td><b>คะแนนรวม</b></td>";
+            $data1.="<td><b>".number_format($sum_s_score,2, '.', '')."</b></td>";
+        $data1.="</tr>";
+
+        $data2.="<tr>";
+            $data2.="<td><b>คะแนนรวม</b></td>";
+            $data2.="<td><b>".number_format($sum_w_score,2, '.', '')."</b></td>";
+        $data2.="</tr>";
+
+        $data3.="<tr>";
+            $data3.="<td><b>คะแนนรวม</b></td>";
+            $data3.="<td><b>".number_format($sum_o_score,2, '.', '')."</b></td>";
+        $data3.="</tr>";
+
+        $data4.="<tr>";
+            $data4.="<td><b>คะแนนรวม</b></td>";
+            $data4.="<td><b>".number_format($sum_t_score,2, '.', '')."</b></td>";
+        $data4.="</tr>";
     
     } 
-    $data.="<h1 style='text-align:center;'>SWOT ANALISYS REPORT</h1>";
+    $data.="<h1 style='text-align:center;'>".$swot_detail."</h1>";
     $data.="<h3>กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส)</h3>";
     $data.="<table class='table' style='width:100%;'  border='1'>";
     $data.="<thead><tr><th>จุดแข็ง (Strengths)</th> <th>โอกาส (Opportunities)</th></tr></thead>"; 
@@ -201,9 +240,15 @@ $dataArray = array();
 
 $mpdf->WriteHTML($data);
 $mpdf->Output("swot-analysis.pdf");
-$mpdf->Output("swot-analysis.pdf",\Mpdf\Output\Destination::INLINE);
-//$mpdf->Output("swot-analysis.pdf",\Mpdf\Output\Destination::DOWNLOAD);
-ob_end_flush()
+//$mpdf->Output("swot-analysis.pdf",\Mpdf\Output\Destination::INLINE);
+$mpdf->Output("swot-analysis.pdf",\Mpdf\Output\Destination::DOWNLOAD);
+ob_end_flush();
+
+
+}else{
+    echo "[{\"status\":\"401\",\"loginStatus\":\"Unauthorized\"}]";
+ }
+ $conn->close();
 
 ?>
 
