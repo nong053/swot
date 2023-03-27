@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SWOT Analysis</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
     <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.3.1109/styles/kendo.default-ocean-blue.min.css" /> -->
     <link rel="stylesheet" href="http://kpi.dashboardweb.com/kendoCommercial/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="http://kpi.dashboardweb.com/kendoCommercial/styles/kendo.default.min.css" />
@@ -124,6 +124,7 @@
         .card-body-ex{
            padding-left:5px; padding-right:5px;
         }
+        
 
         @media print {
            
@@ -151,8 +152,12 @@
 <div class="headerFixed">
         <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
         <div class=" d-lg-none" style="margin-top: 55px;"></div>
+        
         <div class="container">
-            <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
+       
+           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id='btnDevTeam' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
+
         </div>
 </div>
 <div style="margin-bottom: 80px;" class="d-none d-lg-block"></div>
@@ -2016,6 +2021,68 @@
   </div>
 </div>
 <!--Model -->
+<!--Modal-->
+<!-- Modal -->
+<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="teamModalLabel">ทีมผู้พัฒนา</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <div class="modal-body">
+        <divv class="row">
+            <div class="col-md-4">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
+                            <p class="card-text"  style="font-size:16px;">System Analysis</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="alert alert-success" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
+                            <p class="card-text"  style="font-size:16px;">Tester</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="ร.ท.โฆษิต อามรมณ์สวะ">
+                    <div class="card-body ">
+                        <div class="alert alert-info" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
+                            <p class="card-text"  style="font-size:16px;">Developer</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </divv>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnDevTeamClose" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

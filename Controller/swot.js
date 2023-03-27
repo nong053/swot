@@ -1472,7 +1472,15 @@ var checkValidateExampleFn  = function(){
 $(document).ready(function(){
 
 
-
+	$("#btnDevTeam").click(function(){
+		$("#teamModal").modal('show');
+	
+	});
+	$("#btnDevTeamClose").click(function(){
+		$("#teamModal").modal('hide');
+	
+	});
+	
 	$(".setting-toggle").click(function(){
 		checkValidateFn();
 	});

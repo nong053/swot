@@ -2,9 +2,11 @@
 <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="main.css" >
 <style>
-body{
-    background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
-}
+@import url(fonts/thsarabunnew.css);
+body{ 
+        font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; ; 
+        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  );
+    }
 .btn-circle {
     width: 3em;
     height: 3em;
@@ -15,6 +17,16 @@ body{
     line-height: 1.428571429;
     border-radius: 3em;
 }
+.title1{
+    color:white;
+}
+.title2{
+    color:white;
+}
+.titleArea{
+    padding:15px;
+    margin: 15px;
+}
 
 </style>
 
@@ -22,7 +34,14 @@ body{
 
 <div class="row">
     <div class="col-md-12"  style="text-align: center; margin-top: 30px;">
-        <button  type="button" id="btn-sw" class="btn btn-primary btn-circle "><i class="fa-sharp fa-solid fa-users"></i> 
+    <div class="titleArea">
+        <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนเพื่อผู้บริหาร</h1>
+        <h3 class="title2">(ด้านแผนกรอบกำลังพล, ด้านแผนปฏิบัติราชการและด้านบริหารความเสี่ยง)</h3>
+    </div>
+    <button  type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
+        <div>MC</div>
+    </button>
+    <button  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
         <div>SW</div>
     </button>
     <!-- <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
@@ -31,12 +50,10 @@ body{
     <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
         <div>KPI</div>
     </button> -->
-    <button  type="button" id="btn-rm" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-code-compare"></i> 
+    <button  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
         <div>RM</div>
     </button>
-    <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
-        <div>MC</div>
-    </button>
+    
     <!-- <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
         <div>MC2</div>
     </button> -->
