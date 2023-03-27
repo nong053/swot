@@ -600,13 +600,20 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
+      <div id="cate_task_alert" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; display:none;" role="alert">
+        <div id="cate_task_alert_text">
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 
+        </div>
+      </div>
+
       <div class="mb-3">
         <label for="cateTaskName" class="form-label">ภารกิจ</label>
         <input type="text" class="form-control" id="cateTaskName" placeholder="ภารกิจ" >
       </div>
       <div class="mb-3">
         <label for="currentPerson" class="form-label">กำลังพลปัจจุบัน</label>
-        <input type="text" class="form-control" id="currentPerson" placeholder="กำลังพลปัจจุบัน" >
+        <input type="text" class="form-control number_only" id="currentPerson" placeholder="กำลังพลปัจจุบัน" >
       </div>
       </div>
       <div class="modal-footer">
@@ -703,20 +710,25 @@
                        
                         </tbody>
                     </table>
-                    <div class="mb-3">
-                        <hr>
-                        <label for="mc_release_type_code" class="form-label">ประเภทข้อมูล</label>
-                        <select class="form-select" id="mc_release_type_code" aria-label="">
-                            <!-- <option value="1">ผู้ดูแลระบบ</option> -->
-                            <option value="1">ผู้ดูแลระบบ</option>
-                            <option value="2">สาธารณะ</option>
-                            <option value="3">ส่วนตัว</option>
-                        </select>
+                    <div id="example_data_alert" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; display:none;" role="alert">
+                        <div id="example_data_alert_text">
+                            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="mc_release_type_name" class="form-label">ชื่อข้อมูลตัวอย่าง</label>
                         <input type="text" class="form-control" id="mc_name" placeholder="ชื่อข้อมูลตัวอย่าง">
                     </div>
+                    <div class="mb-3">
+                     
+                        <label for="mc_release_type_code" class="form-label">ประเภทข้อมูล</label>
+                        <select class="form-select" id="mc_release_type_code" aria-label="">
+                            <!-- <option value="1">ผู้ดูแลระบบ</option> -->
+                            <option value="2">สาธารณะ</option>
+                            <option value="3">ส่วนตัว</option>
+                        </select>
+                    </div>
+                  
                         
                     </div>
                 </div>
@@ -740,9 +752,12 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <!--
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
-
+    -->
+    <script src="http://kpi.dashboardweb.com/js/jquery-2.1.1.js"></script>
+    <script src="http://kpi.dashboardweb.com/kendoCommercial/js/kendo.all.min.js"></script>
 
      <!-- jquery confirm start-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">

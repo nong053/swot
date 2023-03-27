@@ -764,6 +764,7 @@ var saveExampleDataFn = function(uuid){
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
+
 				if(data[0]['status']=="200"){
 				
                     //alert("OK");
@@ -780,6 +781,7 @@ var saveExampleDataFn = function(uuid){
 						content: ' ชื่อตัวอย่างข้อมูลนี้มีการใช้งานแล้ว กรุณาใช้ชื่ออื่่น',
 					});
 				}
+				
 			}
 		}
 	});

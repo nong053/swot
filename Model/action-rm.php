@@ -1280,8 +1280,6 @@ include("config-rm.php");
     }else if($_REQUEST['action']=='showAllExampleDataByUuid'){
        
        
-        
-
         $sql = "SELECT 
         *
         FROM risk_cate_ex where  uu_id='$_REQUEST[uuid]'";
