@@ -510,19 +510,19 @@ var updateTaskFn = function(uuid,t_code){
 	var t_quantity=parseInt($("#t_quantity-"+t_code).val());
 
 
-	if(t_day==0 || t_day=="" || t_day==undefined){
+	if(t_day=="" || t_day==undefined){
 		t_day=0;
 	}
 
-	if(t_hour==0 || t_hour=="" || t_hour==undefined){
+	if( t_hour=="" || t_hour==undefined){
 		t_hour=0;
 	}
 
-	if(t_minute==0 || t_minute=="" || t_minute==undefined){
+	if( t_minute=="" || t_minute==undefined){
 		t_minute=0;
 	}
 
-	if(t_quantity==0 || t_quantity=="" || t_quantity==undefined){
+	if(t_quantity=="" || t_quantity==undefined){
 		t_quantity=0;
 	}
 
@@ -545,10 +545,10 @@ var updateTaskFn = function(uuid,t_code){
 			"uuid":uuid,
 			"action":"updateTask",
 			"t_name":$("#t_name-"+t_code).val(),
-			"t_day":$("#t_day-"+t_code).val(),
-			"t_hour":$("#t_hour-"+t_code).val(),
-			"t_minute":$("#t_minute-"+t_code).val(),
-			"t_quantity":$("#t_quantity-"+t_code).val(),
+			"t_day":t_day,
+			"t_hour":t_hour,
+			"t_minute":t_minute,
+			"t_quantity":t_quantity,
 			"t_x_time":t_x_time,
 			"manpower":manpower,
 			"current_person":$("#current_person-"+t_code).val(),
