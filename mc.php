@@ -233,6 +233,9 @@
                     <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPrint" class="btn btn-info btn-circle ">
                         <i class="fa-sharp fa-solid fa-print"></i>
                     </button>
+                    <button type="button" id="submitPDF" class="btn btn-danger btn-circle main_cate_mc_btn" >
+                                <i class="fa-sharp fa-solid fa-file-pdf"></i>
+                            </button>
                 </div>
             </div>
 

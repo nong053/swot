@@ -1260,6 +1260,9 @@ $("#submitPrint").click(function(){
 		
 	$("#dataTableMCDisplay").printThis();
 });
+$("#submitPDF").click(function(){
+	location.href = webService+"/Model/mpdf/mc-pdf.php?uuid="+sessionStorage.getItem('uuid')+"";
+});
 
 
 //action example management start
