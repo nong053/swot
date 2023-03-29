@@ -150,7 +150,7 @@
 </svg>
 
 <div class="headerFixed">
-        <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+        <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
         <div class=" d-lg-none" style="margin-top: 55px;"></div>
         
         <div class="container">
@@ -2112,9 +2112,11 @@
     <script src="Controller/swot.js"></script>
     <script>
         $(document).ready(function(){
+            /*
             $("#btn-back").click(function(){
                 window.location.href = './';
             });
+            */
         
         });
     </script>

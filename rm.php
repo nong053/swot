@@ -132,7 +132,7 @@
 </head>
   <body>
 
-  <button class="btn btn-primary btn-circle btn-back" id="btn-back"  href="./"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+  <button class="btn btn-primary btn-circle btn-back" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
 <div class="container">
     <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-building-shield"></i> RISK MANAGEMENT</h1>
     <div class="row mb-3">
@@ -953,13 +953,6 @@
 
     <script src="Controller/rm.js"></script>
 
-    <script>
-        $(document).ready(function(){
-            $("#btn-back").click(function(){
-                window.location.href = './';
-            });
-        
-        });
-    </script>
+   
 </body>
 </html>
