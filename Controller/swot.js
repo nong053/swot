@@ -838,7 +838,24 @@ var autoLoginFn=function(){
 		
 			if(data[0]['loginType']=="newUser"){
 				
-				loadExampleDataFn(sessionStorage.getItem('uuid'),1);
+				$.confirm({
+					title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> โหลดข้อมูลตัวอย่างหรือไม่?',
+					content: '',
+					buttons: {
+						confirm: {
+							text: 'ยืนยันการโหลดข้อมูล', 
+							action: function () {
+								loadExampleDataFn(sessionStorage.getItem('uuid'),1);
+							}
+						},
+						cancel:  {
+							text: 'ยกเลิก'
+							
+						}
+					}
+				});
+
+				
 				//insertAndLoadExampleSwot(sessionStorage.getItem('uuid'));
 				//alert("newUser");
 			}else{
@@ -1506,6 +1523,7 @@ $(document).ready(function(){
 
 	
     //var uuid2 = new DeviceUUID().get();
+	/*
 	var du = new DeviceUUID().parse();
     var dua = [
         du.language,
@@ -1530,10 +1548,9 @@ $(document).ready(function(){
         du.isTouchScreen
     ];
     var uuid = du.hashMD5(dua.join(':'));
-		
-	
-		sessionStorage.setItem('uuid', uuid);
-    	autoLoginFn();
+	sessionStorage.setItem('uuid', uuid);
+    */
+	autoLoginFn();
 
 	// $("#getExampleModel").click(function(){
 	// 	getBusinessType();

@@ -1048,6 +1048,7 @@ $(document).ready(function(){
 	sessionStorage.setItem('uuid', uuid);
 	*/
 /*Login Management Start */
+/*
 var du = new DeviceUUID().parse();
 var dua = [
 	du.language,
@@ -1072,8 +1073,8 @@ var dua = [
 	du.isTouchScreen
 ];
 var uuid = du.hashMD5(dua.join(':'));
-
 sessionStorage.setItem('uuid', uuid);
+*/
 
 autoLoginFn();
 

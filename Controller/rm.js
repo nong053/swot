@@ -973,12 +973,13 @@ var loadExampleDataFn = function(uuid,rce_id){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 
-					riskFormFn(sessionStorage.getItem('uuid'));
+					//riskFormFn(sessionStorage.getItem('uuid'));
 					
-					$.alert({
-						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
-						content: 'โหลดข้อมูลตัวอย่างเรียบร้อย',
-					});
+					// $.alert({
+					// 	title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+					// 	content: 'โหลดข้อมูลตัวอย่างเรียบร้อย',
+					// });
+					window.location.reload();
 				}
 
 			}
@@ -1378,6 +1379,7 @@ $(document).ready(function(){
 
 
 /*Login Management Start */
+/*
 var du = new DeviceUUID().parse();
     var dua = [
         du.language,
@@ -1404,8 +1406,8 @@ var du = new DeviceUUID().parse();
     var uuid = du.hashMD5(dua.join(':'));
 
 	sessionStorage.setItem('uuid', uuid);
-	
-	autoLoginFn();
+	*/
+autoLoginFn();
 
 /*Login Management End */
 
