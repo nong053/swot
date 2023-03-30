@@ -1,9 +1,11 @@
 <?php
+include("config-central.php");
 include("config-rm.php");
- $uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
- $sql = "SELECT * FROM users where uu_id='$uuid'";
- $result = $conn->query($sql);
- if ($result->num_rows > 0) {
+$JWT->decode($token_data, $key);
+//  $uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
+//  $sql = "SELECT * FROM users where uu_id='$uuid'";
+//  $result = $conn->query($sql);
+//  if ($result->num_rows > 0) {
 
     //coding here.
     if($_REQUEST['action']=='showRisk'){
@@ -1795,9 +1797,9 @@ include("config-rm.php");
 
         //importExampleJsonData
 
- }else{
-    echo "[{\"status\":\"404\",\"loginStatus\":\"notLogin\"}]";
- }
+//  }else{
+//     echo "[{\"status\":\"404\",\"loginStatus\":\"notLogin\"}]";
+//  }
  $conn->close();
 
 ?>

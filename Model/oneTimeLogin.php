@@ -14,8 +14,19 @@ if($_REQUEST['action']=='register'){
 
         $sql = "INSERT INTO users (email,password,role,created_date,updated_date) VALUES ('$_REQUEST[email]',MD5('$_REQUEST[password]'),'1',NOW(),NOW())";
         if ($conn_ct->query($sql) === TRUE) {
-            echo "[{\"status\":\"200\",\"data\":\"success\"}]";
-            //echo "[{\"loginType\":\"newUser\"}]";
+            $id = mysqli_insert_id($conn_ct);
+           // echo "[{\"status\":\"200\",\"data\":\"success\"}]";
+            $payload = '{"iss":"'.$_REQUEST['email'].'",
+                "id":"'.$id.'",
+                "email":"'.$_REQUEST['email'].'",
+                "role":"1",
+                "login_status":"1",
+                "exp":1300819380
+            }';
+            $token = $JWT->encode($header, $payload, $key);
+    
+            echo "[{\"status\":\"200\",\"data\":\"$id\",\"token\":\"$token\"}]";
+
         }else{
             echo"error ".$conn_ct->error;
         }
@@ -28,6 +39,9 @@ if($_REQUEST['action']=='register'){
     $result_check = $conn_ct->query($sql_check);
 
     if ($result_check->num_rows > 0) {
+        $rs = $result_check->fetch_assoc();
+            
+        
         $payload = '{"iss":"'.$rs['email'].'",
             "id":"'.$rs['id'].'",
             "email":"'.$rs['email'].'",
@@ -36,11 +50,11 @@ if($_REQUEST['action']=='register'){
             "exp":1300819380
         }';
         $token = $JWT->encode($header, $payload, $key);
-
-        echo "[{\"status\":\"200\",\"data\":\"success\",\"token\":\"$token\"}]";
+      
+        echo "[{\"status\":\"200\",\"data\":\"".$rs['id']."\",\"token\":\"$token\"}]";
 
     }else{
-        echo "[{\"status\":\"403\",\"data\":\"Forbidden Error\"}]";
+        echo "[{\"status\":\"401\",\"data\":\"Unauthorized\"}]";
     }
     
 }

@@ -1,3 +1,8 @@
+if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+	window.location = "./index.php";
+	
+}
+
 var dataJsonForImport="";
 
 $( document ).ajaxStart(function() {
@@ -149,7 +154,8 @@ var riskFormFn = function(uuid){
 			"uuid":uuid,
 			"action":"showRisk"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -185,7 +191,8 @@ var riskAddFn = function(uuid){
 			// "total_score":"0"
             
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -215,7 +222,8 @@ var deleteRiskFn=function(uuid,r_code){
 			"action":"deleteRisk",
 			"r_code":r_code
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -259,7 +267,8 @@ var riskSaveFn = function(uuid,r_code){
             "stm_code":$("#stm_code-"+r_code).val(),
             "total_score":total_score,
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']!="200"){
@@ -283,7 +292,8 @@ var stmSelectDataFn_bk=function(uuid){
 			"uuid":uuid,
 			"action":"stmSelectData"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -311,7 +321,8 @@ var lhSelectDataFn_bk=function(uuid){
 			"uuid":uuid,
 			"action":"lhSelectData"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -339,7 +350,8 @@ var imSelectDataFn_bk=function(uuid){
 			"uuid":uuid,
 			"action":"imSelectData"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -393,7 +405,8 @@ var likelihoodMasterFormFn = function(uuid){
 			"uuid":uuid,
 			"action":"lhSelectData"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -438,7 +451,8 @@ var impactMasterFormFn = function(uuid){
 			"uuid":uuid,
 			"action":"imSelectData"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -531,7 +545,8 @@ var evaluationRiskFormFn = function(uuid){
 			"uuid":uuid,
 			"action":"reSelectData"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -553,7 +568,8 @@ var strategyTypeMasterFormFn = function(uuid){
 			"uuid":uuid,
 			"action":"stmSelectData"
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -580,7 +596,8 @@ var likelihoodRiskSaveFn = function(uuid,lh_code){
             "lh_description":$("#lh_description-"+lh_code).val(),
           
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']!="200"){
@@ -609,7 +626,8 @@ var impactRiskFn = function(uuid,im_code){
             "im_score":$("#im_score-"+im_code).val(),
             "im_description":$("#im_description-"+im_code).val(),
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']!="200"){
@@ -638,7 +656,8 @@ var strategyTypeRiskFn = function(uuid,stm_code){
             "stm_score":$("#stm_score-"+stm_code).val(),
             "stm_description":$("#stm_description-"+stm_code).val(),
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']!="200"){
@@ -669,7 +688,8 @@ var strategyTypeRiskAddFn = function(uuid,stm_code){
 			
             
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -699,7 +719,8 @@ var strategyTypeRiskDelFn=function(uuid,stm_code){
 			"action":"deleteStrategyTypeRisk",
 			"stm_code":stm_code
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -729,7 +750,8 @@ var evaluationRiskFn = function(uuid,re_code){
             "re_score_end":$("#re_score_end-"+re_code).val(),
             "re_score_color":$("#re_score_color-"+re_code).val(),
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']!="200"){
@@ -761,7 +783,8 @@ var saveExampleDataFn = function(uuid){
             "rce_type_name":rce_type_name,
 			"rce_name":$("#rce_name").val(),
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 
@@ -832,7 +855,8 @@ var showAllExampleDataUUIDFn = function(uuid){
 			"action":"showAllExampleDataByUuid",
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -858,7 +882,8 @@ var findOneExampleDataFn = function(uuid,rce_id){
 			"action":"findOneExampleData",
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -888,7 +913,8 @@ var updateExampleDataFn = function(uuid,rce_id){
 			"rce_name":$("#rce_name").val(),
 			"rce_id":rce_id,
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -917,7 +943,8 @@ var delExampleDataFn = function(uuid,rce_id){
 			"action":"delExampleData",
 			"rce_id":rce_id
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -942,7 +969,8 @@ var showAllExampleLoadDataFn = function(uuid){
 			"action":"showAllExampleLoadData",
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -968,7 +996,8 @@ var loadExampleDataFn = function(uuid,rce_id){
             "rce_id":rce_id
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -1043,7 +1072,8 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 			"dataRe":dataJsonForImportObject['dataRe']
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -1081,7 +1111,8 @@ var exportExampleDataFn = function(uuid,rce_id){
 			"action":"exportExampleData",
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -1112,7 +1143,8 @@ var autoLoginFn=function(){
 		data:{
 			"uuid":sessionStorage.getItem('uuid'),
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 		
 			if(data[0]['loginType']=="newUser"){
@@ -1377,7 +1409,7 @@ var checkValidateExampleFn  = function(){
 
 $(document).ready(function(){
 
-
+	
 /*Login Management Start */
 /*
 var du = new DeviceUUID().parse();

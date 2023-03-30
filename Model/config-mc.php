@@ -4,6 +4,13 @@ $username = "root";
 $password = "";
 $dbname = "mc_db";
 
+/*
+$servername = "localhost";
+$username = "dashboa2_mcuser";
+$password = "5013076025";
+$dbname = "dashboa2_mcdb";
+*/
+
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
 $conn->set_charset("utf8");

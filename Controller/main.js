@@ -1,5 +1,7 @@
 
 var webService="http://localhost/swot";
+//var webService="http://dashboardweb.com/swot";
+
 var navigator_info = "";
 var screen_info ="";
 var uid = "";
@@ -19,7 +21,7 @@ function commaSeparateNumber(val){
 
 
   $(document).ready(function(){
-
+/*
     navigator_info = window.navigator;
     screen_info = window.screen;
     uid = navigator_info.mimeTypes.length;
@@ -29,9 +31,9 @@ function commaSeparateNumber(val){
     uid += screen_info.width || '';
     uid += screen_info.pixelDepth || '';
   
-    //alert(uid);
-    sessionStorage.setItem('uuid', uid);
 
+    sessionStorage.setItem('uuid', uid);
+*/
 
 
     

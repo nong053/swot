@@ -3,7 +3,12 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "swot_db";
-
+/*
+$servername = "localhost";
+$username = "dashboa2_swotuser";
+$password = "5013076025";
+$dbname = "dashboa2_swotdb";
+*/
 // Create connection
 $conn = new mysqli($servername, $username, $password,$dbname);
 $conn->set_charset("utf8");

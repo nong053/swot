@@ -1,4 +1,12 @@
+if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+	window.location = "./index.php";
+	
+}
+
 var dataJsonForImport="";
+
+
+
 
 $( document ).ajaxStart(function() {
 	$("body").mLoading();
@@ -247,6 +255,7 @@ var findOneTaskCate=function(uuid,tc_code){
 			"tc_code":tc_code,
 			"action":"findOneCate",
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 	
 			if(data[0]!=="" || data[0]!==null){
@@ -274,6 +283,7 @@ var showTaskCate=function(uuid,showDisplayOnly){
 			"uuid":uuid,
 			"action":"showCate",
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -304,6 +314,7 @@ var updateTaskCateFn=function(uuid){
 			"current_person":$("#currentPerson").val(),
 			"tc_code":$("#idTaskCate").val(),
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -336,6 +347,7 @@ var deleteTaskCate=function(uuid,tc_code){
 			"action":"deleteCate",
 			"tc_code":tc_code
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -362,6 +374,7 @@ var deleteTaskFn=function(uuid,t_code,tc_code){
 			"t_code":t_code,
 			"tc_code":tc_code
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -412,6 +425,7 @@ var insertTaskCateFn=function(uuid){
 			"current_person":$("#currentPerson").val(),
 			
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -488,6 +502,7 @@ var addTaskFn = function(uuid,tc_code){
 			"action":"insertTask",
 			"tc_code":tc_code,
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -526,7 +541,7 @@ var updateTaskFn = function(uuid,t_code){
 		t_quantity=0;
 	}
 
-	t_x_time=((t_day*7)+(t_hour)+(t_minute/60))*t_quantity;
+	t_x_time=((t_day*7*60)+(t_hour*60)+(t_minute))*t_quantity;
 
 	
 
@@ -554,6 +569,7 @@ var updateTaskFn = function(uuid,t_code){
 			"current_person":$("#current_person-"+t_code).val(),
 			"t_code":t_code,
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -588,6 +604,7 @@ var saveExampleDataFn = function(uuid){
             "mc_release_type_name":mc_release_type_name,
 			"mc_name":$("#mc_name").val(),
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -664,6 +681,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 			"action":"showAllExampleDataByUuid",
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -691,6 +709,7 @@ var findOneExampleDataFn = function(uuid,mc_id){
 			"action":"findOneExampleData",
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -722,7 +741,8 @@ var updateExampleDataFn = function(uuid,mc_id){
 			"mc_name":$("#mc_name").val(),
 			"mc_id":mc_id,
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -752,7 +772,8 @@ var delExampleDataFn = function(uuid,mc_id){
 			"action":"delExampleData",
 			"mc_id":mc_id
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -777,7 +798,8 @@ var showAllExampleLoadDataFn = function(uuid){
 			"action":"showAllExampleLoadData",
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -803,7 +825,8 @@ var loadExampleDataFn = function(uuid,mc_id){
             "mc_id":mc_id
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -875,7 +898,8 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 			
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -913,7 +937,8 @@ var exportExampleDataFn = function(uuid,mc_id){
 			"action":"exportExampleData",
 	
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
@@ -959,7 +984,8 @@ var autoLoginFn=function(){
 		data:{
 			"uuid":sessionStorage.getItem('uuid'),
 		},
-		success:function(data){
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+success:function(data){
 
 		
 			if(data[0]['loginType']=="newUser"){
@@ -1043,6 +1069,10 @@ var checkValidateCateTaskFn  = function(){
 }
 
 $(document).ready(function(){
+
+	
+
+
 	/*
 	var uuid = new DeviceUUID().get();
 	sessionStorage.setItem('uuid', uuid);

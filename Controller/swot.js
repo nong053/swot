@@ -1,4 +1,9 @@
 
+if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+	window.location = "./index.php";
+	
+}
+
 $( document ).ajaxStart(function() {
 	$("body").mLoading();
 	console.log('start');
@@ -581,6 +586,7 @@ var findOne=function(uuid){
 			"uuid":uuid,
 			"action":"findOne",
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -613,6 +619,7 @@ var insertAndLoadExampleSwot_bk=function(uuid){
 			"uuid":uuid,
 			"action":"insertAndLoadExampleSwot",
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 			if(data[0]['status']=="200"){
 				alert("load data success.");
@@ -634,6 +641,7 @@ var loadExampleSwot_bk=function(b_id,swot_detail){
 			"b_id":b_id,
 			"swot_detail":swot_detail
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			
@@ -774,6 +782,7 @@ var saveSwot=function(){
 
 
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 		
@@ -806,6 +815,7 @@ var getBusinessType=function(){
 			"uuid":sessionStorage.getItem('uuid'),
 			"action":"business-type",
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			
@@ -833,6 +843,7 @@ var autoLoginFn=function(){
 		data:{
 			"uuid":sessionStorage.getItem('uuid'),
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 		
@@ -943,6 +954,7 @@ var saveExampleDataFn = function(uuid){
             "b_release_type_name":b_release_type_name,
 			"b_type_name":$("#b_type_name").val(),
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -974,6 +986,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 			"action":"showAllExampleDataByUuid",
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1000,6 +1013,7 @@ var showAllExampleLoadDataFn = function(uuid){
 			"action":"showAllExampleLoadData",
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1025,6 +1039,7 @@ var loadExampleDataFn = function(uuid,b_id){
             "b_id":b_id
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1075,6 +1090,7 @@ var findOneExampleDataFn = function(uuid,b_id){
 			"action":"findOneExampleData",
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1106,6 +1122,7 @@ var updateExampleDataFn = function(uuid,b_id){
 			"b_type_name":$("#b_type_name").val(),
 			"b_id":b_id,
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1135,6 +1152,7 @@ var delExampleDataFn = function(uuid,b_id){
 			"action":"delExampleData",
 			"b_id":b_id
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1171,6 +1189,7 @@ var exportExampleDataFn = function(uuid,b_id){
 			"action":"exportExampleData",
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1201,6 +1220,7 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 			
 	
 		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
@@ -1487,6 +1507,8 @@ var checkValidateExampleFn  = function(){
 
 }
 $(document).ready(function(){
+
+	
 
 
 	$("#btnDevTeam").click(function(){

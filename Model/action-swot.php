@@ -1,9 +1,20 @@
 <?php
+include("config-central.php");
 include("config.php");
-$uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
- $sql = "SELECT * FROM users where uu_id='$uuid'";
- $result = $conn->query($sql);
- if ($result->num_rows > 0) {
+
+// Convert JSON string to Array
+$JWT->decode($token_data, $key);
+/*
+$json = $JWT->decode($token_data, $key);
+$jsonArray = json_decode($json, true);
+*/
+// if($jsonArray["login_status"]==1){
+
+
+// $uuid=isset($_REQUEST['uuid']) ? $_REQUEST['uuid'] : '';
+//  $sql = "SELECT * FROM users where uu_id='$uuid'";
+//  $result = $conn->query($sql);
+//  if ($result->num_rows > 0) {
 
     //coding here.
     if($_REQUEST['action']=='findOne'){
@@ -861,9 +872,11 @@ if ($conn->query($sql_insert_swot) === TRUE) {
 
     
 
- }else{
-    echo "[{\"status\":\"404\",\"loginStatus\":\"notLogin\"}]";
- }
+//  }else{
+//     echo "[{\"status\":\"401\",\"data\":\"Unauthorized\"}]";
+//  }
+
+
  $conn->close();
 
 ?>

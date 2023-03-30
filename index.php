@@ -44,9 +44,15 @@ body{
 </style>
 
 
-
+<div class="container " style="text-align: right; color:white;">
+    <div style="padding: 15px; cursor:pointer; display:none;" id="btnLogout">
+       <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ 
+    </div>
+</div>
 <div class="row">
+    
     <div class="col-md-12"  style="text-align: center; margin-top: 30px;">
+    
     <div class="titleArea">
         <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนเพื่อผู้บริหาร</h1>
         <h3 class="title2">(ด้านแผนกรอบกำลังพล, ด้านแผนปฏิบัติราชการและด้านบริหารความเสี่ยง)</h3>

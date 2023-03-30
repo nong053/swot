@@ -155,13 +155,30 @@ var validateLoginFn = function(){
 
 
 $(document).ready(function(){
+ 
+    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+        $("#loginModal").modal('show');
+        $("#btnLogout").hide();
+    }else{
+    
+        $("#loginModal").modal('hide');
+        $("#btnLogout").show();
+    }
 
+
+    $("#btnLogout").click(function(){
+        
+        sessionStorage.setItem('token',"");
+        sessionStorage.setItem('uuid',"");
+        $("#btnLogout").hide();
+        $("#loginModal").modal('show');
+    });
 
     $("#register_password").keyup(function(){	
         checkPasswordStrength();
     });
-
-   $("#loginModal").modal('show');
+    
+   /*
     var navigator_info = window.navigator;
     var screen_info = window.screen;
     var uid = navigator_info.mimeTypes.length;
@@ -171,7 +188,7 @@ $(document).ready(function(){
     uid += screen_info.width || '';
     uid += screen_info.pixelDepth || '';
     console.log(uid);
-
+*/
 
     $("#register_email").val();
     $("#register_password").val();
@@ -215,10 +232,16 @@ $(document).ready(function(){
                             if(data[0]['status']=="200"){
                                 clearFormRegisterFn();
                                 //alert("success and redirect to app");
+                                sessionStorage.setItem('token', data[0]['token']);
+                                sessionStorage.setItem('uuid', data[0]['data']);
+
                                   $.alert({
                                     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
                                     content: 'ลงทะเบียนเรียบร้อย',
                                 });
+                                $("#loginModal").modal('hide');
+                                $("#btnLogout").show();
+
                             }else if(data[0]['status']==403){
                          
                                 $("#register_alert").show();
@@ -248,13 +271,18 @@ $(document).ready(function(){
                             if(data[0]!="" || data[0]!=null){
                                 if(data[0]['status']=="200"){
                                 clearFormLoginFn();
-                                 alert("success and redirect to app");
+                                sessionStorage.setItem('token', data[0]['token']);
+                                sessionStorage.setItem('uuid', data[0]['data']);
+
+                                $("#loginModal").modal('hide');
+                                $("#btnLogout").show();
+                           
                                 //  $.alert({
                                 //     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
                                 //     content: 'บันทึกข้อมูลเรียบร้อย',
                                 // });
 
-                                }else if(data[0]['status']=="403"){
+                                }else if(data[0]['status']=="401"){
                                     $("#login_alert").show();
                                     $("#login_alert_text").html("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> รหัสผ่านไม่ถูกต้อง</div>");
                                 }
