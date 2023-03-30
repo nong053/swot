@@ -1,20 +1,38 @@
 <?php
-include('config.php');
+//include('config.php');
+include('config-central.php');
 
-$sql_check = "
-SELECT * FROM users where email='$_REQUEST[email]'";
-$result_check = $conn->query($sql_check);
+if($_REQUEST['action']=='register'){
+    $sql_check = "
+    SELECT * FROM users where email='$_REQUEST[email]'";
+    $result_check = $conn_ct->query($sql_check);
 
-if ($result_check->num_rows > 0) {
-    echo "[{\"status\":\"403\",\"data\":\"data_duplicate\"}]";
+    if ($result_check->num_rows > 0) {
+        echo "[{\"status\":\"403\",\"data\":\"data_duplicate\"}]";
 
-}else{
+    }else{
 
-    $sql = "INSERT INTO users (email,password,created_date,updated_date) VALUES ('$_REQUEST[email]','$_REQUEST[password]',NOW(),NOW())";
-    if ($conn->query($sql) === TRUE) {
-        echo "[{\"status\":\"200\",\"data\":\"success\"}]";
-    //echo "[{\"loginType\":\"newUser\"}]";
+        $sql = "INSERT INTO users (email,password,role,created_date,updated_date) VALUES ('$_REQUEST[email]',MD5('$_REQUEST[password]'),'1',NOW(),NOW())";
+        if ($conn_ct->query($sql) === TRUE) {
+            echo "[{\"status\":\"200\",\"data\":\"success\"}]";
+            //echo "[{\"loginType\":\"newUser\"}]";
+        }else{
+            echo"error ".$conn_ct->error;
+        }
+
     }
+}else if($_REQUEST['action']=='login'){
+   
+    $sql_check = "
+    SELECT * FROM users where email='$_REQUEST[email]' and password=MD5('$_REQUEST[password]')";
+    $result_check = $conn_ct->query($sql_check);
 
+    if ($result_check->num_rows > 0) {
+        echo "[{\"status\":\"200\",\"data\":\"success\"}]";
+
+    }else{
+        echo "[{\"status\":\"403\",\"data\":\"Forbidden Error\"}]";
+    }
+    
 }
 ?>

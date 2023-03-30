@@ -29,7 +29,7 @@ function commaSeparateNumber(val){
     uid += screen_info.width || '';
     uid += screen_info.pixelDepth || '';
   
-    alert(uid);
+    //alert(uid);
     sessionStorage.setItem('uuid', uid);
 
 
