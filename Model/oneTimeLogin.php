@@ -28,7 +28,16 @@ if($_REQUEST['action']=='register'){
     $result_check = $conn_ct->query($sql_check);
 
     if ($result_check->num_rows > 0) {
-        echo "[{\"status\":\"200\",\"data\":\"success\"}]";
+        $payload = '{"iss":"'.$rs['email'].'",
+            "id":"'.$rs['id'].'",
+            "email":"'.$rs['email'].'",
+            "role":"'.$rs['role'].'",
+            "login_status":"1",
+            "exp":1300819380
+        }';
+        $token = $JWT->encode($header, $payload, $key);
+
+        echo "[{\"status\":\"200\",\"data\":\"success\",\"token\":\"$token\"}]";
 
     }else{
         echo "[{\"status\":\"403\",\"data\":\"Forbidden Error\"}]";
