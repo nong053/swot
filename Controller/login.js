@@ -157,12 +157,16 @@ var validateLoginFn = function(){
 $(document).ready(function(){
  
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
-        $("#loginModal").modal('show');
+        // $("#loginModal").modal('show');
         $("#btnLogout").hide();
+        $("#btnArea").hide();
+        $("#formLoginArea").show();
     }else{
     
-        $("#loginModal").modal('hide');
+        //$("#loginModal").modal('hide');
         $("#btnLogout").show();
+        $("#btnArea").show();
+        $("#formLoginArea").hide();
     }
 
 
@@ -171,7 +175,9 @@ $(document).ready(function(){
         sessionStorage.setItem('token',"");
         sessionStorage.setItem('uuid',"");
         $("#btnLogout").hide();
-        $("#loginModal").modal('show');
+       // $("#loginModal").modal('show');
+       $("#btnArea").hide();
+       $("#formLoginArea").show();
     });
 
     $("#register_password").keyup(function(){	
@@ -239,8 +245,11 @@ $(document).ready(function(){
                                     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
                                     content: 'ลงทะเบียนเรียบร้อย',
                                 });
-                                $("#loginModal").modal('hide');
+                                //$("#loginModal").modal('hide');
                                 $("#btnLogout").show();
+
+                                $("#btnArea").show();
+                                $("#formLoginArea").hide();
 
                             }else if(data[0]['status']==403){
                          
@@ -274,8 +283,10 @@ $(document).ready(function(){
                                 sessionStorage.setItem('token', data[0]['token']);
                                 sessionStorage.setItem('uuid', data[0]['data']);
 
-                                $("#loginModal").modal('hide');
+                                //$("#loginModal").modal('hide');
                                 $("#btnLogout").show();
+                                $("#btnArea").show();
+                                $("#formLoginArea").hide();
                            
                                 //  $.alert({
                                 //     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
