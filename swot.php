@@ -12,6 +12,7 @@
     
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" >
+    <link rel="stylesheet" href="css/swot.css" >
 
     <!-- <link rel="stylesheet" type="text/css" media="print" href="print.css" /> -->
 
@@ -29,108 +30,7 @@
         font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; ; 
         background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  );
     }
-        .font-score{
-            
-        }
-        .font-h-score{
-            text-align: left;
-            font-weight: bold;
-        }
-        .graph{
-            width: 100%;
-             height: 700px; 
-            /* background-color:bisque; */
-        }
-        .setting-toggle {
-            position: fixed;
-            top:75px;
-            right: 33px;
-            text-decoration: none;
-            z-index: 1016;
-            -webkit-transform: rotate(-90deg) translate3d(-25px, 39px, 0);
-            transform: rotate(-90deg) translate3d(-25px, 39px, 0);
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            margin-top: -83px;
-            -webkit-box-shadow: var(--phoenix-setting-toggle-shadow);
-            box-shadow: var(--phoenix-setting-toggle-shadow);
-        }
-
-        .widthSwotName{
-            width: 70%;
-        }
-        .widthSwotWeight{
-            width:15%;
-            text-align: center;
-        }
-        .widthSwotScore{
-            width: 15%;
-            text-align: center;
-        }
-        .card-header{
-            font-weight: bold;
-        }
-        .total-swot{
-            text-align: right;
-            font-weight: bold;
-        }
-        .accordion {
-            --bs-accordion-body-padding-x: 5px;
-        }
-       
-        .headeTitle{
-            color:white;
-            text-align: center;
-            position: absolute;
-            top:25px;
-        }
-        .swot_seq{
-            width: 10%;
-            text-align: center;
-        }
-        .swot_name{
-            width: 70%;
-            text-align: left;
-        }
-        .swot_score number_only{
-            width: 20%;
-            text-align: right;
-        }
-        .headerFixed{
-             background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  ); 
-            position:fixed; z-index:10; display:block;width:100%;
-            top:0px;
-            height: 75px;
-            /* border-bottom: 1px solid #000039; */
-          
- 
-        }
-
-        .alert {
-   
-            --bs-alert-margin-bottom: 0px;
-        }
-      
-        .card-body-ex{
-            padding-left:5px; padding-right:5px
-        }
-        .alert-ex {
-            padding-right: 10px;
-            padding-left: 10px;
-        }
-        .textarea-height-ex{
-            height: 100px;
-        }
-        .card-body-ex{
-           padding-left:5px; padding-right:5px;
-        }
         
-
-        @media print {
-           
-        }
-
-
 
         
     </style>
@@ -155,14 +55,14 @@
         
         <div class="container">
        
-           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id='btnDevTeam' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
-           <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT ANALYSIS</h1>
+           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT </h1>
 
         </div>
 </div>
 <div style="margin-bottom: 80px;" class="d-none d-lg-block"></div>
 <div style="margin-bottom: 75px;" class=" d-lg-none"></div>
-<div class="container"  >
+<div class="container"   >
     
     <div id="tableRmDataAllArea" aria-hidden="true" >
 
@@ -174,12 +74,55 @@
         
 
         <div class="card text-bg-defualt  mb-3 " >
-            <div class="card-header placeholder-glow" id="swot_detail_header">&nbsp;
-                <!-- SWOT Analysis (ระบบป้องกันภัยทางอากาศ  รุ่น “PECHORA-2D” SAM S-125-2D)  -->
+            <div class="card-header placeholder-glow" >&nbsp;
+            SWOT Analysis
             </div>
-            <div class="card-body"  >
+            <div class="card-body" style="padding: 5px;" >
                 <!-- <div id="chartGe" class="chart graph" ></div> -->
-                <div id="chartPrint" class="chart graph" style="width: 420px; height: 400px;margin:auto; display:block;"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div id="chartPrint" class="chart graph" style="width: 350px; height: auto;margin:auto; display:block; padding: 0px;"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="alert alert-warning" role="alert" style="margin-top: 10px;margin-bottom: 10px;" id="swot_detail_header">
+                        A simple warning alert—check it out!
+                        </div>
+                        <table class="table  table-striped tableRmData">
+                            <!-- <thead>
+                                <tr >
+                                    <th class="swot_seq">#</th>
+                                    <th class="swot_name">สรุปคะแนน (SWOT)</th>
+                                    <th class="swot_score number_only">คะแนน</th>
+                                </tr>
+                            </thead> -->
+                            <tbody >
+                                <tr  class="table-primary">
+                                    <td class="swot_seq">S</td>
+                                    <td class="swot_name">จุดแข็ง (Strengths)</td>
+                                    <td class="swot_score">5.00 คะแนน</td>
+                                </tr>
+                                <tr  class="table-secondary">
+                                    <td class="swot_seq">W</td>
+                                    <td class="swot_name">จุดอ่อน (Weaknesses)</td>
+                                    <td class="swot_score">5.00 คะแนน</td>
+                                </tr>
+                                <tr  class="table-success">
+                                    <td class="swot_seq">O</td>
+                                    <td class="swot_name">โอกาส (Opportunities)</td>
+                                    <td class="swot_score">5.00 คะแนน</td>
+                                </tr>
+                                <tr  class="table-danger">
+                                    <td class="swot_seq">T</td>
+                                    <td class="swot_name">ภัยคุกคาม (Threats)</td>
+                                    <td class="swot_score">5.00 คะแนน</td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+               
             </div>
         </div>
   
@@ -530,16 +473,16 @@
         </div>
     </div>
 
-
+    <div class="bottomFooter" style="clear: both; height:100px;"></div>
     </div><!-- #tableRmDataAllArea-->
 
 
 
     
     
-    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
+    <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970; height:95%;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-sharp fa-solid fa-angles-right"></i> SWOT FORM </h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold; "><i data-bs-dismiss="offcanvas" aria-label="Close" style="cursor:pointer;" class="fa-sharp fa-solid fa-angles-right"></i> SWOT FORM </h5>
         <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="container"  >
@@ -576,22 +519,34 @@
             <div class="card text-bg-default mb-3" >
                             <div class="card-header">
 
-                                รายละเอียด SWOT
+                                ข้อมูลทั่วไป
 
                             </div>
-                            <div class="card-body">
+                            <div class="card-body card-body-ex">
                                 <div id="swot_detail_alert" class="row alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
                                     <!-- <i class="fa fa-exclamation" aria-hidden="true"></i> -->
                                     <!-- <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
                                     <!-- <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span> -->
                                     <div id="swot_detail_alert_text"></div>
                                 </div>
-                                <div class="row mb-31">
-
-                                    <textarea class="form-control textarea-height-ex" id="swot_detail"  placeholder="รายละเอียด SWOT"></textarea>
-                                
+                                <div class="alert alert-primary mb-3 alert-ex">
+                                    <div class="row mb-3">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>ชื่อ SWOT</label>
+                                                <textarea class="form-control textarea-height-ex" id="swot_name"  placeholder="ชื่อ SWOT"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>รายละเอียด SWOT</label>
+                                                <textarea class="form-control textarea-height-ex" id="swot_detail"  placeholder="รายละเอียด SWOT"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                
 
                             </div>
                         </div>
@@ -1731,152 +1686,8 @@
   </div>
 </div>
 <!--Model -->
-<!-- for export pdf start-->
-
-<table id="forExportPDF" class="table" style="display:none; font-size:48px; ">
-            
-    <tr>
-        <td colspan="2">กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส)</td>
-    </tr>
-    <tr>
-        <td>
-            <table class="table1  table-striped tableRmData">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">จุดแข็ง (Strengths)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataStrengths">
-
-                </tbody>
-            </table>
-        </td>
-        <td>
-            <table class="table1  table-striped ">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">โอกาส (Opportunities)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataOpportunities ">
-
-                </tbody>
-            </table>
-        </td>
-        
-    </tr>
-
-    <tr>
-        <td colspan="2">กลยุทธ์เชิงป้องกัน ST (จุดแข็งและภัยคุกคาม)</td>
-    </tr>
-    <tr>
-        <td>
-            <table class="table1  table-striped ">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">จุดแข็ง (Strengths)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataStrengths"></tbody>
-            </table>
-        </td>
-        <td>
-            <table class="table1  table-striped ">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">ภัยคุกคาม (Threats)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataThreats">
-
-                </tbody>
-            </table>
-        </td>
-        
-    </tr>
 
 
-    <tr>
-        <td colspan="2">กลยุทธ์เชิงแก้ไข WO (จุดอ่อนและโอกาส)</td>
-    </tr>
-    
-    <tr>
-        <td>
-            <table class="table  table-striped ">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataWeaknesses"></tbody>
-            </table>
-        </td>
-        <td>
-            <table class="table  table-striped ">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">โอกาส (Opportunities)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataOpportunities">
-                    
-                </tbody>
-            </table>
-        </td>
-        
-    </tr>
-
-
-    <tr>
-        <td colspan="2">กลยุทธ์เชิงรับ WT (จุดอ่อนและภัยคุกคาม)</td>
-    </tr>
-    <tr>
-        <td>
-            <table class="table  table-striped tableRmData">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">จุดอ่อน (Weaknesses)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataWeaknesses">
-
-                </tbody>
-            </table>
-        </td>
-        <td>
-            <table class="table  table-striped tableRmData">
-                <thead>
-                    <tr>
-                        <th class="swot_seq">#</th>
-                        <th class="swot_name">ภัยคุกคาม (Threats)</th>
-                        <th class="swot_score number_only">คะแนน</th>
-                    </tr>
-                </thead>
-                <tbody class="dataThreats">
-
-                </tbody>
-            </table>
-        </td>
-        
-    </tr>
-
-    
-</table>
-<!-- for export pdf end-->
 <!-- for export excel start-->
 <table id="forExportExcel" class="table" style="display:none;">
             
@@ -1981,6 +1792,51 @@
 
     
 </table>
+
+
+
+<div class="footerFixed  d-block d-sm-none " >
+    <div class="container">
+        <div class="row ">
+            <div class="col">
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle" id="btn-back" onclick="window.location.href='./'" >
+                    <i class="fa-sharp fa-solid fa-circle-left"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+            <!-- <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id="btnDevTeam" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle btnDevTeam" id="btn-back" data-toggle="modal" data-target="#teamModal" >
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+             
+            </div>
+            <div class="col">
+              
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
+                    <i class="fa-sharp fa-solid fa-gear "></i>
+                    </button>
+                </div>
+             
+            </div>
+            <!--
+            <div class="col">
+               
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle" id="btn-back" onclick="window.location.href='./'" >
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </button>
+                </div>
+             
+            </div>
+            -->
+        </div>
+    </div>
+</div>
 
 <!-- for export exel end-->
 <!-- Modal -->
@@ -2124,18 +1980,20 @@
 <!--Model -->
 <!--Modal-->
 <!-- Modal -->
-<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true">
+<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" style="height:90%;">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="teamModalLabel">ทีมผู้พัฒนา</h5>
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button> -->
+       
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         
+        </button>
+
       </div>
       <div class="modal-body">
-        <divv class="row">
-            <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-4 card_custom">
                 <div class="card" >
                     <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -2147,7 +2005,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 card_custom">
                 <div class="card" >
                     <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
                     <div class="card-body">
@@ -2159,7 +2017,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 card_custom">
                 <div class="card" >
                     <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="ร.ท.โฆษิต อามรมณ์สวะ">
                     <div class="card-body ">
@@ -2175,7 +2033,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" id="btnDevTeamClose" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="btnDevTeamClose" class="btn btn-secondary btnDevTeamClose" data-dismiss="modal">ปิด</button>
      
       </div>
     </div>

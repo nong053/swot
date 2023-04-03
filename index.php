@@ -44,6 +44,7 @@ body{
     color:white;
 }
 
+
 </style>
 
 
@@ -57,8 +58,9 @@ body{
     <div class="col-md-12"  >
     
         <div class="titleArea" style="text-align: center; margin-top: 30px;">
-            <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนเพื่อผู้บริหาร</h1>
-            <h3 class="title2">(ด้านแผนกรอบกำลังพล, ด้านแผนปฏิบัติราชการและด้านบริหารความเสี่ยง)</h3>
+            <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนสำหรับผู้บริหาร</h1>
+            <h2 class="title2">(Management analysis and planning tools)</h2>
+            <h3 class="title2">ด้านแผนกรอบกำลังพล ด้านแผนปฏิบัติราชการ ด้านบริหารความเสี่ยง</h3>
         </div>
         <div id='btnArea' style="text-align: center; margin: 30px; display:none;">
             <button onclick="window.location.href='./mc.php'"  type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
@@ -81,7 +83,7 @@ body{
                 <div>MC2</div>
             </button> -->
         </div>
-        <div id='formLoginArea' style="max-width: 350px;margin:auto; ">
+        <div id='formLoginArea' style="max-width: 350px;margin:auto; display:none;">
             <!-- body form login start-->
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">

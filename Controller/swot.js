@@ -319,7 +319,9 @@ var calculateSwotFn = function(){
 		},
 		chartArea: {
 			 //background: "#ffc107",
-			 //visible: false
+			 //visible: false,
+			 width: 350,
+			 height:350
 		  },
 		legend: {
 			position: "bottom",
@@ -334,7 +336,7 @@ var calculateSwotFn = function(){
 		}],
 		categoryAxis: {
 			//categories: ["Strengths", "Weaknesses", "Opportunities", "Threats"]
-			categories: ["จุดแข็ง", "จุดอ่อน", "โอกาส", "ภัยคุกคาม"]
+			categories: ["S", "W", "O", "T"]
 		},
 		valueAxis: {
 			labels: {
@@ -1511,7 +1513,7 @@ $(document).ready(function(){
 	
 
 
-	$("#btnDevTeam").click(function(){
+	$(".btnDevTeam").click(function(){
 		$("#teamModal").modal('show');
 	
 	});
