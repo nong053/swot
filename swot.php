@@ -77,14 +77,14 @@
             <div class="card-header placeholder-glow" >&nbsp;
             SWOT Analysis
             </div>
-            <div class="card-body" style="padding: 5px;" >
+            <div class="card-body" style="padding-top: 5px;" >
                 <!-- <div id="chartGe" class="chart graph" ></div> -->
                 <div class="row">
                     <div class="col-md-6">
                         <div id="chartPrint" class="chart graph" style="width: 350px; height: auto;margin:auto; display:block; padding: 0px;"></div>
                     </div>
                     <div class="col-md-6">
-                        <div class="alert alert-warning" role="alert" style="margin-top: 10px;margin-bottom: 10px;" id="swot_detail_header">
+                        <div class="alert alert-warning" role="alert" style="margin-top: 10px;margin-bottom: 15px;" id="swot_detail_header">
                         A simple warning alert—check it out!
                         </div>
                         <table class="table  table-striped tableRmData">
