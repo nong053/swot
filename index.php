@@ -40,6 +40,9 @@ body{
 .weak-password{
     color:red;
 }
+.text_form{
+    color:white;
+}
 
 </style>
 
@@ -51,31 +54,89 @@ body{
 </div>
 <div class="row">
     
-    <div class="col-md-12"  style="text-align: center; margin-top: 30px;">
+    <div class="col-md-12"  >
     
-    <div class="titleArea">
-        <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนเพื่อผู้บริหาร</h1>
-        <h3 class="title2">(ด้านแผนกรอบกำลังพล, ด้านแผนปฏิบัติราชการและด้านบริหารความเสี่ยง)</h3>
-    </div>
-    <button onclick="window.location.href='./mc.php'"  type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
-        <div>MC</div>
-    </button>
-    <button onclick="window.location.href='./swot.php'" type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
-        <div>SW</div>
-    </button>
-    <!-- <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
-        <div>BS</div>
-    </button>
-    <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
-        <div>KPI</div>
-    </button> -->
-    <button onclick="window.location.href='./rm.php'" type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-        <div>RM</div>
-    </button>
+        <div class="titleArea" style="text-align: center; margin-top: 30px;">
+            <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนเพื่อผู้บริหาร</h1>
+            <h3 class="title2">(ด้านแผนกรอบกำลังพล, ด้านแผนปฏิบัติราชการและด้านบริหารความเสี่ยง)</h3>
+        </div>
+        <div id='btnArea' style="text-align: center; margin: 30px; display:none;">
+            <button onclick="window.location.href='./mc.php'"  type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
+                <div>MC</div>
+            </button>
+            <button onclick="window.location.href='./swot.php'" type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
+                <div>SW</div>
+            </button>
+            <!-- <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
+                <div>BS</div>
+            </button>
+            <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
+                <div>KPI</div>
+            </button> -->
+            <button onclick="window.location.href='./rm.php'" type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <div>RM</div>
+            </button>
+            
+            <!-- <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
+                <div>MC2</div>
+            </button> -->
+        </div>
+        <div id='formLoginArea' style="max-width: 350px;margin:auto; ">
+            <!-- body form login start-->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">เข้าสู่ระบบ</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">ลงทะเบียน</button>
+                </li>
+                
+            </ul>
+                <div class="tab-content" id="myTabContent" style="padding-top: 15px;">
+                    <div  class="tab-pane fade show active" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+
+                        <div id="login_alert" class="row alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
+                            <div id="login_alert_text"></div>
+                    
+                            
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="login_email" class="form-label text_form">อีเมล์</label>
+                            <input type="email" class="form-control" id="login_email" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="login_password" class="form-label text_form">รหัสผ่าน</label>
+                            <input type="password" class="form-control" id="login_password" placeholder="รหัสผ่าน">
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="register-tab-pane" role="tabpanel" aria-labelledby="register-tab" tabindex="0">
+                        
+                        <div id="register_alert" class="row alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
+                            <div id="register_alert_text"></div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="register_email" class="form-label text_form">อีเมล์</label>
+                            <input type="email" class="form-control" id="register_email" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="register_password" class="form-label text_form text_form">รหัสผ่าน</label> <span id='password-strength-status'></span>
+                            <input type="password" class="form-control" id="register_password" placeholder="รหัสผ่าน">
+                        </div>
+                        <div class="mb-3">
+                            <label for="register_confirm_password" class="form-label text_form text_form">ยืนยันรหัสผ่าน</label>
+                            <input type="password" class="form-control" id="register_confirm_password" placeholder="ยืนยันรหัสผ่าน">
+                        </div>
+                    </div>
+                    <input type="hidden" value="login" id="actionLR">
+                    <button type="button" id="btnSubmitLR" style="width:100%;" class="btn btn-primary">ตกลง</button>
+
+                </div>
+                <!-- body form login end-->
+        </div>
     
-    <!-- <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
-        <div>MC2</div>
-    </button> -->
     </div>
 </div>
 
@@ -88,17 +149,14 @@ body{
 
 
 <!-- Modal -->
-<div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel"><b><i class="fa fa-lock" aria-hidden="true"></i> ลงชื่อเข้าใช้งาน</b></h1>
-        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+    
       </div>
       <div class="modal-body">
-
-
-
 
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
@@ -151,20 +209,15 @@ body{
         </div>
 
 
-        
-
       </div>
       <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button> -->
+  
         <input type="hidden" value="login" id="actionLR">
-        <button type="button" id="btnSubmitLR" class="btn btn-primary">
-            <!-- <i class="fa fa-unlock-alt" aria-hidden="true"></i> -->
-            <!-- <i class="fa fa-key" aria-hidden="true"></i> -->
-         ตกลง</button>
+        <button type="button" id="btnSubmitLR" class="btn btn-primary">ตกลง</button>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
