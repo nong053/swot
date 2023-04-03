@@ -640,28 +640,33 @@
                                 <div class="alert alert-primary mb-3 alert-ex"  >
                                     <div class="row mb-3" >
                                         <div class="col-md-12">
-                                          
-                                                <textarea class="form-control s_name textarea-height-ex" id="s1_name" placeholder="ปัจจัยภายใน จุดแข็ง#1" ></textarea>
-                                               
-                                      
+                                            <div class="form-group">
+                                                    <label for="s1_name">ปัจจัยภายใน จุดแข็ง#1</label>
+                                                    <textarea class="form-control s_name textarea-height-ex" id="s1_name" placeholder="ปัจจัยภายใน จุดแข็ง#1" ></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">
 
                                         <div class="col-6 ">
-                                            
-                                            <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                            <div class="form-group">
+                                                <label for="s1_weight">น้ำหนัก</label>
+                                                <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                            </div>
+
                                         </div>
                                         <div class="col-6 ">
-                                            <select class="form-select s_score" id="s1_score" aria-label="">
-                                                <option value="0">0 คะแนน</option>
-                                                <option value="1">1 คะแนน</option>
-                                                <option value="2">2 คะแนน</option>
-                                                <option value="3">3 คะแนน</option>
-                                                <option value="4">4 คะแนน</option>
-                                                <option value="5">5 คะแนน</option>
-                                            </select>
-                                           
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
+                                                <select class="form-select s_score" id="s1_score" aria-label="">
+                                                    <option value="0">0 คะแนน</option>
+                                                    <option value="1">1 คะแนน</option>
+                                                    <option value="2">2 คะแนน</option>
+                                                    <option value="3">3 คะแนน</option>
+                                                    <option value="4">4 คะแนน</option>
+                                                    <option value="5">5 คะแนน</option>
+                                                </select>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -672,19 +677,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                     <div class="row mb-3" >
                                         <div class="col-md-12">
-                                          
+                                        <div class="form-group">
+                                                    <label for="s2_name">ปัจจัยภายใน จุดแข็ง#2</label>
                                                 <textarea class="form-control s_name textarea-height-ex" id="s2_name" placeholder="ปัจจัยภายใน จุดแข็ง#2" ></textarea>
-                                          
+                                        </div>
                                       
                                         </div>
                                     </div>
                                     <div class="row">
 
                                         <div class="col-6 ">
-                                            
+                                        <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                             <input type="text" name="s2_weight" id="s2_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
                                         </div>
+                                        </div>
                                         <div class="col-6 ">
+                                        <div class="form-group">
+                                                <label >คะแนน</label>
                                             <select class="form-select s_score" id="s2_score" aria-label="">
                                                 <option value="0">0 คะแนน</option>
                                                 <option value="1">1 คะแนน</option>
@@ -693,7 +703,7 @@
                                                 <option value="4">4 คะแนน</option>
                                                 <option value="5">5 คะแนน</option>
                                             </select>
-                                           
+                                        </div>
                                         </div>
 
                                     </div>
@@ -704,19 +714,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                     <div class="row mb-3" >
                                         <div class="col-md-12">
-                                          
+                                        <div class="form-group">
+                                                    <label for="s3_name">ปัจจัยภายใน จุดแข็ง#3</label>
                                                 <textarea class="form-control s_name textarea-height-ex" id="s3_name" placeholder="ปัจจัยภายใน จุดแข็ง#3" ></textarea>
-                                                
+                                        </div>          
                                       
                                         </div>
                                     </div>
                                     <div class="row">
 
                                         <div class="col-6 ">
-                                            
+                                        <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                             <input type="text" name="s1_weight" id="s3_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
                                         </div>
+                                        </div>
                                         <div class="col-6 ">
+                                        <div class="form-group">
+                                                <label >คะแนน</label>
                                             <select class="form-select s_score" id="s3_score" aria-label="">
                                                 <option value="0">0 คะแนน</option>
                                                 <option value="1">1 คะแนน</option>
@@ -725,7 +740,7 @@
                                                 <option value="4">4 คะแนน</option>
                                                 <option value="5">5 คะแนน</option>
                                             </select>
-                                           
+                                        </div>
                                         </div>
 
                                     </div>
@@ -736,19 +751,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                     <div class="row mb-3" >
                                         <div class="col-md-12">
-                                          
+                                        <div class="form-group">
+                                                    <label for="s4_name">ปัจจัยภายใน จุดแข็ง#4</label>
                                                 <textarea class="form-control s_name textarea-height-ex" id="s4_name" placeholder="ปัจจัยภายใน จุดแข็ง#4" ></textarea>
-                                                
+                                        </div>
                                       
                                         </div>
                                     </div>
                                     <div class="row">
 
                                         <div class="col-6 ">
-                                            
+                                        <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                             <input type="text" name="s4_weight" id="s4_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
                                         </div>
+                                        </div>
                                         <div class="col-6 ">
+                                        <div class="form-group">
+                                                <label >คะแนน</label>
                                             <select class="form-select s_score" id="s4_score" aria-label="">
                                                 <option value="0">0 คะแนน</option>
                                                 <option value="1">1 คะแนน</option>
@@ -757,7 +777,7 @@
                                                 <option value="4">4 คะแนน</option>
                                                 <option value="5">5 คะแนน</option>
                                             </select>
-                                            
+                                        </div>
                                         </div>
 
                                     </div>
@@ -768,19 +788,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                     <div class="row mb-3" >
                                         <div class="col-md-12">
-                                          
-                                                <textarea class="form-control s_name textarea-height-ex" id="s5_name" placeholder="ปัจจัยภายใน จุดแข็ง#5" ></textarea>
-                                                
+                                            <div class="form-group">
+                                                    <label for="s5_name">ปัจจัยภายใน จุดแข็ง#5</label>
+                                                    <textarea class="form-control s_name textarea-height-ex" id="s5_name" placeholder="ปัจจัยภายใน จุดแข็ง#5" ></textarea>
+                                            </div>  
                                       
                                         </div>
                                     </div>
                                     <div class="row">
 
                                         <div class="col-6 ">
-                                            
+                                        <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                             <input type="text" name="s5_weight" id="s5_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
                                         </div>
+                                        </div>
                                         <div class="col-6 ">
+                                        <div class="form-group">
+                                                <label >คะแนน</label>
                                             <select class="form-select s_score" id="s5_score" aria-label="">
                                                 <option value="0">0 คะแนน</option>
                                                 <option value="1">1 คะแนน</option>
@@ -789,7 +814,7 @@
                                                 <option value="4">4 คะแนน</option>
                                                 <option value="5">5 คะแนน</option>
                                             </select>
-                                            
+                                        </div>
                                         </div>
 
                                     </div>
@@ -850,19 +875,24 @@
                                     <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="w1_name">ปัจจัยภายใน จุดอ่อน#1</label>
                                                     <textarea class="form-control w_name textarea-height-ex" id="w1_name" placeholder="ปัจจัยภายใน จุดอ่อน#1" ></textarea>
-                                                    
+                                            </div>  
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text" name="w1_weight" id="w1_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select w_score" id="w1_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -871,7 +901,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -881,19 +911,25 @@
                                      <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                          
+                                            <div class="form-group">
+                                                    <label for="w2_name">ปัจจัยภายใน จุดอ่อน#2</label>
                                                     <textarea class="form-control w_name textarea-height-ex" id="w2_name" placeholder="ปัจจัยภายใน จุดอ่อน#2" ></textarea>
-                                                    
+                                            </div>   
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text" name="w2_weight" id="w2_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select w_score" id="w2_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -902,7 +938,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -912,19 +948,24 @@
                                      <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="w3_name">ปัจจัยภายใน จุดอ่อน#3</label>
                                                     <textarea class="form-control w_name textarea-height-ex" id="w3_name" placeholder="ปัจจัยภายใน จุดอ่อน#3" ></textarea>
                                                     
-                                        
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text" name="w3_weight" id="w3_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select w_score" id="w3_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -933,7 +974,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -943,19 +984,24 @@
                                      <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="w4_name">ปัจจัยภายใน จุดอ่อน#4</label>
                                                     <textarea class="form-control w_name textarea-height-ex" id="w4_name" placeholder="ปัจจัยภายใน จุดอ่อน#4" ></textarea>
                                                     
-                                        
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text" name="w4_weight" id="w4_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select w_score" id="w4_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -964,7 +1010,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -974,19 +1020,24 @@
                                      <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="w5_name">ปัจจัยภายใน จุดอ่อน#5</label>
                                                     <textarea class="form-control w_name textarea-height-ex" id="w5_name" placeholder="ปัจจัยภายใน จุดอ่อน#5" ></textarea>
                                                     
-                                        
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text" name="w5_weight" id="w5_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select w_score" id="w5_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -995,7 +1046,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1106,19 +1157,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="o1_name">ปัจจัยภายนอก โอกาส#1</label>
                                                     <textarea class="form-control o_name textarea-height-ex" id="o1_name" placeholder="ปัจจัยภายนอก โอกาส#1" ></textarea>
-                                                    
+                                            </div>
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="o1_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select o_score" id="o1_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1127,7 +1183,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1137,19 +1193,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="o2_name">ปัจจัยภายนอก โอกาส#2</label>
                                                     <textarea class="form-control o_name textarea-height-ex" id="o2_name" placeholder="ปัจจัยภายนอก โอกาส#2" ></textarea>
-                                                    
+                                            </div>            
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="o2_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select o_score" id="o2_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1158,7 +1219,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1168,19 +1229,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="o3_name">ปัจจัยภายนอก โอกาส#3</label>
                                                     <textarea class="form-control o_name textarea-height-ex" id="o3_name" placeholder="ปัจจัยภายนอก โอกาส#3" ></textarea>
                                                     
-                                        
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="o3_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select o_score" id="o3_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1189,7 +1255,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1199,19 +1265,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="o4_name">ปัจจัยภายนอก โอกาส#4</label>
                                                     <textarea class="form-control o_name textarea-height-ex" id="o4_name" placeholder="ปัจจัยภายนอก โอกาส#4" ></textarea>
-                                                    
+                                            </div>
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="o4_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select o_score" id="o4_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1220,7 +1291,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1230,19 +1301,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="o5_name">ปัจจัยภายนอก โอกาส#5</label>
                                                     <textarea class="form-control o_name textarea-height-ex" id="o5_name" placeholder="ปัจจัยภายนอก โอกาส#5" ></textarea>
                                                     
-                                        
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="o5_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select o_score" id="o5_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1251,7 +1327,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1363,19 +1439,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="t1_name">ปัจจัยภายนอก อุปสรรค#1</label>
                                                     <textarea class="form-control t_name textarea-height-ex" id="t1_name" placeholder="ปัจจัยภายนอก อุปสรรค#1" ></textarea>
                                                     
-                                        
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="t1_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select t_score" id="t1_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1384,7 +1465,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1395,19 +1476,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="t2_name">ปัจจัยภายนอก อุปสรรค#2</label>
                                                     <textarea class="form-control t_name textarea-height-ex" id="t2_name" placeholder="ปัจจัยภายนอก อุปสรรค#2" ></textarea>
                                                     
-                                        
+                                            </div>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="t2_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select t_score" id="t2_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1416,7 +1502,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1426,19 +1512,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="t3_name">ปัจจัยภายนอก อุปสรรค#3</label>
                                                     <textarea class="form-control t_name textarea-height-ex" id="t3_name" placeholder="ปัจจัยภายนอก อุปสรรค#3" ></textarea>
-                                                    
+                                            </div>
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="t3_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select t_score" id="t3_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1447,7 +1538,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1457,19 +1548,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="t4_name">ปัจจัยภายนอก อุปสรรค#4</label>
                                                     <textarea class="form-control t_name textarea-height-ex" id="t4_name" placeholder="ปัจจัยภายนอก อุปสรรค#4" ></textarea>
-                                                    
+                                            </div>   
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="t4_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select t_score" id="t4_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1478,7 +1574,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>
@@ -1488,19 +1584,24 @@
                                 <div class="alert alert-primary mb-3 alert-ex">
                                         <div class="row mb-3" >
                                             <div class="col-md-12">
-                                            
+                                            <div class="form-group">
+                                                    <label for="t5_name">ปัจจัยภายนอก อุปสรรค#5</label>
                                                     <textarea class="form-control t_name textarea-height-ex" id="t5_name" placeholder="ปัจจัยภายนอก อุปสรรค#5" ></textarea>
-                                                    
+                                            </div>
                                         
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="col-6 ">
-                                                
+                                            <div class="form-group">
+                                            <label >น้ำหนัก</label>
                                                 <input type="text"  id="t5_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
                                             </div>
+                                            </div>
                                             <div class="col-6 ">
+                                            <div class="form-group">
+                                                <label >คะแนน</label>
                                                 <select class="form-select t_score" id="t5_score" aria-label="">
                                                     <option value="0">0 คะแนน</option>
                                                     <option value="1">1 คะแนน</option>
@@ -1509,7 +1610,7 @@
                                                     <option value="4">4 คะแนน</option>
                                                     <option value="5">5 คะแนน</option>
                                                 </select>
-                                                
+                                            </div>
                                             </div>
 
                                         </div>

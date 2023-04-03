@@ -51,6 +51,7 @@ var listTaskCateFn = function(data){
 
 				htmlListTaskCate+="<table class=\"table table-striped\">";
 				htmlListTaskCate+="<tbody id=\"listTaskArea-"+indexEntryTaskCate['tc_code']+"\" >";
+				var count=1;
 				$.each(data['dataTask'],function(index,indexEntryTask){
 					
 					if(indexEntryTask['tc_code']==indexEntryTaskCate['tc_code']){
@@ -58,6 +59,9 @@ var listTaskCateFn = function(data){
 						htmlListTaskCate+="<tr id=\"t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"task_mc_loop\">";
 							htmlListTaskCate+="<td class=\"widthSwotName\">";
 									htmlListTaskCate+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
+									htmlListTaskCate+="<div class=\"mb-1\">";
+										htmlListTaskCate+=" <label for=\"t_name-"+indexEntryTask['t_code']+"\"><b>รายละเอียดงาน#"+(count)+"</b></label>";
+									htmlListTaskCate+="</div>";
 									htmlListTaskCate+="<div  class=\"mb-3\" >";
 									htmlListTaskCate+="<textarea  class=\"form-control mb-2\" name=\"t_name-"+indexEntryTask['t_code']+"\"  id=\"t_name-"+indexEntryTask['t_code']+"\" placeholder=\"รายละเอียดงาน\">"+indexEntryTask['t_name']+"</textarea>";
 									htmlListTaskCate+="<div  class=\"mb-3\">";
@@ -86,6 +90,7 @@ var listTaskCateFn = function(data){
 								htmlListTaskCate+="</div>";
 							htmlListTaskCate+="</td>";
 						htmlListTaskCate+="</tr>";
+						count++;
 				}
 					
 				});
@@ -450,6 +455,11 @@ var htmlListTask="";
 		htmlListTask+="<tr id=\"t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"task_mc_loop\">";
 				htmlListTask+="<td class=\"widthSwotName\">";
 						htmlListTask+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
+						
+						htmlListTask+="<div class=\"mb-1\">";
+							htmlListTask+=" <label for=\"t_name-"+indexEntryTask['t_code']+"\"><b>รายละเอียดงาน#"+(index+1)+"</b></label>";
+						htmlListTask+="</div>";
+
 						htmlListTask+="<div  class=\"mb-3\" >";
 						htmlListTask+="<textarea  class=\"form-control mb-2 \" name=\"t_name-"+indexEntryTask['t_code']+"\"  id=\"t_name-"+indexEntryTask['t_code']+"\" placeholder=\"รายละเอียดงาน\">"+indexEntryTask['t_name']+"</textarea>";
 						htmlListTask+="<div  class=\"mb-3\">";

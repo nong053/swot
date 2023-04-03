@@ -63,7 +63,7 @@ function checkPasswordStrength() {
             $("#register_password").css({"border":"red solid 1px"});
            
 
-            $("#register_alert_text").append("<div id=\"checkPasswordStrength\"><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> ควรตั้งรหัสผ่านให้มีความปลอดภัยสูง</div>");
+            $("#register_alert_text").append("<div id=\"checkPasswordStrength\"><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> ควรตั้งรหัสผ่านให้มีความปลอดภัยสูง (คละ ตัวเลข สัญลักษณ์ ตัวอักษรพิมพ์ใหญ่ ตัวอักษรพิมพ์เล็ก)</div>");
             $("#register_alert").show();
         	return false;
 

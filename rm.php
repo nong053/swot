@@ -266,10 +266,10 @@
                     
                        
                         <th>
-                            ลำดับ
+                            รหัส
                         </th>
                         <th>
-                            ชื่อความเสี่ยง
+                            ความเสี่ยง
                         </th>
                         <th>
                             ระดับความเสี่ยง
@@ -400,7 +400,7 @@
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">
-        <i class="fa-sharp fa-solid fa-angles-right" data-bs-dismiss="offcanvas" aria-label="Close"></i>
+        <i class="fa-sharp fa-solid fa-angles-right" data-bs-dismiss="offcanvas" aria-label="Close"></i> Risk Managment Form
         <!-- <i class="fa-sharp fa-solid fa-user-group"></i> ทีมพัฒนา Risk Managment Form -->
         </h5>
         <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" ></button>

@@ -36,32 +36,62 @@ var listRiskFormFn = function(data){
     $.each(data['dataRisk'],function(index,indexEntry){
         
         htmlFormRisk+="<div  class=\"alert alert-primary mb-3 risk_loop\" id=\"risk_loop-"+indexEntry['r_code']+"\" role=\"alert\">";
-            htmlFormRisk+="<input type=\"radio\"  id=\"risk_radio-"+indexEntry['r_code']+"\"  class=\"form-check-input risk_radio\">";
+            htmlFormRisk+="<input type=\"radio\" name=\"risk_radio\"  id=\"risk_radio-"+indexEntry['r_code']+"\"  class=\"form-check-input risk_radio\">";
 			
 			htmlFormRisk+="<div id=\"risk_alert-"+indexEntry['r_code']+"\" class=\" alert alert-warning d-flex1 align-items-center\" style=\"display:none; margin-bottom:15px;margin-top:15px;\" role=\"alert\">";
 				htmlFormRisk+="<div id=\"risk_alert_text-"+indexEntry['r_code']+"\"></div>";
 			htmlFormRisk+="</div>";
 
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"r_code_display-"+indexEntry['r_code']+"\">รหัสความเสี่ยง</label>";
+            htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<input type=\"text\" class=\"form-control\" id=\"r_code_display-"+indexEntry['r_code']+"\"  placeholder=\"รหัสความเสี่ยง\" value="+indexEntry['r_code_display']+">";
             htmlFormRisk+="</div>";
+			
+
 			htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<input type=\"hidden\" class=\"form-control\" id=\"r_code-"+indexEntry['r_code']+"\"  placeholder=\"รหัส\" value="+indexEntry['r_code']+">";
+            htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"r_name-"+indexEntry['r_code']+"\">ชื่อความเสี่ยง</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
             htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_name-"+indexEntry['r_code']+"\" placeholder=\"ชื่อความเสี่ยง\">"+indexEntry['r_name']+"</textarea>";
             htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"r_description-"+indexEntry['r_code']+"\">ลักษณะ</label>";
+            htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_description-"+indexEntry['r_code']+"\" placeholder=\"ลักษณะ\">"+indexEntry['r_description']+"</textarea>";
+            htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"r_factor-"+indexEntry['r_code']+"\">ปัจจัยเสี่ยง</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\"> ";
                 htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_factor-"+indexEntry['r_code']+"\" placeholder=\"ปัจจัยเสี่ยง\">"+indexEntry['r_factor']+"</textarea>";
             htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"r_effect-"+indexEntry['r_code']+"\">ผลกระทบ</label>";
+            htmlFormRisk+="</div>";
+          
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_effect-"+indexEntry['r_code']+"\" placeholder=\"ผลกระทบ\">"+indexEntry['r_effect']+"</textarea>";
             htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"responsible_person-"+indexEntry['r_code']+"\">ผู้รับผิดชอบ</label>";
+            htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<input type=\"text\" class=\"form-control\" id=\"responsible_person-"+indexEntry['r_code']+"\"  placeholder=\"ผู้รับผิดชอบ\" value="+indexEntry['responsible_person']+">";  
+            htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"stm_code-"+indexEntry['r_code']+"\">กลยุทธ์</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control stm_code_select_area\" id=\"stm_code-"+indexEntry['r_code']+"\">";
@@ -76,11 +106,23 @@ var listRiskFormFn = function(data){
                 });
                 htmlFormRisk+="</select>";
             htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"duration_of_work-"+indexEntry['r_code']+"\">ระยะเวลาการปฏิบัติ</label>";
+            htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<textarea  class=\"form-control\" id=\"duration_of_work-"+indexEntry['r_code']+"\" placeholder=\"ระยะเวลาการปฏิบัติ\">"+indexEntry['duration_of_work']+"</textarea>";
             htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"guidelines_risk-"+indexEntry['r_code']+"\">จัดการความเสี่ยง</label>";
+            htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<textarea  class=\"form-control\" id=\"guidelines_risk-"+indexEntry['r_code']+"\" placeholder=\"จัดการความเสี่ยง\">"+indexEntry['guidelines_risk']+"</textarea>";
+            htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"lh_code-"+indexEntry['r_code']+"\">โอกาสเกิด</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control lh_code_select_area\" id=\"lh_code-"+indexEntry['r_code']+"\">";
@@ -92,6 +134,10 @@ var listRiskFormFn = function(data){
 					}
                 });
                 htmlFormRisk+="</select>";
+            htmlFormRisk+="</div>";
+
+			htmlFormRisk+="<div class=\"mb-1\">";
+                htmlFormRisk+=" <label for=\"im_code-"+indexEntry['r_code']+"\">ผลกระทบ</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
                 htmlFormRisk+="<select  class=\"form-control im_code_select_area\" id=\"im_code-"+indexEntry['r_code']+"\">";
@@ -111,20 +157,29 @@ var listRiskFormFn = function(data){
 }
 var listRiskDisplayFn = function(data){
     var htmlRiskDisplay="";
+	var riskDetails="";
 	$(".borderRisk").html("");
+
     $.each(data['dataRisk'],function(index,indexEntry){
         htmlRiskDisplay+="<tr>";
 			htmlRiskDisplay+="<td>";
-				htmlRiskDisplay+=index+1;
+				htmlRiskDisplay+="<b>"+indexEntry['r_code_display']+"</b>";
 			htmlRiskDisplay+="</td>";
 			htmlRiskDisplay+="<td>";
-				htmlRiskDisplay+=indexEntry['r_code_display']+""+indexEntry['r_name'];
+		
+				htmlRiskDisplay+="<div><b>ชื่อความเสี่ยง</b>: "+indexEntry['r_name']+"</div>";
+				htmlRiskDisplay+="<div><b>ลักษณะ</b>:"+indexEntry['r_description']+"</div>";
+				htmlRiskDisplay+="<div><b>ปัจจัยเสี่ยง</b>:"+indexEntry['r_effect']+"</div>";
+				htmlRiskDisplay+="<div><b>ผลกระทบ</b>:"+indexEntry['r_factor']+"</div>";
+
 			htmlRiskDisplay+="</td>";
 			htmlRiskDisplay+="<td>";
 				htmlRiskDisplay+=indexEntry['total_score'];
 			htmlRiskDisplay+="</td>";
 			htmlRiskDisplay+="<td>";
-				htmlRiskDisplay+=indexEntry['stm_name'];
+			//stm_description
+				htmlRiskDisplay+="<div><b>"+indexEntry['stm_name']+"</b></div>";
+				htmlRiskDisplay+="<div>"+indexEntry['stm_description']+"</div>";
 			htmlRiskDisplay+="</td>";
 			htmlRiskDisplay+="<td>";
 				htmlRiskDisplay+=indexEntry['guidelines_risk'];
@@ -380,11 +435,22 @@ var listLikelihoodMasterFormFn = function(data){
 				htmlEstimatedRiskForm+="<div id=\"lh_alert_text-"+indexEntry['lh_code']+"\"></div>";
 			htmlEstimatedRiskForm+="</div>";
 
+			htmlEstimatedRiskForm+="<div class=\"mb-1\">";
+				htmlEstimatedRiskForm+=" <label for=\"lh_name-"+indexEntry['r_code']+"\">โอกาสที่จะเกิด</label>";
+            htmlEstimatedRiskForm+="</div>";
             htmlEstimatedRiskForm+="<div class=\"mb-3\">";               
                 htmlEstimatedRiskForm+="<input type=\"text\" class=\"form-control\" id=\"lh_name-"+indexEntry['lh_code']+"\"  placeholder=\"โอกาสที่จะเกิด\" value="+indexEntry['lh_name']+">";
             htmlEstimatedRiskForm+="</div>";
+
+			htmlEstimatedRiskForm+="<div class=\"mb-1\">";
+				htmlEstimatedRiskForm+=" <label for=\"lh_score-"+indexEntry['r_code']+"\">ค่าโอกาส</label>";
+            htmlEstimatedRiskForm+="</div>";
             htmlEstimatedRiskForm+="<div class=\"mb-3\">";
                 htmlEstimatedRiskForm+=" <input type=\"text\" class=\"form-control\" id=\"lh_score-"+indexEntry['lh_code']+"\"  disabled placeholder=\"ค่าโอกาส\" value="+indexEntry['lh_score']+">";
+            htmlEstimatedRiskForm+="</div>";
+
+			htmlEstimatedRiskForm+="<div class=\"mb-1\">";
+				htmlEstimatedRiskForm+=" <label for=\"lh_description-"+indexEntry['r_code']+"\">คำอธิบาย</label>";
             htmlEstimatedRiskForm+="</div>";
             htmlEstimatedRiskForm+="<div class=\"mb-3\">";
                 htmlEstimatedRiskForm+="<textarea  class=\"form-control\" id=\"lh_description-"+indexEntry['lh_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['lh_description']+"</textarea>";
@@ -427,12 +493,23 @@ var listImpactMasterFormFn = function(data){
 		htmlEffectRiskForm+="<div id=\"im_alert_text-"+indexEntry['im_code']+"\"></div>";
 	htmlEffectRiskForm+="</div>";
 
+	htmlEffectRiskForm+="<div class=\"mb-1\">";
+		htmlEffectRiskForm+=" <label for=\"im_name-"+indexEntry['r_code']+"\">ผลกระทบ</label>";
+	htmlEffectRiskForm+="</div>";
     htmlEffectRiskForm+="<div class=\"mb-3\">";
         htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"im_name-"+indexEntry['im_code']+"\"  placeholder=\"ผลกระทบ\" value="+indexEntry['im_name']+">";
     htmlEffectRiskForm+="</div>";
+
+	htmlEffectRiskForm+="<div class=\"mb-1\">";
+		htmlEffectRiskForm+=" <label for=\"im_score-"+indexEntry['r_code']+"\">ค่าผลกระทบ</label>";
+	htmlEffectRiskForm+="</div>";
     htmlEffectRiskForm+="<div class=\"mb-3\">";
         htmlEffectRiskForm+="<input type=\"text\" class=\"form-control\" id=\"im_score-"+indexEntry['im_code']+"\" disabled  placeholder=\"ค่าผลกระทบ\" value="+indexEntry['im_score']+">";
     htmlEffectRiskForm+="</div>";
+
+	htmlEffectRiskForm+="<div class=\"mb-1\">";
+		htmlEffectRiskForm+=" <label for=\"im_description-"+indexEntry['r_code']+"\">คำอธิบาย</label>";
+	htmlEffectRiskForm+="</div>";
     htmlEffectRiskForm+="<div class=\"mb-3\">";
         htmlEffectRiskForm+="<textarea  class=\"form-control\" id=\"im_description-"+indexEntry['im_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['im_description']+"</textarea>";
     htmlEffectRiskForm+="</div>";
@@ -476,10 +553,16 @@ var listStrategyTypeMasterFn = function(data){
 			
 			htmlMitigateRisksForm+="<input type=\"radio\"  name=\"stm_radio\" id=\"stm_radio-"+indexEntry['stm_code']+"\" class=\"form-check-input stm_radio\">";
     		
-
+			htmlMitigateRisksForm+="<div class=\"mb-1\">";
+				htmlMitigateRisksForm+=" <label for=\"stm_name-"+indexEntry['r_code']+"\">กลยุทธ์</label>";
+			htmlMitigateRisksForm+="</div>";
             htmlMitigateRisksForm+="<div class=\"mb-3\">";
                 htmlMitigateRisksForm+="<input type=\"text\" class=\"form-control\" id=\"stm_name-"+indexEntry['stm_code']+"\"   placeholder=\"กลยุทธ์การจัดการความเสี่ยง\" value="+indexEntry['stm_name']+">";
             htmlMitigateRisksForm+="</div>";
+
+			htmlMitigateRisksForm+="<div class=\"mb-1\">";
+				htmlMitigateRisksForm+=" <label for=\"stm_description-"+indexEntry['r_code']+"\">คำอธิบาย</label>";
+			htmlMitigateRisksForm+="</div>";
             htmlMitigateRisksForm+="<div class=\"mb-3\">";
                 htmlMitigateRisksForm+="<textarea  class=\"form-control\" id=\"stm_description-"+indexEntry['stm_code']+"\" placeholder=\"คำอธิบาย\">"+indexEntry['stm_description']+"</textarea>";
             htmlMitigateRisksForm+="</div>";
@@ -514,18 +597,34 @@ var listEvaluationRiskFn = function(data){
 			htmlEvaluationRiskForm+="<div id=\"re_alert_text-"+indexEntry['re_code']+"\"></div>";
 		htmlEvaluationRiskForm+="</div>";
 
+			htmlEvaluationRiskForm+="<div class=\"mb-1\">";
+				htmlEvaluationRiskForm+=" <label for=\"re_name-"+indexEntry['r_code']+"\">ระดับความเสี่ยง</label>";
+			htmlEvaluationRiskForm+="</div>";
             htmlEvaluationRiskForm+="<div class=\"mb-3\">";
              htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_name-"+indexEntry['re_code']+"\"  placeholder=\"ระดับความเสี่ยง\" value="+indexEntry['re_name']+">";
             htmlEvaluationRiskForm+="</div>";
             htmlEvaluationRiskForm+="<div class=\"row\">";
+
+				
                 htmlEvaluationRiskForm+="<div class=\"col-md-4\">";
+					htmlEvaluationRiskForm+="<div class=\"mb-1\">";
+						htmlEvaluationRiskForm+=" <label for=\"re_score_start-"+indexEntry['r_code']+"\">เริ่ม</label>";
+					htmlEvaluationRiskForm+="</div>";
                     htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_score_start-"+indexEntry['re_code']+"\"  placeholder=\"เริ่ม\" value="+indexEntry['re_score_start']+">";
                 htmlEvaluationRiskForm+="</div>";
                 htmlEvaluationRiskForm+="<div class=\"col-md-4\">";
+				
+				htmlEvaluationRiskForm+="<div class=\"mb-1\">";
+					htmlEvaluationRiskForm+=" <label for=\"re_score_end-"+indexEntry['r_code']+"\">ถึง</label>";
+				htmlEvaluationRiskForm+="</div>";
                     htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_score_end-"+indexEntry['re_code']+"\"  placeholder=\"ถึง\" value="+indexEntry['re_score_end']+">";
                 htmlEvaluationRiskForm+="</div>";
                 htmlEvaluationRiskForm+="<div class=\"col-md-4\">";
-                    htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_score_color-"+indexEntry['re_code']+"\" placeholder=\"พื้นที่สี\" value="+indexEntry['re_score_color']+">";
+
+					htmlEvaluationRiskForm+="<div class=\"mb-1\">";
+						htmlEvaluationRiskForm+=" <label for=\"re_score_color-"+indexEntry['r_code']+"\">สีพื้นหลัง</label>";
+					htmlEvaluationRiskForm+="</div>";
+                    htmlEvaluationRiskForm+="<input type=\"text\" class=\"form-control\" id=\"re_score_color-"+indexEntry['re_code']+"\" placeholder=\"สีพื้นหลัง\" value="+indexEntry['re_score_color']+">";
                 htmlEvaluationRiskForm+="</div>";
             htmlEvaluationRiskForm+="</div>";
         htmlEvaluationRiskForm+="</div>";

@@ -47,7 +47,7 @@ SELECT
         r.duration_of_work, 
         r.lh_code , lh.lh_score,
         r.im_code , im.im_score,
-        r.stm_code,stm.stm_name,
+        r.stm_code,stm.stm_name,stm.stm_description,
         r.total_score ,
         r.created_date,
         r.updated_date
@@ -59,6 +59,7 @@ SELECT
         and stm.uu_id='$_REQUEST[uuid]'
         and lh.uu_id='$_REQUEST[uuid]'
         and im.uu_id='$_REQUEST[uuid]'
+        order by r.total_score DESC
 
 ";
 
@@ -79,10 +80,21 @@ $data1="";
                 $data1.="<tr style='background:#cccccc;'>";
               }
             
-                $data1.="<td >".$count."</td>";
-                $data1.="<td >(".$row['r_code_display'].")".$row['r_name']."</td>";
+                $data1.="<td >".$row['r_code_display']."</td>";
+                $data1.="<td >";
+                $data1.="<div><b>ชื่อความเสี่ยง</b>: ".$row['r_name']."</div>";
+                $data1.="<div><b>ลักษณะ</b>: ".$row['r_description']."</div>";
+                $data1.="<div><b>ปัจจัยเสี่ยง</b>: ".$row['r_effect']."</div>";
+                $data1.="<div><b>ผลกระทบ</b>: ".$row['r_factor']."</div>";
+                $data1.="</td>";
+
                 $data1.="<td >".$row['total_score']."</td>";
-                $data1.="<td >".$row['stm_name']."</td>";
+
+                $data1.="<td >";
+                $data1.="<b>".$row['stm_name']."</b>";
+                $data1.="".$row['stm_description']."";
+                $data1.="</td>";
+
                 $data1.="<td >".$row['guidelines_risk']."</td>";
                 $data1.="<td>".$row['responsible_person']."</td>";
                 $data1.="<td >".$row['duration_of_work']."</td>";
@@ -101,7 +113,7 @@ $data1="";
     $data.="<h1 style='text-align:center;'>รายงานสรุปการบริหารความความเสี่ยง</h1>";
     
     $data.="<table style='width:100%; border:0px;' >";
-         $data.="<thead><tr><th>ลำดับ</th> <th>ชื่อความเสี่ยง</th> <th>ระดับความเสี่ยง</th> <th>กลยุทธ์</th> <th>จัดการความเสี่ยง</th> <th>ผู้รับผิดชอบ</th> <th>ระยะเวลาปฏิบัติ</th></tr></thead>"; 
+         $data.="<thead><tr><th>รหัส</th> <th>ความเสี่ยง</th> <th>ระดับความเสี่ยง</th> <th>กลยุทธ์</th> <th>จัดการความเสี่ยง</th> <th>ผู้รับผิดชอบ</th> <th>ระยะเวลาปฏิบัติ</th></tr></thead>"; 
         $data.="<tbody >";
         $data.=$data1;
         $data.="</tbody>";

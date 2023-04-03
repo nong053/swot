@@ -25,7 +25,7 @@ $JWT->decode($token_data, $key);
         r.duration_of_work, 
         r.lh_code , lh.lh_score,
         r.im_code , im.im_score,
-        r.stm_code,stm.stm_name,
+        r.stm_code,stm.stm_name,stm.stm_name,stm.stm_description,
         r.total_score ,
         r.created_date,
         r.updated_date
@@ -978,9 +978,9 @@ $JWT->decode($token_data, $key);
              $sql_save_to_risk_ex ="
              INSERT INTO 
              risk_ex 
-             (rce_id,r_seq,r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
+             (rce_id,r_seq,r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score)
              SELECT 
-           $rce_id,'r_seq',r_code,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
+           $rce_id,'r_seq',r_code,r_code_display,r_name,r_description,r_factor,r_effect,responsible_person,guidelines_risk,duration_of_work,stm_code,im_code,lh_code,total_score
              FROM risk
              WHERE uu_id = '$_REQUEST[uuid]'";
  
