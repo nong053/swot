@@ -11,12 +11,12 @@
 
     
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css" >
+    <link rel="stylesheet" href="css/main.css" >
     <link rel="stylesheet" href="css/swot.css" >
 
     <!-- <link rel="stylesheet" type="text/css" media="print" href="print.css" /> -->
 
-    <script src="./device-uuid-master/lib/device-uuid.js"></script>
+    <!-- <script src="./device-uuid-master/lib/device-uuid.js"></script> -->
 
 
     
@@ -49,6 +49,7 @@
   </symbol>
 </svg>
 
+<!-- set header fixed start-->
 <div class="headerFixed">
         <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
         <div class=" d-lg-none" style="margin-top: 55px;"></div>
@@ -60,8 +61,10 @@
 
         </div>
 </div>
-<div style="margin-bottom: 80px;" class="d-none d-lg-block"></div>
+<div style="margin-bottom: 90px;" class="d-none d-lg-block"></div>
 <div style="margin-bottom: 75px;" class=" d-lg-none"></div>
+<!-- set header fixed end-->
+
 <div class="container"   >
     
     <div id="tableRmDataAllArea" aria-hidden="true" >
@@ -1976,6 +1979,7 @@
 </div>
 <!--Model -->
 <!--Modal-->
+
 <!-- Modal -->
 <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" style="height:90%;">
   <div class="modal-dialog modal-lg" role="document">
