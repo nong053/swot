@@ -34,7 +34,7 @@ $data="
 $sql = "
 select s.s_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
 s.s_name,s.s_weight,s.s_score,
-s.s_total_score,s.swot_detail
+s.s_total_score,s.swot_name,s.swot_detail
 from swot s
 inner join aspect_master ap on s.ap_code=ap.ap_code
 where s.uu_id='$uuid'   and  ap.uu_id='$uuid'
@@ -64,6 +64,7 @@ $dataArray = array();
         $count_data4=1;
         while($row = $result->fetch_assoc()) {
             if($count==1){
+                $swot_name="".$row['swot_name'];
                 $swot_detail="".$row['swot_detail'];
             }
           if($row['ap_code']=='1' && ($row['s_name']!='' && $row['s_total_score']!=0)){
@@ -148,7 +149,8 @@ $dataArray = array();
         $data4.="</tr>";
     
     } 
-    $data.="<h1 style='text-align:center;'>".$swot_detail."</h1>";
+    $data.="<h1 style='text-align:center;'>".$swot_name."</h1>";
+    $data.="<div>".$swot_name."</div>";
     $data.="<h3>กลยุทธ์เชิงรุก SO (จุดแข็งและโอกาส)</h3>";
     $data.="<table  style='width:100%;'  border=''>";
     $data.="<thead><tr ><th>จุดแข็ง (Strengths)</th> <th>โอกาส (Opportunities)</th></tr></thead>"; 

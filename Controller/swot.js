@@ -1531,7 +1531,6 @@ var checkValidateExampleFn  = function(){
 }
 $(document).ready(function(){
 
-	
 //check device start
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
