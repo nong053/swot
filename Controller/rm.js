@@ -1508,6 +1508,14 @@ var checkValidateExampleFn  = function(){
 
 $(document).ready(function(){
 
+//check device start
+
+if("mobile"==sessionStorage.getItem('checkDevice')){
+	$("#offcanvasRight").css({"height":"95%"});
+}else{
+	$("#offcanvasRight").css({"height":"100%"});
+}
+//check device end
 	
 /*Login Management Start */
 /*

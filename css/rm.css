@@ -1,0 +1,93 @@
+.font-score{
+            
+}
+.font-h-score{
+    text-align: left;
+    font-weight: bold;
+}
+.graph{
+    width: 100%;
+     height: 300px; 
+    background-color:bisque;
+}
+/* .setting-toggle {
+    position: fixed;
+    top: 65px;
+    right: 33px;
+    text-decoration: none;
+    z-index: 1016;
+    -webkit-transform: rotate(-90deg) translate3d(-25px, 39px, 0);
+    transform: rotate(-90deg) translate3d(-25px, 39px, 0);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-top: -83px;
+    -webkit-box-shadow: var(--phoenix-setting-toggle-shadow);
+    box-shadow: var(--phoenix-setting-toggle-shadow);
+
+    
+} */
+
+.graphMainRight{
+border-right: red 2px dashed;
+text-align: right;
+font-weight: bold;
+padding-right: 10px;
+
+}
+.graphMainTop{
+border-top: red 2px dashed;
+text-align: right;
+font-weight: bold;
+padding: 10px;
+
+}
+.borderRisk{
+    border:1px dashed wheat;
+    text-align: center;
+    padding: 10px;
+    height: 50px;
+    width: 100px;
+
+}
+.riskBgRed{
+    background-color: red;
+
+}
+.riskBgOgrange{
+    background-color:orange;
+}
+.riskBgYellow{
+    background-color: yellow;
+}
+.riskBgWhite{
+    background-color: white;
+}
+.borderScopeRiskLeft{
+    border-left: black 3px solid;
+  
+}
+.borderScopeRiskBottom{
+
+    border-bottom: black 3px solid;
+}
+.effect_text{
+    position: absolute;
+    z-index: 5;
+    transform: rotate(-90deg); 
+    top:50%;
+}
+.opportunity_occurred_txt{
+    text-align: center;
+}
+/* .headeTitle{
+    color:white;
+    text-align: center;
+    position: absolute;
+    top:15px;
+} */
+.main_cate_rm_btn{
+
+
+    margin-bottom:10px; margin:1px; float:right; 
+    
+}

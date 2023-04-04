@@ -10,8 +10,8 @@
     
     <!-- <link rel="stylesheet" href="https://kit.fontawesome.com/9770e5b059.css" crossorigin="anonymous"> -->
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="./main.css" >
-   
+    <link rel="stylesheet" href="css/main.css" >
+    <link rel="stylesheet" href="css/rm.css" >
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
 
@@ -32,109 +32,34 @@
          background-repeat: no-repeat;
          /* set background */
         }
-        .font-score{
-            
-        }
-        .font-h-score{
-            text-align: left;
-            font-weight: bold;
-        }
-        .graph{
-            width: 100%;
-             height: 300px; 
-            background-color:bisque;
-        }
-        .setting-toggle {
-            position: fixed;
-            top: 65px;
-            right: 33px;
-            text-decoration: none;
-            z-index: 1016;
-            -webkit-transform: rotate(-90deg) translate3d(-25px, 39px, 0);
-            transform: rotate(-90deg) translate3d(-25px, 39px, 0);
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            margin-top: -83px;
-            -webkit-box-shadow: var(--phoenix-setting-toggle-shadow);
-            box-shadow: var(--phoenix-setting-toggle-shadow);
-
-            
-        }
-
-       .graphMainRight{
-        border-right: red 2px dashed;
-        text-align: right;
-        font-weight: bold;
-        padding-right: 10px;
        
-       }
-       .graphMainTop{
-        border-top: red 2px dashed;
-        text-align: right;
-        font-weight: bold;
-        padding: 10px;
-     
-        }
-        .borderRisk{
-            border:1px dashed wheat;
-            text-align: center;
-            padding: 10px;
-            height: 50px;
-            width: 100px;
-
-        }
-        .riskBgRed{
-            background-color: red;
-
-        }
-        .riskBgOgrange{
-            background-color:orange;
-        }
-        .riskBgYellow{
-            background-color: yellow;
-        }
-        .riskBgWhite{
-            background-color: white;
-        }
-        .borderScopeRiskLeft{
-            border-left: black 3px solid;
-          
-        }
-        .borderScopeRiskBottom{
-        
-            border-bottom: black 3px solid;
-        }
-        .effect_text{
-            position: absolute;
-            z-index: 5;
-            transform: rotate(-90deg); 
-            top:50%;
-        }
-        .opportunity_occurred_txt{
-            text-align: center;
-        }
-        .headeTitle{
-            color:white;
-            text-align: center;
-            position: absolute;
-            top:15px;
-        }
-        .main_cate_rm_btn{
-       
-
-            margin-bottom:10px; margin:1px; float:right; 
-            
-        }
 
         
         
     </style>
 </head>
   <body>
+<!-- set header fixed start-->
+<div class="headerFixed">
+        <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+        <div class=" d-lg-none" style="margin-top: 55px;"></div>
+        
+        <div class="container">
+       
+           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <h1 class="headeTitle">
+            <!-- <i class="fa-sharp fa-solid fa-building-shield"></i> -->
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+             RISK MANAGEMENT</h1>
 
-  <button class="btn btn-primary btn-circle btn-back" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+        </div>
+</div>
+<div style="margin-bottom: 80px;" class="d-none d-lg-block"></div>
+<div style="margin-bottom: 75px;" class=" d-lg-none"></div>
+<!-- set header fixed end-->
+  <!-- <button class="btn btn-primary btn-circle btn-back" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button> -->
 <div class="container">
-    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-building-shield"></i> RISK MANAGEMENT</h1>
+    <!-- <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-building-shield"></i> RISK MANAGEMENT</h1> -->
     <div class="row mb-3">
         
         <div class="col-md-12">
@@ -400,7 +325,7 @@
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
         <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">
-        <i class="fa-sharp fa-solid fa-angles-right" data-bs-dismiss="offcanvas" aria-label="Close"></i> Risk Managment Form
+        <i class="fa-sharp fa-solid fa-angles-right " style="cursor:pointer;" data-bs-dismiss="offcanvas" aria-label="Close"></i> Risk Managment Form
         <!-- <i class="fa-sharp fa-solid fa-user-group"></i> ทีมพัฒนา Risk Managment Form -->
         </h5>
         <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
@@ -920,6 +845,68 @@
   </div>
 </div>
 <!--Model -->
+
+<!-- Modal -->
+<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" style="height:90%;">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="teamModalLabel">ทีมผู้พัฒนา</h5>
+       
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
+                            <p class="card-text"  style="font-size:16px;">System Analysis</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="alert alert-success" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
+                            <p class="card-text"  style="font-size:16px;">Tester</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="ร.ท.โฆษิต อามรมณ์สวะ">
+                    <div class="card-body ">
+                        <div class="alert alert-info" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
+                            <p class="card-text"  style="font-size:16px;">Developer</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </divv>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnDevTeamClose" class="btn btn-secondary btnDevTeamClose" data-dismiss="modal">ปิด</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

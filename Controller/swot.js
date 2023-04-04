@@ -579,10 +579,10 @@ var renderSwotToDisplay = function(data){
 		$(".dataOpportunities").html(dataOpportunities).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumOpportunities).toFixed(2)+" </td></tr>");
 		$(".dataThreats").html(dataThreats).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumThreats).toFixed(2)+" </td></tr>");
 
-		$("#strengthsScore").html(parseFloat(sumStrengths).toFixed(2));
-		$("#weaknessesScore").html(parseFloat(sumWeaknesses).toFixed(2));
-		$("#opportunitiesScore").html(parseFloat(sumOpportunities).toFixed(2));
-		$("#threatsScore").html(parseFloat(sumThreats).toFixed(2));
+		$("#strengthsScore").html(parseFloat(sumStrengths).toFixed(2)+" คะแนน");
+		$("#weaknessesScore").html(parseFloat(sumWeaknesses).toFixed(2)+" คะแนน");
+		$("#opportunitiesScore").html(parseFloat(sumOpportunities).toFixed(2)+" คะแนน");
+		$("#threatsScore").html(parseFloat(sumThreats).toFixed(2)+" คะแนน");
 
 }
 var findOne=function(uuid){

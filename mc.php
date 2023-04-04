@@ -9,27 +9,44 @@
     <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/jquery.min.js"></script> -->
     
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css" >
+    <link rel="stylesheet" href="css/main.css" >
     <link rel="stylesheet" href="css/mc.css" >
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
     <style>
-    .headeTitle{
+    /* .headeTitle{
         color:white;
         text-align: center;
         position: absolute;
         top:15px;
-    }
+    } */
     </style>
     
     
     
 </head>
   <body>
-  <button class="btn btn-primary btn-circle btn-back" id="btn-back" onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+<!-- <button class="btn btn-primary btn-circle btn-back" id="btn-back" onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button> -->
+
+<!-- set header fixed start-->
+<div class="headerFixed">
+        <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+        <div class=" d-lg-none" style="margin-top: 55px;"></div>
+        
+        <div class="container">
+       
+           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <h1 class="headeTitle"><i class="fa fa-users"></i> MANPOWER  </h1>
+
+        </div>
+</div>
+<div style="margin-bottom: 90px;" class="d-none d-lg-block"></div>
+<div style="margin-bottom: 75px;" class=" d-lg-none"></div>
+<!-- set header fixed end-->
+
 <div class="container">
-    <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-people-arrows"></i> MANPOWER CALCULATION</h1>
-    <div class="row mb-3" id="gaugeChartArea">
+    <!-- <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-people-arrows"></i> MANPOWER CALCULATION</h1> -->
+    <div class="row mb-31" id="gaugeChartArea">
          
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
@@ -167,13 +184,16 @@
                        
                         </th>
                         <th class="mc_time_unit">
-                            เวลา:หน่วย
+                            <!-- เวลา:หน่วย -->
+                            นาที
                         </th>
                         <th class="mc_workload_year">
-                            ปริมาณงาน:ปี
+                            <!-- ปริมาณงาน:ปี -->
+                            ครั้ง
                         </th>
                         <th class="mc_manpower_year">
-                            อัตรากำลัง:ปี
+                            <!-- อัตรากำลัง:ปี -->
+                            อัตรา
                         </th>
                        
                     
@@ -594,6 +614,44 @@
     </a>
 </div>
 
+
+
+<!--footer for moblie start-->
+<div class="footerFixed  d-block d-sm-none " >
+    <div class="container">
+        <div class="row ">
+            <div class="col">
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle" id="btn-back" onclick="window.location.href='./'" >
+                    <i class="fa-sharp fa-solid fa-circle-left"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+            <!-- <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id="btnDevTeam" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle btnDevTeam" id="btn-back" data-toggle="modal" data-target="#teamModal" >
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+             
+            </div>
+            <div class="col">
+              
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
+                    <i class="fa-sharp fa-solid fa-gear "></i>
+                    </button>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer for moblie end-->
+
+
 <!-- Modal -->
 <div class="modal fade" id="cateTaskModel" tabindex="-1" aria-labelledby="cateTaskModelLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -751,6 +809,68 @@
   </div>
 </div>
 <!--Model -->
+
+<!-- Modal -->
+<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" style="height:90%;">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="teamModalLabel">ทีมผู้พัฒนา</h5>
+       
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
+                            <p class="card-text"  style="font-size:16px;">System Analysis</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <div class="alert alert-success" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
+                            <p class="card-text"  style="font-size:16px;">Tester</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="ร.ท.โฆษิต อามรมณ์สวะ">
+                    <div class="card-body ">
+                        <div class="alert alert-info" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
+                            <p class="card-text"  style="font-size:16px;">Developer</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </divv>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnDevTeamClose" class="btn btn-secondary btnDevTeamClose" data-dismiss="modal">ปิด</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
 
 
 

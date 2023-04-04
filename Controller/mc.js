@@ -20,13 +20,13 @@ var listTaskCateFn = function(data){
 
 	var htmlListTaskCate="";
 	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
-		htmlListTaskCate+="<div class=\"accordion-item\">";
-			htmlListTaskCate+="<h2 class=\"accordion-header\" id=\"flush-heading-"+indexEntryTaskCate['tc_code']+"\">";
-				htmlListTaskCate+="<div class=\"mc_checkbox_cate_mc\">";
+		htmlListTaskCate+="<div class=\"accordion-item \">";
+			htmlListTaskCate+="<h2 class=\"accordion-header\" style='background:#e7f1ff;border-bottom:1px solid #dee2e6 ' id=\"flush-heading-"+indexEntryTaskCate['tc_code']+"\">";
+				htmlListTaskCate+="<div class=\"mc_checkbox_cate_mc\" >";
 					htmlListTaskCate+="<input type=\"radio\" id=\"cate_mc-"+indexEntryTaskCate['tc_code']+"\" name=\"cate_mc\" class=\"form-check-input cate_mc\">";
 				htmlListTaskCate+="</div>";
 					htmlListTaskCate+="<div class=\"mc_cate_mc\">   ";
-						htmlListTaskCate+="<button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapse-"+indexEntryTaskCate['tc_code']+"\" aria-expanded=\"false\" aria-controls=\"flush-collapse-"+indexEntryTaskCate['tc_code']+"\">";
+						htmlListTaskCate+="<button style='background:#e7f1ff;'  class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapse-"+indexEntryTaskCate['tc_code']+"\" aria-expanded=\"false\" aria-controls=\"flush-collapse-"+indexEntryTaskCate['tc_code']+"\">";
 						htmlListTaskCate+=indexEntryTaskCate['tc_name'];
 						htmlListTaskCate+="</button> ";
 					htmlListTaskCate+="</div>";
@@ -58,8 +58,9 @@ var listTaskCateFn = function(data){
 
 						htmlListTaskCate+="<tr id=\"t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"task_mc_loop\">";
 							htmlListTaskCate+="<td class=\"widthSwotName\">";
-									htmlListTaskCate+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
+									//htmlListTaskCate+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
 									htmlListTaskCate+="<div class=\"mb-1\">";
+										htmlListTaskCate+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
 										htmlListTaskCate+=" <label for=\"t_name-"+indexEntryTask['t_code']+"\"><b>รายละเอียดงาน#"+(count)+"</b></label>";
 									htmlListTaskCate+="</div>";
 									htmlListTaskCate+="<div  class=\"mb-3\" >";
@@ -68,7 +69,7 @@ var listTaskCateFn = function(data){
 									htmlListTaskCate+="<table>";
 										htmlListTaskCate+="<tr>";
 											htmlListTaskCate+="<td>";
-												htmlListTaskCate+=" <label for='t_day-"+indexEntryTask['t_code']+"' class='form-label'>วัน</label>";
+												htmlListTaskCate+=" <label for='t_day-"+indexEntryTask['t_code']+"' class='form-label' >วัน</label>";
 												htmlListTaskCate+="<input type=\"text\" name=\"t_day-"+indexEntryTask['t_code']+"\" id=\"t_day-"+indexEntryTask['t_code']+"\" class=\"form-control number_only\" placeholder=\"วัน\" value=\""+indexEntryTask['t_day']+"\">";
 											htmlListTaskCate+="</td>";
 											htmlListTaskCate+="<td>";
@@ -111,6 +112,7 @@ var listTaskCateFn = function(data){
 	});
 
 	$("#accordionFlushExample").html(htmlListTaskCate);
+	checkDeviceExtendSwotFn();
 }
 
 var listTaskCateDisplayFn = function(data){
@@ -153,13 +155,13 @@ var listTaskCateDisplayFn = function(data){
 						htmlDataTableMCDisplay+="รายละเอียดงาน";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+=" <th class=\"mc_time_unit\">";
-						htmlDataTableMCDisplay+="เวลา:หน่วย";
+						htmlDataTableMCDisplay+="นาที";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_workload_year\">";
-						htmlDataTableMCDisplay+="ปริมาณงาน:ครั้ง";
+						htmlDataTableMCDisplay+="ครั้ง";
 						htmlDataTableMCDisplay+=" </th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_manpower_year\">";
-						htmlDataTableMCDisplay+="อัตรากำลัง:ปี";
+						htmlDataTableMCDisplay+="อัตรา";
 						htmlDataTableMCDisplay+="</th>";
 					htmlDataTableMCDisplay+="</thead>";
 					htmlDataTableMCDisplay+="<tbody>";
@@ -454,9 +456,10 @@ var htmlListTask="";
 	$.each(data,function(index,indexEntryTask){
 		htmlListTask+="<tr id=\"t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"task_mc_loop\">";
 				htmlListTask+="<td class=\"widthSwotName\">";
-						htmlListTask+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
+						//htmlListTask+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
 						
 						htmlListTask+="<div class=\"mb-1\">";
+							htmlListTask+="<input type=\"radio\" name=\"task_mc\" id=\"task_mc-t_code-"+indexEntryTask['t_code']+"-tc_code-"+indexEntryTask['tc_code']+"\" class=\"form-check-input task_mc\">";
 							htmlListTask+=" <label for=\"t_name-"+indexEntryTask['t_code']+"\"><b>รายละเอียดงาน#"+(index+1)+"</b></label>";
 						htmlListTask+="</div>";
 
@@ -1077,10 +1080,23 @@ var checkValidateCateTaskFn  = function(){
 	
 
 }
+var checkDeviceExtendSwotFn =function(){
+//check device start
+
+if("mobile"==sessionStorage.getItem('checkDevice')){
+	$("#offcanvasRight").css({"height":"93%"});
+	$(".mc_checkbox_cate_mc").css({"margin-top":"8px"});
+}else{
+
+	$("#offcanvasRight").css({"height":"100%"});
+	$(".mc_checkbox_cate_mc").css({"margin-top":"0px"});
+}
+//check device end
+}
 
 $(document).ready(function(){
 
-	
+	checkDeviceExtendSwotFn();
 
 
 	/*
