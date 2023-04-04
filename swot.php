@@ -28,7 +28,7 @@
     /**{ margin: 0; padding: 0; }*/
     body{ 
         font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; ; 
-        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  );
+        background: radial-gradient(farthest-side ellipse at 10% 0,#000039   20%,#191970  );
     }
         
 
@@ -57,12 +57,12 @@
         <div class="container">
        
            <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
-           <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT </h1>
+           <h1 style="display:none;" class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT </h1>
 
         </div>
 </div>
 <div style="margin-bottom: 90px;" class="d-none d-lg-block"></div>
-<div style="margin-bottom: 75px;" class=" d-lg-none"></div>
+<div style="margin-bottom: 90px;" class=" d-lg-none"></div>
 <!-- set header fixed end-->
 
 <div class="container"   >
@@ -1996,9 +1996,9 @@
         <div class="row">
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" style="height: 300px;">
                     <div class="card-body">
-                        <div class="alert alert-primary" role="alert" style="padding:10px; ">
+                        <div class="alert alert-primary" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
                             <p class="card-text"  style="font-size:16px;">System Analysis</p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -2008,9 +2008,9 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" style="height: 300px;">
                     <div class="card-body">
-                        <div class="alert alert-success" role="alert" style="padding:10px; ">
+                        <div class="alert alert-success" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
                             <p class="card-text"  style="font-size:16px;">Tester</p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -2020,7 +2020,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="ร.ท.โฆษิต อามรมณ์สวะ">
+                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ" style="height: 300px;">
                     <div class="card-body ">
                         <div class="alert alert-info" role="alert" style="padding:10px; ">
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
@@ -2041,7 +2041,7 @@
   </div>
 </div>
 <!--Modal-->
-
+<div id="desktopTest" class="d-none d-lg-block"></div>
 
 
 

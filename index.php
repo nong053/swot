@@ -62,29 +62,31 @@ body{
             <h2 class="title2">(Management analysis and planning tools)</h2>
             <h3 class="title2">ด้านแผนกรอบกำลังพล ด้านแผนปฏิบัติราชการ ด้านบริหารความเสี่ยง</h3>
         </div>
-        <div id='btnArea' style="text-align: center; margin: 30px; display:none;">
-            <button onclick="window.location.href='./mc.php'"  type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
-                <div>MC</div>
-            </button>
-            <button onclick="window.location.href='./swot.php'" type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
-                <div>SW</div>
-            </button>
-            <!-- <button  type="button" id="btn-bs" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
-                <div>BS</div>
-            </button>
-            <button  type="button" id="btn-kpi" class="btn btn-success btn-circle "><i class="fa-sharp fa-solid fa-gauge"></i> 
-                <div>KPI</div>
-            </button> -->
-            <button onclick="window.location.href='./rm.php'" type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                <div>RM</div>
-            </button>
-            
-            <!-- <button  type="button" id="btn-mc" class="btn btn-warning btn-circle "><i class="fa-sharp fa-solid fa-sliders"></i> 
-                <div>MC2</div>
-            </button> -->
+        <div id='btnArea' style="text-align: center; margin: 60px; display:none;">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-xs-4 col-md-4">
+                        <button onclick="window.location.href='./mc.php'"  type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
+                            <div>MC</div>
+                        </button>
+                    </div>
+                    <div class="col-xs-4 col-md-4">
+                        <button onclick="window.location.href='./swot.php'" type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
+                            <div>SW</div>
+                        </button>
+                    </div>
+                    <div class="col-xs-4 col-md-4">
+                        <button onclick="window.location.href='./rm.php'" type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                            <div>RM</div>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-        <div id='formLoginArea' style="max-width: 350px;margin:auto; display:none;">
+        <div id='formLoginArea' style="margin:auto; display:none;">
             <!-- body form login start-->
+            <div class="container">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">เข้าสู่ระบบ</button>
@@ -137,6 +139,7 @@ body{
 
                 </div>
                 <!-- body form login end-->
+            </div>
         </div>
     
     </div>
@@ -221,6 +224,9 @@ body{
   </div>
 </div> -->
 
+<div id="desktopTest" class="d-none d-lg-block"></div>
+
+
 <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
@@ -229,5 +235,5 @@ body{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <!-- jquery confirm end-->
 
-<script src="Controller/main.js"></script>
+<script src="./Controller/main.js"></script>
 <script src="./Controller/login.js" ></script>

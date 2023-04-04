@@ -27,7 +27,8 @@
     /*circle end*/  
 
     .btn-back{
-        z-index:5; margin:10px;
+        z-index:5; 
+        margin:13px;
         margin-left: 25px;
     }
     .btn-circle{
@@ -37,7 +38,7 @@
         color:white;
         text-align: center;
         position: absolute;
-        top:25px;
+        top:15px;
     }
 
     .setting-toggle {

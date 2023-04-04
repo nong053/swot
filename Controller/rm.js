@@ -1512,9 +1512,20 @@ $(document).ready(function(){
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
 	$("#offcanvasRight").css({"height":"95%"});
+	$(".headeTitle").css({"top":"25px"});
 }else{
 	$("#offcanvasRight").css({"height":"100%"});
+	$(".headeTitle").css({"top":"15px"});
 }
+$(".btnDevTeam").click(function(){
+	$("#teamModal").modal('show');
+
+});
+$("#btnDevTeamClose").click(function(){
+	$("#teamModal").modal('hide');
+
+});
+
 //check device end
 	
 /*Login Management Start */

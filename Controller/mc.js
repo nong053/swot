@@ -125,7 +125,7 @@ var listTaskCateDisplayFn = function(data){
 	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
 		var tc_name ="";
 		if(indexEntryTaskCate['tc_name'].length>20){
-			tc_name = indexEntryTaskCate['tc_name'].substring(1,20)+"...";
+			tc_name = indexEntryTaskCate['tc_name'].substring(0,20)+"...";
 		}else{
 			tc_name=indexEntryTaskCate['tc_name'];
 		}
@@ -1086,10 +1086,12 @@ var checkDeviceExtendSwotFn =function(){
 if("mobile"==sessionStorage.getItem('checkDevice')){
 	$("#offcanvasRight").css({"height":"93%"});
 	$(".mc_checkbox_cate_mc").css({"margin-top":"8px"});
+	$(".headeTitle").css({"top":"25px"});
 }else{
 
 	$("#offcanvasRight").css({"height":"100%"});
 	$(".mc_checkbox_cate_mc").css({"margin-top":"0px"});
+	$(".headeTitle").css({"top":"15px"});
 }
 //check device end
 }
@@ -1097,6 +1099,15 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 $(document).ready(function(){
 
 	checkDeviceExtendSwotFn();
+	$(".btnDevTeam").click(function(){
+		$("#teamModal").modal('show');
+	
+	});
+	$("#btnDevTeamClose").click(function(){
+		$("#teamModal").modal('hide');
+	
+	});
+	
 
 
 	/*

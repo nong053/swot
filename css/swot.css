@@ -1,3 +1,9 @@
+body{ 
+    font-family: 'THSarabunNew', sans-serif; 
+    font-size: 0.95em; line-height: 1.7em; 
+    background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
+
+}
 .font-score{
             
 }

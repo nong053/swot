@@ -22,21 +22,58 @@ function commaSeparateNumber(val){
   var checkDeviceFn=function(){
 
     if($(window).width()<980){
-
+ 
+      //$("#formLoginArea").css({"width":"100%"});
       sessionStorage.setItem('checkDevice','mobile');
 
     }else{
       sessionStorage.setItem('checkDevice','desktop');
-      
+      //$("#formLoginArea").css({"width":"350px"});
+   
     }
+    
+    $(".headeTitle").show();
+    
  
   };
-  
+ 
+  function findBootstrapEnvironment() {
+    let envs = ['xs', 'sm', 'md', 'lg', 'xl'];
+
+    let el = document.createElement('div');
+    document.body.appendChild(el);
+
+    let curEnv = envs.shift();
+
+    for (let env of envs.reverse()) {
+        el.classList.add(`d-${env}-none`);
+
+        if (window.getComputedStyle(el).display === 'none') {
+            curEnv = env;
+            break;
+        }
+    }
+
+    document.body.removeChild(el);
+    return curEnv;
+}
 
 
   $(document).ready(function(){
 
+    //console.log(findBootstrapEnvironment());
+
+    if ($('#desktopTest').is(':hidden')) {
+      //alert("device is == eXtra Small");
+    } else {
+      //alert("device is >= SMaller");
+    }
+
     checkDeviceFn();
+
+
+
+    
 
     
 });

@@ -155,6 +155,20 @@ var validateLoginFn = function(){
 
 
 $(document).ready(function(){
+
+    //check device start
+
+if("mobile"==sessionStorage.getItem('checkDevice')){
+
+	$("#formLoginArea").css({"width":"100%"});
+}else{
+ 
+	$("#formLoginArea").css({"width":"350px"});
+}
+//check device end
+
+
+    
  
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         // $("#loginModal").modal('show');

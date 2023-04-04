@@ -26,7 +26,8 @@
          font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em;
           /* background-color: darkblue; */
          /* set background */
-         background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  );
+         /* background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#000039  ); */
+         background: radial-gradient(farthest-side ellipse at 10% 0,#000039   20%,#191970  );
          background-attachment: fixed;
          background-size: cover;
          background-repeat: no-repeat;
@@ -47,14 +48,14 @@
         <div class="container">
        
            <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
-           <h1 class="headeTitle">
+           <h1 style="display:none;" class="headeTitle">
             <!-- <i class="fa-sharp fa-solid fa-building-shield"></i> -->
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
              RISK MANAGEMENT</h1>
 
         </div>
 </div>
-<div style="margin-bottom: 80px;" class="d-none d-lg-block"></div>
+<div style="margin-bottom: 75px;" class="d-none d-lg-block"></div>
 <div style="margin-bottom: 75px;" class=" d-lg-none"></div>
 <!-- set header fixed end-->
   <!-- <button class="btn btn-primary btn-circle btn-back" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button> -->
@@ -186,6 +187,7 @@
     <div class="card  mb-3" >
         <div class="card-header"> 	<b>รายงานสรุปการบริหารความความเสี่ยง </b></div>
         <div class="card-body">
+        <div class="table-responsive">
             <table class="table  table-striped" id="tableRiskData">
                 <thead>
                     
@@ -197,19 +199,19 @@
                             ความเสี่ยง
                         </th>
                         <th>
-                            ระดับความเสี่ยง
+                            ระดับ
                         </th>
                         <th>
                             กลยุทธ์
                         </th>
                         <th>
-                            จัดการความเสี่ยง
+                            จัดการ
                         </th>
                         <th>
                             ผู้รับผิดชอบ
                         </th>
                         <th>
-                            ระยะเวลาปฏิบัติ
+                            ระยะเวลา
 
                         </th>
                        
@@ -316,7 +318,7 @@
                     -->
                 </tbody>
             </table>
-          
+        </div>
         </div>
     </div>
     
@@ -725,6 +727,42 @@
 </div>
 
 
+
+<!--footer for moblie start-->
+<div class="footerFixed  d-block d-sm-none " >
+    <div class="container">
+        <div class="row ">
+            <div class="col">
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle" id="btn-back" onclick="window.location.href='./'" >
+                    <i class="fa-sharp fa-solid fa-circle-left"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col">
+            <!-- <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id="btnDevTeam" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle btnDevTeam" id="btn-back" data-toggle="modal" data-target="#teamModal" >
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    </button>
+                </div>
+             
+            </div>
+            <div class="col">
+              
+                <div class='fontFooter'>
+                    <button class="btn btn-primary btn-circle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
+                    <i class="fa-sharp fa-solid fa-gear "></i>
+                    </button>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--footer for moblie end-->
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -845,7 +883,6 @@
   </div>
 </div>
 <!--Model -->
-
 <!-- Modal -->
 <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" style="height:90%;">
   <div class="modal-dialog modal-lg" role="document">
@@ -862,9 +899,9 @@
         <div class="row">
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" style="height: 300px;">
                     <div class="card-body">
-                        <div class="alert alert-primary" role="alert" style="padding:10px; ">
+                        <div class="alert alert-primary" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
                             <p class="card-text"  style="font-size:16px;">System Analysis</p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -874,9 +911,9 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" style="height: 300px;">
                     <div class="card-body">
-                        <div class="alert alert-success" role="alert" style="padding:10px; ">
+                        <div class="alert alert-success" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
                             <p class="card-text"  style="font-size:16px;">Tester</p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -886,7 +923,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="ร.ท.โฆษิต อามรมณ์สวะ">
+                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ" style="height: 300px;">
                     <div class="card-body ">
                         <div class="alert alert-info" role="alert" style="padding:10px; ">
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
@@ -907,7 +944,7 @@
   </div>
 </div>
 <!--Modal-->
-
+<div id="desktopTest" class="d-none d-lg-block"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>

@@ -36,12 +36,12 @@
         <div class="container">
        
            <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
-           <h1 class="headeTitle"><i class="fa fa-users"></i> MANPOWER  </h1>
+           <h1 style="display:none;" class="headeTitle"><i class="fa fa-users"></i> MANPOWER  </h1>
 
         </div>
 </div>
 <div style="margin-bottom: 90px;" class="d-none d-lg-block"></div>
-<div style="margin-bottom: 75px;" class=" d-lg-none"></div>
+<div style="margin-bottom: 90px;" class=" d-lg-none"></div>
 <!-- set header fixed end-->
 
 <div class="container">
@@ -50,40 +50,40 @@
          
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">การเตรียมความพร้อม..</div>
+                <div class="card-header" style="text-align: center;">&nbsp;</div>
                 <div class="card-body" style="text-align: center; ">
            
-                    <div id="gauge1" class="graph" >graph1</div>
+                    <div id="gauge1" class="graph" >Graph1</div>
                 </div>
             </div>
         </div>
        
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">การกำกับดูแล/ข้อมูลทางยุทธวิธี.. </div>
+                <div class="card-header" style="text-align: center;">&nbsp; </div>
                 <div class="card-body" style="text-align: center; ">
              
-                    <div id="gauge2" class="graph" >graph2</div>
+                    <div id="gauge2" class="graph" >Graph2</div>
                 </div>
             </div>
            
         </div>
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">การกำกับดูแล/(COMSEC)..</div>
+                <div class="card-header" style="text-align: center;">&nbsp;</div>
                 <div class="card-body" style="text-align: center; ">
                 
-                    <div id="gauge3" class="graph" >graph3</div>
+                    <div id="gauge3" class="graph" >Graph3</div>
                 </div>
             </div>
             
         </div>
         <div class="col-md-3">
             <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">สรุปประสิทธิภาพกำลังพล</div>
+                <div class="card-header" style="text-align: center;">&nbsp;</div>
                 <div class="card-body" style="text-align: center; ">
    
-                    <div id="gauge4" class="graph" >graph4</div>
+                    <div id="gauge4" class="graph" >Graph4</div>
                 </div>
             </div>
         </div>
@@ -809,7 +809,6 @@
   </div>
 </div>
 <!--Model -->
-
 <!-- Modal -->
 <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" style="height:90%;">
   <div class="modal-dialog modal-lg" role="document">
@@ -826,9 +825,9 @@
         <div class="row">
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" style="height: 300px;">
                     <div class="card-body">
-                        <div class="alert alert-primary" role="alert" style="padding:10px; ">
+                        <div class="alert alert-primary" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
                             <p class="card-text"  style="font-size:16px;">System Analysis</p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -838,9 +837,9 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" style="height: 300px;">
                     <div class="card-body">
-                        <div class="alert alert-success" role="alert" style="padding:10px; ">
+                        <div class="alert alert-success" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
                             <p class="card-text"  style="font-size:16px;">Tester</p>
                             <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
@@ -850,7 +849,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="https://img2.thuthuatphanmem.vn/uploads/2019/01/05/hinh-avatar-doi-2_042811150.jpg" alt="ร.ท.โฆษิต อามรมณ์สวะ">
+                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ" style="height: 300px;">
                     <div class="card-body ">
                         <div class="alert alert-info" role="alert" style="padding:10px; ">
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
@@ -871,8 +870,7 @@
   </div>
 </div>
 <!--Modal-->
-
-
+<div id="desktopTest" class="d-none d-lg-block"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!--
