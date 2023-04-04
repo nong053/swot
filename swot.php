@@ -74,7 +74,7 @@
         
 
         <div class="card text-bg-defualt  mb-3 " >
-            <div class="card-header placeholder-glow" >&nbsp;
+            <div class="card-header placeholder-glow"  id="swot_name_header">&nbsp;
             SWOT Analysis
             </div>
             <div class="card-body" style="padding-top: 5px;" >
@@ -85,7 +85,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="alert alert-warning" role="alert" style="margin-top: 10px;margin-bottom: 15px;" id="swot_detail_header">
-                        A simple warning alert—check it out!
+                        &nbsp;
                         </div>
                         <table class="table  table-striped tableRmData">
                             <!-- <thead>
@@ -97,24 +97,24 @@
                             </thead> -->
                             <tbody >
                                 <tr  class="table-primary">
-                                    <td class="swot_seq">S</td>
+                                    <td class="swot_seq"><b>S</b></td>
                                     <td class="swot_name">จุดแข็ง (Strengths)</td>
-                                    <td class="swot_score">5.00 คะแนน</td>
+                                    <td class="swot_score" id="strengthsScore">5.00 คะแนน</td>
                                 </tr>
                                 <tr  class="table-secondary">
-                                    <td class="swot_seq">W</td>
+                                    <td class="swot_seq"><b>W</b></td>
                                     <td class="swot_name">จุดอ่อน (Weaknesses)</td>
-                                    <td class="swot_score">5.00 คะแนน</td>
+                                    <td class="swot_score" id="weaknessesScore">5.00 คะแนน</td>
                                 </tr>
                                 <tr  class="table-success">
-                                    <td class="swot_seq">O</td>
+                                    <td class="swot_seq"><b>O</b></td>
                                     <td class="swot_name">โอกาส (Opportunities)</td>
-                                    <td class="swot_score">5.00 คะแนน</td>
+                                    <td class="swot_score" id="opportunitiesScore">5.00 คะแนน</td>
                                 </tr>
                                 <tr  class="table-danger">
-                                    <td class="swot_seq">T</td>
+                                    <td class="swot_seq"><b>T</b></td>
                                     <td class="swot_name">ภัยคุกคาม (Threats)</td>
-                                    <td class="swot_score">5.00 คะแนน</td>
+                                    <td class="swot_score" id="threatsScore">5.00 คะแนน</td>
                                 </tr>
                                
                             </tbody>
@@ -523,10 +523,7 @@
 
                             </div>
                             <div class="card-body card-body-ex">
-                                <div id="swot_detail_alert" class="row alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
-                                    <!-- <i class="fa fa-exclamation" aria-hidden="true"></i> -->
-                                    <!-- <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
-                                    <!-- <span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></span> -->
+                                <div id="swot_detail_alert" class="alert alert-warning d-flex1 align-items-center" style="display:none; margin-bottom:15px;" role="alert">
                                     <div id="swot_detail_alert_text"></div>
                                 </div>
                                 <div class="alert alert-primary mb-3 alert-ex">

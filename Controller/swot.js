@@ -37,11 +37,13 @@ $("body").mLoading();
 // }
 var dataJsonForImport="";
 var clearDataFn = function(){
+	$("#swot_name").val("");
 	$("#swot_detail").val("");
 	$(".dataStrengths").html("");
 	$(".dataWeaknesses").html("");
 	$(".dataOpportunities").html("");
 	$(".dataThreats").html("");
+	$("#swot_name_header").html("");
 	$("#swot_detail_header").html("");
 
 	//clear form start
@@ -370,6 +372,7 @@ uuid
 		var swot_weight="";
 	
 		if(index==0){
+			 $("#swot_name").val(indexEntry['swot_name']);
 			 $("#swot_detail").val(indexEntry['swot_detail']);
 		}
 
@@ -518,6 +521,7 @@ var renderSwotToDisplay = function(data){
 
 		$.each(data,function(index,indexEntry){
 			if(index==1){
+				$("#swot_name_header").html(indexEntry['swot_name']);
 				$("#swot_detail_header").html(indexEntry['swot_detail']);
 				
 			}
@@ -574,6 +578,11 @@ var renderSwotToDisplay = function(data){
 		$(".dataWeaknesses").html(dataWeaknesses).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumWeaknesses).toFixed(2)+" </td></tr>");
 		$(".dataOpportunities").html(dataOpportunities).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumOpportunities).toFixed(2)+" </td></tr>");
 		$(".dataThreats").html(dataThreats).append("<tr><td colspan=\"3\" class=\"total-swot\">คะแนนรวม="+parseFloat(sumThreats).toFixed(2)+" </td></tr>");
+
+		$("#strengthsScore").html(parseFloat(sumStrengths).toFixed(2));
+		$("#weaknessesScore").html(parseFloat(sumWeaknesses).toFixed(2));
+		$("#opportunitiesScore").html(parseFloat(sumOpportunities).toFixed(2));
+		$("#threatsScore").html(parseFloat(sumThreats).toFixed(2));
 
 }
 var findOne=function(uuid){
@@ -672,6 +681,7 @@ var saveSwot=function(){
 		data:{
 			"uuid":sessionStorage.getItem('uuid'),
 			"action":"insert",
+			"swot_name":$("#swot_name").val(),
 			"swot_detail":$("#swot_detail").val(),
 
 			//form strengths start
@@ -1460,20 +1470,31 @@ var checkAllDataSwotFn = function(swot_name){
 
 var checkValidateFn = function(){
 	$("#swot_detail_alert").hide();
+	$("#swot_detail_alert_text").html("");
 	var validate=true;
 
+
+	if($("#swot_name").val()==""){
+		validate=false;
+		$("#swot_name").css({"border":"red solid 1px"});
+		$("#swot_detail_alert_text").append("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกชื่อ SWOT");
+		$("#swot_detail_alert").show();
+
+	}else{
+		$("#swot_name").css({"border":"#ced4da solid 1px"});
+	}
 
 	if($("#swot_detail").val()==""){
 		validate=false;
 		$("#swot_detail").css({"border":"red solid 1px"});
-		$("#swot_detail_alert_text").html("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรายละเอียด SWOT");
+		$("#swot_detail_alert_text").append("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรายละเอียด SWOT");
 		$("#swot_detail_alert").show();
 
 	}else{
 		$("#swot_detail").css({"border":"#ced4da solid 1px"});
-		$("#swot_detail_alert_text").html("");
-		$("#swot_detail_alert").hide();
 	}
+
+
 
 	//validate=checkAllDataSwotFn("s");
 	if(checkAllDataSwotFn("s")==false){
@@ -1511,7 +1532,14 @@ var checkValidateExampleFn  = function(){
 $(document).ready(function(){
 
 	
+//check device start
 
+if("mobile"==sessionStorage.getItem('checkDevice')){
+	$("#offcanvasRight").css({"height":"95%"});
+}else{
+	$("#offcanvasRight").css({"height":"100%"});
+}
+//check device end
 
 	$(".btnDevTeam").click(function(){
 		$("#teamModal").modal('show');
