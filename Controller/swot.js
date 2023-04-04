@@ -322,7 +322,7 @@ var calculateSwotFn = function(){
 		chartArea: {
 			 //background: "#ffc107",
 			 visible: false,
-			 width: 350,
+			 width: 320,
 			 height:350,
 			  background:'transparent'
 		  },

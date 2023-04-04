@@ -84,7 +84,7 @@
                 <!-- <div id="chartGe" class="chart graph" ></div> -->
                 <div class="row">
                     <div class="col-md-6">
-                        <div id="chartPrint" class="chart graph" style="width: 350px; height: auto;margin:auto; display:block; padding: 0px;"></div>
+                        <div id="chartPrint" class="chart graph" style="width: 300px; height: auto;margin:auto; display:block; padding: 0px;"></div>
                     </div>
                     <div class="col-md-6">
                         <div class="alert alert-warning" role="alert" style="margin-top: 10px;margin-bottom: 15px;" id="swot_detail_header">

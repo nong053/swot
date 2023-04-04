@@ -81,8 +81,8 @@ var listTaskCateFn = function(data){
 												htmlListTaskCate+="<input type=\"text\" name=\"t_minute-"+indexEntryTask['t_code']+"\" id=\"t_minute-"+indexEntryTask['t_code']+"\" class=\"form-control number_only\" placeholder=\"นาที\" value=\""+indexEntryTask['t_minute']+"\">";
 											htmlListTaskCate+="</td>";
 											htmlListTaskCate+="<td>";
-												htmlListTaskCate+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง</label>";
-												htmlListTaskCate+="<input type=\"text\" name=\"t_quantity-"+indexEntryTask['t_code']+"\" id=\"t_quantity-"+indexEntryTask['t_code']+"\" class=\"form-control number_only\" placeholder=\"ครั้ง\" value=\""+indexEntryTask['t_quantity']+"\">";
+												htmlListTaskCate+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง/ปี</label>";
+												htmlListTaskCate+="<input style='background:antiquewhite' type=\"text\" name=\"t_quantity-"+indexEntryTask['t_code']+"\" id=\"t_quantity-"+indexEntryTask['t_code']+"\" class=\"form-control number_only \" placeholder=\"ครั้ง\" value=\""+indexEntryTask['t_quantity']+"\">";
 											htmlListTaskCate+="</td>";
 										htmlListTaskCate+="</tr>";
 										
@@ -155,10 +155,10 @@ var listTaskCateDisplayFn = function(data){
 						htmlDataTableMCDisplay+="รายละเอียดงาน";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+=" <th class=\"mc_time_unit\">";
-						htmlDataTableMCDisplay+="นาที";
+						htmlDataTableMCDisplay+="นาที/ปี";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_workload_year\">";
-						htmlDataTableMCDisplay+="ครั้ง";
+						htmlDataTableMCDisplay+="ครั้ง/ปี";
 						htmlDataTableMCDisplay+=" </th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_manpower_year\">";
 						htmlDataTableMCDisplay+="อัตรา";
@@ -916,7 +916,10 @@ success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert("ok");
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'โหลดข้อมูลเรียบร้อย',
+					});
 				}
 			}
 		}
@@ -1415,10 +1418,10 @@ $(document).on("click",".delExampleData",function(){
 /*load data start here.*/
  $("#btnLoadExample").click(function(){
 	if($("#file_import").val()==""){
-		alert('loadExampleDataFn');
+		//alert('loadExampleDataFn');
 		loadExampleDataFn(sessionStorage.getItem('uuid'),$("#mc_id_load").val());
 	}else{
-		alert('importExampleDataJsonFn');
+		//alert('importExampleDataJsonFn');
 		importExampleDataJsonFn(sessionStorage.getItem('uuid'),dataJsonForImport);
 	}
 	

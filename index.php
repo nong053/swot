@@ -43,24 +43,161 @@ body{
 .text_form{
     color:white;
 }
+/* test start */
+.list-group {box-shadow: 0px 11px 23px 5px rgba(0,0,0,0.34);}
 
+.list-group-item {
+    background-color: rgba(255,255,255,0.7); border:0;
+    border-bottom: #ddd 1px solid;
+}
+
+.btn-toolbar {
+    margin-top:10px;
+    float: right;
+}
+
+img {
+  float:left; 
+  margin-right:15px;
+  height: 128px;
+  width: 128px;
+}
+
+
+/* ==== SOME BOOTSTRAP MODS/STYLING ==== */
+.btn-default {background-color: rgba(255,255,255,0.3); border-color:rgba(0,0,0,0.2);}
+.img-rounded, .btn, .label {border-radius: 6px;}
+.btn {padding: 6px 18px;}
+.dropdown-menu>li>a {color:#777;}
+.dropdown-menu {
+  background-color:rgba(0,0,0,0.8);
+}
+.divider {background-color: #555;}
+.data_detail{
+    padding: 5px;
+}
+.lead {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+/* test end */
 
 </style>
 
 
+
+<div class="titleArea" style="text-align: center; margin-top: 30px;">
+    <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนสำหรับผู้บริหาร</h1>
+    <h2 class="title2">(Management analysis and planning tools)</h2>
+   
+</div>
+<div class="container " style="text-align: right; color:white; height:50px;">
+    <div style="padding-bottom: 15px; cursor:pointer; display:none;" id="btnLogout">
+       <i class="fa fa-sign-out" aria-hidden="true"></i> <b>ออกจากระบบ</b> 
+    </div>
+</div>
+<div class="container">
+    
+  <ul class="list-group">
+    <li class="list-group-item clearfix" id="btnMC" >
+     
+   
+        <button style="float:left; margin-right:15px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
+            <div>MC</div>
+        </button>
+      
+
+       <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                    ด้านแผนกรอบกำลังพล
+               
+                </h3>
+                <p class="list-group-item-text lead">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การวางแผนกำลังคน คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน 
+ทำให้เกิดประสิทธิภาพ และมีความคุ้มค่า โดยการเตรียมกำลังคนทั้งด้านปริมาณ และด้านคุณภาพ 
+สำหรับการรองรับการเปลี่ยนแปลงที่จะเกิดขึ้นในอนาคต และใช้เป็นเครื่องมือช่วยตัดสินใจ 
+ในการบริหารทรัพยากรบุคคล
+
+                </p>
+       
+   
+       </div>
+    
+    </li>
+
+    <li class="list-group-item clearfix" id="btnSW">
+      <div >
+       
+            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
+                <div>SW</div>
+            </button>
+      
+     
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                ด้านแผนปฏิบัติราชการ (SWOT)
+           
+                </h3>
+                <p class="list-group-item-text lead">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWOT (การวิเคราะห์สวอต) คือการวิเคราะห์สภาพแวดล้อมและศักยภาพสำหรับการประเมินธุรกิจประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายใน
+                </p>
+            </div>
+       
+      </div>
+    
+    </li>
+    <li class="list-group-item clearfix" id="btnRM" style="cursor:pointer;">
+    <!-- onclick="window.location.href='./rm.php' -->
+       
+            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+                <div>RM</div>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                ด้านบริหารความเสี่ยง
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Risk managment คือ การจัดการความเสี่ยง ทั้งในกระบวนการในการระบุ วิเคราะห์(Risk analysis) ประเมิน (Risk assessment) ดูแล ตรวจสอบ และควบคุมความเสี่ยงที่สัมพันธ์กับ กิจกรรม หน้าที่และกระบวนการทำงาน เพื่อให้องค์กรลดความเสียหายจากความเสี่ยงมากที่สุด
+                </p>
+            </div>
+    
+    </li>
+
+
+
+    
+   
+    
+  </ul>
+</div>
+
+
+
+
+<!--
+<div class="container">
 <div class="container " style="text-align: right; color:white;">
     <div style="padding: 15px; cursor:pointer; display:none;" id="btnLogout">
        <i class="fa fa-sign-out" aria-hidden="true"></i> ออกจากระบบ 
     </div>
 </div>
-<div class="row">
+
+<div class="row ">
     
-    <div class="col-md-12"  >
+    <div class="col-md-6"  >
     
         <div class="titleArea" style="text-align: center; margin-top: 30px;">
             <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนสำหรับผู้บริหาร</h1>
             <h2 class="title2">(Management analysis and planning tools)</h2>
-            <h3 class="title2">ด้านแผนกรอบกำลังพล ด้านแผนปฏิบัติราชการ ด้านบริหารความเสี่ยง</h3>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-primary">ด้านแผนกรอบกำลังพล </li>
+                <li class="list-group-item list-group-item-secondary">ด้านแผนปฏิบัติราชการ </li>
+                <li class="list-group-item list-group-item-success">ด้านบริหารความเสี่ยง</li>
+
+            </ul>
         </div>
         <div id='btnArea' style="text-align: center; margin: 60px; display:none;">
             <div class="container">
@@ -84,8 +221,10 @@ body{
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-6 ">
         <div id='formLoginArea' style="margin:auto; display:none;">
-            <!-- body form login start-->
+
             <div class="container">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -138,12 +277,14 @@ body{
                     <button type="button" id="btnSubmitLR" style="width:100%;" class="btn btn-primary">ตกลง</button>
 
                 </div>
-                <!-- body form login end-->
+           
             </div>
         </div>
     
     </div>
 </div>
+</div>
+-->
 
 <!-- <center>
 <a class="btn btn-success btn-circle" href="./swot.php">SWOT</a>
@@ -154,12 +295,12 @@ body{
 
 
 <!-- Modal -->
-<!-- <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+ <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel"><b><i class="fa fa-lock" aria-hidden="true"></i> ลงชื่อเข้าใช้งาน</b></h1>
-    
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
 
@@ -222,7 +363,7 @@ body{
       </div>
     </div>
   </div>
-</div> -->
+</div> 
 
 <div id="desktopTest" class="d-none d-lg-block"></div>
 

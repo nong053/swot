@@ -167,20 +167,60 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 }
 //check device end
 
+$("#btnMC").click(function(){
+    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+        $("#loginModal").modal('show');
+     
+        return false;
+    }else{
+        window.location.href='./mc.php';
 
+        return true;
+
+    }
+    
+});
+
+$("#btnSW").click(function(){
+    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+        $("#loginModal").modal('show');
+     
+        return false;
+    }else{
+        window.location.href='./swot.php';
+
+        return true;
+
+    }
+    
+});
+
+$("#btnRM").click(function(){
+    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+        $("#loginModal").modal('show');
+     
+        return false;
+    }else{
+        window.location.href='./rm.php';
+
+        return true;
+
+    }
+    
+});
     
  
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
-        // $("#loginModal").modal('show');
+       // $("#loginModal").modal('show');
         $("#btnLogout").hide();
-        $("#btnArea").hide();
-        $("#formLoginArea").show();
+        // $("#btnArea").hide();
+        // $("#formLoginArea").show();
     }else{
     
         //$("#loginModal").modal('hide');
         $("#btnLogout").show();
-        $("#btnArea").show();
-        $("#formLoginArea").hide();
+        // $("#btnArea").show();
+        // $("#formLoginArea").hide();
     }
 
 
@@ -190,8 +230,8 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
         sessionStorage.setItem('uuid',"");
         $("#btnLogout").hide();
        // $("#loginModal").modal('show');
-       $("#btnArea").hide();
-       $("#formLoginArea").show();
+    //    $("#btnArea").hide();
+    //    $("#formLoginArea").show();
     });
 
     $("#register_password").keyup(function(){	
@@ -259,11 +299,11 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
                                     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
                                     content: 'ลงทะเบียนเรียบร้อย',
                                 });
-                                //$("#loginModal").modal('hide');
+                                $("#loginModal").modal('hide');
                                 $("#btnLogout").show();
 
-                                $("#btnArea").show();
-                                $("#formLoginArea").hide();
+                                // $("#btnArea").show();
+                                // $("#formLoginArea").hide();
 
                             }else if(data[0]['status']==403){
                          
@@ -297,10 +337,10 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
                                 sessionStorage.setItem('token', data[0]['token']);
                                 sessionStorage.setItem('uuid', data[0]['data']);
 
-                                //$("#loginModal").modal('hide');
+                                $("#loginModal").modal('hide');
                                 $("#btnLogout").show();
-                                $("#btnArea").show();
-                                $("#formLoginArea").hide();
+                                // $("#btnArea").show();
+                                // $("#formLoginArea").hide();
                            
                                 //  $.alert({
                                 //     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',

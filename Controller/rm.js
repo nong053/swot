@@ -1176,7 +1176,10 @@ success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					alert("ok");
+					$.alert({
+						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						content: 'โหลดข้อมูลเรียบร้อย',
+					});
 				}
 			}
 		}

@@ -20,6 +20,9 @@
         position: absolute;
         top:15px;
     } */
+
+
+
     </style>
     
     
@@ -185,11 +188,11 @@
                         </th>
                         <th class="mc_time_unit">
                             <!-- เวลา:หน่วย -->
-                            นาที
+                            นาที/ปี
                         </th>
                         <th class="mc_workload_year">
                             <!-- ปริมาณงาน:ปี -->
-                            ครั้ง
+                            ครั้ง/ปี
                         </th>
                         <th class="mc_manpower_year">
                             <!-- อัตรากำลัง:ปี -->
@@ -247,9 +250,9 @@
                     <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
                         <i class="fa-sharp fa-solid fa-bars-progress"></i>
                     </button>
-                    <button  type="button" id="addTaskModal" class="btn btn-primary btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
-                    <button  type="button" id="deleteTaskCate" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
-                    <button  type="button" id="editTaskCateModal" class="btn btn-warning btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+                    <button style=" margin: 1px;"  type="button" id="addTaskModal" class="btn btn-primary btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
+                    <button style=" margin: 1px;"  type="button" id="deleteTaskCate" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                    <button style=" margin: 1px;"  type="button" id="editTaskCateModal" class="btn btn-warning btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                     <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPrint" class="btn btn-info btn-circle ">
                         <i class="fa-sharp fa-solid fa-print"></i>
                     </button>
@@ -622,7 +625,7 @@
         <div class="row ">
             <div class="col">
                 <div class='fontFooter'>
-                    <button class="btn btn-primary btn-circle" id="btn-back" onclick="window.location.href='./'" >
+                    <button class="btn btn-primary btn-circle shadow-lg " id="btn-back" onclick="window.location.href='./'" >
                     <i class="fa-sharp fa-solid fa-circle-left"></i>
                     </button>
                 </div>
@@ -630,7 +633,7 @@
             <div class="col">
             <!-- <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id="btnDevTeam" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
                 <div class='fontFooter'>
-                    <button class="btn btn-primary btn-circle btnDevTeam" id="btn-back" data-toggle="modal" data-target="#teamModal" >
+                    <button class="btn btn-primary btn-circle btnDevTeam shadow-lg " id="btn-back" data-toggle="modal" data-target="#teamModal" >
                     <i class="fa fa-user-circle" aria-hidden="true"></i>
                     </button>
                 </div>
@@ -639,7 +642,7 @@
             <div class="col">
               
                 <div class='fontFooter'>
-                    <button class="btn btn-primary btn-circle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
+                    <button class="btn btn-primary btn-circle shadow-lg " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
                     <i class="fa-sharp fa-solid fa-gear "></i>
                     </button>
                 </div>
@@ -825,7 +828,7 @@
         <div class="row">
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" style="height: 300px;">
+                    <img class="card-img-top circle" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" >
                     <div class="card-body">
                         <div class="alert alert-primary" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
@@ -837,7 +840,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" style="height: 300px;">
+                    <img class="card-img-top circle" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา">
                     <div class="card-body">
                         <div class="alert alert-success" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
@@ -849,7 +852,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ" style="height: 300px;">
+                    <img class="card-img-top circle" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ">
                     <div class="card-body ">
                         <div class="alert alert-info" role="alert" style="padding:10px; ">
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>

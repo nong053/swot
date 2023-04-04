@@ -1,5 +1,5 @@
 
-var webService="http://localhost/swot";
+var webService="http://192.168.1.103/swot";
 //var webService="http://dashboardweb.com/swot";
 
 var navigator_info = "";
