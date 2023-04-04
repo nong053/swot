@@ -828,7 +828,7 @@
         <div class="row">
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top circle" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" >
+                    <img class="card-img-top " src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" >
                     <div class="card-body">
                         <div class="alert alert-primary" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
@@ -840,7 +840,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top circle" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา">
+                    <img class="card-img-top " src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา">
                     <div class="card-body">
                         <div class="alert alert-success" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
@@ -852,7 +852,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top circle" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ">
+                    <img class="card-img-top " src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ">
                     <div class="card-body ">
                         <div class="alert alert-info" role="alert" style="padding:10px; ">
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>

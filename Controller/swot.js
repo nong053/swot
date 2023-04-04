@@ -1544,10 +1544,10 @@ $(document).ready(function(){
 
 if ($('#desktopTest').is(':hidden')) {
 	$("#offcanvasRight").css({"height":"95%"});
-	$(".headeTitle").css({"top":"25px"});
+	$(".headeTitle").css({"top":"15px"});
   } else {
 	$("#offcanvasRight").css({"height":"100%"});
-	$(".headeTitle").css({"top":"15px"});
+	$(".headeTitle").css({"top":"25px"});
   }
   
 //check device end
