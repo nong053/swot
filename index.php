@@ -99,7 +99,7 @@ img {
 <div class="container">
     
   <ul class="list-group">
-    <li class="list-group-item clearfix" id="btnMC" >
+    <li class="list-group-item clearfix" id="btnMC" style="cursor:pointer;">
      
    
         <button style="float:left; margin-right:15px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
@@ -125,7 +125,7 @@ img {
     
     </li>
 
-    <li class="list-group-item clearfix" id="btnSW">
+    <li class="list-group-item clearfix" id="btnSW" style="cursor:pointer;">
       <div >
        
             <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>

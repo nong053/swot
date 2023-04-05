@@ -1534,22 +1534,24 @@ $(document).ready(function(){
 
 //check device start
 
-// if("mobile"==sessionStorage.getItem('checkDevice')){
-// 	$("#offcanvasRight").css({"height":"95%"});
-// 	$(".headeTitle").css({"top":"25px"});
-// }else{
-// 	$("#offcanvasRight").css({"height":"100%"});
-// 	$(".headeTitle").css({"top":"15px"});
-// }
-
-if ($('#desktopTest').is(':hidden')) {
+if("mobile"==sessionStorage.getItem('checkDevice')){
 	$("#offcanvasRight").css({"height":"95%"});
-	$(".headeTitle").css({"top":"15px"});
-  } else {
-	$("#offcanvasRight").css({"height":"100%"});
 	$(".headeTitle").css({"top":"25px"});
+}else{
+	$("#offcanvasRight").css({"height":"100%"});
+	$(".headeTitle").css({"top":"15px"});
+}
+/*
+if ($('#desktopTest').is(':hidden')) {
+	alert('moblie');
+	$("#offcanvasRight").css({"height":"95%"});
+	$(".headeTitle").css({"top":"25px"});
+  } else {
+	alert('desktop');
+	$("#offcanvasRight").css({"height":"100%"});
+	$(".headeTitle").css({"top":"15px"});
   }
-  
+  */
 //check device end
 
 	$(".btnDevTeam").click(function(){

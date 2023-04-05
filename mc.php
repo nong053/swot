@@ -38,7 +38,7 @@
         
         <div class="container">
        
-           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <span style="float:right; position:relative; top:-30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
            <h1 style="display:none;" class="headeTitle"><i class="fa fa-users"></i> MANPOWER  </h1>
 
         </div>
@@ -224,7 +224,7 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;"><i data-bs-dismiss="offcanvas" aria-label="Close" class="fa-sharp fa-solid fa-angles-right"></i> MANPOWER FORM</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold; cursor:pointer;" data-bs-dismiss="offcanvas" aria-label="Close"><i  class="fa-sharp fa-solid fa-angles-right"></i> MANPOWER FORM</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="offcanvas-body">
@@ -615,6 +615,9 @@
         <!-- <small class="text-uppercase text-700 fw-bold py-2 pe-2 ps-1 rounded-end"></small> -->
         </div>
     </a>
+
+
+    <div class="bottomFooter" style="clear: both; height:100px;"></div>
 </div>
 
 

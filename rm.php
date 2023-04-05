@@ -47,7 +47,7 @@
         
         <div class="container">
        
-           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <span style="float:right; position:relative; top:-30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
            <h1 style="display:none;" class="headeTitle">
             <!-- <i class="fa-sharp fa-solid fa-building-shield"></i> -->
             <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -326,8 +326,8 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;">
-        <i class="fa-sharp fa-solid fa-angles-right " style="cursor:pointer;" data-bs-dismiss="offcanvas" aria-label="Close"></i> Risk Managment Form
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;cursor:pointer;" data-bs-dismiss="offcanvas" aria-label="Close">
+        <i class="fa-sharp fa-solid fa-angles-right " style="cursor:pointer;" ></i> Risk Managment Form
         <!-- <i class="fa-sharp fa-solid fa-user-group"></i> ทีมพัฒนา Risk Managment Form -->
         </h5>
         <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
@@ -722,7 +722,7 @@
     </a>
 
  
-
+    <div class="bottomFooter" style="clear: both; height:100px;"></div>
    
 </div>
 

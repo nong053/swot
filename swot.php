@@ -56,7 +56,7 @@
         
         <div class="container">
        
-           <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <span style="float:right; position:relative; top:-30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
            <h1 style="display:none;" class="headeTitle"><i class="fa-sharp fa-solid fa-chart-line"></i> SWOT </h1>
 
         </div>
@@ -485,7 +485,7 @@
     
     <div class="offcanvas  offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color:#191970; height:95%;">
         <div class="offcanvas-header" style=" text-align:center;">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold; "><i data-bs-dismiss="offcanvas" aria-label="Close" style="cursor:pointer;" class="fa-sharp fa-solid fa-angles-right"></i> SWOT FORM </h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white; font-weight:bold;cursor:pointer; " data-bs-dismiss="offcanvas" aria-label="Close"><i  style="cursor:pointer;" class="fa-sharp fa-solid fa-angles-right"></i> SWOT FORM </h5>
         <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="color: white;"></button>
         </div>
         <div class="container"  >
@@ -2041,7 +2041,7 @@
   </div>
 </div>
 <!--Modal-->
-<div id="desktopTest" class="d-none d-lg-block"></div>
+<div id="desktopTest" style="color:white" class="d-none d-lg-block"></div>
 
 
 
