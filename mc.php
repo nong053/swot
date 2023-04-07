@@ -766,7 +766,7 @@
                         <!-- <label for="exampleFindData" class="form-label">ค้นหา</label> -->
                         <input type="text" class="form-control" id="mc_name_find" placeholder="ค้นหา">
                     </div>
-                    <table class="table" id="exampleDataTable">
+                    <table class="table  table-striped" id="exampleDataTable">
                         <thead>
                             <!-- <th>#</th> -->
                             <th>ข้อมูลตัวอย่าง</th>
