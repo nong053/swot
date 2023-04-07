@@ -56,7 +56,7 @@
                 <div class="card-header" style="text-align: center;">&nbsp;</div>
                 <div class="card-body" style="text-align: center; ">
            
-                    <div id="gauge1" class="graph" >Graph1</div>
+                    <div id="gauge1" class="graph" >&nbsp;</div>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                 <div class="card-header" style="text-align: center;">&nbsp; </div>
                 <div class="card-body" style="text-align: center; ">
              
-                    <div id="gauge2" class="graph" >Graph2</div>
+                    <div id="gauge2" class="graph" >&nbsp;</div>
                 </div>
             </div>
            
@@ -76,7 +76,7 @@
                 <div class="card-header" style="text-align: center;">&nbsp;</div>
                 <div class="card-body" style="text-align: center; ">
                 
-                    <div id="gauge3" class="graph" >Graph3</div>
+                    <div id="gauge3" class="graph" >&nbsp;</div>
                 </div>
             </div>
             
@@ -86,7 +86,7 @@
                 <div class="card-header" style="text-align: center;">&nbsp;</div>
                 <div class="card-body" style="text-align: center; ">
    
-                    <div id="gauge4" class="graph" >Graph4</div>
+                    <div id="gauge4" class="graph" >&nbsp;</div>
                 </div>
             </div>
         </div>
@@ -188,11 +188,11 @@
                         </th>
                         <th class="mc_time_unit">
                             <!-- เวลา:หน่วย -->
-                            นาที/ปี
+                            นาที(ปี)
                         </th>
                         <th class="mc_workload_year">
                             <!-- ปริมาณงาน:ปี -->
-                            ครั้ง/ปี
+                            ครั้ง(ปี)
                         </th>
                         <th class="mc_manpower_year">
                             <!-- อัตรากำลัง:ปี -->
@@ -252,7 +252,7 @@
                     </button>
                     <button style=" margin: 1px;"  type="button" id="addTaskModal" class="btn btn-primary btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-plus"></i></button>
                     <button style=" margin: 1px;"  type="button" id="deleteTaskCate" class="btn btn-danger btn-circle main_cate_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
-                    <button style=" margin: 1px;"  type="button" id="editTaskCateModal" class="btn btn-warning btn-circle main_cate_mc_btn" data-bs-toggle="modal" data-bs-target="#cateTaskModel"><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
+                    <button style=" margin: 1px;"  type="button" id="editTaskCateModal" class="btn btn-warning btn-circle main_cate_mc_btn" ><i class="fa-sharp fa-solid fa-pen-to-square"></i></button>
                     <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="submitPrint" class="btn btn-info btn-circle ">
                         <i class="fa-sharp fa-solid fa-print"></i>
                     </button>
@@ -629,15 +629,15 @@
             <div class="col">
                 <div class='fontFooter'>
                     <button class="btn btn-primary btn-circle shadow-lg " id="btn-back" onclick="window.location.href='./'" >
-                    <i class="fa-sharp fa-solid fa-circle-left"></i>
+                    <i style="line-height: 2;" class="fa-sharp fa-solid fa-circle-left"></i>
                     </button>
                 </div>
             </div>
             <div class="col">
             <!-- <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id="btnDevTeam" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
                 <div class='fontFooter'>
-                    <button class="btn btn-primary btn-circle btnDevTeam shadow-lg " id="btn-back" data-toggle="modal" data-target="#teamModal" >
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <button class="btn btn-primary btn-circle btnDevTeam shadow-lg " id="btnDevTeam" data-toggle="modal" data-target="#teamModal" value="YES">
+                    <i style="line-height: 2;" class="fa fa-user-circle" aria-hidden="true"></i>
                     </button>
                 </div>
              
@@ -646,7 +646,7 @@
               
                 <div class='fontFooter'>
                     <button class="btn btn-primary btn-circle shadow-lg " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
-                    <i class="fa-sharp fa-solid fa-gear "></i>
+                    <i style="line-height: 2;" class="fa-sharp fa-solid fa-gear "></i>
                     </button>
                 </div>
              
@@ -768,10 +768,10 @@
                     </div>
                     <table class="table" id="exampleDataTable">
                         <thead>
-                            <th>#</th>
+                            <!-- <th>#</th> -->
                             <th>ข้อมูลตัวอย่าง</th>
-                            <th>ประเภท</th>
-                            <th style="text-align: center;">จัดการ</th>
+                            <!-- <th>ประเภท</th> -->
+                            <!-- <th style="text-align: center;">จัดการ</th> -->
                         </thead>
                         <tbody id="dataExampleArea">
                        

@@ -20,6 +20,14 @@ var listTaskCateFn = function(data){
 
 	var htmlListTaskCate="";
 	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
+
+		var tc_name ="";
+		if(indexEntryTaskCate['tc_name'].length>20){
+			tc_name = indexEntryTaskCate['tc_name'].substring(0,20)+"...";
+		}else{
+			tc_name=indexEntryTaskCate['tc_name'];
+		}
+
 		htmlListTaskCate+="<div class=\"accordion-item \">";
 			htmlListTaskCate+="<h2 class=\"accordion-header\" style='background:#e7f1ff;border-bottom:1px solid #dee2e6 ' id=\"flush-heading-"+indexEntryTaskCate['tc_code']+"\">";
 				htmlListTaskCate+="<div class=\"mc_checkbox_cate_mc\" >";
@@ -27,7 +35,8 @@ var listTaskCateFn = function(data){
 				htmlListTaskCate+="</div>";
 					htmlListTaskCate+="<div class=\"mc_cate_mc\">   ";
 						htmlListTaskCate+="<button style='background:#e7f1ff;'  class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapse-"+indexEntryTaskCate['tc_code']+"\" aria-expanded=\"false\" aria-controls=\"flush-collapse-"+indexEntryTaskCate['tc_code']+"\">";
-						htmlListTaskCate+=indexEntryTaskCate['tc_name'];
+						
+						htmlListTaskCate+=tc_name;
 						htmlListTaskCate+="</button> ";
 					htmlListTaskCate+="</div>";
 				htmlListTaskCate+="<br style=\"clear:both\">";	
@@ -81,7 +90,7 @@ var listTaskCateFn = function(data){
 												htmlListTaskCate+="<input type=\"text\" name=\"t_minute-"+indexEntryTask['t_code']+"\" id=\"t_minute-"+indexEntryTask['t_code']+"\" class=\"form-control number_only\" placeholder=\"นาที\" value=\""+indexEntryTask['t_minute']+"\">";
 											htmlListTaskCate+="</td>";
 											htmlListTaskCate+="<td>";
-												htmlListTaskCate+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง/ปี</label>";
+												htmlListTaskCate+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง(ปี)</label>";
 												htmlListTaskCate+="<input style='background:antiquewhite' type=\"text\" name=\"t_quantity-"+indexEntryTask['t_code']+"\" id=\"t_quantity-"+indexEntryTask['t_code']+"\" class=\"form-control number_only \" placeholder=\"ครั้ง\" value=\""+indexEntryTask['t_quantity']+"\">";
 											htmlListTaskCate+="</td>";
 										htmlListTaskCate+="</tr>";
@@ -149,16 +158,17 @@ var listTaskCateDisplayFn = function(data){
 		htmlDataTableMCDisplay+="<div class=\"card  mb-3\" >";
 			htmlDataTableMCDisplay+="<div class=\"card-header\">"+indexEntryTaskCate['tc_name']+"</div>";
 			htmlDataTableMCDisplay+="<div class=\"card-body\">";
+			htmlDataTableMCDisplay+="<div class=\"table-responsive\">";
 				htmlDataTableMCDisplay+="<table class=\"table  table-striped\">";
 					htmlDataTableMCDisplay+="<thead>";
 						htmlDataTableMCDisplay+="<th class=\"mc_detail\">";
 						htmlDataTableMCDisplay+="รายละเอียดงาน";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+=" <th class=\"mc_time_unit\">";
-						htmlDataTableMCDisplay+="นาที/ปี";
+						htmlDataTableMCDisplay+="นาที(ปี)";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_workload_year\">";
-						htmlDataTableMCDisplay+="ครั้ง/ปี";
+						htmlDataTableMCDisplay+="ครั้ง(ปี)";
 						htmlDataTableMCDisplay+=" </th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_manpower_year\">";
 						htmlDataTableMCDisplay+="อัตรา";
@@ -191,6 +201,7 @@ var listTaskCateDisplayFn = function(data){
 								
 					htmlDataTableMCDisplay+="</tbody>";
 				htmlDataTableMCDisplay+="</table>";
+				htmlDataTableMCDisplay+="</div>";
 			htmlDataTableMCDisplay+="</div>";
 		htmlDataTableMCDisplay+="</div>";
 		$("#gaugeChartArea").append(htmlGauageChartArea);
@@ -654,7 +665,7 @@ var listExampleDataFn = function(data){
 	
 	var htmlExampleData = "";
 	$.each(data,function(index,indexEntry){
-		
+		/*
 		htmlExampleData+="<tr>";
 			htmlExampleData+="<td>"+(index+1)+"</td>";
 			htmlExampleData+="<td>"+indexEntry['mc_name']+"</td>";
@@ -667,6 +678,42 @@ var listExampleDataFn = function(data){
 				// }
 				htmlExampleData+="</td>";
 		htmlExampleData+="</tr>";
+
+*/
+
+
+		htmlExampleData+="<tr>";
+			htmlExampleData+="<td>";
+			htmlExampleData+="<b>ชื่อข้อมูล</b>:"+indexEntry['mc_name']+"<br>";
+			htmlExampleData+="<b>ประเภทข้อมูล</b>: "+indexEntry['mc_release_type_name']+"<br>";
+			
+			// htmlExampleData+="</td>";
+			// htmlExampleData+="<td>";
+			// htmlExampleData+="<b>จัดการ</b>";
+				htmlExampleData+="<div style=''>";
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['mc_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['mc_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['mc_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+				htmlExampleData+="</div>"
+			htmlExampleData+="</td>";
+
+/*
+
+			htmlExampleData+="<td>"+(index+1)+"</td>";
+			htmlExampleData+="<td>"+indexEntry['b_type_name']+"</td>";
+			htmlExampleData+="<td>"+indexEntry['b_release_type_name']+"</td>";
+			htmlExampleData+="<td>";
+
+
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+
+			htmlExampleData+="</td>";
+*/
+
+		htmlExampleData+="</tr>";
+
 	});
 	$("#dataExampleArea").html(htmlExampleData);
 }
@@ -1087,12 +1134,15 @@ var checkDeviceExtendSwotFn =function(){
 //check device start
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
-	$("#offcanvasRight").css({"height":"93%"});
+	$("#offcanvasRight").css({"height":"95%"});
+	
+	
 	$(".mc_checkbox_cate_mc").css({"margin-top":"8px"});
 	$(".headeTitle").css({"top":"25px"});
 }else{
 
 	$("#offcanvasRight").css({"height":"100%"});
+	
 	$(".mc_checkbox_cate_mc").css({"margin-top":"0px"});
 	$(".headeTitle").css({"top":"15px"});
 }
@@ -1102,6 +1152,30 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 $(document).ready(function(){
 
 	checkDeviceExtendSwotFn();
+	//check toggle modal dev team start
+	$(".btnDevTeam").click(function(){
+		
+		if($("#btnDevTeam").val()=="YES"){
+			$("#teamModal").modal('show');
+			$("#btnDevTeam").val("NO");
+		}else{
+			$("#teamModal").modal('hide');
+			$("#btnDevTeam").val("YES");
+		}
+	
+	});
+	$("#btnDevTeamClose").click(function(){
+		$("#teamModal").modal('hide');
+		$("#btnDevTeam").val("YES");
+	
+	});
+	$(".btn-close").click(function(){
+		$("#teamModal").modal('hide');
+		$("#btnDevTeam").val("YES");
+	});
+//check toggle modal dev team end
+
+	/*
 	$(".btnDevTeam").click(function(){
 		$("#teamModal").modal('show');
 	
@@ -1110,7 +1184,7 @@ $(document).ready(function(){
 		$("#teamModal").modal('hide');
 	
 	});
-	
+	*/
 
 
 	/*
@@ -1168,10 +1242,27 @@ autoLoginFn();
 
 	 $("#editTaskCateModal").click(function(){
 		var tc_code =$(".cate_mc:checked").attr("id");
-		tc_code=tc_code.split("-");
-		tc_code=tc_code[1];
-		
+
+
+		if(tc_code==undefined){
+	
+			$.alert({
+				title: '<i style="font-size:44px; color:yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> Warning',
+				content: ' กรุณาเลือกความเสี่ยงที่ต้องการแก้ไข',
+			});
+	
+		}else{
+
+			tc_code=tc_code.split("-");
+			tc_code=tc_code[1];
+			$("#cateTaskModel").modal('show');
 			findOneTaskCate(sessionStorage.getItem('uuid'),tc_code);
+			
+		}
+
+		
+		
+			
 	 });
 
 

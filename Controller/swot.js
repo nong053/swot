@@ -1536,9 +1536,11 @@ $(document).ready(function(){
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
 	$("#offcanvasRight").css({"height":"95%"});
+	
 	$(".headeTitle").css({"top":"25px"});
 }else{
 	$("#offcanvasRight").css({"height":"100%"});
+	
 	$(".headeTitle").css({"top":"15px"});
 }
 /*
@@ -1554,14 +1556,29 @@ if ($('#desktopTest').is(':hidden')) {
   */
 //check device end
 
+//check toggle modal dev team start
 	$(".btnDevTeam").click(function(){
-		$("#teamModal").modal('show');
+		//alert($("#btnDevTeam").val())
+		if($("#btnDevTeam").val()=="YES"){
+			$("#teamModal").modal('show');
+			$("#btnDevTeam").val("NO");
+		}else{
+			$("#teamModal").modal('hide');
+			$("#btnDevTeam").val("YES");
+		}
 	
 	});
 	$("#btnDevTeamClose").click(function(){
 		$("#teamModal").modal('hide');
+		$("#btnDevTeam").val("YES");
 	
 	});
+	$(".btn-close").click(function(){
+		$("#teamModal").modal('hide');
+		$("#btnDevTeam").val("YES");
+	});
+//check toggle modal dev team end
+
 	
 	$(".setting-toggle").click(function(){
 		checkValidateFn();

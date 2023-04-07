@@ -5,7 +5,8 @@
 @import url(fonts/thsarabunnew.css);
 body{ 
         font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; ; 
-        background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  );
+        /* background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  ); */
+        background: radial-gradient(farthest-side ellipse at 10% 0,#000039   20%,#191970  );
     }
 .btn-circle {
     width: 3em;
@@ -84,19 +85,40 @@ img {
 
 </style>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div class="headerFixed">
+       
+        <!-- <div class=" d-lg-none" style="margin-top: 55px;"></div> -->
+        
+        <div class="container">
+       
+           <span style="float:right; position:relative; top:-30px; color:white; " class=" " ></span>
+            <!-- <h1 style="top: 25px;" class="headeTitle">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                MAP
+            </h1> -->
+            <div class="container-xl " style="text-align: right; color:white; height:40px; ">
+                <div style="padding-top: 28px; padding-bottom:0px; cursor:pointer;  display:none;" id="btnOpenLogin">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> <b>เข้าสู่ระบบ</b> 
+                </div>
+                <div style="padding-top: 28px; padding-bottom:0px; cursor:pointer; display:none;" id="btnLogout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> <b>ออกจากระบบ</b> 
+                </div>
+            </div>
+
+        </div>
+</div>
 
 
-<div class="titleArea" style="text-align: center; margin-top: 30px;">
+
+<div class="titleArea" style="text-align: center; padding:15px; margin-top:100px;">
     <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนสำหรับผู้บริหาร</h1>
     <h2 class="title2">(Management analysis and planning tools)</h2>
    
 </div>
-<div class="container " style="text-align: right; color:white; height:50px;">
-    <div style="padding-bottom: 15px; cursor:pointer; display:none;" id="btnLogout">
-       <i class="fa fa-sign-out" aria-hidden="true"></i> <b>ออกจากระบบ</b> 
-    </div>
-</div>
-<div class="container">
+
+<div class="container-xl">
     
   <ul class="list-group">
     <li class="list-group-item clearfix" id="btnMC" style="cursor:pointer;">
@@ -294,9 +316,11 @@ img {
 </center> -->
 
 
+
+
 <!-- Modal -->
  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog ">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel"><b><i class="fa fa-lock" aria-hidden="true"></i> ลงชื่อเข้าใช้งาน</b></h1>
@@ -357,7 +381,7 @@ img {
 
       </div>
       <div class="modal-footer">
-  
+        <input type="hidden" value="" id="actionTo">
         <input type="hidden" value="login" id="actionLR">
         <button type="button" id="btnSubmitLR" class="btn btn-primary">ตกลง</button>
       </div>
@@ -368,8 +392,8 @@ img {
 <div id="desktopTest" class="d-none d-lg-block"></div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" ></script>
 
 <!-- jquery confirm start-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">

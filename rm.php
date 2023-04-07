@@ -735,15 +735,15 @@
             <div class="col">
                 <div class='fontFooter'>
                     <button class="btn btn-primary btn-circle" id="btn-back" onclick="window.location.href='./'" >
-                    <i class="fa-sharp fa-solid fa-circle-left"></i>
+                    <i style="line-height: 2;" class="fa-sharp fa-solid fa-circle-left"></i>
                     </button>
                 </div>
             </div>
             <div class="col">
             <!-- <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id="btnDevTeam" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
                 <div class='fontFooter'>
-                    <button class="btn btn-primary btn-circle btnDevTeam" id="btn-back" data-toggle="modal" data-target="#teamModal" >
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <button id="btnDevTeam" class="btn btn-primary btn-circle btnDevTeam"  data-toggle="modal" data-target="#teamModal" value="YES">
+                    <i style="line-height: 2;" class="fa fa-user-circle" aria-hidden="true"></i>
                     </button>
                 </div>
              
@@ -752,7 +752,7 @@
               
                 <div class='fontFooter'>
                     <button class="btn btn-primary btn-circle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
-                    <i class="fa-sharp fa-solid fa-gear "></i>
+                    <i style="line-height: 2;" class="fa-sharp fa-solid fa-gear "></i>
                     </button>
                 </div>
              
@@ -815,10 +815,10 @@
                     </div>
                     <table class="table" id="exampleDataTable">
                         <thead>
-                            <th>#</th>
+                            <!-- <th>#</th> -->
                             <th>ข้อมูลตัวอย่าง</th>
-                            <th>ประเภท</th>
-                            <th style="text-align: center;">จัดการ</th>
+                            <!-- <th>ประเภท</th> -->
+                            <!-- <th style="text-align: center;">จัดการ</th> -->
                         </thead>
                         <tbody id="dataExampleArea">
                             <!-- <tr>
@@ -899,7 +899,7 @@
         <div class="row">
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" style="height: 300px;">
+                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" >
                     <div class="card-body">
                         <div class="alert alert-primary" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
@@ -911,7 +911,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" style="height: 300px;">
+                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" >
                     <div class="card-body">
                         <div class="alert alert-success" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
@@ -923,7 +923,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ" style="height: 300px;">
+                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ">
                     <div class="card-body ">
                         <div class="alert alert-info" role="alert" style="padding:10px; ">
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
@@ -948,8 +948,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 
 
      <!-- jquery confirm start-->
@@ -965,8 +965,8 @@
     <!-- export excel-->
     <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
     <!-- export pdf-->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
     <!-- printing-->
     <script type="text/javascript" src="printThis-master/printThis.js"></script>
    

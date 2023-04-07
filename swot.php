@@ -1801,15 +1801,16 @@
             <div class="col">
                 <div class='fontFooter'>
                     <button class="btn btn-primary btn-circle" id="btn-back" onclick="window.location.href='./'" >
-                    <i class="fa-sharp fa-solid fa-circle-left"></i>
+                    <i style="line-height: 2;" class="fa-sharp fa-solid fa-circle-left"></i>
                     </button>
                 </div>
+               
             </div>
             <div class="col">
             <!-- <span style="float:right; position:relative; top:-25px; color:white; cursor: pointer;" id="btnDevTeam" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
                 <div class='fontFooter'>
-                    <button class="btn btn-primary btn-circle btnDevTeam" id="btn-back" data-toggle="modal" data-target="#teamModal" >
-                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                    <button id="btnDevTeam" class="btn btn-primary btn-circle btnDevTeam"  data-toggle="modal" data-target="#teamModal"  value="YES">
+                    <i style="line-height: 2;" class="fa fa-user-circle" aria-hidden="true"></i>
                     </button>
                 </div>
              
@@ -1818,7 +1819,7 @@
               
                 <div class='fontFooter'>
                     <button class="btn btn-primary btn-circle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
-                    <i class="fa-sharp fa-solid fa-gear "></i>
+                    <i style="line-height: 2;" class="fa-sharp fa-solid fa-gear "></i>
                     </button>
                 </div>
              
@@ -1996,7 +1997,7 @@
         <div class="row">
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" style="height: 300px;">
+                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ" >
                     <div class="card-body">
                         <div class="alert alert-primary" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
@@ -2008,7 +2009,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" style="height: 300px;">
+                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา" >
                     <div class="card-body">
                         <div class="alert alert-success" role="alert" style="padding:10px; " >
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
@@ -2020,7 +2021,7 @@
             </div>
             <div class="col-md-4 card_custom">
                 <div class="card" >
-                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ" style="height: 300px;">
+                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ" >
                     <div class="card-body ">
                         <div class="alert alert-info" role="alert" style="padding:10px; ">
                             <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>

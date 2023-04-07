@@ -914,7 +914,7 @@ var listExampleDataFn = function(data){
 	
 	var htmlExampleData = "";
 	$.each(data,function(index,indexEntry){
-		
+		/*
 		htmlExampleData+="<tr>";
 			htmlExampleData+="<td>"+(index+1)+"</td>";
 			htmlExampleData+="<td>"+indexEntry['rce_name']+"</td>";
@@ -927,6 +927,43 @@ var listExampleDataFn = function(data){
 				// }
 				htmlExampleData+="</td>";
 		htmlExampleData+="</tr>";
+*/
+
+
+
+		htmlExampleData+="<tr>";
+			htmlExampleData+="<td>";
+			htmlExampleData+="<b>ชื่อข้อมูล</b>:"+indexEntry['rce_name']+"<br>";
+			htmlExampleData+="<b>ประเภทข้อมูล</b>: "+indexEntry['rce_type_name']+"<br>";
+			
+			// htmlExampleData+="</td>";
+			// htmlExampleData+="<td>";
+			// htmlExampleData+="<b>จัดการ</b>";
+				htmlExampleData+="<div style=''>";
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['rce_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+				htmlExampleData+="</div>"
+			htmlExampleData+="</td>";
+
+/*
+
+			htmlExampleData+="<td>"+(index+1)+"</td>";
+			htmlExampleData+="<td>"+indexEntry['b_type_name']+"</td>";
+			htmlExampleData+="<td>"+indexEntry['b_release_type_name']+"</td>";
+			htmlExampleData+="<td>";
+
+
+				htmlExampleData+="<button class=\"btn btn-danger delExampleData\" id=\"delExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-trash \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-warning editExampleData\" id=\"editExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-solid fa-pencil \"></i></button>";
+				htmlExampleData+="<button class=\"btn btn-primary exportExampleData\" id=\"exportExampleData-"+indexEntry['b_id']+"\"><i class=\"fa-sharp fa-solid fa-download\"></i></button>";
+
+			htmlExampleData+="</td>";
+*/
+
+		htmlExampleData+="</tr>";
+
+
 	});
 	$("#dataExampleArea").html(htmlExampleData);
 }
@@ -1515,11 +1552,37 @@ $(document).ready(function(){
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
 	$("#offcanvasRight").css({"height":"95%"});
+	$(".effect_text").css({"position":"fixed"});
 	$(".headeTitle").css({"top":"25px"});
 }else{
 	$("#offcanvasRight").css({"height":"100%"});
+	$(".effect_text").css({"position":"absolute"});
 	$(".headeTitle").css({"top":"15px"});
 }
+//check toggle modal dev team start
+$(".btnDevTeam").click(function(){
+		
+	if($("#btnDevTeam").val()=="YES"){
+		$("#teamModal").modal('show');
+		$("#btnDevTeam").val("NO");
+	}else{
+		$("#teamModal").modal('hide');
+		$("#btnDevTeam").val("YES");
+	}
+
+});
+$("#btnDevTeamClose").click(function(){
+	$("#teamModal").modal('hide');
+	$("#btnDevTeam").val("YES");
+
+});
+$(".btn-close").click(function(){
+	$("#teamModal").modal('hide');
+	$("#btnDevTeam").val("YES");
+});
+//check toggle modal dev team end
+
+/*
 $(".btnDevTeam").click(function(){
 	$("#teamModal").modal('show');
 
@@ -1528,7 +1591,7 @@ $("#btnDevTeamClose").click(function(){
 	$("#teamModal").modal('hide');
 
 });
-
+*/
 //check device end
 	
 /*Login Management Start */

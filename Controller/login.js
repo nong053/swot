@@ -170,6 +170,7 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 $("#btnMC").click(function(){
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
+        $("#actionTo").val("./mc.php");
      
         return false;
     }else{
@@ -184,7 +185,7 @@ $("#btnMC").click(function(){
 $("#btnSW").click(function(){
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
-     
+        $("#actionTo").val("./swot.php");
         return false;
     }else{
         window.location.href='./swot.php';
@@ -198,7 +199,7 @@ $("#btnSW").click(function(){
 $("#btnRM").click(function(){
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
-     
+        $("#actionTo").val('./rm.php');
         return false;
     }else{
         window.location.href='./rm.php';
@@ -208,17 +209,23 @@ $("#btnRM").click(function(){
     }
     
 });
+
+$("#btnOpenLogin").click(function(){
+    $("#loginModal").modal('show');
+});
     
  
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
        // $("#loginModal").modal('show');
         $("#btnLogout").hide();
+        $("#btnOpenLogin").show();
         // $("#btnArea").hide();
         // $("#formLoginArea").show();
     }else{
     
         //$("#loginModal").modal('hide');
         $("#btnLogout").show();
+        $("#btnOpenLogin").hide();
         // $("#btnArea").show();
         // $("#formLoginArea").hide();
     }
@@ -229,6 +236,7 @@ $("#btnRM").click(function(){
         sessionStorage.setItem('token',"");
         sessionStorage.setItem('uuid',"");
         $("#btnLogout").hide();
+        $("#btnOpenLogin").show();
        // $("#loginModal").modal('show');
     //    $("#btnArea").hide();
     //    $("#formLoginArea").show();
@@ -295,12 +303,14 @@ $("#btnRM").click(function(){
                                 sessionStorage.setItem('token', data[0]['token']);
                                 sessionStorage.setItem('uuid', data[0]['data']);
 
-                                  $.alert({
-                                    title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
-                                    content: 'ลงทะเบียนเรียบร้อย',
-                                });
+                                // $.alert({
+                                //     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+                                //     content: 'ลงทะเบียนเรียบร้อย',
+                                // });
                                 $("#loginModal").modal('hide');
                                 $("#btnLogout").show();
+
+                                window.location.href=""+$("#actionTo").val()+"";
 
                                 // $("#btnArea").show();
                                 // $("#formLoginArea").hide();
@@ -338,6 +348,7 @@ $("#btnRM").click(function(){
                                 sessionStorage.setItem('uuid', data[0]['data']);
 
                                 $("#loginModal").modal('hide');
+                                $("#btnOpenLogin").hide();
                                 $("#btnLogout").show();
                                 // $("#btnArea").show();
                                 // $("#formLoginArea").hide();
@@ -346,6 +357,7 @@ $("#btnRM").click(function(){
                                 //     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
                                 //     content: 'บันทึกข้อมูลเรียบร้อย',
                                 // });
+                                window.location.href=""+$("#actionTo").val()+"";
 
                                 }else if(data[0]['status']=="401"){
                                     $("#login_alert").show();
