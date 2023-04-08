@@ -102,22 +102,22 @@
                                 <tr  class="table-primary">
                                     <td class="swot_seq"><b>S</b></td>
                                     <td class="swot_name">จุดแข็ง (Strengths)</td>
-                                    <td class="swot_score" id="strengthsScore">5.00 คะแนน</td>
+                                    <td class="swot_score" id="strengthsScore">0.00 คะแนน</td>
                                 </tr>
                                 <tr  class="table-secondary">
                                     <td class="swot_seq"><b>W</b></td>
                                     <td class="swot_name">จุดอ่อน (Weaknesses)</td>
-                                    <td class="swot_score" id="weaknessesScore">5.00 คะแนน</td>
+                                    <td class="swot_score" id="weaknessesScore">0.00 คะแนน</td>
                                 </tr>
                                 <tr  class="table-success">
                                     <td class="swot_seq"><b>O</b></td>
                                     <td class="swot_name">โอกาส (Opportunities)</td>
-                                    <td class="swot_score" id="opportunitiesScore">5.00 คะแนน</td>
+                                    <td class="swot_score" id="opportunitiesScore">0.00 คะแนน</td>
                                 </tr>
                                 <tr  class="table-danger">
                                     <td class="swot_seq"><b>T</b></td>
                                     <td class="swot_name">ภัยคุกคาม (Threats)</td>
-                                    <td class="swot_score" id="threatsScore">5.00 คะแนน</td>
+                                    <td class="swot_score" id="threatsScore">0.00 คะแนน</td>
                                 </tr>
                                
                             </tbody>
@@ -1840,27 +1840,28 @@
 </div>
 
 <!-- for export exel end-->
-<!-- Modal -->
-<!-- <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
+<!-- Modal --> 
+<div class="modal fade" id="exampleNewUserModel" tabindex="-1" aria-labelledby="exampleNewUserModelLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModelLabel">ตัวอย่างข้อมูล</h1>
+        <h1 class="modal-title fs-5" id="exampleNewUserModelLabel">ตัวอย่างข้อมูล</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <select class="form-select" id="dataBusinessType" aria-label="Default select example">
+        <select class="form-select b_id_load" id="b_id_load_new_user" aria-label="ตัวอย่างข้อมูล">
            
         </select>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="getExampleSubmit" class="btn btn-primary">Load</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+        <button type="button" id="getExampleNewUserSubmit" class="btn btn-primary">โหลดข้อมูล</button>
       </div>
     </div>
   </div>
-</div> -->
+</div> 
 <!--Model -->
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -1888,7 +1889,7 @@
                     <div class="col-md-12 " >
                         <form id="formImportFile" enctype="multipart/form-data">
                             <div class="mb-3" style="padding-top: 15px;">
-                                <select class="form-select" id="b_id_load" >
+                                <select class="form-select b_id_load" id="b_id_load" >
                                     <option>ตัวอย่างข้อมูล 1</option>
                                     <option>ตัวอย่างข้อมูล 2</option>
                                 </select>

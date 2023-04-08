@@ -861,7 +861,9 @@ var autoLoginFn=function(){
 
 		
 			if(data[0]['loginType']=="newUser"){
-				
+				//alert("newUser");
+				$("#exampleNewUserModel").modal('show');
+				/*
 				$.confirm({
 					title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> โหลดข้อมูลตัวอย่างหรือไม่?',
 					content: '',
@@ -878,11 +880,16 @@ var autoLoginFn=function(){
 						}
 					}
 				});
-
+				*/
 				
-				//insertAndLoadExampleSwot(sessionStorage.getItem('uuid'));
-				//alert("newUser");
-			}else{
+			
+			}else if(data[0]['loginType']=="oldUserAndEmptyData"){
+				//loadExampleSwot(sessionStorage.getItem('uuid'));
+				//alert("oldUserAndEmptyData");	
+				$("#exampleNewUserModel").modal('show');
+				
+
+			}else if(data[0]['loginType']=="oldUser"){
 				//loadExampleSwot(sessionStorage.getItem('uuid'));
 				//alert("oldUser");
 				findOne(sessionStorage.getItem('uuid'));
@@ -1058,12 +1065,12 @@ var loadExampleDataFn = function(uuid,b_id){
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
 
-
+					$("#exampleNewUserModel").modal('hide');
 					$.alert({
 						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 						content: 'โหลดข้อมูลเรียบร้อย',
 					});
-
+					
 					findOne(sessionStorage.getItem('uuid'));
 
 					//location.reload();
@@ -1084,7 +1091,7 @@ var listExampleLoadDataFn = function(data){
 		htmlExampleLoadData+="<option value="+indexEntry['b_id']+">"+indexEntry['b_type_name']+"</option>";
 	});
 
-	$("#b_id_load").html(htmlExampleLoadData);
+	$(".b_id_load").html(htmlExampleLoadData);
 	
 }	
 
@@ -1478,7 +1485,7 @@ var checkValidateFn = function(){
 	if($("#swot_name").val()==""){
 		validate=false;
 		$("#swot_name").css({"border":"red solid 1px"});
-		$("#swot_detail_alert_text").append("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกชื่อ SWOT");
+		$("#swot_detail_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกชื่อ SWOT<div>");
 		$("#swot_detail_alert").show();
 
 	}else{
@@ -1488,7 +1495,7 @@ var checkValidateFn = function(){
 	if($("#swot_detail").val()==""){
 		validate=false;
 		$("#swot_detail").css({"border":"red solid 1px"});
-		$("#swot_detail_alert_text").append("<i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรายละเอียด SWOT");
+		$("#swot_detail_alert_text").append("<div><i class=\"fa fa-exclamation-triangle\" aria-hidden=\"true\"></i> กรุณากรอกรายละเอียด SWOT</div>");
 		$("#swot_detail_alert").show();
 
 	}else{
@@ -1531,6 +1538,14 @@ var checkValidateExampleFn  = function(){
 
 }
 $(document).ready(function(){
+
+
+
+//select on tab load example
+showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
+$("#getExampleNewUserSubmit").click(function(){
+	loadExampleDataFn(sessionStorage.getItem('uuid'),$("#b_id_load_new_user").val());
+})
 
 //check device start
 
@@ -1754,7 +1769,7 @@ if ($('#desktopTest').is(':hidden')) {
 		//table show display on list example
 		showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
 		//select on tab load example
-		showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
+		//showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 		clearExampleDataFn();
 	});
 	//action show modal  end

@@ -762,7 +762,27 @@
 </div>
 
 <!--footer for moblie end-->
-
+<!-- Modal --> 
+<div class="modal fade" id="exampleNewUserModel" tabindex="-1" aria-labelledby="exampleNewUserModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleNewUserModelLabel">ตัวอย่างข้อมูล</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <select class="form-select rce_id_load" id="rce_id_load_new_user" aria-label="ตัวอย่างข้อมูล">
+           
+        </select>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+        <button type="button" id="getExampleNewUserSubmit" class="btn btn-primary">โหลดข้อมูล</button>
+      </div>
+    </div>
+  </div>
+</div> 
+<!--Model -->
 <!-- Modal -->
 <div class="modal fade" id="exampleModel" tabindex="-1" aria-labelledby="exampleModelLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -790,7 +810,7 @@
                     <div class="col-md-12 " >
                         <form id="formImportFile" enctype="multipart/form-data">
                             <div class="mb-3" style="padding-top: 15px;">
-                                <select class="form-select" id="rce_id_load" >
+                                <select class="form-select rce_id_load" id="rce_id_load" >
                                     <option>ตัวอย่างข้อมูล 1</option>
                                     <option>ตัวอย่างข้อมูล 2</option>
                                 </select>

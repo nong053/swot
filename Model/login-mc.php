@@ -7,10 +7,20 @@ if($_REQUEST['uuid']!=""){
 
     if ($result->num_rows > 0) {
       // output data of each row
-      while($row = $result->fetch_assoc()) {
+     // while($row = $result->fetch_assoc()) {
         //echo "id: " . $row["p_id"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. "<br>";
-            echo "[{\"loginType\":\"oldUser\"}]";
-      }
+            //echo "[{\"loginType\":\"oldUser\"}]";
+      //}
+
+        $sql_check_data = "SELECT * FROM task_cate  where uu_id='$_REQUEST[uuid]'";
+        $result_check_data = $conn->query($sql_check_data);
+
+        if ($result_check_data->num_rows == 0) {
+          echo "[{\"loginType\":\"oldUserAndEmptyData\"}]";
+        }else{
+          echo "[{\"loginType\":\"oldUser\"}]";
+        }
+
     } else {
 
 

@@ -725,7 +725,7 @@ var listExampleLoadDataFn = function(data){
 		htmlExampleLoadData+="<option value="+indexEntry['mc_id']+">"+indexEntry['mc_name']+"</option>";
 	});
 
-	$("#mc_id_load").html(htmlExampleLoadData);
+	$(".mc_id_load").html(htmlExampleLoadData);
 	
 }	
 
@@ -892,6 +892,7 @@ success:function(data){
 				if(data[0]['status']=="200"){
 
 					//alert("ok");
+					$("#exampleNewUserModel").modal('hide');
 					showTaskCate(sessionStorage.getItem('uuid'));
 					$.alert({
 						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
@@ -1052,7 +1053,8 @@ success:function(data){
 
 		
 			if(data[0]['loginType']=="newUser"){
-				
+				$("#exampleNewUserModel").modal('show');
+				/*
 				$.confirm({
 					title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> โหลดข้อมูลตัวอย่างหรือไม่?',
 					content: '',
@@ -1069,13 +1071,16 @@ success:function(data){
 						}
 					}
 				});
+				*/
+				
+				
+			}else if(data[0]['loginType']=="oldUserAndEmptyData"){
+			
+				$("#exampleNewUserModel").modal('show');
+				
 
-				
-				
-			}else{
-				
+			}else if(data[0]['loginType']=="oldUser"){
 				showTaskCate(sessionStorage.getItem('uuid'));
-				
 				
 
 			}
@@ -1143,13 +1148,21 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 
 	$("#offcanvasRight").css({"height":"100%"});
 	
-	$(".mc_checkbox_cate_mc").css({"margin-top":"0px"});
+	$(".mc_checkbox_cate_mc").css({"margin-top":"3px"});
 	$(".headeTitle").css({"top":"15px"});
 }
 //check device end
 }
 
 $(document).ready(function(){
+
+	//select on tab load example
+	showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
+	$("#getExampleNewUserSubmit").click(function(){
+		loadExampleDataFn(sessionStorage.getItem('uuid'),$("#mc_id_load_new_user").val());
+	})
+
+	//check device start
 
 	checkDeviceExtendSwotFn();
 	//check toggle modal dev team start
@@ -1432,7 +1445,7 @@ $("#getExampleModel").click(function(){
     //table show display on list example
 	showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
     //select on tab load example
-    showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
+    //showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 	clearExampleDataFn();
 });
 

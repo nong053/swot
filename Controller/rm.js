@@ -975,7 +975,7 @@ var listExampleLoadDataFn = function(data){
 		htmlExampleLoadData+="<option value="+indexEntry['rce_id']+">"+indexEntry['rce_name']+"</option>";
 	});
 
-	$("#rce_id_load").html(htmlExampleLoadData);
+	$(".rce_id_load").html(htmlExampleLoadData);
 	
 }	
 
@@ -1287,7 +1287,8 @@ success:function(data){
 
 		
 			if(data[0]['loginType']=="newUser"){
-				
+				$("#exampleNewUserModel").modal('show');
+				/*
 				$.confirm({
 					title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> โหลดข้อมูลตัวอย่างหรือไม่?',
 					content: '',
@@ -1304,12 +1305,16 @@ success:function(data){
 						}
 					}
 				});
+*/
+				
+				
+			}else if(data[0]['loginType']=="oldUserAndEmptyData"){
+			
+				$("#exampleNewUserModel").modal('show');
+				
 
-				
-				
-			}else{
+			}else if(data[0]['loginType']=="oldUser"){
 				riskFormFn(sessionStorage.getItem('uuid'));
-				
 				
 
 			}
@@ -1547,6 +1552,14 @@ var checkValidateExampleFn  = function(){
 }
 
 $(document).ready(function(){
+
+//select on tab load example
+showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
+$("#getExampleNewUserSubmit").click(function(){
+	loadExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id_load_new_user").val());
+})
+
+//check device start
 
 //check device start
 
@@ -1953,7 +1966,7 @@ $("#getExampleModel").click(function(){
     //table show display on list example
 	showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
     //select on tab load example
-    showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
+    //showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 	clearExampleDataFn();
 });
 $(document).on("click",".delExampleData",function(){
