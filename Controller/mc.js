@@ -128,6 +128,7 @@ var listTaskCateDisplayFn = function(data){
 	var htmlGauageChartArea="";
 	var htmlDataTableMCDisplay="";
 	var totalAllManpower=0.00;
+	var currentTotalManpower=0.00;
 	var totalAllTime=0;
 	var totalAllQuantity=0;
 	$("#gaugeChartArea").html("");
@@ -176,6 +177,7 @@ var listTaskCateDisplayFn = function(data){
 					htmlDataTableMCDisplay+="</thead>";
 					htmlDataTableMCDisplay+="<tbody>";
 					var totalManpowerByCate=0.00;
+					
 					$.each(data['dataTask'],function(index,indexEntryTask){
 						if(indexEntryTaskCate['tc_code']==indexEntryTask['tc_code']){
 							htmlDataTableMCDisplay+="<tr>";
@@ -197,6 +199,7 @@ var listTaskCateDisplayFn = function(data){
 						htmlDataTableMCDisplay+="<td colspan=\"3\">อัตรากำลังพล</td>";
 						
 						htmlDataTableMCDisplay+="<td class=\"mc_footer_sumary\">"+commaSeparateNumber(parseFloat(totalManpowerByCate).toFixed(2))+"/"+indexEntryTaskCate['current_person']+"</td>";
+						currentTotalManpower+=(+indexEntryTaskCate['current_person']);
 					htmlDataTableMCDisplay+="</tr>";
 								
 					htmlDataTableMCDisplay+="</tbody>";
@@ -217,7 +220,7 @@ var listTaskCateDisplayFn = function(data){
 	$("#dataTableMCDisplay").html(htmlDataTableMCDisplay);
 	$("#totalTime").html(commaSeparateNumber(totalAllTime));
 	$("#totalQuantity").html(commaSeparateNumber(totalAllQuantity));
-	$("#totalManPower").html(commaSeparateNumber(parseFloat(totalAllManpower).toFixed(2)));
+	$("#totalManPower").html(commaSeparateNumber(parseFloat(totalAllManpower).toFixed(2))+"/"+commaSeparateNumber(currentTotalManpower));
 
 
 	
