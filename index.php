@@ -94,9 +94,9 @@ img {
         <div class="container">
        
            <span style="float:right; position:relative; top:-30px; color:white; " class=" " ></span>
-            <h1 style=" display:none;" class="headeTitle" >
+            <h1 style="top:25px; display:none;" class="headeTitle" >
             <i class="fa fa-suitcase" aria-hidden="true"></i>
-                MAPT
+               <b> MAPT</b>
             </h1> 
             <div class="container-xl " style="text-align: right; color:white; height:40px; ">
                 <div style="padding-top: 28px; padding-bottom:0px; cursor:pointer;  display:none;" id="btnOpenLogin">
@@ -135,7 +135,7 @@ img {
                
                 </h3>
                 <p class="list-group-item-text lead">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การวางแผนกำลังคน คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน 
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>การวางแผนกำลังคน คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน 
 ทำให้เกิดประสิทธิภาพ และมีความคุ้มค่า โดยการเตรียมกำลังคนทั้งด้านปริมาณ และด้านคุณภาพ 
 สำหรับการรองรับการเปลี่ยนแปลงที่จะเกิดขึ้นในอนาคต และใช้เป็นเครื่องมือช่วยตัดสินใจ 
 ในการบริหารทรัพยากรบุคคล
@@ -161,7 +161,7 @@ img {
            
                 </h3>
                 <p class="list-group-item-text lead">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWOT (การวิเคราะห์สวอต) คือการวิเคราะห์สภาพแวดล้อมและศักยภาพสำหรับการประเมินธุรกิจประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายใน
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SWOT (การวิเคราะห์สวอต) คือการวิเคราะห์สภาพแวดล้อมและศักยภาพสำหรับการประเมินธุรกิจประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายใน
                 </p>
             </div>
        
@@ -182,7 +182,7 @@ img {
              
                 </h3>
                 <p class="list-group-item-text lead">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Risk managment คือ การจัดการความเสี่ยง ทั้งในกระบวนการในการระบุ วิเคราะห์(Risk analysis) ประเมิน (Risk assessment) ดูแล ตรวจสอบ และควบคุมความเสี่ยงที่สัมพันธ์กับ กิจกรรม หน้าที่และกระบวนการทำงาน เพื่อให้องค์กรลดความเสียหายจากความเสี่ยงมากที่สุด
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Risk managment คือ การจัดการความเสี่ยง ทั้งในกระบวนการในการระบุ วิเคราะห์(Risk analysis) ประเมิน (Risk assessment) ดูแล ตรวจสอบ และควบคุมความเสี่ยงที่สัมพันธ์กับ กิจกรรม หน้าที่และกระบวนการทำงาน เพื่อให้องค์กรลดความเสียหายจากความเสี่ยงมากที่สุด
                 </p>
             </div>
     

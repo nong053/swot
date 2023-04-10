@@ -162,10 +162,13 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 
 	$("#formLoginArea").css({"width":"100%"});
     $(".headeTitle").css({"top":"25px"}).show();
+    $(".nbsp").remove();
+   
 }else{
  
 	$("#formLoginArea").css({"width":"350px"});
     $(".headeTitle").css({"top":"17px"}).show();
+
 }
 //check device end
 
