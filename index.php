@@ -190,10 +190,11 @@ img {
 
 
 
-    
+   
    
     
   </ul>
+  <br style="clear: both;">
 </div>
 
 
