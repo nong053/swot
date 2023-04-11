@@ -198,6 +198,12 @@ img {
 </div>
 
 
+<footer class="footer mt-auto py-3 bg-body-tertiary">
+  <div class="container">
+  <span style="float:right;  color:white; cursor: pointer;" class='btnDevTeam ' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+  </div>
+</footer>
+
 
 
 <!--
@@ -389,6 +395,69 @@ img {
     </div>
   </div>
 </div> 
+<!--modal -->
+<!-- Modal -->
+<div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="teamModalLabel">ทีมผู้พัฒนา</h5>
+       
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         
+        </button>
+
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="images/dev1.jpg" alt="น.ต.สุธีร์  ตั้งใจ"  style="height:auto;">
+                    <div class="card-body">
+                        <div class="alert alert-primary" role="alert" style="padding:10px; " >
+                            <h5 class="card-title" style="font-size:16px; font-weight:bold;">น.ต.สุธีร์  ตั้งใจ</h5>
+                            <p class="card-text"  style="font-size:16px;">System Analysis</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="images/dev2.jpg" alt="ร.อ.ณรงศักดิ์  เปรมปรีดา"  style="height:auto;">
+                    <div class="card-body">
+                        <div class="alert alert-success" role="alert" style="padding:10px; " >
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.อ.ณรงศักดิ์  เปรมปรีดา</h5>
+                            <p class="card-text"  style="font-size:16px;">Tester</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 card_custom">
+                <div class="card" >
+                    <img class="card-img-top" src="images/dev3.png" alt="ร.ท.โฆษิต อามรมณ์สวะ"  style="height:auto;">
+                    <div class="card-body ">
+                        <div class="alert alert-info" role="alert" style="padding:10px; ">
+                            <h5 class="card-title" style="font-size:16px;font-weight:bold;">ร.ท.โฆษิต อามรมณ์สวะ</h5>
+                            <p class="card-text"  style="font-size:16px;">Developer</p>
+                            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br style="clear: both;">
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnDevTeamClose" class="btn btn-secondary btnDevTeamClose" data-dismiss="modal">ปิด</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
 
 <div id="desktopTest" class="d-none d-lg-block"></div>
 

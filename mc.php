@@ -33,13 +33,16 @@
 
 <!-- set header fixed start-->
 <div class="headerFixed">
-        <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+<!-- btn-back  d-none d-lg-block -->
+        <button class="btn btn-primary btn-circle" style="display:none;" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
         <div class=" d-lg-none" style="margin-top: 55px;"></div>
         
         <div class="container">
        
-           <span style="float:right; position:relative; top:-30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
-           <h1 style="display:none;" class="headeTitle"><i class="fa fa-users"></i> MANPOWER  </h1>
+           <span style="float:right; position:relative; top:30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-lg-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <h1 style="display:none;"  onclick="window.location.href='./'" class="headeTitle">
+           <!-- <i class="fa fa-users"></i> -->
+           <i class="fa-sharp fa-solid fa-circle-left  " style="cursor: pointer;"></i> MANPOWER  </h1>
 
         </div>
 </div>
@@ -594,7 +597,8 @@
                 <!-- <button type="button" id="submit" class="btn btn-primary ">บันทึกข้อมูล</button> -->
             </form>
 
-
+            <br style="clear:both">
+            <br style="clear:both">
         </div>
     </div>
 
@@ -623,7 +627,8 @@
 
 
 <!--footer for moblie start-->
-<div class="footerFixed  d-block d-sm-none " >
+<!-- d-block d-xl-none  -->
+<div class="footerFixed  " style="display:none;">
     <div class="container">
         <div class="row ">
             <div class="col">
@@ -864,7 +869,8 @@
                     </div>
                 </div>
             </div>
-        </divv>
+            <br style="clear: both;">
+        </div>
 
       </div>
       <div class="modal-footer">

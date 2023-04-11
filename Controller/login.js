@@ -156,7 +156,16 @@ var validateLoginFn = function(){
 
 $(document).ready(function(){
 
+
+    $(".btnDevTeam").click(function(){
+        $("#teamModal").modal('show');
+	});
+    $("#btnDevTeamClose").click(function(){
+		$("#teamModal").modal('hide');
+	});
+
     //check device start
+    
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
 

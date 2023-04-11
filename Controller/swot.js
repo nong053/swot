@@ -1550,11 +1550,11 @@ $("#getExampleNewUserSubmit").click(function(){
 //check device start
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
-	$("#offcanvasRight").css({"height":"95%"});
+	//$("#offcanvasRight").css({"height":"95%"});
 	
 	$(".headeTitle").css({"top":"25px"});
 }else{
-	$("#offcanvasRight").css({"height":"100%"});
+	//$("#offcanvasRight").css({"height":"100%"});
 	
 	$(".headeTitle").css({"top":"15px"});
 }

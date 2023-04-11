@@ -20,7 +20,7 @@ function commaSeparateNumber(val){
   }
 
   var checkDeviceFn=function(){
-
+ 
     if($(window).width()<980){
  
       //$("#formLoginArea").css({"width":"100%"});
@@ -31,6 +31,7 @@ function commaSeparateNumber(val){
       //$("#formLoginArea").css({"width":"350px"});
    
     }
+  
     
     $(".headeTitle").show();
     

@@ -42,15 +42,17 @@
   <body>
 <!-- set header fixed start-->
 <div class="headerFixed">
-        <button class="btn btn-primary btn-circle btn-back  d-none d-lg-block" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
+<!-- d-none d-lg-block -->
+        <button class="btn btn-primary btn-circle btn-back  " id="btn-back" style="display: none;"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
         <div class=" d-lg-none" style="margin-top: 55px;"></div>
         
         <div class="container">
        
-           <span style="float:right; position:relative; top:-30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-sm-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
-           <h1 style="display:none;" class="headeTitle">
+           <span style="float:right; position:relative; top:30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-lg-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <h1 style="display:none;"  onclick="window.location.href='./'" class="headeTitle">
             <!-- <i class="fa-sharp fa-solid fa-building-shield"></i> -->
-            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> -->
+            <i class="fa-sharp fa-solid fa-circle-left  " style="cursor: pointer;" ></i>
              RISK MANAGEMENT</h1>
 
         </div>
@@ -696,7 +698,8 @@
 <!-- ระดับความเสี่ยง  บรรเทาความเสี่ยง -->
 
         
-           
+            <br style="clear:both">
+            <br style="clear:both">
 
         </div>
     </div>
@@ -729,7 +732,8 @@
 
 
 <!--footer for moblie start-->
-<div class="footerFixed  d-block d-sm-none " >
+<!-- d-block d-sm-none  -->
+<div class="footerFixed  " style="display: none;">
     <div class="container">
         <div class="row ">
             <div class="col">
@@ -953,6 +957,7 @@
                     </div>
                 </div>
             </div>
+            <br style="clear: both;">
         </divv>
 
       </div>
