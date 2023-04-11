@@ -75,6 +75,32 @@ function commaSeparateNumber(val){
 
 
     
+    //check device start
+    
+  $(".headerFixed").hide();
+  $(".setting-toggle").hide();
+  if("mobile"==sessionStorage.getItem('checkDevice')){
+
+    
+
+      $(".headeTitle").css({"top":"30px"}).show();
+      $(".headerFixed").css({"top":"-20px","height":"65px"}).show();
+      $(".setting-toggle").css({"top":"60px"}).show();
+      $("#loginArea").css({"padding-top":"30px"}).show();
+      
+
+     
+  }else{
+   
+    
+      
+      $(".headeTitle").css({"top":"17px"}).show();
+      $(".headerFixed").css({"top":"0px","height":"75px"}).show();
+      $(".setting-toggle").css({"top":"75px"}).show();
+      $("#loginArea").css({"padding-top":"28px"}).show();
+
+  }
+  //check device end
 
     
 });

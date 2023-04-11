@@ -87,32 +87,43 @@ img {
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="headerFixed">
+<div class="headerFixed" style="display: none;">
        
         <!-- <div class=" d-lg-none" style="margin-top: 55px;"></div> -->
         
         <div class="container">
        
            <span style="float:right; position:relative; top:-30px; color:white; " class=" " ></span>
-            <h1 style="top:25px; display:none;" class="headeTitle" >
+            <h1 style="top:30px; display:none;" class="headeTitle" >
             <i class="fa fa-suitcase" aria-hidden="true"></i>
                <b> MAPT</b>
             </h1> 
-            <div class="container1 " style="text-align: right; color:white; height:40px; ">
-                <div style="padding-top: 28px; padding-bottom:0px; cursor:pointer;  display:none;" id="btnOpenLogin">
+
+             <div id="loginArea" class="" style="text-align: right; color:white; float:right;  display:none;">
+                <div style=" padding-bottom:0px; cursor:pointer;  display:none;" id="btnOpenLogin">
                 <i class="fa fa-sign-in" aria-hidden="true"></i> <b>เข้าสู่ระบบ</b> 
                 </div>
-                <div style="padding-top: 28px; padding-bottom:0px; cursor:pointer; display:none;" id="btnLogout">
+                <div style="padding-bottom:0px; cursor:pointer; display:none;  " id="btnLogout">
                 <i class="fa fa-sign-out" aria-hidden="true"></i> <b>ออกจากระบบ</b> 
                 </div>
             </div>
 
+
+           <!--  <div id="loginArea" class="" style="text-align: right; color:white; height:40px; ">
+                <div style="padding-top: 28px; padding-bottom:0px; cursor:pointer;  display:none;" id="btnOpenLogin">
+                <i class="fa fa-sign-in" aria-hidden="true"></i> <b>เข้าสู่ระบบ</b> 
+                </div>
+                <div style="padding-bottom:0px; cursor:pointer; display:none;  float:right;" id="btnLogout">
+                <i class="fa fa-sign-out" aria-hidden="true"></i> <b>ออกจากระบบ</b> 
+                </div>
+            </div>
+ -->
         </div>
 </div>
 
 
 
-<div class="titleArea" style="text-align: center; padding:15px; margin-top:100px;">
+<div class="titleArea" style="text-align: center; padding:15px; margin-top:70px;">
     <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนสำหรับผู้บริหาร</h1>
     <h2 class="title2">(Management analysis and planning tools)</h2>
    

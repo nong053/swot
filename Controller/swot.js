@@ -1552,11 +1552,11 @@ $("#getExampleNewUserSubmit").click(function(){
 if("mobile"==sessionStorage.getItem('checkDevice')){
 	//$("#offcanvasRight").css({"height":"95%"});
 	
-	$(".headeTitle").css({"top":"25px"});
+	//$(".headeTitle").css({"top":"25px"});
 }else{
 	//$("#offcanvasRight").css({"height":"100%"});
 	
-	$(".headeTitle").css({"top":"15px"});
+	//$(".headeTitle").css({"top":"15px"});
 }
 /*
 if ($('#desktopTest').is(':hidden')) {

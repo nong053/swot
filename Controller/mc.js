@@ -1146,13 +1146,15 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 	
 	
 	$(".mc_checkbox_cate_mc").css({"margin-top":"8px"});
-	$(".headeTitle").css({"top":"25px"});
+	//$(".headeTitle").css({"top":"25px"});
+
 }else{
 
 	//$("#offcanvasRight").css({"height":"100%"});
 	
 	$(".mc_checkbox_cate_mc").css({"margin-top":"3px"});
-	$(".headeTitle").css({"top":"15px"});
+	//$(".headeTitle").css({"top":"15px"});
+
 }
 //check device end
 }

@@ -170,13 +170,18 @@ $(document).ready(function(){
 if("mobile"==sessionStorage.getItem('checkDevice')){
 
 	$("#formLoginArea").css({"width":"100%"});
-    $(".headeTitle").css({"top":"25px"}).show();
     $(".nbsp").remove();
+
+    // $(".headeTitle").css({"top":"30px"}).show();
+    // $(".headerFixed").css({"top":"-20px","height":"65px"});
+
    
 }else{
  
 	$("#formLoginArea").css({"width":"350px"});
-    $(".headeTitle").css({"top":"17px"}).show();
+    
+    // $(".headeTitle").css({"top":"17px"}).show();
+    // $(".headerFixed").css({"top":"0px","height":"75px"});
 
 }
 //check device end

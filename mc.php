@@ -32,7 +32,7 @@
 <!-- <button class="btn btn-primary btn-circle btn-back" id="btn-back" onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button> -->
 
 <!-- set header fixed start-->
-<div class="headerFixed">
+<div class="headerFixed" style="display: none;">
 <!-- btn-back  d-none d-lg-block -->
         <button class="btn btn-primary btn-circle" style="display:none;" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button>
         <div class=" d-lg-none" style="margin-top: 55px;"></div>
@@ -605,7 +605,7 @@
 
 
 
-    <a class="card setting-toggle" href="#offcanvasRight" data-bs-toggle="offcanvas" aria-controls="offcanvasRight">
+    <a style="display: none;" class="card setting-toggle" href="#offcanvasRight" data-bs-toggle="offcanvas" aria-controls="offcanvasRight">
         <div class="card-body d-flex align-items-center px-2 py-1">
         <div class="position-relative rounded-start" style="height:34px;width:28px">
             <div class="settings-popover">

@@ -65,7 +65,12 @@
         background: radial-gradient(farthest-side ellipse at 10% 0,#191970   20%,#191970  ); 
        position:fixed; z-index:10; display:block;width:100%;
        top:0px;
-       height: 75px;
+       /*height: 75px;*/
+       /*top:0px;*/
+        /*
+       top:-20px;
+       height: 65px;
+       */
        /* border-bottom: 1px solid #000039; */
    }
    
