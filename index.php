@@ -123,7 +123,7 @@ img {
 
 
 
-<div class="titleArea" style="text-align: center; padding:15px; margin-top:70px;">
+<div class="titleArea" style="text-align: center; padding:15px; display:none; ">
     <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนสำหรับผู้บริหาร</h1>
     <h2 class="title2">(Management analysis and planning tools)</h2>
    

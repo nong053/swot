@@ -65,7 +65,7 @@
         </div>
 </div>
 <div style="margin-bottom: 90px;" class="d-none d-lg-block"></div>
-<div style="margin-bottom: 90px;" class=" d-lg-none"></div>
+<div style="margin-bottom: 60px;" class=" d-lg-none"></div>
 <!-- set header fixed end-->
 
 <div class="container"   >

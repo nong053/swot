@@ -47,7 +47,7 @@
         </div>
 </div>
 <div style="margin-bottom: 90px;" class="d-none d-lg-block"></div>
-<div style="margin-bottom: 90px;" class=" d-lg-none"></div>
+<div style="margin-bottom: 60px;" class=" d-lg-none"></div>
 <!-- set header fixed end-->
 
 <div class="container">
@@ -605,7 +605,7 @@
 
 
 
-    <a style="display: none;" class="card setting-toggle" href="#offcanvasRight" data-bs-toggle="offcanvas" aria-controls="offcanvasRight">
+    <a style="display: none;" id="setting-toggle" class="card setting-toggle" href="#offcanvasRight" data-bs-toggle="offcanvas" aria-controls="offcanvasRight">
         <div class="card-body d-flex align-items-center px-2 py-1">
         <div class="position-relative rounded-start" style="height:34px;width:28px">
             <div class="settings-popover">

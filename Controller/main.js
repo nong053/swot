@@ -85,8 +85,12 @@ function commaSeparateNumber(val){
 
       $(".headeTitle").css({"top":"30px"}).show();
       $(".headerFixed").css({"top":"-20px","height":"65px"}).show();
-      $(".setting-toggle").css({"top":"60px"}).show();
+      $(".setting-toggle").css({"top":"58px","color":"white","background-color":"#191970","border-color":"#191970"}).show();
       $("#loginArea").css({"padding-top":"30px"}).show();
+      $(".titleArea").css({"margin-top":"70px"}).show();
+      
+      
+  
       
 
      
@@ -98,6 +102,7 @@ function commaSeparateNumber(val){
       $(".headerFixed").css({"top":"0px","height":"75px"}).show();
       $(".setting-toggle").css({"top":"75px"}).show();
       $("#loginArea").css({"padding-top":"28px"}).show();
+      $(".titleArea").css({"margin-top":"100px"}).show();
 
   }
   //check device end

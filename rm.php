@@ -58,7 +58,7 @@
         </div>
 </div>
 <div style="margin-bottom: 75px;" class="d-none d-lg-block"></div>
-<div style="margin-bottom: 75px;" class=" d-lg-none"></div>
+<div style="margin-bottom: 45px;" class=" d-lg-none"></div>
 <!-- set header fixed end-->
   <!-- <button class="btn btn-primary btn-circle btn-back" id="btn-back"  onclick="window.location.href='./'"><i class="fa-sharp fa-solid fa-circle-left"></i></button> -->
 <div class="container">
