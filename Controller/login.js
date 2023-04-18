@@ -189,7 +189,7 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 }
 //check device end
 
-$("#btnMC").click(function(){
+$(".btnMC").click(function(){
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
         $("#actionTo").val("./mc.php");
@@ -204,7 +204,7 @@ $("#btnMC").click(function(){
     
 });
 
-$("#btnSW").click(function(){
+$(".btnSW").click(function(){
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
         $("#actionTo").val("./swot.php");
@@ -218,7 +218,7 @@ $("#btnSW").click(function(){
     
 });
 
-$("#btnRM").click(function(){
+$(".btnRM").click(function(){
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
         $("#actionTo").val('./rm.php');

@@ -139,7 +139,7 @@ img {
     <li class="list-group-item clearfix" >
      
    
-        <button style="float:left; margin-right:15px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
+        <button style="float:left; margin-right:15px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow btnMC"><i class="fa fa-users" aria-hidden="true"></i>
             <div>MC</div>
         </button>
       
@@ -162,7 +162,7 @@ img {
        <div class="btn-toolbar " role="toolbar" aria-label="">
                 
         <a href="./doc/คู่มือMC.pdf" target="_blank" id="btnManualMC" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
-        <a href="#" id="btnMC" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+        <a href="#" id="btnMC" class="btn btn-primary btnMC"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
     </div>
     
     </li>
@@ -170,7 +170,7 @@ img {
     <li class="list-group-item clearfix" >
       <div >
        
-            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
+            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg btnSW"><i class="fa fa-line-chart" aria-hidden="true"></i>
                 <div>SW</div>
             </button>
       
@@ -189,14 +189,14 @@ img {
       <div class="btn-toolbar " role="toolbar" aria-label="">
                 
         <a  href="./doc/คู่มือSW.pdf" target="_blank" id="btnManualSW" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
-        <a href="#" id="btnSW" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+        <a href="#" id="btnSW" class="btn btn-primary btnSW"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
     </div>
     
     </li>
     <li class="list-group-item clearfix" >
     <!-- onclick="window.location.href='./rm.php' -->
        
-            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg btnRM"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
                 <div>RM</div>
             </button>
       
@@ -213,7 +213,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="./doc/คู่มือRM.pdf" target="_blank" id="btnManualRM" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
-                <a href="#" id="btnRM" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+                <a href="#" id="btnRM" class="btn btn-primary btnRM"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
             </div>
     </li>
 
