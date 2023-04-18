@@ -53,8 +53,9 @@ body{
 }
 
 .btn-toolbar {
-    margin-top:10px;
-    float: right;
+    margin-top:0px;
+    display:none;
+    /* float: right; */
 }
 
 img {
@@ -80,6 +81,9 @@ img {
 .lead {
     font-size: 1.1rem;
     font-weight: 300;
+}
+.btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group {
+    margin-left: 5px;
 }
 /* test end */
 
@@ -132,7 +136,7 @@ img {
 <div class="container-xl">
     
   <ul class="list-group">
-    <li class="list-group-item clearfix" id="btnMC" style="cursor:pointer;">
+    <li class="list-group-item clearfix" >
      
    
         <button style="float:left; margin-right:15px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow "><i class="fa fa-users" aria-hidden="true"></i>
@@ -155,10 +159,15 @@ img {
        
    
        </div>
+       <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+        <a href="./doc/คู่มือMC.pdf" target="_blank" id="btnManualMC" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
+        <a href="#" id="btnMC" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+    </div>
     
     </li>
 
-    <li class="list-group-item clearfix" id="btnSW" style="cursor:pointer;">
+    <li class="list-group-item clearfix" >
       <div >
        
             <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg"><i class="fa fa-line-chart" aria-hidden="true"></i>
@@ -177,9 +186,14 @@ img {
             </div>
        
       </div>
+      <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+        <a  href="./doc/คู่มือSW.pdf" target="_blank" id="btnManualSW" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
+        <a href="#" id="btnSW" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+    </div>
     
     </li>
-    <li class="list-group-item clearfix" id="btnRM" style="cursor:pointer;">
+    <li class="list-group-item clearfix" >
     <!-- onclick="window.location.href='./rm.php' -->
        
             <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
@@ -196,7 +210,11 @@ img {
                 <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Risk managment คือ การจัดการความเสี่ยง ทั้งในกระบวนการในการระบุ วิเคราะห์(Risk analysis) ประเมิน (Risk assessment) ดูแล ตรวจสอบ และควบคุมความเสี่ยงที่สัมพันธ์กับ กิจกรรม หน้าที่และกระบวนการทำงาน เพื่อให้องค์กรลดความเสียหายจากความเสี่ยงมากที่สุด
                 </p>
             </div>
-    
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="./doc/คู่มือRM.pdf" target="_blank" id="btnManualRM" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
+                <a href="#" id="btnRM" class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+            </div>
     </li>
 
 

@@ -170,6 +170,7 @@ $(document).ready(function(){
 if("mobile"==sessionStorage.getItem('checkDevice')){
 
 	$("#formLoginArea").css({"width":"100%"});
+    $(".btn-toolbar").css({"text-align":"center"}).show();
     $(".nbsp").remove();
 
     // $(".headeTitle").css({"top":"30px"}).show();
@@ -179,6 +180,8 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 }else{
  
 	$("#formLoginArea").css({"width":"350px"});
+    $(".btn-toolbar").css({"float":"right"}).show();
+    
     
     // $(".headeTitle").css({"top":"17px"}).show();
     // $(".headerFixed").css({"top":"0px","height":"75px"});
