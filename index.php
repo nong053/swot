@@ -50,6 +50,7 @@ body{
 .list-group-item {
     background-color: rgba(255,255,255,0.7); border:0;
     border-bottom: #ddd 1px solid;
+    padding: 15px;
 }
 
 .btn-toolbar {
