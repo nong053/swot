@@ -14,13 +14,7 @@
     <script src="./device-uuid-master/lib/device-uuid.js"></script>
 
     <style>
-    /* .headeTitle{
-        color:white;
-        text-align: center;
-        position: absolute;
-        top:15px;
-    } */
-
+   
 
 
     </style>
@@ -50,9 +44,10 @@
 <div style="margin-bottom: 60px;" class=" d-lg-none"></div>
 <!-- set header fixed end-->
 
-<div class="container">
+<div class="container" >
 
     <!-- <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-people-arrows"></i> MANPOWER CALCULATION</h1> -->
+    <div id="dataTableMCDisplayPrint">
     <div class="row mb-31" id="gaugeChartArea">
          
         <div class="col-md-3">
@@ -181,7 +176,7 @@
 
     <div class="card  mb-3" >
         <div class="card-header"> 	สรุป
-</div>
+    </div>
         <div class="card-body">
         <table class="table  table-striped">
                 <thead>
@@ -216,7 +211,7 @@
         </table>
         </div>
     </div>
-
+    </div>
     
 
 

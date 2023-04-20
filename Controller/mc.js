@@ -1521,7 +1521,11 @@ $(document).on("click",".addTask",function(){
 
 $("#submitPrint").click(function(){
 		
-	$("#dataTableMCDisplay").printThis();
+	$("#dataTableMCDisplayPrint").printThis({
+		importCSS: true,
+		loadCSS: "css/mc.css",
+		header: "<h1>รายงานสรุปประสิทธิภาพความเหมาะสมคนกับงาน</h1>"
+	});
 });
 $("#submitPDF").click(function(){
 	location.href = webService+"/Model/mpdf/mc-pdf.php?uuid="+sessionStorage.getItem('uuid')+"";
