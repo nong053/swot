@@ -33,7 +33,7 @@ function drawChart() {
 
 		var data = google.visualization.arrayToDataTable([
 			['Label', 'Value'],
-			['Task#'+(index+1)+'', parseInt(value)]
+			['', parseInt(value)]
 		  ]);
 
 		
