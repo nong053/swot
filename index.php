@@ -1,6 +1,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="css/main.css" >
+<link href="images/favicon_io/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 <style>
 @import url(fonts/thsarabunnew.css);
 body{ 
@@ -99,9 +100,14 @@ img {
         <div class="container">
        
            <span style="float:right; position:relative; top:-30px; color:white; " class=" " ></span>
+           
+           
             <h1 style="top:30px; display:none;" class="headeTitle" >
-            <i class="fa fa-suitcase" aria-hidden="true"></i>
-               <b> MAPT</b>
+            <!-- <i class="fa fa-suitcase" aria-hidden="true"></i> -->
+            <b> MAPT</b>
+            <img src="images/icon60x54.png" class="d-none d-sm-block" style="width:60px; height:54px; top: -11px; position:relative; margin-right: 5px;">
+            <img src="images/icon45x40.png" class="d-block d-sm-none" style="width:45px; height:40px; top: -11px; position:relative; margin-right: 5px;">
+              
             </h1> 
 
              <div id="loginArea" class="" style="text-align: right; color:white; float:right;  display:none;">
@@ -129,6 +135,7 @@ img {
 
 
 <div class="titleArea" style="text-align: center; padding:15px; display:none; ">
+    
     <h1 class="title1">เครื่องมือวิเคราะห์และวางแผนสำหรับผู้บริหาร</h1>
     <h2 class="title2">(Management analysis and planning tools)</h2>
    
