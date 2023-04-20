@@ -127,6 +127,7 @@ $data1="";
 
 //echo  $data;
 //$data = ob_get_contents();
+$mpdf->use_kwt = true;
 $mpdf->AddPage('L');
 $mpdf->WriteHTML($data);
 //$mpdf->Output("risk-mangement-report.pdf");

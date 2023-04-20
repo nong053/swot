@@ -100,7 +100,7 @@ $sqlTaskCate = "SELECT tc_id, tc_name,tc_code,current_person FROM task_cate wher
 
 //echo  $data;
 //$data = ob_get_contents();
-
+$mpdf->use_kwt = true;
 $mpdf->AddPage('L');
 $mpdf->WriteHTML($data);
 //$mpdf->Output("risk-mangement-report.pdf");

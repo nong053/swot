@@ -272,7 +272,7 @@ $dataArray = array();
 
 //echo  $data;
 //$data = ob_get_contents();
-
+$mpdf->use_kwt = true;
 $mpdf->WriteHTML($data);
 $mpdf->Output("swot-analysis.pdf");
 //$mpdf->Output("swot-analysis.pdf",\Mpdf\Output\Destination::INLINE);
