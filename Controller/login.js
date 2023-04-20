@@ -164,6 +164,13 @@ $(document).ready(function(){
 		$("#teamModal").modal('hide');
 	});
 
+    $(".btnDevTools").click(function(){
+        $("#devToolsModal").modal('show');
+	});
+    $("#btnDevToolsClose").click(function(){
+		$("#devToolsModal").modal('hide');
+	});
+
     //check device start
     
 

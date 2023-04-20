@@ -230,7 +230,9 @@ img {
 
 <footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
+  <span style="float:left;  color:white; cursor: pointer;" class='btnDevTools' data-toggle="modal" data-target="#devToolsModal">Tools for Development</span>
   <span style="float:right;  color:white; cursor: pointer;" class='btnDevTeam ' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+  <br style="clear: both;">
   </div>
 </footer>
 
@@ -482,6 +484,125 @@ img {
       </div>
       <div class="modal-footer">
         <button type="button" id="btnDevTeamClose" class="btn btn-secondary btnDevTeamClose" data-dismiss="modal">ปิด</button>
+     
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal-->
+<!-- Modal -->
+<div class="modal fade" id="devToolsModal" tabindex="-1" role="dialog" aria-labelledby="devToolsModalLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="devToolsModalLabel">เครื่องมือในการการพัฒนาระบบ</h5>
+       
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         
+        </button>
+
+      </div>
+      <div class="modal-body">
+        
+      <div class="list-group">
+        <a href="https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.2.34/xampp-windows-x64-7.2.34-2-VC15-installer.exe/download" class="list-group-item list-group-item-action " aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">xampp-windows-x64-7.2.34</h5>
+           
+            </div>
+            <p class="mb-1">
+            XAMPP  คือโปรแกรมจำลอง web server ทำให้เราสามารถทดสอบเว็บไซต์ได้โดยที่ไม่ต้องเชื่อมต่ออินเตอร์เน็ต และไม่มีค่าใช่จ่ายใดๆ
+            XAMPP ประภอบด้วย Apache, PHP, MySQL, PHP MyAdmin, Perl
+                <!-- <a href='https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.2.34/xampp-windows-x64-7.2.34-2-VC15-installer.exe/download'>Download</a> -->
+            </p>
+           
+        </a>
+        <a href="https://jquery.com/" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">javascript jquery</h5>
+            <!-- <small class="text-body-secondary">3 days ago</small> -->
+            </div>
+            <p class="mb-1">jQuery คือ JavaScript Library ยอดนิยมตัวหนึ่งที่โปรแกรมเมอร์นำมาใช้พัฒนาเว็บไซต์ สามารถรองรับการทำงานทุกเบราเซอร์ โดยไลบารี่นี้มีวัตถุประสงค์ที่จะเอามาแก้ปัญหาการใช้งาน JavaScript ที่มีความยุ่งยากในการใช้งานให้สามารถใช้งานได้ง่ายขึ้น</p>
+           
+        </a>
+        <a href="https://code.visualstudio.com/" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">VS CODE</h5>
+            <!-- <small class="text-body-secondary">3 days ago</small> -->
+            </div>
+            <p class="mb-1">เครื่องมือในการเขียนโปรแกรม</p>
+           
+        </a>
+        <a href="https://github.com/" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">GitHub</h5>
+            <!-- <small class="text-body-secondary">3 days ago</small> -->
+            </div>
+            <p class="mb-1">version control repository </p>
+           
+        </a>
+        <!-- <a href="https://www.chartjs.org/" target="_blank" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Chart.js</h5>
+           
+            </div>
+            <p class="mb-1">Simple yet flexible JavaScript charting library for the modern web </p>
+           
+        </a> -->
+        <a href="https://github.com/telerik/kendo-ui-core" target="_blank" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Kendo UI Core</h5>
+            <!-- <small class="text-body-secondary">3 days ago</small> -->
+            </div>
+            <p class="mb-1">Kendo UI Core is a free and open-source subset of Kendo UI. The following table details the widgets and features available in Kendo UI Core, as well as the additional features available via a commercial Kendo UI license. </p>
+           
+        </a>
+        <!-- <a href="https://www.zingchart.com/" target="_blank" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">ZingChart</h5>
+          
+            </div>
+            <p class="mb-1">Create animated & interactive charts with hundreds of thousands of data records using the ZingChart JavaScript charting library.</p>
+           
+        </a> -->
+        <a href="https://developers.google.com/chart?hl=th" target="_blank" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Google Chart</h5>
+           
+            </div>
+            <p class="mb-1">เครื่องมือแผนภูมิของ Google มีประสิทธิภาพ ใช้งานง่าย และไม่เสียค่าใช้จ่าย </p>
+           
+        </a>
+        <a href="https://jwt.io/" target="_blank" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">JWT(PHP)</h5>
+           
+            </div>
+            <p class="mb-1">JWT คือ JSON Web Token เป็นรูปแบบหนึ่งที่ใช้ในการสร้างรหัส token จากข้อมูล JSON Data แล้วทำการเข้ารหัสด้วย Base64Url และถือว่าเป็นมาตรฐานเปิด(RFC 7519) ที่เข้ามาแก้ปัญหาการส่งข้อมูลอย่างปลอดภัยระหว่างกัน โดยถูกออกแบบไว้ว่า จะต้องมีขนาดที่กะทัดรัด (Compact) และเก็บข้อมูลภายในตัว(Self-contained) </p>
+           
+        </a>
+        <a href="https://getbootstrap.com/" target="_blank" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"> Bootstrap 5.3</h5>
+           
+            </div>
+            <p class="mb-1">
+                Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.
+            </p>
+           
+        </a>
+        
+       
+        
+
+        
+     </div>
+
+
+      <br style="clear:both" > 
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="btnDevToolsClose" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
      
       </div>
     </div>

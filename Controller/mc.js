@@ -16,6 +16,71 @@ $( document ).ajaxStop(function() {
 });
 $("body").mLoading();
 
+
+
+function drawChart() {
+	
+	  
+	$.each($(".gauge_data").get(),function(index,indexEntry){
+		
+		var id="";
+		var value="";
+		var data_id = indexEntry.id;
+		data_id=data_id.split("-");
+		id=data_id[1];
+		value=data_id[2];
+		//alert(value);
+
+		var data = google.visualization.arrayToDataTable([
+			['Label', 'Value'],
+			['Task#'+(index+1)+'', parseInt(value)]
+		  ]);
+
+		
+		
+		  
+		  var options = {
+			width: '100%', height: '100%',
+			redFrom: 20, redTo: 60,
+			yellowFrom:60, yellowTo: 80,
+			greenFrom:80, greenTo: 100,
+			minorTicks: 5
+		  };
+	  
+		  var chart = new google.visualization.Gauge(document.getElementById('gauge'+id));
+		  chart.draw(data, options);
+
+		  $("#gauge"+id+" table").css({"margin":"auto"});
+		
+		  
+		  
+
+		  //console.log(chart);
+		  //console.log(id+"-"+value);
+		
+	});
+/*
+	var data = google.visualization.arrayToDataTable([
+		['Label', 'Value'],
+		['Memory', 80]
+  
+	  ]);
+  
+	  
+	  var options = {
+		width: 400, height: 200,
+		redFrom: 90, redTo: 100,
+		yellowFrom:75, yellowTo: 90,
+		minorTicks: 5
+	  };
+  
+	  var chart = new google.visualization.Gauge(document.getElementById('gauge14'));
+	  chart.draw(data, options);
+	*/
+
+  }
+
+
 var listTaskCateFn = function(data){
 
 	var htmlListTaskCate="";
@@ -141,15 +206,7 @@ var listTaskCateDisplayFn = function(data){
 		}
 		
 		 
-		htmlGauageChartArea="";
-		htmlGauageChartArea+="<div class=\"col-md-3\">";
-			htmlGauageChartArea+="<div class=\"card text-bg-default  mb-3\">";
-				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center;\">"+tc_name+"</div>";
-				htmlGauageChartArea+="<div class=\"card-body\" style=\"text-align: center; \">";
-				htmlGauageChartArea+="<div id=\"gauge"+indexEntryTaskCate['tc_code']+"\" class=\"graph\" ></div>";
-				htmlGauageChartArea+="</div>";
-			htmlGauageChartArea+="</div>";
-		htmlGauageChartArea+="</div>";
+		
 
 
 
@@ -207,12 +264,31 @@ var listTaskCateDisplayFn = function(data){
 				htmlDataTableMCDisplay+="</div>";
 			htmlDataTableMCDisplay+="</div>";
 		htmlDataTableMCDisplay+="</div>";
+
+
+		htmlGauageChartArea="";
+		htmlGauageChartArea+="<div class=\"col-md-3\">";
+			htmlGauageChartArea+="<div class=\"card text-bg-default  mb-3\">";
+				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center;\">"+tc_name+"</div>";
+				htmlGauageChartArea+="<div class=\"card-body\" style=\"text-align: center; \">";
+				htmlGauageChartArea+="<div id=\"gauge"+indexEntryTaskCate['tc_code']+"\" class=\"graph\" ></div>";
+				var guagePercentage=((totalManpowerByCate/indexEntryTaskCate['current_person']))*100;
+				htmlGauageChartArea+="<div style='display:none;' class='gauge_data' id=\"gauge_data-"+indexEntryTaskCate['tc_code']+"-"+guagePercentage+"\"  ></div>";
+				
+				htmlGauageChartArea+="<div class=\"alert alert-secondary\" role=\"alert\">ประสิทธิภาพ "+guagePercentage+"%</div>";
+
+				htmlGauageChartArea+="</div>";
+			htmlGauageChartArea+="</div>";
+		htmlGauageChartArea+="</div>";
+
 		$("#gaugeChartArea").append(htmlGauageChartArea);
 		//alert(totalManpowerByCate+"-"+indexEntryTaskCate['current_person']);
 		//alert((totalManpowerByCate/indexEntryTaskCate['current_person'])*100);
-		createGauges(indexEntryTaskCate['tc_code'],((totalManpowerByCate/indexEntryTaskCate['current_person']))*100);
+		//createGauges(indexEntryTaskCate['tc_code'],((totalManpowerByCate/indexEntryTaskCate['current_person']))*100);
 	});
-	
+
+
+	google.charts.setOnLoadCallback(drawChart);
 
 	
 
@@ -1160,6 +1236,13 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 }
 
 $(document).ready(function(){
+
+
+	//google chart start
+	google.charts.load('current', {'packages':['gauge']});
+	
+
+	
 
 	//select on tab load example
 	showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));

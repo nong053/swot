@@ -51,6 +51,7 @@
 <!-- set header fixed end-->
 
 <div class="container">
+
     <!-- <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-people-arrows"></i> MANPOWER CALCULATION</h1> -->
     <div class="row mb-31" id="gaugeChartArea">
          
@@ -890,6 +891,10 @@
     -->
     <script src="http://kpi.dashboardweb.com/js/jquery-2.1.1.js"></script>
     <script src="http://kpi.dashboardweb.com/kendoCommercial/js/kendo.all.min.js"></script>
+
+    <!--google chart start-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!--google chart end-->
 
      <!-- jquery confirm start-->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
