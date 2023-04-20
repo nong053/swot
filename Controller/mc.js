@@ -272,7 +272,7 @@ var listTaskCateDisplayFn = function(data){
 				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center;\">"+tc_name+"</div>";
 				htmlGauageChartArea+="<div class=\"card-body\" style=\"text-align: center; \">";
 				htmlGauageChartArea+="<div id=\"gauge"+indexEntryTaskCate['tc_code']+"\" class=\"graph\" ></div>";
-				var guagePercentage=((totalManpowerByCate/indexEntryTaskCate['current_person']))*100;
+				var guagePercentage=parseInt(((totalManpowerByCate/indexEntryTaskCate['current_person']))*100);
 				htmlGauageChartArea+="<div style='display:none;' class='gauge_data' id=\"gauge_data-"+indexEntryTaskCate['tc_code']+"-"+guagePercentage+"\"  ></div>";
 				
 				htmlGauageChartArea+="<div class=\"alert alert-secondary\" role=\"alert\">ประสิทธิภาพ "+guagePercentage+"%</div>";
