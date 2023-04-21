@@ -41,7 +41,7 @@ function drawChart() {
 		  
 		  var options = {
 			width: '100%', height: '100%',
-			redFrom: 20, redTo: 60,
+			redFrom: 0, redTo: 60,
 			yellowFrom:60, yellowTo: 80,
 			greenFrom:80, greenTo: 100,
 			minorTicks: 5
@@ -275,7 +275,17 @@ var listTaskCateDisplayFn = function(data){
 				var guagePercentage=parseInt(((totalManpowerByCate/indexEntryTaskCate['current_person']))*100);
 				htmlGauageChartArea+="<div style='display:none;' class='gauge_data' id=\"gauge_data-"+indexEntryTaskCate['tc_code']+"-"+guagePercentage+"\"  ></div>";
 				
-				htmlGauageChartArea+="<div class=\"alert alert-secondary\" role=\"alert\">ประสิทธิภาพ "+guagePercentage+"%</div>";
+
+				if(guagePercentage>=0 || guagePercentage<=60){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-"+indexEntryTaskCate['tc_code']+"\" class=\"alert alert-danger\" role=\"alert\">ปริมาณงานน้อยเกินไป "+guagePercentage+"%</div>";
+				}else if(guagePercentage>=60 || guagePercentage<=80){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-"+indexEntryTaskCate['tc_code']+"\" class=\"alert alert-warning\" role=\"alert\">ปริมาณงานน้อย "+guagePercentage+"%</div>";
+				}else if(guagePercentage>=80 || guagePercentage<=100){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-"+indexEntryTaskCate['tc_code']+"\" class=\"alert alert-success\" role=\"alert\">ปริมาณงานเหมาะสม "+guagePercentage+"%</div>";
+				}else if(guagePercentage>100){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-"+indexEntryTaskCate['tc_code']+"\" class=\"alert alert-danger\" role=\"alert\">ปริมาณงานมากเกินไป "+guagePercentage+"%</div>";
+				}
+				
 
 				htmlGauageChartArea+="</div>";
 			htmlGauageChartArea+="</div>";
