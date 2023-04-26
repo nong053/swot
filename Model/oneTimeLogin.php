@@ -19,6 +19,7 @@ if($_REQUEST['action']=='register'){
             $payload = '{"iss":"'.$_REQUEST['email'].'",
                 "id":"'.$id.'",
                 "email":"'.$_REQUEST['email'].'",
+                "c_uu_id":"",
                 "role":"1",
                 "login_status":"1",
                 "exp":1300819380
@@ -45,6 +46,7 @@ if($_REQUEST['action']=='register'){
         $payload = '{"iss":"'.$rs['email'].'",
             "id":"'.$rs['id'].'",
             "email":"'.$rs['email'].'",
+            "c_uu_id":"",
             "role":"'.$rs['role'].'",
             "login_status":"1",
             "exp":1300819380

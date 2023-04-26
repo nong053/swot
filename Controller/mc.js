@@ -1127,6 +1127,7 @@ var autoLoginFn=function(){
 	
     if(sessionStorage.getItem('uuid')=="" || sessionStorage.getItem('uuid')==null) {
 		console.log("Can't login");
+		window.location = "./index.php";
 		return false;
 	}
     $.ajax({

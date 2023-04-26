@@ -170,7 +170,7 @@ img {
        <div class="btn-toolbar " role="toolbar" aria-label="">
                 
         <a href="./doc/คู่มือMC.pdf" target="_blank" id="btnManualMC" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
-        <a href="#" id="btnMC" class="btn btn-primary btnMC"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+        <a href="#" id="btnMC" class="btn btn-primary btnMC"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> เข้าใช้งาน</a>
     </div>
     
     </li>
@@ -197,7 +197,7 @@ img {
       <div class="btn-toolbar " role="toolbar" aria-label="">
                 
         <a  href="./doc/คู่มือSW.pdf" target="_blank" id="btnManualSW" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
-        <a href="#" id="btnSW" class="btn btn-primary btnSW"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+        <a href="#" id="btnSW" class="btn btn-primary btnSW"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> เข้าใช้งาน</a>
     </div>
     
     </li>
@@ -221,7 +221,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="./doc/คู่มือRM.pdf" target="_blank" id="btnManualRM" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
-                <a href="#" id="btnRM" class="btn btn-primary btnRM"><i class="fa fa-sign-in" aria-hidden="true"></i> เข้าสู่ระบบ</a>
+                <a href="#" id="btnRM" class="btn btn-primary btnRM"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> เข้าใช้งาน</a>
             </div>
     </li>
 
@@ -620,7 +620,7 @@ img {
 <div id="desktopTest" class="d-none d-lg-block"></div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.3.js" ></script>
+<script src="./js/jquery-3.6.3.js" ></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" ></script>
 
 <!-- jquery confirm start-->

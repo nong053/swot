@@ -153,9 +153,48 @@ var validateLoginFn = function(){
     return check;
 }
 
+var autoLoginByMoblieFn = function(uuidByMobile){
+
+    $.ajax({
+        url:webService+"/Model/oneTimeAutoLogin.php",
+        type:"post",
+        dataType:"json",
+        async:false,
+        data:{
+            "action":"mobileLogin",
+            "uuidByMobile": uuidByMobile
+        },
+        success:function(data){
+            
+            if(data[0]!="" || data[0]!=null){
+                if(data[0]['status']=="200"){
+                    sessionStorage.setItem('token', data[0]['token']);
+                    sessionStorage.setItem('uuid', data[0]['data']);
+            }
+        
+        }
+    }
+        
+    });
+}
+
 
 $(document).ready(function(){
 
+
+
+    
+   
+    
+   //auto login by mobile start
+   if($.urlParam('uuidByMobile')!="" && $.urlParam('action')=="mobileLogin" ){
+        autoLoginByMoblieFn($.urlParam('uuidByMobile'));
+        sessionStorage.setItem('uuidByMobile',$.urlParam('uuidByMobile'));
+        
+        $("#loginArea").hide();
+        
+   }
+    //auto login by mobile end
 
     $(".btnDevTeam").click(function(){
         $("#teamModal").modal('show');
@@ -304,12 +343,10 @@ $("#btnOpenLogin").click(function(){
         $("#actionLR").val("register");
     });
     
+   
 
     $("#btnSubmitLR").click(function(){
         if($("#actionLR").val()=="register"){
-
-
-         
 
                 if(validateRisterFn()==true && checkPasswordStrength()==true){
                 $.ajax({
