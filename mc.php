@@ -884,8 +884,9 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script>
     -->
-    <script src="http://kpi.dashboardweb.com/js/jquery-2.1.1.js"></script>
-    <script src="http://kpi.dashboardweb.com/kendoCommercial/js/kendo.all.min.js"></script>
+   
+    <script src="http://dashboardweb.com/js/jquery-2.1.1.js"></script>
+    <script src="http://dashboardweb.com/kendoCommercial/js/kendo.all.min.js"></script>
 
     <!--google chart start-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>

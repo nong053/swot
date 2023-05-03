@@ -6,8 +6,8 @@
     <title>SWOT Analysis</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" >
     <!-- <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2022.3.1109/styles/kendo.default-ocean-blue.min.css" /> -->
-    <link rel="stylesheet" href="http://kpi.dashboardweb.com/kendoCommercial/styles/kendo.common.min.css" />
-    <link rel="stylesheet" href="http://kpi.dashboardweb.com/kendoCommercial/styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://dashboardweb.com/kendoCommercial/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="http://dashboardweb.com/kendoCommercial/styles/kendo.default.min.css" />
 
     
     <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
@@ -2055,8 +2055,8 @@
     <!-- <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script> -->
     <!-- <script src="https://kendo.cdn.telerik.com/2022.3.1109/js/kendo.all.min.js"></script> -->
 
-    <script src="http://kpi.dashboardweb.com/js/jquery-2.1.1.js"></script>
-    <script src="http://kpi.dashboardweb.com/kendoCommercial/js/kendo.all.min.js"></script>
+    <script src="http://dashboardweb.com/js/jquery-2.1.1.js"></script>
+    <script src="http://dashboardweb.com/kendoCommercial/js/kendo.all.min.js"></script>
     <!-- jquery confirm start-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
