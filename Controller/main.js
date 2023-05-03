@@ -11,7 +11,17 @@ $('.number_only').keypress(function(e) {
   .on("cut copy paste",function(e){
   e.preventDefault();
   });
+ 
   
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null) {
+       return null;
+    }
+    return decodeURI(results[1]) || 0;
+}
+
+
 function commaSeparateNumber(val){
     while (/(\d+)(\d{3})/.test(val.toString())){
       val = val.toString().replace(/(\d+)(\d{3})/, '$1'+','+'$2');
@@ -74,7 +84,7 @@ function commaSeparateNumber(val){
 
 
 
-    
+   
     //check device start
     
   $(".headerFixed").hide();
@@ -86,7 +96,14 @@ function commaSeparateNumber(val){
       $(".headeTitle").css({"top":"30px"}).show();
       $(".headerFixed").css({"top":"-20px","height":"65px"}).show();
       $(".setting-toggle").css({"top":"58px","color":"white","background-color":"#191970","border-color":"#191970"}).show();
-      $("#loginArea").css({"padding-top":"30px"}).show();
+      
+   
+      if(sessionStorage.getItem('uuidByMobile')=="" || sessionStorage.getItem('uuidByMobile')==null){
+        $("#loginArea").css({"padding-top":"30px"}).show();
+      }else{
+        $("#loginArea").css({"padding-top":"30px"}).hide();
+      }
+      
       $(".titleArea").css({"margin-top":"70px"}).show();
       
       
@@ -96,12 +113,18 @@ function commaSeparateNumber(val){
      
   }else{
    
+   
     
-      
       $(".headeTitle").css({"top":"17px"}).show();
       $(".headerFixed").css({"top":"0px","height":"75px"}).show();
       $(".setting-toggle").css({"top":"75px"}).show();
-      $("#loginArea").css({"padding-top":"28px"}).show();
+      if(sessionStorage.getItem('uuidByMobile')=="" || sessionStorage.getItem('uuidByMobile')==null){
+        $("#loginArea").css({"padding-top":"28px"}).show();
+      }else{
+        $("#loginArea").css({"padding-top":"28px"}).hide();
+      }
+
+      
       $(".titleArea").css({"margin-top":"100px"}).show();
 
   }
