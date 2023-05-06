@@ -628,5 +628,10 @@ img {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <!-- jquery confirm end-->
 
+<!--Adssense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"
+     crossorigin="anonymous"></script>
+<!--Adssense -->
+
 <script src="./Controller/main.js"></script>
 <script src="./Controller/login.js" ></script>
