@@ -262,240 +262,72 @@
             </div>
 
         <!-- accordian start-->
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion accordion-flush" >
+
             <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                    <div class="mc_checkbox_cate_mc">
-                        <input type="checkbox" class="form-check-input">
-                    </div>
-                    <div class="mc_cate_mc">   
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            งานที่#1
-                        </button> 
-                    </div>
-                    <br style="clear:both">
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body" style="padding: 2px;">
-                <div  class="mb-3">
-                    <div class="row" style="padding:5px;">
-                        <div class="col-md-12" style="text-align: left; ">
-                    
-                            
-                            <button type="button" id="submitSaveTask" class="btn btn-success btn-circle sub_mc_btn" >
-                                <i class="fa-solid fa-floppy-disk"></i>
-                            </button>
-                            <button   type="button" id="submit" class="btn btn-primary btn-circle sub_mc_btn"><i class="fa-sharp fa-solid fa-plus"></i></button>
-                            <button  type="button" id="submit" class="btn btn-danger btn-circle sub_mc_btn"><i class="fa-sharp fa-solid fa-trash"></i></button>
+                    <h2 class="accordion-header" id="flush-headingGeneralData">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseGeneralData" aria-expanded="false" aria-controls="flush-collapseOne" fdprocessedid="4oirhx">
+                        ข้อมูลทั่วไป
+                    </button>
+                    </h2>
+                    <div id="flush-collapseGeneralData" class="accordion-collapse collapse" aria-labelledby="flush-headingGeneralData" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-12" style="text-align: left;">
+                                <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="gerneralSave" class="btn btn-success btn-circle ">
+                                    <i class="fa-solid fa-floppy-disk"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                   
-                    <table class="table table-striped">
-                            <tr >
-                                <td class="widthSwotName">
-                                    <input type="checkbox"  class="form-check-input">
-                                    <div  class="mb-3"  class="form-check-input">
-                                        <textarea  class="form-control mb-2" id="s1_name" placeholder="1.1 รายละเอียดงาน"></textarea>
-                                        <div  class="mb-3">
-                                            <table>
-                                                <tr>
-                                                
-                                                    <td>
-                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
-                                                    </td>
-                                                    <td>
-                                                        <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
-                                                    </td>
-                                                </tr>
-                                            </table>
+                        
+
+                        <div class="row ">
+                            <div class="col-md-12 ">
+                                <div class="alert alert-primary">
+
+                                    <div id="risk_alert_gerneral" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; margin-top: 15px; display:none;" role="alert">
+                                        <div id="risk_alert_text_gerneral">
+                                            <div><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> หัวข้อความเสี่ยง</div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                            <tr >
-                                <td class="widthSwotName">
-                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.2 รายละเอียดงาน"> -->
-                                <input type="checkbox"  class="form-check-input">
-                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.2 รายละเอียดงาน"></textarea>
-                                <div  class="mb-3">
-                                    <table>
-                                        <tr>
-                                            
-                                            
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
-                                            </td>
-                                           
-                                        </tr>
-                                    </table>
-                                </div>   
                                     
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="widthSwotName">
-                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.3 รายละเอียดงาน"> -->
-                                <input type="checkbox"  class="form-check-input">
-                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.3 รายละเอียดงาน"></textarea>
-                                <div  class="mb-3">
-                                    <table>
-                                        <tr>
-                                            
-                                           
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
-                                            </td>
-                                           
-                                        </tr>
-                                    </table>
+                                
+                                    <div class="">
+                                        <div class="mb-1"> 
+                                            <label for="risk_title">หัวข้อความเสี่ยง</label>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="mb-3">
+                                        <textarea type="text" class="form-control risk_form" id="risk_title" placeholder="หัวข้อความเสี่ยง"></textarea>
+                                    </div>
+
+                                    
+                                    <div class="">
+                                        <div class="mb-1"> 
+                                            <label for="risk_detail">รายละเอียด</label>
+                                        </div>
+                                    </div>
+                                
+
+                                    <div class="mb-3">
+                                        <textarea type="text" class="form-control risk_form" id="risk_detail" placeholder="รายละเอียด"></textarea>
+                                    </div>
+
+
+                                
                                 </div>
-                                    
-                                </td>
-                            </tr>
-                            <tr >
-                                <td class="widthSwotName">
-                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.4 รายละเอียดงาน"> -->
-                                <input type="checkbox"  class="form-check-input">
-                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.4 รายละเอียดงาน"></textarea>
-                                <div  class="mb-3">
-                                    <table>
-                                        <tr>
-                                            
-                                            
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
-                                            </td>
-                                           
-                                        </tr>
-                                    </table>
-                                    
-                                </div>
-                                </td>
-                            </tr>
-                            <tr >
-                                <td class="widthSwotName">
-                                <!-- <input type="text" class="form-control" id="s1_name" placeholder="1.5 รายละเอียดงาน"> -->
-                                <input type="checkbox"  class="form-check-input">
-                                <textarea  class="form-control mb-2" id="s1_name" placeholder="1.5 รายละเอียดงาน"></textarea>
-                                <div class="mb-3">
-                                    <table>
-                                        <tr>
-                                            
-                                          
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="วัน">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ชั่วโมง">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="นาที">
-                                            </td>
-                                            <td>
-                                                <input type="text" name="t5_score" id="t5_score" class="form-control" placeholder="ครั้ง">
-                                            </td>
-                                           
-                                        </tr>
-                                    </table>
-                                </div>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="widthSwotName">
-                                <input type="text" class="form-control" id="current_persion5" placeholder="กำลังพล(ปัจจุบัน)">
-                               
-                                    
-                                </td>
-                            </tr>
-                            
-                    </table>
-                </div>
 
-                </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTwo">
-
-                    <div class="mc_checkbox_cate_mc">
-                        <input type="checkbox" class="form-check-input">
-                    </div>
-                    <div class="mc_cate_mc">   
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            งานที่#2
-                        </button> 
-                    </div>
-                    <br style="clear:both">
-
-                    <!-- <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    งานที่#2
-                    </button> -->
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
-                    xx
-                    <!-- Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content. -->
-                </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingThree">
-
-
-                    <div class="mc_checkbox_cate_mc">
-                        <input type="checkbox" class="form-check-input">
-                    </div>
-                    <div class="mc_cate_mc">   
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                            งานที่#3
-                        </button> 
-                    </div>
-                    <br style="clear:both">
-
-                <!-- <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                งานที่#3
-                </button> -->
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                <div class="accordion-body">
+                            </div>
                     
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </div>
+
+            <div id="accordionFlushExample"></div>
+            
+            
         </div>
         <!-- accordian end-->
 

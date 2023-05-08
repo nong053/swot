@@ -84,6 +84,8 @@ function drawChart() {
 var listTaskCateFn = function(data){
 
 	var htmlListTaskCate="";
+
+	
 	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
 
 		var tc_name ="";
