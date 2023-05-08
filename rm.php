@@ -67,9 +67,18 @@
         
         <div class="col-md-12">
         <div class="card text-dark bg-light mt-3 " >
-        <div class="card-header"><b>โปรแกรมบริหารความเสี่ยง (RISK MANAGEMENT)</b></div>
+        <div class="card-header" ><b id="risk_title_display">โปรแกรมบริหารความเสี่ยง (RISK MANAGEMENT)</b></div>
         <div class="card-body" style="padding: 0px; ">
+
             <!-- content here. -->
+            <div class="row">
+                <div class="col-md-12" >
+                    <div class="alert alert-success">
+                        <div id="risk_detail_display"></div>
+
+                    </div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6" >
                     <div style="padding:5px;">
@@ -334,9 +343,8 @@
         </h5>
         <button type="button" id="OffcanvasClose" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" ></button>
         </div>
-        <div class="offcanvas-body">
-        <div class="row">
-            <div class="col-md-12" style="text-align: left;  margin-bottom:10px;">
+        <div class=" container">
+            <div class="col-md-121" style="text-align: left; margin-bottom:10px; margin-right:15px">
                 <!-- <button style="margin-bottom:10px; float:right; "  type="button" id="submit" class="btn btn-primary btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
                 <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-success btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
                 <!-- <button style="margin-bottom:10px; float:right;"  type="button" id="submit" class="btn btn-warning btn-circle "><i class="fa-solid fa-floppy-disk"></i></button> -->
@@ -374,8 +382,69 @@
                         
             </div>
         </div>
+        <div class="row container">
+            <div id="btnClearForm"  style="text-align:right; color:white; font-weight:bold; cursor:pointer;padding:5px;">
+                เคลียร์ข้อมูล <i class="fa-solid fa-arrows-rotate"></i></a>
+            </div>
+        </div>
+
+        <div class="offcanvas-body">
+        
         <!-- accordian start-->
         <div class="accordion accordion-flush mb-3" id="accordionFlushExample">
+        <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingGeneralData">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseGeneralData" aria-expanded="false" aria-controls="flush-collapseOne">
+                    ข้อมูลทั่วไป
+                </button>
+                </h2>
+                <div id="flush-collapseGeneralData" class="accordion-collapse collapse" aria-labelledby="flush-headingGeneralData" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: left;">
+                            <button style="margin-bottom:10px; margin:1px; float:right; " type="button" id="gerneralSave" class="btn btn-success btn-circle ">
+                                <i class="fa-solid fa-floppy-disk"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+
+                    <div class="row">
+                        <div id="risk_alert_gerneral" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; margin-top: 15px; display:none;" role="alert">
+                            <div id="risk_alert_text_gerneral">
+                                <div><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> หัวข้อความเสี่ยง</div>
+                            </div>
+                        </div>
+                        <div class="alert alert-primary">
+                        <div class="col-md-12" style="text-align: left;">
+                            <div class="mb-1"> 
+                                <label for="risk_title">หัวข้อความเสี่ยง</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea type="text" class="form-control risk_form" id="risk_title" placeholder="หัวข้อความเสี่ยง" ></textarea>
+                        </div>
+
+                        <div class="col-md-12" style="text-align: left;">
+                            <div class="mb-1"> 
+                                <label for="risk_detail">รายละเอียด</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <textarea type="text" class="form-control risk_form" id="risk_detail" placeholder="รายละเอียด"></textarea>
+                        </div>
+
+
+                        </div>
+                    </div>
+                   
+
+                </div>
+                </div>
+            </div>
+
             <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">

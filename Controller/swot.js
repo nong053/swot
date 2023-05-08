@@ -370,16 +370,14 @@ uuid
 
 
 	$.each(data,function(index,indexEntry){
-		var swot_weight="";
+		var swot_weight=0.00;
 	
 		if(index==0){
 			 $("#swot_name").val(indexEntry['swot_name']);
 			 $("#swot_detail").val(indexEntry['swot_detail']);
 		}
 
-		if(indexEntry['s_weight']=="" || indexEntry['s_weight']==0 ){
-			swot_weight="";
-		}else{
+		if(indexEntry['s_weight']!="" || indexEntry['s_weight']!=0 ){
 			swot_weight=indexEntry['s_weight'];
 		}
 	
@@ -1540,6 +1538,11 @@ var checkValidateExampleFn  = function(){
 $(document).ready(function(){
 
 
+//clear form data start
+	$("#btnClearForm").click(function(){
+		clearDataFn();
+	});
+//clear form data end
 
 //select on tab load example
 showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
@@ -1837,11 +1840,11 @@ if ($('#desktopTest').is(':hidden')) {
 	$("#btnLoadExample").click(function(){
 
 		$.confirm({
-			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
-			content: 'คำเตือน!! ข้อมูลเก่าจะถูกลบโดยทันที',
+			title: '<i style="font-size:44px; color:yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการโหลดข้อมูล!',
+			//content: 'คำเตือน!! ข้อมูลเก่าจะถูกลบโดยทันที',
 			buttons: {
 				confirm: {
-					text: 'ยืนยันการโหลดข้อมูล', 
+					text: 'ยืนยัน', 
 					
 					action: function () {
 

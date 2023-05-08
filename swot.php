@@ -89,7 +89,7 @@
                         <div id="chartPrint" class="chart graph" style="width: 300px; height: auto;margin:auto; display:block; padding: 0px;"></div>
                     </div>
                     <div class="col-md-6">
-                        <div class="alert alert-warning" role="alert" style="margin-top: 10px;margin-bottom: 15px;" id="swot_detail_header">
+                        <div class="alert alert-warning" role="alert" style="margin-top: 10px;margin-bottom: 15px; font-weight:bold;" id="swot_detail_header">
                         &nbsp;
                         </div>
                         <table class="table  table-striped tableRmData">
@@ -512,10 +512,15 @@
                 <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitPDF" class="btn btn-danger btn-circle ">
                     <i class="fa-sharp fa-solid fa-file-pdf"></i>
                 </button>
+                
                 <br style="clear: both;">
             </div>
         </div>
-
+        <div class="row container">
+            <div id="btnClearForm"  style="text-align:right; color:white; font-weight:bold; cursor:pointer">
+                เคลียร์ข้อมูล <i class="fa-solid fa-arrows-rotate"></i></a>
+            </div>
+        </div>
         <div class="offcanvas-body">
 
             <form >
@@ -524,7 +529,7 @@
             <div class="card text-bg-default mb-3" >
                             <div class="card-header">
 
-                                ข้อมูลทั่วไป
+                                <span>ข้อมูลทั่วไป</span> 
 
                             </div>
                             <div class="card-body card-body-ex">
@@ -608,7 +613,7 @@
                                         <div class="col-6 ">
                                             <div class="form-group">
                                                 <label for="s1_weight">น้ำหนัก</label>
-                                                <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text" name="s1_weight" id="s1_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
 
                                         </div>
@@ -646,7 +651,7 @@
                                         <div class="col-6 ">
                                         <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                            <input type="text" name="s2_weight" id="s2_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                            <input type="text" name="s2_weight" id="s2_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                         </div>
                                         </div>
                                         <div class="col-6 ">
@@ -683,7 +688,7 @@
                                         <div class="col-6 ">
                                         <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                            <input type="text" name="s1_weight" id="s3_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                            <input type="text" name="s1_weight" id="s3_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                         </div>
                                         </div>
                                         <div class="col-6 ">
@@ -720,7 +725,7 @@
                                         <div class="col-6 ">
                                         <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                            <input type="text" name="s4_weight" id="s4_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                            <input type="text" name="s4_weight" id="s4_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                         </div>
                                         </div>
                                         <div class="col-6 ">
@@ -757,7 +762,7 @@
                                         <div class="col-6 ">
                                         <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                            <input type="text" name="s5_weight" id="s5_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก">
+                                            <input type="text" name="s5_weight" id="s5_weight" class=" s_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                         </div>
                                         </div>
                                         <div class="col-6 ">
@@ -844,7 +849,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text" name="w1_weight" id="w1_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text" name="w1_weight" id="w1_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -881,7 +886,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text" name="w2_weight" id="w2_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text" name="w2_weight" id="w2_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -917,7 +922,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text" name="w3_weight" id="w3_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text" name="w3_weight" id="w3_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -953,7 +958,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text" name="w4_weight" id="w4_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text" name="w4_weight" id="w4_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -989,7 +994,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text" name="w5_weight" id="w5_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text" name="w5_weight" id="w5_weight" class=" w_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1126,7 +1131,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="o1_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="o1_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1162,7 +1167,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="o2_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="o2_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1198,7 +1203,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="o3_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="o3_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1234,7 +1239,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="o4_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="o4_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1270,7 +1275,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="o5_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="o5_weight" class=" o_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1408,7 +1413,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="t1_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="t1_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1445,7 +1450,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="t2_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="t2_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1481,7 +1486,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="t3_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="t3_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1517,7 +1522,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="t4_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="t4_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">
@@ -1553,7 +1558,7 @@
                                             <div class="col-6 ">
                                             <div class="form-group">
                                             <label >น้ำหนัก</label>
-                                                <input type="text"  id="t5_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก">
+                                                <input type="text"  id="t5_weight" class=" t_weight number_only form-control"  placeholder="น้ำหนัก" value="0.00">
                                             </div>
                                             </div>
                                             <div class="col-6 ">

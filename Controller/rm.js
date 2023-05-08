@@ -34,6 +34,11 @@ var clearExampleDataFn = function(){
 var listRiskFormFn = function(data){
     var htmlFormRisk="";
     $.each(data['dataRisk'],function(index,indexEntry){
+		if(index==0){
+			
+			$("#risk_title").val(indexEntry['r_title']);
+			$("#risk_detail").val(indexEntry['r_detail']);
+		}
         
         htmlFormRisk+="<div  class=\"alert alert-primary mb-3 risk_loop\" id=\"risk_loop-"+indexEntry['r_code']+"\" role=\"alert\">";
             htmlFormRisk+="<input type=\"radio\" name=\"risk_radio\"  id=\"risk_radio-"+indexEntry['r_code']+"\"  class=\"form-check-input risk_radio\">";
@@ -46,33 +51,33 @@ var listRiskFormFn = function(data){
                 htmlFormRisk+=" <label for=\"r_code_display-"+indexEntry['r_code']+"\">รหัสความเสี่ยง</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<input type=\"text\" class=\"form-control\" id=\"r_code_display-"+indexEntry['r_code']+"\"  placeholder=\"รหัสความเสี่ยง\" value="+indexEntry['r_code_display']+">";
+                htmlFormRisk+="<input type=\"text\" class=\"form-control risk_form\" id=\"r_code_display-"+indexEntry['r_code']+"\"  placeholder=\"รหัสความเสี่ยง\" value="+indexEntry['r_code_display']+">";
             htmlFormRisk+="</div>";
 			
 
 			htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<input type=\"hidden\" class=\"form-control\" id=\"r_code-"+indexEntry['r_code']+"\"  placeholder=\"รหัส\" value="+indexEntry['r_code']+">";
+                htmlFormRisk+="<input type=\"hidden\" class=\"form-control risk_form\" id=\"r_code-"+indexEntry['r_code']+"\"  placeholder=\"รหัส\" value="+indexEntry['r_code']+">";
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
                 htmlFormRisk+=" <label for=\"r_name-"+indexEntry['r_code']+"\">ชื่อความเสี่ยง</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
-            htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_name-"+indexEntry['r_code']+"\" placeholder=\"ชื่อความเสี่ยง\">"+indexEntry['r_name']+"</textarea>";
+            htmlFormRisk+="<textarea  class=\"form-control risk_form\" id=\"r_name-"+indexEntry['r_code']+"\" placeholder=\"ชื่อความเสี่ยง\">"+indexEntry['r_name']+"</textarea>";
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
                 htmlFormRisk+=" <label for=\"r_description-"+indexEntry['r_code']+"\">ลักษณะ</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_description-"+indexEntry['r_code']+"\" placeholder=\"ลักษณะ\">"+indexEntry['r_description']+"</textarea>";
+                htmlFormRisk+="<textarea  class=\"form-control risk_form\" id=\"r_description-"+indexEntry['r_code']+"\" placeholder=\"ลักษณะ\">"+indexEntry['r_description']+"</textarea>";
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
                 htmlFormRisk+=" <label for=\"r_factor-"+indexEntry['r_code']+"\">ปัจจัยเสี่ยง</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\"> ";
-                htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_factor-"+indexEntry['r_code']+"\" placeholder=\"ปัจจัยเสี่ยง\">"+indexEntry['r_factor']+"</textarea>";
+                htmlFormRisk+="<textarea  class=\"form-control risk_form\" id=\"r_factor-"+indexEntry['r_code']+"\" placeholder=\"ปัจจัยเสี่ยง\">"+indexEntry['r_factor']+"</textarea>";
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
@@ -80,14 +85,14 @@ var listRiskFormFn = function(data){
             htmlFormRisk+="</div>";
           
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<textarea  class=\"form-control\" id=\"r_effect-"+indexEntry['r_code']+"\" placeholder=\"ผลกระทบ\">"+indexEntry['r_effect']+"</textarea>";
+                htmlFormRisk+="<textarea  class=\"form-control risk_form\" id=\"r_effect-"+indexEntry['r_code']+"\" placeholder=\"ผลกระทบ\">"+indexEntry['r_effect']+"</textarea>";
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
                 htmlFormRisk+=" <label for=\"responsible_person-"+indexEntry['r_code']+"\">ผู้รับผิดชอบ</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<input type=\"text\" class=\"form-control\" id=\"responsible_person-"+indexEntry['r_code']+"\"  placeholder=\"ผู้รับผิดชอบ\" value="+indexEntry['responsible_person']+">";  
+                htmlFormRisk+="<input type=\"text\" class=\"form-control risk_form\" id=\"responsible_person-"+indexEntry['r_code']+"\"  placeholder=\"ผู้รับผิดชอบ\" value="+indexEntry['responsible_person']+">";  
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
@@ -111,14 +116,14 @@ var listRiskFormFn = function(data){
                 htmlFormRisk+=" <label for=\"duration_of_work-"+indexEntry['r_code']+"\">ระยะเวลาการปฏิบัติ</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<textarea  class=\"form-control\" id=\"duration_of_work-"+indexEntry['r_code']+"\" placeholder=\"ระยะเวลาการปฏิบัติ\">"+indexEntry['duration_of_work']+"</textarea>";
+                htmlFormRisk+="<textarea  class=\"form-control risk_form\" id=\"duration_of_work-"+indexEntry['r_code']+"\" placeholder=\"ระยะเวลาการปฏิบัติ\">"+indexEntry['duration_of_work']+"</textarea>";
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
                 htmlFormRisk+=" <label for=\"guidelines_risk-"+indexEntry['r_code']+"\">จัดการความเสี่ยง</label>";
             htmlFormRisk+="</div>";
             htmlFormRisk+="<div class=\"mb-3\">";
-                htmlFormRisk+="<textarea  class=\"form-control\" id=\"guidelines_risk-"+indexEntry['r_code']+"\" placeholder=\"จัดการความเสี่ยง\">"+indexEntry['guidelines_risk']+"</textarea>";
+                htmlFormRisk+="<textarea  class=\"form-control risk_form\" id=\"guidelines_risk-"+indexEntry['r_code']+"\" placeholder=\"จัดการความเสี่ยง\">"+indexEntry['guidelines_risk']+"</textarea>";
             htmlFormRisk+="</div>";
 
 			htmlFormRisk+="<div class=\"mb-1\">";
@@ -161,6 +166,12 @@ var listRiskDisplayFn = function(data){
 	$(".borderRisk").html("");
 
     $.each(data['dataRisk'],function(index,indexEntry){
+		if(index==0){
+	
+			$("#risk_title_display").text(indexEntry['r_title']);
+			$("#risk_detail_display").text(indexEntry['r_detail']);
+		}
+
         htmlRiskDisplay+="<tr>";
 			htmlRiskDisplay+="<td>";
 				htmlRiskDisplay+="<b>"+indexEntry['r_code_display']+"</b>";
@@ -1213,6 +1224,8 @@ success:function(data){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
+					//load data again here.
+					riskFormFn(sessionStorage.getItem('uuid'));
 					$.alert({
 						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
 						content: 'โหลดข้อมูลเรียบร้อย',
@@ -1266,7 +1279,14 @@ success:function(data){
 	});
 }
 //example management end
+var clearDataFn = function(){
 
+	clearFormRiskFn();
+	clearFormStrategyTypeRiskFn();
+	$(".risk_form").val("");
+
+	
+}
 
 var autoLoginFn=function(){
 	
@@ -1553,6 +1573,54 @@ var checkValidateExampleFn  = function(){
 
 $(document).ready(function(){
 
+
+//clear form data start
+$("#btnClearForm").click(function(){
+	clearDataFn();
+});
+//clear form data end
+//save gerneral data start
+$("#gerneralSave").click(function(){
+
+	if($("#risk_title").val()=="" ){
+		$("#risk_alert_gerneral").show();
+		return false;
+	}else{
+		$("#risk_alert_gerneral").hide();
+
+		$.ajax({
+			url:webService+"/Model/action-rm.php",
+			type:"post",
+			dataType:"json",
+			async:false,
+			data:{
+				"uuid":sessionStorage.getItem('uuid'),
+				"action":"updatedRiskGeneral",
+				"r_title":$("#risk_title").val(),
+				"r_detail":$("#risk_detail").val(),
+			
+			},
+			headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+	success:function(data){
+
+				if(data[0]!=="" || data[0]!==null){
+					if(data[0]['status']=="200"){
+						riskFormFn(sessionStorage.getItem('uuid'));
+						// $.alert({
+						// 	title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+						// 	content: 'บันทึกข้อมูลเรียบร้อย',
+						// });
+						//listTaskFn(data[0]['data'],tc_code);
+					}
+				}
+				
+			}
+			
+		});
+	}
+
+});
+//save gereral data end
 //select on tab load example
 showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 $("#getExampleNewUserSubmit").click(function(){
@@ -2056,11 +2124,11 @@ $(document).on("click",".delExampleData",function(){
 	}else{
 
 		$.confirm({
-			title: '<i style="font-size:44px; color:red;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการลบข้อมูล!',
-			content: 'คำเตือน!! ควรสำรองข้อมูลก่อน! เนื่องจากข้อมูลเก่าจะถูกลบโดยทันที',
+			title: '<i style="font-size:44px; color:yellow;" class="fa fa-exclamation-triangle" aria-hidden="true"></i> ยืนยันการโหลดข้อมูล!',
+			//content: 'คำเตือน!! ควรสำรองข้อมูลก่อน! เนื่องจากข้อมูลเก่าจะถูกลบโดยทันที',
 			buttons: {
 				confirm: {
-					text: 'ยืนยันการโหลดข้อมูล', 
+					text: 'ยืนยัน', 
 					
 					action: function () {
 
