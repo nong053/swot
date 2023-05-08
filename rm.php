@@ -34,7 +34,7 @@
          /* set background */
         }
        
-
+    
         
         
     </style>
@@ -68,7 +68,7 @@
         <div class="col-md-12">
         <div class="card text-dark bg-light mt-3 " >
         <div class="card-header" ><b id="risk_title_display">โปรแกรมบริหารความเสี่ยง (RISK MANAGEMENT)</b></div>
-        <div class="card-body" style="padding: 0px; ">
+        <div class="card-body ">
 
             <!-- content here. -->
             <div class="row">
@@ -79,9 +79,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-6" >
-                    <div style="padding:5px;">
+                    <div >
                     <table class="table">
                         <thead>
                             
@@ -123,9 +123,9 @@
                     </div>
                 </div>
                 <div class="col-md-6" >
-                <div style="background-color: #cccccc; padding: 10px;" >
+                <div style="background-color: #dee2e6; " >
                 <div class="effect_text">ผลกระทบ</div>
-                    <table class="" style="background-color: #cccccc; margin-top:30px; width:100%; margin:0px; ">
+                    <table class="" style="background-color: #dee2e6; margin-top:30px; width:100%; margin:0px; ">
                     
                     <tr>
                         <td class="graphMainRight" id="risk5T" >5</td>
@@ -409,38 +409,46 @@
                     </div>
                     
 
-                    <div class="row">
-                        <div id="risk_alert_gerneral" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; margin-top: 15px; display:none;" role="alert">
-                            <div id="risk_alert_text_gerneral">
-                                <div><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> หัวข้อความเสี่ยง</div>
+                    <div class="row ">
+                        <div class="col-md-12 ">
+                            <div class="alert alert-primary">
+
+                                <div id="risk_alert_gerneral" class=" alert alert-warning d-flex1 align-items-center" style="margin-bottom: 15px; margin-top: 15px; display:none;" role="alert">
+                                    <div id="risk_alert_text_gerneral">
+                                        <div><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> หัวข้อความเสี่ยง</div>
+                                    </div>
+                                </div>
+                                
+                            
+                                <div class="">
+                                    <div class="mb-1"> 
+                                        <label for="risk_title">หัวข้อความเสี่ยง</label>
+                                    </div>
+                                </div>
+                            
+                                <div class="mb-3">
+                                    <textarea type="text" class="form-control risk_form" id="risk_title" placeholder="หัวข้อความเสี่ยง" ></textarea>
+                                </div>
+
+                                
+                                <div class="">
+                                    <div class="mb-1"> 
+                                        <label for="risk_detail">รายละเอียด</label>
+                                    </div>
+                                </div>
+                            
+
+                                <div class="mb-3">
+                                    <textarea type="text" class="form-control risk_form" id="risk_detail" placeholder="รายละเอียด"></textarea>
+                                </div>
+
+
+                            
                             </div>
-                        </div>
-                        <div class="alert alert-primary">
-                        <div class="col-md-12" style="text-align: left;">
-                            <div class="mb-1"> 
-                                <label for="risk_title">หัวข้อความเสี่ยง</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <textarea type="text" class="form-control risk_form" id="risk_title" placeholder="หัวข้อความเสี่ยง" ></textarea>
-                        </div>
-
-                        <div class="col-md-12" style="text-align: left;">
-                            <div class="mb-1"> 
-                                <label for="risk_detail">รายละเอียด</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <textarea type="text" class="form-control risk_form" id="risk_detail" placeholder="รายละเอียด"></textarea>
-                        </div>
-
 
                         </div>
-                    </div>
                    
-
+                    </div>
                 </div>
                 </div>
             </div>
@@ -463,8 +471,12 @@
                         </div>
                     </div>
                     <!-- form here. -->
-                    <div id="riskFormArea">
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <div id="riskFormArea">
 
+                            </div>
+                        </div>
                     </div>
                     <!--
                     <div  class="alert alert-primary mb-3" role="alert">
