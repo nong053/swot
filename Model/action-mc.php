@@ -95,7 +95,21 @@ $JWT->decode($token_data, $key);
                 }
             }
 
-            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
+            $sqlSetting = "SELECT *
+            FROM setting where uu_id='$_REQUEST[uuid]'";
+            $dataSettingArray = array();
+            $resultSetting = $conn->query($sqlSetting);
+
+            if ($resultSetting->num_rows > 0) {
+            // output data of each row
+                while($row = $resultSetting->fetch_assoc()) {
+                    $dataSettingArray[] = $row;
+                }
+            }
+
+            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray).",\"dataSetting\":".json_encode($dataSettingArray)."}]";
+            
+            //echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
             
         } else {
         echo "Error updating record: " . $conn->error;
@@ -161,8 +175,21 @@ $JWT->decode($token_data, $key);
                     $dataTaskArray[] = $row;
                 }
             }
+            $sqlSetting = "SELECT *
+            FROM setting where uu_id='$_REQUEST[uuid]'";
+            $dataSettingArray = array();
+            $resultSetting = $conn->query($sqlSetting);
+
+            if ($resultSetting->num_rows > 0) {
+            // output data of each row
+                while($row = $resultSetting->fetch_assoc()) {
+                    $dataSettingArray[] = $row;
+                }
+            }
+
+            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray).",\"dataSetting\":".json_encode($dataSettingArray)."}]";
     
-            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
+            //echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
 
         }
 
@@ -229,7 +256,21 @@ $JWT->decode($token_data, $key);
                 }
             }
     
-            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
+            $sqlSetting = "SELECT *
+            FROM setting where uu_id='$_REQUEST[uuid]'";
+            $dataSettingArray = array();
+            $resultSetting = $conn->query($sqlSetting);
+
+            if ($resultSetting->num_rows > 0) {
+            // output data of each row
+                while($row = $resultSetting->fetch_assoc()) {
+                    $dataSettingArray[] = $row;
+                }
+            }
+
+            echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray).",\"dataSetting\":".json_encode($dataSettingArray)."}]";
+            
+            //echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
 
 
         }
