@@ -48,6 +48,15 @@
 
     <!-- <h1 class="headeTitle"><i class="fa-sharp fa-solid fa-people-arrows"></i> MANPOWER CALCULATION</h1> -->
     <div id="dataTableMCDisplayPrint">
+
+    <div class="card  mb-3">
+        <div class="card-header" id='mc_title_display'>ด้านแผนกรอบกำลังพล</div>
+        <div class="card-body">
+          <div class="alert alert-success" >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id='mc_detail_display'>การวางแผนกำลังคน คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน ทำให้เกิดประสิทธิภาพ และมีความคุ้มค่า โดยการเตรียมกำลังคนทั้งด้านปริมาณ และด้านคุณภาพ สำหรับการรองรับการเปลี่ยนแปลงที่จะเกิดขึ้นในอนาคต และใช้เป็นเครื่องมือช่วยตัดสินใจ ในการบริหารทรัพยากรบุคคล</span>
+          </div>
+        </div>
+    </div>
     <div class="row mb-31" id="gaugeChartArea">
          
         <div class="col-md-3">
@@ -187,11 +196,11 @@
                         </th>
                         <th class="mc_time_unit">
                             <!-- เวลา:หน่วย -->
-                            นาที(ปี)
+                            นาที
                         </th>
                         <th class="mc_workload_year">
                             <!-- ปริมาณงาน:ปี -->
-                            ครั้ง(ปี)
+                            ครั้ง
                         </th>
                         <th class="mc_manpower_year">
                             <!-- อัตรากำลัง:ปี -->
@@ -294,24 +303,57 @@
                                 
                                     <div class="">
                                         <div class="mb-1"> 
-                                            <label for="risk_title">หัวข้อความเสี่ยง</label>
+                                            <label for="mc_title">หัวข้อ</label>
                                         </div>
                                     </div>
                                 
                                     <div class="mb-3">
-                                        <textarea type="text" class="form-control risk_form" id="risk_title" placeholder="หัวข้อความเสี่ยง"></textarea>
+                                        <input type="hidden"   id="s_code" >
+                                        <textarea type="text" class="form-control risk_form" id="mc_title" placeholder="หัวข้อ"></textarea>
                                     </div>
 
                                     
                                     <div class="">
                                         <div class="mb-1"> 
-                                            <label for="risk_detail">รายละเอียด</label>
+                                            <label for="mc_detail">รายละเอียด</label>
                                         </div>
                                     </div>
                                 
 
                                     <div class="mb-3">
-                                        <textarea type="text" class="form-control risk_form" id="risk_detail" placeholder="รายละเอียด"></textarea>
+                                        <textarea type="text" class="form-control risk_form" id="mc_detail" placeholder="รายละเอียด"></textarea>
+                                    </div>
+
+                                    <div class="">
+                                        <div class="mb-1"> 
+                                            <label for="mc_operation_period">ระยะเวลาการปฏบัติงาน(แปลงเป็นนาที)</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <table class="table1" style="width:100%">
+                                            <tr>
+                                                <td style="text-align:center;">ระยะเวลา</td>
+                                                <td style="text-align:center;">หน่วย</td>
+                                                <td style="text-align:center;">นาที</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="text" id="period" value="1" class="form-control" style="width: 80px;" placeholder="ระยะเวลา">
+                                                </td>
+                                                <td>
+                                                    <select class="form-control" id="period_unit" style="width: 80px;">
+                                                        <option value="year">ปี</option>
+                                                        <option value="month">เดือน</option>
+                                                        <option value="day">วัน</option>
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <input type="text"   id="period_minute" value="88200"  disabled class="form-control" placeholder="นาที">
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                        
                                     </div>
 
 

@@ -1,3 +1,10 @@
+var loaddingFn = function(){
+	//alert('loadding');
+	$("body").mLoading();
+	setTimeout(function(){
+		$("body").mLoading('hide');
+	},1000);
+}
 var clearFormRegisterFn = function(){
     $("#register_alert").hide();
     $("#register_alert_text").html("");
@@ -197,6 +204,7 @@ $(document).ready(function(){
     //auto login by mobile end
 
     $(".btnDevTeam").click(function(){
+        loaddingFn();
         $("#teamModal").modal('show');
 	});
     $("#btnDevTeamClose").click(function(){
@@ -204,6 +212,7 @@ $(document).ready(function(){
 	});
 
     $(".btnDevTools").click(function(){
+        loaddingFn();
         $("#devToolsModal").modal('show');
 	});
     $("#btnDevToolsClose").click(function(){
@@ -214,17 +223,17 @@ $(document).ready(function(){
     
 
 if("mobile"==sessionStorage.getItem('checkDevice')){
-
+    $("#displayView").show();
 	$("#formLoginArea").css({"width":"100%"});
     $(".btn-toolbar").css({"text-align":"center"}).show();
     $(".nbsp").remove();
-
+    
     // $(".headeTitle").css({"top":"30px"}).show();
     // $(".headerFixed").css({"top":"-20px","height":"65px"});
 
    
 }else{
- 
+    $("#displayView").show();
 	$("#formLoginArea").css({"width":"350px"});
     $(".btn-toolbar").css({"float":"right"}).show();
     
@@ -236,6 +245,7 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 //check device end
 
 $(".btnMC").click(function(){
+    loaddingFn();
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
         $("#actionTo").val("./mc.php");
@@ -251,6 +261,7 @@ $(".btnMC").click(function(){
 });
 
 $(".btnSW").click(function(){
+    loaddingFn();
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
         $("#actionTo").val("./swot.php");
@@ -265,6 +276,7 @@ $(".btnSW").click(function(){
 });
 
 $(".btnRM").click(function(){
+    loaddingFn();
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
         $("#actionTo").val('./rm.php');
@@ -279,6 +291,7 @@ $(".btnRM").click(function(){
 });
 
 $("#btnOpenLogin").click(function(){
+    loaddingFn();
     $("#loginModal").modal('show');
 });
     
@@ -300,7 +313,7 @@ $("#btnOpenLogin").click(function(){
 
 
     $("#btnLogout").click(function(){
-        
+        loaddingFn();
         sessionStorage.setItem('token',"");
         sessionStorage.setItem('uuid',"");
         $("#btnLogout").hide();
@@ -331,6 +344,7 @@ $("#btnOpenLogin").click(function(){
     $("#register_confirm_password").val();
 
     $("#login-tab").click(function(){
+        loaddingFn();
         $("#actionLR").val("login");
         clearFormRegisterFn();
         clearFormLoginFn();
@@ -338,6 +352,7 @@ $("#btnOpenLogin").click(function(){
     });
 
     $("#register-tab").click(function(){
+        loaddingFn();
         clearFormRegisterFn();
         clearFormLoginFn();
         $("#actionLR").val("register");
@@ -346,6 +361,7 @@ $("#btnOpenLogin").click(function(){
    
 
     $("#btnSubmitLR").click(function(){
+        loaddingFn();
         if($("#actionLR").val()=="register"){
 
                 if(validateRisterFn()==true && checkPasswordStrength()==true){

@@ -85,6 +85,17 @@ var listTaskCateFn = function(data){
 
 	var htmlListTaskCate="";
 
+
+	$.each(data['dataSetting'],function(index,indexEntrySetting){
+		$("#mc_title").val(indexEntrySetting['title']);
+		$("#mc_detail").val(indexEntrySetting['detail']);
+
+		$("#s_code").val(indexEntrySetting['s_code']);
+		$("#period").val(indexEntrySetting['period']);
+		$("#period_unit").val(indexEntrySetting['period_unit']);
+		$("#period_minute").val(indexEntrySetting['period_minute']);
+	});
+
 	
 	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
 
@@ -157,7 +168,7 @@ var listTaskCateFn = function(data){
 												htmlListTaskCate+="<input type=\"text\" name=\"t_minute-"+indexEntryTask['t_code']+"\" id=\"t_minute-"+indexEntryTask['t_code']+"\" class=\"form-control number_only\" placeholder=\"นาที\" value=\""+indexEntryTask['t_minute']+"\">";
 											htmlListTaskCate+="</td>";
 											htmlListTaskCate+="<td>";
-												htmlListTaskCate+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง(ปี)</label>";
+												htmlListTaskCate+=" <label for='t_quantity-"+indexEntryTask['t_code']+"' class='form-label'>ครั้ง</label>";
 												htmlListTaskCate+="<input style='background:antiquewhite' type=\"text\" name=\"t_quantity-"+indexEntryTask['t_code']+"\" id=\"t_quantity-"+indexEntryTask['t_code']+"\" class=\"form-control number_only \" placeholder=\"ครั้ง\" value=\""+indexEntryTask['t_quantity']+"\">";
 											htmlListTaskCate+="</td>";
 										htmlListTaskCate+="</tr>";
@@ -198,6 +209,12 @@ var listTaskCateDisplayFn = function(data){
 	var currentTotalManpower=0.00;
 	var totalAllTime=0;
 	var totalAllQuantity=0;
+
+	$.each(data['dataSetting'],function(index,indexEntrySetting){
+		$("#mc_title_display").html(indexEntrySetting['title']);
+		$("#mc_detail_display").html(indexEntrySetting['detail']);
+	});
+
 	$("#gaugeChartArea").html("");
 	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
 		var tc_name ="";
@@ -225,10 +242,10 @@ var listTaskCateDisplayFn = function(data){
 						htmlDataTableMCDisplay+="รายละเอียดงาน";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+=" <th class=\"mc_time_unit\">";
-						htmlDataTableMCDisplay+="นาที(ปี)";
+						htmlDataTableMCDisplay+="นาที";
 						htmlDataTableMCDisplay+="</th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_workload_year\">";
-						htmlDataTableMCDisplay+="ครั้ง(ปี)";
+						htmlDataTableMCDisplay+="ครั้ง";
 						htmlDataTableMCDisplay+=" </th>";
 						htmlDataTableMCDisplay+="<th class=\"mc_manpower_year\">";
 						htmlDataTableMCDisplay+="อัตรา";
@@ -662,8 +679,11 @@ var updateTaskFn = function(uuid,t_code){
 
 
 	//t_x_time=(t_day*t_hour*t_minute*t_minute*t_quantity);
-	manpower=parseFloat(t_x_time/88200).toFixed(2);
-	// alert(manpower);
+	
+	manpower=parseFloat(t_x_time/$("#period_minute").val()).toFixed(2);
+	//manpower=parseFloat(t_x_time/88200).toFixed(2);
+	//alert($("#period_minute").val()+"--"+manpower); 
+	//alert(manpower);
 	
 	var dataReturn=true;
 	$.ajax({
@@ -1248,8 +1268,79 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 //check device end
 }
 
+var settingFn = function(uuid){
+	$.ajax({
+		url:webService+"/Model/action-mc.php",
+		type:"post",
+		dataType:"json",
+        async:false,
+		data:{
+			"uuid":uuid,
+			"title":$("#mc_title").val(),
+			"detail":$("#mc_detail").val(),
+			"period":$("#period").val(),
+			"period_unit":$("#period_unit").val(),
+			"period_minute":$("#period_minute").val(),
+			"s_code":$("#s_code").val(),
+			"action":"saveSetting",
+	
+		},
+		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
+		success:function(data){
+
+			if(data[0]!=="" || data[0]!==null){
+				if(data[0]['status']=="200"){
+				showTaskCate(sessionStorage.getItem('uuid'));
+				//alert("Save");
+				
+					
+                    
+				}
+			}
+		}
+	});
+}
+
+
 $(document).ready(function(){
 
+
+	//select period unit start
+	$("#period_unit").change(function(){
+		var period_minute=0.00;
+		var period = parseInt($("#period").val());
+		
+		if("year"==$(this).val()){
+			period_minute = period*88200;//1 year =88200 minute
+		}else if("month"==$(this).val()){
+			period_minute = period*7350;//1 month=7350 minute
+		}else if("day"==$(this).val()){
+			period_minute=period * 480   //1day = minte
+		}
+		$("#period_minute").val(period_minute);
+	});
+
+	$("#period").keyup(function(){
+		var period_minute=0.00;
+		var period = parseInt($(this).val());
+		
+		if("year"==$("#period_unit").val()){
+			period_minute = period*88200;//1 year =88200 minute
+		}else if("month"==$("#period_unit").val()){
+			period_minute = period*7350;//1 month= 17.5*420 =7350 minute
+		}else if("day"==$("#period_unit").val()){
+			period_minute=period * 420   //1day=7*60 =420 minte
+		}
+		$("#period_minute").val(period_minute);
+	});
+
+	
+
+	$("#gerneralSave").click(function(){
+		settingFn(sessionStorage.getItem('uuid'));
+		$(".saveTask").click();
+		//alert(1);
+	});
 
 	//google chart start
 	google.charts.load('current', {'packages':['gauge']});
@@ -1458,10 +1549,10 @@ $(document).on("click",".saveTask",function(){
 	});
 	if(flagCheck==true){
 		//alert("ok");
-		$.alert({
-			title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
-			content: 'บันทึกข้อมูลเรียบร้อย',
-		});
+		// $.alert({
+		// 	title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+		// 	content: 'บันทึกข้อมูลเรียบร้อย',
+		// });
 		showTaskCate(sessionStorage.getItem('uuid'),showDisplayOnly=true);
 		
 	}

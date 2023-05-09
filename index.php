@@ -92,7 +92,7 @@ img {
 </style>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<div id='displayView' style="display:none;">
 <div class="headerFixed" style="display: none;">
        
         <!-- <div class=" d-lg-none" style="margin-top: 55px;"></div> -->
@@ -243,7 +243,7 @@ img {
   </div>
 </footer>
 
-
+</div>
 
 <!--
 <div class="container">
@@ -627,6 +627,11 @@ img {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <!-- jquery confirm end-->
+
+ <!-- jquery mloading start-->
+ <link rel="stylesheet" href="css/jquery.mloading.css">
+ <script src="js/jquery.mloading.js"></script>
+ <!-- jquery mloading end-->
 
 <!--Adssense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"

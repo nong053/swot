@@ -4,14 +4,23 @@ if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null)
 }
 
 var dataJsonForImport="";
-
+var loaddingFn = function(){
+	//alert('loadding');
+	$("body").mLoading();
+	setTimeout(function(){
+		$("body").mLoading('hide');
+	},1000);
+}
+/*
 $( document ).ajaxStart(function() {
 	$("body").mLoading();
 });
 $( document ).ajaxStop(function() {
 	$("body").mLoading('hide');
 });
-$("body").mLoading();
+*/
+loaddingFn();
+//$("body").mLoading();
 
 
 var clearExampleDataFn = function(){
@@ -1576,12 +1585,14 @@ $(document).ready(function(){
 
 //clear form data start
 $("#btnClearForm").click(function(){
+	loaddingFn();
 	clearDataFn();
 });
 //clear form data end
 //save gerneral data start
 $("#gerneralSave").click(function(){
-
+	
+	loaddingFn();
 	if($("#risk_title").val()=="" ){
 		$("#risk_alert_gerneral").show();
 		return false;
@@ -1624,6 +1635,7 @@ $("#gerneralSave").click(function(){
 //select on tab load example
 showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 $("#getExampleNewUserSubmit").click(function(){
+	loaddingFn();
 	loadExampleDataFn(sessionStorage.getItem('uuid'),$("#rce_id_load_new_user").val());
 })
 
@@ -1642,7 +1654,7 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 }
 //check toggle modal dev team start
 $(".btnDevTeam").click(function(){
-		
+	loaddingFn();
 	if($("#btnDevTeam").val()=="YES"){
 		$("#teamModal").modal('show');
 		$("#btnDevTeam").val("NO");
@@ -1653,6 +1665,7 @@ $(".btnDevTeam").click(function(){
 
 });
 $("#btnDevTeamClose").click(function(){
+	
 	$("#teamModal").modal('hide');
 	$("#btnDevTeam").val("YES");
 
@@ -1800,6 +1813,7 @@ $(document).on("click","#btnRiskAdd",function(){
 
 /*risk estimate start*/
 $("#likelihoodRiskSave").click(function(){
+	loaddingFn();
     var flagCheck=true;
 	$(".lh_loop").each(function(index,indexEntry){
 		
@@ -1835,7 +1849,7 @@ $("#likelihoodRiskSave").click(function(){
 
 /*risk effectRisk start*/
 $("#impactRiskSave").click(function(){
-    
+    loaddingFn();
     var flagCheck=true;
 	$(".im_loop").each(function(index,indexEntry){
 		
@@ -1883,7 +1897,7 @@ $("#impactRiskSave").click(function(){
 
 /*risk mitigate start*/
 $("#mitigateRisksSave").click(function(){
-     
+	loaddingFn();
     var flagCheck=true;
 	$(".stm_loop").each(function(index,indexEntry){
 		
@@ -1972,7 +1986,7 @@ $(document).on("click","#mitigateRisAdd",function(){
 
 /*risk evaluation master start*/
 $("#evaluationRiskSave").click(function(){
-     
+	loaddingFn();
     var flagCheck=true;
 	$(".re_loop").each(function(index,indexEntry){
 		
@@ -2019,6 +2033,7 @@ $("#evaluationRiskSave").click(function(){
 /*load data start here.*/
 
 $("#btnSaveExample").click(function(){
+	loaddingFn();
 	if(checkValidateExampleFn()==true){
 
 		if($("#actionExample").val()=='add'){
@@ -2031,6 +2046,7 @@ $("#btnSaveExample").click(function(){
 });
 
 $("#getExampleModel").click(function(){
+	loaddingFn();
     //table show display on list example
 	showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
     //select on tab load example
@@ -2095,6 +2111,7 @@ $(document).on("click",".delExampleData",function(){
 
  $("#home-tab").click(function(){
 	//alert("TAB1");
+	loaddingFn();
 	clearExampleDataFn();
 	$("#btnLoadExample").show();
 	$("#btnSaveExample").hide();
@@ -2103,6 +2120,7 @@ $(document).on("click",".delExampleData",function(){
  });
  $("#profile-tab").click(function(){
 	//alert("TAB2");
+	loaddingFn();
 	clearExampleDataFn();
 	$("#btnLoadExample").hide();
 	$("#btnSaveExample").show();
@@ -2112,7 +2130,7 @@ $(document).on("click",".delExampleData",function(){
  
  $("#btnLoadExample").click(function(){
 
-
+	loaddingFn();
 
 
 	if($("#rce_id_load").val()==undefined || $("#rce_id_load").val()==""){
@@ -2186,6 +2204,7 @@ $("#submitExcel").click(function(){
 	});
 });
 $("#submitPDF").click(function(){
+	loaddingFn();
 	location.href = webService+"/Model/mpdf/rm-pdf.php?uuid="+sessionStorage.getItem('uuid')+"";
 
 	// html2canvas($('#tableRiskData')[0], {
@@ -2202,7 +2221,7 @@ $("#submitPDF").click(function(){
 	// });
 });
 $("#submitPrint").click(function(){
-	
+	loaddingFn();
 	$("#tableRiskData").printThis();
 });
 

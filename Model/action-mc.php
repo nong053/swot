@@ -51,8 +51,19 @@ $JWT->decode($token_data, $key);
                 $dataTaskArray[] = $row;
             }
         }
+        $sqlSetting = "SELECT *
+        FROM setting where uu_id='$_REQUEST[uuid]'";
+        $dataSettingArray = array();
+        $resultSetting = $conn->query($sqlSetting);
 
-        echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray)."}]";
+        if ($resultSetting->num_rows > 0) {
+        // output data of each row
+            while($row = $resultSetting->fetch_assoc()) {
+                $dataSettingArray[] = $row;
+            }
+        }
+
+        echo "[{\"status\":\"200\",\"dataTaskCate\":".json_encode($dataTaskCateArray).",\"dataTask\":".json_encode($dataTaskArray).",\"dataSetting\":".json_encode($dataSettingArray)."}]";
 
     }else if($_REQUEST['action']=='updatedCate'){
 
@@ -889,7 +900,44 @@ $JWT->decode($token_data, $key);
 
 
 
-     }
+     }else if($_REQUEST['action']=='saveSetting'){
+/*
+uu_id
+title
+detail
+period
+period_unit
+period_minute
+*/
+    
+
+    $sql = "SELECT 	* FROM setting where uu_id='$_REQUEST[uuid]'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+
+        $sql = "UPDATE setting SET title='$_REQUEST[title]',detail='$_REQUEST[detail]',
+                period='$_REQUEST[period]' ,period_unit='$_REQUEST[period_unit]',period_minute='$_REQUEST[period_minute]' ,updated_date=NOW()
+        WHERE s_code='$_REQUEST[s_code]'";
+        if ($conn->query($sql) === TRUE) {
+            echo "[{\"status\":\"200\"},{\"detail\":\"Update Success\"}]";
+        }
+
+    } else {
+
+        $sql = "INSERT INTO setting (uu_id,title,detail,period,period_unit,period_minute,created_date,updated_date) 
+                             VALUES ('$_REQUEST[uuid]','$_REQUEST[title]','$_REQUEST[detail]','$_REQUEST[period]',
+                             '$_REQUEST[period_unit]','$_REQUEST[period_minute]',NOW(),NOW())";
+        if ($conn->query($sql) === TRUE) {
+            $last_id = mysqli_insert_id($conn);
+            $sql2 = "UPDATE setting SET s_code='$last_id' WHERE id='$last_id'";
+            $conn->query($sql2);
+            echo "[{\"status\":\"200\"},{\"detail\":\"Insert Success\"}]";
+        }
+  
+    }
+
+}
 
        
        
