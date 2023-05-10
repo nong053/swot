@@ -7,14 +7,26 @@ var dataJsonForImport="";
 
 
 
-
+/*
 $( document ).ajaxStart(function() {
 	$("body").mLoading();
 });
 $( document ).ajaxStop(function() {
 	$("body").mLoading('hide');
 });
-$("body").mLoading();
+*/
+//$("body").mLoading();
+
+var loaddingFn = function(){
+	//alert('loadding');
+	$("body").mLoading();
+	setTimeout(function(){
+		$("body").mLoading('hide');
+	},1000);
+}
+
+loaddingFn();
+
 
 
 
@@ -1055,6 +1067,7 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 
 	var dataJsonForImportObject=eval("("+dataJsonForImport+")");
 	
+	console.log(dataJsonForImportObject);
 
     
     $.ajax({
@@ -1067,6 +1080,7 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 			"action":"importExampleJsonData",
 			"dataTaskCate":dataJsonForImportObject['dataTaskCate'],
 			"dataTask":dataJsonForImportObject['dataTask'],
+			"dataSetting":dataJsonForImportObject['dataSetting'],
 			
 	
 		},
@@ -1337,6 +1351,7 @@ $(document).ready(function(){
 	
 
 	$("#gerneralSave").click(function(){
+		loaddingFn();
 		settingFn(sessionStorage.getItem('uuid'));
 		$(".saveTask").click();
 		//alert(1);
@@ -1351,6 +1366,7 @@ $(document).ready(function(){
 	//select on tab load example
 	showAllExampleLoadDataFn(sessionStorage.getItem('uuid'));
 	$("#getExampleNewUserSubmit").click(function(){
+		loaddingFn();
 		loadExampleDataFn(sessionStorage.getItem('uuid'),$("#mc_id_load_new_user").val());
 	})
 
@@ -1359,7 +1375,7 @@ $(document).ready(function(){
 	checkDeviceExtendSwotFn();
 	//check toggle modal dev team start
 	$(".btnDevTeam").click(function(){
-		
+		loaddingFn();
 		if($("#btnDevTeam").val()=="YES"){
 			$("#teamModal").modal('show');
 			$("#btnDevTeam").val("NO");
@@ -1441,11 +1457,13 @@ autoLoginFn();
 
 
 	$("#addTaskModal").click(function(){
+		loaddingFn();
 		clearFormTaskCateFn();
 	});
 
 
 	 $("#editTaskCateModal").click(function(){
+		loaddingFn();
 		var tc_code =$(".cate_mc:checked").attr("id");
 
 
@@ -1472,7 +1490,7 @@ autoLoginFn();
 
 
 	 $("#cateTaskSubmit").click(function(){
-		
+		loaddingFn();
 		if(checkValidateCateTaskFn()==true){
 			if($("#actionTaskCate").val()=="add"){
 				insertTaskCateFn(sessionStorage.getItem('uuid'));
@@ -1484,7 +1502,7 @@ autoLoginFn();
 	});
 
 	$("#deleteTaskCate").click(function(){
-		
+		loaddingFn();
 		var tc_code =$(".cate_mc:checked").attr("id");
 		
 
@@ -1624,7 +1642,7 @@ $(document).on("click",".addTask",function(){
 
 
 $("#submitPrint").click(function(){
-		
+	loaddingFn();
 	$("#dataTableMCDisplayPrint").printThis({
 		importCSS: true,
 		loadCSS: "css/mc.css",
@@ -1632,12 +1650,14 @@ $("#submitPrint").click(function(){
 	});
 });
 $("#submitPDF").click(function(){
+	loaddingFn();
 	location.href = webService+"/Model/mpdf/mc-pdf.php?uuid="+sessionStorage.getItem('uuid')+"";
 });
 
 
 //action example management start
 $("#getExampleModel").click(function(){
+	loaddingFn();
     //table show display on list example
 	showAllExampleDataUUIDFn(sessionStorage.getItem('uuid'));
     //select on tab load example
@@ -1701,6 +1721,7 @@ $(document).on("click",".delExampleData",function(){
 
 
  $("#home-tab").click(function(){
+	loaddingFn();
 	//alert("TAB1");
 	clearExampleDataFn();
 	$("#btnLoadExample").show();
@@ -1709,6 +1730,7 @@ $(document).on("click",".delExampleData",function(){
 	
  });
  $("#profile-tab").click(function(){
+	loaddingFn();
 	//alert("TAB2");
 	clearExampleDataFn();
 	$("#btnLoadExample").hide();
@@ -1717,6 +1739,7 @@ $(document).on("click",".delExampleData",function(){
  });
 /*load data start here.*/
  $("#btnLoadExample").click(function(){
+	loaddingFn();
 	if($("#file_import").val()==""){
 		//alert('loadExampleDataFn');
 		loadExampleDataFn(sessionStorage.getItem('uuid'),$("#mc_id_load").val());
@@ -1730,6 +1753,7 @@ $(document).on("click",".delExampleData",function(){
 
 //action save,update start
 $("#btnSaveExample").click(function(){
+	loaddingFn();
 	if(checkValidateExampleFn()==true){
 		if($("#actionExample").val()=='add'){
 			saveExampleDataFn(sessionStorage.getItem('uuid'));
