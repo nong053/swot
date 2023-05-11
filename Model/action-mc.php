@@ -902,7 +902,7 @@ $JWT->decode($token_data, $key);
             $sql_insert_setting = "
             INSERT INTO setting 
             (
-                uu_id,title,detail,period,period_unit,period_minute,created_date,updated_date,s_code
+                uu_id,title,detail,period,period_unit,period_minute,s_code,created_date,updated_date
             ) 
             VALUES
             (

@@ -11,12 +11,12 @@ var dataJsonForImport="";
 $( document ).ajaxStart(function() {
 	$("body").mLoading();
 });
+
 $( document ).ajaxStop(function() {
 	$("body").mLoading('hide');
 });
-*/
 //$("body").mLoading();
-
+*/
 var loaddingFn = function(){
 	//alert('loadding');
 	$("body").mLoading();
@@ -1353,7 +1353,10 @@ $(document).ready(function(){
 	$("#gerneralSave").click(function(){
 		loaddingFn();
 		settingFn(sessionStorage.getItem('uuid'));
-		$(".saveTask").click();
+		setTimeout(function(){
+			$(".saveTask").click();
+		},500);
+		//$(".saveTask").click();
 		//alert(1);
 	});
 
@@ -1457,13 +1460,13 @@ autoLoginFn();
 
 
 	$("#addTaskModal").click(function(){
-		loaddingFn();
+		//loaddingFn();
 		clearFormTaskCateFn();
 	});
 
 
 	 $("#editTaskCateModal").click(function(){
-		loaddingFn();
+		//loaddingFn();
 		var tc_code =$(".cate_mc:checked").attr("id");
 
 
@@ -1502,7 +1505,7 @@ autoLoginFn();
 	});
 
 	$("#deleteTaskCate").click(function(){
-		loaddingFn();
+		//loaddingFn();
 		var tc_code =$(".cate_mc:checked").attr("id");
 		
 
