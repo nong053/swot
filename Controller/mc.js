@@ -322,7 +322,7 @@ var listTaskCateDisplayFn = function(data){
 	htmlGauageChartArea="";
 		htmlGauageChartArea+="<div class=\"col-md-4\">";
 			htmlGauageChartArea+="<div class=\"card text-bg-default  mb-3\">";
-				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center; background:#d1e7dd;\">สรุป</div>";
+				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center; background:antiquewhite;\">สรุป</div>";
 				htmlGauageChartArea+="<div class=\"card-body\" style=\"text-align: center; \">";
 				htmlGauageChartArea+="<div id=\"gaugesummary\" class=\"graph\" ></div>";
 				var guagePercentage=parseInt(((parseFloat(totalAllManpower).toFixed(2)/currentTotalManpower))*100);
