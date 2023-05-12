@@ -47,10 +47,6 @@ function drawChart() {
 			['Label', 'Value'],
 			['', parseInt(value)]
 		  ]);
-
-		
-		
-		  
 		  var options = {
 			width: '100%', height: '100%',
 			redFrom: 0, redTo: 60,
@@ -63,10 +59,6 @@ function drawChart() {
 		  chart.draw(data, options);
 
 		  $("#gauge"+id+" table").css({"margin":"auto"});
-		
-		  
-		  
-
 		  //console.log(chart);
 		  //console.log(id+"-"+value);
 		
@@ -230,8 +222,8 @@ var listTaskCateDisplayFn = function(data){
 	$("#gaugeChartArea").html("");
 	$.each(data['dataTaskCate'],function(index,indexEntryTaskCate){
 		var tc_name ="";
-		if(indexEntryTaskCate['tc_name'].length>20){
-			tc_name = indexEntryTaskCate['tc_name'].substring(0,20)+"...";
+		if(indexEntryTaskCate['tc_name'].length>30){
+			tc_name = indexEntryTaskCate['tc_name'].substring(0,30)+"...";
 		}else{
 			tc_name=indexEntryTaskCate['tc_name'];
 		}
@@ -298,7 +290,7 @@ var listTaskCateDisplayFn = function(data){
 
 
 		htmlGauageChartArea="";
-		htmlGauageChartArea+="<div class=\"col-md-3\">";
+		htmlGauageChartArea+="<div class=\"col-md-4\">";
 			htmlGauageChartArea+="<div class=\"card text-bg-default  mb-3\">";
 				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center;\">"+tc_name+"</div>";
 				htmlGauageChartArea+="<div class=\"card-body\" style=\"text-align: center; \">";
@@ -317,7 +309,6 @@ var listTaskCateDisplayFn = function(data){
 					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-"+indexEntryTaskCate['tc_code']+"\" class=\"alert alert-danger\" role=\"alert\">ปริมาณงานมากเกินไป "+guagePercentage+"%</div>";
 				}
 				
-
 				htmlGauageChartArea+="</div>";
 			htmlGauageChartArea+="</div>";
 		htmlGauageChartArea+="</div>";
@@ -328,10 +319,33 @@ var listTaskCateDisplayFn = function(data){
 		//createGauges(indexEntryTaskCate['tc_code'],((totalManpowerByCate/indexEntryTaskCate['current_person']))*100);
 	});
 
+	htmlGauageChartArea="";
+		htmlGauageChartArea+="<div class=\"col-md-4\">";
+			htmlGauageChartArea+="<div class=\"card text-bg-default  mb-3\">";
+				htmlGauageChartArea+="<div class=\"card-header\" style=\"text-align: center; background:#d1e7dd;\">สรุป</div>";
+				htmlGauageChartArea+="<div class=\"card-body\" style=\"text-align: center; \">";
+				htmlGauageChartArea+="<div id=\"gaugesummary\" class=\"graph\" ></div>";
+				var guagePercentage=parseInt(((parseFloat(totalAllManpower).toFixed(2)/currentTotalManpower))*100);
+				htmlGauageChartArea+="<div style='display:none;' class='gauge_data' id=\"gauge_data-summary"+"-"+guagePercentage+"\"  ></div>";
+				
 
+				if(guagePercentage>=0 && guagePercentage<=60){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-summary\" class=\"alert alert-danger\" role=\"alert\">ปริมาณงานน้อยเกินไป "+guagePercentage+"%</div>";
+				}else if(guagePercentage>=60 && guagePercentage<=80){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-summary\" class=\"alert alert-warning\" role=\"alert\">ปริมาณงานน้อย "+guagePercentage+"%</div>";
+				}else if(guagePercentage>=80 && guagePercentage<=100){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-summary\" class=\"alert alert-success\" role=\"alert\">ปริมาณงานเหมาะสม "+guagePercentage+"%</div>";
+				}else if(guagePercentage>100){
+					htmlGauageChartArea+="<div id=\"gauge_percentage_txt-summary\" class=\"alert alert-danger\" role=\"alert\">ปริมาณงานมากเกินไป "+guagePercentage+"%</div>";
+				}
+
+				
+				htmlGauageChartArea+="</div>";
+			htmlGauageChartArea+="</div>";
+		htmlGauageChartArea+="</div>";
+
+	$("#gaugeChartArea").append(htmlGauageChartArea);
 	google.charts.setOnLoadCallback(drawChart);
-
-	
 
 
 	$("#dataTableMCDisplay").html(htmlDataTableMCDisplay);

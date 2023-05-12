@@ -52,135 +52,26 @@
     <div class="card  mb-3">
         <div class="card-header" id='mc_title_display'>ด้านแผนกรอบกำลังพล</div>
         <div class="card-body">
-          <div class="alert alert-success" >
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id='mc_detail_display'>การวางแผนกำลังคน คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน ทำให้เกิดประสิทธิภาพ และมีความคุ้มค่า โดยการเตรียมกำลังคนทั้งด้านปริมาณ และด้านคุณภาพ สำหรับการรองรับการเปลี่ยนแปลงที่จะเกิดขึ้นในอนาคต และใช้เป็นเครื่องมือช่วยตัดสินใจ ในการบริหารทรัพยากรบุคคล</span>
-          </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-success" >
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id='mc_detail_display'>การวางแผนกำลังคน คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน ทำให้เกิดประสิทธิภาพ และมีความคุ้มค่า โดยการเตรียมกำลังคนทั้งด้านปริมาณ และด้านคุณภาพ สำหรับการรองรับการเปลี่ยนแปลงที่จะเกิดขึ้นในอนาคต และใช้เป็นเครื่องมือช่วยตัดสินใจ ในการบริหารทรัพยากรบุคคล</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row" id="gaugeChartArea"></div>  
+                </div>
+
+            </div>
         </div>
     </div>
-    <div class="row mb-31" id="gaugeChartArea">
-         
-        <div class="col-md-3">
-            <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">&nbsp;</div>
-                <div class="card-body" style="text-align: center; ">
-           
-                    <div id="gauge1" class="graph" >&nbsp;</div>
-                </div>
-            </div>
-        </div>
-       
-        <div class="col-md-3">
-            <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">&nbsp; </div>
-                <div class="card-body" style="text-align: center; ">
-             
-                    <div id="gauge2" class="graph" >&nbsp;</div>
-                </div>
-            </div>
-           
-        </div>
-        <div class="col-md-3">
-            <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">&nbsp;</div>
-                <div class="card-body" style="text-align: center; ">
-                
-                    <div id="gauge3" class="graph" >&nbsp;</div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="col-md-3">
-            <div class="card text-bg-default  mb-3"  >
-                <div class="card-header" style="text-align: center;">&nbsp;</div>
-                <div class="card-body" style="text-align: center; ">
-   
-                    <div id="gauge4" class="graph" >&nbsp;</div>
-                </div>
-            </div>
-        </div>
-        
+    
         
   
-    </div>
+    
 
     <div id="dataTableMCDisplay"></div>
-<!--
-    <div class="card  mb-3" >
-        <div class="card-header"> 	1. การเตรียมความพร้อมระบบบัญชาการและควบคุม ทอ.</div>
-        <div class="card-body">
-            <table class="table  table-striped">
-                <thead>
-                        <th class="mc_detail">
-                            รายละเอียดงาน
-                        </th>
-                        <th class="mc_time_unit">
-                            เวลา:หน่วย
-                        </th>
-                        <th class="mc_workload_year">
-                            ปริมาณงาน:ปี
-                        </th>
-                        <th class="mc_manpower_year">
-                            อัตรากำลัง:ปี
-                        </th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="mc_detail">
-                            1.1  สำรวจและรวบรวมสถานภาพของระบบบัญชาการและควบคุม
-                        </td>
-                        <td class="mc_time_unit">840</td>
-                        <td class="mc_workload_year">24</td>
-                        <td class="mc_manpower_year">0.23</td>
-                    </tr>
-                    <tr>
-                        <td class="mc_detail">
-                        1.2  ตรวจสอบความสัมพันธ์ของข้อมูลสถานภาพ ข้อมูล Hardware/Software และบุคลากร จากหน่วยที่เกี่ยวข้อง 
-                        </td>
-                        <td class="mc_time_unit">720</td>
-                        <td class="mc_workload_year">24</td>
-                        <td class="mc_manpower_year">0.20</td>
-                    </tr>
-                    <tr>
-                        <td class="mc_detail">
-                        1.3  วิเคราะห์ และประเมินผล การบูรณาการทุกระบบสารสนเทศเพื่อการยุทธ ทอ.(CIS) ที่เชื่อมต่อกับ ศปก.ทอ.
-                        </td>
-                        <td class="mc_time_unit">900</td>
-                        <td class="mc_workload_year">24</td>
-                        <td class="mc_manpower_year">0.24</td>
-                    </tr>
-                    <tr>
-                        <td class="mc_detail">
-                        1.4  นำข้อมูลที่ได้จากการวิเคราะห์ นำมาเปรียบเทียบกับ ระบบบัญชาการและควบคุม ร่วม/ผสม 
-                        </td>
-                        <td class="mc_time_unit">1,200</td>
-                        <td class="mc_workload_year">24</td>
-                        <td class="mc_manpower_year">0.33</td>
-                    </tr>
-                    <tr>  
-                        <td class="mc_detail">
-                        1.5  นำเสนอแนวทาง พัฒนา/แก้ไข ให้ผู้บังคับบัญชา ตัดสินตกลงใจได้ในทุกสภาวการณ์ อย่างมีประสิทธิภาพ
-                        </td>
-                        <td class="mc_time_unit">720</td>
-                        <td class="mc_workload_year">24</td>
-                        <td class="mc_manpower_year">0.20</td>
-                    </tr>
-                    <tr>
-                        <td class="mc_detail">
-                        1.6  มีเอกสารการเตรียมข้อมูลในระบบบัญชาการและควบคุม 
-                        </td>
-                        <td class="mc_time_unit">720</td>
-                        <td class="mc_workload_year">24</td>
-                        <td class="mc_manpower_year">0.20</td>
-                    </tr>
-                    <tr style="background-color:antiquewhite;">
-                        <td colspan="3">อัตรากำลังพล</td>
-                        <td class="mc_footer_sumary">1.39/1</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
--->
+
 
 
     <div class="card  mb-3" >
