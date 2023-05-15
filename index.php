@@ -238,9 +238,10 @@ img {
 <footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
   <span style="float:left;  color:white; cursor: pointer;" class='btnDevTools' data-toggle="modal" data-target="#devToolsModal">Tools for Development</span>
-  <span style="float:right;  color:white; cursor: pointer;" class='btnDevTeam ' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+  <span style="float:right;  color:white; cursor: pointer; display:none;" class='btnDevTeam' id="Copyright" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
   <br style="clear: both;">
   </div>
+ 
 </footer>
 
 </div>
@@ -616,6 +617,17 @@ img {
   </div>
 </div>
 <!--Modal-->
+<?php
+echo "<div id='serverMC' style='display:none'>".GetMAC()."</div>";
+
+function GetMAC(){
+    ob_start();
+    system('getmac');
+    $Content = ob_get_contents();
+    ob_clean();
+    return substr($Content, strpos($Content,'\\')-20, 17);
+}
+?>
 
 <div id="desktopTest" class="d-none d-lg-block"></div>
 

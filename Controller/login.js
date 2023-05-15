@@ -188,10 +188,8 @@ var autoLoginByMoblieFn = function(uuidByMobile){
 
 $(document).ready(function(){
 
-
-
     
-   
+    $("#Copyright").show();
     
    //auto login by mobile start
    if($.urlParam('uuidByMobile')!="" && $.urlParam('action')=="mobileLogin" ){
