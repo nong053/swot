@@ -189,7 +189,7 @@ img {
            
                 </h3>
                 <p class="list-group-item-text lead">
-                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SWOT (การวิเคราะห์สวอต) คือการวิเคราะห์สภาพแวดล้อมและศักยภาพสำหรับการประเมินธุรกิจประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายใน
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>SWOT (การวิเคราะห์สวอต) คือการวิเคราะห์สภาพแวดล้อมและศักยภาพสำหรับการประเมินองค์กรประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายใน
                 </p>
             </div>
        
@@ -238,7 +238,7 @@ img {
 <footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
   <span style="float:left;  color:white; cursor: pointer;" class='btnDevTools' data-toggle="modal" data-target="#devToolsModal">Tools for Development</span>
-  <span style="float:right;  color:white; cursor: pointer; display:none;" class='btnDevTeam' id="Copyright" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+  <span style="float:right;  color:white; cursor: pointer; " class='btnDevTeam' id="Copyright" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
   <br style="clear: both;">
   </div>
  
@@ -646,8 +646,9 @@ function GetMAC(){
  <!-- jquery mloading end-->
 
 <!--Adssense -->
+<!--
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"
-     crossorigin="anonymous"></script>
+     crossorigin="anonymous"></script>-->
 <!--Adssense -->
 
 <script src="./Controller/main.js"></script>
