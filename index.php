@@ -154,7 +154,7 @@ img {
 
        <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                    ด้านแผนกรอบกำลังพล
+                    ด้านวางแผนกำลังคน
                
                 </h3>
                 <p class="list-group-item-text lead">
@@ -185,7 +185,7 @@ img {
      
             <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                ด้านแผนปฏิบัติราชการ (SWOT)
+                ด้านวางแผนปฏิบัติงาน (SWOT)
            
                 </h3>
                 <p class="list-group-item-text lead">
@@ -237,8 +237,9 @@ img {
 
 <footer class="footer mt-auto py-3 bg-body-tertiary">
   <div class="container">
-  <span style="float:left;  color:white; cursor: pointer;" class='btnDevTools' data-toggle="modal" data-target="#devToolsModal">Tools for Development</span>
-  <span style="float:right;  color:white; cursor: pointer; " class='btnDevTeam' id="Copyright" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+  <!-- <span style="float:left;  color:white; cursor: pointer;" class='btnDevTools' data-toggle="modal" data-target="#devToolsModal">Tools for Development</span> -->
+  <!-- <span style="float:right;  color:white; cursor: pointer; " class='btnDevTeam' id="Copyright" data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
+  <span style="float:right;  color:white; cursor: pointer; "  id="Copyright" >Copyright@Kosit Tel:0809926565</span>
   <br style="clear: both;">
   </div>
  
@@ -646,9 +647,9 @@ function GetMAC(){
  <!-- jquery mloading end-->
 
 <!--Adssense -->
-<!--
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"
-     crossorigin="anonymous"></script>-->
+     crossorigin="anonymous"></script>
 <!--Adssense -->
 
 <script src="./Controller/main.js"></script>

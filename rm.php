@@ -48,7 +48,8 @@
         
         <div class="container">
        
-           <span style="float:right; position:relative; top:30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-lg-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span>
+           <!-- <span style="float:right; position:relative; top:30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-lg-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
+           <span style="float:right; position:relative; top:30px; color:white; cursor: pointer;" class=' d-none d-lg-block'>Copyright@Kosit</span>
            <h1 style="display:none;"  onclick="window.location.href='./'" class="headeTitle">
             <!-- <i class="fa-sharp fa-solid fa-building-shield"></i> -->
             <!-- <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> -->
@@ -1078,6 +1079,13 @@
    
     
 
+
+
+    <!--Adssense -->
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"
+     crossorigin="anonymous"></script>
+<!--Adssense -->
 
     <script src="Controller/main.js"></script>
 
