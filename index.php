@@ -154,11 +154,11 @@ img {
 
        <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                    ด้านวางแผนกำลังคน
+                    Manpower Calculation
                
                 </h3>
                 <p class="list-group-item-text lead">
-                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>การวางแผนกำลังคน คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน 
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Manpower Calculation คือ การเตรียมการล่วงหน้า เพื่อใช้กำลังคนให้สอดคล้อง เหมาะสมกับงาน 
 ทำให้เกิดประสิทธิภาพ และมีความคุ้มค่า โดยการเตรียมกำลังคนทั้งด้านปริมาณ และด้านคุณภาพ 
 สำหรับการรองรับการเปลี่ยนแปลงที่จะเกิดขึ้นในอนาคต และใช้เป็นเครื่องมือช่วยตัดสินใจ 
 ในการบริหารทรัพยากรบุคคล
@@ -185,7 +185,7 @@ img {
      
             <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                ด้านวางแผนปฏิบัติงาน (SWOT)
+                SWOT Analysis
            
                 </h3>
                 <p class="list-group-item-text lead">
@@ -211,7 +211,7 @@ img {
     
             <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                ด้านบริหารความเสี่ยง
+                Risk managment
              
                 </h3>
                 <p class="list-group-item-text lead">
