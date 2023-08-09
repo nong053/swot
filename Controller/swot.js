@@ -584,6 +584,7 @@ var renderSwotToDisplay = function(data){
 		$("#threatsScore").html(parseFloat(sumThreats).toFixed(2)+" คะแนน");
 
 }
+
 var findOne=function(uuid){
 	// alert(uuid);
 	// alert("findOne");
