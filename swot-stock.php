@@ -150,28 +150,32 @@ img {
     <li class="list-group-item clearfix" >
      
    
-        <button style="float:left; margin-right:15px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow btnMC">
-        <img src="./images/stocks/TU.png">
+        <button style="float:left; margin-right:15px; margin-bottom:15px;  padding: 0px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow btnMC">
+        <span id='logo-3'><img src="./images/stocks/TU.png"></span>
         </button> 
         
       
 
        <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                <b>"TU"</b> บริษัท ไทยยูเนี่ยน กรุ๊ป จำกัด (มหาชน)
+                <span class='companyIitle' id='title-3'>
+                    <b>"TU"</b> บริษัท ไทยยูเนี่ยน กรุ๊ป จำกัด (มหาชน)
+                </span>
                
                 </h3>
                 <p class="list-group-item-text lead">
-                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>ผลิตและส่งออกอาหารสำเร็จรูปแช่แข็งและบรรจุกระป๋อง และขยายธุรกิจให้ครบวงจรด้วยธุรกิจอาหารสำเร็จรูปและอาหารว่าง โดยเน้นอาหารทะเล ธุรกิจบรรจุภัณฑ์และสิ่งพิมพ์ ธุรกิจการตลาดภายในประเทศ ธุรกิจอาหารสัตว์ และธุรกิจพัฒนาสายพันธุ์กุ้งเพื่อจำหน่าย
-
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-3'>
+                    ผลิตและส่งออกอาหารสำเร็จรูปแช่แข็งและบรรจุกระป๋อง และขยายธุรกิจให้ครบวงจรด้วยธุรกิจอาหารสำเร็จรูปและอาหารว่าง โดยเน้นอาหารทะเล ธุรกิจบรรจุภัณฑ์และสิ่งพิมพ์ ธุรกิจการตลาดภายในประเทศ ธุรกิจอาหารสัตว์ และธุรกิจพัฒนาสายพันธุ์กุ้งเพื่อจำหน่าย
+                </span>
                 </p>
        
    
        </div>
        <div class="btn-toolbar " role="toolbar" aria-label="">
                 
-        <a href="./doc/คู่มือMC.pdf" target="_blank" id="btnManualMC1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-        <a href="#" id="btnMC" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+        <a href="#" target="_blank" id="btnManualMC1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+        <a href="#" id="btn-3" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
     </div>
     
     </li>
@@ -179,53 +183,56 @@ img {
     <li class="list-group-item clearfix" >
       <div >
        
-             <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg btnSW">
-                <img src="./images/stocks/ADVANC.png">
+             <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 0px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg btnSW">
+             <span id='logo-2'><img src="./images/stocks/ADVANC.png"></span>
             </button> 
             
      
             <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                <b>"ADVANC"</b> บริษัท แอดวานซ์ อินโฟร์ เซอร์วิส จำกัด (มหาชน)
-           
+                    <span class='companyIitle' id='title-2'>
+                        <b>"ADVANC"</b> บริษัท แอดวานซ์ อินโฟร์ เซอร์วิส จำกัด (มหาชน)
+                    </span>
                 </h3>
                 <p class="list-group-item-text lead">
                 <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                ให้บริการสื่อสารโทรคมนาคม โดยรวมถึงธุรกิจให้บริการโทรศัพท์เคลื่อนที่ ธุรกิจอินเทอร์เน็ตความเร็วสูง และธุรกิจดิจิทัล เซอร์วิส
+                <span class='companyDetail' id='detail-2'>
+                    ให้บริการสื่อสารโทรคมนาคม โดยรวมถึงธุรกิจให้บริการโทรศัพท์เคลื่อนที่ ธุรกิจอินเทอร์เน็ตความเร็วสูง และธุรกิจดิจิทัล เซอร์วิส
+                </span>
                 </p>
             </div>
        
       </div>
       <div class="btn-toolbar " role="toolbar" aria-label="">
                 
-        <a  href="./doc/คู่มือSW.pdf" target="_blank" id="btnManualSW1" class="btn btn-default"><i class=" fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-        <a href="#" id="btnSW" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+        <a  href="#" target="_blank" id="btnManualSW1" class="btn btn-default"><i class=" fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+        <a href="#" id="btn-2" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
     </div>
     
     </li>
     <li class="list-group-item clearfix" >
     <!-- onclick="window.location.href='./rm.php' -->
        
-            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg btnRM">
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 0px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg btnRM">
                 <!-- <div>RM</div> -->
-                <img src="./images/stocks/AOT.png">
+                <span id='logo-1'><img src="./images/stocks/AOT.png"></span>
             </button>
       
     
             <div class="data_detail">
                 <h3 class="list-group-item-heading">
-                <b>"AOT"</b> บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)
+                <span class='companyIitle' id='title-1'><b>"AOT"</b> บริษัท ท่าอากาศยานไทย จำกัด (มหาชน)</span>
              
                 </h3>
                 <p class="list-group-item-text lead">
                 <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                ทอท.ประกอบธุรกิจท่าอากาศยานของประเทศไทย โดยธุรกิจหลักประกอบด้วย การจัดการ การดำเนินงาน และการพัฒนาท่าอากาศยาน โดยมีท่าอากาศยานในความรับผิดชอบ 6 แห่ง คือ ท่าอากาศยานสุวรรณภูมิ ท่าอากาศยานดอนเมือง ท่าอากาศยานเชียงใหม่ ท่าอากาศยานแม่ฟ้าหลวง เชียงราย ท่าอากาศยานภูเก็ต และท่าอากาศยานหาดใหญ่ ซึ่งท่าอากาศยานทั้ง 6 แห่งนี้ ให้บริการเที่ยวบินภายในประเทศและระหว่างประเทศ โดยมีท่าอากาศยานสุวรรณภูมิเป็นท่าอากาศยานหลักของประเทศ
+                <span class='companyDetail' id='detail-1'>ทอท.ประกอบธุรกิจท่าอากาศยานของประเทศไทย โดยธุรกิจหลักประกอบด้วย การจัดการ การดำเนินงาน และการพัฒนาท่าอากาศยาน โดยมีท่าอากาศยานในความรับผิดชอบ 6 แห่ง คือ ท่าอากาศยานสุวรรณภูมิ ท่าอากาศยานดอนเมือง ท่าอากาศยานเชียงใหม่ ท่าอากาศยานแม่ฟ้าหลวง เชียงราย ท่าอากาศยานภูเก็ต และท่าอากาศยานหาดใหญ่ ซึ่งท่าอากาศยานทั้ง 6 แห่งนี้ ให้บริการเที่ยวบินภายในประเทศและระหว่างประเทศ โดยมีท่าอากาศยานสุวรรณภูมิเป็นท่าอากาศยานหลักของประเทศ
                 </p>
             </div>
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
-                <a  href="./doc/คู่มือRM.pdf" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btnRM" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a  href="#" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
             </div>
     </li>
 
@@ -627,21 +634,27 @@ img {
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content" >
       <div class="modal-header" style="background-color: #191970; color:white;">
-        <h5 class="modal-title" id="swotModalLabel">SWOT บริษัท...</h5>
-       
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-         
-        </button>
+        <h5 class="modal-title" id="swotCompanyModalLabel">
+           
+        <div id="companyTitle">SWOT Analisys</div>
+        <div id="companyDeatail"></div>
+        </h5>
+       <span style="color: white;">
+            <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            
+            </button>
+       </span>
 
       </div>
-      <div class="modal-body" style="padding:0px;">
+      <div class="modal-body" style="padding:0px;" id="dataSwotArea">
         
       <!-- conntent -->
+      
       <ul class="list-group" style="box-shadow:none; background-color:#b7b7ce; ">
-    <li class="list-group-item clearfix" >
+        <li class="list-group-item clearfix" >
      
    
-        <button style="float:left; margin-right:15px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow btnMC">
+        <button style="float:left; margin-right:30px; margin-bottom:15px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow btnMC">
         <i class="fa fa-flag" aria-hidden="true"></i>   
             <div>S</div>
         </button> 
@@ -653,13 +666,9 @@ img {
                 <b>ความแข็งแกร่ง</b> (Strengths)
                
                 </h3>
-                <p class="list-group-item-text lead">
+                <p class="list-group-item-text lead" id="dataStrengthsArea">
 
-                <ul>
-                    <li>xx</li>
-                    <li>xx</li>
-                    <li>xx</li>
-                </ul>
+                
 
                 </p>
        
@@ -672,7 +681,7 @@ img {
     <li class="list-group-item clearfix" >
       <div >
        
-             <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg btnSW">
+             <button style="float:left;  margin-right:30px; margin-bottom:15px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg btnSW">
              <i class="fa fa-low-vision" aria-hidden="true"></i>   
                 <div>W</div> 
             </button> 
@@ -683,10 +692,10 @@ img {
                 <b>จุดอ่อน</b> (Weaknesses)
            
                 </h3>
-                <p class="list-group-item-text lead">
-                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                ให้บริการสื่อสารโทรคมนาคม โดยรวมถึงธุรกิจให้บริการโทรศัพท์เคลื่อนที่ ธุรกิจอินเทอร์เน็ตความเร็วสูง และธุรกิจดิจิทัล เซอร์วิส
+                <p class="list-group-item-text lead" id="dataWeaknessesArea">
+               
                 </p>
+                
             </div>
        
       </div>
@@ -696,7 +705,7 @@ img {
     <li class="list-group-item clearfix" >
     <!-- onclick="window.location.href='./rm.php' -->
        
-            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg btnRM">
+            <button style="float:left;  margin-right:30px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg btnRM">
             <i class="fa fa-pie-chart" aria-hidden="true"></i>   
             <div>O</div> 
                 
@@ -708,9 +717,8 @@ img {
                 <b>โอกาส </b> (Opportunities)
              
                 </h3>
-                <p class="list-group-item-text lead">
-                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                XXX
+                <p class="list-group-item-text lead" id="dataOpportunitiesArea">
+                
                 </p>
             </div>
             
@@ -718,7 +726,7 @@ img {
     <li class="list-group-item clearfix" >
     <!-- onclick="window.location.href='./rm.php' -->
        
-            <button style="float:left;  margin-right:15px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-danger shadow-lg btnRM">
+            <button style="float:left;  margin-right:30px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-danger shadow-lg btnRM">
             <i class="fa fa-bomb" aria-hidden="true"></i>   
             <div>T</div> 
                 
@@ -730,9 +738,8 @@ img {
                 <b>อุปสรรค </b> (Threats)
              
                 </h3>
-                <p class="list-group-item-text lead">
-                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                XXX
+                <p class="list-group-item-text lead" id="dataThreatsArea">
+                
                 </p>
             </div>
             
