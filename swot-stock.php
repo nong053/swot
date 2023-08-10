@@ -150,7 +150,7 @@ img {
     <li class="list-group-item clearfix" >
      
    
-        <button style="float:left; margin-right:15px; margin-bottom:15px;  padding: 0px;"   type="button" id="btn-mc" class="btn btn-success btn-circle shadow btnMC">
+        <button style="float:left; margin-right:15px; margin-bottom:15px;  padding: 0px;"   type="button" id="btn-mc" class="btn btn-default btn-circle shadow btnMC">
         <span id='logo-3'><img src="./images/stocks/TU.png"></span>
         </button> 
         
@@ -183,7 +183,7 @@ img {
     <li class="list-group-item clearfix" >
       <div >
        
-             <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 0px;"  type="button" id="btn-sw" class="btn btn-primary btn-circle shadow-lg btnSW">
+             <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-sw" class="btn btn-default btn-circle shadow-lg btnSW">
              <span id='logo-2'><img src="./images/stocks/ADVANC.png"></span>
             </button> 
             
@@ -213,7 +213,7 @@ img {
     <li class="list-group-item clearfix" >
     <!-- onclick="window.location.href='./rm.php' -->
        
-            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 0px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg btnRM">
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
                 <!-- <div>RM</div> -->
                 <span id='logo-1'><img src="./images/stocks/AOT.png"></span>
             </button>
@@ -237,7 +237,1210 @@ img {
     </li>
 
 
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/AWC.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"AWC"</b> บริษัท แอสเสท เวิรด์ คอร์ป จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทประกอบธุรกิจโดยการถือหุ้นในบริษัทอื่น (Holding Company) ที่ประกอบธุรกิจอสังหาริมทรัพย์ชั้นนำที่มุ่งตอบสนองไลฟ์สไตล์แบบครบวงจรในประเทศไทย อันประกอบไปด้วยกลุ่มธุรกิจโรงแรมและการบริการ (Hospitality) และกลุ่มธุรกิจอสังหาริมทรัพย์เพื่อการพาณิชย์ (Retail and Commercial) ซึ่งประกอบด้วยกลุ่มธุรกิจอสังหาริมทรัพย์เพื่อประกอบกิจการการค้า (Retail & Wholesale) และกลุ่มธุรกิจอาคารสำนักงาน (Office)
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="https://www.assetworldcorp-th.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
 
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/BANPU.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"BANPU"</b> บริษัท แอสเสท เวิรด์ คอร์ป จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทพลังงานแบบครบวงจร โดยสร้างการเติบโตครอบคลุม 3 กลุ่มธุรกิจหลัก ได้แก่ กลุ่มธุรกิจแหล่งพลังงาน (ถ่านหินและก๊าซธรรมชาติ รวมถึงงานที่เกี่ยวข้อง อาทิ การตลาด การค้า โลจิสติกส์ และการจัดหาเชื้อเพลิง และสายส่ง) กลุ่มธุรกิจผลิตพลังงาน (โรงไฟฟ้าจากพลังงานเชื้อเพลิงทั่วไป และจากพลังงานหมุนเวียน) และกลุ่มธุรกิจเทคโนโลยีพลังงาน (ระบบผลิตไฟฟ้าจากพลังงานแสงอาทิตย์แบบครบวงจร ระบบจัดเก็บพลังงาน และระบบการจัดการเทคโนโลยีพลังงาน ซึ่งการผสานธุรกิจด้านพลังงานทั้งในรูปแบบดั้งเดิมและรูปแบบใหม่หรือพลังงานหมุนเวียน ไว้ในโครงสร้างขององค์กรอย่างครบถ้วนนี้ ทำให้บ้านปูฯ สามารถผนึกกำลังระหว่างกันในกลุ่มธุรกิจหลักเพื่อบริหารจัดการทรัพยากรได้อย่างมีประสิทธิภาพ สร้างความสมดุลและขยายการเติบโตในกลุ่มธุรกิจพลังงานของบ้านปูฯ ที่ตอบโจทย์ผู้บริโภค ชุมชน สังคม และสิ่งแวดล้อม
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.banpu.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/BBL.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"BBL"</b> ธนาคารกรุงเทพ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                    ธุรกิจธนาคารพาณิชย์ที่ให้บริการทางการเงินครบวงจรแก่ธุรกิจทั้งขนาดใหญ่ SME ตลอดจนฐานลูกค้าบุคคล โดยมีสาขาในทุกพื้นที่ทั่วประเทศ และมีเครือข่ายในต่างประเทศครอบคลุมเขตเศรษฐกิจสำคัญของโลก
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.bangkokbank.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/BDMS.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"BDMS"</b> บริษัท กรุงเทพดุสิตเวชการ จำกัด(มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทเป็นผู้ประกอบการธุรกิจโรงพยาบาลเอกชนขนาดใหญ่ของประเทศ โดยมีโรงพยาบาลเครือข่ายในไทยและกัมพูชา ดำเนินการภายใต้ชื่อโรงพยาบาล 6 กลุ่ม คือ กลุ่มโรงพยาบาลกรุงเทพ กลุ่มโรงพยาบาลสมิติเวช โรงพยาบาลบี เอ็น เอช กลุ่มโรงพยาบาลพญาไท กลุ่มโรงพยาบาลเปาโล และกลุ่มโรงพยาบาลรอยัล นอกจากนี้เครือข่ายของบริษัท กรุงเทพดุสิตเวชการ จำกัด (มหาชน) ยังรวมถึงธุรกิจที่ให้การสนับสนุนด้านการแพทย์ ได้แก่ ธุรกิจห้องปฏิบัติการทางการแพทย์ ธุรกิจผลิตยาและธุรกิจผลิตน้ำเกลือ เป็นต้น
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.bangkokhospital.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/BEM.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"BEM"</b> บริษัท ทางด่วนและรถไฟฟ้ากรุงเทพ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ก่อสร้างและบริหารทางพิเศษและบริหารจัดการโครงการระบบขนส่งมวลชนด้วยรถไฟฟ้า รวมถึงธุรกิจอื่นที่เกี่ยวข้อง
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.bemplc.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/BGRIM.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"BGRIM"</b> บริษัท บี.กริม เพาเวอร์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ประกอบธุรกิจโดยการถือหุ้นในบริษัทอื่น (Holding Company) ที่ประกอบธุรกิจหลักด้านการผลิตและจำหน่ายไฟฟ้า ไอน้ำ และธุรกิจที่เกี่ยวข้องทั้งในประเทศและต่างประเทศ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.bgrimmpower.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/BH.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"BH"</b> บริษัท โรงพยาบาลบำรุงราษฎร์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ธุรกิจโรงพยาบาลเอกชน ภายใต้ชื่อ โรงพยาบาลบำรุงราษฎร์อินเตอร์เนชั่นแนล ในกรุงเทพมหานคร โดยมีการให้บริการทางการแพทย์ครบวงจรทั้งผู้ป่วยนอกและผู้ป่วยใน รวมทั้งศูนย์บริการผู้ป่วยต่างชาติ และลงทุนในธุรกิจการแพทย์และธุรกิจที่เกี่ยวข้องทั้งในและต่างประเทศ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.bumrungrad.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/BTS.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"BTS"</b> บริษัท บีทีเอส กรุ๊ป โฮลดิ้งส์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                กลุ่มบริษัทที่ประกอบธุรกิจในหลากหลายอุตสาหกรรมโดยมุ่งเน้นการใช้ประโยชน์จากการเข้าถึงข้อมูลเครือข่ายระบบขนส่งมวลชนและสื่อโฆษณา รวมทั้งการเป็นพันธมิตรทางธุรกิจกับบริษัทต่าง ๆ เพื่อเพิ่มมูลค่าทางธุรกิจแก่กลุ่มบริษัทและพันธมิตรผ่านการดำเนินธุรกิจใน 3 แพลตฟอร์ม ได้แก่ MOVE MIX และ MATCH
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.btsgroup.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/CBG.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"CBG"</b> บริษัท คาราบาวกรุ๊ป จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ประกอบธุรกิจโดยการถือหุ้นในบริษัทอื่น (Holding Company) ซึ่งมีการลงทุนหลักในบริษัทย่อยที่ประกอบธุรกิจ ผลิต ทำการตลาด จำหน่าย และบริหารจัดการการจัดจำหน่ายเครื่องดื่มบำรุงกำลังและเครื่องดื่มอื่น ๆ อย่างครบวงจร
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.carabaogroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/CENTEL.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"CENTEL"</b> บริษัท โรงแรมเซ็นทรัลพลาซา จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                แบ่งเป็น 2 ธุรกิจ คือ 1. ธุรกิจโรงแรมในประเทศและต่างประเทศ ภายใต้แบรนด์ของตนเอง เซ็นทาราแกรนด์ เซ็นทารา เซ็นทรา โคซี่ และธุรกิจรับจ้างบริหารโรงแรมภายใต้สัญญาบริหารโรงแรม 2. ธุรกิจอาหารจานด่วนในประเทศไทย ภายใต้แบรนด์ของตนเอง คือ เดอะ เทอเรส อร่อยดี สุกี้เฮ้าส์ ซอฟท์แอร์ เกาลูน และแฟรนไชส์ คือ มิสเตอร์โดนัท เคเอฟซี อานตี้แอนส์ เปปเปอร์ลันช์ โคลด์สโตนครีมเมอรี่ ชาบูตง โยชิโนยะ โอโตยะ เทนยะ และคัตสึยะ มีสาขากระจายอยู่ทั่วประเทศ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.centarahotelsresorts.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/_COM7.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"COM7"</b> บริษัท คอมเซเว่น จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัท คอมเซเว่น จำกัด (มหาชน) (บริษัท) ประกอบธุรกิจจำหน่ายสินค้าไอที ประเภทคอมพิวเตอร์แล็บท็อป คอมพิวเตอร์แบบตั้งโต๊ะ โทรศัพท์เคลื่อนที่ แท็บเล็ต และอุปกรณ์เสริมที่เกี่ยวข้อง ผ่านช่องทางการจำหน่ายหลัก รวมทั้งให้บริการศูนย์ซ่อมสินค้าแบรนด์ Apple.
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.comseven.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/CPALL.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"CPALL"</b> บริษัท ซีพี ออลล์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ดำเนินธุรกิจร้านสะดวกซื้อภายใต้เครื่องหมายการค้า 7-Eleven และให้สิทธิแก่ผู้ค้าปลีกรายอื่นในการดำเนินธุรกิจในประเทศไทย และลงทุนในธุรกิจสนับสนุนธุรกิจร้านค้าสะดวกซื้อ อาทิ ผลิตและจำหน่ายอาหารสำเร็จรูปและเบเกอรี่ ตัวแทนรับชำระเงินค่าสินค้าและบริการ รวมถึงการลงทุนในธุรกิจศูนย์จำหน่ายสินค้าแบบชำระเงินสดและบริการตนเองภายใต้ชื่อ "แม็คโคร"
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.cpall.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/CPF.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"CPF"</b> บริษัท เจริญโภคภัณฑ์อาหาร จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทประกอบธุรกิจเกษตรอุตสาหกรรมและอาหารที่จำแนกธุรกิจหลักตามลักษณะของผลิตภัณฑ์ ออกเป็น 3 ประเภท คือ 1) ธุรกิจอาหารสัตว์ (Feed) ได้แก่ การผลิตและจำหน่ายอาหารสัตว์ 2) ธุรกิจเลี้ยงสัตว์-แปรรูป (Farm-Processing) ได้แก่ การเพาะพันธุ์สัตว์ การเลี้ยงสัตว์เพื่อการค้า และการแปรรูปเนื้อสัตว์ขั้นพื้นฐาน 3) ธุรกิจอาหาร (Food) ได้แก่ การผลิตเนื้อสัตว์แปรรูปกึ่งปรุงสุกและปรุงสุก และการผลิตผลิตภัณฑ์อาหารสำเร็จรูปหรืออาหารพร้อมรับประทาน รวมถึงกิจการค้าปลีกอาหารและร้านอาหาร
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.cpfworldwide.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/CPN.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"CPN"</b> บริษัท เซ็นทรัลพัฒนา จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                พัฒนาและให้เช่าพื้นที่ศูนย์การค้าขนาดใหญ่และประกอบธุรกิจอื่นที่เกี่ยวเนื่องและส่งเสริมธุรกิจ พัฒนาศูนย์การค้า เช่น อาคารสำนักงาน ศูนย์อาหาร โรงแรม และที่พักอาศัยเป็นต้น รวมถึงการลงทุนในกองทุนรวมสิทธิการเช่าอสังหาริมทรัพย์ (CPNCG) และทรัสต์เพื่อการลงทุนในสิทธิการเช่าอสังหาริมทรัพย์ (CPNREIT) และเป็นผ้บู ริหารอสังหาริมทรัพย์ของกองทุนรวมฯ และกองทรัสต์ฯ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.centralpattana.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/CRC.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"CRC"</b> บริษัท เซ็นทรัล รีเทล คอร์ปอเรชั่น จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ดำเนินธุรกิจค้าปลีกสินค้าหลากหลายประเภทผ่านรูปแบบและช่องทางที่หลากหลายในประเทศไทย ประเทศอิตาลี และประเทศเวียดนาม และเป็นผู้บุกเบิกธุรกิจค้าปลีกในรูปแบบ Omni-channel ในประเทศไทย ซึ่งช่วยเสริมสร้างเครือข่ายร้านค้าปลีกในการนำเสนอสินค้าและบริการแก่ผู้บริโภค
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="https://www.centralretail.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/DELTA.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"DELTA"</b> บริษัทเดลต้า อีเลคโทรนิคส์ (ประเทศไทย) จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ผลิตและจำหน่ายผลิตภัณฑ์ด้านการจัดการระบบกำลังไฟฟ้า (Power management solutions) รวมถึงชิ้นส่วนอิเล็กทรอนิกส์บางประเภท ได้แก่ พัดลมอิเล็กทรอนิกส์ (DC Fan) อีเอ็มไอ ฟิลเตอร์ (EMI) และโซลินอยด์ มีฐานการผลิตอยู่ในภูมิภาคต่างๆ ทั่วโลก ได้แก่ เอเชีย ยุโรป และอเมริกาใต้
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.deltathailand.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/EA.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"EA"</b> บริษัท พลังงานบริสุทธิ์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทฯ และบริษัทย่อย ดำเนินธุรกิจหลัก 4 กลุ่ม ได้แก่ 1.) กลุ่มธุรกิจไบโอดีเซล 2.) กลุ่มธุรกิจโรงไฟฟ้าพลังงานหมุนเวียน- โรงไฟฟ้าพลังงานลม - โรงไฟฟ้าพลังงานแสงอาทิตย์ 3.) กลุ่มธุรกิจยานยนต์ไฟฟ้า และระบบกักเก็บพลังงาน- พัฒนา ผลิตและจำหน่ายแบตเตอรี่ -ธุรกิจบริการสถานีอัดประจุไฟฟ้า (สำหรับยานยนต์ไฟฟ้า)- ธุรกิจยานยนต์ไฟฟ้า4.) กลุ่มธุรกิจอื่นๆ - ศูนย์ทดสอบแบตเตอรี่ ยานยนต์ไฟฟ้า และผลิตภัณฑ์อิเล็กทรอนิกส์ - วิจัยและพัฒนา
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.energyabsolute.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/EGCO.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"EGCO"</b> บริษัท ผลิตไฟฟ้า จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ประกอบธุรกิจด้านการลงทุนโดยการถือหุ้นในบริษัทต่าง ๆ (Holding company) ที่ประกอบธุรกิจ 1) ผลิตและจำหน่ายไฟฟ้าทั้งในฐานะรายใหญ่ (IPP-Independent Power Producer) และรายเล็ก (SPP-Small Power Producer) 2) ธุรกิจการให้บริการด้านเทคนิคการจัดการแก่โรงไฟฟ้าและโรงงานอุตสาหกรรมต่าง ๆ ทั้งในและต่างประเทศ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.egco.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/GLOBAL.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"GLOBAL"</b> บริษัท สยามโกลบอลเฮ้าส์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                เป็นศูนย์จำหน่ายสินค้าวัสดุก่อสร้าง วัสดุตกแต่ง เครื่องมือ อุปกรณ์ที่ใช้ในงานก่อสร้าง ต่อเติม ตกแต่ง บ้านและสวนแบบควบวงจร (one stop shopping center) โดยใช้ชื่อทางการค้าว่า โกลบอล เฮ้าส์ (Global House) โดยนำระบบ Drive-through มาใช้เพื่อเพิ่มความสะดวกในการรับสินค้าโครงสร้างของลูกค้า
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.globalhouse.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/GPSC.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"GPSC"</b> บริษัท โกลบอล เพาเวอร์ ซินเนอร์ยี่ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริิษัทฯ ประกอบธุรกิิจหลัักในการผลิิตและจำหน่ายไฟฟ้า ไอน้ำ และสาธารณูปโภคต่างๆนอกจากนี้้ บริิษััทฯ ดำเนิินธุรกิิจในลัักษณะการเข้าถืือหุ้นในบริิษััทที่่ประกอบธุรกิิจผลิิตและจำหน่ายไฟฟ้า ไอน้ำ สาธารณูปโภคต่างๆ รวมถึึงธุุรกิิจ New S-curve ได้แก่ ธุรกิิจแบตเตอรี่่ ธุรกิิจพลัังงานอััจฉริิยะ และธุรกิิจที่่เกี่่ยวเนื่่องทั้งในและต่างประเทศ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.gpscgroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/GULF.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"GULF"</b> บริษัท กัลฟ์ เอ็นเนอร์จี ดีเวลลอปเมนท์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ประกอบธุรกิจโดยการถือหุ้นในบริษัทอื่น (Holding Company) ที่ประกอบธุรกิจหลักด้านการผลิตและจำหน่ายไฟฟ้าจากก๊าซธรรมชาติและพลังงานหมุนเวียน รวมถึงการจัดหาและจำหน่ายก๊าซธรรมชาติ การลงทุนในธุรกิจโครงสร้างพื้นฐาน และธุรกิจอื่น ๆ ที่เกี่ยวข้อง
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.gulf.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/HMPRO.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"HMPRO"</b> บริษัท โฮม โปรดักส์ เซ็นเตอร์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                จำหน่ายสินค้าและให้บริการที่เกี่ยวข้องกับการก่อสร้าง ตกแต่ง ต่อเติม ซ่อมแซม ปรับปรุง อาคาร บ้าน และที่อยู่อาศัยแบบครบวงจร
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.homepro.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/INTUCH.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"INTUCH"</b> บริษัท อินทัช โฮลดิ้งส์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                อินทัชประกอบธุรกิจด้านการลงทุนในธุรกิจโทรคมนาคม สื่อ เทคโนโลยี และดิจิทัล โดยการถือหุ้นและเข้าไปบริหารงาน (Holding Company)
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.intouchcompany.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/IVL.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"IVL"</b> บริษัท อินโดรามา เวนเจอร์ส จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ประกอบธุรกิจด้านการลงทุนโดยการถือหุ้นในบริษัทต่างๆ ทั้งในประเทศและต่างประเทศ ในผลิตภัณฑ์ปิโตรเคมีแบบครบวงจร ซึ่งผลิตและจำหน่าย Ethylene Oxide และ Ethylene Glycol (?EO&EG?) Purified Terephthalic Acid (?PTA?) Polyethylene Terephthalate (?PET?) เส้นใยและเส้นด้าย โพลีเอสเตอร์ (Polyester Fiber and Yarn) และเส้นใยจากขนสัตว์ (Wool)
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.indoramaventures.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/KBANK.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"KBANK"</b> ธนาคารกสิกรไทย จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ธนาคารกสิกรไทย จำกัด (มหาชน) ประกอบกิจการธนาคารพาณิชย์ ธุรกิจหลักทรัพย์และธุรกิจที่เกี่ยวเนื่องตามที่ได้รับอนุญาตไว้ในพระราชบัญญัติธุรกิจสถาบันการเงินฯ และพระราชบัญญัติหลักทรัพย์และตลาดหลักทรัพย์ฯ และประกาศที่เกี่ยวข้อง โดย ณ วันที่ 31 ธันวาคม 2565 ธนาคารมีเครือข่ายสาขาจำนวน 824 สาขา และเครื่องอิเล็กทรอนิกส์สำหรับทำธุรกรรมด้วยตนเอง 10,953 เครื่อง ครอบคลุมทุกพื้นที่และเพียงพอต่อความต้องการของลูกค้า นอกจากนี้ ธนาคารมีเครือข่ายการให้บริการในต่างประเทศรวม 16 แห่ง ใน 8 ประเทศ มีศูนย์กลางการดำเนินงานและให้บริการที่สำนักงานใหญ่
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.kasikornbank.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/KTB.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"KTB"</b> ธนาคารกรุงไทย จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ธุรกิจธนาคารพาณิชย์เต็มรูปแบบ โดยมีสาขาอยู่ทั่วภูมิภาคในประเทศไทย และในบางภูมิภาคหลักของโลก
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="https://krungthai.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/KTC.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"KTC"</b> บริษัท บัตรกรุงไทย จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ประกอบธุรกิจหลักด้านบัตรเครดิต ตลอดจนธุรกิจที่เกี่ยวเนื่องกับธุรกิจบัตรเครดิต ธุรกิจร้านค้ารับบัตร การให้บริการรับชำระเงินแทน และธุรกิจสินเชื่อบุคคล ซึ่งครอบคลุมไปถึงสินเชื่อส่วนบุคคลภายใต้การกำกับและสินเชื่อที่มีทะเบียนรถเป็นประกัน นอกจากนี้บริษัทได้จัดตั้งบริษัทย่อยเพื่อเพิ่มผลิตภัณฑ์ทางการเงินที่ครบวงจรซึ่งครอบคลุมธุรกิ สินเชื่อรายย่อยระดับจังหวัด ธุรกิจสินเชื่อรายย่อยสำหรับการประกอบอาชีพ ธุรกิจเงินอิเล็กทรอนิกส์ ธุรกิจเช่าซื้อและธุรกิจลีสซิ่ง รวมถึงธุรกิจโฮลดิ้ง
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.ktc.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/LH.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"LH"</b> บริษัทแลนด์แอนด์เฮ้าส์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                พัฒนาโครงการที่พักอาศัยประเภทบ้านเดี่ยว ทาวน์เฮ้าส์ และอาคารชุดพักอาศัยที่มีคุณภาพ เพื่อจำหน่ายให้แก่กลุ่มลูกค้าเป้าหมายตามระดับความต้องการของลูกค้าในแต่ละระดับราคาที่แตกต่างกันไป โดยเน้นการพัฒนาโครงการในเขตกรุงเทพมหานครและปริมณฑล และโครงการตามจังหวัดใหญ่ๆ ได้แก่ เชียงใหม่ เชียงราย นครราชสีมา ขอนแก่น มหาสารคาม อุดรธานี ประจวบคีรีขันธ์ อยุธยา และภูเก็ต
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.lh.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/MINT.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"MINT"</b> บริษัท ไมเนอร์ อินเตอร์เนชั่นแนล จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                เป็นผู้ดำเนินธุรกิจอาหารและเครื่องดื่ม ธุรกิจโรงแรมและธุรกิจอื่น ๆ ที่เกี่ยวข้องกับธุรกิจโรงแรม ซึ่งรวมถึงโครงการพัฒนาที่อยู่อาศัยเพื่อขาย โครงการพักผ่อนแบบปันส่วนเวลา และให้เช่าศูนย์การค้าและอสังหาริมทรัพย์ และธุรกิจบันเทิงและธุรกิจจัดจำหน่าย
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.minor.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/MTC.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"MTC"</b> บริษัท เมืองไทย แคปปิตอล จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ให้บริการสินเชื่อทะเบียนรถและสินเชื่อส่วนบุคคล
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.muangthaicap.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/OR.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"OR"</b> บริษัท ปตท. น้ำมันและการค้าปลีก จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทประกอบธุรกิจจัดจำหน่ายผลิตภัณฑ์ปิโตรเลียมและธุรกิจค้าปลีกสินค้าและบริการอื่นๆ (Non-Oil) ทั้งในและต่างประเทศ ซึ่งรวมถึงการจัดจำหน่ายผลิตภัณฑ์ปิโตรเลียมและผลิตภัณฑ์อื่นๆ ในตลาดค้าปลีกและตลาดพาณิชย์ ธุรกิจกาแฟ ร้านอาหารและเครื่องดื่มอื่นๆ ร้านสะดวกซื้อ และการบริหารจัดการพื้นที่
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.pttor.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/OSP.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"OSP"</b> บริษัท โอสถสภา จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ธุรกิจผลิต ทำการตลาด และจำหน่ายสินค้าอุปโภคบริโภค โดยมีกลุ่มผลิตภัณฑ์หลักได้แก่ กลุ่มผลิตภัณฑ์เครื่องดื่ม กลุ่มผลิตภัณฑ์ของใช้ส่วนบุคคล และธุรกิจอื่นๆ ซึ่งรวมถึงผลิตภัณฑ์เพื่อสุขภาพและลูกอม และธุรกิจให้บริการผลิตสินค้าและบรรจุภัณฑ์ (OEM)และธุรกิจตู้จำหน่ายสินค้าอัตโนมัติ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.osotspa.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/PTT.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"PTT"</b> บริษัท ปตท. จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ประกอบด้วยกิจการที่ ปตท. ดำเนินการเอง ได้แก่ ธุรกิจก๊าซธรรมชาติ ธุรกิจระบบท่อส่งก๊าซธรรมชาติ ธุรกิจการค้าระหว่างประเทศธุรกิจใหม่และโครงสร้างพื้นฐาน และธุรกิจที่ลงทุนผ่านบริษัทย่อยและ/หรือกิจการที่ควบคุมร่วมกันและบริษัทร่วม (กลุ่มบริษัท) ได้แก่ ธุรกิจสำรวจและผลิตปิโตรเลียม ธุรกิจก๊าซธรรมชาติเหลว ธุรกิจปิโตรเคมีและการกลั่น ธุรกิจน้ำมันและค้าปลีก ธุรกิจไฟฟ้าและสาธารณูปการ ธุรกิจถ่านหิน ธุรกิจให้บริการ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.pttplc.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/PTTEP.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"PTTEP"</b> บริษัท ปตท. สำรวจและผลิตปิโตรเลียม จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                กลุ่มบริษัทประกอบธุรกิจด้านการสำรวจและผลิตปิโตรเลียมทั้งภายในประเทศและต่างประเทศ ธุรกิจขนส่งก๊าซทางท่อในต่างประเทศ และการลงทุนในธุรกิจต่อเนื่อง
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.pttep.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/PTTGC.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"PTTGC"</b> บริษัท พีทีที โกลบอล เคมิคอล จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัท พีทีที โกลบอล เคมิคอล จำกัด (มหาชน) (PTT Global Chemical Public Company Limited) เกิดจากการควบบริษัทระหว่าง บริษัท ปตท. เคมิคอล จำกัด (มหาชน) (PTTCH) และ บริษัท ปตท. อะโรเมติกส์และการกลั่น จำกัด (มหาชน) (PTTAR) โดยได้จดทะเบียนจัดตั้งบริษัทขึ้นเมื่อวันที่ 19 ตุลาคม 2554 เพื่อก้าวขึ้นเป็นแกนนำของธุรกิจเคมีภัณฑ์ (Chemical Flagship) ของกลุ่ม ปตท.
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.pttgcgroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/RATCH.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"RATCH"</b> บริษัท ราช กรุ๊ป จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทฯ ประกอบธุรกิจในรูปแบบบริษัทโฮลดิ้ง โดยลงทุนถือหุ้นในบริษัทอื่น ซึ่งมีสถานะเป็นบริษัทหลัก บริษัทย่อย และ/หรือ บริษัทร่วมค้าของบริษัทฯ ขึ้นอยู่กับสัดส่วนการถือหุ้นของบริษัทฯ ที่ผ่านมาบริษัทฯ ได้ลงทุนในบริษัทพัฒนาโครงการโรงไฟฟ้าที่ใช้เชื้อเพลิงหลักประเภทต่างๆ โครงการพลังงานทดแทน ตลอดจนธุรกิจเกี่ยวเนื่องกับการผลิตไฟฟ้าและธุรกิจพลังงานด้านอื่นๆ ทั้งในประเทศและต่างประเทศ รายได้หลักของบริษัทฯ มาจากเงินปันผลและส่วนแบ่งกำไร
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.ratch.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/SAWAD.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"SAWAD"</b> บริษัท ศรีสวัสดิ์ คอร์ปอเรชั่น จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                กลุ่มบริษัทประกอบธุรกิจให้บริการสินเชื่อรายย่อย ภายใต้เครื่องหมายบริการ "ศรีสวัสดิ์ เงินสดทันใจ" ซึ่งประกอบด้วย 5 ธุรกิจหลัก ได้แก่ 1) สินเชื่อรายย่อยแบบมีหลักประกันประเภท ทะเบียนรถเก่าทุกประเภท บ้านและโฉนดที่ดิน 2) สินเชื่อรายย่อยแบบไม่มีหลักประกันภายใต้การกำกับ 3) บริหารสินทรัพย์ 4) รับจ้างติดตามหนี้ 5) บริการที่ปรึกษาและให้คำแนะนำเกี่ยวกับการทำธุรกิจสินเชื่อ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.meebaanmeerod.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/SCB.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"SCB"</b> บริษัท เอสซีบี เอกซ์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                SCBX จัดตั้งขึ้นโดยมีวัตถุประสงค์หลักเพื่อเป็นบริษัทใหญ่ของกลุ่มธุรกิจทางการเงิน ดำเนินธุรกิจในลักษณะบริษัทลงทุน (Holding Company) และเข้าถือหุ้นในบริษัทอื่นโดยมีวัตถุประสงค์เพื่อการมีอำนาจควบคุมกิจการในบริษัทอื่น และเป็นผู้กำหนดยุทธศาสตร์รวมของกลุ่ม มองหาโอกาสการลงทุน และจัดสรรเงินลงทุนในธุรกิจที่จะสร้างผลตอบแทนที่ดีและสร้างการเติบโตให้กลุ่มธุรกิจอย่างต่อเนื่อง อีกทั้ง ยังมีบทบาทในการกำหนดนโยบายและกำกับดูแล การดำเนินธุรกิจ การบริหารความเสี่ยง และความบริหารความต่อเนื่องทางธุรกิจของบริษัทต่าง ๆ ในกลุ่มธุรกิจทางการเงิน ทั้งนี้ ขอบเขตการประกอบธุรกิจของ SCBX เป็นไปตามหลักเกณฑ์ที่ธนาคารแห่งประเทศไทยกำหนด
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.scbx.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/SCC.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"SCC"</b> บริษัท ปูนซิเมนต์ไทย จำกัด(มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ธุรกิจการลงทุน (Holding company) ใน 3 ธุรกิจหลัก ได้แก่ ธุรกิจซีเมนต์และผลิตภัณฑ์ก่อสร้าง ธุรกิจเคมิคอลส์ และธุรกิจแพคเกจจิ้ง
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.scg.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/SCGP.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"SCGP"</b> บริษัท เอสซีจี แพคเกจจิ้ง จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทประกอบธุรกิจโดยการถือหุ้นในบริษัทอื่น (Holding Company) ที่ประกอบธุรกิจหลักในการให้บริการโซลูชันด้านบรรจุภัณฑ์แบบครบวงจร (ซึ่งมีบริษัทย่อยที่ประกอบธุรกิจหลัก คือ บริษัทสยามคราฟท์อุตสาหกรรม จำกัด) ซึ่งแบ่งออกเป็น 3 สายธุรกิจหลัก คือ สายธุรกิจบรรจุภัณฑ์แบบครบวงจร สายธุรกิจเยื่อและกระดาษ และสายธุรกิจรีไซเคิลและส่วนงานอื่น
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.scgpackaging.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/TIDLOR.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"TIDLOR"</b> บริษัท เงินติดล้อ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ให้บริการสินเชื่อ ให้บริการเช่าซื้อ และให้บริการนายหน้าประกันวินาศภัย นายหน้าประกันชีวิต และบริการที่เกี่ยวเนี่องอื่น ๆ
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.ngerntidlor.com/th/home.html" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/TISCO.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"TISCO"</b> บริษัท ทิสโก้ไฟแนนเชียลกรุ๊ป จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทประกอบธุรกิจการถือหุ้นในบริษัทอื่น (Holding Company) ของกลุ่มธุรกิจทางการเงินทิสโก้ โดยมีธนาคารทิสโก้เป็นหลัก ซึ่งได้รับอนุมัติให้เป็นธนาคารพาณิชย์เต็มรูปแบบ ปัจจุบันให้บริการทางด้านการเงินอันประกอบด้วย บริการสินเชื่อลูกค้ารายย่อยและสินเชื่อธุรกิจขนาดกลางและขนาดย่อม บริการสินเชื่อพาณิชย์ธนกิจ บริการเงินฝากรายย่อย บริการลูกค้าธนบดีธนกิจ บริการตัวแทนขายประกันผ่านธนาคาร บริการจัดการการเงิน และบริการคัสโตเดียน
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.tisco.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/TLI.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"TLI"</b> บริษัท ไทยประกันชีวิต จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ธุรกิจประกันชีวิต
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.thailife.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/TOP.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"TOP"</b> บริษัท ไทยออยล์ จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ไทยออยล์เป็นผู้ประกอบธุรกิจการกลั่นและจำหน่ายผลิตภัณฑ์ปิโตรเลียมสำเร็จรูปที่ใหญ่ที่สุดในประเทศไทย และเป็นโรงกลั่นที่มีประสิทธิภาพอยู่ในระดับชั้นนำแห่งหนึ่งในภูมิภาคเอเชียแปซิฟิก ซึ่งก่อตั้งขึ้นในปี 2504 โดยมีธุรกิจหลักคือ โรงกลั่นนํ้ามัน ปัจจุบันมีกำลังการกลั่น 275,000 บาร์เรลต่อวันนอกจากนี้ ไทยออยล์ยังมีธุรกิจที่เกี่ยวข้องหลากหลาย เช่น ธุรกิจน้ำมันหล่อลื่นพื้นฐาน ธุรกิจปิโตรเคมีสายอะโรเมติกส์และสายโอเลฟิน ธุรกิจไฟฟ้า ธุรกิจสารทำละลายและเคมีภัณฑ์ ธุรกิจบริการขนส่งผลิตภัณฑ์ปิโตรเลียมสำเร็จรูปทางท่อ ธุรกิจพลังงานทดแทน ธุรกิจผลิตสารตั้งต้นสำหรับการผลิตผลิตภัณฑ์สารทำความสะอาด ธุรกิจให้บริการด้านการสรรหาและคัดเลือกบุคลากรสำหรับกลุ่มไทยออยล์ รวมถึงมีศูนย์บริหารการเงิน เพื่อช่วยเพิ่มขีดความสามารถในการบริหารจัดการทางการเงินของกลุ่มไทยออยล์
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="http://www.thaioilgroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/TRUE.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"TRUE"</b> บริษัท ทรู คอร์ปอเรชั่น จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ผู้ให้บริการด้านการสื่อสารโทรคมนาคม บริการด้านดิจิทัลครบวงจร และดิจิทัลคอนเวอร์เจนซ์ไลฟ์สไตล์ครอบคลุมทั้งโทรศัพท์เคลื่อนที่ บอรดแบนด์อินเทอร์เน็ต WiFi โทรทัศน์ คอนเทนต์ และดิจิทัลมีเดียแพลตฟอร์ม
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="xx" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/TTB.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"TTB"</b> ธนาคารทหารไทยธนชาต จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                ดำเนินธุรกิจธนาคารพาณิชย์เต็มรูปแบบแก่ลูกค้า 3 กลุ่มหลัก คือ กลุ่มลูกค้าธุรกิจขนาดใหญ่ ลูกค้าเอสเอ็มอี และลูกค้ารายย่อย โดยมีกลุ่ม ไอเอ็นจี สถาบันการเงินของประเทศเนเธอร์แลนด์ เป็นพันธมิตรทางธุรกิจและผู้ถือหุ้นรายใหญ่ร่วมกับกระทรวงการคลัง
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="https://www.ttbbank.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+
+    <li class="list-group-item clearfix" >
+            <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
+                <!-- <div>RM</div> -->
+                <span id='logo-1'><img src="./images/stocks/WHA.png"></span>
+            </button>
+      
+    
+            <div class="data_detail">
+                <h3 class="list-group-item-heading">
+                <span class='companyIitle' id='title-1'><b>"WHA"</b> บริษัท ดับบลิวเอชเอ คอร์ปอเรชั่น จำกัด (มหาชน)</span>
+             
+                </h3>
+                <p class="list-group-item-text lead">
+                <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <span class='companyDetail' id='detail-1'>
+                บริษัทฯ เป็นผู้นำในการให้บริการแบบครบวงจรที่ครอบคลุมทุกความต้องการของลูกค้าในธุรกิจที่เกี่ยวข้องกับการให้บริการด้านโลจิสติกส์ โดยสามารถจำแนกส่วนธุรกิจได้เป็น 4 กลุ่ม ได้แก่ ธุรกิจพัฒนาและบริหารจัดการอสังหาริมทรัพย์ (Logistics Hub) ธุรกิจพัฒนานิคมอุตสาหกรรม (Industrial Development Hub) ธุรกิจให้บริการสาธารณูปโภคและพลังงาน (Utilities & Power Hub) และธุรกิจให้บริการด้านดิจิทัล (Digital Platform Hub) อีกทั้งบริษัทฯ ยังมีนโยบายในการขายสินทรัพย์เข้ากองทรัสต์ฯ (WHART WHAIR และ WHABT) เพื่อเป็นแหล่งเงินทุนในการพัฒนาโครงการในอนาคตของบริษัทฯ อย่างต่อเนื่อง และได้รับแต่งตั้งเป็นผู้บริหารอสังหาริมทรัพย์ของกองทรัสต์ฯ และกองทุนรวมฯ นอกจากนี้ บริษัทฯ ยังมีนโยบายลงทุนในธุรกิจอสังหาริมทรัพย์ผ่านการลงทุนในกองทรัสต์ฯ และ/หรือกองทุนรวมฯ เพื่อผลตอบแทนในรูปเงินปันผลสม่ำเสมอเป็นประจำทุกปี
+                </span>
+                </p>
+            </div>
+            <div class="btn-toolbar " role="toolbar" aria-label="">
+                
+                <a  href="https://www.wha-group.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
+                <a href="#" id="btn-1" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+            </div>
+    </li>
+    
+    
+
+    
    
    
     

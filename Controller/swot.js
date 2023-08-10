@@ -48,6 +48,10 @@ var clearDataFn = function(){
 
 	//clear form start
 	$(".form-control").val("");
+	$(".s_weight").val('0.00');
+	$(".w_weight").val('0.00');
+	$(".o_weight").val('0.00');
+	$(".t_weight").val('0.00');
 }
 var calculateSwotFn = function(){
 	var s1_name="";
@@ -1872,17 +1876,6 @@ if ($('#desktopTest').is(':hidden')) {
 	 });
 	 /*load data end here.*/
 
-	 //Test Load Data from SET
-	 alert(1);
-	 $.ajax({
-		url:"https://www.set.or.th/th/market/product/stock/quote/SIRI/financial-statement/company-highlights",
-		type:"get",
-		dataType:"html",
-        async:false,
-		success:function(data){
-				console.log(data);
-				alert(2);
-		}
-	});
+	 
 
 });
