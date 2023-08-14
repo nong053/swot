@@ -31,8 +31,12 @@ var getSwotByCompany=function(b_id){
                     dataOpportunitiesArea+="<ul>";
                     dataThreatsArea+="<ul>";
                         $.each(data[0]['data'],function(index,indexEntry){
+                        if(indexEntry['s_name']!=""){
+
+                            
                            
                             if(indexEntry['ap_code']=='1'){
+
                                 dataStrengthsArea+="<li>"+indexEntry['s_name']+"</li>";
                             }
 
@@ -47,6 +51,7 @@ var getSwotByCompany=function(b_id){
                             if(indexEntry['ap_code']=='4'){
                                 dataThreatsArea+="<li>"+indexEntry['s_name']+"</li>";
                             }
+                        }
 
                         });
                         dataStrengthsArea+="</ul>";
