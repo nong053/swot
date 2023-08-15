@@ -102,18 +102,26 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 //check device end
 
 
-$(".btnSWOT").click(function(){
-    //loaddingFn();
-    //http://localhost/swot/Model/action-swot-stock-public.php?action=swotByCompany&b_id=1
-    var idArray = this.id;
-    idArray = idArray.split("-");
-    var id = idArray[1];
+    $(".btnSWOT").click(function(){
+        //loaddingFn();
+        //http://localhost/swot/Model/action-swot-stock-public.php?action=swotByCompany&b_id=1
+        var idArray = this.id;
+        idArray = idArray.split("-");
+        var id = idArray[1];
 
 
-  
-
-    getSwotByCompany(id);
-    $("#swotModal").modal('show');
     
-});
+
+        getSwotByCompany(id);
+        $("#swotModal").modal('show');
+        
+    });
+
+    $("#btnSwotClose").click(function(){
+
+        $("#swotModal").modal('hide');
+        
+    });
+
+
 });

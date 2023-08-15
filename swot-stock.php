@@ -105,10 +105,11 @@ img {
            
             <h1 style="top:30px; display:none;" class="headeTitle" >
             <!-- <i class="fa fa-suitcase" aria-hidden="true"></i> -->
-            <b style="font-size: 24px;left:5px; position: relative;top: 10px;"> วิเคราะห์ SWOT หุ้นไทย</b>
+            <b style="font-size: 24px;left:5px; position: relative; " id='swotTitle'> วิเคราะห์ SWOT หุ้นไทย</b>
+           
             <img src="images/icon60x54.png" class="d-none d-sm-block" style="width:60px; height:54px; top: -11px; position:relative; margin-right: 5px;">
             <img src="images/icon45x40.png" class="d-block d-sm-none" style="width:45px; height:40px; top: -11px; position:relative; margin-right: 5px;">
-              
+
             </h1> 
 
              <div id="loginArea" class="" style="text-align: right; color:white; float:right;  display:none;">
@@ -639,7 +640,7 @@ img {
                 </h3>
                 <p class="list-group-item-text lead">
                 <span class='nbsp'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                <span class='companyDetail' id='detail-1'>
+                <span class='companyDetail' id='detail-38'>
                 พัฒนาและให้เช่าพื้นที่ศูนย์การค้าขนาดใหญ่และประกอบธุรกิจอื่นที่เกี่ยวเนื่องและส่งเสริมธุรกิจ พัฒนาศูนย์การค้า เช่น อาคารสำนักงาน ศูนย์อาหาร โรงแรม และที่พักอาศัยเป็นต้น รวมถึงการลงทุนในกองทุนรวมสิทธิการเช่าอสังหาริมทรัพย์ (CPNCG) และทรัสต์เพื่อการลงทุนในสิทธิการเช่าอสังหาริมทรัพย์ (CPNREIT) และเป็นผ้บู ริหารอสังหาริมทรัพย์ของกองทุนรวมฯ และกองทรัสต์ฯ
                 </span>
                 </p>
@@ -935,7 +936,7 @@ img {
     <li class="list-group-item clearfix" >
             <button style="float:left;  margin-right:15px; margin-bottom:15px; padding: 2px;"  type="button" id="btn-rm" class="btn  btn-circle btn-default shadow-lg btnRM">
                 <!-- <div>RM</div> -->
-                <span id='logo-1'><img src="./images/stocks/KTB.png"></span>
+                <span id='logo-50'><img src="./images/stocks/KTB.png"></span>
             </button>
       
     
@@ -2010,14 +2011,16 @@ img {
 
    
       </div>
-      <!-- <div class="modal-footer"  style="background-color: #191970; color:white;">
-        <button type="button" id="btnDevToolsClose" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+       <div class="modal-footer"  style="background-color: #191970; color:white;">
+        <button type="button" id="btnSwotClose" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
      
-      </div> -->
+      </div>
     </div>
   </div>
 </div>
 <!--Modal-->
+
+
 <?php
 echo "<div id='serverMC' style='display:none'>".GetMAC()."</div>";
 

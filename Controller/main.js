@@ -89,10 +89,11 @@ function commaSeparateNumber(val){
     
   $(".headerFixed").hide();
   $(".setting-toggle").hide();
+
   if("mobile"==sessionStorage.getItem('checkDevice')){
 
     
-
+      $("#swotTitle").css({"top":"5px","font-size":"20px"});
       $(".headeTitle").css({"top":"30px"}).show();
       $(".headerFixed").css({"top":"-20px","height":"65px"}).show();
       $(".setting-toggle").css({"top":"58px","color":"white","background-color":"#191970","border-color":"#191970"}).show();
@@ -105,16 +106,16 @@ function commaSeparateNumber(val){
       }
       
       $(".titleArea").css({"margin-top":"70px"}).show();
-      
-      
   
       
+  
+     
 
      
   }else{
    
    
-    
+      $("#swotTitle").css({"top":"10px","font-size":"24px"});
       $(".headeTitle").css({"top":"17px"}).show();
       $(".headerFixed").css({"top":"0px","height":"75px"}).show();
       $(".setting-toggle").css({"top":"75px"}).show();
@@ -123,8 +124,6 @@ function commaSeparateNumber(val){
       }else{
         $("#loginArea").css({"padding-top":"28px"}).hide();
       }
-
-      
       $(".titleArea").css({"margin-top":"100px"}).show();
 
   }
