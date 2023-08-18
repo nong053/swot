@@ -1,7 +1,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous">
 <link rel="stylesheet" href="css/main.css" >
-<link href="images/favicon_io/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="images/favicon_ss/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 <style>
 @import url(fonts/thsarabunnew.css);
 body{ 
@@ -88,6 +88,7 @@ img {
 .btn-toolbar>.btn, .btn-toolbar>.btn-group, .btn-toolbar>.input-group {
     margin-left: 5px;
 }
+
 /* test end */
 
 </style>
@@ -107,8 +108,8 @@ img {
             <!-- <i class="fa fa-suitcase" aria-hidden="true"></i> -->
             <b style="font-size: 24px;left:5px; position: relative; " id='swotTitle'> วิเคราะห์ SWOT หุ้นไทย</b>
            
-            <img src="images/icon60x54.png" class="d-none d-sm-block" style="width:60px; height:54px; top: -11px; position:relative; margin-right: 5px;">
-            <img src="images/icon45x40.png" class="d-block d-sm-none" style="width:45px; height:40px; top: -11px; position:relative; margin-right: 5px;">
+            <img src="images/logo-swot.png" class="d-none d-sm-block" style="width:60px; height:60px; top: -7px; position:relative; margin-right: 5px;">
+            <img src="images/logo-swot.png" class="d-block d-sm-none" style="width:45px; height:45px; top: -9px; position:relative; margin-right: 5px;">
 
             </h1> 
 
@@ -1889,16 +1890,18 @@ img {
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content" >
       <div class="modal-header" style="background-color: #191970; color:white;">
-        <h5 class="modal-title" id="swotCompanyModalLabel">
+        
+        <h5 class="modal-title" id="swotCompanyModalLabel" style="margin-top: 35px;">
            
         <div id="companyTitle">SWOT Analisys</div>
         <div id="companyDeatail"></div>
         </h5>
-       <span style="color: white;">
-            <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+        <span style="position:absolute;top:20px; right:20px;" >
+            <button type="button"  class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             
             </button>
-       </span>
+        </span>
 
       </div>
       <div class="modal-body" style="padding:0px;" id="dataSwotArea">
@@ -2012,7 +2015,7 @@ img {
    
       </div>
        <div class="modal-footer"  style="background-color: #191970; color:white;">
-        <button type="button" id="btnSwotClose" class="btn btn-secondary" data-dismiss="modal">ปิด</button>
+        <button type="button" id="btnSwotClose" class="btn btn-default" data-dismiss="modal">ปิด</button>
      
       </div>
     </div>
