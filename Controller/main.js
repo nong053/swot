@@ -5,6 +5,16 @@ var webService="http://localhost/swot";
 var navigator_info = "";
 var screen_info ="";
 var uid = "";
+
+
+var loaddingFn = function(){
+	//alert('loadding');
+	$("body").mLoading();
+	setTimeout(function(){
+		$("body").mLoading('hide');
+	},1000);
+}
+
 $('.number_only').keypress(function(e) {
   if(isNaN(this.value+""+String.fromCharCode(e.charCode))) return false;
   })

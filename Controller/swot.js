@@ -1542,6 +1542,23 @@ var checkValidateExampleFn  = function(){
 }
 $(document).ready(function(){
 
+	if($.urlParam('from')=='swot-stock'){
+		sessionStorage.setItem('from','swot-stock');
+	}else{
+		sessionStorage.setItem('from','');
+	}
+
+
+	$("#btnSwotBack").click(function(){
+		if(sessionStorage.getItem('from')=='swot-stock'){
+			window.location.href='./swot-stock.php';
+		}else{
+			window.location.href='./';
+		}
+	});
+
+
+
 
 //clear form data start
 	$("#btnClearForm").click(function(){

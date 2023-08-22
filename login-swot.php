@@ -282,6 +282,8 @@ img {
         </ul>
     </div>
     <div class="col-md-6 ">
+
+
         <div id='formLoginArea' style="margin:auto; display:'none'  ;">
 
             <div class="container">
@@ -333,12 +335,15 @@ img {
                         </div>
                     </div>
                     <input type="hidden" value="login" id="actionLR">
+                    
                     <button type="button" id="btnSubmitLR" style="width:100%;" class="btn btn-primary">ตกลง</button>
 
                 </div>
            
             </div>
         </div>
+
+        
     
     </div>
 </div>
@@ -369,6 +374,7 @@ img {
 
 
 <!-- Modal -->
+<!--
  <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog ">
     <div class="modal-content">
@@ -438,6 +444,7 @@ img {
     </div>
   </div>
 </div> 
+-->
 <!--modal -->
 <!-- Modal -->
 <div class="modal fade" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="teamModalLabel" aria-hidden="true" >

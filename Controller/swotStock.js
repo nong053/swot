@@ -123,5 +123,50 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
         
     });
 
+    $("#btnLogout").click(function(){
+        
+        loaddingFn();
+        sessionStorage.setItem('token',"");
+        sessionStorage.setItem('uuid',"");
+        $("#btnLogout").hide();
+        $("#btnOpenLogin").show();
+
+    });
+
+    $("#btnOpenLogin").click(function(){
+    
+        loaddingFn();
+        window.location.href='./login-swot.php';
+    });
+
+    //check login status
+    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+         $("#btnLogout").hide();
+         $("#btnOpenLogin").show();
+     }else{
+         $("#btnLogout").show();
+         $("#btnOpenLogin").hide();
+     }
+     //check login status
+
+     $(".btnSWOTAdvance").click(function(){
+    
+        loaddingFn();
+
+        var idArray = this.id;
+        idArray = idArray.split("-");
+        var id = idArray[1];
+        
+
+        if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
+            window.location.href='./login-swot.php';
+        }else{
+            window.location.href='./swot.php?from=swot-stock';
+        }
+    });
+
+     
+        
+
 
 });

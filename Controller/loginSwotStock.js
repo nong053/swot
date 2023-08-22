@@ -1,10 +1,4 @@
-var loaddingFn = function(){
-	//alert('loadding');
-	$("body").mLoading();
-	setTimeout(function(){
-		$("body").mLoading('hide');
-	},1000);
-}
+
 var clearFormRegisterFn = function(){
     $("#register_alert").hide();
     $("#register_alert_text").html("");
@@ -289,8 +283,9 @@ $(".btnRM").click(function(){
 });
 
 $("#btnOpenLogin").click(function(){
+    
     loaddingFn();
-    $("#loginModal").modal('show');
+    window.location.href='./login-swot.php';
 });
     
  
@@ -357,11 +352,12 @@ $("#btnOpenLogin").click(function(){
     });
     
    
-alert(1);
+
     $("#btnSubmitLR").click(function(){
+     
         loaddingFn();
         if($("#actionLR").val()=="register"){
-
+            alert('register');
                 if(validateRisterFn()==true && checkPasswordStrength()==true){
                 $.ajax({
                     url:webService+"/Model/oneTimeLogin.php",
@@ -391,8 +387,8 @@ alert(1);
                                 $("#btnLogout").show();
 
                                 //window.location.href=""+$("#actionTo").val()+"";
-                                window.location.href="./swot/swot-stock.php";
-                                alert('ok');
+                                window.location.href="./swot-stock.php";
+                                
                                 // $("#btnArea").show();
                                 // $("#formLoginArea").hide();
 
@@ -409,6 +405,7 @@ alert(1);
             }
             }else{
                 if(validateLoginFn()==true){
+           
                     $.ajax({
                         url:webService+"/Model/oneTimeLogin.php",
                         type:"post",
@@ -438,8 +435,9 @@ alert(1);
                                 //     title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
                                 //     content: 'บันทึกข้อมูลเรียบร้อย',
                                 // });
-                                 alert('login success');
-                                //window.location.href=""+$("#actionTo").val()+"";
+                                
+                               
+                                window.location.href="./swot-stock.php";
 
                                 }else if(data[0]['status']=="401"){
                                     $("#login_alert").show();

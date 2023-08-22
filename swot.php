@@ -58,9 +58,9 @@
        
            <!-- <span style="float:right; position:relative; top:30px; color:white; cursor: pointer;" class='btnDevTeam d-none d-lg-block' data-toggle="modal" data-target="#teamModal">@DevTeamByDICT</span> -->
            <span style="float:right; position:relative; top:30px; color:white; cursor: pointer;" class=' d-none d-lg-block'>Copyright@Kosit</span>
-           <h1 style="display:none;" onclick="window.location.href='./'" class="headeTitle">
+           <h1 style="display:none;"  class="headeTitle">
             <!-- <i class="fa-sharp fa-solid fa-chart-line"></i> -->
-            <i class="fa-sharp fa-solid fa-circle-left  " style="cursor: pointer;"></i> SWOT </h1>
+            <i class="fa-sharp fa-solid fa-circle-left  " id='btnSwotBack' style="cursor: pointer;"></i> SWOT </h1>
 
         </div>
 </div>

@@ -113,11 +113,11 @@ img {
 
             </h1> 
 
-             <div id="loginArea" class="" style="text-align: right; color:white; float:right;  display:none;">
+             <div id="loginArea" class="" style="text-align: right; color:white; float:right;  ">
                 <div style=" padding-bottom:0px; cursor:pointer;  display:none;" id="btnOpenLogin">
                 <i class="fa fa-sign-in" aria-hidden="true"></i> <b>เข้าสู่ระบบ</b> 
                 </div>
-                <div style="padding-bottom:0px; cursor:pointer; display:none;  " id="btnLogout">
+                <div style="padding-bottom:0px; cursor:pointer;  " id="btnLogout">
                 <i class="fa fa-sign-out" aria-hidden="true"></i> <b>ออกจากระบบ</b> 
                 </div>
             </div>
@@ -228,7 +228,8 @@ img {
        <div class="btn-toolbar " role="toolbar" aria-label="">
                 
         <a href="http://thaiunion.com" target="_blank" id="btnManualMC1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-        <a href="#" id="btn-24" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+        <a href="#" id="btn-24" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT ฺBasic</a>
+        <a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
     </div>
     
     </li>
@@ -259,7 +260,7 @@ img {
       <div class="btn-toolbar " role="toolbar" aria-label="">
                 
         <a  href="http://investor.ais.co.th" target="_blank" id="btnManualSW1" class="btn btn-default"><i class=" fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-        <a href="#" id="btn-23" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+        <a href="#" id="btn-23" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
     </div>
     
     </li>
@@ -283,9 +284,8 @@ img {
                 </p>
             </div>
             <div class="btn-toolbar " role="toolbar" aria-label="">
-                
                 <a  href="http://www.airportthai.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-22" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-22" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -312,7 +312,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="https://www.assetworldcorp-th.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-25" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-25" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -338,7 +338,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.banpu.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-26" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-26" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -364,7 +364,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.bangkokbank.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-27" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-27" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -390,7 +390,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.bangkokhospital.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-28" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-28" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -416,7 +416,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.bemplc.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-29" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-29" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -443,7 +443,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.bgrimmpower.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-30" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-30" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -469,7 +469,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.bumrungrad.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-31" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-31" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -495,7 +495,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.btsgroup.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-32" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-32" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -522,7 +522,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.carabaogroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-33" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-33" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -548,7 +548,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.centarahotelsresorts.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-34" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-34" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -574,7 +574,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.comseven.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-35" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-35" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -599,7 +599,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.cpall.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-36" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-36" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -624,7 +624,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.cpfworldwide.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-37" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-37" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -649,7 +649,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.centralpattana.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-38" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-38" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -674,7 +674,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="https://www.centralretail.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-39" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-39" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -699,7 +699,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.deltathailand.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-40" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-40" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -726,7 +726,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.energyabsolute.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-41" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-41" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -752,7 +752,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.egco.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-42" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-42" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -778,7 +778,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.globalhouse.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-43" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-43" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -803,7 +803,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.gpscgroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-44" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-44" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -829,7 +829,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.gulf.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-45" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-45" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -855,7 +855,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.homepro.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-46" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-46" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -881,7 +881,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.intouchcompany.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-47" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-47" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -906,7 +906,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.indoramaventures.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-48" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-48" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -931,7 +931,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.kasikornbank.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-49" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-49" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -956,7 +956,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="https://krungthai.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-50" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-50" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -981,7 +981,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.ktc.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-51" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-51" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1006,7 +1006,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.lh.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-52" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-52" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1031,7 +1031,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.minor.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-53" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-53" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -1057,7 +1057,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.muangthaicap.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-54" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-54" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -1083,7 +1083,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.pttor.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-55" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-55" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -1109,7 +1109,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.osotspa.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-56" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-56" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1134,7 +1134,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.pttplc.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-57" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-57" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1159,7 +1159,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.pttep.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-58" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-58" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1184,7 +1184,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.pttgcgroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-59" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-59" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1209,7 +1209,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.ratch.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-60" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-60" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1234,7 +1234,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.meebaanmeerod.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-61" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-61" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1259,7 +1259,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.scbx.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-62" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-62" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -1285,7 +1285,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.scg.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-63" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-63" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -1311,7 +1311,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.scgpackaging.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-64" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-64" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1336,7 +1336,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.ngerntidlor.com/th/home.html" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-65" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-65" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1361,7 +1361,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.tisco.co.th" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-66" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-66" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1386,7 +1386,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.thailife.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-67" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-67" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1411,7 +1411,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="http://www.thaioilgroup.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-68" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-68" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1436,7 +1436,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="xx" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-69" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-69" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     <li class="list-group-item clearfix" >
@@ -1461,7 +1461,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="https://www.ttbbank.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-70" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-70" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
 
@@ -1487,7 +1487,7 @@ img {
             <div class="btn-toolbar " role="toolbar" aria-label="">
                 
                 <a  href="https://www.wha-group.com" target="_blank" id="btnManualRM1" class="btn btn-default"><i class="fa fa-link" aria-hidden="true"></i> เว็บไซต์</a>
-                <a href="#" id="btn-71" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT</a>
+                <a href="#" id="btn-71" class="btn btn-primary btnSWOT"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> SWOT Basic</a><a href="#" id="btn-24" class="btn btn-warning btnSWOTAdvance"><i class="fa-solid fa-chart-line"></i> SWOT Advance</a>
             </div>
     </li>
     
