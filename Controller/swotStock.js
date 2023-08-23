@@ -149,21 +149,23 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
      }
      //check login status
 
-     $(".btnSWOTAdvance").click(function(){
+    $(".btnSWOTAdvance").click(function(){
     
         loaddingFn();
 
         var idArray = this.id;
         idArray = idArray.split("-");
-        var id = idArray[1];
+        var b_id = idArray[1];
         
 
         if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
             window.location.href='./login-swot.php';
         }else{
-            window.location.href='./swot.php?from=swot-stock';
+            window.location.href="./swot.php?from=swot-stock&b_id="+b_id+"";
         }
     });
+
+ 
 
      
         

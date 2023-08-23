@@ -23,7 +23,7 @@ $jsonArray = json_decode($json, true);
   
 
 
-        select s.s_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
+        select s.s_id,s.b_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
         s.s_name,s.s_weight,s.s_score,
         s.s_total_score,s.swot_name,s.swot_detail
         from swot s
@@ -71,32 +71,32 @@ if ($conn->query($sql_insert_swot) === TRUE) {
         if ($conn->query($sql_delete) === TRUE) {
             $sql_insert_swot = "
                 INSERT INTO swot 
-                (uu_id,s_code,form_id,ap_code, s_name, s_weight,s_score,s_total_score,created_date,updated_date,swot_name,swot_detail) 
+                (uu_id,b_id,s_code,form_id,ap_code, s_name, s_weight,s_score,s_total_score,created_date,updated_date,swot_name,swot_detail) 
                 VALUES
-                ('$_REQUEST[uuid]','1','s1','1','$_REQUEST[s1_name]','$_REQUEST[s1_weight]','$_REQUEST[s1_score]','$_REQUEST[s1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','2','s2','1','$_REQUEST[s2_name]','$_REQUEST[s2_weight]','$_REQUEST[s2_score]','$_REQUEST[s2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','3','s3','1','$_REQUEST[s3_name]','$_REQUEST[s3_weight]','$_REQUEST[s3_score]','$_REQUEST[s3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','4','s4','1','$_REQUEST[s4_name]','$_REQUEST[s4_weight]','$_REQUEST[s4_score]','$_REQUEST[s4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','5','s5','1','$_REQUEST[s5_name]','$_REQUEST[s5_weight]','$_REQUEST[s5_score]','$_REQUEST[s5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'1','s1','1','$_REQUEST[s1_name]','$_REQUEST[s1_weight]','$_REQUEST[s1_score]','$_REQUEST[s1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'2','s2','1','$_REQUEST[s2_name]','$_REQUEST[s2_weight]','$_REQUEST[s2_score]','$_REQUEST[s2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'3','s3','1','$_REQUEST[s3_name]','$_REQUEST[s3_weight]','$_REQUEST[s3_score]','$_REQUEST[s3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'4','s4','1','$_REQUEST[s4_name]','$_REQUEST[s4_weight]','$_REQUEST[s4_score]','$_REQUEST[s4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'5','s5','1','$_REQUEST[s5_name]','$_REQUEST[s5_weight]','$_REQUEST[s5_score]','$_REQUEST[s5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
 
 
-                ('$_REQUEST[uuid]','6','w1','2','$_REQUEST[w1_name]','$_REQUEST[w1_weight]','$_REQUEST[w1_score]','$_REQUEST[w1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','7','w2','2','$_REQUEST[w2_name]','$_REQUEST[w2_weight]','$_REQUEST[w2_score]','$_REQUEST[w2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','8','w3','2','$_REQUEST[w3_name]','$_REQUEST[w3_weight]','$_REQUEST[w3_score]','$_REQUEST[w3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','9','w4','2','$_REQUEST[w4_name]','$_REQUEST[w4_weight]','$_REQUEST[w4_score]','$_REQUEST[w4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','10','w5','2','$_REQUEST[w5_name]','$_REQUEST[w5_weight]','$_REQUEST[w5_score]','$_REQUEST[w5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'6','w1','2','$_REQUEST[w1_name]','$_REQUEST[w1_weight]','$_REQUEST[w1_score]','$_REQUEST[w1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'7','w2','2','$_REQUEST[w2_name]','$_REQUEST[w2_weight]','$_REQUEST[w2_score]','$_REQUEST[w2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'8','w3','2','$_REQUEST[w3_name]','$_REQUEST[w3_weight]','$_REQUEST[w3_score]','$_REQUEST[w3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'9','w4','2','$_REQUEST[w4_name]','$_REQUEST[w4_weight]','$_REQUEST[w4_score]','$_REQUEST[w4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'10','w5','2','$_REQUEST[w5_name]','$_REQUEST[w5_weight]','$_REQUEST[w5_score]','$_REQUEST[w5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
 
-                ('$_REQUEST[uuid]','11','o1','3','$_REQUEST[o1_name]','$_REQUEST[o1_weight]','$_REQUEST[o1_score]','$_REQUEST[o1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','12','o2','3','$_REQUEST[o2_name]','$_REQUEST[o2_weight]','$_REQUEST[o2_score]','$_REQUEST[o2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','13','o3','3','$_REQUEST[o3_name]','$_REQUEST[o3_weight]','$_REQUEST[o3_score]','$_REQUEST[o3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','14','o4','3','$_REQUEST[o4_name]','$_REQUEST[o4_weight]','$_REQUEST[o4_score]','$_REQUEST[o4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','15','o5','3','$_REQUEST[o5_name]','$_REQUEST[o5_weight]','$_REQUEST[o5_score]','$_REQUEST[o5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'11','o1','3','$_REQUEST[o1_name]','$_REQUEST[o1_weight]','$_REQUEST[o1_score]','$_REQUEST[o1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'12','o2','3','$_REQUEST[o2_name]','$_REQUEST[o2_weight]','$_REQUEST[o2_score]','$_REQUEST[o2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'13','o3','3','$_REQUEST[o3_name]','$_REQUEST[o3_weight]','$_REQUEST[o3_score]','$_REQUEST[o3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'14','o4','3','$_REQUEST[o4_name]','$_REQUEST[o4_weight]','$_REQUEST[o4_score]','$_REQUEST[o4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'15','o5','3','$_REQUEST[o5_name]','$_REQUEST[o5_weight]','$_REQUEST[o5_score]','$_REQUEST[o5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
 
-                ('$_REQUEST[uuid]','16','t1','4','$_REQUEST[t1_name]','$_REQUEST[t1_weight]','$_REQUEST[t1_score]','$_REQUEST[t1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','17','t2','4','$_REQUEST[t2_name]','$_REQUEST[t2_weight]','$_REQUEST[t2_score]','$_REQUEST[t2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','18','t3','4','$_REQUEST[t3_name]','$_REQUEST[t3_weight]','$_REQUEST[t3_score]','$_REQUEST[t3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','19','t4','4','$_REQUEST[t4_name]','$_REQUEST[t4_weight]','$_REQUEST[t4_score]','$_REQUEST[t4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
-                ('$_REQUEST[uuid]','20','t5','4','$_REQUEST[t5_name]','$_REQUEST[t5_weight]','$_REQUEST[t5_score]','$_REQUEST[t5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]')
+                ('$_REQUEST[uuid]',1,'16','t1','4','$_REQUEST[t1_name]','$_REQUEST[t1_weight]','$_REQUEST[t1_score]','$_REQUEST[t1_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'17','t2','4','$_REQUEST[t2_name]','$_REQUEST[t2_weight]','$_REQUEST[t2_score]','$_REQUEST[t2_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'18','t3','4','$_REQUEST[t3_name]','$_REQUEST[t3_weight]','$_REQUEST[t3_score]','$_REQUEST[t3_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'19','t4','4','$_REQUEST[t4_name]','$_REQUEST[t4_weight]','$_REQUEST[t4_score]','$_REQUEST[t4_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]'),
+                ('$_REQUEST[uuid]',1,'20','t5','4','$_REQUEST[t5_name]','$_REQUEST[t5_weight]','$_REQUEST[t5_score]','$_REQUEST[t5_total_score]',now(),now(),'$_REQUEST[swot_name]','$_REQUEST[swot_detail]')
 
 
 
@@ -121,7 +121,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
 
 
 
-                    select s.s_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
+                    select s.s_id,s.b_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
                     s.s_name,s.s_weight,s.s_score,
                     s.s_total_score,s.swot_name,s.swot_detail
                     from swot s
@@ -162,25 +162,6 @@ if ($conn->query($sql_insert_swot) === TRUE) {
         echo "0 results";
         }
 
-    }else if($_REQUEST['action']=='updated'){
-
-        $sql = "UPDATE MyGuests SET lastname='Doe' WHERE id=2";
-
-        if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
-        } else {
-        echo "Error updating record: " . $conn->error;
-        }
-
-    }else if($_REQUEST['action']=='delete'){
-        // sql to delete a record
-        $sql = "DELETE FROM MyGuests WHERE id=3";
-
-        if ($conn->query($sql) === TRUE) {
-        echo "Record deleted successfully";
-        } else {
-        echo "Error deleting record: " . $conn->error;
-        }
     }else if($_REQUEST['action']=='insertSwotMaster'){
 
         $sql = "
@@ -211,8 +192,8 @@ if ($conn->query($sql_insert_swot) === TRUE) {
                 while($row = $result_swot->fetch_assoc()) {
                    
                     $sql_select_swot = "
-                    INSERT INTO swot (uu_id,s_code,form_id,ap_code, s_name, s_weight, s_score,s_total_score,created_date,updated_date,swot_name,swot_detail) VALUES
-                    ('$_REQUEST[uuid]','$row[s_code]','$row[form_id]','$row[ap_code]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW(),'$row[swot_name]','$row[swot_detail]')";
+                    INSERT INTO swot (uu_id,b_id,s_code,form_id,ap_code, s_name, s_weight, s_score,s_total_score,created_date,updated_date,swot_name,swot_detail) VALUES
+                    ('$_REQUEST[uuid]','$row[b_id]','$row[s_code]','$row[form_id]','$row[ap_code]','$row[s_name]','$row[s_weight]', '$row[s_score]', '$row[s_total_score]',NOW(),NOW(),'$row[swot_name]','$row[swot_detail]')";
         
                    $count++;
         
@@ -247,7 +228,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
             $sql_swot = "
 
             
-            select s.s_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
+            select s.s_id,s.b_id,s.uu_id,s.form_id,s.ap_code,ap.ap_name,
             s.s_name,s.s_weight,s.s_score,
             s.s_total_score,s.swot_name,s.swot_detail
             from swot s
@@ -741,9 +722,9 @@ if ($conn->query($sql_insert_swot) === TRUE) {
        $sql_load_from_swot_ex ="
        INSERT INTO 
        swot
-                  (uu_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date)
+                  (uu_id,b_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date)
        SELECT 
-       '$_REQUEST[uuid]',s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,now(),now()
+       '$_REQUEST[uuid]',b_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,now(),now()
        FROM swot_ex
        WHERE b_id = '$_REQUEST[b_id]'";
 
@@ -829,11 +810,12 @@ if ($conn->query($sql_insert_swot) === TRUE) {
             $sql_insert_swot = "
             INSERT INTO swot 
             (
-                uu_id,s_code,ap_code,form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date
+                uu_id,b_id,s_code,ap_code,form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date
             ) 
             VALUES
             (
             '".$_REQUEST['uuid']."',
+            '".$_REQUEST['dataSwotEx'][$i]['b_id']."',
             '".$_REQUEST['dataSwotEx'][$i]['s_code']."',
             '".$_REQUEST['dataSwotEx'][$i]['ap_code']."',
             '".$_REQUEST['dataSwotEx'][$i]['form_id']."',
