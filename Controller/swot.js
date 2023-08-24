@@ -590,7 +590,7 @@ var renderSwotToDisplay = function(data){
 }
 
 var findOne=function(uuid){
-	// alert(uuid);
+	 alert(uuid+"=uuid");
 	// alert("findOne");
     $.ajax({
 		url:webService+"/Model/action-swot.php",
@@ -1544,16 +1544,21 @@ $(document).ready(function(){
 
 	if($.urlParam('from')=='swot-stock'){
 		sessionStorage.setItem('from','swot-stock');
+		sessionStorage.setItem('b_id',$.urlParam('b_id'));
+		
 	}else{
 		sessionStorage.setItem('from','');
+		sessionStorage.setItem('b_id','');
 	}
 
 
 	$("#btnSwotBack").click(function(){
 		if(sessionStorage.getItem('from')=='swot-stock'){
 			window.location.href='./swot-stock.php';
-		}else{
+		}else if(sessionStorage.getItem('from')=='swot-main'){
 			window.location.href='./';
+		}else{
+			window.location.href='./swot-stock.php';
 		}
 	});
 

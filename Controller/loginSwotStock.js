@@ -236,51 +236,6 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 }
 //check device end
 
-$(".btnMC").click(function(){
-    loaddingFn();
-    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
-        $("#loginModal").modal('show');
-        $("#actionTo").val("./mc.php");
-     
-        return false;
-    }else{
-        window.location.href='./mc.php';
-
-        return true;
-
-    }
-    
-});
-
-$(".btnSW").click(function(){
-    loaddingFn();
-    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
-        $("#loginModal").modal('show');
-        $("#actionTo").val("./swot.php");
-        return false;
-    }else{
-        window.location.href='./swot.php';
-
-        return true;
-
-    }
-    
-});
-
-$(".btnRM").click(function(){
-    loaddingFn();
-    if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
-        $("#loginModal").modal('show');
-        $("#actionTo").val('./rm.php');
-        return false;
-    }else{
-        window.location.href='./rm.php';
-
-        return true;
-
-    }
-    
-});
 
 $("#btnOpenLogin").click(function(){
     

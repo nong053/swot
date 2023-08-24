@@ -9,7 +9,7 @@ if($_REQUEST['uuid']!=""){
       // output data of each row
       //while($row = $result->fetch_assoc()) {
         //echo "id: " . $row["p_id"]. " - Name: " . $row["first_name"]. " " . $row["last_name"]. "<br>";
-        $sql_check_data = "SELECT * FROM swot where uu_id='$_REQUEST[uuid]'";
+        $sql_check_data = "SELECT * FROM swot where uu_id='$_REQUEST[uuid]' and  b_id='$_REQUEST[b_id]'";
         $result_check_data = $conn->query($sql_check_data);
 
         if ($result_check_data->num_rows == 0) {
