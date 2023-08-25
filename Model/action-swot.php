@@ -26,7 +26,7 @@ $jsonArray = json_decode($json, true);
         from swot s
         inner join aspect_master ap on s.ap_code=ap.ap_code
        
-        where s.uu_id='$_REQUEST[uuid]' and s.b_id='$_REQUEST[b_id]'    and  ap.uu_id='$_REQUEST[uuid]'
+        where s.uu_id='$_REQUEST[uuid]' and s.b_id='$_REQUEST[b_id]'     and  ap.uu_id='$_REQUEST[uuid]'
         order by s.ap_code,s.form_id asc
 
         ";
@@ -684,7 +684,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
             echo "Error deleting sql_aspect_master_delete: " . $conn->error."<br>";
         }
 
-        $sql_swot_delete = "DELETE FROM swot WHERE  uu_id='$_REQUEST[uuid]' and b_id='$_REQUEST[b_id]'";
+        $sql_swot_delete = "DELETE FROM swot WHERE  uu_id='$_REQUEST[uuid]' ";
         if ($conn->query($sql_swot_delete) === TRUE) {
             $checkError=true;
         }else{
@@ -719,9 +719,9 @@ if ($conn->query($sql_insert_swot) === TRUE) {
        $sql_load_from_swot_ex ="
        INSERT INTO 
        swot
-                  (uu_id,b_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date)
+                  (uu_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date)
        SELECT 
-       '$_REQUEST[uuid]',b_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,now(),now()
+       '$_REQUEST[uuid]',s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,now(),now()
        FROM swot_ex
        WHERE b_id = '$_REQUEST[b_id]'";
 

@@ -589,8 +589,8 @@ var renderSwotToDisplay = function(data){
 
 }
 
-var findOne=function(uuid){
-	 alert(uuid+"=uuid");
+var findOne=function(uuid,b_id){
+
 	// alert("findOne");
     $.ajax({
 		url:webService+"/Model/action-swot.php",
@@ -599,6 +599,7 @@ var findOne=function(uuid){
         async:false,
 		data:{
 			"uuid":uuid,
+			"b_id":b_id,
 			"action":"findOne",
 		},
 		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
@@ -684,6 +685,7 @@ var saveSwot=function(){
         async:false,
 		data:{
 			"uuid":sessionStorage.getItem('uuid'),
+			"b_id":sessionStorage.getItem('b_id'),
 			"action":"insert",
 			"swot_name":$("#swot_name").val(),
 			"swot_detail":$("#swot_detail").val(),
@@ -858,6 +860,7 @@ var autoLoginFn=function(){
         async:false,
 		data:{
 			"uuid":sessionStorage.getItem('uuid'),
+			"b_id":sessionStorage.getItem('b_id'),
 		},
 		headers:{Authorization:"Bearer "+sessionStorage.getItem('token')},
 		success:function(data){
@@ -895,7 +898,7 @@ var autoLoginFn=function(){
 			}else if(data[0]['loginType']=="oldUser"){
 				//loadExampleSwot(sessionStorage.getItem('uuid'));
 				//alert("oldUser");
-				findOne(sessionStorage.getItem('uuid'));
+				findOne(sessionStorage.getItem('uuid'),sessionStorage.getItem('b_id'));
 				
 
 			}
@@ -962,9 +965,7 @@ var listExampleDataFn = function(data){
 }
 
 var saveExampleDataFn = function(uuid){
-    var b_release_type_name = $("#b_release_type_code option:selected").html()
-
-    
+    var b_release_type_name = $("#b_release_type_code option:selected").html();
 	$.ajax({
 		url:webService+"/Model/action-swot.php",
 		type:"post",
@@ -1074,7 +1075,7 @@ var loadExampleDataFn = function(uuid,b_id){
 						content: 'โหลดข้อมูลเรียบร้อย',
 					});
 					
-					findOne(sessionStorage.getItem('uuid'));
+					findOne(sessionStorage.getItem('uuid'),sessionStorage.getItem('b_id'));
 
 					//location.reload();
 
@@ -1542,9 +1543,10 @@ var checkValidateExampleFn  = function(){
 }
 $(document).ready(function(){
 
-	if($.urlParam('from')=='swot-stock'){
-		sessionStorage.setItem('from','swot-stock');
+	if($.urlParam('from')=='swot-main'){
+		sessionStorage.setItem('from','swot-main');
 		sessionStorage.setItem('b_id',$.urlParam('b_id'));
+		alert($.urlParam('b_id'));
 		
 	}else{
 		sessionStorage.setItem('from','');
@@ -1553,13 +1555,9 @@ $(document).ready(function(){
 
 
 	$("#btnSwotBack").click(function(){
-		if(sessionStorage.getItem('from')=='swot-stock'){
-			window.location.href='./swot-stock.php';
-		}else if(sessionStorage.getItem('from')=='swot-main'){
+		
 			window.location.href='./';
-		}else{
-			window.location.href='./swot-stock.php';
-		}
+		
 	});
 
 

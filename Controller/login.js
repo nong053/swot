@@ -262,10 +262,10 @@ $(".btnSW").click(function(){
     loaddingFn();
     if(sessionStorage.getItem('token')=="" || sessionStorage.getItem('token')==null){
         $("#loginModal").modal('show');
-        $("#actionTo").val("./swot.php?from=swot-main");
+        $("#actionTo").val("./swot.php?from=swot-main&b_id=0");
         return false;
     }else{
-        window.location.href='./swot.php?from=swot-main';
+        window.location.href='./swot.php?from=swot-main&b_id=0';
 
         return true;
 

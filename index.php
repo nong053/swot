@@ -197,7 +197,7 @@ img {
       <div class="btn-toolbar " role="toolbar" aria-label="">
                 
         <a  href="./doc/คู่มือSW.pdf" target="_blank" id="btnManualSW" class="btn btn-default"><i class="fa fa-file-pdf" aria-hidden="true"></i> คู่มือการใช้งาน</a>
-        <a href="#" id="btnSW" class="btn btn-primary btnSW"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> เข้าใช้งาน</a>
+        <a href="#"  id="btn-0" class="btn btn-primary btnSW"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i> เข้าใช้งาน</a>
     </div>
     
     </li>
