@@ -497,7 +497,7 @@
                 <button style="margin-bottom:10px; margin:1px; float:right; "  type="button" id="submitSave" class="btn btn-success btn-circle ">
                     <i class="fa-solid fa-floppy-disk"></i>
                 </button>
-                <button style="margin-bottom:10px; margin:1px; float:right; "  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
+                <button style="margin-bottom:10px; margin:1px; float:right; display:none;"  data-bs-toggle="modal" data-bs-target="#exampleModel" type="button" id="getExampleModel" class="btn btn-secondary btn-circle ">
                     <i class="fa-sharp fa-solid fa-bars-progress"></i>
                 </button>
 
@@ -518,7 +518,7 @@
             </div>
         </div>
         <div class="row container">
-            <div id="btnClearForm"  style="text-align:right; color:white; font-weight:bold; cursor:pointer">
+            <div id="btnClearForm"  style="text-align:right; color:white; font-weight:bold; cursor:pointer; display:none;">
                 เคลียร์ข้อมูล <i class="fa-solid fa-arrows-rotate"></i></a>
             </div>
         </div>

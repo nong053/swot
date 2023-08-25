@@ -16,7 +16,7 @@ $("body").mLoading();
 
 // var saveSubmitFn = function(){
 // 	$.ajax({
-// 		url:webService+"/Model/action-swot.php",
+// 		url:webService+"/Model/action-swot-stock.php",
 // 		type:"post",
 // 		dataType:"json",
 //         async:false,
@@ -593,7 +593,7 @@ var findOne=function(uuid,b_id){
 	
 	// alert("findOne");
     $.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -627,7 +627,7 @@ var findOne=function(uuid,b_id){
 var insertAndLoadExampleSwot_bk=function(uuid){
 
     $.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -647,7 +647,7 @@ var loadExampleSwot_bk=function(b_id,swot_detail){
 
 
     $.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -679,7 +679,7 @@ var saveSwot=function(){
 //alert($("#swot_detail").val());
 
     $.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -825,7 +825,7 @@ var saveSwot=function(){
 var getBusinessType=function(){
 
     $.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -970,7 +970,7 @@ var saveExampleDataFn = function(uuid){
 
     
 	$.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1004,7 +1004,7 @@ var saveExampleDataFn = function(uuid){
 var showAllExampleDataUUIDFn = function(uuid){
 
 	$.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1031,7 +1031,7 @@ var showAllExampleDataUUIDFn = function(uuid){
 //LOAD DATA START
 var showAllExampleLoadDataFn = function(uuid){
 	$.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1056,7 +1056,7 @@ var loadExampleDataFn = function(uuid,b_id){
 
     
     $.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1107,7 +1107,7 @@ var listExampleLoadDataFn = function(data){
 var findOneExampleDataFn = function(uuid,b_id){
 
 	$.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1137,7 +1137,7 @@ var findOneExampleDataFn = function(uuid,b_id){
 var updateExampleDataFn = function(uuid,b_id){
 	var b_release_type_name = $("#b_release_type_code option:selected").html()
 	$.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1170,7 +1170,7 @@ var updateExampleDataFn = function(uuid,b_id){
 var delExampleDataFn = function(uuid,b_id){
 
 	$.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1206,7 +1206,7 @@ function exportToJsonFile(jsonData) {
 
 var exportExampleDataFn = function(uuid,b_id){
 	$.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
@@ -1235,7 +1235,7 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 	var dataJsonForImportObject=eval("("+dataJsonForImport+")");
 
     $.ajax({
-		url:webService+"/Model/action-swot.php",
+		url:webService+"/Model/action-swot-stock.php",
 		type:"post",
 		dataType:"json",
         async:false,
