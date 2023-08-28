@@ -1249,10 +1249,11 @@ var importExampleDataJsonFn = function(uuid,dataJsonForImport){
 
 			if(data[0]!=="" || data[0]!==null){
 				if(data[0]['status']=="200"){
-					$.alert({
-						title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
-						content: 'โหลดข้อมูลเรียบร้อย',
-					});
+					window.location='./swot.php?from=swot-main&b_id=0';
+					// $.alert({
+					// 	title: '<i style="font-size:44px; color:green;" class="fa-sharp fa-solid fa-circle-check" aria-hidden="true"></i> Success',
+					// 	content: 'โหลดข้อมูลเรียบร้อย',
+					// });
 				}
 			}
 		}
@@ -1546,7 +1547,7 @@ $(document).ready(function(){
 	if($.urlParam('from')=='swot-main'){
 		sessionStorage.setItem('from','swot-main');
 		sessionStorage.setItem('b_id',$.urlParam('b_id'));
-		alert($.urlParam('b_id'));
+		
 		
 	}else{
 		sessionStorage.setItem('from','');

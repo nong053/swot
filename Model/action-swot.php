@@ -719,9 +719,9 @@ if ($conn->query($sql_insert_swot) === TRUE) {
        $sql_load_from_swot_ex ="
        INSERT INTO 
        swot
-                  (uu_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date)
+                  (uu_id,b_id,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,created_date,updated_date)
        SELECT 
-       '$_REQUEST[uuid]',s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,now(),now()
+       '$_REQUEST[uuid]',0,s_code, ap_code, form_id,seq_id,s_name,s_weight,s_score,s_total_score,swot_name,swot_detail,now(),now()
        FROM swot_ex
        WHERE b_id = '$_REQUEST[b_id]'";
 
@@ -812,7 +812,7 @@ if ($conn->query($sql_insert_swot) === TRUE) {
             VALUES
             (
             '".$_REQUEST['uuid']."',
-            '".$_REQUEST['dataSwotEx'][$i]['b_id']."',
+            '0',
             '".$_REQUEST['dataSwotEx'][$i]['s_code']."',
             '".$_REQUEST['dataSwotEx'][$i]['ap_code']."',
             '".$_REQUEST['dataSwotEx'][$i]['form_id']."',
