@@ -109,10 +109,11 @@ img {
             <img src="images/icon60x54.png" class="d-none d-sm-block" style="width:60px; height:54px; top: -11px; position:relative; margin-right: 5px;">
             <img src="images/icon45x40.png" class="d-block d-sm-none" style="width:45px; height:40px; top: -11px; position:relative; margin-right: 5px;">
             -->
-            <b style="font-size: 24px;left:5px; position: relative; " id='swotTitle'> วิเคราะห์ SWOT หุ้นไทย</b>
+            <b style="font-size: 24px;left:5px; position: relative; " id='swotTitle'> วิเคราะห์หุ้นไทย</b>
+<!--             
             <img src="images/logo-swot.png" class="d-none d-sm-block" style="width:60px; height:60px; top: -7px; position:relative; margin-right: 5px;">
-            <img src="images/logo-swot.png" class="d-block d-sm-none" style="width:45px; height:45px; top: -9px; position:relative; margin-right: 5px;">
-
+            <img src="images/logo-swot.png" class="d-block d-sm-none" style="width:45px; height:45px; top: -9px; position:relative; margin-right: 5px;"> -->
+            <img src="images/logo-swot.png" class="" style="width:45px; height:45px; top: 0px; position:relative; margin-right: 5px;">
             
 
             </h1> 
@@ -161,17 +162,16 @@ img {
 
 <div class="row " >
     
-    <p style="margin-bottom: 80px; color:white;">
+    <p style="margin-bottom: 100px; color:white;">
     
     </p>
-    <div style="color:white; font-size:20px; padding-left:15p; padding-right:15px; padding-top:30px; padding-bottom:30px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การวิเคราะห์ SWOT ช่วยให้องค์กรหรือกิจการมีภาพรวมและความเข้าใจที่เข้าใจตลาดและสภาวะแวดล้อมภายนอกอย่างเต็มรูปแบบ ทำให้สามารถปรับปรุงและสร้างกลยุทธ์ที่เหมาะสมเพื่อสร้างความสำเร็จและความยั่งยืนในอนาคตได้มากขึ้น ประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายในดังนี้
-    </div>
+    
     <!--
     <div style="color:white; font-size:20px; padding-left:15p; padding-right:15px; padding-top:30px; padding-bottom:30px;">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SWOT (การวิเคราะห์สวอต) คือการวิเคราะห์สภาพแวดล้อมและศักยภาพสำหรับการประเมินองค์กรประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายในดังนี้
     </div>
 -->
+<!--
     <div class="col-md-6"  >
     
             <ul class="list-group" style="box-shadow:none; background-color:#b7b7ce; ">
@@ -233,7 +233,7 @@ img {
             
             </li>
             <li class="list-group-item clearfix" >
-            <!-- onclick="window.location.href='./rm.php' -->
+          
             
                     <button style="float:left;  margin-right:30px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-warning shadow-lg btnRM">
                     <i class="fa fa-pie-chart" aria-hidden="true"></i>   
@@ -256,7 +256,7 @@ img {
                     
             </li>
             <li class="list-group-item clearfix" >
-            <!-- onclick="window.location.href='./rm.php' -->
+
             
                     <button style="float:left;  margin-right:30px; margin-bottom:15px;"  type="button" id="btn-rm" class="btn  btn-circle btn-danger shadow-lg btnRM">
                     <i class="fa fa-bomb" aria-hidden="true"></i>   
@@ -281,6 +281,7 @@ img {
             </li>
         </ul>
     </div>
+-->
     <div class="col-md-6 ">
 
 
@@ -345,6 +346,11 @@ img {
 
         
     
+    </div>
+    <div class="col-md-6">
+        <div style="color:white; font-size:20px; padding-left:15p; padding-right:15px; padding-top:30px; padding-bottom:30px;" class="">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;การวิเคราะห์ SWOT ช่วยให้องค์กรหรือกิจการมีภาพรวมและความเข้าใจที่เข้าใจตลาดและสภาวะแวดล้อมภายนอกอย่างเต็มรูปแบบ ทำให้สามารถปรับปรุงและสร้างกลยุทธ์ที่เหมาะสมเพื่อสร้างความสำเร็จและความยั่งยืนในอนาคตได้มากขึ้น ประกอบด้วย จุดแข็ง จุดอ่อน จากสภาพแวดล้อมภายนอก และ โอกาส อุปสรรค จากสภาพแวดล้อมภายใน
+        </div>
     </div>
 </div>
 

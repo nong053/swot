@@ -86,15 +86,23 @@ if("mobile"==sessionStorage.getItem('checkDevice')){
 	$("#formLoginArea").css({"width":"100%"});
     $(".btn-toolbar").css({"text-align":"center"}).show();
     $(".nbsp").remove();
-    
+
+    $(".btnLink").addClass("btn-block").css({"width":"100%","margin":"5px"});
+    $(".btnSWOT").addClass("btn-block").css({"width":"100%","margin":"5px"});
+    $(".btnSWOTAdvance").addClass("btn-block").css({"width":"100%","margin":"5px"});
     // $(".headeTitle").css({"top":"30px"}).show();
     // $(".headerFixed").css({"top":"-20px","height":"65px"});
 
    
 }else{
+    
     $("#displayView").show();
 	$("#formLoginArea").css({"width":"350px"});
     $(".btn-toolbar").css({"float":"right"}).show();
+
+    $(".btnLink").removeClass("btn-block").css({"width":"","margin":"0px"});
+    $(".btnSWOT").removeClass("btn-block").css({"width":"","margin":"0px"});
+    $(".btnSWOTAdvance").removeClass("btn-block").css({"width":"","margin":"0px"});
     
     
     // $(".headeTitle").css({"top":"17px"}).show();

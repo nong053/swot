@@ -1,6 +1,6 @@
 
-var webService="http://localhost/swot";
-//var webService="http://dashboardweb.com/swot";
+//var webService="http://localhost/swot";
+var webService="http://dashboardweb.com/swot";
 
 var navigator_info = "";
 var screen_info ="";
@@ -102,12 +102,19 @@ function commaSeparateNumber(val){
 
   if("mobile"==sessionStorage.getItem('checkDevice')){
 
-    
+    /*
       $("#swotTitle").css({"top":"5px","font-size":"20px"});
       $(".headeTitle").css({"top":"30px"}).show();
       $(".headerFixed").css({"top":"-20px","height":"65px"}).show();
       $(".setting-toggle").css({"top":"58px","color":"white","background-color":"#191970","border-color":"#191970"}).show();
-      
+      */
+
+      $("#swotTitle").css({"top":"10px","font-size":"24px"});
+      $(".headeTitle").css({"top":"17px"}).show();
+      $(".headerFixed").css({"top":"0px","height":"75px"}).show();
+      $(".setting-toggle").css({"top":"75px"}).show();
+
+
    
       if(sessionStorage.getItem('uuidByMobile')=="" || sessionStorage.getItem('uuidByMobile')==null){
         $("#loginArea").css({"padding-top":"30px"}).show();
@@ -129,6 +136,7 @@ function commaSeparateNumber(val){
       $(".headeTitle").css({"top":"17px"}).show();
       $(".headerFixed").css({"top":"0px","height":"75px"}).show();
       $(".setting-toggle").css({"top":"75px"}).show();
+
       if(sessionStorage.getItem('uuidByMobile')=="" || sessionStorage.getItem('uuidByMobile')==null){
         $("#loginArea").css({"padding-top":"28px"}).show();
       }else{
